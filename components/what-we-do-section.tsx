@@ -11,8 +11,8 @@ export default function WhatWeDoSection() {
                         What We Do
                     </h2>
                     <p className="mt-4">
-                        We craft premium digital solutions that transform your
-                        business operations
+                        We focus on building technology that takes work off your
+                        plate and creates lasting value.
                     </p>
                 </div>
                 <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
@@ -29,8 +29,9 @@ export default function WhatWeDoSection() {
 
                         <CardContent className="pb-6">
                             <p className="text-sm">
-                                Scalable, robust APIs and databases engineered
-                                for performance and reliability.
+                                We design APIs, databases, and infrastructure
+                                that are reliable, secure, and built to scale as
+                                your business grows.
                             </p>
                         </CardContent>
                     </div>
@@ -46,8 +47,9 @@ export default function WhatWeDoSection() {
 
                         <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
-                                Smart workflows that save time and cut costs
-                                through intelligent process optimization.
+                                We streamline repetitive tasks with smart
+                                workflows that save time, reduce mistakes, and
+                                lower costs.
                             </p>
                         </CardContent>
                     </div>
@@ -58,15 +60,15 @@ export default function WhatWeDoSection() {
                                 <Bot className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">
-                                AI Agentic Solutions
-                            </h3>
+                            <h3 className="mt-6 font-medium">AI Solutions</h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
-                                Intelligent assistants and autonomous business
-                                workflows powered by cutting-edge AI.
+                                From customer-facing chatbots to autonomous
+                                workflows, we create AI-powered tools that
+                                handle complex processes and provide real
+                                business impact.
                             </p>
                         </CardContent>
                     </div>
@@ -84,8 +86,9 @@ export default function WhatWeDoSection() {
 
                         <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
-                                Bespoke, performance-driven Shopify & custom
-                                builds that convert visitors to customers.
+                                We build and optimize Shopify and custom online
+                                stores designed for performance, seamless
+                                integrations, and strong conversion rates.
                             </p>
                         </CardContent>
                     </div>

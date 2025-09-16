@@ -93,11 +93,9 @@ export default function ContactSection() {
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
         try {
-            const googleScriptUrl = process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL;
-
-            if (!googleScriptUrl) {
-                throw new Error("Google Script URL not configured");
-            }
+            const apiUrl =
+                process.env.NEXT_PUBLIC_API_URL ||
+                "https://your-api-domain.vercel.app";
 
             // Execute reCAPTCHA
             let recaptchaToken = null;
@@ -108,7 +106,7 @@ export default function ContactSection() {
                 }
             }
 
-            const response = await fetch(googleScriptUrl, {
+            const response = await fetch(`${apiUrl}/api/contact`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -118,7 +116,6 @@ export default function ContactSection() {
                     source: "Contact Form",
                     recaptchaToken,
                     webhookSecret: process.env.NEXT_PUBLIC_WEBHOOK_SECRET,
-                    timestamp: new Date().toISOString(),
                 }),
             });
 
@@ -163,7 +160,7 @@ export default function ContactSection() {
                         </h3>
                         <p className="text-sm mb-6">
                             Your information has been submitted successfully.
-                            We'll get back to you soon!
+                            We&apos;ll get back to you soon!
                         </p>
                         <Button
                             onClick={() =>
@@ -190,33 +187,14 @@ export default function ContactSection() {
                     Help us route your inquiry
                 </h1>
 
-                <div className="grid divide-y border md:grid-cols-2 md:gap-4 md:divide-x md:divide-y-0">
-                    <div className="flex flex-col justify-between space-y-8 p-6 sm:p-12">
-                        <div>
-                            <h2 className="mb-3 text-lg font-semibold">
-                                Collaborate
-                            </h2>
-                            <Link
-                                href="mailto:hello@invaritech.ai"
-                                className="text-lg text-blue-600 hover:underline dark:text-blue-400"
-                            >
-                                hello@invaritech.ai
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col justify-between space-y-8 p-6 sm:p-12">
-                        <div>
-                            <h3 className="mb-3 text-lg font-semibold">
-                                Press
-                            </h3>
-                            <Link
-                                href="mailto:hello@invaritech.ai"
-                                className="text-lg text-blue-600 hover:underline dark:text-blue-400"
-                            >
-                                hello@invaritech.ai
-                            </Link>
-                        </div>
-                    </div>
+                <div className="border p-6 sm:p-12 text-center">
+                    <h2 className="mb-3 text-lg font-semibold">Get in Touch</h2>
+                    <Link
+                        href="mailto:hello@invaritech.ai"
+                        className="text-lg text-blue-600 hover:underline dark:text-blue-400"
+                    >
+                        hello@invaritech.ai
+                    </Link>
                 </div>
 
                 <div className="h-3 border-x bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_6px)]"></div>
@@ -226,10 +204,10 @@ export default function ContactSection() {
                 >
                     <Card className="mx-auto max-w-lg p-8 sm:p-16">
                         <h3 className="text-xl font-semibold">
-                            Let's get you to the right place
+                            Let&apos;s get you to the right place
                         </h3>
                         <p className="mt-4 text-sm">
-                            Reach out to our sales team! We're eager to learn
+                            Reach out to our sales team! We&apos;re eager to learn
                             more about how you plan to use our application.
                         </p>
 
