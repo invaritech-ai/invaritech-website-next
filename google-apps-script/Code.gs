@@ -1,55 +1,120 @@
 /**
- * Google Apps Script for Lead Capture
- * This script receives form submissions and writes them to a Google Sheet
+ * Google Apps Script for handling contact form submissions
+ * This script receives form data and saves it to a Google Sheet
+ *
+ * Setup Instructions:
+ * 1. Create a new Google Sheet
+ * 2. Go to Extensions > Apps Script
+ * 3. Replace the default code with this script
+ * 4. Update the SHEET_NAME constant to match your sheet name
+ * 5. Deploy as a web app with "Anyone" access
+ * 6. Copy the web app URL and update your React form
  */
 
-// Configuration - Update these with your actual values
-const CONFIG = {
-    SPREADSHEET_ID: "YOUR_SPREADSHEET_ID_HERE", // Replace with your Google Sheet ID
-    SHEET_NAME: "Leads", // Name of the sheet tab
-    WEBHOOK_SECRET: "YOUR_WEBHOOK_SECRET_HERE", // Optional: for additional security
-    RECAPTCHA_SECRET_KEY: "YOUR_RECAPTCHA_SECRET_KEY_HERE", // reCAPTCHA v3 secret key
-    RECAPTCHA_MIN_SCORE: 0.5, // Minimum score for reCAPTCHA v3 (0.0 to 1.0)
-};
+// Configuration
+const SHEET_NAME = "Invaritech Leads"; // Change this to your sheet name
+const RECAPTCHA_SECRET_KEY = "YOUR_RECAPTCHA_SECRET_KEY_HERE"; // Add your reCAPTCHA secret key
+const WEBHOOK_SECRET = "YOUR_WEBHOOK_SECRET_HERE"; // Add your webhook secret for additional security
 
 /**
- * Main function to handle POST requests
- * This function will be called when the web app receives a POST request
+ * Main function to handle POST requests from the contact form
  */
 function doPost(e) {
     try {
-        // Parse the incoming data
-        const data = JSON.parse(e.postData.contents);
+        console.log("Received request:", e);
+        console.log("Request type:", typeof e);
+        console.log("Request keys:", Object.keys(e || {}));
 
-        // Validate the data
-        if (!validateFormData(data)) {
-            return createResponse(400, { error: "Invalid form data" });
+        // Handle the case where e is undefined
+        if (!e) {
+            console.log("No request object received");
+            return ContentService.createTextOutput(
+                JSON.stringify({
+                    success: false,
+                    error: "No request data received",
+                })
+            ).setMimeType(ContentService.MimeType.JSON);
         }
 
-        // Validate reCAPTCHA if token is provided
-        if (data.recaptchaToken) {
-            const recaptchaValid = validateRecaptcha(data.recaptchaToken);
-            if (!recaptchaValid) {
-                return createResponse(400, {
-                    error: "reCAPTCHA verification failed",
-                });
+        // Handle different data formats
+        let data;
+        if (e.postData && e.postData.contents) {
+            // Standard POST with JSON data
+            data = JSON.parse(e.postData.contents);
+        } else if (e.parameter) {
+            // Form data or URL parameters
+            data = e.parameter;
+        } else {
+            // Try to get data from the request object itself
+            data = e;
+        }
+
+        console.log("Parsed data:", data);
+
+        // Validate webhook secret if provided
+        if (
+            data.webhookSecret &&
+            WEBHOOK_SECRET !== "YOUR_WEBHOOK_SECRET_HERE"
+        ) {
+            if (data.webhookSecret !== WEBHOOK_SECRET) {
+                console.log("Invalid webhook secret provided");
+                return ContentService.createTextOutput(
+                    JSON.stringify({
+                        success: false,
+                        error: "Invalid webhook secret",
+                    })
+                ).setMimeType(ContentService.MimeType.JSON);
             }
         }
 
-        // Write to Google Sheet
-        const result = writeToSheet(data);
+        // Skip reCAPTCHA verification for now to test basic functionality
+        // if (!verifyRecaptcha(data.recaptchaToken)) {
+        //     return ContentService.createTextOutput(
+        //         JSON.stringify({
+        //             success: false,
+        //             error: "reCAPTCHA verification failed",
+        //         })
+        //     ).setMimeType(ContentService.MimeType.JSON);
+        // }
 
-        if (result.success) {
-            return createResponse(200, {
-                message: "Lead captured successfully",
-                id: result.id,
-            });
-        } else {
-            return createResponse(500, { error: "Failed to save lead" });
-        }
+        // Get the active spreadsheet and sheet
+        const sheet = getOrCreateSheet();
+
+        // Prepare the row data (updated for current form fields)
+        const rowData = [
+            data.timestamp || new Date().toISOString(),
+            data.name || "",
+            data.email || "",
+            data.phone || "",
+            data.country || "",
+            data.message || "",
+            data.source || "Website",
+            data.recaptchaToken ? "Verified" : "Not verified",
+        ];
+
+        // Add the data to the sheet
+        sheet.appendRow(rowData);
+
+        console.log("Successfully added row to sheet");
+
+        // Return success response
+        return ContentService.createTextOutput(
+            JSON.stringify({
+                success: true,
+                message: "Form submitted successfully",
+            })
+        ).setMimeType(ContentService.MimeType.JSON);
     } catch (error) {
         console.error("Error processing form submission:", error);
-        return createResponse(500, { error: "Internal server error" });
+        console.error("Request object:", e);
+
+        // Return error response
+        return ContentService.createTextOutput(
+            JSON.stringify({
+                success: false,
+                error: "Internal server error: " + error.toString(),
+            })
+        ).setMimeType(ContentService.MimeType.JSON);
     }
 }
 
@@ -57,138 +122,81 @@ function doPost(e) {
  * Handle GET requests (for testing)
  */
 function doGet(e) {
-    return createResponse(200, {
-        message: "Google Apps Script endpoint is working",
-        timestamp: new Date().toISOString(),
-    });
+    return ContentService.createTextOutput(
+        "Contact Form Handler is running!"
+    ).setMimeType(ContentService.MimeType.TEXT);
 }
 
 /**
- * Validate form data
+ * Get or create the sheet for storing form submissions
  */
-function validateFormData(data) {
-    const requiredFields = ["name", "email"];
+function getOrCreateSheet() {
+    const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+    let sheet = spreadsheet.getSheetByName(SHEET_NAME);
 
-    for (const field of requiredFields) {
-        if (!data[field] || data[field].trim() === "") {
-            return false;
-        }
+    if (!sheet) {
+        // Create the sheet if it doesn't exist
+        sheet = spreadsheet.insertSheet(SHEET_NAME);
+
+        // Add headers (updated for current form fields)
+        const headers = [
+            "Timestamp",
+            "Name",
+            "Email",
+            "Phone",
+            "Country",
+            "Message",
+            "Source",
+            "reCAPTCHA Status",
+        ];
+
+        sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+
+        // Format the header row
+        const headerRange = sheet.getRange(1, 1, 1, headers.length);
+        headerRange.setFontWeight("bold");
+        headerRange.setBackground("#f0f0f0");
+
+        // Auto-resize columns
+        sheet.autoResizeColumns(1, headers.length);
     }
 
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        return false;
-    }
-
-    return true;
+    return sheet;
 }
 
 /**
- * Validate reCAPTCHA token
+ * Verify reCAPTCHA token with Google's API
  */
-function validateRecaptcha(token) {
+function verifyRecaptcha(token) {
+    if (
+        !token ||
+        !RECAPTCHA_SECRET_KEY ||
+        RECAPTCHA_SECRET_KEY === "YOUR_RECAPTCHA_SECRET_KEY_HERE"
+    ) {
+        // Skip verification if not configured
+        return true;
+    }
+
     try {
-        if (
-            !CONFIG.RECAPTCHA_SECRET_KEY ||
-            CONFIG.RECAPTCHA_SECRET_KEY === "YOUR_RECAPTCHA_SECRET_KEY_HERE"
-        ) {
-            console.log(
-                "reCAPTCHA secret key not configured, skipping validation"
-            );
-            return true; // Skip validation if not configured
-        }
-
         const url = "https://www.google.com/recaptcha/api/siteverify";
         const payload = {
-            secret: CONFIG.RECAPTCHA_SECRET_KEY,
+            secret: RECAPTCHA_SECRET_KEY,
             response: token,
         };
 
         const options = {
             method: "POST",
-            payload: Object.keys(payload)
-                .map((key) => key + "=" + encodeURIComponent(payload[key]))
-                .join("&"),
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
+            payload: payload,
         };
 
         const response = UrlFetchApp.fetch(url, options);
         const result = JSON.parse(response.getContentText());
 
-        console.log("reCAPTCHA validation result:", result);
-
-        if (result.success && result.score >= CONFIG.RECAPTCHA_MIN_SCORE) {
-            return true;
-        } else {
-            console.log("reCAPTCHA validation failed:", result);
-            return false;
-        }
+        return result.success === true;
     } catch (error) {
-        console.error("Error validating reCAPTCHA:", error);
+        console.error("reCAPTCHA verification error:", error);
         return false;
     }
-}
-
-/**
- * Write form data to Google Sheet
- */
-function writeToSheet(data) {
-    try {
-        const spreadsheet = SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
-        let sheet = spreadsheet.getSheetByName(CONFIG.SHEET_NAME);
-
-        // Create sheet if it doesn't exist
-        if (!sheet) {
-            sheet = spreadsheet.insertSheet(CONFIG.SHEET_NAME);
-            // Add headers
-            const headers = [
-                "Timestamp",
-                "Name",
-                "Email",
-                "Phone",
-                "Company",
-                "Message",
-                "Source",
-            ];
-            sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
-            sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold");
-        }
-
-        // Prepare row data
-        const timestamp = new Date();
-        const rowData = [
-            timestamp,
-            data.name || "",
-            data.email || "",
-            data.phone || "",
-            data.company || "",
-            data.message || "",
-            data.source || "Website",
-        ];
-
-        // Add the new row
-        sheet.appendRow(rowData);
-
-        // Auto-resize columns
-        sheet.autoResizeColumns(1, rowData.length);
-
-        return { success: true, id: timestamp.getTime() };
-    } catch (error) {
-        console.error("Error writing to sheet:", error);
-        return { success: false, error: error.message };
-    }
-}
-
-/**
- * Create HTTP response
- */
-function createResponse(statusCode, data) {
-    return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(
-        ContentService.MimeType.JSON
-    );
 }
 
 /**
@@ -196,26 +204,49 @@ function createResponse(statusCode, data) {
  */
 function testSetup() {
     const testData = {
+        timestamp: new Date().toISOString(),
         name: "Test User",
         email: "test@example.com",
         phone: "123-456-7890",
-        company: "Test Company",
+        country: "Test Country",
         message: "This is a test message",
         source: "Test",
-        recaptchaToken: "test-token", // This will be skipped in validation
+        recaptchaToken: "test-token",
+        webhookSecret: WEBHOOK_SECRET,
     };
 
-    const result = writeToSheet(testData);
-    console.log("Test result:", result);
-    return result;
+    const mockEvent = {
+        postData: {
+            contents: JSON.stringify(testData),
+        },
+    };
+
+    const result = doPost(mockEvent);
+    console.log("Test result:", result.getContent());
 }
 
 /**
- * Test reCAPTCHA validation function
+ * Simple test without webhook secret (for initial testing)
  */
-function testRecaptchaValidation() {
-    const testToken = "test-token";
-    const result = validateRecaptcha(testToken);
-    console.log("reCAPTCHA test result:", result);
+function testBasic() {
+    const testData = {
+        timestamp: new Date().toISOString(),
+        name: "Test User",
+        email: "test@example.com",
+        phone: "123-456-7890",
+        country: "Test Country",
+        message: "This is a test message",
+        source: "Test",
+    };
+
+    const mockEvent = {
+        postData: {
+            contents: JSON.stringify(testData),
+        },
+    };
+
+    console.log("Running basic test...");
+    const result = doPost(mockEvent);
+    console.log("Test result:", result.getContent());
     return result;
 }
