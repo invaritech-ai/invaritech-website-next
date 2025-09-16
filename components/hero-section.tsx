@@ -132,7 +132,7 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base"
                                         >
-                                            <Link href="#link">
+                                            <Link href="#contact">
                                                 <span className="text-nowrap">
                                                     Start Your Project Today
                                                 </span>
