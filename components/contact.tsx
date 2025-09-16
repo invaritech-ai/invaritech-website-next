@@ -115,7 +115,6 @@ export default function ContactSection() {
                     ...formData,
                     source: "Contact Form",
                     recaptchaToken,
-                    webhookSecret: process.env.NEXT_PUBLIC_WEBHOOK_SECRET,
                 }),
             });
 
@@ -207,8 +206,9 @@ export default function ContactSection() {
                             Let&apos;s get you to the right place
                         </h3>
                         <p className="mt-4 text-sm">
-                            Reach out to our sales team! We&apos;re eager to learn
-                            more about how you plan to use our application.
+                            Reach out to our sales team! We&apos;re eager to
+                            learn more about how you plan to use our
+                            application.
                         </p>
 
                         <div className="**:[&>label]:block mt-12 space-y-6 *:space-y-3">
