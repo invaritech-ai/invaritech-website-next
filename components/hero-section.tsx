@@ -59,14 +59,14 @@ export default function HeroSection() {
                                     },
                                 },
                             }}
-                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32"
+                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32"
                         >
                             <Image
                                 src="/hero-bg.jpg"
                                 alt="INVARITECH digital solutions background"
-                                className="size-full invert dark:invert-0"
-                                width="3276"
-                                height="4095"
+                                className="size-full object-cover object-top invert dark:invert-0"
+                                fill
+                                sizes="100vw"
                             />
                         </AnimatedGroup>
 
@@ -75,13 +75,13 @@ export default function HeroSection() {
                             className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
                         />
 
-                        <div className="mx-auto max-w-7xl px-6">
+                        <div className="mx-auto max-w-7xl px-3 sm:px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]"
+                                    className="mx-auto mt-8 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]"
                                 >
                                     Your Vision, Intelligently Executed
                                 </TextEffect>
@@ -91,7 +91,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.5}
                                     as="p"
-                                    className="mx-auto mt-8 max-w-2xl text-balance text-lg"
+                                    className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
                                 >
                                     Custom Backends • Automation • AI Agents •
                                     E‑Commerce
@@ -102,7 +102,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.7}
                                     as="p"
-                                    className="mx-auto mt-4 max-w-2xl text-balance text-base text-muted-foreground"
+                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-base text-muted-foreground"
                                 >
                                     We design and build practical digital
                                     systems that help businesses work smarter,
@@ -156,8 +156,8 @@ export default function HeroSection() {
                                 item: transitionVariants,
                             }}
                         >
-                            <div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                            <div className="mask-b-from-55% relative mr-0 mt-8 overflow-hidden px-1 sm:px-2 sm:mt-12 md:mt-20">
+                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 sm:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-15/8 relative rounded-2xl scale-x-[-1]"
                                         src="/app.png"
