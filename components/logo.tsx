@@ -14,7 +14,10 @@ export const Logo = ({
             alt="Invaritech Logo"
             width={120}
             height={32}
-            className={cn("h-8 w-auto", className)}
+            className={cn(
+                "h-8 w-auto brightness-75 dark:brightness-100",
+                className
+            )}
             priority
         />
     );
@@ -33,7 +36,10 @@ export const LogoIcon = ({
             alt="Invaritech Icon"
             width={32}
             height={32}
-            className={cn("size-8", className)}
+            className={cn(
+                "size-8 brightness-75 dark:brightness-100",
+                className
+            )}
         />
     );
 };

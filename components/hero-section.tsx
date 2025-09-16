@@ -70,8 +70,8 @@ export default function HeroSection() {
                             className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32"
                         >
                             <Image
-                                src="/hero-bg.png"
-                                alt=""
+                                src="/hero-bg.jpg"
+                                alt="INVARITECH digital solutions background"
                                 className="size-full invert dark:invert-0"
                                 width="3276"
                                 height="4095"
@@ -168,7 +168,7 @@ export default function HeroSection() {
                                     <Image
                                         className="bg-background aspect-15/8 relative rounded-2xl scale-x-[-1]"
                                         src="/app.png"
-                                        alt="app screen"
+                                        alt="INVARITECH application interface showcasing premium digital solutions"
                                         width="2700"
                                         height="1440"
                                     />

@@ -27,7 +27,7 @@ export default function Features() {
                             </h3>
                         </CardHeader>
 
-                        <CardContent>
+                        <CardContent className="pb-6">
                             <p className="text-sm">
                                 Every line of code crafted with meticulous
                                 attention to detail and performance.
@@ -46,7 +46,7 @@ export default function Features() {
                             </h3>
                         </CardHeader>
 
-                        <CardContent>
+                        <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
                                 Premium interfaces and seamless user journeys
                                 that set you apart from competitors.
@@ -65,7 +65,7 @@ export default function Features() {
                             </h3>
                         </CardHeader>
 
-                        <CardContent>
+                        <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
                                 Architecture designed to evolve with your
                                 business from startup to enterprise.
@@ -84,7 +84,7 @@ export default function Features() {
                             </h3>
                         </CardHeader>
 
-                        <CardContent>
+                        <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
                                 Proven track record with forward-thinking
                                 companies worldwide.
@@ -98,14 +98,11 @@ export default function Features() {
 }
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
-    <div className="mask-radial-from-40% mask-radial-to-60% relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">
-        <div
-            aria-hidden
-            className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px] dark:opacity-50"
-        />
-
-        <div className="bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t">
-            {children}
+    <div className="relative mx-auto size-16 flex items-center justify-center">
+        <div className="bg-muted/50 rounded-xl p-3 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:scale-105">
+            <div className="text-foreground/70 group-hover:text-foreground transition-colors duration-200">
+                {children}
+            </div>
         </div>
     </div>
 );
