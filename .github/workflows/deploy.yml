@@ -1,10 +1,12 @@
-name: Deploy to Hostinger
+name: Deploy to Hostinger (DISABLED - Using FTP deployment instead)
 
 on:
-    push:
-        branches: [main]
-    pull_request:
-        branches: [main]
+    # Disabled - using hostinger-deploy.yml for FTP deployment instead
+    # push:
+    #     branches: [main]
+    # pull_request:
+    #     branches: [main]
+    workflow_dispatch: # Keep manual trigger option
 
 jobs:
     build-and-deploy:
