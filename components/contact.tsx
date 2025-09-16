@@ -182,12 +182,12 @@ export default function ContactSection() {
     return (
         <section className="py-32">
             <div className="mx-auto max-w-4xl px-4 lg:px-0">
-                <h1 className="mb-12 text-center text-4xl font-semibold lg:text-5xl">
-                    Help us route your inquiry
-                </h1>
+                <h2 className="mb-12 text-center text-4xl font-semibold lg:text-5xl">
+                    Let&apos;s Build Something Great Together
+                </h2>
 
                 <div className="border p-6 sm:p-12 text-center">
-                    <h2 className="mb-3 text-lg font-semibold">Get in Touch</h2>
+                    <h3 className="mb-3 text-lg font-semibold">Get in Touch</h3>
                     <Link
                         href="mailto:hello@invaritech.ai"
                         className="text-lg text-blue-600 hover:underline dark:text-blue-400"
@@ -202,13 +202,12 @@ export default function ContactSection() {
                     className="border px-4 py-12 lg:px-0 lg:py-24"
                 >
                     <Card className="mx-auto max-w-lg p-8 sm:p-16">
-                        <h3 className="text-xl font-semibold">
-                            Let&apos;s get you to the right place
-                        </h3>
+                        <h3 className="text-xl font-semibold">Work With Us</h3>
                         <p className="mt-4 text-sm">
-                            Reach out to our sales team! We&apos;re eager to
-                            learn more about how you plan to use our
-                            application.
+                            We&apos;re a global remote team that partners
+                            closely with each client. Whether you need to launch
+                            an MVP quickly or overhaul an existing system,
+                            we&apos;ll make sure the technology fits your goals.
                         </p>
 
                         <div className="**:[&>label]:block mt-12 space-y-6 *:space-y-3">

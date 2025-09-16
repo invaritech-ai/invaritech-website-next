@@ -13,7 +13,7 @@ export default function Home() {
             {/* <Features /> */}
             {/* <StatsSection /> */}
             <IntegrationsSection />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <ContactSection />
             <FooterSection />
         </main>
