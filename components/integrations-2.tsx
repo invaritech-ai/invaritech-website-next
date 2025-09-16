@@ -13,15 +13,15 @@ import { cn } from "@/lib/utils";
 
 export default function IntegrationsSection() {
     return (
-        <section>
-            <div className="bg-muted dark:bg-background py-24 md:py-32">
+        <section id="technologies">
+            <div className="bg-muted dark:bg-background py-16 md:py-20">
                 <div className="mx-auto max-w-5xl px-6">
                     <div className="dark:bg-muted/50 relative mx-auto w-fit">
                         <div
                             role="presentation"
-                            className="bg-radial to-muted dark:to-background absolute inset-0 z-10 from-transparent to-75%"
+                            className="bg-radial to-muted dark:to-background absolute inset-0 z-1 from-transparent to-75%"
                         />
-                        <div className="mx-auto mb-2 flex w-fit justify-center gap-2">
+                        <div className="mx-auto mb-3 flex w-fit justify-center gap-3">
                             <IntegrationCard>
                                 <AWS />
                             </IntegrationCard>
@@ -29,7 +29,7 @@ export default function IntegrationsSection() {
                                 <Python />
                             </IntegrationCard>
                         </div>
-                        <div className="mx-auto my-2 flex w-fit justify-center gap-2">
+                        <div className="mx-auto my-3 flex w-fit justify-center gap-3">
                             <IntegrationCard>
                                 <NodeJS />
                             </IntegrationCard>
@@ -37,14 +37,14 @@ export default function IntegrationsSection() {
                                 borderClassName="shadow-black-950/10 shadow-xl border-black/25 dark:border-white/25"
                                 className="dark:bg-white/10"
                             >
-                                <LogoIcon className="!size-12" />
+                                <LogoIcon className="!size-14" />
                             </IntegrationCard>
                             <IntegrationCard>
                                 <Shopify />
                             </IntegrationCard>
                         </div>
 
-                        <div className="mx-auto flex w-fit justify-center gap-2">
+                        <div className="mx-auto flex w-fit justify-center gap-3">
                             <IntegrationCard>
                                 <Zapier />
                             </IntegrationCard>
@@ -81,7 +81,7 @@ const IntegrationCard = ({
     return (
         <div
             className={cn(
-                "bg-background relative flex size-20 rounded-xl dark:bg-transparent",
+                "bg-background relative flex size-24 rounded-xl dark:bg-transparent shadow-md hover:shadow-lg transition-shadow duration-200",
                 className
             )}
         >
@@ -92,7 +92,7 @@ const IntegrationCard = ({
                     borderClassName
                 )}
             />
-            <div className="relative z-20 m-auto size-fit">{children}</div>
+            <div className="relative z-2 m-auto size-fit">{children}</div>
         </div>
     );
 };
