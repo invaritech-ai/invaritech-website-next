@@ -93,8 +93,8 @@ export default function HeroSection() {
                                     as="p"
                                     className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                                 >
-                                    Backend Systems. Automation. AI Agents.
-                                    Premium E-Commerce.
+                                    Custom Backends • Automation • AI Agents •
+                                    E‑Commerce
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -104,8 +104,9 @@ export default function HeroSection() {
                                     as="p"
                                     className="mx-auto mt-4 max-w-2xl text-balance text-base text-muted-foreground"
                                 >
-                                    Precision-engineered solutions for
-                                    forward-thinking businesses.
+                                    We design and build practical digital
+                                    systems that help businesses work smarter,
+                                    move faster, and grow with confidence.
                                 </TextEffect>
 
                                 <AnimatedGroup
