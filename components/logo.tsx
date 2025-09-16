@@ -3,7 +3,6 @@ import Image from "next/image";
 
 export const Logo = ({
     className,
-    uniColor,
 }: {
     className?: string;
     uniColor?: boolean;
@@ -25,7 +24,6 @@ export const Logo = ({
 
 export const LogoIcon = ({
     className,
-    uniColor,
 }: {
     className?: string;
     uniColor?: boolean;

@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { Logo, LogoIcon } from "@/components/logo";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/mode-toggle";
 import React from "react";
 import { cn } from "@/lib/utils";

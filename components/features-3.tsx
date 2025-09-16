@@ -11,7 +11,7 @@ export default function Features() {
                         Why INVARITECH
                     </h2>
                     <p className="mt-4">
-                        We don't just build software—we engineer digital
+                        We don&apos;t just build software—we engineer digital
                         experiences that define the future
                     </p>
                 </div>

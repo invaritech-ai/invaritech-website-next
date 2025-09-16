@@ -140,8 +140,8 @@ export default function Testimonials() {
                             <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
                                 <p>
                                     The precision and attention to detail in
-                                    INVARITECH's solutions is unmatched. Truly
-                                    premium quality.
+                                    INVARITECH&apos;s solutions is unmatched.
+                                    Truly premium quality.
                                 </p>
 
                                 <div className="grid grid-cols-[auto_1fr] gap-3">

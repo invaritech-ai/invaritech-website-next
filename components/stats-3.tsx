@@ -7,7 +7,7 @@ export default function StatsSection() {
                         Success Stories
                     </h2>
                     <p>
-                        Real results for real businesses. See how we've
+                        Real results for real businesses. See how we&apos;ve
                         transformed operations across industries.
                     </p>
                 </div>
