@@ -91,7 +91,7 @@ export default function HeroSection() {
                                     speedSegment={0.3}
                                     delay={0.2}
                                     as="h1"
-                                    className="mx-auto mt-4 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-8 xl:text-[5.25rem]"
+                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-2xl max-md:font-semibold md:text-2xl lg:mt-8 xl:text-5xl"
                                 >
                                     Intelligent automation for growth
                                     companies—cut 30 hours per person in 60 days

@@ -190,16 +190,21 @@ export const HeroHeader = () => {
                         </div>
 
                         {/* Desktop CTAs */}
-                        <div className="hidden lg:flex items-center gap-3">
-                            <Button asChild variant="outline" size="sm">
-                                <Link href="/contact">
-                                    Book Architecture & Roadmap
-                                </Link>
+                        <div className="hidden lg:flex items-center gap-2">
+                            <Button
+                                asChild
+                                variant="outline"
+                                size="sm"
+                                className="text-xs px-3 py-1.5"
+                            >
+                                <Link href="/contact">Book Call</Link>
                             </Button>
-                            <Button asChild size="sm">
-                                <Link href="/assessment">
-                                    Get your Ops Efficiency Score
-                                </Link>
+                            <Button
+                                asChild
+                                size="sm"
+                                className="text-xs px-3 py-1.5"
+                            >
+                                <Link href="/assessment">Get Score</Link>
                             </Button>
                             <ModeToggle />
                         </div>
@@ -217,7 +222,7 @@ export const HeroHeader = () => {
                                         href="/assessment"
                                         onClick={() => setMenuState(false)}
                                     >
-                                        Get your Ops Efficiency Score
+                                        Get Ops Efficiency Score
                                     </Link>
                                 </Button>
                                 <Button
@@ -229,7 +234,7 @@ export const HeroHeader = () => {
                                         href="/contact"
                                         onClick={() => setMenuState(false)}
                                     >
-                                        Book Architecture & Roadmap
+                                        Book Architecture Call
                                     </Link>
                                 </Button>
                             </div>
