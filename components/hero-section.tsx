@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+import { SystemDiagram } from "@/components/ui/system-diagram";
 import { HeroHeader } from "./header";
 
 const transitionVariants = {
@@ -80,33 +81,42 @@ export default function HeroSection() {
                                 <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
-                                    as="h1"
-                                    className="mx-auto mt-8 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]"
+                                    as="p"
+                                    className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-sm font-medium text-primary"
                                 >
-                                    Your Vision, Intelligently Executed
+                                    Your vision, intelligently executed
+                                </TextEffect>
+                                <TextEffect
+                                    preset="fade-in-blur"
+                                    speedSegment={0.3}
+                                    delay={0.2}
+                                    as="h1"
+                                    className="mx-auto mt-4 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-8 xl:text-[5.25rem]"
+                                >
+                                    Intelligent automation for growth
+                                    companies—cut 30 hours per person in 60 days
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
-                                    delay={0.5}
+                                    delay={0.4}
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
                                 >
-                                    Custom Backends • Automation • AI Agents •
-                                    E‑Commerce
+                                    Or save $50,000 per month on average—without
+                                    ripping out your stack*
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
-                                    delay={0.7}
+                                    delay={0.6}
                                     as="p"
-                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-base text-muted-foreground"
+                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-sm text-muted-foreground"
                                 >
-                                    We design and build practical digital
-                                    systems that help businesses work smarter,
-                                    move faster, and grow with confidence.
+                                    Recently delivered: compliance-grade API
+                                    workflows for EUDR (France)
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -121,7 +131,7 @@ export default function HeroSection() {
                                         },
                                         item: transitionVariants,
                                     }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+                                    className="mt-12 flex flex-col items-center justify-center gap-4 md:flex-row"
                                 >
                                     <div
                                         key={1}
@@ -132,13 +142,49 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base"
                                         >
-                                            <Link href="#contact">
+                                            <Link href="/assessment">
                                                 <span className="text-nowrap">
-                                                    Start Your Project Today
+                                                    Get your Ops Efficiency
+                                                    Score
                                                 </span>
                                             </Link>
                                         </Button>
                                     </div>
+                                    <div
+                                        key={2}
+                                        className="bg-foreground/5 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
+                                    >
+                                        <Button
+                                            asChild
+                                            variant="outline"
+                                            size="lg"
+                                            className="rounded-xl px-5 text-base"
+                                        >
+                                            <Link href="/ops-efficiency-sprint#demo-plan">
+                                                <span className="text-nowrap">
+                                                    See the 2‑week Demo Plan
+                                                </span>
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                </AnimatedGroup>
+
+                                {/* System Diagram */}
+                                <AnimatedGroup
+                                    variants={{
+                                        container: {
+                                            visible: {
+                                                transition: {
+                                                    staggerChildren: 0.1,
+                                                    delayChildren: 1.0,
+                                                },
+                                            },
+                                        },
+                                        item: transitionVariants,
+                                    }}
+                                    className="mt-16"
+                                >
+                                    <SystemDiagram />
                                 </AnimatedGroup>
                             </div>
                         </div>

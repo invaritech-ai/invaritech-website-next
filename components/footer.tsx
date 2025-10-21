@@ -1,25 +1,45 @@
 import { Logo, LogoIcon } from "@/components/logo";
 import Link from "next/link";
 
-const links = [
+const footerSections = [
     {
-        title: "Services",
-        href: "#what-we-do",
+        title: "Security & Governance",
+        links: [
+            { name: "Security Overview", href: "/security" },
+            { name: "Compliance", href: "/security#compliance" },
+            { name: "Data Handling", href: "/security#data-handling" },
+        ],
     },
     {
-        title: "Tech",
-        href: "#technologies",
+        title: "Resources",
+        links: [
+            { name: "Blog", href: "/resources" },
+            { name: "Case Studies", href: "/results" },
+            { name: "Sprint Overview", href: "/ops-efficiency-sprint" },
+        ],
     },
     {
-        title: "Contact",
-        href: "#contact",
+        title: "Legal",
+        links: [
+            { name: "Privacy Policy", href: "/privacy" },
+            { name: "Terms of Service", href: "/terms" },
+            { name: "DPA", href: "/dpa" },
+        ],
+    },
+    {
+        title: "Company",
+        links: [
+            { name: "About", href: "/about" },
+            { name: "Contact", href: "/contact" },
+            { name: "Assessment", href: "/assessment" },
+        ],
     },
 ];
 
 export default function FooterSection() {
     return (
         <footer className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-6xl px-6">
                 <Link
                     href="/"
                     aria-label="go home"
@@ -31,17 +51,30 @@ export default function FooterSection() {
                     </div>
                 </Link>
 
-                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
-                    {links.map((link, index) => (
-                        <Link
-                            key={index}
-                            href={link.href}
-                            className="text-muted-foreground hover:text-primary block duration-150"
-                        >
-                            <span>{link.title}</span>
-                        </Link>
+                {/* Footer Sections */}
+                <div className="my-12 grid grid-cols-2 gap-8 md:grid-cols-4">
+                    {footerSections.map((section, sectionIndex) => (
+                        <div key={sectionIndex}>
+                            <h3 className="mb-4 font-semibold text-sm">
+                                {section.title}
+                            </h3>
+                            <ul className="space-y-2">
+                                {section.links.map((link, linkIndex) => (
+                                    <li key={linkIndex}>
+                                        <Link
+                                            href={link.href}
+                                            className="text-sm text-muted-foreground hover:text-primary block duration-150"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     ))}
                 </div>
+
+                {/* Social Links */}
                 <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
                     <Link
                         href="https://x.com/invaritechai?s=21&t=ECORxk4YJbibzdLPBGw6Vw"
@@ -104,8 +137,21 @@ export default function FooterSection() {
                         </svg>
                     </Link>
                 </div>
+
+                {/* Asterisk Note */}
+                <div className="my-6 text-center">
+                    <p className="text-sm text-muted-foreground">
+                        * See full assumptions and measurement methodology{" "}
+                        <Link
+                            href="/ops-efficiency-sprint#assumptions"
+                            className="text-primary hover:underline"
+                        >
+                            here
+                        </Link>
+                    </p>
+                </div>
+
                 <span className="text-muted-foreground block text-center text-sm">
-                    {" "}
                     © {new Date().getFullYear()} Invaritech, All rights reserved
                 </span>
             </div>
