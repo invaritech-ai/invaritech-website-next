@@ -118,8 +118,20 @@ export const HeroHeader = () => {
                                 }
                                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
                             >
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                                <Menu
+                                    className={`m-auto size-6 duration-200 ${
+                                        menuState
+                                            ? "rotate-180 scale-0 opacity-0"
+                                            : ""
+                                    }`}
+                                />
+                                <X
+                                    className={`absolute inset-0 m-auto size-6 duration-200 ${
+                                        menuState
+                                            ? "rotate-0 scale-100 opacity-100"
+                                            : "-rotate-180 scale-0 opacity-0"
+                                    }`}
+                                />
                             </button>
                         </div>
 
@@ -193,7 +205,11 @@ export const HeroHeader = () => {
                         </div>
 
                         {/* Mobile Menu */}
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent z-50">
+                        <div
+                            className={`bg-background lg:hidden mb-6 w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap z-50 ${
+                                menuState ? "block" : "hidden"
+                            }`}
+                        >
                             {/* Mobile CTAs */}
                             <div className="w-full space-y-3">
                                 <Button asChild className="w-full">
