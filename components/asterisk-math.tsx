@@ -11,7 +11,7 @@ const formulas = [
             "Hours saved = (Monthly cases × minutes saved per case ÷ 60) ÷ number of involved FTEs",
         details: [
             "Baseline via time-motion or logs",
-            "Measured post-launch on ≥300 cases or ≥2 weeks of volume",
+            "Measured post-launch on ≥300 cases or ≥6 weeks of volume",
         ],
     },
     {
@@ -40,7 +40,7 @@ export default function AsteriskMath() {
     const [expandedFormula, setExpandedFormula] = useState<number | null>(null);
 
     return (
-        <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
+        <section className="bg-muted py-16 md:py-32">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl mb-4">

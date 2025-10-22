@@ -238,10 +238,7 @@ export default function OpsEfficiencySprint() {
                 </section>
 
                 {/* How it works */}
-                <section
-                    id="how-it-works"
-                    className="py-16 md:py-24 bg-zinc-50"
-                >
+                <section id="how-it-works" className="py-16 md:py-24 bg-muted">
                     <div className="mx-auto max-w-6xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -346,7 +343,7 @@ export default function OpsEfficiencySprint() {
                 </section>
 
                 {/* Pricing */}
-                <section id="pricing" className="py-16 md:py-24 bg-zinc-50">
+                <section id="pricing" className="py-16 md:py-24 bg-muted">
                     <div className="mx-auto max-w-4xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -439,7 +436,7 @@ export default function OpsEfficiencySprint() {
                 </section>
 
                 {/* Security & governance */}
-                <section id="security" className="py-16 md:py-24 bg-zinc-50">
+                <section id="security" className="py-16 md:py-24 bg-muted">
                     <div className="mx-auto max-w-6xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -547,7 +544,7 @@ export default function OpsEfficiencySprint() {
                 </section>
 
                 {/* Assumptions & Measurement */}
-                <section id="assumptions" className="py-16 md:py-24 bg-zinc-50">
+                <section id="assumptions" className="py-16 md:py-24 bg-muted">
                     <div className="mx-auto max-w-6xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -586,7 +583,7 @@ export default function OpsEfficiencySprint() {
                                             <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></div>
                                             <span className="text-sm text-muted-foreground">
                                                 Measured post-launch on ≥300
-                                                cases or ≥2 weeks of volume
+                                                cases or ≥6 weeks of volume
                                             </span>
                                         </div>
                                     </div>
@@ -669,7 +666,7 @@ export default function OpsEfficiencySprint() {
                     <div className="mx-auto max-w-4xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                2-week Demo Plan
+                                6-week Demo Plan
                             </h2>
                             <p className="text-lg text-muted-foreground">
                                 See our approach in action with a focused

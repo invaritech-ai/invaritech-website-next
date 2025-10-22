@@ -146,9 +146,6 @@ export const HeroHeader = () => {
                                             onMouseEnter={() =>
                                                 setActiveDropdown(item.name)
                                             }
-                                            onMouseLeave={() =>
-                                                setActiveDropdown(null)
-                                            }
                                         >
                                             <span>{item.name}</span>
                                             {item.dropdown && (
@@ -159,7 +156,17 @@ export const HeroHeader = () => {
                                         {/* Dropdown Menu */}
                                         {item.dropdown &&
                                             activeDropdown === item.name && (
-                                                <div className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg z-50">
+                                                <div
+                                                    className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg z-50"
+                                                    onMouseEnter={() =>
+                                                        setActiveDropdown(
+                                                            item.name
+                                                        )
+                                                    }
+                                                    onMouseLeave={() =>
+                                                        setActiveDropdown(null)
+                                                    }
+                                                >
                                                     <div className="py-2">
                                                         {item.dropdown.map(
                                                             (

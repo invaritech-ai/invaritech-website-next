@@ -10,8 +10,8 @@ import { HeroHeader } from "./header";
 const transitionVariants = {
     hidden: {
         opacity: 0,
-        filter: "blur(12px)",
-        y: 12,
+        filter: "blur(8px)",
+        y: 8,
     },
     visible: {
         opacity: 1,
@@ -19,8 +19,8 @@ const transitionVariants = {
         y: 0,
         transition: {
             type: "spring" as const,
-            bounce: 0.3,
-            duration: 1.5,
+            bounce: 0.2,
+            duration: 0.8,
         },
     },
 };
@@ -40,36 +40,16 @@ export default function HeroSection() {
                 </div>
                 <section>
                     <div className="relative pt-24 md:pt-36">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                    },
-                                },
-                            }}
-                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32"
-                        >
+                        <div className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32">
                             <Image
                                 src="/hero-bg.jpg"
                                 alt="INVARITECH digital solutions background"
                                 className="size-full object-cover object-top invert dark:invert-0"
                                 fill
                                 sizes="100vw"
+                                priority
                             />
-                        </AnimatedGroup>
+                        </div>
 
                         <div
                             aria-hidden
@@ -80,7 +60,7 @@ export default function HeroSection() {
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <TextEffect
                                     preset="fade-in-blur"
-                                    speedSegment={0.3}
+                                    speedSegment={0.2}
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-sm font-medium text-primary"
                                 >
@@ -88,35 +68,23 @@ export default function HeroSection() {
                                 </TextEffect>
                                 <TextEffect
                                     preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.2}
+                                    speedSegment={0.2}
+                                    delay={0.1}
                                     as="h1"
                                     className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-2xl max-md:font-semibold md:text-2xl lg:mt-8 xl:text-5xl"
                                 >
-                                    Intelligent automation for growth
-                                    companies—cut 30 hours per person in 60 days
+                                    Intelligent automation for growth companies
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
                                     preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.4}
+                                    speedSegment={0.2}
+                                    delay={0.2}
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
                                 >
-                                    Or save $50,000 per month on average—without
-                                    ripping out your stack*
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.6}
-                                    as="p"
-                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-sm text-muted-foreground"
-                                >
-                                    Recently delivered: compliance-grade API
-                                    workflows for EUDR (France)
+                                    Cut 30 hours per person in 60 days. Or save
+                                    $50,000 per month on average.*
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -125,7 +93,7 @@ export default function HeroSection() {
                                             visible: {
                                                 transition: {
                                                     staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
+                                                    delayChildren: 0.3,
                                                 },
                                             },
                                         },
@@ -162,7 +130,7 @@ export default function HeroSection() {
                                         >
                                             <Link href="/ops-efficiency-sprint#demo-plan">
                                                 <span className="text-nowrap">
-                                                    See the 2‑week Demo Plan
+                                                    See the 6‑week Demo Plan
                                                 </span>
                                             </Link>
                                         </Button>
@@ -176,7 +144,7 @@ export default function HeroSection() {
                                             visible: {
                                                 transition: {
                                                     staggerChildren: 0.1,
-                                                    delayChildren: 1.0,
+                                                    delayChildren: 0.5,
                                                 },
                                             },
                                         },
@@ -195,7 +163,7 @@ export default function HeroSection() {
                                     visible: {
                                         transition: {
                                             staggerChildren: 0.05,
-                                            delayChildren: 0.75,
+                                            delayChildren: 0.4,
                                         },
                                     },
                                 },
@@ -210,6 +178,7 @@ export default function HeroSection() {
                                         alt="INVARITECH application interface showcasing premium digital solutions"
                                         width="2700"
                                         height="1440"
+                                        priority
                                     />
                                 </div>
                             </div>

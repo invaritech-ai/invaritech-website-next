@@ -16,7 +16,7 @@ const steps = [
         title: "Ops Efficiency Sprint",
         description:
             "Crude PoC by week 3 (Milestone Gate). If accepted, we polish to production-grade v1 by day 60.",
-        duration: "3-6 weeks",
+        duration: "6 weeks",
     },
     {
         icon: TrendingUp,

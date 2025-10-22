@@ -322,7 +322,7 @@ export default function Assessment() {
                                             size="lg"
                                         >
                                             <Link href="/ops-efficiency-sprint">
-                                                See the 2-week Demo Plan
+                                                See the 6-week Demo Plan
                                             </Link>
                                         </Button>
                                     </div>

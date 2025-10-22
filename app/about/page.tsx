@@ -127,7 +127,7 @@ export default function About() {
                 </section>
 
                 {/* How we work */}
-                <section className="py-16 md:py-24 bg-zinc-50">
+                <section className="py-16 md:py-24 bg-muted">
                     <div className="mx-auto max-w-6xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -359,7 +359,7 @@ export default function About() {
                 </section>
 
                 {/* Where we've delivered */}
-                <section className="py-16 md:py-24 bg-zinc-50">
+                <section className="py-16 md:py-24 bg-muted">
                     <div className="mx-auto max-w-6xl px-6">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">

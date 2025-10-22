@@ -111,128 +111,128 @@ export default function Solutions() {
         <>
             <HeroHeader />
             <main className="pt-24 md:pt-36">
-            {/* Hero Section */}
-            <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-                <div className="mx-auto max-w-6xl px-6">
-                    <div className="text-center">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            Solutions for modern operations
-                        </h1>
-                        <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                            Intelligent systems that reduce cost-to-serve and
-                            make work auditable.
-                        </p>
-                        <Button asChild size="lg">
-                            <Link href="/ops-efficiency-sprint">
-                                See the Ops Efficiency Sprint
-                            </Link>
-                        </Button>
-                    </div>
-                </div>
-            </section>
-
-            {/* Solutions Grid */}
-            <section className="py-16 md:py-24">
-                <div className="mx-auto max-w-7xl px-6">
-                    <div className="grid lg:grid-cols-2 gap-8">
-                        {solutions.map((solution, index) => (
-                            <Card
-                                key={index}
-                                id={solution.anchor}
-                                className="hover:shadow-lg transition-all duration-300"
-                            >
-                                <CardHeader className="pb-4">
-                                    <div className="flex items-center mb-4">
-                                        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
-                                            <solution.icon className="w-6 h-6 text-primary" />
-                                        </div>
-                                        <h2 className="text-2xl font-semibold">
-                                            {solution.title}
-                                        </h2>
-                                    </div>
-                                    <p className="text-muted-foreground text-lg">
-                                        {solution.description}
-                                    </p>
-                                </CardHeader>
-
-                                <CardContent className="space-y-6">
-                                    <div className="bg-muted/30 rounded-lg p-4">
-                                        <h3 className="font-semibold mb-2">
-                                            Outcomes:
-                                        </h3>
-                                        <p className="text-sm text-muted-foreground">
-                                            {solution.outcomes}
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <h3 className="font-semibold mb-3">
-                                            Key Features:
-                                        </h3>
-                                        <ul className="space-y-2">
-                                            {solution.features.map(
-                                                (feature, featureIndex) => (
-                                                    <li
-                                                        key={featureIndex}
-                                                        className="flex items-center text-sm"
-                                                    >
-                                                        <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></div>
-                                                        {feature}
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                    </div>
-
-                                    <div className="pt-4 border-t">
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            className="w-full"
-                                        >
-                                            <Link
-                                                href={`/solutions#${solution.anchor}`}
-                                            >
-                                                Learn more
-                                                <ArrowRight className="w-4 h-4 ml-2" />
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-16 md:py-24 bg-zinc-50">
-                <div className="mx-auto max-w-4xl px-6">
-                    <div className="text-center">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                            Ready to implement intelligent operations?
-                        </h2>
-                        <p className="text-lg text-muted-foreground mb-8">
-                            Choose your highest-ROI workflow and see measurable
-                            results in 60 days.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {/* Hero Section */}
+                <section className="pt-24 pb-16 md:pt-32 md:pb-24">
+                    <div className="mx-auto max-w-6xl px-6">
+                        <div className="text-center">
+                            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+                                Solutions for modern operations
+                            </h1>
+                            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                                Intelligent systems that reduce cost-to-serve
+                                and make work auditable.
+                            </p>
                             <Button asChild size="lg">
                                 <Link href="/ops-efficiency-sprint">
                                     See the Ops Efficiency Sprint
                                 </Link>
                             </Button>
-                            <Button asChild variant="outline" size="lg">
-                                <Link href="/assessment">
-                                    Get your Ops Efficiency Score
-                                </Link>
-                            </Button>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
-        <FooterSection />
-    </>
+                </section>
+
+                {/* Solutions Grid */}
+                <section className="py-16 md:py-24">
+                    <div className="mx-auto max-w-7xl px-6">
+                        <div className="grid lg:grid-cols-2 gap-8">
+                            {solutions.map((solution, index) => (
+                                <Card
+                                    key={index}
+                                    id={solution.anchor}
+                                    className="hover:shadow-lg transition-all duration-300"
+                                >
+                                    <CardHeader className="pb-4">
+                                        <div className="flex items-center mb-4">
+                                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
+                                                <solution.icon className="w-6 h-6 text-primary" />
+                                            </div>
+                                            <h2 className="text-2xl font-semibold">
+                                                {solution.title}
+                                            </h2>
+                                        </div>
+                                        <p className="text-muted-foreground text-lg">
+                                            {solution.description}
+                                        </p>
+                                    </CardHeader>
+
+                                    <CardContent className="space-y-6">
+                                        <div className="bg-muted/30 rounded-lg p-4">
+                                            <h3 className="font-semibold mb-2">
+                                                Outcomes:
+                                            </h3>
+                                            <p className="text-sm text-muted-foreground">
+                                                {solution.outcomes}
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <h3 className="font-semibold mb-3">
+                                                Key Features:
+                                            </h3>
+                                            <ul className="space-y-2">
+                                                {solution.features.map(
+                                                    (feature, featureIndex) => (
+                                                        <li
+                                                            key={featureIndex}
+                                                            className="flex items-center text-sm"
+                                                        >
+                                                            <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3 flex-shrink-0"></div>
+                                                            {feature}
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        </div>
+
+                                        <div className="pt-4 border-t">
+                                            <Button
+                                                asChild
+                                                variant="outline"
+                                                className="w-full"
+                                            >
+                                                <Link
+                                                    href={`/solutions#${solution.anchor}`}
+                                                >
+                                                    Learn more
+                                                    <ArrowRight className="w-4 h-4 ml-2" />
+                                                </Link>
+                                            </Button>
+                                        </div>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* CTA Section */}
+                <section className="py-16 md:py-24 bg-muted">
+                    <div className="mx-auto max-w-4xl px-6">
+                        <div className="text-center">
+                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                                Ready to implement intelligent operations?
+                            </h2>
+                            <p className="text-lg text-muted-foreground mb-8">
+                                Choose your highest-ROI workflow and see
+                                measurable results in 60 days.
+                            </p>
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                                <Button asChild size="lg">
+                                    <Link href="/ops-efficiency-sprint">
+                                        See the Ops Efficiency Sprint
+                                    </Link>
+                                </Button>
+                                <Button asChild variant="outline" size="lg">
+                                    <Link href="/assessment">
+                                        Get your Ops Efficiency Score
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <FooterSection />
+        </>
     );
 }

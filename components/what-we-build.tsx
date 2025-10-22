@@ -55,7 +55,7 @@ const CardDecorator = ({ children }: { children: ReactNode }) => (
 
 export default function WhatWeBuild() {
     return (
-        <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
+        <section className="bg-muted py-16 md:py-32">
             <div className="mx-auto max-w-6xl px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl mb-4">
