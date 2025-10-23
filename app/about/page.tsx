@@ -157,8 +157,8 @@ export default function About() {
 
                             <Card className="text-center">
                                 <CardContent className="p-6">
-                                    <div className="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <Target className="w-8 h-8 text-blue-600" />
+                                    <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                        <Target className="w-8 h-8 text-accent" />
                                     </div>
                                     <h3 className="text-xl font-semibold mb-3">
                                         Short cycles
@@ -173,8 +173,8 @@ export default function About() {
 
                             <Card className="text-center">
                                 <CardContent className="p-6">
-                                    <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <CheckCircle className="w-8 h-8 text-green-600" />
+                                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                        <CheckCircle className="w-8 h-8 text-primary" />
                                     </div>
                                     <h3 className="text-xl font-semibold mb-3">
                                         Visible metrics
@@ -282,14 +282,14 @@ export default function About() {
                             <Card className="hover:shadow-lg transition-all duration-300">
                                 <CardHeader>
                                     <div className="flex items-center mb-4">
-                                        <div className="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mr-4">
-                                            <Building className="w-8 h-8 text-blue-600" />
+                                        <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mr-4">
+                                            <Building className="w-8 h-8 text-accent" />
                                         </div>
                                         <div>
                                             <h3 className="text-2xl font-semibold">
                                                 Avishek Majumder
                                             </h3>
-                                            <p className="text-blue-600 font-medium">
+                                            <p className="text-accent font-medium">
                                                 CTO
                                             </p>
                                             <a

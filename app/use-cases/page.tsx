@@ -178,22 +178,22 @@ export default function UseCases() {
                                                 {useCase.title}
                                             </h2>
                                         </div>
-                                        <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-8">
-                                            <p className="text-sm font-medium text-green-800">
+                                        <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mb-8">
+                                            <p className="text-sm font-medium text-primary">
                                                 Impact:
                                             </p>
-                                            <p className="text-sm text-green-700">
+                                            <p className="text-sm text-primary">
                                                 {useCase.metrics}
                                             </p>
                                         </div>
                                     </div>
 
                                     {/* Before */}
-                                    <Card className="border-red-200 bg-red-50/50">
+                                    <Card className="border-destructive/20 bg-destructive/5">
                                         <CardContent className="p-6">
                                             <div className="flex items-center mb-4">
-                                                <XCircle className="w-5 h-5 text-red-600 mr-2" />
-                                                <h3 className="text-xl font-semibold text-red-800">
+                                                <XCircle className="w-5 h-5 text-destructive mr-2" />
+                                                <h3 className="text-xl font-semibold text-destructive">
                                                     {useCase.before.title}
                                                 </h3>
                                             </div>
@@ -204,8 +204,8 @@ export default function UseCases() {
                                                             key={issueIndex}
                                                             className="flex items-start text-sm"
                                                         >
-                                                            <div className="w-1.5 h-1.5 bg-red-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                                            <span className="text-red-700">
+                                                            <div className="w-1.5 h-1.5 bg-destructive rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                                            <span className="text-destructive">
                                                                 {issue}
                                                             </span>
                                                         </li>
@@ -216,11 +216,11 @@ export default function UseCases() {
                                     </Card>
 
                                     {/* After */}
-                                    <Card className="border-green-200 bg-green-50/50">
+                                    <Card className="border-primary/20 bg-primary/5">
                                         <CardContent className="p-6">
                                             <div className="flex items-center mb-4">
-                                                <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-                                                <h3 className="text-xl font-semibold text-green-800">
+                                                <CheckCircle className="w-5 h-5 text-primary mr-2" />
+                                                <h3 className="text-xl font-semibold text-primary">
                                                     {useCase.after.title}
                                                 </h3>
                                             </div>
@@ -231,8 +231,8 @@ export default function UseCases() {
                                                             key={benefitIndex}
                                                             className="flex items-start text-sm"
                                                         >
-                                                            <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                                                            <span className="text-green-700">
+                                                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                                                            <span className="text-primary">
                                                                 {benefit}
                                                             </span>
                                                         </li>

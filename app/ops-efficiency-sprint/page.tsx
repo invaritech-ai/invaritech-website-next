@@ -189,10 +189,10 @@ export default function OpsEfficiencySprint() {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-6">
-                            <Card className="border-blue-200 bg-blue-50/50">
+                            <Card className="border-accent/20 bg-accent/5">
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-3">
-                                        <Shield className="w-5 h-5 text-blue-600 mr-2" />
+                                        <Shield className="w-5 h-5 text-accent mr-2" />
                                         <h3 className="font-semibold">
                                             Guardrails
                                         </h3>
@@ -204,10 +204,10 @@ export default function OpsEfficiencySprint() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="border-green-200 bg-green-50/50">
+                            <Card className="border-primary/20 bg-primary/5">
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-3">
-                                        <Target className="w-5 h-5 text-green-600 mr-2" />
+                                        <Target className="w-5 h-5 text-primary mr-2" />
                                         <h3 className="font-semibold">
                                             KPI board
                                         </h3>
@@ -219,10 +219,10 @@ export default function OpsEfficiencySprint() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="border-purple-200 bg-purple-50/50">
+                            <Card className="border-chart-5/20 bg-chart-5/5">
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-3">
-                                        <TrendingUp className="w-5 h-5 text-purple-600 mr-2" />
+                                        <TrendingUp className="w-5 h-5 text-chart-5 mr-2" />
                                         <h3 className="font-semibold">
                                             Measurement
                                         </h3>
@@ -326,8 +326,8 @@ export default function OpsEfficiencySprint() {
 
                             <Card className="text-center p-6">
                                 <CardContent className="pt-6">
-                                    <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <Shield className="w-8 h-8 text-green-600" />
+                                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                        <Shield className="w-8 h-8 text-primary" />
                                     </div>
                                     <h3 className="text-xl font-semibold mb-3">
                                         If not accepted
@@ -365,20 +365,20 @@ export default function OpsEfficiencySprint() {
                                     </p>
                                     <div className="space-y-4 text-left">
                                         <div className="flex items-center">
-                                            <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                                            <CheckCircle className="w-5 h-5 text-primary mr-3" />
                                             <span className="text-sm">
                                                 Includes all development and
                                                 deployment
                                             </span>
                                         </div>
                                         <div className="flex items-center">
-                                            <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                                            <CheckCircle className="w-5 h-5 text-primary mr-3" />
                                             <span className="text-sm">
                                                 Full documentation and training
                                             </span>
                                         </div>
                                         <div className="flex items-center">
-                                            <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
+                                            <CheckCircle className="w-5 h-5 text-primary mr-3" />
                                             <span className="text-sm">
                                                 30-day post-launch support
                                             </span>
@@ -420,11 +420,11 @@ export default function OpsEfficiencySprint() {
                                                 {result.metrics}
                                             </p>
                                         </div>
-                                        <div className="bg-green-50 rounded-lg p-4">
-                                            <p className="text-sm font-medium text-green-800">
+                                        <div className="bg-primary/10 rounded-lg p-4">
+                                            <p className="text-sm font-medium text-primary">
                                                 Result:
                                             </p>
-                                            <p className="text-sm text-green-700">
+                                            <p className="text-sm text-primary">
                                                 {result.result}
                                             </p>
                                         </div>
@@ -467,7 +467,7 @@ export default function OpsEfficiencySprint() {
                             <Card>
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-3">
-                                        <FileText className="w-5 h-5 text-blue-600 mr-2" />
+                                        <FileText className="w-5 h-5 text-accent mr-2" />
                                         <h3 className="font-semibold">
                                             Auditability
                                         </h3>
@@ -482,7 +482,7 @@ export default function OpsEfficiencySprint() {
                             <Card>
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-3">
-                                        <Database className="w-5 h-5 text-green-600 mr-2" />
+                                        <Database className="w-5 h-5 text-primary mr-2" />
                                         <h3 className="font-semibold">
                                             Data handling
                                         </h3>
@@ -497,7 +497,7 @@ export default function OpsEfficiencySprint() {
                             <Card>
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-3">
-                                        <Zap className="w-5 h-5 text-purple-600 mr-2" />
+                                        <Zap className="w-5 h-5 text-chart-5 mr-2" />
                                         <h3 className="font-semibold">
                                             Reliability
                                         </h3>
@@ -593,7 +593,7 @@ export default function OpsEfficiencySprint() {
                             <Card>
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-4">
-                                        <DollarSign className="w-6 h-6 text-green-600 mr-3" />
+                                        <DollarSign className="w-6 h-6 text-primary mr-3" />
                                         <h3 className="font-semibold">
                                             $50,000 per month avoided cost
                                         </h3>
@@ -608,14 +608,14 @@ export default function OpsEfficiencySprint() {
                                     </div>
                                     <div className="space-y-2">
                                         <div className="flex items-start">
-                                            <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></div>
                                             <span className="text-sm text-muted-foreground">
                                                 Fully-loaded hourly rate
                                                 provided by client
                                             </span>
                                         </div>
                                         <div className="flex items-start">
-                                            <div className="w-1.5 h-1.5 bg-green-600 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 mr-2 flex-shrink-0"></div>
                                             <span className="text-sm text-muted-foreground">
                                                 Default $75–$120/hour by role
                                             </span>
@@ -627,7 +627,7 @@ export default function OpsEfficiencySprint() {
                             <Card>
                                 <CardContent className="p-6">
                                     <div className="flex items-center mb-4">
-                                        <Users className="w-6 h-6 text-purple-600 mr-3" />
+                                        <Users className="w-6 h-6 text-chart-5 mr-3" />
                                         <h3 className="font-semibold">
                                             Smaller teams equivalence
                                         </h3>
@@ -641,13 +641,13 @@ export default function OpsEfficiencySprint() {
                                     </div>
                                     <div className="space-y-2">
                                         <div className="flex items-start">
-                                            <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                                            <div className="w-1.5 h-1.5 bg-chart-5 rounded-full mt-2 mr-2 flex-shrink-0"></div>
                                             <span className="text-sm text-muted-foreground">
                                                 Reallocated, not replaced
                                             </span>
                                         </div>
                                         <div className="flex items-start">
-                                            <div className="w-1.5 h-1.5 bg-purple-600 rounded-full mt-2 mr-2 flex-shrink-0"></div>
+                                            <div className="w-1.5 h-1.5 bg-chart-5 rounded-full mt-2 mr-2 flex-shrink-0"></div>
                                             <span className="text-sm text-muted-foreground">
                                                 Assumes data access, workflow
                                                 owner, and timely approvals (≤1

@@ -180,27 +180,27 @@ export default function Assessment() {
                                     </h2>
                                 </CardHeader>
                                 <CardContent className="space-y-4">
-                                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                    <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
                                         <div className="flex items-center mb-2">
-                                            <Clock className="w-4 h-4 text-blue-600 mr-2" />
-                                            <span className="font-medium text-blue-800">
+                                            <Clock className="w-4 h-4 text-accent mr-2" />
+                                            <span className="font-medium text-accent">
                                                 Hours Saved/Month
                                             </span>
                                         </div>
-                                        <p className="text-2xl font-bold text-blue-900">
+                                        <p className="text-2xl font-bold text-accent">
                                             {result.projectedHoursSaved.min} -{" "}
                                             {result.projectedHoursSaved.max}
                                         </p>
                                     </div>
 
-                                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                                    <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
                                         <div className="flex items-center mb-2">
-                                            <DollarSign className="w-4 h-4 text-green-600 mr-2" />
-                                            <span className="font-medium text-green-800">
+                                            <DollarSign className="w-4 h-4 text-primary mr-2" />
+                                            <span className="font-medium text-primary">
                                                 Cost Avoided/Month
                                             </span>
                                         </div>
-                                        <p className="text-2xl font-bold text-green-900">
+                                        <p className="text-2xl font-bold text-primary">
                                             $
                                             {result.projectedCostAvoided.min.toLocaleString()}{" "}
                                             - $
@@ -245,7 +245,7 @@ export default function Assessment() {
                                             key={index}
                                             className="flex items-start"
                                         >
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2 mt-0.5 flex-shrink-0" />
                                             <span className="text-sm">
                                                 {reason}
                                             </span>
@@ -283,7 +283,7 @@ export default function Assessment() {
                         <div className="text-center">
                             {result.tier === "hot" ? (
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold text-green-800 mb-4">
+                                    <h3 className="text-xl font-semibold text-primary mb-4">
                                         🎉 Excellent fit! You&apos;re ready for
                                         the Ops Efficiency Sprint.
                                     </h3>
@@ -329,7 +329,7 @@ export default function Assessment() {
                                 </div>
                             ) : (
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                                    <h3 className="text-xl font-semibold text-foreground mb-4">
                                         📋 Let&apos;s explore alternative
                                         approaches for your situation.
                                     </h3>

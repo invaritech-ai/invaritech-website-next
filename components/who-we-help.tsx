@@ -35,8 +35,8 @@ export default function WhoWeHelp() {
                     {/* Geographic Focus */}
                     <Card className="text-center p-6">
                         <CardContent className="pt-6">
-                            <div className="w-16 h-16 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <Globe className="w-8 h-8 text-blue-600" />
+                            <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <Globe className="w-8 h-8 text-accent" />
                             </div>
                             <h3 className="text-xl font-semibold mb-3">
                                 Global reach
@@ -51,8 +51,8 @@ export default function WhoWeHelp() {
                     {/* Focus Area */}
                     <Card className="text-center p-6">
                         <CardContent className="pt-6">
-                            <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <Target className="w-8 h-8 text-green-600" />
+                            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <Target className="w-8 h-8 text-primary" />
                             </div>
                             <h3 className="text-xl font-semibold mb-3">
                                 Measurable outcomes

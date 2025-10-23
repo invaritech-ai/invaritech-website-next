@@ -9,27 +9,27 @@ const results = [
         title: "30+ hours saved per person per month",
         description:
             "Measured across targeted teams with baseline time-motion studies and post-launch tracking on ≥300 cases.",
-        color: "text-blue-600",
-        bgColor: "bg-blue-500/10",
-        borderColor: "border-blue-500/20",
+        color: "text-chart-2",
+        bgColor: "bg-chart-2/10",
+        borderColor: "border-chart-2/20",
     },
     {
         icon: DollarSign,
         title: "$50k+/month avoided operating cost",
         description:
             "Typical volumes with fully-loaded hourly rates ($75–$120/hour) and error reduction calculations.",
-        color: "text-green-600",
-        bgColor: "bg-green-500/10",
-        borderColor: "border-green-500/20",
+        color: "text-chart-1",
+        bgColor: "bg-chart-1/10",
+        borderColor: "border-chart-1/20",
     },
     {
         icon: TrendingUp,
         title: "Faster SLAs, fewer errors",
         description:
             "Full audit-ready traceability with measurable improvements in cycle time and quality metrics.",
-        color: "text-purple-600",
-        bgColor: "bg-purple-500/10",
-        borderColor: "border-purple-500/20",
+        color: "text-chart-5",
+        bgColor: "bg-chart-5/10",
+        borderColor: "border-chart-5/20",
     },
 ];
 

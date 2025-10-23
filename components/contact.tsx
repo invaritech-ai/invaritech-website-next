@@ -154,7 +154,7 @@ export default function ContactSection() {
             <section className="py-32">
                 <div className="mx-auto max-w-4xl px-4 lg:px-0">
                     <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center">
-                        <h3 className="text-xl font-semibold text-green-600 mb-4">
+                        <h3 className="text-xl font-semibold text-primary mb-4">
                             Thank You!
                         </h3>
                         <p className="text-sm mb-6">
@@ -190,7 +190,7 @@ export default function ContactSection() {
                     <h3 className="mb-3 text-lg font-semibold">Get in Touch</h3>
                     <Link
                         href="mailto:hello@invaritech.ai"
-                        className="text-lg text-blue-600 hover:underline dark:text-blue-400"
+                        className="text-lg text-accent hover:underline"
                     >
                         hello@invaritech.ai
                     </Link>
@@ -277,7 +277,7 @@ export default function ContactSection() {
                             </div>
 
                             {formState.error && (
-                                <div className="text-red-600 text-sm bg-red-50 p-3 rounded-md">
+                                <div className="text-destructive text-sm bg-destructive/10 p-3 rounded-md">
                                     {formState.error}
                                 </div>
                             )}

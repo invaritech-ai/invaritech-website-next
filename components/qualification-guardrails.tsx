@@ -51,8 +51,8 @@ export default function QualificationGuardrails() {
                             key={index}
                             className={`${
                                 req.type === "exclusion"
-                                    ? "border-red-200 bg-red-50/50 dark:border-red-800 dark:bg-red-950/20"
-                                    : "border-green-200 bg-green-50/50 dark:border-green-800 dark:bg-green-950/20"
+                                    ? "border-destructive/20 bg-destructive/5 dark:border-destructive/30 dark:bg-destructive/10"
+                                    : "border-primary/20 bg-primary/5 dark:border-primary/30 dark:bg-primary/10"
                             }`}
                         >
                             <CardContent className="p-6">
@@ -60,8 +60,8 @@ export default function QualificationGuardrails() {
                                     <div
                                         className={`w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0 ${
                                             req.type === "exclusion"
-                                                ? "bg-red-100 text-red-600 dark:bg-red-900/50"
-                                                : "bg-green-100 text-green-600 dark:bg-green-900/50"
+                                                ? "bg-destructive/10 text-destructive dark:bg-destructive/20"
+                                                : "bg-primary/10 text-primary dark:bg-primary/20"
                                         }`}
                                     >
                                         <req.icon className="w-6 h-6" />

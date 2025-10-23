@@ -208,7 +208,7 @@ export default function Security() {
                                                             key={featureIndex}
                                                             className="flex items-center text-sm"
                                                         >
-                                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2 flex-shrink-0" />
+                                                            <CheckCircle className="w-4 h-4 text-primary mr-2 flex-shrink-0" />
                                                             <span>
                                                                 {feature}
                                                             </span>
@@ -299,9 +299,9 @@ export default function Security() {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8">
-                            <Card className="border-blue-200 bg-blue-50/50">
+                            <Card className="border-accent/20 bg-accent/5">
                                 <CardContent className="p-6 text-center">
-                                    <Globe className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                                    <Globe className="w-12 h-12 text-accent mx-auto mb-4" />
                                     <h3 className="text-xl font-semibold mb-2">
                                         UK/EEA Hosting
                                     </h3>
@@ -312,20 +312,20 @@ export default function Security() {
                                     </p>
                                     <div className="space-y-2 text-sm">
                                         <div className="flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2" />
                                             <span>GDPR compliant</span>
                                         </div>
                                         <div className="flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2" />
                                             <span>EU data residency</span>
                                         </div>
                                     </div>
                                 </CardContent>
                             </Card>
 
-                            <Card className="border-green-200 bg-green-50/50">
+                            <Card className="border-primary/20 bg-primary/5">
                                 <CardContent className="p-6 text-center">
-                                    <Shield className="w-12 h-12 text-green-600 mx-auto mb-4" />
+                                    <Shield className="w-12 h-12 text-primary mx-auto mb-4" />
                                     <h3 className="text-xl font-semibold mb-2">
                                         North America
                                     </h3>
@@ -335,20 +335,20 @@ export default function Security() {
                                     </p>
                                     <div className="space-y-2 text-sm">
                                         <div className="flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2" />
                                             <span>SOC 2 Type II</span>
                                         </div>
                                         <div className="flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2" />
                                             <span>ISO 27001</span>
                                         </div>
                                     </div>
                                 </CardContent>
                             </Card>
 
-                            <Card className="border-purple-200 bg-purple-50/50">
+                            <Card className="border-chart-5/20 bg-chart-5/5">
                                 <CardContent className="p-6 text-center">
-                                    <Database className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                                    <Database className="w-12 h-12 text-chart-5 mx-auto mb-4" />
                                     <h3 className="text-xl font-semibold mb-2">
                                         Australia/NZ
                                     </h3>
@@ -358,11 +358,11 @@ export default function Security() {
                                     </p>
                                     <div className="space-y-2 text-sm">
                                         <div className="flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2" />
                                             <span>Local compliance</span>
                                         </div>
                                         <div className="flex items-center justify-center">
-                                            <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                                            <CheckCircle className="w-4 h-4 text-primary mr-2" />
                                             <span>Regional hosting</span>
                                         </div>
                                     </div>

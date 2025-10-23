@@ -15,8 +15,8 @@ export default function WhatWeDoSection() {
                         plate and creates lasting value.
                     </p>
                 </div>
-                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-                    <div className="group shadow-zinc-950/5">
+                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden *:text-center md:mt-16">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Database className="size-6" aria-hidden />
@@ -36,7 +36,7 @@ export default function WhatWeDoSection() {
                         </CardContent>
                     </div>
 
-                    <div className="group shadow-zinc-950/5">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Zap className="size-6" aria-hidden />
@@ -54,7 +54,7 @@ export default function WhatWeDoSection() {
                         </CardContent>
                     </div>
 
-                    <div className="group shadow-zinc-950/5">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Bot className="size-6" aria-hidden />
@@ -73,7 +73,7 @@ export default function WhatWeDoSection() {
                         </CardContent>
                     </div>
 
-                    <div className="group shadow-zinc-950/5">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <ShoppingCart className="size-6" aria-hidden />

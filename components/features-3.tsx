@@ -15,8 +15,8 @@ export default function Features() {
                         experiences that define the future
                     </p>
                 </div>
-                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-                    <div className="group shadow-zinc-950/5">
+                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden *:text-center md:mt-16">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Target className="size-6" aria-hidden />
@@ -35,7 +35,7 @@ export default function Features() {
                         </CardContent>
                     </div>
 
-                    <div className="group shadow-zinc-950/5">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Crown className="size-6" aria-hidden />
@@ -54,7 +54,7 @@ export default function Features() {
                         </CardContent>
                     </div>
 
-                    <div className="group shadow-zinc-950/5">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <TrendingUp className="size-6" aria-hidden />
@@ -73,7 +73,7 @@ export default function Features() {
                         </CardContent>
                     </div>
 
-                    <div className="group shadow-zinc-950/5">
+                    <div className="group">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Users className="size-6" aria-hidden />

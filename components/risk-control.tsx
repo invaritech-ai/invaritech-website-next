@@ -52,8 +52,8 @@ export default function RiskControl() {
                     {/* No Risk */}
                     <Card className="text-center p-6">
                         <CardContent className="pt-6">
-                            <div className="w-16 h-16 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                <Shield className="w-8 h-8 text-green-600" />
+                            <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                <Shield className="w-8 h-8 text-primary" />
                             </div>
                             <h3 className="text-xl font-semibold mb-3">
                                 If not accepted

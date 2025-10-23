@@ -103,8 +103,8 @@ export default function Contact() {
                     <div className="mx-auto max-w-4xl px-6">
                         <Card className="max-w-2xl mx-auto">
                             <CardContent className="p-8 text-center">
-                                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <CheckCircle className="w-8 h-8 text-green-600" />
+                                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <CheckCircle className="w-8 h-8 text-primary" />
                                 </div>
                                 <h2 className="text-2xl font-bold mb-4">
                                     Thank you!
@@ -390,9 +390,9 @@ export default function Contact() {
 
                                     {/* Error Message */}
                                     {formState.error && (
-                                        <div className="flex items-center p-3 bg-red-50 border border-red-200 rounded-lg">
-                                            <AlertTriangle className="w-4 h-4 text-red-600 mr-2 flex-shrink-0" />
-                                            <span className="text-sm text-red-700">
+                                        <div className="flex items-center p-3 bg-destructive/10 border border-destructive/20 rounded-lg">
+                                            <AlertTriangle className="w-4 h-4 text-destructive mr-2 flex-shrink-0" />
+                                            <span className="text-sm text-destructive">
                                                 {formState.error}
                                             </span>
                                         </div>
@@ -468,8 +468,8 @@ export default function Contact() {
 
                             <Card className="text-center hover:shadow-lg transition-all duration-300">
                                 <CardContent className="p-6">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <Calendar className="w-6 h-6 text-blue-600" />
+                                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                        <Calendar className="w-6 h-6 text-accent" />
                                     </div>
                                     <h3 className="text-lg font-semibold mb-2">
                                         Book a call
@@ -488,8 +488,8 @@ export default function Contact() {
 
                             <Card className="text-center hover:shadow-lg transition-all duration-300">
                                 <CardContent className="p-6">
-                                    <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <MessageSquare className="w-6 h-6 text-green-600" />
+                                    <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                        <MessageSquare className="w-6 h-6 text-primary" />
                                     </div>
                                     <h3 className="text-lg font-semibold mb-2">
                                         Take the assessment

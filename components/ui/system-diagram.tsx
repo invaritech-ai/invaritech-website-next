@@ -35,9 +35,9 @@ export function SystemDiagram({ className }: SystemDiagramProps) {
 
                     {/* Retrieval/Approvals/Logs */}
                     <div className="flex flex-col items-center space-y-3">
-                        <div className="bg-blue-500/10 rounded-xl p-4 border-2 border-blue-500/20">
-                            <div className="w-16 h-16 bg-blue-500/20 rounded-lg flex items-center justify-center">
-                                <Lightbulb className="w-8 h-8 text-blue-600" />
+                        <div className="bg-accent/10 rounded-xl p-4 border-2 border-accent/20">
+                            <div className="w-16 h-16 bg-accent/20 rounded-lg flex items-center justify-center">
+                                <Lightbulb className="w-8 h-8 text-accent" />
                             </div>
                         </div>
                         <div className="text-center">
@@ -57,9 +57,9 @@ export function SystemDiagram({ className }: SystemDiagramProps) {
 
                     {/* Business Systems */}
                     <div className="flex flex-col items-center space-y-3">
-                        <div className="bg-green-500/10 rounded-xl p-4 border-2 border-green-500/20">
-                            <div className="w-16 h-16 bg-green-500/20 rounded-lg flex items-center justify-center">
-                                <Server className="w-8 h-8 text-green-600" />
+                        <div className="bg-primary/10 rounded-xl p-4 border-2 border-primary/20">
+                            <div className="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <Server className="w-8 h-8 text-primary" />
                             </div>
                         </div>
                         <div className="text-center">
@@ -78,10 +78,10 @@ export function SystemDiagram({ className }: SystemDiagramProps) {
                     <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium border border-primary/20">
                         SSO/RBAC
                     </div>
-                    <div className="bg-blue-500/10 text-blue-600 px-3 py-1 rounded-full text-xs font-medium border border-blue-500/20">
+                    <div className="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs font-medium border border-accent/20">
                         Audit Logs
                     </div>
-                    <div className="bg-green-500/10 text-green-600 px-3 py-1 rounded-full text-xs font-medium border border-green-500/20">
+                    <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium border border-primary/20">
                         Data Residency
                     </div>
                 </div>

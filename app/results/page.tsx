@@ -162,11 +162,11 @@ export default function Results() {
                                                 </p>
                                             </div>
 
-                                            <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                                                <p className="text-sm font-medium text-green-800 mb-1">
+                                            <div className="bg-primary/10 border border-primary/20 rounded-lg p-3">
+                                                <p className="text-sm font-medium text-primary mb-1">
                                                     Cost Impact:
                                                 </p>
-                                                <p className="text-sm text-green-700">
+                                                <p className="text-sm text-primary">
                                                     {result.costImpact}
                                                 </p>
                                             </div>
@@ -250,19 +250,19 @@ export default function Results() {
                                         </h4>
                                         <ul className="space-y-2 text-sm">
                                             <li className="flex items-center">
-                                                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
+                                                <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2 flex-shrink-0"></div>
                                                 SSO/RBAC integration
                                             </li>
                                             <li className="flex items-center">
-                                                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
+                                                <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2 flex-shrink-0"></div>
                                                 End-to-end audit trails
                                             </li>
                                             <li className="flex items-center">
-                                                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
+                                                <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2 flex-shrink-0"></div>
                                                 Data residency compliance
                                             </li>
                                             <li className="flex items-center">
-                                                <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
+                                                <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2 flex-shrink-0"></div>
                                                 Automated monitoring and
                                                 alerting
                                             </li>

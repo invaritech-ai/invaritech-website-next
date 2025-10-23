@@ -179,7 +179,7 @@ export const HeroHeader = () => {
 
                         {/* Mobile Menu */}
                         <div
-                            className={`bg-background lg:hidden mb-6 w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap z-50 ${
+                            className={`bg-background lg:hidden mb-6 w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl z-50 ${
                                 menuState ? "block" : "hidden"
                             }`}
                         >

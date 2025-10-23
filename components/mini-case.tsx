@@ -87,35 +87,35 @@ export function MiniCase({
                         Baseline
                     </h4>
                     <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <p className="text-xs text-red-600 font-medium mb-1">
+                        <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                            <p className="text-xs text-destructive font-medium mb-1">
                                 Volume
                             </p>
-                            <p className="text-sm font-semibold text-red-800">
+                            <p className="text-sm font-semibold text-destructive">
                                 {baseline.volume}
                             </p>
                         </div>
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <p className="text-xs text-red-600 font-medium mb-1">
+                        <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                            <p className="text-xs text-destructive font-medium mb-1">
                                 AHT
                             </p>
-                            <p className="text-sm font-semibold text-red-800">
+                            <p className="text-sm font-semibold text-destructive">
                                 {baseline.aht}
                             </p>
                         </div>
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <p className="text-xs text-red-600 font-medium mb-1">
+                        <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                            <p className="text-xs text-destructive font-medium mb-1">
                                 Errors
                             </p>
-                            <p className="text-sm font-semibold text-red-800">
+                            <p className="text-sm font-semibold text-destructive">
                                 {baseline.errors}
                             </p>
                         </div>
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                            <p className="text-xs text-red-600 font-medium mb-1">
+                        <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-3">
+                            <p className="text-xs text-destructive font-medium mb-1">
                                 SLA
                             </p>
-                            <p className="text-sm font-semibold text-red-800">
+                            <p className="text-sm font-semibold text-destructive">
                                 {baseline.sla}
                             </p>
                         </div>
@@ -125,8 +125,8 @@ export function MiniCase({
                 {/* Intervention */}
                 <div>
                     <h4 className="font-semibold mb-3">Intervention</h4>
-                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                        <p className="text-sm font-medium text-blue-800 mb-2">
+                    <div className="bg-accent/10 border border-accent/20 rounded-lg p-4">
+                        <p className="text-sm font-medium text-accent mb-2">
                             Lane: {intervention.lane}
                         </p>
                         <div className="space-y-1">
@@ -135,8 +135,8 @@ export function MiniCase({
                                     key={index}
                                     className="flex items-center text-sm"
                                 >
-                                    <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2 flex-shrink-0"></div>
-                                    <span className="text-blue-700">
+                                    <div className="w-1.5 h-1.5 bg-accent rounded-full mr-2 flex-shrink-0"></div>
+                                    <span className="text-accent">
                                         {feature}
                                     </span>
                                 </div>
@@ -152,35 +152,35 @@ export function MiniCase({
                         Outcome
                     </h4>
                     <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <p className="text-xs text-green-600 font-medium mb-1">
+                        <div className="bg-chart-1/10 border border-chart-1/20 rounded-lg p-3">
+                            <p className="text-xs text-chart-1 font-medium mb-1">
                                 Hours Saved
                             </p>
-                            <p className="text-sm font-semibold text-green-800">
+                            <p className="text-sm font-semibold text-chart-1">
                                 {outcome.hoursSaved}
                             </p>
                         </div>
-                        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <p className="text-xs text-green-600 font-medium mb-1">
+                        <div className="bg-chart-1/10 border border-chart-1/20 rounded-lg p-3">
+                            <p className="text-xs text-chart-1 font-medium mb-1">
                                 Cost Avoided
                             </p>
-                            <p className="text-sm font-semibold text-green-800">
+                            <p className="text-sm font-semibold text-chart-1">
                                 {outcome.costAvoided}
                             </p>
                         </div>
-                        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <p className="text-xs text-green-600 font-medium mb-1">
+                        <div className="bg-chart-1/10 border border-chart-1/20 rounded-lg p-3">
+                            <p className="text-xs text-chart-1 font-medium mb-1">
                                 SLA Change
                             </p>
-                            <p className="text-sm font-semibold text-green-800">
+                            <p className="text-sm font-semibold text-chart-1">
                                 {outcome.slaChange}
                             </p>
                         </div>
-                        <div className="bg-green-50 border border-green-200 rounded-lg p-3">
-                            <p className="text-xs text-green-600 font-medium mb-1">
+                        <div className="bg-chart-1/10 border border-chart-1/20 rounded-lg p-3">
+                            <p className="text-xs text-chart-1 font-medium mb-1">
                                 Error Reduction
                             </p>
-                            <p className="text-sm font-semibold text-green-800">
+                            <p className="text-sm font-semibold text-chart-1">
                                 {outcome.errorDeltas}
                             </p>
                         </div>
