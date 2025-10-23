@@ -20,7 +20,7 @@ const transitionVariants = {
         transition: {
             type: "spring" as const,
             bounce: 0.2,
-            duration: 0.8,
+            duration: 0.4,
         },
     },
 };
@@ -58,17 +58,24 @@ export default function HeroSection() {
 
                         <div className="mx-auto max-w-7xl px-3 sm:px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
+                                <div className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-sm font-medium relative">
+                                    <div className="relative inline-block">
+                                        <div className="bg-gray-800/90 dark:bg-gray-700/90 rounded-full px-4 py-2 border border-gray-600/50 dark:border-gray-500/50 shadow-lg">
+                                            <TextEffect
+                                                preset="fade-in-blur"
+                                                speedSegment={0.8}
+                                                as="p"
+                                                className="relative text-white font-medium drop-shadow-[0_0_6px_rgba(255,255,255,0.3)]"
+                                            >
+                                                Your vision, intelligently
+                                                executed
+                                            </TextEffect>
+                                        </div>
+                                    </div>
+                                </div>
                                 <TextEffect
                                     preset="fade-in-blur"
-                                    speedSegment={0.2}
-                                    as="p"
-                                    className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-sm font-medium text-primary"
-                                >
-                                    Your vision, intelligently executed
-                                </TextEffect>
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.2}
+                                    speedSegment={0.8}
                                     delay={0.1}
                                     as="h1"
                                     className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-2xl max-md:font-semibold md:text-2xl lg:mt-8 xl:text-5xl"
@@ -78,7 +85,7 @@ export default function HeroSection() {
                                 <TextEffect
                                     per="line"
                                     preset="fade-in-blur"
-                                    speedSegment={0.2}
+                                    speedSegment={0.8}
                                     delay={0.2}
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
@@ -92,8 +99,8 @@ export default function HeroSection() {
                                         container: {
                                             visible: {
                                                 transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.3,
+                                                    staggerChildren: 0.02,
+                                                    delayChildren: 0.2,
                                                 },
                                             },
                                         },
@@ -137,14 +144,14 @@ export default function HeroSection() {
                                     </div>
                                 </AnimatedGroup>
 
-                                {/* System Diagram */}
-                                <AnimatedGroup
+                                {/* System Diagram - Hidden */}
+                                {/* <AnimatedGroup
                                     variants={{
                                         container: {
                                             visible: {
                                                 transition: {
-                                                    staggerChildren: 0.1,
-                                                    delayChildren: 0.5,
+                                                    staggerChildren: 0.05,
+                                                    delayChildren: 0.3,
                                                 },
                                             },
                                         },
@@ -153,7 +160,7 @@ export default function HeroSection() {
                                     className="mt-16"
                                 >
                                     <SystemDiagram />
-                                </AnimatedGroup>
+                                </AnimatedGroup> */}
                             </div>
                         </div>
 
@@ -162,8 +169,8 @@ export default function HeroSection() {
                                 container: {
                                     visible: {
                                         transition: {
-                                            staggerChildren: 0.05,
-                                            delayChildren: 0.4,
+                                            staggerChildren: 0.02,
+                                            delayChildren: 0.25,
                                         },
                                     },
                                 },

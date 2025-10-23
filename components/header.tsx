@@ -11,53 +11,14 @@ const menuItems = [
     {
         name: "Solutions",
         href: "/solutions",
-        dropdown: [
-            {
-                name: "Knowledge & Decision Support",
-                href: "/solutions#knowledge",
-            },
-            {
-                name: "Agentic Workflows (with approvals)",
-                href: "/solutions#agentic",
-            },
-            {
-                name: "Intake & Processing (Docs/Data/Vision)",
-                href: "/solutions#intake",
-            },
-            {
-                name: "Finance & Back-Office Pipelines",
-                href: "/solutions#finance",
-            },
-            { name: "View all solutions", href: "/solutions" },
-        ],
     },
     {
         name: "Sprint",
         href: "/ops-efficiency-sprint",
-        dropdown: [
-            {
-                name: "How it works",
-                href: "/ops-efficiency-sprint#how-it-works",
-            },
-            {
-                name: "Milestone Gate",
-                href: "/ops-efficiency-sprint#milestone-gate",
-            },
-            { name: "Pricing", href: "/ops-efficiency-sprint#pricing" },
-            {
-                name: "Assumptions & Measurement",
-                href: "/ops-efficiency-sprint#assumptions",
-            },
-        ],
     },
     {
         name: "Results",
         href: "/results",
-        dropdown: [
-            { name: "EUDR mini-case", href: "/results#eudr" },
-            { name: "Results snapshots", href: "/results#snapshots" },
-            { name: "Security & Governance", href: "/security" },
-        ],
     },
     {
         name: "About",
