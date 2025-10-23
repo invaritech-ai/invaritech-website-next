@@ -4,8 +4,9 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
-import { SystemDiagram } from "@/components/ui/system-diagram";
+// import { SystemDiagram } from "@/components/ui/system-diagram";
 import { HeroHeader } from "./header";
+import { ArrowRight } from "lucide-react";
 
 const transitionVariants = {
     hidden: {
@@ -60,17 +61,33 @@ export default function HeroSection() {
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <div className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-sm font-medium relative">
                                     <div className="relative inline-block">
-                                        <div className="bg-gray-800/90 dark:bg-gray-700/90 rounded-full px-4 py-2 border border-gray-600/50 dark:border-gray-500/50 shadow-lg">
+                                        <Link
+                                            href="/solutions"
+                                            className="group bg-foreground/10 rounded-full px-4 py-2 border border-border/50 shadow-lg hover:bg-foreground/15 transition-colors duration-200 cursor-pointer inline-flex items-center gap-2"
+                                        >
                                             <TextEffect
                                                 preset="fade-in-blur"
                                                 speedSegment={0.8}
-                                                as="p"
-                                                className="relative text-white font-medium drop-shadow-[0_0_6px_rgba(255,255,255,0.3)]"
+                                                as="span"
+                                                className="relative text-foreground font-medium drop-shadow-[0_0_6px_rgba(var(--foreground),0.3)]"
                                             >
                                                 Your vision, intelligently
                                                 executed
                                             </TextEffect>
-                                        </div>
+                                            <div className="w-px h-4 bg-foreground/60"></div>
+                                            <div className="w-4 h-4 rounded-full border border-foreground/60 flex items-center justify-center group-hover:bg-foreground group-hover:border-foreground transition-all duration-200 relative overflow-hidden">
+                                                {/* Default arrow */}
+                                                <ArrowRight
+                                                    size={8}
+                                                    className="text-foreground transition-all duration-300 group-hover:translate-x-full group-hover:opacity-0"
+                                                />
+                                                {/* Hover arrow (inverted) */}
+                                                <ArrowRight
+                                                    size={8}
+                                                    className="text-background absolute transition-all duration-300 -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                                                />
+                                            </div>
+                                        </Link>
                                     </div>
                                 </div>
                                 <TextEffect
