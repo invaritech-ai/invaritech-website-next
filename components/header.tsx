@@ -103,7 +103,7 @@ export const HeroHeader = () => {
                                     <li key={index} className="relative group">
                                         <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground flex items-center gap-1 duration-150"
+                                            className="text-white/90 hover:text-white flex items-center gap-1 duration-150 drop-shadow-sm"
                                             onMouseEnter={() =>
                                                 setActiveDropdown(item.name)
                                             }
@@ -217,7 +217,7 @@ export const HeroHeader = () => {
                                                 onClick={() =>
                                                     setMenuState(false)
                                                 }
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                                                className="text-white/90 hover:text-white block duration-150 drop-shadow-sm"
                                             >
                                                 <span>{item.name}</span>
                                             </Link>
@@ -242,7 +242,7 @@ export const HeroHeader = () => {
                                                                             false
                                                                         )
                                                                     }
-                                                                    className="text-sm text-muted-foreground hover:text-accent-foreground block duration-150"
+                                                                    className="text-sm text-white/80 hover:text-white block duration-150 drop-shadow-sm"
                                                                 >
                                                                     {
                                                                         dropdownItem.name

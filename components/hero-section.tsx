@@ -40,7 +40,7 @@ export default function HeroSection() {
                 </div>
                 <section>
                     <div className="relative pt-24 md:pt-36">
-                        <div className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32">
+                        <div className="mask-b-from-35% mask-b-to-90% absolute inset-0 -z-20">
                             <Image
                                 src="/hero-bg.jpg"
                                 alt="INVARITECH digital solutions background"
