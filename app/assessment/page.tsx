@@ -306,7 +306,7 @@ export default function Assessment() {
                                 </div>
                             ) : result.tier === "warm" ? (
                                 <div className="space-y-4">
-                                    <h3 className="text-xl font-semibold text-orange-800 mb-4">
+                                    <h3 className="text-xl font-semibold text-destructive mb-4">
                                         🤔 Good potential. Let&apos;s discuss
                                         your specific needs.
                                     </h3>

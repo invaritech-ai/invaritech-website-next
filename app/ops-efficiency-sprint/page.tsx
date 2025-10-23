@@ -309,10 +309,10 @@ export default function OpsEfficiencySprint() {
                                 </CardContent>
                             </Card>
 
-                            <Card className="text-center p-6 border-2 border-orange-200 bg-orange-50/50">
+                            <Card className="text-center p-6 border-2 border-destructive/20 bg-destructive/5">
                                 <CardContent className="pt-6">
-                                    <div className="w-16 h-16 bg-orange-500/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <AlertTriangle className="w-8 h-8 text-orange-600" />
+                                    <div className="w-16 h-16 bg-destructive/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                                        <AlertTriangle className="w-8 h-8 text-destructive" />
                                     </div>
                                     <h3 className="text-xl font-semibold mb-3">
                                         Week 3 Milestone Gate

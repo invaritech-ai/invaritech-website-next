@@ -95,7 +95,7 @@ export default function HeroSection() {
                                     speedSegment={0.8}
                                     delay={0.1}
                                     as="h1"
-                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-2xl max-md:font-semibold md:text-2xl lg:mt-8 xl:text-5xl"
+                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-3xl max-md:font-semibold md:text-4xl lg:mt-8 xl:text-6xl"
                                 >
                                     Intelligent automation for growth companies
                                 </TextEffect>

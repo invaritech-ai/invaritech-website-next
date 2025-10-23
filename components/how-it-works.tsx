@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Search, Zap, TrendingUp } from "lucide-react";
+import { Search, Zap, TrendingUp, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const steps = [
@@ -62,10 +62,10 @@ export default function HowItWorks() {
                                 </p>
                             </CardContent>
 
-                            {/* Connector line */}
+                            {/* Connector arrow */}
                             {index < steps.length - 1 && (
-                                <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-border">
-                                    <div className="absolute right-0 top-1/2 w-2 h-2 bg-border rotate-45 transform -translate-y-1/2"></div>
+                                <div className="hidden md:flex absolute top-1/2 -right-8 w-8 h-8 items-center justify-center">
+                                    <ArrowRight className="w-6 h-6 text-primary" />
                                 </div>
                             )}
                         </Card>
