@@ -127,6 +127,11 @@ export default function RootLayout({
                         __html: JSON.stringify(faqSchema),
                     }}
                 />
+                <script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
+                    async
+                ></script>
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
