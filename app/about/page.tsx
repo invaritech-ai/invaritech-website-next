@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         title: "About INVARITECH - Boutique Automation Studio",
         description:
             "Small by design, expert by trade. We build automation systems for regulated firms and freelancers. No body shops, no bloat.",
-        url: "https://invaritech.ai/about",
+        url: "https://www.invaritech.ai/about",
     },
     alternates: {
         canonical: "https://www.invaritech.ai/about",

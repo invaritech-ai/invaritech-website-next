@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         title: "Compliance Workflow Bridge - Services",
         description:
             "We turn your most painful compliance workflow into one auditable, automated pipeline in 6 weeks.",
-        url: "https://invaritech.ai/services/compliance-bridge",
+        url: "https://www.invaritech.ai/services/compliance-bridge",
     },
     alternates: {
         canonical: "https://www.invaritech.ai/services/compliance-bridge",

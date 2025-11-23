@@ -8,7 +8,7 @@ export const metadata: Metadata = {
         title: "WeekendSuite - Admin Suite for Freelancers",
         description:
             "WeekendSuite turns every new inquiry into a same-day proposal, signed contract, and first invoice. Join the waitlist.",
-        url: "https://invaritech.ai/weekend-suite",
+        url: "https://www.invaritech.ai/weekend-suite",
     },
     alternates: {
         canonical: "https://www.invaritech.ai/weekend-suite",

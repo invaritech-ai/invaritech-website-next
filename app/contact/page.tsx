@@ -9,7 +9,7 @@ export const metadata: Metadata = {
         title: "Contact INVARITECH - Automation Consultation",
         description:
             "Schedule a call to discuss your automation project. Compliance bridges, data pipelines, or admin suites. 30-minute consultation.",
-        url: "https://invaritech.ai/contact",
+        url: "https://www.invaritech.ai/contact",
     },
     alternates: {
         canonical: "https://www.invaritech.ai/contact",
