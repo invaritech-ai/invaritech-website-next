@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, CheckCircle2, ArrowRight } from "lucide-react";
@@ -93,16 +94,26 @@ export default function EudrCaseStudyPage() {
                                     </li>
                                 </ul>
                             </div>
-                            <div className="bg-muted rounded-2xl p-8 aspect-video flex items-center justify-center text-muted-foreground">
-                                {/* Placeholder for API diagram/image */}
-                                <span className="font-medium">API Architecture Diagram</span>
+                            <div className="rounded-2xl overflow-hidden border shadow-sm bg-muted">
+                                <Image
+                                    src="/eudr-flow.png"
+                                    alt="EUDR API Architecture Diagram"
+                                    width={800}
+                                    height={450}
+                                    className="w-full h-auto dark:invert"
+                                />
                             </div>
                         </div>
 
                         <div className="grid gap-8 md:grid-cols-2 items-center md:flex-row-reverse">
-                            <div className="order-last md:order-first bg-muted rounded-2xl p-8 aspect-video flex items-center justify-center text-muted-foreground">
-                                {/* Placeholder for Database/Dashboard image */}
-                                <span className="font-medium">Dashboard Preview</span>
+                            <div className="order-last md:order-first rounded-2xl overflow-hidden border shadow-sm bg-muted">
+                                <Image
+                                    src="/eudr-portal.png"
+                                    alt="EUDR Compliance Dashboard"
+                                    width={800}
+                                    height={450}
+                                    className="w-full h-auto dark:invert"
+                                />
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold mb-4">Custom Database & Dashboard</h3>
@@ -125,9 +136,14 @@ export default function EudrCaseStudyPage() {
                                     It knows the difference between a temporary glitch and a real error. This means the team doesn&apos;t have to worry about lost data or waking up at night to fix things.
                                 </p>
                             </div>
-                            <div className="bg-muted rounded-2xl p-8 aspect-video flex items-center justify-center text-muted-foreground">
-                                {/* Placeholder for Retry Logic image */}
-                                <span className="font-medium">Retry Logic Visualization</span>
+                            <div className="rounded-2xl overflow-hidden border shadow-sm bg-muted">
+                                <Image
+                                    src="/eudr-retry.png"
+                                    alt="Smart Retry Logic Visualization"
+                                    width={800}
+                                    height={450}
+                                    className="w-full h-auto dark:invert"
+                                />
                             </div>
                         </div>
                     </div>

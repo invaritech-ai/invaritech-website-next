@@ -7,15 +7,15 @@ import { ArrowRight } from "lucide-react";
 const selectedProjects = [
     {
         title: "EUDR Compliance Bridge",
-        description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of Due Diligence Statements.",
+        description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of Due Diligence Statements in minutes.",
         image: "/eudr-preview.png", // Updated to use new preview image
-        href: "/work#eudr",
+        href: "/work/eudr-compliance-bridge",
     },
     {
         title: "China Coast Community Website Redesign",
-        description: "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content.",
+        description: "We redesigned a small charity’s website and donation flow to make it easier for donors to contribute and for staff to maintain content.",
         image: "/ccc-isometric.png", // Updated to use new isometric image
-        href: "/work#charity",
+        href: "/work",
     },
     {
         title: "WeekendSuite (In Development)",
