@@ -17,10 +17,10 @@ const selectedProjects = [
         href: "/work#charity",
     },
     {
-        title: "Weekend (In Development)",
-        description: "Weekend is our own product: a focused admin tool for freelancers and tiny agencies that handles the messy middle from lead to invoice.",
+        title: "WeekendSuite (In Development)",
+        description: "WeekendSuite is our own product: a focused admin tool for freelancers and tiny agencies that handles the messy middle from lead to invoice.",
         image: "/work/weekend-preview.jpg", // Placeholder image path
-        href: "/weekend",
+        href: "/weekend-suite",
     },
 ];
 

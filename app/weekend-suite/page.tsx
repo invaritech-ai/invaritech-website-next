@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 
-export default function WeekendPage() {
+export default function WeekendSuitePage() {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -34,8 +34,8 @@ export default function WeekendPage() {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
                     ...formData,
-                    message: `Weekend Waitlist: ${formData.workType} - ${formData.headache}`,
-                    source: "Weekend Waitlist",
+                    message: `WeekendSuite Waitlist: ${formData.workType} - ${formData.headache}`,
+                    source: "WeekendSuite Waitlist",
                 }),
             });
 
@@ -61,7 +61,7 @@ export default function WeekendPage() {
                         Every Lead to Signed Project in a Weekend
                     </h1>
                     <p className="text-xl md:text-2xl font-medium text-foreground/80 mb-6">
-                        Weekend turns every new inquiry into a same‑day proposal, signed contract, and first invoice.
+                        WeekendSuite turns every new inquiry into a same‑day proposal, signed contract, and first invoice.
                     </p>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         A simple admin suite for freelancers & tiny agencies to set up a professional client flow in a single weekend.
@@ -94,7 +94,7 @@ export default function WeekendPage() {
                         </div>
 
                         <div>
-                            <h3 className="text-xl font-semibold mb-4">The Pain (Miseries)</h3>
+                            <h3 className="text-xl font-semibold mb-4">The Pain</h3>
                             <ul className="space-y-3 text-muted-foreground">
                                 <li className="flex gap-2">
                                     <span className="text-red-500 font-bold">×</span>
@@ -116,7 +116,7 @@ export default function WeekendPage() {
                         </div>
 
                         <div>
-                            <h3 className="text-xl font-semibold mb-4">What Weekend Does</h3>
+                            <h3 className="text-xl font-semibold mb-4">What WeekendSuite Does</h3>
                             <ul className="space-y-3">
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
@@ -142,7 +142,8 @@ export default function WeekendPage() {
                         </div>
 
                         <div className="rounded-xl bg-muted/50 p-6 border border-border/50">
-                            <h3 className="font-semibold mb-2">Why it&apos;s Killer</h3>
+                            {/* <h3 className="font-semibold mb-2">Why it&apos;s Killer</h3> */}
+                            <h3 className="font-semibold mb-2">Why you need it?</h3>
                             <p className="text-sm text-muted-foreground">
                                 It&apos;s a "Weekend-sized" setup. You can realistically configure it in a weekend. It&apos;s a thin layer on top of your existing tools, not a heavy CRM replacement.
                             </p>

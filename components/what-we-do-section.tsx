@@ -42,17 +42,17 @@ export default function WhatWeDoSection() {
                         </CardContent>
                     </Link>
 
-                    <Link href="/weekend" className="group shadow-zinc-950/5 cursor-pointer block h-full">
+                    <Link href="/weekend-suite" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
-                                <Zap className="size-6" aria-hidden />
+                                <Bot className="size-6" aria-hidden />
                             </CardDecorator>
 
                             <h3 className="mt-6 font-medium">For Freelancers & Agencies</h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
-                            <h4 className="font-bold text-lg mb-2">Weekend</h4>
+                            <h4 className="font-bold text-lg mb-2">Weekend Suite</h4>
                             <p className="mt-3 text-sm text-muted-foreground">
                                 A simple admin suite to turn every lead into a signed project in a weekend. Proposals, contracts, and invoices in one flow.
                             </p>

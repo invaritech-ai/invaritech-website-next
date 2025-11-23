@@ -12,16 +12,27 @@ const projects = [
         description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of EUDR Due Diligence Statements through a simple REST API and dashboard. Includes a retry queue and monitoring.",
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
         image: "/work/eudr-full.jpg", // Placeholder
-        link: "#", // Placeholder for external link
+        link: "/work/eudr-compliance-bridge",
     },
     {
         id: "charity",
-        title: "Charity Donation Refresh",
+        title: "China Coast Community Website Redesign",
         category: "Web & Automation",
         description: "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content. The new flow is simpler, faster, and connects directly to their CRM.",
         tags: ["Next.js", "Stripe", "CMS Integration"],
         image: "/work/charity-full.jpg", // Placeholder
         link: "#", // Placeholder for external link
+        ongoing: true,
+    },
+    {
+        id: "custom",
+        title: "Your Custom Solution",
+        category: "Consulting & Development",
+        description: "We help you identify the single biggest bottleneck costing you 100+ hours a month. Then, we deliver a custom automation solution within 6 weeks to give those hours back to your business.",
+        tags: ["Analysis", "Strategy", "Custom Build"],
+        image: "/work/custom-full.jpg", // Placeholder
+        link: "/contact",
+        buttonText: "Talk to Us",
     },
 ];
 
@@ -71,8 +82,9 @@ export default function WorkPage() {
                                         </div>
 
                                         <div className="flex gap-4">
-                                            <ButtonLink href={project.link}>
-                                                View Project <ExternalLink className="ml-2 size-4" />
+                                            <ButtonLink href={project.link} disabled={project.ongoing}>
+                                                {project.buttonText || (project.ongoing ? "Visit Site (Ongoing)" : "Read Details")} 
+                                                {!project.ongoing && <ArrowRight className="ml-2 size-4" />}
                                             </ButtonLink>
                                         </div>
                                     </div>
@@ -83,18 +95,18 @@ export default function WorkPage() {
                         </div>
                     ))}
 
-                    {/* Labs Section for Weekend */}
+                    {/* Labs Section for WeekendSuite */}
                     <div id="weekend" className="scroll-mt-32">
                         <div className="rounded-2xl bg-muted/30 p-8 md:p-12 border border-border/50">
                             <div className="max-w-3xl">
                                 <Badge variant="outline" className="mb-4 bg-background">
                                     Invaritech Labs
                                 </Badge>
-                                <h2 className="text-3xl font-bold mb-4">Weekend</h2>
+                                <h2 className="text-3xl font-bold mb-4">WeekendSuite</h2>
                                 <p className="text-xl text-muted-foreground mb-8">
-                                    Weekend is our in-house product: a weekend-sized admin suite for freelancers and tiny agencies. It handles the messy middle from lead → proposal → contract → onboarding → invoice.
+                                    WeekendSuite is our in-house product: a weekend-sized admin suite for freelancers and tiny agencies. It handles the messy middle from lead → proposal → contract → onboarding → invoice.
                                 </p>
-                                <ButtonLink href="/weekend">
+                                <ButtonLink href="/weekend-suite">
                                     Learn more & join the waitlist <ArrowRight className="ml-2 size-4" />
                                 </ButtonLink>
                             </div>
@@ -106,7 +118,14 @@ export default function WorkPage() {
     );
 }
 
-function ButtonLink({ href, children }: { href: string; children: React.ReactNode }) {
+function ButtonLink({ href, children, disabled }: { href: string; children: React.ReactNode; disabled?: boolean }) {
+    if (disabled) {
+        return (
+            <div className="inline-flex h-10 items-center justify-center rounded-md bg-muted px-8 text-sm font-medium text-muted-foreground shadow-none cursor-not-allowed opacity-70">
+                {children}
+            </div>
+        );
+    }
     return (
         <Link
             href={href}
