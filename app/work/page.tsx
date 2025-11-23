@@ -3,7 +3,19 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Our Work - Automation Projects",
+    description:
+        "See how INVARITECH builds compliance bridges, data pipelines, and custom automation for small service businesses. Real projects, real results.",
+    openGraph: {
+        title: "Our Work - Automation Projects & Case Studies",
+        description:
+            "Compliance bridges, data pipelines, and custom automation. See how we help small service businesses stop losing time between their tools.",
+        url: "https://invaritech.ai/work",
+    },
+};
 
 const projects = [
     {

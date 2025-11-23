@@ -6,6 +6,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About Us - The Studio Model",
+    description:
+        "INVARITECH is a boutique automation studio. We design and build custom systems that help small teams stop losing time between their tools. Meet the team.",
+    openGraph: {
+        title: "About INVARITECH - Boutique Automation Studio",
+        description:
+            "Small by design, expert by trade. We build automation systems for regulated firms and freelancers. No body shops, no bloat.",
+        url: "https://invaritech.ai/about",
+    },
+};
 
 export default function AboutPage() {
     return (
