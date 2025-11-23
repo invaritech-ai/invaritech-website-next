@@ -3,12 +3,12 @@ import { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://invaritech.ai";
+    const baseUrl = "https://www.invaritech.ai";
     const currentDate = new Date();
 
     return [
         {
-            url: baseUrl,
+            url: `${baseUrl}`,
             lastModified: currentDate,
             changeFrequency: "weekly",
             priority: 1.0,

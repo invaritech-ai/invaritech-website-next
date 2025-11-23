@@ -171,7 +171,7 @@ export default function HeroSection() {
                                 <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 sm:p-4 shadow-lg shadow-zinc-950/15 ring-1">
                                     <Image
                                         className="bg-background aspect-15/8 relative rounded-2xl scale-x-[-1]"
-                                        src="/app.png"
+                                        src="/app.webp"
                                         alt="INVARITECH application interface showcasing premium digital solutions"
                                         width="2700"
                                         height="1440"

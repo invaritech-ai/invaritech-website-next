@@ -11,11 +11,22 @@ export const metadata: Metadata = {
             "Schedule a call to discuss your automation project. Compliance bridges, data pipelines, or admin suites. 30-minute consultation.",
         url: "https://invaritech.ai/contact",
     },
+    alternates: {
+        canonical: "https://invaritech.ai/contact",
+    },
 };
 
 export default function ContactPage() {
     return (
         <main className="pt-24 md:pt-32">
+            <div className="mx-auto max-w-4xl px-4 lg:px-0 mb-12">
+                <h1 className="text-center text-4xl font-bold md:text-5xl mb-4">
+                    Contact Us
+                </h1>
+                <p className="text-center text-muted-foreground text-lg">
+                    Let&apos;s talk about your automation project
+                </p>
+            </div>
             <ContactSection />
         </main>
     );

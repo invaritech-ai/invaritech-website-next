@@ -15,6 +15,9 @@ export const metadata: Metadata = {
             "Compliance bridges, data pipelines, and custom automation. See how we help small service businesses stop losing time between their tools.",
         url: "https://invaritech.ai/work",
     },
+    alternates: {
+        canonical: "https://invaritech.ai/work",
+    },
 };
 
 const projects = [
@@ -22,18 +25,20 @@ const projects = [
         id: "eudr",
         title: "EUDR Compliance Bridge",
         category: "Automation & Compliance",
-        description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of EUDR Due Diligence Statements through a simple REST API and dashboard. Includes a retry queue and monitoring.",
+        description:
+            "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of EUDR Due Diligence Statements through a simple REST API and dashboard. Includes a retry queue and monitoring.",
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
-        image: "/eudr-preview.png", // Updated to use new preview image
+        image: "/eudr-preview.webp",
         link: "/work/eudr-compliance-bridge",
     },
     {
         id: "charity",
         title: "China Coast Community Website Redesign",
         category: "Web & Automation",
-        description: "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content. The new flow is simpler, faster, and connects directly to their CRM.",
+        description:
+            "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content. The new flow is simpler, faster, and connects directly to their CRM.",
         tags: ["Next.js", "Stripe", "CMS Integration"],
-        image: "/ccc-isometric.png", // Updated to use new isometric image
+        image: "/ccc-isometric.webp",
         link: "#", // Placeholder for external link
         ongoing: true,
     },
@@ -41,7 +46,8 @@ const projects = [
         id: "custom",
         title: "Your Custom Solution",
         category: "Consulting & Development",
-        description: "We help you identify the single biggest bottleneck costing you 100+ hours a month. Then, we deliver a custom automation solution within 6 weeks to give those hours back to your business.",
+        description:
+            "We help you identify the single biggest bottleneck costing you 100+ hours a month. Then, we deliver a custom automation solution within 6 weeks to give those hours back to your business.",
         tags: ["Analysis", "Strategy", "Custom Build"],
         image: "/work/custom-full.jpg", // Placeholder
         link: "/contact",
@@ -58,20 +64,29 @@ export default function WorkPage() {
                         Our Work
                     </h1>
                     <p className="text-xl text-muted-foreground max-w-3xl">
-                        A few examples of the kind of systems we build. Most of our work is behind the scenes, connecting existing tools into reliable workflows.
+                        A few examples of the kind of systems we build. Most of
+                        our work is behind the scenes, connecting existing tools
+                        into reliable workflows.
                     </p>
                 </div>
 
                 <div className="space-y-16">
                     {projects.map((project) => (
-                        <div key={project.id} id={project.id} className="scroll-mt-32">
+                        <div
+                            key={project.id}
+                            id={project.id}
+                            className="scroll-mt-32"
+                        >
                             <Card className="overflow-hidden border-none shadow-none bg-transparent">
                                 <div className="grid gap-8 md:grid-cols-2 lg:gap-12 items-start">
                                     <div className="aspect-video relative rounded-2xl overflow-hidden bg-muted border shadow-sm group">
-                                        {project.image && !project.image.includes("custom-full") ? (
-                                            <Image 
-                                                src={project.image} 
-                                                alt={project.title} 
+                                        {project.image &&
+                                        !project.image.includes(
+                                            "custom-full"
+                                        ) ? (
+                                            <Image
+                                                src={project.image}
+                                                alt={project.title}
                                                 fill
                                                 className="object-cover"
                                             />
@@ -82,30 +97,47 @@ export default function WorkPage() {
                                         )}
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                                     </div>
-                                    
+
                                     <div className="flex flex-col h-full justify-center">
                                         <div className="mb-4">
-                                            <Badge variant="secondary" className="mb-4">
+                                            <Badge
+                                                variant="secondary"
+                                                className="mb-4"
+                                            >
                                                 {project.category}
                                             </Badge>
-                                            <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
+                                            <h2 className="text-3xl font-bold mb-4">
+                                                {project.title}
+                                            </h2>
                                             <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
                                                 {project.description}
                                             </p>
                                         </div>
-                                        
+
                                         <div className="flex flex-wrap gap-2 mb-8">
                                             {project.tags.map((tag) => (
-                                                <Badge key={tag} variant="outline" className="text-xs">
+                                                <Badge
+                                                    key={tag}
+                                                    variant="outline"
+                                                    className="text-xs"
+                                                >
                                                     {tag}
                                                 </Badge>
                                             ))}
                                         </div>
 
                                         <div className="flex gap-4">
-                                            <ButtonLink href={project.link} disabled={project.ongoing}>
-                                                {project.buttonText || (project.ongoing ? "Visit Site (Ongoing)" : "Read Details")} 
-                                                {!project.ongoing && <ArrowRight className="ml-2 size-4" />}
+                                            <ButtonLink
+                                                href={project.link}
+                                                disabled={project.ongoing}
+                                            >
+                                                {project.buttonText ||
+                                                    (project.ongoing
+                                                        ? "Visit Site (Ongoing)"
+                                                        : "Read Details")}
+                                                {!project.ongoing && (
+                                                    <ArrowRight className="ml-2 size-4" />
+                                                )}
                                             </ButtonLink>
                                         </div>
                                     </div>
@@ -120,15 +152,25 @@ export default function WorkPage() {
                     <div id="weekend" className="scroll-mt-32">
                         <div className="rounded-2xl bg-muted/30 p-8 md:p-12 border border-border/50">
                             <div className="max-w-3xl">
-                                <Badge variant="outline" className="mb-4 bg-background">
+                                <Badge
+                                    variant="outline"
+                                    className="mb-4 bg-background"
+                                >
                                     Invaritech Labs
                                 </Badge>
-                                <h2 className="text-3xl font-bold mb-4">WeekendSuite</h2>
+                                <h2 className="text-3xl font-bold mb-4">
+                                    WeekendSuite
+                                </h2>
                                 <p className="text-xl text-muted-foreground mb-8">
-                                    WeekendSuite is our in-house product: a weekend-sized admin suite for freelancers and tiny agencies. It handles the messy middle from lead → proposal → contract → onboarding → invoice.
+                                    WeekendSuite is our in-house product: a
+                                    weekend-sized admin suite for freelancers
+                                    and tiny agencies. It handles the messy
+                                    middle from lead → proposal → contract →
+                                    onboarding → invoice.
                                 </p>
                                 <ButtonLink href="/weekend-suite">
-                                    Learn more & join the waitlist <ArrowRight className="ml-2 size-4" />
+                                    Learn more & join the waitlist{" "}
+                                    <ArrowRight className="ml-2 size-4" />
                                 </ButtonLink>
                             </div>
                         </div>
@@ -139,7 +181,15 @@ export default function WorkPage() {
     );
 }
 
-function ButtonLink({ href, children, disabled }: { href: string; children: React.ReactNode; disabled?: boolean }) {
+function ButtonLink({
+    href,
+    children,
+    disabled,
+}: {
+    href: string;
+    children: React.ReactNode;
+    disabled?: boolean;
+}) {
     if (disabled) {
         return (
             <div className="inline-flex h-10 items-center justify-center rounded-md bg-muted px-8 text-sm font-medium text-muted-foreground shadow-none cursor-not-allowed opacity-70">

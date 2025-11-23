@@ -6,12 +6,15 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Careers - Join Our Team",
     description:
-        "Join INVARITECH's team of automation experts. We're looking for talented engineers to help build compliance bridges, data pipelines, and custom automation solutions.",
+        "Join INVARITECH's team of automation experts. We're looking for talented engineers to help build compliance bridges and data pipelines.",
     openGraph: {
         title: "Careers at INVARITECH - Build Automation Solutions",
         description:
             "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for small service businesses.",
         url: "https://invaritech.ai/careers",
+    },
+    alternates: {
+        canonical: "https://invaritech.ai/careers",
     },
 };
 
@@ -37,12 +40,16 @@ export default function CareersPage() {
                         Join Our Team
                     </h1>
                     <p className="text-muted-foreground text-lg sm:text-xl mb-12 max-w-2xl mx-auto">
-                        Build the future with us. We&apos;re looking for passionate individuals to help us craft precision-engineered digital solutions.
+                        Build the future with us. We&apos;re looking for
+                        passionate individuals to help us craft
+                        precision-engineered digital solutions.
                     </p>
                 </div>
 
                 <div className="mx-auto max-w-4xl mt-16">
-                    <h2 className="text-2xl font-semibold mb-8">Open Positions</h2>
+                    <h2 className="text-2xl font-semibold mb-8">
+                        Open Positions
+                    </h2>
                     <div className="grid gap-6">
                         {jobs.map((job) => (
                             <div
@@ -77,9 +84,13 @@ export default function CareersPage() {
                                         </p>
                                     </div>
                                     <div className="flex items-center">
-                                        <Button asChild className="w-full sm:w-auto">
+                                        <Button
+                                            asChild
+                                            className="w-full sm:w-auto"
+                                        >
                                             <Link href={`/careers/${job.id}`}>
-                                                Apply Now <ArrowRight className="ml-2 size-4" />
+                                                Apply Now{" "}
+                                                <ArrowRight className="ml-2 size-4" />
                                             </Link>
                                         </Button>
                                     </div>

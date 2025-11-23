@@ -14,6 +14,22 @@ import {
     MonitorPlay,
 } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Full-Stack Software Engineer - Careers",
+    description:
+        "Join INVARITECH as a Full-Stack Software Engineer. Remote position, hourly contract. Work on automation solutions and grow your career.",
+    openGraph: {
+        title: "Full-Stack Software Engineer - Careers",
+        description:
+            "Join INVARITECH as a Full-Stack Software Engineer. Remote position, hourly contract.",
+        url: "https://invaritech.ai/careers/full-stack-developer",
+    },
+    alternates: {
+        canonical: "https://invaritech.ai/careers/full-stack-developer",
+    },
+};
 
 export default function FullStackDeveloperPage() {
     return (
@@ -66,20 +82,38 @@ export default function FullStackDeveloperPage() {
                 <div className="mx-auto max-w-3xl space-y-16">
                     {/* About the Role */}
                     <section>
-                        <h2 className="text-2xl font-bold mb-4">About the Role</h2>
+                        <h2 className="text-2xl font-bold mb-4">
+                            About the Role
+                        </h2>
                         <div className="prose prose-neutral dark:prose-invert max-w-none">
                             <p className="text-lg text-muted-foreground leading-relaxed">
-                                Invaritech is looking for a curious and proactive <strong>Full-Stack Software Engineer</strong> to join our growing team. This is a unique opportunity for a junior-to-mid-level engineer to work directly with founders, build scalable products, and accelerate their career growth.
+                                Invaritech is looking for a curious and
+                                proactive{" "}
+                                <strong>Full-Stack Software Engineer</strong> to
+                                join our growing team. This is a unique
+                                opportunity for a junior-to-mid-level engineer
+                                to work directly with founders, build scalable
+                                products, and accelerate their career growth.
                             </p>
                             <p className="mt-4 text-muted-foreground">
-                                You will work across the entire stack—from building responsive frontends in React to designing backend workflows in Python. We don&apos;t expect you to know everything on day one, but we do expect a hunger to learn. This role is designed to be a springboard: you&apos;ll start by contributing to features under guidance and grow into a Senior Full-Stack & Cloud/DevOps Engineer over time.
+                                You will work across the entire stack—from
+                                building responsive frontends in React to
+                                designing backend workflows in Python. We
+                                don&apos;t expect you to know everything on day
+                                one, but we do expect a hunger to learn. This
+                                role is designed to be a springboard:
+                                you&apos;ll start by contributing to features
+                                under guidance and grow into a Senior Full-Stack
+                                & Cloud/DevOps Engineer over time.
                             </p>
                         </div>
                     </section>
 
                     {/* Responsibilities */}
                     <section>
-                        <h2 className="text-2xl font-bold mb-6">What You&apos;ll Do</h2>
+                        <h2 className="text-2xl font-bold mb-6">
+                            What You&apos;ll Do
+                        </h2>
                         <div className="grid gap-4">
                             {[
                                 "Implement and maintain user-facing features in our web and mobile apps.",
@@ -93,7 +127,9 @@ export default function FullStackDeveloperPage() {
                             ].map((item, index) => (
                                 <div key={index} className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
-                                    <span className="text-muted-foreground">{item}</span>
+                                    <span className="text-muted-foreground">
+                                        {item}
+                                    </span>
                                 </div>
                             ))}
                         </div>
@@ -101,9 +137,13 @@ export default function FullStackDeveloperPage() {
 
                     {/* Tech Stack */}
                     <section>
-                        <h2 className="text-2xl font-bold mb-6">Our Tech Stack</h2>
+                        <h2 className="text-2xl font-bold mb-6">
+                            Our Tech Stack
+                        </h2>
                         <p className="text-muted-foreground mb-6">
-                            You aren&apos;t required to know all of these immediately, but familiarity with some and a strong desire to learn the rest is essential.
+                            You aren&apos;t required to know all of these
+                            immediately, but familiarity with some and a strong
+                            desire to learn the rest is essential.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div className="bg-card border rounded-xl p-5">
@@ -132,7 +172,9 @@ export default function FullStackDeveloperPage() {
                             <div className="bg-card border rounded-xl p-5">
                                 <div className="flex items-center gap-2 mb-3 text-primary">
                                     <Database className="size-5" />
-                                    <h3 className="font-semibold">Data & Automation</h3>
+                                    <h3 className="font-semibold">
+                                        Data & Automation
+                                    </h3>
                                 </div>
                                 <ul className="space-y-2 text-sm text-muted-foreground ml-1">
                                     <li>• PostgreSQL</li>
@@ -143,7 +185,9 @@ export default function FullStackDeveloperPage() {
                             <div className="bg-card border rounded-xl p-5">
                                 <div className="flex items-center gap-2 mb-3 text-primary">
                                     <Cpu className="size-5" />
-                                    <h3 className="font-semibold">Growth Path</h3>
+                                    <h3 className="font-semibold">
+                                        Growth Path
+                                    </h3>
                                 </div>
                                 <ul className="space-y-2 text-sm text-muted-foreground ml-1">
                                     <li>• DevOps & CI/CD</li>
@@ -156,10 +200,14 @@ export default function FullStackDeveloperPage() {
 
                     {/* Requirements */}
                     <section>
-                        <h2 className="text-2xl font-bold mb-6">Requirements</h2>
+                        <h2 className="text-2xl font-bold mb-6">
+                            Requirements
+                        </h2>
                         <div className="space-y-8">
                             <div>
-                                <h3 className="font-semibold text-lg mb-4">Must-Have</h3>
+                                <h3 className="font-semibold text-lg mb-4">
+                                    Must-Have
+                                </h3>
                                 <ul className="space-y-3">
                                     {[
                                         "0–2 years of experience in software development (professional or strong personal projects).",
@@ -169,7 +217,10 @@ export default function FullStackDeveloperPage() {
                                         "Strong curiosity and ability to learn independently.",
                                         "Good communication skills and reliability in a remote environment.",
                                     ].map((item, index) => (
-                                        <li key={index} className="flex gap-3 text-muted-foreground">
+                                        <li
+                                            key={index}
+                                            className="flex gap-3 text-muted-foreground"
+                                        >
                                             <div className="size-1.5 rounded-full bg-primary mt-2 shrink-0" />
                                             {item}
                                         </li>
@@ -177,7 +228,9 @@ export default function FullStackDeveloperPage() {
                                 </ul>
                             </div>
                             <div>
-                                <h3 className="font-semibold text-lg mb-4">Nice-to-Have</h3>
+                                <h3 className="font-semibold text-lg mb-4">
+                                    Nice-to-Have
+                                </h3>
                                 <ul className="space-y-3">
                                     {[
                                         "Experience with Next.js, React Native, or Tailwind CSS.",
@@ -186,7 +239,10 @@ export default function FullStackDeveloperPage() {
                                         "Familiarity with Git and branching workflows.",
                                         "Exposure to cloud platforms (AWS, GCP, Azure).",
                                     ].map((item, index) => (
-                                        <li key={index} className="flex gap-3 text-muted-foreground">
+                                        <li
+                                            key={index}
+                                            className="flex gap-3 text-muted-foreground"
+                                        >
                                             <div className="size-1.5 rounded-full bg-muted-foreground/40 mt-2 shrink-0" />
                                             {item}
                                         </li>
@@ -204,13 +260,24 @@ export default function FullStackDeveloperPage() {
                         </h2>
                         <div className="space-y-4 text-muted-foreground">
                             <p>
-                                We believe in full transparency. This is an <strong>hourly contract role</strong> with a rate of <strong>HKD 32–39 per hour</strong>, depending on experience.
+                                We believe in full transparency. This is an{" "}
+                                <strong>hourly contract role</strong> with a
+                                rate of <strong>HKD 32–39 per hour</strong>,
+                                depending on experience.
                             </p>
                             <p>
-                                To ensure accurate billing and productivity for this remote role, we require the use of our <strong>productivity/monitoring software</strong> while working. This software tracks active work time to guarantee you are paid for every minute you contribute.
+                                To ensure accurate billing and productivity for
+                                this remote role, we require the use of our{" "}
+                                <strong>
+                                    productivity/monitoring software
+                                </strong>{" "}
+                                while working. This software tracks active work
+                                time to guarantee you are paid for every minute
+                                you contribute.
                             </p>
                             <p className="text-sm italic">
-                                * Without this software active, work will not be considered billable.
+                                * Without this software active, work will not be
+                                considered billable.
                             </p>
                         </div>
                     </section>
@@ -218,13 +285,25 @@ export default function FullStackDeveloperPage() {
                     {/* How to Apply */}
                     <section className="border-t pt-16">
                         <div className="bg-primary/5 rounded-3xl p-8 sm:p-12 text-center">
-                            <h2 className="text-3xl font-bold mb-4">Ready to Grow?</h2>
+                            <h2 className="text-3xl font-bold mb-4">
+                                Ready to Grow?
+                            </h2>
                             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                                If you&apos;re eager to learn, build, and solve real problems, we want to hear from you.
+                                If you&apos;re eager to learn, build, and solve
+                                real problems, we want to hear from you.
                             </p>
-                            
+
                             <div className="max-w-md mx-auto text-left bg-background p-6 rounded-xl border mb-8 shadow-sm">
-                                <p className="font-medium mb-4">Please email <a href="mailto:hello@invaritech.ai" className="text-primary hover:underline">hello@invaritech.ai</a> with:</p>
+                                <p className="font-medium mb-4">
+                                    Please email{" "}
+                                    <a
+                                        href="mailto:hello@invaritech.ai"
+                                        className="text-primary hover:underline"
+                                    >
+                                        hello@invaritech.ai
+                                    </a>{" "}
+                                    with:
+                                </p>
                                 <ul className="space-y-2 text-sm text-muted-foreground">
                                     <li className="flex gap-2">
                                         <span className="text-primary">1.</span>
@@ -232,18 +311,25 @@ export default function FullStackDeveloperPage() {
                                     </li>
                                     <li className="flex gap-2">
                                         <span className="text-primary">2.</span>
-                                        A short note on why you want to join and what you&apos;re currently learning
+                                        A short note on why you want to join and
+                                        what you&apos;re currently learning
                                     </li>
                                     <li className="flex gap-2">
                                         <span className="text-primary">3.</span>
-                                        Links to projects, GitHub, or portfolio (unfinished projects are welcome!)
+                                        Links to projects, GitHub, or portfolio
+                                        (unfinished projects are welcome!)
                                     </li>
                                 </ul>
                             </div>
 
-                            <Button asChild size="lg" className="w-full sm:w-auto">
+                            <Button
+                                asChild
+                                size="lg"
+                                className="w-full sm:w-auto"
+                            >
                                 <a href="mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer">
-                                    Send Application <ArrowRight className="ml-2 size-4" />
+                                    Send Application{" "}
+                                    <ArrowRight className="ml-2 size-4" />
                                 </a>
                             </Button>
                         </div>

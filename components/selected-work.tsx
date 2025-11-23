@@ -8,19 +8,19 @@ const selectedProjects = [
     {
         title: "EUDR Compliance Bridge",
         description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of Due Diligence Statements in minutes.",
-        image: "/eudr-preview.png", // Updated to use new preview image
+        image: "/eudr-preview.webp",
         href: "/work/eudr-compliance-bridge",
     },
     {
         title: "China Coast Community Website Redesign",
         description: "We redesigned a small charity’s website and donation flow to make it easier for donors to contribute and for staff to maintain content.",
-        image: "/ccc-isometric.png", // Updated to use new isometric image
+        image: "/ccc-isometric.webp",
         href: "/work",
     },
     {
         title: "WeekendSuite (In Development)",
         description: "WeekendSuite is our own product: a focused admin tool for freelancers and tiny agencies that handles the messy middle from lead to invoice.",
-        image: "/weekendsuite.png", // Updated to use new weekendsuite image
+        image: "/weekendsuite.webp",
         href: "/weekend-suite",
     },
 ];
@@ -57,6 +57,8 @@ export default function SelectedWorkSection() {
                                         alt={project.title} 
                                         fill
                                         className="object-cover"
+                                        loading="lazy"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
                                 ) : (
                                     <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-4xl">

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         template: "%s | INVARITECH",
     },
     description:
-        "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites for freelancers and agencies. Stop losing time between your tools.",
+        "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
     keywords: [
         "INVARITECH",
         "business automation",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
         "web development",
         "digital transformation",
     ],
-    authors: [{ name: "INVARITECH", url: "https://invaritech.ai" }],
+    authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
     publisher: "INVARITECH",
     formatDetection: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL("https://invaritech.ai"),
+    metadataBase: new URL("https://www.invaritech.ai"),
 
     robots: {
         index: true,
@@ -72,10 +72,10 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://invaritech.ai",
+        url: "https://www.invaritech.ai",
         title: "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
         description:
-            "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites for freelancers and agencies. Stop losing time between your tools.",
+            "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
         siteName: "INVARITECH",
         images: [
             {
