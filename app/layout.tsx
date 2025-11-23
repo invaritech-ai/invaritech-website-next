@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import { faqSchema } from "@/lib/faq-schema";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -132,6 +133,7 @@ export default function RootLayout({
                     data-key="A6OV+c4YNtaqQiY6VZk1eg"
                     async
                 ></script>
+                <GoogleAnalytics gaId="G-JJPJBB10G7" />
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
