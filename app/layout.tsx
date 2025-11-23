@@ -79,7 +79,7 @@ export const metadata: Metadata = {
         siteName: "INVARITECH",
         images: [
             {
-                url: "/logo.png",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "INVARITECH - Automation & Back-Office Systems",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
         title: "INVARITECH - Automation & Back-Office Systems",
         description:
             "Custom automation for small service businesses. Compliance bridges, data pipelines, and admin suites. Stop losing time between your tools.",
-        images: ["/logo.png"],
+        images: ["/og-image.png"],
         creator: "@invaritech",
         site: "@invaritech",
     },

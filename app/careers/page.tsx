@@ -1,6 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Briefcase, MapPin, Clock, DollarSign } from "lucide-react";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Careers - Join Our Team",
+    description:
+        "Join INVARITECH's team of automation experts. We're looking for talented engineers to help build compliance bridges, data pipelines, and custom automation solutions.",
+    openGraph: {
+        title: "Careers at INVARITECH - Build Automation Solutions",
+        description:
+            "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for small service businesses.",
+        url: "https://invaritech.ai/careers",
+    },
+};
 
 export default function CareersPage() {
     const jobs = [
