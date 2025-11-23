@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, MapPin, Clock } from "lucide-react";
+import { ArrowRight, Briefcase, MapPin, Clock, DollarSign } from "lucide-react";
 import Link from "next/link";
 
 export default function CareersPage() {
     const jobs = [
         {
-            id: "senior-full-stack-engineer",
-            title: "Senior Full Stack Engineer",
+            id: "full-stack-developer",
+            title: "Full-Stack Software Engineer",
             department: "Engineering",
             location: "Remote",
-            type: "Full-time",
+            type: "Full-time (Hourly Contract)",
+            pay: "HKD 32–39 / hr",
             description:
-                "We are looking for an experienced Full Stack Engineer to join our team and help build the next generation of digital solutions.",
+                "We are looking for an experienced Full-Stack Software Engineer to join our team and help build the next generation of digital solutions.",
         },
     ];
 
@@ -53,6 +54,10 @@ export default function CareersPage() {
                                                 <Clock className="size-4" />
                                                 {job.type}
                                             </div>
+                                            <div className="flex items-center gap-1.5">
+                                                <DollarSign className="size-4" />
+                                                {job.pay}
+                                            </div>
                                         </div>
                                         <p className="text-muted-foreground">
                                             {job.description}
@@ -60,7 +65,7 @@ export default function CareersPage() {
                                     </div>
                                     <div className="flex items-center">
                                         <Button asChild className="w-full sm:w-auto">
-                                            <Link href={`/contact?subject=Application for ${job.title}`}>
+                                            <Link href={`/careers/${job.id}`}>
                                                 Apply Now <ArrowRight className="ml-2 size-4" />
                                             </Link>
                                         </Button>

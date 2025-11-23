@@ -55,9 +55,7 @@ export const metadata: Metadata = {
         telephone: false,
     },
     metadataBase: new URL("https://invaritech.ai"),
-    alternates: {
-        canonical: "/",
-    },
+
     robots: {
         index: true,
         follow: true,

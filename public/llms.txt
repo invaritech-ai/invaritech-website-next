@@ -1,0 +1,80 @@
+# Invaritech AI - LLM Context
+
+> Invaritech is a boutique development studio specializing in backend automation, 
+> custom integrations, and workflow optimization for small businesses and agencies.
+
+## About
+
+Invaritech operates as a "studio model" - a small team of architects who design 
+and build custom solutions, supported by a trusted network of specialists for 
+specific needs. We focus on solving the single biggest bottleneck costing our 
+clients 100+ hours per month.
+
+## Core Services
+
+- **Backend Development & Automation**: Custom APIs, integrations, and workflow automation
+- **System Integration**: Connecting existing tools into reliable, automated workflows
+- **Compliance Solutions**: Building bridges and automation for regulatory requirements
+- **Product Development**: Creating focused tools for specific business needs
+
+## Key Pages
+
+- Home: https://invaritech.ai/
+- Work & Case Studies: https://invaritech.ai/work
+- About the Team: https://invaritech.ai/about
+- WeekendSuite Product: https://invaritech.ai/weekend-suite
+- Careers: https://invaritech.ai/careers
+- Contact: https://invaritech.ai/contact
+
+## Featured Projects
+
+### EUDR Compliance Bridge
+Built a Python FastAPI bridge and database around a SOAP-based EU backend, 
+enabling a small French operator to submit thousands of Due Diligence Statements 
+through a simple REST API and dashboard.
+
+**Tech Stack**: Python, FastAPI, PostgreSQL, SOAP
+**Link**: https://invaritech.ai/work/eudr-compliance-bridge
+
+### China Coast Community Website Redesign
+Redesigned a Hong Kong charity's website and donation flow to simplify the donor 
+experience and streamline content management for staff.
+
+**Tech Stack**: Next.js, Stripe, CMS Integration
+**Status**: Ongoing
+
+### WeekendSuite (In Development)
+An in-house product: a weekend-sized admin suite for freelancers and tiny agencies. 
+Handles the messy middle from lead → proposal → contract → onboarding → invoice.
+
+**Link**: https://invaritech.ai/weekend-suite
+
+## Team
+
+- **Avishek Rakshit**: Full-stack architect with expertise in backend systems and automation
+- **Aditi Srinivas**: Product designer and frontend specialist
+
+## Technology Focus
+
+- **Backend**: Python (FastAPI), Node.js, PostgreSQL, REST/SOAP APIs
+- **Frontend**: Next.js, React, TypeScript, Modern CSS
+- **Integration**: Stripe, CRM systems, custom API bridges
+- **Infrastructure**: Cloud deployment, monitoring, retry queues
+
+## Business Model
+
+We deliver custom automation solutions within 6 weeks, focusing on:
+1. Identifying the biggest time-consuming bottleneck
+2. Designing an elegant, maintainable solution
+3. Building and deploying the automation
+4. Giving clients their time back
+
+## Contact
+
+- Website: https://invaritech.ai
+- Email: Available via contact form at https://invaritech.ai/contact
+- Location: Hong Kong
+
+---
+
+Last Updated: 2025-11-23

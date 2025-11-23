@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 
 const projects = [
@@ -56,10 +57,11 @@ export default function WorkPage() {
                                 <div className="grid gap-8 md:grid-cols-2 lg:gap-12 items-start">
                                     <div className="aspect-video relative rounded-2xl overflow-hidden bg-muted border shadow-sm group">
                                         {project.image && !project.image.includes("custom-full") ? (
-                                            <img 
+                                            <Image 
                                                 src={project.image} 
                                                 alt={project.title} 
-                                                className="object-cover w-full h-full"
+                                                fill
+                                                className="object-cover"
                                             />
                                         ) : (
                                             <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-3xl">

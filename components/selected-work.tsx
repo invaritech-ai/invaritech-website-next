@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
 
@@ -51,10 +52,11 @@ export default function SelectedWorkSection() {
                         <Card key={index} className="overflow-hidden transition-all hover:shadow-lg">
                             <div className="aspect-video w-full bg-muted relative">
                                 {project.image ? (
-                                    <img 
+                                    <Image 
                                         src={project.image} 
                                         alt={project.title} 
-                                        className="object-cover w-full h-full"
+                                        fill
+                                        className="object-cover"
                                     />
                                 ) : (
                                     <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-4xl">
