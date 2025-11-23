@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, CheckCircle2, ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+
 
 export default function EudrCaseStudyPage() {
     return (
@@ -49,7 +49,7 @@ export default function EudrCaseStudyPage() {
                             <CardContent className="pt-6">
                                 <h3 className="font-semibold text-lg mb-3">No Visibility</h3>
                                 <p className="text-muted-foreground">
-                                    The EUDR portal has a list of statements, but it's hard to use at scale. It lacks good search or filtering, so finding specific records among thousands is a slow, manual process.
+                                    The EUDR portal has a list of statements, but it&apos;s hard to use at scale. It lacks good search or filtering, so finding specific records among thousands is a slow, manual process.
                                 </p>
                             </CardContent>
                         </Card>
@@ -76,7 +76,7 @@ export default function EudrCaseStudyPage() {
                             <div>
                                 <h3 className="text-2xl font-bold mb-4">A Modern API</h3>
                                 <p className="text-muted-foreground mb-4">
-                                    We replaced the complex EU interface with a clean, modern one. It allows the client's systems to send data easily.
+                                    We replaced the complex EU interface with a clean, modern one. It allows the client&apos;s systems to send data easily.
                                 </p>
                                 <ul className="space-y-2">
                                     <li className="flex items-start">
@@ -122,7 +122,7 @@ export default function EudrCaseStudyPage() {
                                     Connections can fail. Our system expects this. If a submission fails due to a network issue, it automatically tries again.
                                 </p>
                                 <p className="text-muted-foreground">
-                                    It knows the difference between a temporary glitch and a real error. This means the team doesn't have to worry about lost data or waking up at night to fix things.
+                                    It knows the difference between a temporary glitch and a real error. This means the team doesn&apos;t have to worry about lost data or waking up at night to fix things.
                                 </p>
                             </div>
                             <div className="bg-muted rounded-2xl p-8 aspect-video flex items-center justify-center text-muted-foreground">

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, ShieldCheck, FileText, Activity } from "lucide-react";
+import { ArrowRight, ShieldCheck, FileText, Activity } from "lucide-react";
 import Link from "next/link";
 
 export default function ComplianceBridgePage() {
@@ -73,7 +73,7 @@ export default function ComplianceBridgePage() {
                             </li>
                             <li className="flex gap-2 items-start">
                                 <span className="text-red-500 font-bold">×</span>
-                                <span>Fear of "digital transformation" projects that are huge, scary, and expensive.</span>
+                                <span>Fear of &quot;digital transformation&quot; projects that are huge, scary, and expensive.</span>
                             </li>
                         </ul>
                     </div>

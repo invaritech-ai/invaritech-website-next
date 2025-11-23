@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Database, Zap, Bot, ShoppingCart, ArrowRight } from "lucide-react";
+import { Database, Bot, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 

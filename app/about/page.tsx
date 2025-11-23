@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Network, PenTool, Users } from "lucide-react";
+import { ArrowRight, Network, PenTool } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
@@ -34,7 +34,7 @@ export default function AboutPage() {
                         <h2 className="text-3xl font-bold mb-6">Why We Exist</h2>
                         <div className="space-y-4 text-lg text-muted-foreground">
                             <p>
-                                The "digital transformation" industry is broken. It sells bloat, complexity, and multi-year roadmaps to companies that mostly just want to work faster, with fewer errors and less chaos.
+                                The &quot;digital transformation&quot; industry is broken. It sells bloat, complexity, and multi-year roadmaps to companies that mostly just want to work faster, with fewer errors and less chaos.
                             </p>
                             <p>
                                 We built Invaritech to prove that a small, focused team armed with the right automation tools can outmaneuver a giant corporation.
@@ -46,7 +46,7 @@ export default function AboutPage() {
                     </div>
                     <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12">
                         <blockquote className="text-xl font-medium italic mb-6">
-                            "Automation doesn&apos;t just save time. It frees human expertise from boring admin so it can be used where it actually moves the needle."
+                            &quot;Automation doesn&apos;t just save time. It frees human expertise from boring admin so it can be used where it actually moves the needle.&quot;
                         </blockquote>
                         <div className="flex items-center gap-4">
                             <Avatar>
@@ -65,7 +65,7 @@ export default function AboutPage() {
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold mb-4">How We Work: The Studio Model</h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            We reject the "body shop" agency model. No anonymous teams. No endless hand‑offs. No slideware that never ships. Instead, we operate as a high-precision studio.
+                            We reject the &quot;body shop&quot; agency model. No anonymous teams. No endless hand‑offs. No slideware that never ships. Instead, we operate as a high-precision studio.
                         </p>
                     </div>
 
@@ -85,7 +85,7 @@ export default function AboutPage() {
                             <CardContent className="pb-6 p-0 mt-6">
                                 <p className="text-muted-foreground mb-6">
                                     We (the founders) architect every solution, define the strategy, and own the outcome.
-                                    There are no "account managers" buffering communication or diluting decisions.
+                                    There are no &quot;account managers&quot; buffering communication or diluting decisions.
                                 </p>
                                 <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
                                     <li className="flex gap-3">

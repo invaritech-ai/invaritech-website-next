@@ -23,7 +23,7 @@ export default function CareersPage() {
                         Join Our Team
                     </h1>
                     <p className="text-muted-foreground text-lg sm:text-xl mb-12 max-w-2xl mx-auto">
-                        Build the future with us. We're looking for passionate individuals to help us craft precision-engineered digital solutions.
+                        Build the future with us. We&apos;re looking for passionate individuals to help us craft precision-engineered digital solutions.
                     </p>
                 </div>
 

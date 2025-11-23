@@ -110,7 +110,7 @@ export default function WeekendSuitePage() {
                                 </li>
                                 <li className="flex gap-2">
                                     <span className="text-red-500 font-bold">×</span>
-                                    <span>"My work is great, but my ops are amateur."</span>
+                                    <span>&quot;My work is great, but my ops are amateur.&quot;</span>
                                 </li>
                             </ul>
                         </div>
@@ -145,7 +145,7 @@ export default function WeekendSuitePage() {
                             {/* <h3 className="font-semibold mb-2">Why it&apos;s Killer</h3> */}
                             <h3 className="font-semibold mb-2">Why you need it?</h3>
                             <p className="text-sm text-muted-foreground">
-                                It&apos;s a "Weekend-sized" setup. You can realistically configure it in a weekend. It&apos;s a thin layer on top of your existing tools, not a heavy CRM replacement.
+                                It&apos;s a &quot;Weekend-sized&quot; setup. You can realistically configure it in a weekend. It&apos;s a thin layer on top of your existing tools, not a heavy CRM replacement.
                             </p>
                         </div>
                     </div>
