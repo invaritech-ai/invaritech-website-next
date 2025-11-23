@@ -13,12 +13,12 @@ export default function WhatWeDoSection() {
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
                         What We Do
                     </h2>
-                    <p className="mt-4">
-                        We focus on building technology that takes work off your
-                        plate and creates lasting value.
+                    <p className="mt-4 max-w-2xl mx-auto">
+                        We help small teams stop losing time in the gaps between their tools.
+                        Most of our clients already use tools like Google Workspace, HubSpot, Notion, or custom portals. We connect and automate these so work stops falling through the cracks.
                     </p>
                 </div>
-                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-3 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
                     <div className="group shadow-zinc-950/5">
                         <CardHeader className="pb-3">
                             <CardDecorator>
@@ -26,15 +26,13 @@ export default function WhatWeDoSection() {
                             </CardDecorator>
 
                             <h3 className="mt-6 font-medium">
-                                Backend Development
+                                Backend/API Automation
                             </h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
                             <p className="text-sm">
-                                We design APIs, databases, and infrastructure
-                                that are reliable, secure, and built to scale as
-                                your business grows.
+                                We build custom bridges and internal tools that connect your existing software, eliminating manual data entry and errors.
                             </p>
                         </CardContent>
                     </div>
@@ -45,14 +43,12 @@ export default function WhatWeDoSection() {
                                 <Zap className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">Automation</h3>
+                            <h3 className="mt-6 font-medium">Compliance Systems</h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
-                                We streamline repetitive tasks with smart
-                                workflows that save time, reduce mistakes, and
-                                lower costs.
+                                Lightweight reporting and compliance systems that handle complex regulations without the bloat of enterprise software.
                             </p>
                         </CardContent>
                     </div>
@@ -63,35 +59,12 @@ export default function WhatWeDoSection() {
                                 <Bot className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">AI Solutions</h3>
+                            <h3 className="mt-6 font-medium">Admin Workflows</h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
                             <p className="mt-3 text-sm">
-                                From customer-facing chatbots to autonomous
-                                workflows, we create AI-powered tools that
-                                handle complex processes and provide real
-                                business impact.
-                            </p>
-                        </CardContent>
-                    </div>
-
-                    <div className="group shadow-zinc-950/5">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <ShoppingCart className="size-6" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium">
-                                E-Commerce Stores
-                            </h3>
-                        </CardHeader>
-
-                        <CardContent className="pb-6">
-                            <p className="mt-3 text-sm">
-                                We build and optimize Shopify and custom online
-                                stores designed for performance, seamless
-                                integrations, and strong conversion rates.
+                                Streamlined flows from lead → proposal → contract → onboarding → invoice, designed specifically for your business process.
                             </p>
                         </CardContent>
                     </div>

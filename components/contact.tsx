@@ -14,6 +14,7 @@ interface FormData {
     email: string;
     phone: string;
     country: string;
+    company: string;
     message: string;
 }
 
@@ -29,6 +30,7 @@ export default function ContactSection() {
         email: "",
         phone: "",
         country: "",
+        company: "",
         message: "",
     });
 
@@ -134,6 +136,7 @@ export default function ContactSection() {
                 email: "",
                 phone: "",
                 country: "",
+                company: "",
                 message: "",
             });
         } catch (error) {
@@ -183,7 +186,7 @@ export default function ContactSection() {
         <section id="contact" className="py-32">
             <div className="mx-auto max-w-4xl px-4 lg:px-0">
                 <h2 className="mb-12 text-center text-4xl font-semibold lg:text-5xl">
-                    Let&apos;s Build Something Great Together
+                    Let&apos;s talk about automation or Weekend
                 </h2>
 
                 <div className="border p-6 sm:p-12 text-center">
@@ -263,8 +266,19 @@ export default function ContactSection() {
                                 />
                             </div>
                             <div>
+                                <Label htmlFor="company" className="space-y-2">
+                                    Company / Website
+                                </Label>
+                                <Input
+                                    type="text"
+                                    id="company"
+                                    name="company" // Note: You might need to add this to your FormData interface and state if you want to capture it
+                                    onChange={handleInputChange}
+                                />
+                            </div>
+                            <div>
                                 <Label htmlFor="message" className="space-y-2">
-                                    Message *
+                                    What would you like to automate or build? *
                                 </Label>
                                 <Textarea
                                     id="message"

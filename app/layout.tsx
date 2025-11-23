@@ -108,6 +108,11 @@ export const metadata: Metadata = {
     referrer: "origin-when-cross-origin",
 };
 
+import { HeroHeader } from "@/components/header";
+import FooterSection from "@/components/footer";
+
+// ... imports ...
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -116,6 +121,7 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
+                {/* ... scripts ... */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -144,7 +150,9 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
+                    <HeroHeader />
                     {children}
+                    <FooterSection />
                 </ThemeProvider>
             </body>
         </html>

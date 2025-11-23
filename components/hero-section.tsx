@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
-import { HeroHeader } from "./header";
+
 
 const transitionVariants = {
     hidden: {
@@ -27,7 +27,7 @@ const transitionVariants = {
 export default function HeroSection() {
     return (
         <>
-            <HeroHeader />
+
             <main className="overflow-hidden">
                 <div
                     aria-hidden
@@ -78,12 +78,19 @@ export default function HeroSection() {
                         <div className="mx-auto max-w-7xl px-3 sm:px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <TextEffect
+                                    per="char"
+                                    preset="fade-in-blur"
+                                    className="mx-auto mb-4 block w-full max-w-2xl text-balance text-sm font-medium uppercase tracking-widest text-muted-foreground md:text-base"
+                                >
+                                    Your vision, intelligently executed
+                                </TextEffect>
+                                <TextEffect
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="mx-auto mt-8 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]"
+                                    className="mx-auto mt-0 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl xl:text-[5.25rem]"
                                 >
-                                    Your Vision, Intelligently Executed
+                                    Automation & Back‑Office Systems for Small Service Businesses
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -93,20 +100,7 @@ export default function HeroSection() {
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
                                 >
-                                    Custom Backends • Automation • AI Agents •
-                                    E‑Commerce
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.7}
-                                    as="p"
-                                    className="mx-auto mt-4 max-w-full sm:max-w-2xl text-balance text-base text-muted-foreground"
-                                >
-                                    We design and build practical digital
-                                    systems that help businesses work smarter,
-                                    move faster, and grow with confidence.
+                                    Invaritech designs and builds custom automation – from compliance bridges and data pipelines to a new admin suite for freelancers and tiny agencies.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -132,9 +126,26 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base"
                                         >
-                                            <Link href="#contact">
+                                            <Link href="/contact">
                                                 <span className="text-nowrap">
-                                                    Start Your Project Today
+                                                    Talk about an automation project
+                                                </span>
+                                            </Link>
+                                        </Button>
+                                    </div>
+                                    <div
+                                        key={2}
+                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
+                                    >
+                                        <Button
+                                            asChild
+                                            size="lg"
+                                            variant="outline"
+                                            className="rounded-xl px-5 text-base"
+                                        >
+                                            <Link href="/work">
+                                                <span className="text-nowrap">
+                                                    See our work
                                                 </span>
                                             </Link>
                                         </Button>
