@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Network, PenTool } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +13,7 @@ export default function AboutPage() {
             <div className="mx-auto max-w-5xl px-6">
                 {/* Hero */}
                 <div className="text-center mb-24">
-                    <div className="inline-block rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary dark:text-white mb-6">
+                    <div className="inline-block rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground mb-6">
                         Our Philosophy
                     </div>
                     <h1 className="text-4xl font-bold md:text-6xl mb-6">
@@ -49,7 +50,8 @@ export default function AboutPage() {
                             &quot;Automation doesn&apos;t just save time. It frees human expertise from boring admin so it can be used where it actually moves the needle.&quot;
                         </blockquote>
                         <div className="flex items-center gap-4">
-                            <Avatar>
+                            <Avatar className="h-16 w-16">
+                                <AvatarImage src="/aditi.png" alt="Aditi Garg" className="object-cover object-top" />
                                 <AvatarFallback className="text-primary bg-primary-foreground">AG</AvatarFallback>
                             </Avatar>
                             <div>
@@ -152,10 +154,14 @@ export default function AboutPage() {
                         {/* Aditi Card */}
                         <Card className="overflow-hidden bg-transparent border-none shadow-none">
                             <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
-                                {/* Placeholder for Image */}
-                                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                                    Aditi Garg
-                                </div>
+                                <Image
+                                    src="/aditi.png"
+                                    alt="Aditi Garg - Director & Founder"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
                             <CardContent className="p-0">
                                 <h3 className="text-2xl font-bold mb-1">Aditi Garg</h3>
@@ -169,10 +175,14 @@ export default function AboutPage() {
                         {/* Avishek Card */}
                         <Card className="overflow-hidden bg-transparent border-none shadow-none">
                             <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
-                                {/* Placeholder for Image */}
-                                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-                                    Avishek Majumder
-                                </div>
+                                <Image
+                                    src="/avishek.png"
+                                    alt="Avishek Majumder - CEO & Co-founder"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
                             <CardContent className="p-0">
                                 <h3 className="text-2xl font-bold mb-1">Avishek Majumder</h3>

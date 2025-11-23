@@ -7,19 +7,19 @@ const selectedProjects = [
     {
         title: "EUDR Compliance Bridge",
         description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of Due Diligence Statements.",
-        image: "/work/eudr-preview.jpg", // Placeholder image path
+        image: "/eudr-preview.png", // Updated to use new preview image
         href: "/work#eudr",
     },
     {
-        title: "Charity Donation Refresh",
+        title: "China Coast Community Website Redesign",
         description: "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content.",
-        image: "/work/charity-preview.jpg", // Placeholder image path
+        image: "/ccc-isometric.png", // Updated to use new isometric image
         href: "/work#charity",
     },
     {
         title: "WeekendSuite (In Development)",
         description: "WeekendSuite is our own product: a focused admin tool for freelancers and tiny agencies that handles the messy middle from lead to invoice.",
-        image: "/work/weekend-preview.jpg", // Placeholder image path
+        image: "/weekendsuite.png", // Updated to use new weekendsuite image
         href: "/weekend-suite",
     },
 ];
@@ -50,10 +50,17 @@ export default function SelectedWorkSection() {
                     {selectedProjects.map((project, index) => (
                         <Card key={index} className="overflow-hidden transition-all hover:shadow-lg">
                             <div className="aspect-video w-full bg-muted relative">
-                                {/* Placeholder for actual images */}
-                                <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-4xl">
-                                    {project.title[0]}
-                                </div>
+                                {project.image ? (
+                                    <img 
+                                        src={project.image} 
+                                        alt={project.title} 
+                                        className="object-cover w-full h-full"
+                                    />
+                                ) : (
+                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-4xl">
+                                        {project.title[0]}
+                                    </div>
+                                )}
                             </div>
                             <CardHeader>
                                 <CardTitle>{project.title}</CardTitle>

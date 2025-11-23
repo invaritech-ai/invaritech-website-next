@@ -57,7 +57,7 @@ export default function ComplianceBridgePage() {
                         </ul>
                     </div>
                     <div className="bg-muted/30 rounded-2xl p-8 border border-border/50">
-                        <h3 className="text-xl font-semibold mb-4">The Current Reality (Miseries)</h3>
+                        <h3 className="text-xl font-semibold mb-4">The Current Reality</h3>
                         <ul className="space-y-3 text-muted-foreground">
                             <li className="flex gap-2 items-start">
                                 <span className="text-red-500 font-bold">×</span>
@@ -124,7 +124,7 @@ export default function ComplianceBridgePage() {
 
                 {/* Outcomes */}
                 <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-8">Desired Outcomes (Miracles)</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-8">Desired Outcomes</h2>
                     <div className="grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto">
                         <div className="flex gap-4">
                             <div className="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold flex-none">1</div>

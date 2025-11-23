@@ -11,7 +11,7 @@ const projects = [
         category: "Automation & Compliance",
         description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of EUDR Due Diligence Statements through a simple REST API and dashboard. Includes a retry queue and monitoring.",
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
-        image: "/work/eudr-full.jpg", // Placeholder
+        image: "/eudr-preview.png", // Updated to use new preview image
         link: "/work/eudr-compliance-bridge",
     },
     {
@@ -20,7 +20,7 @@ const projects = [
         category: "Web & Automation",
         description: "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content. The new flow is simpler, faster, and connects directly to their CRM.",
         tags: ["Next.js", "Stripe", "CMS Integration"],
-        image: "/work/charity-full.jpg", // Placeholder
+        image: "/ccc-isometric.png", // Updated to use new isometric image
         link: "#", // Placeholder for external link
         ongoing: true,
     },
@@ -55,10 +55,17 @@ export default function WorkPage() {
                             <Card className="overflow-hidden border-none shadow-none bg-transparent">
                                 <div className="grid gap-8 md:grid-cols-2 lg:gap-12 items-start">
                                     <div className="aspect-video relative rounded-2xl overflow-hidden bg-muted border shadow-sm group">
-                                        {/* Placeholder for project image */}
-                                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-3xl">
-                                            {project.title}
-                                        </div>
+                                        {project.image && !project.image.includes("custom-full") ? (
+                                            <img 
+                                                src={project.image} 
+                                                alt={project.title} 
+                                                className="object-cover w-full h-full"
+                                            />
+                                        ) : (
+                                            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-3xl">
+                                                {project.title}
+                                            </div>
+                                        )}
                                         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
                                     </div>
                                     
