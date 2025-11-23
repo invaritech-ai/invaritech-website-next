@@ -1,6 +1,6 @@
 export const seoConfig = {
     siteName: "INVARITECH",
-    siteUrl: "https://invaritech.ai",
+    siteUrl: "https://www.invaritech.ai",
     defaultTitle:
         "INVARITECH - Premium Digital Solutions & AI-Powered Development",
     titleTemplate: "%s | INVARITECH - Premium Digital Solutions",
