@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         url: "https://invaritech.ai/contact",
     },
     alternates: {
-        canonical: "https://invaritech.ai/contact",
+        canonical: "https://www.invaritech.ai/contact",
     },
 };
 

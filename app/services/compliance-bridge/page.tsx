@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         url: "https://invaritech.ai/services/compliance-bridge",
     },
     alternates: {
-        canonical: "https://invaritech.ai/services/compliance-bridge",
+        canonical: "https://www.invaritech.ai/services/compliance-bridge",
     },
 };
 

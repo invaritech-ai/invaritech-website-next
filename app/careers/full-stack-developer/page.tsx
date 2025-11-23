@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: "https://invaritech.ai/careers/full-stack-developer",
     },
     alternates: {
-        canonical: "https://invaritech.ai/careers/full-stack-developer",
+        canonical: "https://www.invaritech.ai/careers/full-stack-developer",
     },
 };
 

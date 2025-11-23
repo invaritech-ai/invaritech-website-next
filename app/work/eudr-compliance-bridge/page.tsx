@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         url: "https://invaritech.ai/work/eudr-compliance-bridge",
     },
     alternates: {
-        canonical: "https://invaritech.ai/work/eudr-compliance-bridge",
+        canonical: "https://www.invaritech.ai/work/eudr-compliance-bridge",
     },
 };
 

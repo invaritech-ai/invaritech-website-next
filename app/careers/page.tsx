@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         url: "https://invaritech.ai/careers",
     },
     alternates: {
-        canonical: "https://invaritech.ai/careers",
+        canonical: "https://www.invaritech.ai/careers",
     },
 };
 
