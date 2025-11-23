@@ -28,8 +28,8 @@ export default function WeekendSuitePage() {
         setIsSubmitting(true);
 
         try {
-            // Using the existing contact API for now
-            const response = await fetch("/api/contact", {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+            const response = await fetch(`${apiUrl}/api/weekend-waitlist`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
