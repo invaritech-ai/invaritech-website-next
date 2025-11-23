@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Database, Zap, Bot, ShoppingCart } from "lucide-react";
+import { Database, Zap, Bot, ShoppingCart, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export default function WhatWeDoSection() {
@@ -18,56 +19,48 @@ export default function WhatWeDoSection() {
                         Most of our clients already use tools like Google Workspace, HubSpot, Notion, or custom portals. We connect and automate these so work stops falling through the cracks.
                     </p>
                 </div>
-                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-3 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-                    <div className="group shadow-zinc-950/5">
+                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+                    <Link href="/services/compliance-bridge" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Database className="size-6" aria-hidden />
                             </CardDecorator>
 
                             <h3 className="mt-6 font-medium">
-                                Backend/API Automation
+                                For Regulated Service Firms
                             </h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
-                            <p className="text-sm">
-                                We build custom bridges and internal tools that connect your existing software, eliminating manual data entry and errors.
+                            <h4 className="font-bold text-lg mb-2">Compliance Workflow Bridge</h4>
+                            <p className="text-sm text-muted-foreground">
+                                We turn your most painful compliance/reporting workflow into one auditable, automated pipeline in 6 weeks.
                             </p>
+                            <div className="mt-4 text-primary text-sm font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                                Learn more <ArrowRight className="size-4" />
+                            </div>
                         </CardContent>
-                    </div>
+                    </Link>
 
-                    <div className="group shadow-zinc-950/5">
+                    <Link href="/weekend" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Zap className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">Compliance Systems</h3>
+                            <h3 className="mt-6 font-medium">For Freelancers & Agencies</h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
-                            <p className="mt-3 text-sm">
-                                Lightweight reporting and compliance systems that handle complex regulations without the bloat of enterprise software.
+                            <h4 className="font-bold text-lg mb-2">Weekend</h4>
+                            <p className="mt-3 text-sm text-muted-foreground">
+                                A simple admin suite to turn every lead into a signed project in a weekend. Proposals, contracts, and invoices in one flow.
                             </p>
+                            <div className="mt-4 text-primary text-sm font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                                Join Waitlist <ArrowRight className="size-4" />
+                            </div>
                         </CardContent>
-                    </div>
-
-                    <div className="group shadow-zinc-950/5">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Bot className="size-6" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium">Admin Workflows</h3>
-                        </CardHeader>
-
-                        <CardContent className="pb-6">
-                            <p className="mt-3 text-sm">
-                                Streamlined flows from lead → proposal → contract → onboarding → invoice, designed specifically for your business process.
-                            </p>
-                        </CardContent>
-                    </div>
+                    </Link>
                 </Card>
             </div>
         </section>

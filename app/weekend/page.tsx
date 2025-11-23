@@ -58,13 +58,13 @@ export default function WeekendPage() {
                         In Development • Join the Waitlist
                     </div>
                     <h1 className="text-4xl font-bold md:text-6xl mb-6">
-                        Weekend
+                        Every Lead to Signed Project in a Weekend
                     </h1>
                     <p className="text-xl md:text-2xl font-medium text-foreground/80 mb-6">
-                        A Simple Admin Suite for Freelancers & Tiny Agencies
+                        Weekend turns every new inquiry into a same‑day proposal, signed contract, and first invoice.
                     </p>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Weekend is a focused admin tool that handles the messy middle from lead → proposal → contract → onboarding → invoice, on top of the tools you already use.
+                        A simple admin suite for freelancers & tiny agencies to set up a professional client flow in a single weekend.
                     </p>
                 </div>
 
@@ -76,49 +76,75 @@ export default function WeekendPage() {
                             <ul className="space-y-3">
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Freelancers juggling multiple clients</span>
+                                    <span>Solo freelancers & 1–3 person agencies</span>
                                 </li>
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Tiny agencies (1-5 people)</span>
+                                    <span>Designers, Devs, Marketers, Consultants</span>
                                 </li>
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Consultants who hate admin work</span>
+                                    <span>Handling 5–30 inquiries/month ($1k+ projects)</span>
+                                </li>
+                                <li className="flex gap-3">
+                                    <CheckCircle2 className="size-5 text-primary flex-none" />
+                                    <span>Using email, Google Docs, Notion, but feeling chaotic</span>
                                 </li>
                             </ul>
                         </div>
 
                         <div>
-                            <h3 className="text-xl font-semibold mb-4">What it does</h3>
+                            <h3 className="text-xl font-semibold mb-4">The Pain (Miseries)</h3>
+                            <ul className="space-y-3 text-muted-foreground">
+                                <li className="flex gap-2">
+                                    <span className="text-red-500 font-bold">×</span>
+                                    <span>Leads scattered across inbox, forms, and DMs.</span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-red-500 font-bold">×</span>
+                                    <span>Proposals reinvented every time, often sent days late.</span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-red-500 font-bold">×</span>
+                                    <span>Invoices sent late or forgotten; lumpy cash flow.</span>
+                                </li>
+                                <li className="flex gap-2">
+                                    <span className="text-red-500 font-bold">×</span>
+                                    <span>"My work is great, but my ops are amateur."</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-xl font-semibold mb-4">What Weekend Does</h3>
                             <ul className="space-y-3">
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Unified lead forms & pipeline</span>
+                                    <span><strong>Lead Capture:</strong> Hosted forms that instantly create a Lead.</span>
                                 </li>
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>AI-generated proposals & contracts</span>
+                                    <span><strong>AI Proposals:</strong> Auto-draft from inquiry into a structured proposal.</span>
                                 </li>
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Automated client onboarding flows</span>
+                                    <span><strong>Contracts:</strong> One click to a simple agreement with e-signature.</span>
                                 </li>
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Simple invoicing & payment tracking</span>
+                                    <span><strong>Onboarding:</strong> Predefined welcome sequence & task lists.</span>
                                 </li>
                                 <li className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary flex-none" />
-                                    <span>Integrates with your existing tools</span>
+                                    <span><strong>Invoices:</strong> Straightforward project-tied invoices & tracking.</span>
                                 </li>
                             </ul>
                         </div>
 
                         <div className="rounded-xl bg-muted/50 p-6 border border-border/50">
-                            <h3 className="font-semibold mb-2">Pilot Program</h3>
+                            <h3 className="font-semibold mb-2">Why it&apos;s Killer</h3>
                             <p className="text-sm text-muted-foreground">
-                                We&apos;re building Weekend with a small group of early users. Join the waitlist to get early access, shape the product, and lock in a future discount.
+                                It&apos;s a "Weekend-sized" setup. You can realistically configure it in a weekend. It&apos;s a thin layer on top of your existing tools, not a heavy CRM replacement.
                             </p>
                         </div>
                     </div>
