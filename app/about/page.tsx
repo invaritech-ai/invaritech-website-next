@@ -115,7 +115,7 @@ export default function AboutPage() {
                         </h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
                             We reject the &quot;body shop&quot; agency model. No
-                            anonymous teams. No endless hand‑offs. No slideware
+                            anonymous teams. No endless hand-offs. No slideware
                             that never ships. Instead, we operate as a
                             high-precision studio.
                         </p>
@@ -147,7 +147,7 @@ export default function AboutPage() {
                                 <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
                                     <li className="flex gap-3">
                                         <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                        We map your real‑world processes and
+                                        We map your real-world processes and
                                         constraints
                                     </li>
                                     <li className="flex gap-3">
@@ -184,8 +184,8 @@ export default function AboutPage() {
                                 <p className="text-muted-foreground mb-6">
                                     Developers, designers, and compliance
                                     experts we’ve vetted over years of projects.
-                                    You get big‑firm capability, without
-                                    big‑firm overhead:
+                                    You get big-firm capability, without
+                                    big-firm overhead:
                                 </p>
                                 <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
                                     <li className="flex gap-3">
@@ -198,7 +198,7 @@ export default function AboutPage() {
                                     </li>
                                     <li className="flex gap-3">
                                         <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                        Clear, accountable ownership end‑to‑end
+                                        Clear, accountable ownership end-to-end
                                     </li>
                                 </ul>
                             </CardContent>
@@ -242,7 +242,7 @@ export default function AboutPage() {
                                     Central Support at Trilogy Ltd and Director
                                     at Invaritech, she specialises in turning
                                     messy support operations into measurable,
-                                    automated, high‑NPS experiences.
+                                    automated, high-NPS experiences.
                                 </p>
                             </CardContent>
                         </Card>
@@ -269,11 +269,11 @@ export default function AboutPage() {
                                 <p className="text-muted-foreground leading-relaxed">
                                     Avishek is a data engineer and scientist who
                                     has spent his career building and deploying
-                                    predictive systems in regulated, high‑stakes
+                                    predictive systems in regulated, high-stakes
                                     environments across energy and finance. At
                                     Invaritech, he designs the automation
                                     architectures that let lean teams operate
-                                    with enterprise‑grade reliability.
+                                    with enterprise-grade reliability.
                                 </p>
                             </CardContent>
                         </Card>
@@ -285,7 +285,7 @@ export default function AboutPage() {
                     <h2 className="text-3xl font-bold mb-6">Ready to Build?</h2>
                     <p className="text-lg text-muted-foreground mb-6">
                         If you’re a regulated firm or independent expert who’s
-                        outgrown spreadsheets, manual checklists, and duct‑taped
+                        outgrown spreadsheets, manual checklists, and duct-taped
                         tools, we should talk.
                     </p>
                     <p className="text-lg font-medium text-foreground mb-8">

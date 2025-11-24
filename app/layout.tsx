@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         "small business software",
         "process automation",
         "compliance bridge",
-        "weekend suite",
+        "weekendsuite",
         "backend development",
         "AI automation",
         "custom software",

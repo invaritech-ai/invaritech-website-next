@@ -25,8 +25,11 @@ const projects = [
         id: "eudr",
         title: "EUDR Compliance Bridge",
         category: "Automation & Compliance",
-        description:
-            "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of EUDR Due Diligence Statements through a simple REST API and dashboard. Includes a retry queue and monitoring.",
+        description: (
+            <>
+                We built a <strong>Python FastAPI bridge and database</strong> around a SOAP-based EU backend so a <strong>small French operator</strong> could <strong>submit thousands of EUDR Due Diligence Statements</strong> through a simple <strong>REST API and dashboard</strong>. Includes a retry queue and monitoring.
+            </>
+        ),
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
         image: "/eudr-preview.webp",
         link: "/work/eudr-compliance-bridge",
@@ -35,8 +38,11 @@ const projects = [
         id: "charity",
         title: "China Coast Community Website Redesign",
         category: "Web & Automation",
-        description:
-            "We redesigned a small charity’s website and donation flow to make it easier for donors to give and for staff to maintain content. The new flow is simpler, faster, and connects directly to their CRM.",
+        description: (
+            <>
+                We redesigned a <strong>small charity's website and donation flow</strong> to make it <strong>easier for donors to give and for staff to maintain content</strong>. The new flow is <strong>simpler, faster, and connects directly to their CRM</strong>.
+            </>
+        ),
         tags: ["Next.js", "Stripe", "CMS Integration"],
         image: "/ccc-isometric.webp",
         link: "#", // Placeholder for external link

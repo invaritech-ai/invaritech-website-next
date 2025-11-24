@@ -61,7 +61,7 @@ export default function WeekendSuitePage() {
                         Every Lead to Signed Project in a Weekend
                     </h1>
                     <p className="text-xl md:text-2xl font-medium text-foreground/80 mb-6">
-                        WeekendSuite turns every new inquiry into a same‑day proposal, signed contract, and first invoice.
+                        WeekendSuite turns every new inquiry into a same-day proposal, signed contract, and first invoice.
                     </p>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                         A simple admin suite for freelancers & tiny agencies to set up a professional client flow in a single weekend.

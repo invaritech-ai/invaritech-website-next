@@ -111,7 +111,7 @@ export const structuredData = {
         },
         {
             "@type": "Service",
-            name: "Weekend Suite",
+            name: "WeekendSuite",
             description:
                 "A simple admin suite for freelancers and tiny agencies. Turns every new inquiry into a same-day proposal, signed contract, and first invoice. Set up a professional client flow in a single weekend.",
             provider: {

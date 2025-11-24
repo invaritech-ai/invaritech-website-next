@@ -186,7 +186,7 @@ export default function ContactSection() {
         <section id="contact" className="py-32">
             <div className="mx-auto max-w-4xl px-4 lg:px-0">
                 <h2 className="mb-12 text-center text-4xl font-semibold lg:text-5xl">
-                    Let&apos;s talk about automation or Weekend
+                    Let&apos;s talk about automation or WeekendSuite
                 </h2>
 
                 <div className="border p-6 sm:p-12 text-center">

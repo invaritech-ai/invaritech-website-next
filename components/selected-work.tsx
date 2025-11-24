@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 const selectedProjects = [
     {
         title: "EUDR Compliance Bridge",
-        description: "We built a Python FastAPI bridge and database around a SOAP‑based EU backend so a small French operator could submit thousands of Due Diligence Statements in minutes.",
+        description: "We built a Python FastAPI bridge and database around a SOAP-based EU backend so a small French operator could submit thousands of Due Diligence Statements in minutes.",
         image: "/eudr-preview.webp",
         href: "/work/eudr-compliance-bridge",
     },

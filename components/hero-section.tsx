@@ -5,7 +5,6 @@ import Image from "next/image";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 
-
 const transitionVariants = {
     hidden: {
         opacity: 0,
@@ -27,7 +26,6 @@ const transitionVariants = {
 export default function HeroSection() {
     return (
         <>
-
             <div className="overflow-hidden">
                 <div
                     aria-hidden
@@ -80,6 +78,7 @@ export default function HeroSection() {
                                 <TextEffect
                                     per="char"
                                     preset="fade-in-blur"
+                                    as="p"
                                     className="mx-auto mb-4 block w-full max-w-2xl text-balance text-sm font-medium uppercase tracking-widest text-muted-foreground md:text-base"
                                 >
                                     Your vision, intelligently executed
@@ -90,7 +89,8 @@ export default function HeroSection() {
                                     as="h1"
                                     className="mx-auto mt-0 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl xl:text-[5.25rem]"
                                 >
-                                    Automation & Back‑Office Systems for Small Service Businesses
+                                    Automation & Back-Office Systems for Small
+                                    Service Businesses
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -100,7 +100,10 @@ export default function HeroSection() {
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
                                 >
-                                    Invaritech designs and builds custom automation – from compliance bridges and data pipelines to a new admin suite for freelancers and tiny agencies.
+                                    Invaritech designs and builds custom
+                                    automation – from compliance bridges and
+                                    data pipelines to a new admin suite for
+                                    freelancers and tiny agencies.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -128,7 +131,8 @@ export default function HeroSection() {
                                         >
                                             <Link href="/contact">
                                                 <span className="text-nowrap">
-                                                    Talk about an automation project
+                                                    Talk about an automation
+                                                    project
                                                 </span>
                                             </Link>
                                         </Button>

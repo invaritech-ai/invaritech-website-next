@@ -52,7 +52,7 @@ export default function WhatWeDoSection() {
                         </CardHeader>
 
                         <CardContent className="pb-6">
-                            <h4 className="font-bold text-lg mb-2">Weekend Suite</h4>
+                            <h4 className="font-bold text-lg mb-2">WeekendSuite</h4>
                             <p className="mt-3 text-sm text-muted-foreground">
                                 A simple admin suite to turn every lead into a signed project in a weekend. Proposals, contracts, and invoices in one flow.
                             </p>

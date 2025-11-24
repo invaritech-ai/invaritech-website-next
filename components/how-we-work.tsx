@@ -7,7 +7,7 @@ const steps = [
     },
     {
         title: "Small, scoped build (4–8 weeks)",
-        description: "We design and build a concrete automation bridge or tool. No big‑bang platform projects.",
+        description: "We design and build a concrete automation bridge or tool. No big-bang platform projects.",
     },
     {
         title: "Iterate",

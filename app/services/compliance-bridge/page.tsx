@@ -108,7 +108,7 @@ export default function ComplianceBridgePage() {
                                     ×
                                 </span>
                                 <span>
-                                    Staff re‑keying data between email, Excel,
+                                    Staff re-keying data between email, Excel,
                                     CRMs, and portals.
                                 </span>
                             </li>
@@ -118,7 +118,7 @@ export default function ComplianceBridgePage() {
                                 </span>
                                 <span>
                                     High risk of missed deadlines, wrong
-                                    submissions, and non‑compliance.
+                                    submissions, and non-compliance.
                                 </span>
                             </li>
                             <li className="flex gap-2 items-start">
@@ -151,7 +151,7 @@ export default function ComplianceBridgePage() {
                             The Solution: A Bridge, Not a Rebuild
                         </h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            We replace manual, error‑prone, multi‑tool chaos
+                            We replace manual, error-prone, multi-tool chaos
                             with a single, reliable flow from intake to audit
                             log.
                         </p>
@@ -176,7 +176,7 @@ export default function ComplianceBridgePage() {
                             </CardHeader>
                             <CardContent>
                                 <p className="text-sm text-muted-foreground">
-                                    A production‑grade system connecting your
+                                    A production-grade system connecting your
                                     intake source, internal tools (CRM/Sheets),
                                     and regulator portals.
                                 </p>
@@ -188,7 +188,7 @@ export default function ComplianceBridgePage() {
                             </CardHeader>
                             <CardContent>
                                 <p className="text-sm text-muted-foreground">
-                                    A simple internal UI to view all in‑flight
+                                    A simple internal UI to view all in-flight
                                     filings, status, and logs—giving you total
                                     visibility.
                                 </p>
