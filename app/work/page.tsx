@@ -13,10 +13,10 @@ export const metadata: Metadata = {
         title: "Our Work - Automation Projects & Case Studies",
         description:
             "Compliance bridges, data pipelines, and custom automation. See how we help small service businesses stop losing time between their tools.",
-        url: "https://www.invaritech.ai/work",
+        url: "https://www.invaritech.ai/work/",
     },
     alternates: {
-        canonical: "https://www.invaritech.ai/work",
+        canonical: "https://www.invaritech.ai/work/",
     },
 };
 

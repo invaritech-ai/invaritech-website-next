@@ -122,8 +122,14 @@ export const generateMetadata = (pageData?: {
     const description = pageData?.description || seoConfig.defaultDescription;
     const keywords = pageData?.keywords || seoConfig.keywords.primary;
     const image = pageData?.image || "/logo.png";
-    const url = pageData?.url || seoConfig.siteUrl;
+    let url = pageData?.url || seoConfig.siteUrl;
     const type = pageData?.type || "website";
+
+    // Add trailing slash to URLs except home page
+    // Home page is exactly the siteUrl, all others should have trailing slash
+    if (url !== seoConfig.siteUrl && !url.endsWith("/")) {
+        url = `${url}/`;
+    }
 
     return {
         title,

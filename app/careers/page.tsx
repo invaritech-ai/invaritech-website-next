@@ -11,10 +11,10 @@ export const metadata: Metadata = {
         title: "Careers at INVARITECH - Build Automation Solutions",
         description:
             "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for small service businesses.",
-        url: "https://www.invaritech.ai/careers",
+        url: "https://www.invaritech.ai/careers/",
     },
     alternates: {
-        canonical: "https://www.invaritech.ai/careers",
+        canonical: "https://www.invaritech.ai/careers/",
     },
 };
 

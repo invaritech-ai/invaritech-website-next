@@ -24,10 +24,10 @@ export const metadata: Metadata = {
         title: "Full-Stack Software Engineer - Careers",
         description:
             "Join INVARITECH as a Full-Stack Software Engineer. Remote position, hourly contract.",
-        url: "https://www.invaritech.ai/careers/full-stack-developer",
+        url: "https://www.invaritech.ai/careers/full-stack-developer/",
     },
     alternates: {
-        canonical: "https://www.invaritech.ai/careers/full-stack-developer",
+        canonical: "https://www.invaritech.ai/careers/full-stack-developer/",
     },
 };
 
