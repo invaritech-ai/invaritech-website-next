@@ -40,7 +40,7 @@ const projects = [
         category: "Web & Automation",
         description: (
             <>
-                We redesigned a <strong>small charity's website and donation flow</strong> to make it <strong>easier for donors to give and for staff to maintain content</strong>. The new flow is <strong>simpler, faster, and connects directly to their CRM</strong>.
+                We redesigned a <strong>small charity&apos;s website and donation flow</strong> to make it <strong>easier for donors to give and for staff to maintain content</strong>. The new flow is <strong>simpler, faster, and connects directly to their CRM</strong>.
             </>
         ),
         tags: ["Next.js", "Stripe", "CMS Integration"],
