@@ -138,6 +138,13 @@ export default function RootLayout({
                     async
                 ></script>
                 <GoogleAnalytics gaId="G-JJPJBB10G7" />
+                <script
+                    id="vtag-ai-js"
+                    async
+                    src="https://r2.leadsy.ai/tag.js"
+                    data-pid="1rQPfvIzStzrxlsWj"
+                    data-version="062024"
+                ></script>
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
