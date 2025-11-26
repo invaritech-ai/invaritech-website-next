@@ -297,7 +297,7 @@ export default function AboutPage() {
                         size="lg"
                         className="rounded-xl px-8 text-base"
                     >
-                        <Link href="/contact">
+                        <Link href="/contact/">
                             Work with us <ArrowRight className="ml-2 size-4" />
                         </Link>
                     </Button>

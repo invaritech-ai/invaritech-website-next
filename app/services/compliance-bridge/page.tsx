@@ -44,7 +44,7 @@ export default function ComplianceBridgePage() {
                         size="lg"
                         className="rounded-xl px-8 text-base"
                     >
-                        <Link href="/contact">
+                        <Link href="/contact/">
                             Book a Consultation{" "}
                             <ArrowRight className="ml-2 size-4" />
                         </Link>

@@ -174,7 +174,7 @@ export default function WorkPage() {
                                     middle from lead → proposal → contract →
                                     onboarding → invoice.
                                 </p>
-                                <ButtonLink href="/weekend-suite">
+                                <ButtonLink href="/weekend-suite/">
                                     Learn more & join the waitlist{" "}
                                     <ArrowRight className="ml-2 size-4" />
                                 </ButtonLink>

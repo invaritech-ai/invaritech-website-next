@@ -38,7 +38,7 @@ export default function FullStackDeveloperPage() {
             <section className="container mx-auto px-6 mb-16">
                 <div className="mx-auto max-w-4xl">
                     <Link
-                        href="/careers"
+                        href="/careers/"
                         className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-8 transition-colors"
                     >
                         <ArrowRight className="mr-2 size-4 rotate-180" />

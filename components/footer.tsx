@@ -8,19 +8,19 @@ const links = [
     },
     {
         title: "About",
-        href: "/about",
+        href: "/about/",
     },
     {
         title: "Work",
-        href: "/work",
+        href: "/work/",
     },
     {
         title: "Careers",
-        href: "/careers",
+        href: "/careers/",
     },
     {
         title: "Contact",
-        href: "/contact",
+        href: "/contact/",
     },
 ];
 

@@ -1,5 +1,21 @@
-import ContactSection from "@/components/contact";
+import dynamic from "next/dynamic";
 import { Metadata } from "next";
+
+// Lazy load ContactSection to defer reCAPTCHA loading until contact page is visited
+const ContactSection = dynamic(() => import("@/components/contact"), {
+    loading: () => (
+        <section className="py-32">
+            <div className="mx-auto max-w-4xl px-4 lg:px-0">
+                <div className="border p-6 sm:p-12 text-center">
+                    <div className="animate-pulse">
+                        <div className="h-8 bg-muted rounded w-48 mx-auto mb-4"></div>
+                        <div className="h-4 bg-muted rounded w-64 mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    ),
+});
 
 export const metadata: Metadata = {
     title: "Contact - Let's Talk Automation",

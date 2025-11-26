@@ -28,7 +28,7 @@ export default function EudrCaseStudyPage() {
                 {/* Back Link */}
                 <div className="mb-12">
                     <Link
-                        href="/work"
+                        href="/work/"
                         className="inline-flex items-center text-muted-foreground hover:text-foreground transition-colors"
                     >
                         <ArrowLeft className="mr-2 size-4" />
@@ -289,7 +289,7 @@ export default function EudrCaseStudyPage() {
                             build a solution for you. We handle the complex
                             technical parts so you can focus on your business.
                         </p>
-                        <Link href="/contact">
+                        <Link href="/contact/">
                             <Button size="lg" className="rounded-full px-8">
                                 Get in Touch{" "}
                                 <ArrowRight className="ml-2 size-4" />

@@ -20,7 +20,7 @@ export default function WhatWeDoSection() {
                     </p>
                 </div>
                 <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
-                    <Link href="/services/compliance-bridge" className="group shadow-zinc-950/5 cursor-pointer block h-full">
+                    <Link href="/services/compliance-bridge/" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Database className="size-6" aria-hidden />
@@ -42,7 +42,7 @@ export default function WhatWeDoSection() {
                         </CardContent>
                     </Link>
 
-                    <Link href="/weekend-suite" className="group shadow-zinc-950/5 cursor-pointer block h-full">
+                    <Link href="/weekend-suite/" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Bot className="size-6" aria-hidden />

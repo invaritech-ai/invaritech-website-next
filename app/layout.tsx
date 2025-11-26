@@ -3,17 +3,22 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import { faqSchema } from "@/lib/faq-schema";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
+    display: "swap",
+    preload: true,
+    fallback: ["system-ui", "arial"],
 });
 
 const geistMono = Geist_Mono({
     variable: "--font-geist-mono",
     subsets: ["latin"],
+    display: "swap",
+    fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {
@@ -119,7 +124,15 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
-                {/* ... scripts ... */}
+                {/* Resource hints for external domains */}
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link rel="preconnect" href="https://www.google.com" />
+                <link rel="preconnect" href="https://www.googletagmanager.com" />
+                <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+                <link rel="dns-prefetch" href="https://r2.leadsy.ai" />
+                
+                {/* Structured data - inline scripts are fine, they don't block */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -132,19 +145,6 @@ export default function RootLayout({
                         __html: JSON.stringify(faqSchema),
                     }}
                 />
-                <script
-                    src="https://analytics.ahrefs.com/analytics.js"
-                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
-                    async
-                ></script>
-                <GoogleAnalytics gaId="G-JJPJBB10G7" />
-                <script
-                    id="vtag-ai-js"
-                    async
-                    src="https://r2.leadsy.ai/tag.js"
-                    data-pid="1rQPfvIzStzrxlsWj"
-                    data-version="062024"
-                ></script>
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -159,6 +159,34 @@ export default function RootLayout({
                     {children}
                     <FooterSection />
                 </ThemeProvider>
+                
+                {/* Third-party scripts with optimized loading strategies */}
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-JJPJBB10G7"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-JJPJBB10G7');
+                    `}
+                </Script>
+                
+                <Script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
+                    strategy="lazyOnload"
+                />
+                
+                <Script
+                    id="vtag-ai-js"
+                    src="https://r2.leadsy.ai/tag.js"
+                    data-pid="1rQPfvIzStzrxlsWj"
+                    data-version="062024"
+                    strategy="lazyOnload"
+                />
             </body>
         </html>
     );

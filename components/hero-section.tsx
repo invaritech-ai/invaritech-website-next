@@ -60,11 +60,12 @@ export default function HeroSection() {
                             className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32"
                         >
                             <Image
-                                src="/hero-bg.jpg"
+                                src="/hero-bg.webp"
                                 alt="INVARITECH digital solutions background"
                                 className="size-full object-cover object-top invert dark:invert-0"
                                 fill
                                 sizes="100vw"
+                                priority
                             />
                         </AnimatedGroup>
 
@@ -129,7 +130,7 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base"
                                         >
-                                            <Link href="/contact">
+                                            <Link href="/contact/">
                                                 <span className="text-nowrap">
                                                     Talk about an automation
                                                     project
@@ -147,7 +148,7 @@ export default function HeroSection() {
                                             variant="outline"
                                             className="rounded-xl px-5 text-base"
                                         >
-                                            <Link href="/work">
+                                            <Link href="/work/">
                                                 <span className="text-nowrap">
                                                     See our work
                                                 </span>

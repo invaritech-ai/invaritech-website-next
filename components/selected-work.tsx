@@ -9,19 +9,19 @@ const selectedProjects = [
         title: "EUDR Compliance Bridge",
         description: "We built a Python FastAPI bridge and database around a SOAP-based EU backend so a small French operator could submit thousands of Due Diligence Statements in minutes.",
         image: "/eudr-preview.webp",
-        href: "/work/eudr-compliance-bridge",
+        href: "/work/eudr-compliance-bridge/",
     },
     {
         title: "China Coast Community Website Redesign",
-        description: "We redesigned a small charity’s website and donation flow to make it easier for donors to contribute and for staff to maintain content.",
+        description: "We redesigned a small charity's website and donation flow to make it easier for donors to contribute and for staff to maintain content.",
         image: "/ccc-isometric.webp",
-        href: "/work",
+        href: "/work/",
     },
     {
         title: "WeekendSuite (In Development)",
         description: "WeekendSuite is our own product: a focused admin tool for freelancers and tiny agencies that handles the messy middle from lead to invoice.",
         image: "/weekendsuite.webp",
-        href: "/weekend-suite",
+        href: "/weekend-suite/",
     },
 ];
 
@@ -39,7 +39,7 @@ export default function SelectedWorkSection() {
                         </p>
                     </div>
                     <Link
-                        href="/work"
+                        href="/work/"
                         className="group flex items-center gap-2 text-sm font-medium text-primary"
                     >
                         View all projects
