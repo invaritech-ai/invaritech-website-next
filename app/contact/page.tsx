@@ -26,6 +26,15 @@ export const metadata: Metadata = {
         description:
             "Schedule a call to discuss your automation project. Compliance bridges, data pipelines, or admin suites. 30-minute consultation.",
         url: "https://www.invaritech.ai/contact/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Contact INVARITECH - Automation Consultation",
+                type: "image/webp",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/contact/",

@@ -13,6 +13,15 @@ export const metadata: Metadata = {
         description:
             "We turn your most painful compliance workflow into one auditable, automated pipeline in 6 weeks.",
         url: "https://www.invaritech.ai/services/compliance-bridge/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Compliance Workflow Bridge - Services",
+                type: "image/webp",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/services/compliance-bridge/",

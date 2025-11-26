@@ -15,6 +15,15 @@ export const metadata: Metadata = {
         description:
             "Automating EUDR compliance for a high-volume French operator. Built a Python FastAPI bridge to submit thousands of Due Diligence Statements.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "EUDR Compliance Bridge - Case Study",
+                type: "image/webp",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/work/eudr-compliance-bridge/",

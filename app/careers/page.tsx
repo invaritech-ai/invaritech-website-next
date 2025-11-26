@@ -12,6 +12,15 @@ export const metadata: Metadata = {
         description:
             "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for small service businesses.",
         url: "https://www.invaritech.ai/careers/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Careers at INVARITECH - Build Automation Solutions",
+                type: "image/webp",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/careers/",
@@ -88,7 +97,7 @@ export default function CareersPage() {
                                             asChild
                                             className="w-full sm:w-auto"
                                         >
-                                            <Link href={`/careers/${job.id}`}>
+                                            <Link href={`/careers/${job.id}/`}>
                                                 Apply Now{" "}
                                                 <ArrowRight className="ml-2 size-4" />
                                             </Link>

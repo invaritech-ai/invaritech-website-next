@@ -14,6 +14,15 @@ export const metadata: Metadata = {
         description:
             "Compliance bridges, data pipelines, and custom automation. See how we help small service businesses stop losing time between their tools.",
         url: "https://www.invaritech.ai/work/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Our Work - Automation Projects & Case Studies",
+                type: "image/webp",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/work/",
@@ -32,7 +41,7 @@ const projects = [
         ),
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
         image: "/eudr-preview.webp",
-        link: "/work/eudr-compliance-bridge",
+        link: "/work/eudr-compliance-bridge/",
     },
     {
         id: "charity",
@@ -56,7 +65,7 @@ const projects = [
             "We help you identify the single biggest bottleneck costing you 100+ hours a month. Then, we deliver a custom automation solution within 6 weeks to give those hours back to your business.",
         tags: ["Analysis", "Strategy", "Custom Build"],
         image: "/work/custom-full.jpg", // Placeholder
-        link: "/contact",
+        link: "/contact/",
         buttonText: "Talk to Us",
     },
 ];

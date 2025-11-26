@@ -91,7 +91,7 @@ export const seoConfig = {
     // Performance
     performance: {
         preload: ["/logo.png", "/logo-image.png"],
-        prefetch: ["/services", "/contact"],
+        prefetch: ["/services/compliance-bridge/", "/contact/"],
     },
 
     // Analytics & Tracking

@@ -17,6 +17,15 @@ export const metadata: Metadata = {
         description:
             "Small by design, expert by trade. We build automation systems for regulated firms and freelancers. No body shops, no bloat.",
         url: "https://www.invaritech.ai/about/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "About INVARITECH - Boutique Automation Studio",
+                type: "image/webp",
+            },
+        ],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/about/",
