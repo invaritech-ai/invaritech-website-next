@@ -19,12 +19,12 @@ clients 100+ hours per month.
 
 ## Key Pages
 
-- Home: https://invaritech.ai/
-- Work & Case Studies: https://invaritech.ai/work
-- About the Team: https://invaritech.ai/about
-- WeekendSuite Product: https://invaritech.ai/weekend-suite
-- Careers: https://invaritech.ai/careers
-- Contact: https://invaritech.ai/contact
+- Home: https://www.invaritech.ai
+- Work & Case Studies: https://www.invaritech.ai/work/
+- About the Team: https://www.invaritech.ai/about/
+- WeekendSuite Product: https://www.invaritech.ai/weekend-suite/
+- Careers: https://www.invaritech.ai/careers/
+- Contact: https://www.invaritech.ai/contact/
 
 ## Featured Projects
 
@@ -34,7 +34,7 @@ enabling a small French operator to submit thousands of Due Diligence Statements
 through a simple REST API and dashboard.
 
 **Tech Stack**: Python, FastAPI, PostgreSQL, SOAP
-**Link**: https://invaritech.ai/work/eudr-compliance-bridge
+**Link**: https://www.invaritech.ai/work/eudr-compliance-bridge/
 
 ### China Coast Community Website Redesign
 Redesigned a Hong Kong charity's website and donation flow to simplify the donor 
@@ -47,12 +47,13 @@ experience and streamline content management for staff.
 An in-house product: a weekend-sized admin suite for freelancers and tiny agencies. 
 Handles the messy middle from lead → proposal → contract → onboarding → invoice.
 
-**Link**: https://invaritech.ai/weekend-suite
+**Link**: https://www.invaritech.ai/weekend-suite/
 
 ## Team
 
-- **Avishek Rakshit**: Full-stack architect with expertise in backend systems and automation
-- **Aditi Srinivas**: Product designer and frontend specialist
+- **Avishek Majumder** (CEO & Co-founder): Data engineer and scientist who has spent his career building and deploying predictive systems in regulated, high-stakes environments across energy and finance. At Invaritech, he designs the automation architectures that let lean teams operate with enterprise-grade reliability.
+
+- **Aditi Garg** (Director & Founder): Solutions and customer success leader who has helped organisations like Goldman Sachs, Uber, BMW and Citi Bank get real value from complex platforms. As VP of Central Support at Trilogy Ltd and Director at Invaritech, she specialises in turning messy support operations into measurable, automated, high-NPS experiences.
 
 ## Technology Focus
 
@@ -71,8 +72,8 @@ We deliver custom automation solutions within 6 weeks, focusing on:
 
 ## Contact
 
-- Website: https://invaritech.ai
-- Email: Available via contact form at https://invaritech.ai/contact
+- Website: https://www.invaritech.ai
+- Email: Available via contact form at https://www.invaritech.ai/contact/
 - Location: Hong Kong
 
 ---
