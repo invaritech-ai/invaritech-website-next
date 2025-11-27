@@ -298,12 +298,16 @@ export default function EudrCaseStudyPage() {
                             build a solution for you. We handle the complex
                             technical parts so you can focus on your business.
                         </p>
-                        <Link href="/contact/">
+                        <a
+                            href="https://calendly.com/hello-invaritech/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             <Button size="lg" className="rounded-full px-8">
                                 Get in Touch{" "}
                                 <ArrowRight className="ml-2 size-4" />
                             </Button>
-                        </Link>
+                        </a>
                     </div>
                 </section>
             </div>

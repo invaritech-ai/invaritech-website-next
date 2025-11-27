@@ -130,12 +130,16 @@ export default function HeroSection() {
                                             size="lg"
                                             className="rounded-xl px-5 text-base"
                                         >
-                                            <Link href="/contact/">
+                                            <a
+                                                href="https://calendly.com/hello-invaritech/30min"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
                                                 <span className="text-nowrap">
                                                     Talk about an automation
                                                     project
                                                 </span>
-                                            </Link>
+                                            </a>
                                         </Button>
                                     </div>
                                     <div

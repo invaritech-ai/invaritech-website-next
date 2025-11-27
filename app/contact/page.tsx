@@ -1,16 +1,19 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
+import { TextEffect } from "@/components/ui/text-effect";
 
 // Lazy load ContactSection to defer reCAPTCHA loading until contact page is visited
 const ContactSection = dynamic(() => import("@/components/contact"), {
     loading: () => (
-        <section className="py-32">
-            <div className="mx-auto max-w-4xl px-4 lg:px-0">
-                <div className="border p-6 sm:p-12 text-center">
-                    <div className="animate-pulse">
-                        <div className="h-8 bg-muted rounded w-48 mx-auto mb-4"></div>
-                        <div className="h-4 bg-muted rounded w-64 mx-auto"></div>
+        <section className="py-12 md:py-24">
+            <div className="mx-auto max-w-7xl px-4 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 items-start">
+                    <div className="space-y-8">
+                        <div className="h-12 bg-muted rounded w-3/4 animate-pulse"></div>
+                        <div className="h-6 bg-muted rounded w-full animate-pulse"></div>
+                        <div className="h-6 bg-muted rounded w-2/3 animate-pulse"></div>
                     </div>
+                    <div className="border rounded-xl p-8 h-[600px] bg-muted/10 animate-pulse"></div>
                 </div>
             </div>
         </section>
@@ -43,15 +46,36 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-        <main className="pt-24 md:pt-32">
-            <div className="mx-auto max-w-4xl px-4 lg:px-0 mb-12">
-                <h1 className="text-center text-4xl font-bold md:text-5xl mb-4">
-                    Contact Us
-                </h1>
-                <p className="text-center text-muted-foreground text-lg">
-                    Let&apos;s talk about your automation project
-                </p>
+        <main className="min-h-screen bg-background relative overflow-hidden pt-24 md:pt-32 pb-12">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
+                <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"></div>
             </div>
+
+            <div className="mx-auto max-w-7xl px-4 lg:px-8 mb-12 md:mb-20">
+                <div className="max-w-3xl">
+                    <TextEffect
+                        per="word"
+                        as="h1"
+                        preset="fade"
+                        className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-foreground"
+                    >
+                        Let's build something extraordinary together.
+                    </TextEffect>
+                    <TextEffect
+                        per="line"
+                        as="p"
+                        preset="fade"
+                        delay={0.5}
+                        className="text-lg text-muted-foreground md:text-xl leading-relaxed"
+                    >
+                        Whether you need to automate complex workflows, build a
+                        custom platform, or just want to explore what's
+                        possible—we're here to help.
+                    </TextEffect>
+                </div>
+            </div>
+            
             <ContactSection />
         </main>
     );

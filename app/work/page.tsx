@@ -65,7 +65,7 @@ const projects = [
             "We help you identify the single biggest bottleneck costing you 100+ hours a month. Then, we deliver a custom automation solution within 6 weeks to give those hours back to your business.",
         tags: ["Analysis", "Strategy", "Custom Build"],
         image: "/work/custom-full.jpg", // Placeholder
-        link: "/contact/",
+        link: "https://calendly.com/hello-invaritech/30min",
         buttonText: "Talk to Us",
     },
 ];
@@ -212,11 +212,25 @@ function ButtonLink({
             </div>
         );
     }
+    const isExternal = href.startsWith("http");
+    const className =
+        "inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
+    
+    if (isExternal) {
+        return (
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={className}
+            >
+                {children}
+            </a>
+        );
+    }
+    
     return (
-        <Link
-            href={href}
-            className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-        >
+        <Link href={href} className={className}>
             {children}
         </Link>
     );

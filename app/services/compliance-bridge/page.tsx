@@ -53,10 +53,14 @@ export default function ComplianceBridgePage() {
                         size="lg"
                         className="rounded-xl px-8 text-base"
                     >
-                        <Link href="/contact/">
+                        <a
+                            href="https://calendly.com/hello-invaritech/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Book a Consultation{" "}
                             <ArrowRight className="ml-2 size-4" />
-                        </Link>
+                        </a>
                     </Button>
                 </div>
 
