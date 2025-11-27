@@ -246,8 +246,8 @@ export default async function BlogPostPage({ params }: Props) {
                         </h2>
                         <p className="text-muted-foreground mb-6 text-lg">
                             Schedule a 30-minute call to discuss your automation
-                            needs. We'll help you identify your biggest bottleneck
-                            and show you what's possible.
+                            needs. We&apos;ll help you identify your biggest bottleneck
+                            and show you what&apos;s possible.
                         </p>
                         <a
                             href="https://calendly.com/hello-invaritech/30min"

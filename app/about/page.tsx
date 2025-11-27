@@ -2,7 +2,6 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Network, PenTool } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";

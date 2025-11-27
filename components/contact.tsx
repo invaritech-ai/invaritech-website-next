@@ -167,7 +167,7 @@ export default function ContactSection() {
                             Message Sent!
                         </h3>
                         <p className="text-muted-foreground mb-8 text-lg">
-                            Thanks for reaching out. We've received your message and will get back to you shortly.
+                            Thanks for reaching out. We&apos;ve received your message and will get back to you shortly.
                         </p>
                         <Button
                             onClick={() =>
@@ -200,7 +200,7 @@ export default function ContactSection() {
                                     Why partner with Invaritech?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    We're not just a dev shop. We're a strategic partner that helps you navigate complex technical challenges. From compliance bridges to data pipelines, we build the infrastructure that powers your business.
+                                    We&apos;re not just a dev shop. We&apos;re a strategic partner that helps you navigate complex technical challenges. From compliance bridges to data pipelines, we build the infrastructure that powers your business.
                                 </p>
                             </div>
 
@@ -238,7 +238,7 @@ export default function ContactSection() {
                                     <div>
                                         <h3 className="font-medium mb-1">Email Us</h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Prefer to write it down? Send us an email and we'll respond within 24 hours.
+                                            Prefer to write it down? Send us an email and we&apos;ll respond within 24 hours.
                                         </p>
                                         <Link
                                             href="mailto:hello@invaritech.ai"
@@ -261,7 +261,7 @@ export default function ContactSection() {
                                     Send us a message
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Tell us a bit about your project and we'll be in touch.
+                                    Tell us a bit about your project and we&apos;ll be in touch.
                                 </p>
                             </div>
 

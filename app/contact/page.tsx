@@ -60,7 +60,7 @@ export default function ContactPage() {
                         preset="fade"
                         className="text-4xl font-bold tracking-tight sm:text-6xl mb-6 text-foreground"
                     >
-                        Let's build something extraordinary together.
+                        Let&apos;s build something extraordinary together.
                     </TextEffect>
                     <TextEffect
                         per="line"
@@ -70,8 +70,8 @@ export default function ContactPage() {
                         className="text-lg text-muted-foreground md:text-xl leading-relaxed"
                     >
                         Whether you need to automate complex workflows, build a
-                        custom platform, or just want to explore what's
-                        possible—we're here to help.
+                        custom platform, or just want to explore what&apos;s
+                        possible—we&apos;re here to help.
                     </TextEffect>
                 </div>
             </div>

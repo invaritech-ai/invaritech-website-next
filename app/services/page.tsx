@@ -88,7 +88,6 @@ export default function ServicesPage() {
                 {/* Featured Services */}
                 <div className="space-y-16 mb-24">
                     {services.map((service) => {
-                        const Icon = service.icon;
                         return (
                             <Card
                                 key={service.id}
