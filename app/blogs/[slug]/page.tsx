@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         openGraph: {
             title: post.title,
             description: post.excerpt,
-            url: `https://www.invaritech.ai/blogs/${post.slug}`,
+            url: `https://www.invaritech.ai/blogs/${post.slug}/`,
             images: post.coverImage
                 ? [
                       {
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                   ],
         },
         alternates: {
-            canonical: `https://www.invaritech.ai/blogs/${post.slug}`,
+            canonical: `https://www.invaritech.ai/blogs/${post.slug}/`,
         },
     };
 }
