@@ -1,3 +1,5 @@
+import { ShieldCheck } from "lucide-react";
+
 
 
 const steps = [
@@ -42,6 +44,24 @@ export default function HowWeWorkSection() {
                             </div>
                         </div>
                     ))}
+                </div>
+
+                <div className="mt-12 mx-auto max-w-3xl">
+                    <div className="bg-primary/5 border border-primary/10 rounded-2xl p-6 flex gap-4 items-start text-left">
+                        <div className="bg-primary/10 p-2 rounded-full shrink-0">
+                            <ShieldCheck className="size-5 text-primary" />
+                        </div>
+                        <div>
+                            <h4 className="font-semibold text-foreground mb-1">
+                                Our Guarantee
+                            </h4>
+                            <p className="text-muted-foreground text-sm leading-relaxed">
+                                If we cannot deliver the agreed workflow into
+                                production, we keep working at no additional fee
+                                until it is live.
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div className="mt-16 text-center">
