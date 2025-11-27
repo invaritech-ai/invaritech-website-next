@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
             <article className="mx-auto max-w-4xl px-6">
                 {/* Back Button */}
                 <Link
-                    href="/blogs"
+                    href="/blogs/"
                     className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 group"
                 >
                     <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
@@ -131,7 +131,9 @@ export default async function BlogPostPage({ params }: Props) {
                                 <div className="font-medium text-foreground">
                                     {post.author.name}
                                 </div>
-                                <div className="text-xs">{post.author.role}</div>
+                                <div className="text-xs">
+                                    {post.author.role}
+                                </div>
                             </div>
                         </div>
                         <div className="flex items-center gap-1">
@@ -246,8 +248,8 @@ export default async function BlogPostPage({ params }: Props) {
                         </h2>
                         <p className="text-muted-foreground mb-6 text-lg">
                             Schedule a 30-minute call to discuss your automation
-                            needs. We&apos;ll help you identify your biggest bottleneck
-                            and show you what&apos;s possible.
+                            needs. We&apos;ll help you identify your biggest
+                            bottleneck and show you what&apos;s possible.
                         </p>
                         <a
                             href="https://calendly.com/hello-invaritech/30min"
@@ -263,7 +265,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* Back to Blog */}
                 <div className="mt-12 text-center">
                     <Link
-                        href="/blogs"
+                        href="/blogs/"
                         className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
                     >
                         <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />

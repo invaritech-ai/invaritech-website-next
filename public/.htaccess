@@ -72,6 +72,10 @@
     RewriteEngine On
     RewriteBase /
     
+    # Redirect non-www to www (must be first redirect rule)
+    RewriteCond %{HTTP_HOST} ^invaritech\.ai$ [NC]
+    RewriteRule ^(.*)$ https://www.invaritech.ai/$1 [R=301,L]
+    
     # Redirect non-trailing slash URLs to trailing slash (except home page and files)
     # Skip if it's a file (has extension) or already has trailing slash
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -84,6 +88,10 @@
     RewriteRule ^index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    # Exclude robots.txt, sitemap.xml, and llms.txt from catch-all redirect
+    RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC]
+    RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC]
+    RewriteCond %{REQUEST_URI} !^/llms\.txt$ [NC]
     RewriteRule . /index.html [L]
 </IfModule>
 

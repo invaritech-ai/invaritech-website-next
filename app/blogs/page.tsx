@@ -91,7 +91,7 @@ export default function BlogsPage() {
                         {posts.map((post, index) => (
                             <Link
                                 key={post.slug}
-                                href={`/blogs/${post.slug}`}
+                                href={`/blogs/${post.slug}/`}
                                 className="group"
                             >
                                 <Card className="h-full overflow-hidden border transition-all duration-300 hover:shadow-lg hover:border-primary/50 bg-card">
