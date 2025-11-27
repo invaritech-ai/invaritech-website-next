@@ -83,7 +83,7 @@ If you're losing 100+ hours per month to manual work, let's talk. We'll help you
         },
         publishedAt: "2025-01-15T10:00:00Z",
         tags: ["Automation", "Small Business", "Productivity"],
-        coverImage: "/blog/automation-cover.jpg",
+        coverImage: "/blog/automation-cover.webp",
     },
     {
         slug: "compliance-automation-for-small-teams",
@@ -160,7 +160,7 @@ If compliance is eating up your time, let's talk. We'll help you identify what c
         },
         publishedAt: "2025-01-08T10:00:00Z",
         tags: ["Compliance", "Automation", "Regulation"],
-        coverImage: "/blog/compliance-cover.jpg",
+        coverImage: "/blog/compliance-cover.webp",
     },
     {
         slug: "building-vs-buying-automation-software",
@@ -257,7 +257,7 @@ If you're facing a problem where off-the-shelf software doesn't fit, let's talk.
         },
         publishedAt: "2025-01-01T10:00:00Z",
         tags: ["Strategy", "Automation", "Decision Making"],
-        coverImage: "/blog/build-vs-buy-cover.jpg",
+        coverImage: "/blog/build-vs-buy-cover.webp",
     },
 ];
 
