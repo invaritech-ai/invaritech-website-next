@@ -11,8 +11,16 @@ const links = [
         href: "/about/",
     },
     {
+        title: "Services",
+        href: "/services/",
+    },
+    {
         title: "Work",
         href: "/work/",
+    },
+    {
+        title: "Blogs",
+        href: "/blogs/",
     },
     {
         title: "Careers",
