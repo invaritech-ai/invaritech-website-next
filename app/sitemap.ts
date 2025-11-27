@@ -1,10 +1,22 @@
 import { MetadataRoute } from "next";
+import { getAllPosts } from "@/lib/blog-posts";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = "https://www.invaritech.ai";
     const currentDate = new Date();
+
+    // Get all blog posts
+    const blogPosts = getAllPosts();
+
+    // Generate sitemap entries for blog posts
+    const blogPostEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+        url: `${baseUrl}/blogs/${post.slug}`,
+        lastModified: new Date(post.publishedAt),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+    }));
 
     return [
         {
@@ -55,6 +67,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "weekly",
             priority: 0.7,
         },
+        ...blogPostEntries,
         {
             url: `${baseUrl}/careers/`,
             lastModified: currentDate,
