@@ -41,12 +41,12 @@ export default function ComplianceBridgePage() {
                         Compliance Workflow Bridge
                     </h1>
                     <p className="text-xl md:text-2xl font-medium text-foreground/80 mb-6 max-w-3xl mx-auto">
-                        We turn your most painful compliance/reporting workflow
-                        into one auditable, automated pipeline in 6 weeks.
+                        We turn the manual parts of your compliance and
+                        reporting into one reliable, auditable pipeline, using
+                        the tools you already have.
                     </p>
                     <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                        Using the tools you already have, we replace manual
-                        chaos with a single, reliable flow.
+                        No big IT project, no surprise costs. Just a production-grade workflow in 6 weeks.
                     </p>
                     <Button
                         asChild
@@ -58,7 +58,7 @@ export default function ComplianceBridgePage() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Book a Consultation{" "}
+                            Book a free consultation{" "}
                             <ArrowRight className="ml-2 size-4" />
                         </a>
                     </Button>
@@ -68,19 +68,18 @@ export default function ComplianceBridgePage() {
                 <div className="grid gap-12 md:grid-cols-2 mb-24">
                     <div>
                         <h2 className="text-2xl font-bold mb-6">
-                            Who it&apos;s for
+                            Who this is for
                         </h2>
                         <ul className="space-y-4">
                             <li className="flex gap-3">
                                 <ShieldCheck className="size-6 text-primary flex-none" />
                                 <div>
                                     <span className="font-semibold block">
-                                        Regulated B2B Service Firms
+                                        Small, regulated B2B service firms
                                     </span>
                                     <span className="text-muted-foreground">
-                                        5–30 person firms handling EUDR/ESG
-                                        reporting, KYC/AML, or regulatory
-                                        filings.
+                                        Small, regulated B2B service firms (5-30 people) doing EUDR/ESG, KYC/AML,
+                                        or regulatory filings.
                                     </span>
                                 </div>
                             </li>
@@ -91,8 +90,8 @@ export default function ComplianceBridgePage() {
                                         High-Volume Reporting
                                     </span>
                                     <span className="text-muted-foreground">
-                                        Delivering recurring reports or filings
-                                        to regulators and enterprise clients.
+                                        Teams that deliver recurring reports or
+                                        filings at volume.
                                     </span>
                                 </div>
                             </li>
@@ -100,12 +99,12 @@ export default function ComplianceBridgePage() {
                                 <FileText className="size-6 text-primary flex-none" />
                                 <div>
                                     <span className="font-semibold block">
-                                        Existing Toolset Users
+                                        No Internal Engineering
                                     </span>
                                     <span className="text-muted-foreground">
-                                        Running on Google Workspace, HubSpot,
-                                        spreadsheets, and portals—with no
-                                        internal engineering team.
+                                        Organizations running on Google
+                                        Workspace, HubSpot, spreadsheets and
+                                        portals.
                                     </span>
                                 </div>
                             </li>
@@ -113,44 +112,43 @@ export default function ComplianceBridgePage() {
                     </div>
                     <div className="bg-muted/30 rounded-2xl p-8 border border-border/50">
                         <h3 className="text-xl font-semibold mb-4">
-                            The Current Reality
+                            The Problem
                         </h3>
                         <ul className="space-y-3 text-muted-foreground">
                             <li className="flex gap-2 items-start">
                                 <span className="text-red-500 font-bold">
-                                    ×
+                                    x
                                 </span>
                                 <span>
-                                    Staff re-keying data between email, Excel,
-                                    CRMs, and portals.
+                                    People re-typing the same data between
+                                    email, Excel, CRM and portals.
                                 </span>
                             </li>
                             <li className="flex gap-2 items-start">
                                 <span className="text-red-500 font-bold">
-                                    ×
+                                    x
                                 </span>
                                 <span>
-                                    High risk of missed deadlines, wrong
-                                    submissions, and non-compliance.
+                                    Missed deadlines and avoidable mistakes that
+                                    risk non-compliance.
                                 </span>
                             </li>
                             <li className="flex gap-2 items-start">
                                 <span className="text-red-500 font-bold">
-                                    ×
+                                    x
                                 </span>
                                 <span>
-                                    Senior staff firefighting admin instead of
-                                    doing billable expert work.
+                                    Senior staff stuck doing admin instead of
+                                    billable, expert work.
                                 </span>
                             </li>
                             <li className="flex gap-2 items-start">
                                 <span className="text-red-500 font-bold">
-                                    ×
+                                    x
                                 </span>
                                 <span>
-                                    Fear of &quot;digital transformation&quot;
-                                    projects that are huge, scary, and
-                                    expensive.
+                                    Fear of huge, expensive “digital
+                                    transformation” projects that never finish.
                                 </span>
                             </li>
                         </ul>
@@ -160,50 +158,45 @@ export default function ComplianceBridgePage() {
                 {/* Offer Section */}
                 <div className="mb-24">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold mb-4">
-                            The Solution: A Bridge, Not a Rebuild
-                        </h2>
+                        <h2 className="text-3xl font-bold mb-4">What we do</h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            We replace manual, error-prone, multi-tool chaos
-                            with a single, reliable flow from intake to audit
-                            log.
+                            An end-to-end flow from intake → review → filing →
+                            client update, fully auditable and easy to manage.
                         </p>
                     </div>
 
                     <div className="grid gap-6 md:grid-cols-3">
                         <Card>
                             <CardHeader>
-                                <CardTitle>Workflow Map</CardTitle>
+                                <CardTitle>Map the Process</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className="text-sm text-muted-foreground">
-                                    We map your current vs. ideal compliance
-                                    process, identifying every step, owner, and
-                                    tool involved.
+                                    We map your current process, every step,
+                                    tool and owner.
                                 </p>
                             </CardContent>
                         </Card>
                         <Card>
                             <CardHeader>
-                                <CardTitle>Automated Bridge</CardTitle>
+                                <CardTitle>Automate the Work</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className="text-sm text-muted-foreground">
-                                    A production-grade system connecting your
-                                    intake source, internal tools (CRM/Sheets),
-                                    and regulator portals.
+                                    We automate the repeatable work and connect
+                                    the tools you already use.
                                 </p>
                             </CardContent>
                         </Card>
                         <Card>
                             <CardHeader>
-                                <CardTitle>Internal Control Panel</CardTitle>
+                                <CardTitle>Control Panel</CardTitle>
                             </CardHeader>
                             <CardContent>
                                 <p className="text-sm text-muted-foreground">
-                                    A simple internal UI to view all in-flight
-                                    filings, status, and logs—giving you total
-                                    visibility.
+                                    We give you a small internal control panel
+                                    so you can see every filing, status and
+                                    audit log.
                                 </p>
                             </CardContent>
                         </Card>
@@ -211,9 +204,9 @@ export default function ComplianceBridgePage() {
                 </div>
 
                 {/* Outcomes */}
-                <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center">
+                <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center mb-24">
                     <h2 className="text-2xl md:text-3xl font-bold mb-8">
-                        Desired Outcomes
+                        Expected Outcomes
                     </h2>
                     <div className="grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto">
                         <div className="flex gap-4">
@@ -222,11 +215,11 @@ export default function ComplianceBridgePage() {
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">
-                                    One Clean Workflow
+                                    One clear workflow
                                 </h4>
                                 <p className="text-sm text-muted-foreground">
-                                    From intake → review → filing → client
-                                    update. One auditable path.
+                                    Everyone follows the same path, fewer errors,
+                                    fewer questions.
                                 </p>
                             </div>
                         </div>
@@ -236,11 +229,11 @@ export default function ComplianceBridgePage() {
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">
-                                    No More Scrambles
+                                    Predictable Deadlines
                                 </h4>
                                 <p className="text-sm text-muted-foreground">
-                                    Clear visibility of what’s due and what’s
-                                    done. No last-minute panic.
+                                    No last-minute panics, deadlines become
+                                    predictable.
                                 </p>
                             </div>
                         </div>
@@ -250,11 +243,11 @@ export default function ComplianceBridgePage() {
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">
-                                    Systemized Knowledge
+                                    Captured Knowledge
                                 </h4>
                                 <p className="text-sm text-muted-foreground">
-                                    Less dependence on specific “ops heroes”
-                                    remembering 10 different steps.
+                                    Knowledge sits in the system, not in one
+                                    person&apos;s head.
                                 </p>
                             </div>
                         </div>
@@ -264,15 +257,61 @@ export default function ComplianceBridgePage() {
                             </div>
                             <div>
                                 <h4 className="font-semibold mb-1">
-                                    Scalable Confidence
+                                    Scalable Volume
                                 </h4>
                                 <p className="text-sm text-muted-foreground">
-                                    Confidence you can scale client volume
-                                    without linearly hiring more admin staff.
+                                    Scale client volume without hiring lots of
+                                    extra admin.
                                 </p>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                {/* Timeline & Guarantee */}
+                <div className="max-w-3xl mx-auto text-center mb-24">
+                    <h2 className="text-3xl font-bold mb-6">
+                        How long it takes
+                    </h2>
+                    <div className="bg-card border rounded-2xl p-8 shadow-sm">
+                        <p className="text-xl font-medium mb-4">
+                            We deliver a production-grade, auditable pipeline in
+                            6 weeks using your existing tools.
+                        </p>
+                        <div className="h-px bg-border my-6" />
+                        <p className="text-muted-foreground">
+                            <span className="font-semibold text-foreground">
+                                Our Guarantee:
+                            </span>{" "}
+                            If we cannot deliver the agreed workflow into
+                            production, we keep working at no additional fee
+                            until it is live.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Final CTA */}
+                <div className="text-center">
+                    <h2 className="text-2xl font-bold mb-4">
+                        Ready to stop chasing submissions?
+                    </h2>
+                    <p className="text-muted-foreground mb-8">
+                        Start trusting your process today.
+                    </p>
+                    <Button
+                        asChild
+                        size="lg"
+                        className="rounded-xl px-8 text-base"
+                    >
+                        <a
+                            href="https://calendly.com/hello-invaritech/30min"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Book a free consultation{" "}
+                            <ArrowRight className="ml-2 size-4" />
+                        </a>
+                    </Button>
                 </div>
             </div>
         </main>
