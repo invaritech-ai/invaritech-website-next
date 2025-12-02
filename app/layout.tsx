@@ -109,6 +109,11 @@ export const metadata: Metadata = {
     category: "technology",
     classification: "Business",
     referrer: "origin-when-cross-origin",
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: "/favicon.ico",
+    },
 };
 
 import { HeroHeader } from "@/components/header";
@@ -126,12 +131,19 @@ export default function RootLayout({
             <head>
                 {/* Resource hints for external domains */}
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin="anonymous"
+                />
                 <link rel="preconnect" href="https://www.google.com" />
-                <link rel="preconnect" href="https://www.googletagmanager.com" />
+                <link
+                    rel="preconnect"
+                    href="https://www.googletagmanager.com"
+                />
                 <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
                 <link rel="dns-prefetch" href="https://r2.leadsy.ai" />
-                
+
                 {/* Structured data - inline scripts are fine, they don't block */}
                 <script
                     type="application/ld+json"
@@ -159,7 +171,7 @@ export default function RootLayout({
                     {children}
                     <FooterSection />
                 </ThemeProvider>
-                
+
                 {/* Third-party scripts with optimized loading strategies */}
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-JJPJBB10G7"
@@ -173,13 +185,13 @@ export default function RootLayout({
                         gtag('config', 'G-JJPJBB10G7');
                     `}
                 </Script>
-                
+
                 <Script
                     src="https://analytics.ahrefs.com/analytics.js"
                     data-key="A6OV+c4YNtaqQiY6VZk1eg"
                     strategy="lazyOnload"
                 />
-                
+
                 <Script
                     id="vtag-ai-js"
                     src="https://r2.leadsy.ai/tag.js"
