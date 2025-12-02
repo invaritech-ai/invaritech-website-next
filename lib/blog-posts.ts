@@ -1,8 +1,8 @@
 // Import all blog posts
-import { post as whySmallBusinessesNeedAutomation } from "./blog-posts/why-small-businesses-need-automation";
-import { post as complianceAutomationForSmallTeams } from "./blog-posts/compliance-automation-for-small-teams";
-import { post as buildingVsBuyingAutomationSoftware } from "./blog-posts/building-vs-buying-automation-software";
-import { post as whyManualEudrComplianceFailsAtScale } from "./blog-posts/why-manual-eudr-compliance-fails-at-scale";
+import { post as whyConsultanciesGetStuck } from "./blog-posts/why-consultancies-get-stuck";
+import { post as complianceAutomationDoneRight } from "./blog-posts/compliance-automation-done-right";
+import { post as buildingVsBuyingCustomAutomation } from "./blog-posts/building-vs-buying-custom-automation";
+import { post as whyManualEudrComplianceFails } from "./blog-posts/why-manual-eudr-compliance-fails";
 
 export interface BlogPost {
     slug: string;
@@ -33,10 +33,10 @@ export interface BlogPostMetadata {
 
 // Aggregate all blog posts
 export const blogPosts: BlogPost[] = [
-    whySmallBusinessesNeedAutomation,
-    complianceAutomationForSmallTeams,
-    buildingVsBuyingAutomationSoftware,
-    whyManualEudrComplianceFailsAtScale,
+    whyConsultanciesGetStuck,
+    complianceAutomationDoneRight,
+    buildingVsBuyingCustomAutomation,
+    whyManualEudrComplianceFails,
 ];
 
 // Helper functions
