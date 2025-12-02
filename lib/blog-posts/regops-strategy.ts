@@ -14,7 +14,7 @@ We speak to a lot of consultancy owners. The pattern is painfully familiar:
 
 You are selling a premium service: regulatory assurance. But behind the scenes, the work is held together by manual effort, copy‑paste, and fragile processes that haven't really changed since 2010.
 
-That is **[The Consultancy Trap](/blogs/why-consultancies-get-stuck)** in action: using expensive, highly trained people to wrangle low-value data problems.
+That is **[The Consultancy Trap](/blogs/consultancy-trap)** in action: using expensive, highly trained people to wrangle low-value data problems.
 
 This is where **RegOps (Regulatory Operations)** comes in. It is the shift from "doing compliance by hand" to **engineering** how compliance happens.
 
@@ -77,7 +77,7 @@ In a low-stakes environment, maybe. In a regulatory context, that is dangerous.
 
 In this world, **"hallucination" is just a polite word for malpractice.**
 
-As we break down in more depth in our **[technical deep dive on the logic layer](/blogs/regops-technical#logic-layer)**, generic AI agents:
+As we break down in more depth in our **[technical deep dive on the logic layer](/blogs/regops-technical#2-the-logic-layer-codifying-the-heroic-analyst)**, generic AI agents:
 
 - don't have a guaranteed, stable logic path  
 - can misinterpret small UI changes  
@@ -198,10 +198,10 @@ If you want to explore how to build a RegOps Bridge for your consultancy:
 Want to stress-test your current workflow? [Book a 20-minute diagnostic call here](/contact) to map your current process and see where a Bridge could remove the most friction.
     `,
     author: {
-        name: "INVARITECH Team",
-        role: "Automation Specialists",
+        name: "Aditi Garg",
+        role: "Director and Founder",
     },
-    publishedAt: "2025-12-01T10:00:00Z",
+    publishedAt: "2025-10-10T10:00:00Z",
     tags: ["RegOps", "ConsultancyGrowth", "Automation", "Scalability", "ESG"],
     coverImage: "/blog/regops-strategy.webp",
 };

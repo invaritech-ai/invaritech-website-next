@@ -247,8 +247,14 @@ export default function EudrCaseStudyPage() {
                 </section>
 
                 <div className="mb-24 text-center">
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground mb-4">
                         Want to see how we built this? <Link href="/blogs/regops-technical" className="underline hover:text-foreground font-medium">Read the technical deep dive.</Link>
+                    </p>
+                    <p className="text-muted-foreground text-sm">
+                        Learn more about{" "}
+                        <Link href="/blogs/compliance-automation-done-right" className="underline hover:text-foreground">deterministic compliance automation</Link>{" "}
+                        and{" "}
+                        <Link href="/blogs/building-vs-buying-custom-automation" className="underline hover:text-foreground">when custom automation makes sense</Link>.
                     </p>
                 </div>
 

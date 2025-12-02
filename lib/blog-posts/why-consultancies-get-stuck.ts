@@ -218,6 +218,8 @@ If you want to go deeper:
 
 - [See how we build these bridges step by step](/blogs/regops-technical)
 
+- [Read about "The Consultancy Trap" and how it caps revenue](/blogs/consultancy-trap)
+
 Stuck in manual compliance work and want to see what a different model could look like?  
 
 [Let's talk about what a RegOps Bridge would mean for your firm](https://calendly.com/hello-invaritech/30min)
@@ -226,7 +228,7 @@ Stuck in manual compliance work and want to see what a different model could loo
         name: "Avishek Majumder",
         role: "CEO",
     },
-    publishedAt: "2025-12-01T10:00:00Z",
+    publishedAt: "2025-10-01T10:00:00Z",
     tags: [
         "RegOps",
         "ConsultancyGrowth",

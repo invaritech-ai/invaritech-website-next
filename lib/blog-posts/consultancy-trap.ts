@@ -24,7 +24,7 @@ That's sustainable with 5 clients.
 
 It falls apart at 50.
 
-This is what we call **[The Manual Middle](/blogs/regops-technical#manual-middle)**: the stage where work is too complex for off-the-shelf tools, but still handled with spreadsheets, inboxes, and ingenuity. It's also where your margins quietly disappear.
+This is what we call **[The Manual Middle](/blogs/regops-technical#the-challenge-the-manual-middle)**: the stage where work is too complex for off-the-shelf tools, but still handled with spreadsheets, inboxes, and ingenuity. It's also where your margins quietly disappear.
 
 We recently worked with a compliance operation stuck at this "scale wall." Their recurring Due Diligence Statements (DDS) for EUDR were piling up. Their senior experts were reduced to glorified data typists. Burnout risk was high. Error risk was higher.
 
@@ -52,7 +52,7 @@ In many firms, this splits out roughly as:
 
 - 20%: applying expertise and judgment
 
-The problem isn't that the work exists. The problem is that it's invisible, manual, and hard to standardize. **[We break down how this fragmentation kills scalability here](/blogs/regops-strategy#fragmented-vs-auditable).**
+The problem isn't that the work exists. The problem is that it's invisible, manual, and hard to standardize. **[We break down how this fragmentation kills scalability here](/blogs/regops-strategy#the-old-way-vs-the-regops-way).**
 
 If every billing cycle feels like a fresh crisis, you're not running a recurring revenue operation. You're running recurring chaos.
 
@@ -232,13 +232,15 @@ If you want to see what that looks like in practice:
 
 - [Read more on how RegOps protects your margins and de-risks scale](/blogs/regops-strategy)
 
+- [Learn why hiring more people doesn't fix the problem](/blogs/why-consultancies-get-stuck)
+
 Stuck in spreadsheet hell? We help consultancies build auditable workflow bridges so your team can stop living in crisis mode. [Let's sketch your workflow](/contact).
     `,
     author: {
-        name: "INVARITECH Team",
-        role: "Automation Specialists",
+        name: "Aditi Garg",
+        role: "Director and Founder",
     },
-    publishedAt: "2025-12-01T10:00:00Z",
+    publishedAt: "2025-11-20T10:00:00Z",
     tags: ["ConsultancyGrowth", "RegOps", "Scalability", "ESG", "Automation"],
     coverImage: "/blog/consultancy-trap.webp",
 };

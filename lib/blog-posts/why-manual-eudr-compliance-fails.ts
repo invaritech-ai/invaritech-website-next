@@ -68,7 +68,7 @@ If you have questions about your EUDR setup, you can [contact](/contact) us or b
         name: "Avishek Majumder",
         role: "CEO",
     },
-    publishedAt: "2025-12-01T10:00:00Z",
+    publishedAt: "2025-12-03T10:00:00Z",
     tags: ["EUDR", "Compliance", "Automation", "RegTech", "EU-Regulation"],
     coverImage: "/blog/why-manual-eudr-compliance-fails.webp",
 };

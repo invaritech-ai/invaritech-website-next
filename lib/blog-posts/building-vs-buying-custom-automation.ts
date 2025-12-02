@@ -251,6 +251,8 @@ It’s worth revisiting your setup if:
 If you want to step back and look at the bigger picture of RegOps for consultancies, have a look at:  
 [The strategic case for RegOps in consulting firms](/blogs/regops-strategy)
 
+[See the technical architecture of a RegOps Bridge](/blogs/regops-technical) to understand how these systems are built.
+
 ## Next Steps
 
 If you’re in the middle of a build‑vs‑buy decision for compliance automation, a simple way forward is:
@@ -274,7 +276,7 @@ If you want to explore whether a custom RegOps bridge makes sense for your consu
         name: "INVARITECH Team",
         role: "Automation Specialists",
     },
-    publishedAt: "2025-01-01T10:00:00Z",
+    publishedAt: "2025-10-20T10:00:00Z",
     tags: ["Strategy", "Automation", "Decision Making"],
     coverImage: "/blog/buy-vs-build.webp",
 };

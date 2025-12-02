@@ -142,7 +142,7 @@ Key components in the logic layer:
 
 - **Why do this in code instead of with generic AI?**  
 
-  As we explain in our **[strategy analysis](/blogs/regops-strategy#why-generic-ai-isnt-the-answer)**:
+  As we explain in our **[strategy analysis](/blogs/regops-strategy#why-generic-ai-wont-fix-this)**:
 
   - Compliance decisions are often binary: pass/fail, yes/no.
 
@@ -294,7 +294,7 @@ If you want to explore how to build a RegOps Bridge for your consultancy:
         name: "INVARITECH Team",
         role: "Automation Specialists",
     },
-    publishedAt: "2025-12-20T10:00:00Z",
+    publishedAt: "2025-11-10T10:00:00Z",
     tags: ["RegTech", "API", "Integration", "WorkflowAutomation", "EUDR"],
     coverImage: "/blog/regops-technical.webp",
 };

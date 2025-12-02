@@ -84,6 +84,8 @@ This is the pattern you see again and again:
 
 **[See a real-world example of this approach: The EUDR Compliance Bridge](/work/eudr-compliance-bridge)**
 
+**[Learn why manual compliance fails at scale](/blogs/why-manual-eudr-compliance-fails)** and why automation becomes essential.
+
 That's the standard compliance automation has to meet.
 
 ## What "Compliance Automation Done Right" Looks Like
@@ -344,7 +346,7 @@ Stuck with black-box automation and want to see what a deterministic approach co
         name: "Avishek Majumder",
         role: "CEO",
     },
-    publishedAt: "2025-12-15T10:00:00Z",
+    publishedAt: "2025-10-30T10:00:00Z",
     tags: ["RegOps", "Compliance", "Automation", "Auditing", "Risk"],
     coverImage: "/blog/compliance-done-right.webp",
 };

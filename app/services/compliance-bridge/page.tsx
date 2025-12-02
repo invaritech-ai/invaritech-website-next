@@ -312,7 +312,7 @@ export default function ComplianceBridgePage() {
                     <h2 className="text-2xl font-bold mb-8">
                         See it in action
                     </h2>
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                         <Link href="/work/eudr-compliance-bridge/" className="block group">
                             <Card className="h-full transition-colors hover:bg-muted/50">
                                 <CardHeader>
@@ -351,6 +351,48 @@ export default function ComplianceBridgePage() {
                                 <CardContent>
                                     <p className="text-sm text-muted-foreground">
                                         See the architecture of a compliance bridge (Python, FastAPI, SOAP).
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                        <Link href="/blogs/why-manual-eudr-compliance-fails" className="block group">
+                            <Card className="h-full transition-colors hover:bg-muted/50">
+                                <CardHeader>
+                                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                        Why Manual Compliance Fails
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        Learn why manual EUDR compliance breaks at scale and how automation solves it.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                        <Link href="/blogs/compliance-automation-done-right" className="block group">
+                            <Card className="h-full transition-colors hover:bg-muted/50">
+                                <CardHeader>
+                                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                        Compliance Automation Done Right
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        Why deterministic systems beat black-box AI for regulatory submissions.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                        <Link href="/blogs/building-vs-buying-custom-automation" className="block group">
+                            <Card className="h-full transition-colors hover:bg-muted/50">
+                                <CardHeader>
+                                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                        Building vs. Buying
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        A framework to decide when custom automation makes sense for your firm.
                                     </p>
                                 </CardContent>
                             </Card>
