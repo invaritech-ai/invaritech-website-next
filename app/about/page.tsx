@@ -297,12 +297,12 @@ export default function AboutPage() {
             <div className="max-w-3xl">
                 <h2 className="text-3xl font-bold mb-6">Ready to Build?</h2>
                 <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    If you're a regulated firm or independent expert who's
+                    If you&apos;re a regulated firm or independent expert who&apos;s
                     outgrown spreadsheets, manual checklists, and duct-taped
                     tools, we should talk.
                 </p>
                 <p className="text-lg font-medium text-foreground mb-8 leading-relaxed">
-                    Let's design the system that makes your operations feel
+                    Let&apos;s design the system that makes your operations feel
                     inevitable, not improvisational.
                 </p>
                 <Button asChild size="lg" className="rounded-xl px-8 text-base">

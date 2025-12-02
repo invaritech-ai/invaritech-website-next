@@ -39,7 +39,8 @@ export default function NotFound() {
                 </h1>
                 <p className="mb-8 max-w-md text-base sm:text-lg text-muted-foreground px-4">
                     Oops! It looks like our little robot friend got lost. The
-                    page you're looking for doesn't exist or has been moved.
+                    page you&apos;re looking for doesn&apos;t exist or has been
+                    moved.
                 </p>
                 <Button asChild size="lg" className="gap-2">
                     <Link href="/">

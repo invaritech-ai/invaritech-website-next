@@ -96,7 +96,7 @@ const projects = [
                     href="/blogs/why-consultancies-get-stuck/"
                     className="underline hover:text-foreground"
                 >
-                    see why hiring more people doesn't fix the problem
+                    see why hiring more people doesn&apos;t fix the problem
                 </Link>
                 .
             </>
@@ -185,16 +185,13 @@ export default function WorkPage() {
                                                 <ArrowRight className="ml-2 size-4" />
                                             )}
                                         </ButtonLink>
-                                        {/* @ts-ignore */}
                                         {project.secondaryLink && (
                                             <ButtonLink
-                                                /* @ts-ignore */
                                                 href={
                                                     project.secondaryLink.href
                                                 }
                                                 variant="outline"
                                             >
-                                                {/* @ts-ignore */}
                                                 {project.secondaryLink.text}
                                             </ButtonLink>
                                         )}

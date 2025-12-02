@@ -336,7 +336,7 @@ export default function ComplianceBridgePage() {
                                 </CardHeader>
                                 <CardContent>
                                     <p className="text-sm text-muted-foreground">
-                                        Why "hiring more people" stops working, and what to do instead.
+                                        Why &quot;hiring more people&quot; stops working, and what to do instead.
                                     </p>
                                 </CardContent>
                             </Card>
