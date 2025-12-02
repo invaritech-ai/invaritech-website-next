@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
+import { PageLayout } from "@/components/page-layout";
+import { TextEffect } from "@/components/ui/text-effect";
 
 export default function WeekendSuitePage() {
     const [formData, setFormData] = useState({
@@ -50,23 +53,39 @@ export default function WeekendSuitePage() {
     };
 
     return (
-        <main className="pt-24 pb-16 md:pt-32 md:pb-32">
-            <div className="mx-auto max-w-5xl px-6">
-                {/* Hero */}
-                <div className="text-center mb-24">
-                    <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
-                        In Development • Join the Waitlist
-                    </div>
-                    <h1 className="text-4xl font-bold md:text-6xl mb-6">
-                        Every Lead to Signed Project in a Weekend
-                    </h1>
-                    <p className="text-xl md:text-2xl font-medium text-foreground/80 mb-6">
-                        WeekendSuite turns every new inquiry into a same-day proposal, signed contract, and first invoice.
-                    </p>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        A simple admin suite for freelancers & tiny agencies to set up a professional client flow in a single weekend.
-                    </p>
-                </div>
+        <PageLayout maxWidth="7xl">
+            {/* Hero */}
+            <div className="mb-16 max-w-3xl">
+                <Badge variant="secondary" className="mb-6">
+                    In Development • Join the Waitlist
+                </Badge>
+                <TextEffect
+                    per="word"
+                    as="h1"
+                    preset="fade"
+                    className="text-4xl font-bold tracking-tight md:text-6xl mb-6"
+                >
+                    Every Lead to Signed Project in a Weekend
+                </TextEffect>
+                <TextEffect
+                    per="line"
+                    as="p"
+                    preset="fade"
+                    delay={0.3}
+                    className="text-xl md:text-2xl font-medium text-foreground/80 mb-6 leading-relaxed"
+                >
+                    WeekendSuite turns every new inquiry into a same-day proposal, signed contract, and first invoice.
+                </TextEffect>
+                <TextEffect
+                    per="line"
+                    as="p"
+                    preset="fade"
+                    delay={0.5}
+                    className="text-lg text-muted-foreground leading-relaxed"
+                >
+                    A simple admin suite for freelancers & tiny agencies to set up a professional client flow in a single weekend.
+                </TextEffect>
+            </div>
 
                 <div className="grid gap-16 md:grid-cols-2 lg:gap-24">
                     {/* Content */}
@@ -231,7 +250,6 @@ export default function WeekendSuitePage() {
                         </Card>
                     </div>
                 </div>
-            </div>
-        </main>
+        </PageLayout>
     );
 }

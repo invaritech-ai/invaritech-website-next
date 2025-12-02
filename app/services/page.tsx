@@ -5,6 +5,7 @@ import { ArrowRight, ShieldCheck, Database, Zap, Code } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import { PageLayout } from "@/components/page-layout";
 
 export const metadata: Metadata = {
     title: "Our Services - Automation & Back-Office Solutions",
@@ -71,19 +72,14 @@ const generalServices = [
 
 export default function ServicesPage() {
     return (
-        <main className="pt-24 pb-16 md:pt-32 md:pb-32">
-            <div className="mx-auto max-w-5xl px-6">
-                <div className="mb-16">
-                    <h1 className="text-4xl font-bold md:text-6xl mb-6">
-                        Our Services
-                    </h1>
-                    <p className="text-xl text-muted-foreground max-w-3xl">
-                        We help small service businesses stop losing time between
-                        their tools. Most of our clients already use tools like
-                        Google Workspace, HubSpot, or custom portals. We connect
-                        and automate these so work stops falling through the cracks.
-                    </p>
-                </div>
+        <PageLayout
+            maxWidth="6xl"
+            header={{
+                title: "Our Services",
+                description:
+                    "We help small service businesses stop losing time between their tools. Most of our clients already use tools like Google Workspace, HubSpot, or custom portals. We connect and automate these so work stops falling through the cracks.",
+            }}
+        >
 
                 {/* Featured Services */}
                 <div className="space-y-16 mb-24">
@@ -153,11 +149,11 @@ export default function ServicesPage() {
 
                 {/* General Services */}
                 <div className="mb-16">
-                    <div className="text-center mb-12">
+                    <div className="mb-12 max-w-3xl">
                         <h2 className="text-3xl font-bold mb-4">
                             Other Services We Offer
                         </h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        <p className="text-muted-foreground leading-relaxed">
                             Beyond our packaged solutions, we also provide custom
                             development and integration services tailored to your
                             specific needs.
@@ -189,11 +185,11 @@ export default function ServicesPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="text-center bg-muted/30 rounded-2xl p-8 md:p-12 border border-border/50">
+                <div className="bg-muted/30 rounded-2xl p-8 md:p-12 border border-border/50 max-w-3xl">
                     <h2 className="text-2xl md:text-3xl font-bold mb-4">
                         Ready to automate your workflow?
                     </h2>
-                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                    <p className="text-muted-foreground mb-8 leading-relaxed">
                         Book a free 30-minute consultation to discuss your
                         automation needs and see how we can help.
                     </p>
@@ -212,7 +208,6 @@ export default function ServicesPage() {
                         </a>
                     </Button>
                 </div>
-            </div>
-        </main>
+        </PageLayout>
     );
 }

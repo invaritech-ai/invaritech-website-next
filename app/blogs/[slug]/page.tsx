@@ -219,7 +219,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                     {/* Cover Image */}
                     {post.coverImage && (
-                        <div className="aspect-video relative overflow-hidden rounded-2xl mb-12 bg-muted">
+                        <div className="aspect-[4/3] relative overflow-hidden rounded-2xl mb-12 bg-muted">
                             <Image
                                 src={post.coverImage}
                                 alt={post.title}

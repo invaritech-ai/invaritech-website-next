@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, ShieldCheck, FileText, Activity } from "lucide-react";
 import { Metadata } from "next";
+import { PageLayout } from "@/components/page-layout";
+import { TextEffect } from "@/components/ui/text-effect";
 
 export const metadata: Metadata = {
     title: "Compliance Workflow Bridge - Services",
@@ -29,39 +32,53 @@ export const metadata: Metadata = {
 
 export default function ComplianceBridgePage() {
     return (
-        <main className="pt-24 pb-16 md:pt-32 md:pb-32">
-            <div className="mx-auto max-w-5xl px-6">
-                {/* Hero */}
-                <div className="text-center mb-24">
-                    <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-6">
-                        Invaritech Services
-                    </div>
-                    <h1 className="text-4xl font-bold md:text-6xl mb-6">
-                        Compliance Workflow Bridge
-                    </h1>
-                    <p className="text-xl md:text-2xl font-medium text-foreground/80 mb-6 max-w-3xl mx-auto">
-                        We turn the manual parts of your compliance and
-                        reporting into one reliable, auditable pipeline, using
-                        the tools you already have.
-                    </p>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-                        No big IT project, no surprise costs. Just a production-grade workflow in 6 weeks.
-                    </p>
-                    <Button
-                        asChild
-                        size="lg"
-                        className="rounded-xl px-8 text-base"
+        <PageLayout maxWidth="6xl">
+            {/* Hero */}
+            <div className="mb-16 max-w-3xl">
+                <Badge variant="secondary" className="mb-6">
+                    Invaritech Services
+                </Badge>
+                <TextEffect
+                    per="word"
+                    as="h1"
+                    preset="fade"
+                    className="text-4xl font-bold tracking-tight md:text-6xl mb-6"
+                >
+                    Compliance Workflow Bridge
+                </TextEffect>
+                <TextEffect
+                    per="line"
+                    as="p"
+                    preset="fade"
+                    delay={0.3}
+                    className="text-xl md:text-2xl font-medium text-foreground/80 mb-6 leading-relaxed"
+                >
+                    We turn the manual parts of your compliance and reporting into one reliable, auditable pipeline, using the tools you already have.
+                </TextEffect>
+                <TextEffect
+                    per="line"
+                    as="p"
+                    preset="fade"
+                    delay={0.5}
+                    className="text-lg text-muted-foreground mb-8 leading-relaxed"
+                >
+                    No big IT project, no surprise costs. Just a production-grade workflow in 6 weeks.
+                </TextEffect>
+                <Button
+                    asChild
+                    size="lg"
+                    className="rounded-xl px-8 text-base"
+                >
+                    <a
+                        href="https://calendly.com/hello-invaritech/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        <a
-                            href="https://calendly.com/hello-invaritech/30min"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Book a free consultation{" "}
-                            <ArrowRight className="ml-2 size-4" />
-                        </a>
-                    </Button>
-                </div>
+                        Book a free consultation{" "}
+                        <ArrowRight className="ml-2 size-4" />
+                    </a>
+                </Button>
+            </div>
 
                 {/* ICP Section */}
                 <div className="grid gap-12 md:grid-cols-2 mb-24">
@@ -156,9 +173,9 @@ export default function ComplianceBridgePage() {
 
                 {/* Offer Section */}
                 <div className="mb-24">
-                    <div className="text-center mb-12">
+                    <div className="mb-12 max-w-3xl">
                         <h2 className="text-3xl font-bold mb-4">What we do</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
+                        <p className="text-muted-foreground leading-relaxed">
                             An end-to-end flow from intake → review → filing →
                             client update, fully auditable and easy to manage.
                         </p>
@@ -203,11 +220,11 @@ export default function ComplianceBridgePage() {
                 </div>
 
                 {/* Outcomes */}
-                <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center mb-24">
+                <div className="bg-primary/5 rounded-3xl p-8 md:p-12 mb-24">
                     <h2 className="text-2xl md:text-3xl font-bold mb-8">
                         Expected Outcomes
                     </h2>
-                    <div className="grid gap-8 md:grid-cols-2 text-left max-w-4xl mx-auto">
+                    <div className="grid gap-8 md:grid-cols-2 max-w-4xl">
                         <div className="flex gap-4">
                             <div className="size-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold flex-none">
                                 1
@@ -268,17 +285,17 @@ export default function ComplianceBridgePage() {
                 </div>
 
                 {/* Timeline & Guarantee */}
-                <div className="max-w-3xl mx-auto text-center mb-24">
+                <div className="max-w-3xl mb-24">
                     <h2 className="text-3xl font-bold mb-6">
                         How long it takes
                     </h2>
                     <div className="bg-card border rounded-2xl p-8 shadow-sm">
-                        <p className="text-xl font-medium mb-4">
+                        <p className="text-xl font-medium mb-4 leading-relaxed">
                             We deliver a production-grade, auditable pipeline in
                             6 weeks using your existing tools.
                         </p>
                         <div className="h-px bg-border my-6" />
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground leading-relaxed">
                             <span className="font-semibold text-foreground">
                                 Our Guarantee:
                             </span>{" "}
@@ -290,11 +307,11 @@ export default function ComplianceBridgePage() {
                 </div>
 
                 {/* Final CTA */}
-                <div className="text-center">
+                <div className="max-w-3xl">
                     <h2 className="text-2xl font-bold mb-4">
                         Ready to stop chasing submissions?
                     </h2>
-                    <p className="text-muted-foreground mb-8">
+                    <p className="text-muted-foreground mb-8 leading-relaxed">
                         Start trusting your process today.
                     </p>
                     <Button
@@ -312,7 +329,6 @@ export default function ComplianceBridgePage() {
                         </a>
                     </Button>
                 </div>
-            </div>
-        </main>
+        </PageLayout>
     );
 }

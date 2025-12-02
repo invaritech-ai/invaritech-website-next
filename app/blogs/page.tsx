@@ -123,7 +123,6 @@ export default function BlogsPage() {
                                                 <Badge
                                                     key={tag}
                                                     variant="secondary"
-                                                    className="text-xs"
                                                 >
                                                     {tag}
                                                 </Badge>
@@ -152,7 +151,7 @@ export default function BlogsPage() {
                                                 <Clock className="size-3" />
                                                 <span>
                                                     {estimateReadingTime(
-                                                        post.excerpt
+                                                        post.content
                                                     )}{" "}
                                                     min read
                                                 </span>

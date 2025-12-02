@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import { PageLayout } from "@/components/page-layout";
 
 export const metadata: Metadata = {
     title: "Our Work - Automation Projects",
@@ -72,18 +73,14 @@ const projects = [
 
 export default function WorkPage() {
     return (
-        <main className="pt-24 pb-16 md:pt-32 md:pb-32">
-            <div className="mx-auto max-w-5xl px-6">
-                <div className="mb-16">
-                    <h1 className="text-4xl font-bold md:text-6xl mb-6">
-                        Our Work
-                    </h1>
-                    <p className="text-xl text-muted-foreground max-w-3xl">
-                        A few examples of the kind of systems we build. Most of
-                        our work is behind the scenes, connecting existing tools
-                        into reliable workflows.
-                    </p>
-                </div>
+        <PageLayout
+            maxWidth="6xl"
+            header={{
+                title: "Our Work",
+                description:
+                    "A few examples of the kind of systems we build. Most of our work is behind the scenes, connecting existing tools into reliable workflows.",
+            }}
+        >
 
                 <div className="space-y-16">
                     {projects.map((project) => (
@@ -134,7 +131,6 @@ export default function WorkPage() {
                                                 <Badge
                                                     key={tag}
                                                     variant="outline"
-                                                    className="text-xs"
                                                 >
                                                     {tag}
                                                 </Badge>
@@ -191,8 +187,7 @@ export default function WorkPage() {
                         </div>
                     </div>
                 </div>
-            </div>
-        </main>
+        </PageLayout>
     );
 }
 

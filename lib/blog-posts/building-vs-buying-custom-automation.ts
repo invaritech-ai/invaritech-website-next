@@ -274,5 +274,5 @@ If you want to explore whether a custom RegOps bridge makes sense for your consu
     },
     publishedAt: "2025-01-01T10:00:00Z",
     tags: ["Strategy", "Automation", "Decision Making"],
-    coverImage: "/blog/build-vs-buy-cover.webp",
+    coverImage: "/blog/buy-vs-build.webp",
 };

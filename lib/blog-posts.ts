@@ -22,6 +22,7 @@ export interface BlogPostMetadata {
     slug: string;
     title: string;
     excerpt: string;
+    content: string;
     author: {
         name: string;
         role: string;
@@ -46,6 +47,7 @@ export function getAllPosts(): BlogPostMetadata[] {
             slug: post.slug,
             title: post.title,
             excerpt: post.excerpt,
+            content: post.content,
             author: post.author,
             publishedAt: post.publishedAt,
             tags: post.tags,
