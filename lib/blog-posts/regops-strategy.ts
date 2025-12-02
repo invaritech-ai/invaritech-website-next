@@ -14,7 +14,7 @@ We speak to a lot of consultancy owners. The pattern is painfully familiar:
 
 You are selling a premium service: regulatory assurance. But behind the scenes, the work is held together by manual effort, copy‑paste, and fragile processes that haven't really changed since 2010.
 
-That is **[The Consultancy Trap](/blogs/consultancy-trap)** in action: using expensive, highly trained people to wrangle low-value data problems.
+That is **[The Consultancy Trap](/blogs/consultancy-trap/)** in action: using expensive, highly trained people to wrangle low-value data problems.
 
 This is where **RegOps (Regulatory Operations)** comes in. It is the shift from "doing compliance by hand" to **engineering** how compliance happens.
 

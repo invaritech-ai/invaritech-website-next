@@ -327,7 +327,7 @@ export default function ComplianceBridgePage() {
                                 </CardContent>
                             </Card>
                         </Link>
-                        <Link href="/blogs/regops-strategy" className="block group">
+                        <Link href="/blogs/regops-strategy/" className="block group">
                             <Card className="h-full transition-colors hover:bg-muted/50">
                                 <CardHeader>
                                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
@@ -341,7 +341,7 @@ export default function ComplianceBridgePage() {
                                 </CardContent>
                             </Card>
                         </Link>
-                        <Link href="/blogs/regops-technical" className="block group">
+                        <Link href="/blogs/regops-technical/" className="block group">
                             <Card className="h-full transition-colors hover:bg-muted/50">
                                 <CardHeader>
                                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
@@ -355,7 +355,7 @@ export default function ComplianceBridgePage() {
                                 </CardContent>
                             </Card>
                         </Link>
-                        <Link href="/blogs/why-manual-eudr-compliance-fails" className="block group">
+                        <Link href="/blogs/why-manual-eudr-compliance-fails/" className="block group">
                             <Card className="h-full transition-colors hover:bg-muted/50">
                                 <CardHeader>
                                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
@@ -369,7 +369,7 @@ export default function ComplianceBridgePage() {
                                 </CardContent>
                             </Card>
                         </Link>
-                        <Link href="/blogs/compliance-automation-done-right" className="block group">
+                        <Link href="/blogs/compliance-automation-done-right/" className="block group">
                             <Card className="h-full transition-colors hover:bg-muted/50">
                                 <CardHeader>
                                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
@@ -383,7 +383,7 @@ export default function ComplianceBridgePage() {
                                 </CardContent>
                             </Card>
                         </Link>
-                        <Link href="/blogs/building-vs-buying-custom-automation" className="block group">
+                        <Link href="/blogs/building-vs-buying-custom-automation/" className="block group">
                             <Card className="h-full transition-colors hover:bg-muted/50">
                                 <CardHeader>
                                     <CardTitle className="text-lg group-hover:text-primary transition-colors">

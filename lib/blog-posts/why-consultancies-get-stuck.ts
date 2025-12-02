@@ -214,11 +214,11 @@ You stop asking, "How many more people do we need?" and start asking, "What else
 
 If you want to go deeper:
 
-- [Understand the strategic case for RegOps here](/blogs/regops-strategy)  
+- [Understand the strategic case for RegOps here](/blogs/regops-strategy/)  
 
-- [See how we build these bridges step by step](/blogs/regops-technical)
+- [See how we build these bridges step by step](/blogs/regops-technical/)
 
-- [Read about "The Consultancy Trap" and how it caps revenue](/blogs/consultancy-trap)
+- [Read about "The Consultancy Trap" and how it caps revenue](/blogs/consultancy-trap/)
 
 Stuck in manual compliance work and want to see what a different model could look like?  
 

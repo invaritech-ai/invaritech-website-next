@@ -86,14 +86,14 @@ const projects = [
                 solution within 6 weeks to give those hours back to your
                 business.{" "}
                 <Link
-                    href="/blogs/building-vs-buying-custom-automation"
+                    href="/blogs/building-vs-buying-custom-automation/"
                     className="underline hover:text-foreground"
                 >
                     Learn when custom automation makes sense
                 </Link>{" "}
                 or{" "}
                 <Link
-                    href="/blogs/why-consultancies-get-stuck"
+                    href="/blogs/why-consultancies-get-stuck/"
                     className="underline hover:text-foreground"
                 >
                     see why hiring more people doesn't fix the problem

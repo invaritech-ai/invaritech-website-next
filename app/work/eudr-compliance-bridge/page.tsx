@@ -59,7 +59,7 @@ export default function EudrCaseStudyPage() {
                         full enforcement, a French operator saw a challenge
                         coming. They needed to submit thousands of Due Diligence
                         Statements to the European Commission. Doing this
-                        manually was impossible at their scale (read <Link href="/blogs/why-manual-eudr-compliance-fails" className="underline hover:text-foreground">why manual compliance fails here</Link>). We built them a
+                        manually was impossible at their scale (read <Link href="/blogs/why-manual-eudr-compliance-fails/" className="underline hover:text-foreground">why manual compliance fails here</Link>). We built them a
                         bridge to automate it all.
                     </p>
                 </div>
@@ -248,13 +248,13 @@ export default function EudrCaseStudyPage() {
 
                 <div className="mb-24 text-center">
                     <p className="text-muted-foreground mb-4">
-                        Want to see how we built this? <Link href="/blogs/regops-technical" className="underline hover:text-foreground font-medium">Read the technical deep dive.</Link>
+                        Want to see how we built this? <Link href="/blogs/regops-technical/" className="underline hover:text-foreground font-medium">Read the technical deep dive.</Link>
                     </p>
                     <p className="text-muted-foreground text-sm">
                         Learn more about{" "}
-                        <Link href="/blogs/compliance-automation-done-right" className="underline hover:text-foreground">deterministic compliance automation</Link>{" "}
+                        <Link href="/blogs/compliance-automation-done-right/" className="underline hover:text-foreground">deterministic compliance automation</Link>{" "}
                         and{" "}
-                        <Link href="/blogs/building-vs-buying-custom-automation" className="underline hover:text-foreground">when custom automation makes sense</Link>.
+                        <Link href="/blogs/building-vs-buying-custom-automation/" className="underline hover:text-foreground">when custom automation makes sense</Link>.
                     </p>
                 </div>
 
