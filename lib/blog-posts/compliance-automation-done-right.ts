@@ -82,6 +82,8 @@ This is the pattern you see again and again:
 
 - When automation is deterministic, explicit, and rule-based, **you get speed without losing control**.
 
+**[See a real-world example of this approach: The EUDR Compliance Bridge](/work/eudr-compliance-bridge)**
+
 That's the standard compliance automation has to meet.
 
 ## What "Compliance Automation Done Right" Looks Like

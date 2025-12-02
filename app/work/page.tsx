@@ -68,6 +68,10 @@ const projects = [
         image: "/work/custom-full.jpg", // Placeholder
         link: "https://calendly.com/hello-invaritech/30min",
         buttonText: "Talk to Us",
+        secondaryLink: {
+            text: "Learn more",
+            href: "/services/compliance-bridge/",
+        },
     },
 ];
 
@@ -150,6 +154,17 @@ export default function WorkPage() {
                                                     <ArrowRight className="ml-2 size-4" />
                                                 )}
                                             </ButtonLink>
+                                            {/* @ts-ignore */}
+                                            {project.secondaryLink && (
+                                                <ButtonLink
+                                                    /* @ts-ignore */
+                                                    href={project.secondaryLink.href}
+                                                    variant="outline"
+                                                >
+                                                    {/* @ts-ignore */}
+                                                    {project.secondaryLink.text}
+                                                </ButtonLink>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -195,10 +210,12 @@ function ButtonLink({
     href,
     children,
     disabled,
+    variant,
 }: {
     href: string;
     children: React.ReactNode;
     disabled?: boolean;
+    variant?: 'default' | 'outline';
 }) {
     if (disabled) {
         return (
@@ -208,8 +225,12 @@ function ButtonLink({
         );
     }
     const isExternal = href.startsWith("http");
-    const className =
-        "inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
+    const baseClassName = "inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
+    const variantStyles = variant === 'outline' 
+        ? "border border-input bg-background hover:bg-accent hover:text-accent-foreground" 
+        : "bg-primary text-primary-foreground hover:bg-primary/90";
+    
+    const className = `${baseClassName} ${variantStyles}`;
     
     if (isExternal) {
         return (

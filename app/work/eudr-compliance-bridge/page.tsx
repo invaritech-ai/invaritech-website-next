@@ -59,7 +59,7 @@ export default function EudrCaseStudyPage() {
                         full enforcement, a French operator saw a challenge
                         coming. They needed to submit thousands of Due Diligence
                         Statements to the European Commission. Doing this
-                        manually was impossible at their scale. We built them a
+                        manually was impossible at their scale (read <Link href="/blogs/why-manual-eudr-compliance-fails" className="underline hover:text-foreground">why manual compliance fails here</Link>). We built them a
                         bridge to automate it all.
                     </p>
                 </div>
@@ -245,6 +245,12 @@ export default function EudrCaseStudyPage() {
                         ))}
                     </div>
                 </section>
+
+                <div className="mb-24 text-center">
+                    <p className="text-muted-foreground">
+                        Want to see how we built this? <Link href="/blogs/regops-technical" className="underline hover:text-foreground font-medium">Read the technical deep dive.</Link>
+                    </p>
+                </div>
 
                 {/* Business Impact */}
                 <section className="mb-24">

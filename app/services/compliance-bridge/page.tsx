@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, ShieldCheck, FileText, Activity } from "lucide-react";
+import Link from "next/link";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
@@ -303,6 +304,57 @@ export default function ComplianceBridgePage() {
                             production, we keep working at no additional fee
                             until it is live.
                         </p>
+                    </div>
+                </div>
+
+                {/* Related Resources */}
+                <div className="mb-24">
+                    <h2 className="text-2xl font-bold mb-8">
+                        See it in action
+                    </h2>
+                    <div className="grid gap-6 md:grid-cols-3">
+                        <Link href="/work/eudr-compliance-bridge/" className="block group">
+                            <Card className="h-full transition-colors hover:bg-muted/50">
+                                <CardHeader>
+                                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                        EUDR Case Study
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        See how we automated thousands of submissions for a French operator.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                        <Link href="/blogs/regops-strategy" className="block group">
+                            <Card className="h-full transition-colors hover:bg-muted/50">
+                                <CardHeader>
+                                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                        The RegOps Strategy
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        Why "hiring more people" stops working, and what to do instead.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </Link>
+                        <Link href="/blogs/regops-technical" className="block group">
+                            <Card className="h-full transition-colors hover:bg-muted/50">
+                                <CardHeader>
+                                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                                        Technical Deep Dive
+                                    </CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                    <p className="text-sm text-muted-foreground">
+                                        See the architecture of a compliance bridge (Python, FastAPI, SOAP).
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        </Link>
                     </div>
                 </div>
 
