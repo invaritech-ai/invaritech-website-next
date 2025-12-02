@@ -140,7 +140,7 @@ You want:
 
 If you want to see this idea applied to EUDR-style work, take a look at the RegOps Bridge approach:  
 
-**[See our RegOps Bridge architecture →](/blogs/regops-technical)**
+**[See our RegOps Bridge architecture](/blogs/regops-technical)**
 
 The key insight:
 

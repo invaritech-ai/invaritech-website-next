@@ -3,6 +3,9 @@ import { post as whyConsultanciesGetStuck } from "./blog-posts/why-consultancies
 import { post as complianceAutomationDoneRight } from "./blog-posts/compliance-automation-done-right";
 import { post as buildingVsBuyingCustomAutomation } from "./blog-posts/building-vs-buying-custom-automation";
 import { post as whyManualEudrComplianceFails } from "./blog-posts/why-manual-eudr-compliance-fails";
+import { post as regopsTechnical } from "./blog-posts/regops-technical";
+import { post as regopsStrategy } from "./blog-posts/regops-strategy";
+import { post as consultancyTrap } from "./blog-posts/consultancy-trap";
 
 export interface BlogPost {
     slug: string;
@@ -38,6 +41,9 @@ export const blogPosts: BlogPost[] = [
     complianceAutomationDoneRight,
     buildingVsBuyingCustomAutomation,
     whyManualEudrComplianceFails,
+    regopsTechnical,
+    regopsStrategy,
+    consultancyTrap,
 ];
 
 // Helper functions
