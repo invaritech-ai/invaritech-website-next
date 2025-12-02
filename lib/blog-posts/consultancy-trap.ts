@@ -24,7 +24,7 @@ That's sustainable with 5 clients.
 
 It falls apart at 50.
 
-This is what we call **[The Manual Middle](/blogs/regops-technical#the-challenge-the-manual-middle)**: the stage where work is too complex for off-the-shelf tools, but still handled with spreadsheets, inboxes, and ingenuity. It's also where your margins quietly disappear.
+This is what we call **[The Manual Middle](/blogs/regops-technical/#the-challenge-the-manual-middle)**: the stage where work is too complex for off-the-shelf tools, but still handled with spreadsheets, inboxes, and ingenuity. It's also where your margins quietly disappear.
 
 We recently worked with a compliance operation stuck at this "scale wall." Their recurring Due Diligence Statements (DDS) for EUDR were piling up. Their senior experts were reduced to glorified data typists. Burnout risk was high. Error risk was higher.
 
@@ -32,7 +32,7 @@ They didn't have a people problem. They had an operating model problem.
 
 ## Three Signs Your Consultancy Needs "RegOps"
 
-From working with firms in the 5–30 employee range, the pattern is consistent. When manual processes are capping your growth, it usually shows up in three ways.
+From working with firms in the 5-30 employee range, the pattern is consistent. When manual processes are capping your growth, it usually shows up in three ways.
 
 ### 1. Your "Recurring" Revenue Is Really Just Recurring Stress
 
@@ -52,7 +52,7 @@ In many firms, this splits out roughly as:
 
 - 20%: applying expertise and judgment
 
-The problem isn't that the work exists. The problem is that it's invisible, manual, and hard to standardize. **[We break down how this fragmentation kills scalability here](/blogs/regops-strategy#the-old-way-vs-the-regops-way).**
+The problem isn't that the work exists. The problem is that it's invisible, manual, and hard to standardize. **[We break down how this fragmentation kills scalability here](/blogs/regops-strategy/#the-old-way-vs-the-regops-way).**
 
 If every billing cycle feels like a fresh crisis, you're not running a recurring revenue operation. You're running recurring chaos.
 
@@ -92,7 +92,7 @@ What you need is a **RegOps Bridge**: a workflow backbone that:
 
 So the work gets done correctly **even when Maria is on holiday**.
 
-**[We unpack the RegOps Bridge philosophy here](/blogs/regops-strategy).**
+**[We unpack the RegOps Bridge philosophy here](/blogs/regops-strategy/).**
 
 ### 3. You're Turning Down Work (Or Secretly Dreading It)
 
@@ -228,13 +228,13 @@ If any of this sounds uncomfortably familiar, you're not alone. Most boutique ES
 
 If you want to see what that looks like in practice:
 
-- [See how we wired an EUDR RegOps Bridge into the EU's SOAP interface](/blogs/regops-technical)
+- [See how we wired an EUDR RegOps Bridge into the EU's SOAP interface](/blogs/regops-technical/)
 
-- [Read more on how RegOps protects your margins and de-risks scale](/blogs/regops-strategy)
+- [Read more on how RegOps protects your margins and de-risks scale](/blogs/regops-strategy/)
 
-- [Learn why hiring more people doesn't fix the problem](/blogs/why-consultancies-get-stuck)
+- [Learn why hiring more people doesn't fix the problem](/blogs/why-consultancies-get-stuck/)
 
-Stuck in spreadsheet hell? We help consultancies build auditable workflow bridges so your team can stop living in crisis mode. [Let's sketch your workflow](/contact).
+Stuck in spreadsheet hell? We help consultancies build auditable workflow bridges so your team can stop living in crisis mode. [Let's sketch your workflow](/contact/).
     `,
     author: {
         name: "Aditi Garg",

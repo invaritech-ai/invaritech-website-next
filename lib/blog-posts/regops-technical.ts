@@ -14,7 +14,7 @@ When we talk about automation with small consultancies, one fear comes up every 
 
 You don't.
 
-The most effective automation doesn't replace your existing stack. It connects it. That's the core of the **[RegOps Strategy](/blogs/regops-strategy)**: you're not building a new ERP, you're building a bridge between your clients' messy reality and the regulator's rigid portal.
+The most effective automation doesn't replace your existing stack. It connects it. That's the core of the **[RegOps Strategy](/blogs/regops-strategy/)**: you're not building a new ERP, you're building a bridge between your clients' messy reality and the regulator's rigid portal.
 
 That bridge connects:
 
@@ -48,7 +48,7 @@ The painful part sat in the middle. Analysts were:
 
 - Manually preparing payloads for a fragile, legacy API
 
-That "Manual Middle" is where **90% of the cost** was hiding. It's also **[the bottleneck that creates the Consultancy Trap](/blogs/why-consultancies-get-stuck)**: more clients means more analysts, not more margin.
+That "Manual Middle" is where **90% of the cost** was hiding. It's also **[the bottleneck that creates the Consultancy Trap](/blogs/why-consultancies-get-stuck/)**: more clients means more analysts, not more margin.
 
 ### The Solution Architecture
 
@@ -142,7 +142,7 @@ Key components in the logic layer:
 
 - **Why do this in code instead of with generic AI?**  
 
-  As we explain in our **[strategy analysis](/blogs/regops-strategy#why-generic-ai-wont-fix-this)**:
+  As we explain in our **[strategy analysis](/blogs/regops-strategy/#why-generic-ai-wont-fix-this)**:
 
   - Compliance decisions are often binary: pass/fail, yes/no.
 
@@ -280,15 +280,15 @@ By building this bridge, the EUDR firm didn't only save analyst hours. They crea
 
 Their competitors are still copying values from Excel into portals. This firm now has a proprietary engine that can handle 10x the workload and surface issues earlier and more clearly.
 
-If you're wondering whether the investment pays off, see **[the business case for building this kind of bridge now](/blogs/why-consultancies-get-stuck)**.
+If you're wondering whether the investment pays off, see **[the business case for building this kind of bridge now](/blogs/why-consultancies-get-stuck/)**.
 
 You already have the basic pieces: email, spreadsheets, CRM, shared drives. The RegOps Bridge is what turns them into a system.
 
 If you want to explore how to build a RegOps Bridge for your consultancy:
 
-- [Start with the architecture patterns in our RegOps Strategy guide](/blogs/regops-strategy)
+- [Start with the architecture patterns in our RegOps Strategy guide](/blogs/regops-strategy/)
 
-- [Contact our engineering team for hands-on help connecting your tools](/contact)
+- [Contact our engineering team for hands-on help connecting your tools](/contact/)
     `,
     author: {
         name: "INVARITECH Team",

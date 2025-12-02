@@ -110,7 +110,7 @@ This is where your team creates value and where your firm differentiates itself.
 
 Most consultancies flip this balance. They automate a small slice (around 20%) and rely on people for the remaining 80%. High-performing firms do the opposite. They automate 70–80% of the work and reserve human time for Type 3 only.
 
-**Want to see what that looks like in practice? [We break it down here](/blogs/regops-technical)**
+**Want to see what that looks like in practice? [We break it down here](/blogs/regops-technical/)**
 
 ## Why Many Automation Efforts Fail
 
@@ -140,7 +140,7 @@ That is common. The issue is rarely the idea of automation itself. It is how it 
 
 The difference between the two is not a buzzword. It is design.  
 
-**We explain why generic "AI" is rarely the right starting point for this kind of work here: [RegOps strategy overview](/blogs/regops-strategy)**
+**We explain why generic "AI" is rarely the right starting point for this kind of work here: [RegOps strategy overview](/blogs/regops-strategy/)**
 
 ## What a Better Setup Looks Like: An EUDR Case
 
@@ -174,7 +174,7 @@ They chose Path B.
 
 Their team moved away from constant manual firefighting and started focusing on higher-value tasks: explaining regulatory changes, advising on upstream data quality, and planning for upcoming obligations rather than chasing the last filing.
 
-**We walk through how this was set up in detail here: [EUDR RegOps Bridge](/blogs/regops-technical)**
+**We walk through how this was set up in detail here: [EUDR RegOps Bridge](/blogs/regops-technical/)**
 
 ## Is Your Consultancy at This Point?
 
@@ -192,7 +192,7 @@ If you answered "yes" to at least two of these, your main challenge is probably 
 
 We call this a **RegOps Bridge**. You can read more about the concept and strategy here:  
 
-**[Why a RegOps Bridge beats "just hiring more people"](/blogs/regops-strategy)**
+**[Why a RegOps Bridge beats "just hiring more people"](/blogs/regops-strategy/)**
 
 ## What Needs to Change
 

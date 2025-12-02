@@ -12,7 +12,7 @@ We speak to a lot of consultancy owners. The pattern is painfully familiar:
 
 > "We have great clients. We have smart consultants. But our back-office is a mess of spreadsheets, shared drives, and anxiety."
 
-You are selling a premium service: regulatory assurance. But behind the scenes, the work is held together by manual effort, copy‑paste, and fragile processes that haven't really changed since 2010.
+You are selling a premium service: regulatory assurance. But behind the scenes, the work is held together by manual effort, copy-paste, and fragile processes that haven't really changed since 2010.
 
 That is **[The Consultancy Trap](/blogs/consultancy-trap/)** in action: using expensive, highly trained people to wrangle low-value data problems.
 
@@ -36,7 +36,7 @@ It:
 
 Your team still sets the rules and makes the expert decisions. But they stop being human middleware.
 
-You can see a more detailed breakdown in **[the technical architecture of a Bridge](/blogs/regops-technical)**.
+You can see a more detailed breakdown in **[the technical architecture of a Bridge](/blogs/regops-technical/)**.
 
 ## The "Old Way" vs The RegOps Way
 
@@ -77,7 +77,7 @@ In a low-stakes environment, maybe. In a regulatory context, that is dangerous.
 
 In this world, **"hallucination" is just a polite word for malpractice.**
 
-As we break down in more depth in our **[technical deep dive on the logic layer](/blogs/regops-technical#2-the-logic-layer-codifying-the-heroic-analyst)**, generic AI agents:
+As we break down in more depth in our **[technical deep dive on the logic layer](/blogs/regops-technical/#2-the-logic-layer-codifying-the-heroic-analyst)**, generic AI agents:
 
 - don't have a guaranteed, stable logic path  
 - can misinterpret small UI changes  
@@ -119,7 +119,7 @@ With a Bridge in place, a large portion of the "grunt work" disappears:
 
 The effect is simple: you can take on more clients and more volume **without** hiring a corresponding number of analysts.
 
-We dig deeper into this dynamic in **[breaking the "heroic ceiling"](/blogs/why-consultancies-get-stuck)**, where growth stalls because everything depends on heroic individual effort.
+We dig deeper into this dynamic in **[breaking the "heroic ceiling"](/blogs/why-consultancies-get-stuck/)**, where growth stalls because everything depends on heroic individual effort.
 
 ### 2. Built-In Auditability
 
@@ -165,9 +165,9 @@ Buyers pay more for Firm B, because:
 
 - It is easier to grow without breaking.  
 - Its delivery is not tied to a small number of "heroes."  
-- Its know‑how is encoded in systems, not only in people's heads.
+- Its know-how is encoded in systems, not only in people's heads.
 
-As a simple rule of thumb, a consultancy that runs on code and IP is often worth **around 3x** what a purely time‑and‑materials firm with the same top-line can command.
+As a simple rule of thumb, a consultancy that runs on code and IP is often worth **around 3x** what a purely time-and-materials firm with the same top-line can command.
 
 ## Is Your Firm Ready for RegOps?
 
@@ -175,7 +175,7 @@ You don't need thousands of employees or a dedicated engineering team to make th
 
 In fact, the firms that benefit most often look like this:
 
-- **5–30 employees**  
+- **5-30 employees**  
 - recurring regulatory work (e.g. ESG, sustainability, financial compliance)  
 - constant pressure at peak deadlines  
 - owners who can feel that "just hire another analyst" is no longer a real plan
@@ -191,11 +191,11 @@ The second option is RegOps.
 
 If you want to explore how to build a RegOps Bridge for your consultancy:
 
-- [See how we built a RegOps Bridge for a high-volume EUDR filing process](/blogs/regops-technical)
+- [See how we built a RegOps Bridge for a high-volume EUDR filing process](/blogs/regops-technical/)
 
-- [Read more on the trap of manual scaling](/blogs/why-consultancies-get-stuck)
+- [Read more on the trap of manual scaling](/blogs/why-consultancies-get-stuck/)
 
-Want to stress-test your current workflow? [Book a 20-minute diagnostic call here](/contact) to map your current process and see where a Bridge could remove the most friction.
+Want to stress-test your current workflow? [Book a 20-minute diagnostic call here](/contact/) to map your current process and see where a Bridge could remove the most friction.
     `,
     author: {
         name: "Aditi Garg",

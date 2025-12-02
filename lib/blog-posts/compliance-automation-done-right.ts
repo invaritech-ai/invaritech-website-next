@@ -82,9 +82,9 @@ This is the pattern you see again and again:
 
 - When automation is deterministic, explicit, and rule-based, **you get speed without losing control**.
 
-**[See a real-world example of this approach: The EUDR Compliance Bridge](/work/eudr-compliance-bridge)**
+**[See a real-world example of this approach: The EUDR Compliance Bridge](/work/eudr-compliance-bridge/)**
 
-**[Learn why manual compliance fails at scale](/blogs/why-manual-eudr-compliance-fails)** and why automation becomes essential.
+**[Learn why manual compliance fails at scale](/blogs/why-manual-eudr-compliance-fails/)** and why automation becomes essential.
 
 That's the standard compliance automation has to meet.
 
@@ -144,7 +144,7 @@ You want:
 
 If you want to see this idea applied to EUDR-style work, take a look at the RegOps Bridge approach:  
 
-**[See our RegOps Bridge architecture](/blogs/regops-technical)**
+**[See our RegOps Bridge architecture](/blogs/regops-technical/)**
 
 The key insight:
 
@@ -238,7 +238,7 @@ If you can't answer this question clearly, you have a risk problem, not an autom
 
 There's a longer breakdown here:  
 
-**[Read our full framework](/blogs/building-vs-buying-custom-automation)**
+**[Read our full framework](/blogs/building-vs-buying-custom-automation/)**
 
 But in short:
 
@@ -334,9 +334,9 @@ If a solution "probably works," it doesn't belong anywhere near your regulatory 
 
 If a system is deterministic, transparent, and boring in exactly the way regulators like, that's worth investing in.
 
-**[Ready to build?](/blogs/regops-strategy)**  
+**[Ready to build?](/blogs/regops-strategy/)**  
 
-[See the business case for RegOps here.](/blogs/why-consultancies-get-stuck)
+[See the business case for RegOps here.](/blogs/why-consultancies-get-stuck/)
 
 Stuck with black-box automation and want to see what a deterministic approach could look like?  
 

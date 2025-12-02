@@ -11,10 +11,10 @@ export const post: BlogPost = {
 Most compliance consultancies have lived some version of this story.
 
 A vendor shows you a polished demo and says something like:  
-“Buy our platform. It handles EUDR, ESG, AML, KYC, everything. One system. End‑to‑end compliance.”
+“Buy our platform. It handles EUDR, ESG, AML, KYC, everything. One system. End-to-end compliance.”
 
 The numbers seem to work at first glance:  
-€500–5,000 per month for “enterprise‑grade” compliance software. Cheaper than another full‑time hire, right?
+€500–5,000 per month for “enterprise-grade” compliance software. Cheaper than another full-time hire, right?
 
 Then the real work starts:
 
@@ -26,13 +26,13 @@ Then the real work starts:
 You didn't buy a solution to your problem.  
 You bought enterprise software designed for someone else's problem.
 
-## When Buying Off‑the‑Shelf Compliance Software Makes Sense
+## When Buying Off-the-Shelf Compliance Software Makes Sense
 
-Off‑the‑shelf tools absolutely have their place. The key is to recognize when your problem is genuinely “standard.”
+Off-the-shelf tools absolutely have their place. The key is to recognize when your problem is genuinely “standard.”
 
 Buying tends to work well when:
 
-- **The problem is common and well‑understood.**  
+- **The problem is common and well-understood.**  
   Payroll runs, basic HR workflows, generic policy attestations, standard reporting.
 - **You’re willing to adapt your process to the tool.**  
   You don’t mind using the vendor’s view of “how this should work.”
@@ -49,13 +49,13 @@ Typical “buy” candidates:
 
 Typical “don’t buy blindly” areas:
 
-- Specific regulatory submissions (EUDR, sector‑specific ESG, niche local rules)  
-- Multi‑client, multi‑jurisdiction filing workflows  
+- Specific regulatory submissions (EUDR, sector-specific ESG, niche local rules)  
+- Multi-client, multi-jurisdiction filing workflows  
 - Anything tightly tied to your methodology or competitive edge  
 
-**[See why manual EUDR compliance fails at scale here](/blogs/why-manual-eudr-compliance-fails)**
+**[See why manual EUDR compliance fails at scale here](/blogs/why-manual-eudr-compliance-fails/)**
 
-Once your work involves nuanced, client‑specific workflows and complex review chains, generic platforms start feeling like a blunt instrument.
+Once your work involves nuanced, client-specific workflows and complex review chains, generic platforms start feeling like a blunt instrument.
 
 ## When Building Custom Compliance Automation Is the Better Move
 
@@ -67,7 +67,7 @@ Building starts to make sense when:
   Your clients, jurisdictions, and review steps don’t match what a generic platform was built for.
 - **You need deep, reliable integration.**  
   Data has to move cleanly from client systems → your internal checks → regulator submissions → client reporting.
-- **Off‑the‑shelf tools feel bloated.**  
+- **Off-the-shelf tools feel bloated.**  
   You’d be paying for 200 features to use 10, and working around the rest.
 - **You can quantify the impact.**  
   You know how many hours per filing you’re burning and what reducing that would mean for margin.
@@ -78,14 +78,14 @@ Good places to consider custom builds:
 
 - Submission pipelines for specific regulations  
 - Custom ESG or sustainability reporting engines  
-- Multi‑client filing engines with recurring deadlines  
-- Bridges between existing back‑office tools and client portals  
+- Multi-client filing engines with recurring deadlines  
+- Bridges between existing back-office tools and client portals  
 
-This is where a narrow, well‑designed system often beats a broad, generic platform.
+This is where a narrow, well-designed system often beats a broad, generic platform.
 
 ## Real Case Study: When Payroll Became Strategy At Trusted Health
 
-To ground this in reality, it’s helpful to look at a public, non‑fiction example where a company deliberately chose to build a custom system instead of buying an enterprise product.
+To ground this in reality, it’s helpful to look at a public, non-fiction example where a company deliberately chose to build a custom system instead of buying an enterprise product.
 
 Trusted Health is a healthcare staffing company that connects nurses with jobs. They faced a decision around payroll and pay experience that maps very closely to the “build vs. buy” question many consultancies face in compliance.
 
@@ -109,7 +109,7 @@ For a compliance consultancy, swap “payroll” for:
 
 - How you run due diligence  
 - How you structure evidence and audit trails  
-- How you orchestrate multi‑client, multi‑regulator workloads  
+- How you orchestrate multi-client, multi-regulator workloads  
 
 If that orchestration is central to how you win and keep clients, you're much closer to Trusted Health's situation than to a generic "we just need a tool" scenario.
 
@@ -143,7 +143,7 @@ How to read your answers:
   Custom automation is probably the stronger path.
 
 - **4+ “Buy” answers:**  
-  A well‑selected off‑the‑shelf tool will probably serve you better.
+  A well-selected off-the-shelf tool will probably serve you better.
 
 - **A mixed result:**  
   You may need a hybrid: a general platform plus **custom bridges** where your workflow is unique.
@@ -167,9 +167,9 @@ A common worry:
 - You’re not beholden to a vendor’s priorities when regulations shift.  
 - You can design the system around your audit and evidence needs from day one.
 
-Done well, a focused custom system can be **more predictable** than living inside a very large, ever‑changing platform.
+Done well, a focused custom system can be **more predictable** than living inside a very large, ever-changing platform.
 
-## Cost Comparison: A 3‑Year View
+## Cost Comparison: A 3-Year View
 
 Let’s compare rough, realistic costs over three years for a “serious” compliance platform versus a custom bridge. Numbers will vary, but the pattern is what matters.
 
@@ -190,7 +190,7 @@ Let’s compare rough, realistic costs over three years for a “serious” comp
   - Potential extra spend for new modules or added users  
   - **Total: ~€60k+**
 
-**Three‑year total:** ~€210k, often higher once you factor:
+**Three-year total:** ~€210k, often higher once you factor:
 
 - Time spent bending workflows to fit the platform  
 - Lost hours from low adoption  
@@ -198,11 +198,11 @@ Let’s compare rough, realistic costs over three years for a “serious” comp
 
 **Custom RegOps Bridge:**
 
-- **One‑time build:** ~€15k for a focused, well‑scoped system  
+- **One-time build:** ~€15k for a focused, well-scoped system  
 - **Maintenance/retainer:** €3k/month × 36 = €108k across three years  
 - **Hosting and infrastructure:** roughly €50–100/month ≈ €2.4k over three years
 
-**Three‑year total:** ~€125k
+**Three-year total:** ~€125k
 
 So you’re looking at **€80k+ in direct savings**, plus:
 
@@ -217,7 +217,7 @@ The exact numbers will differ for your firm, but the pattern shows why custom ca
 If you already have a compliance platform in place, some common red flags signal that you might have overbought:
 
 - “We bought it, but the team barely uses it.”  
-  The tool doesn’t fit day‑to‑day reality.
+  The tool doesn’t fit day-to-day reality.
 
 - “Implementation took more than 6 months.”  
   The solution is likely more complex than the problem you actually needed to solve.
@@ -249,13 +249,13 @@ It’s worth revisiting your setup if:
    Your operations can’t scale without either more headcount or better systems.
 
 If you want to step back and look at the bigger picture of RegOps for consultancies, have a look at:  
-[The strategic case for RegOps in consulting firms](/blogs/regops-strategy)
+[The strategic case for RegOps in consulting firms](/blogs/regops-strategy/)
 
-[See the technical architecture of a RegOps Bridge](/blogs/regops-technical) to understand how these systems are built.
+[See the technical architecture of a RegOps Bridge](/blogs/regops-technical/) to understand how these systems are built.
 
 ## Next Steps
 
-If you’re in the middle of a build‑vs‑buy decision for compliance automation, a simple way forward is:
+If you’re in the middle of a build-vs-buy decision for compliance automation, a simple way forward is:
 
 1. **Run the framework with your partners.**  
    Answer the five questions honestly, not to defend a decision you’ve already taken.
@@ -270,7 +270,7 @@ If you’re in the middle of a build‑vs‑buy decision for compliance automati
    Learn from real experiences, including ones like Trusted Health’s, where a critical workflow moved from “back office” to “strategic asset.”
 
 If you want to explore whether a custom RegOps bridge makes sense for your consultancy and where it should sit alongside any existing tools:  
-[Let’s discuss the right approach for you.](/contact)
+[Let's discuss the right approach for you.](/contact/)
     `,
     author: {
         name: "INVARITECH Team",

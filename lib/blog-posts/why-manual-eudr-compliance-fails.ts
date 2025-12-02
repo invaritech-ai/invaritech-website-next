@@ -52,17 +52,17 @@ This lets the consultancy shift from manual work to higher value oversight. It a
 
 If you prepare EUDR compliance by hand today, the workload will rise once the portal opens. The rules will grow. The volume will increase. More staff will not fix this.
 
-[Automation](/blogs/compliance-automation-done-right) is a practical path. A well-designed system gives consultants a tool they can use for their clients. It improves accuracy and lowers the time needed for daily work.
+[Automation](/blogs/compliance-automation-done-right/) is a practical path. A well-designed system gives consultants a tool they can use for their clients. It improves accuracy and lowers the time needed for daily work.
 
 This is what we built for the French operator. It gives them a clean API, a searchable database, and retry rules that prevent failures once live submissions begin.
 
-If you want to prepare for automated EUDR compliance, you can read [our technical guide](/blogs/regops-technical).
+If you want to prepare for automated EUDR compliance, you can read [our technical guide](/blogs/regops-technical/).
 
 ## About This Case Study
 
 This case is based on a real project completed in 2025. The operator is prepared to process thousands of DDS submissions each month once the system opens, with a projected success rate of 99.8 percent.
 
-If you have questions about your EUDR setup, you can [contact](/contact) us or book a [call](https://calendly.com/hello-invaritech/30min).
+If you have questions about your EUDR setup, you can [contact](/contact/) us or book a [call](https://calendly.com/hello-invaritech/30min).
     `,
     author: {
         name: "Avishek Majumder",
