@@ -37,7 +37,7 @@ export const structuredData = {
                 "@type": "PostalAddress",
                 addressCountry: "US",
             },
-            foundingDate: "2024",
+            foundingDate: "2025",
             numberOfEmployees: "1-10",
             industry: "Technology",
             knowsAbout: [
