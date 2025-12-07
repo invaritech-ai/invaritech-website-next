@@ -11,13 +11,13 @@ export const structuredData = {
             url: "https://www.invaritech.ai",
             logo: {
                 "@type": "ImageObject",
-                url: "https://www.invaritech.ai/logo.png",
+                url: "https://www.invaritech.ai/logo-image.png",
                 width: 512,
                 height: 512,
             },
             image: {
                 "@type": "ImageObject",
-                url: "https://www.invaritech.ai/logo.png",
+                url: "https://www.invaritech.ai/logo-image.png",
                 width: 1200,
                 height: 630,
             },

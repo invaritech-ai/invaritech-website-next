@@ -163,7 +163,7 @@ export default function RootLayout({
                         __html: JSON.stringify(faqSchema),
                     }}
                 />
-                <script
+                {/* <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify({
@@ -178,7 +178,7 @@ export default function RootLayout({
                             ],
                         }),
                     }}
-                />
+                /> */}
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
