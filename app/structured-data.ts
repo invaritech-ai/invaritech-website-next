@@ -29,9 +29,9 @@ export const structuredData = {
                 areaServed: "Worldwide",
             },
             sameAs: [
-                "https://twitter.com/invaritech",
-                "https://linkedin.com/company/invaritech",
-                "https://github.com/invaritech",
+                "https://x.com/invaritechai",
+                "https://linkedin.com/company/invaritechai",
+                "https://github.com/invaritech-ai",
             ],
             address: {
                 "@type": "PostalAddress",

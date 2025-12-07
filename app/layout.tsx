@@ -110,8 +110,8 @@ export const metadata: Metadata = {
         description:
             "Custom automation for small service businesses. Compliance bridges, data pipelines, and admin suites. Stop losing time between your tools.",
         images: ["/og-image.webp"],
-        creator: "@invaritech",
-        site: "@invaritech",
+        creator: "@invaritechai",
+        site: "@invaritechai",
     },
     verification: {
         google: "your-google-verification-code",
@@ -173,8 +173,8 @@ export default function RootLayout({
                             url: "https://www.invaritech.ai",
                             logo: "https://www.invaritech.ai/logo-image.png",
                             sameAs: [
-                                "https://www.linkedin.com/company/invaritech",
-                                "https://x.com/invaritech",
+                                "https://linkedin.com/company/invaritechai",
+                                "https://x.com/invaritechai",
                             ],
                         }),
                     }}

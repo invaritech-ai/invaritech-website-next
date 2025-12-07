@@ -9,9 +9,9 @@ export const seoConfig = {
 
     // Social Media
     social: {
-        twitter: "@invaritech",
-        linkedin: "https://linkedin.com/company/invaritech",
-        github: "https://github.com/invaritech",
+        twitter: "@invaritechai",
+        linkedin: "https://linkedin.com/company/invaritechai",
+        github: "https://github.com/invaritech-ai",
     },
 
     // Contact Information
