@@ -87,7 +87,7 @@ export const structuredData = {
             },
             primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://www.invaritech.ai/logo.png",
+                url: "https://www.invaritech.ai/logo-image.png",
                 width: 1200,
                 height: 630,
             },
