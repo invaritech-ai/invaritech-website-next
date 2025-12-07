@@ -1,22 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import { faqSchema } from "@/lib/faq-schema";
 import Script from "next/script";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = localFont({
+    src: [
+        {
+            path: "./fonts/Geist-Variable.woff2",
+            weight: "100 900",
+            style: "normal",
+        },
+    ],
     variable: "--font-geist-sans",
-    subsets: ["latin"],
     display: "swap",
     preload: true,
     fallback: ["system-ui", "arial"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+    src: [
+        {
+            path: "./fonts/GeistMono-Variable.woff2",
+            weight: "100 900",
+            style: "normal",
+        },
+    ],
     variable: "--font-geist-mono",
-    subsets: ["latin"],
     display: "swap",
     fallback: ["monospace"],
 });
@@ -130,12 +142,6 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <head>
                 {/* Resource hints for external domains */}
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link
-                    rel="preconnect"
-                    href="https://fonts.gstatic.com"
-                    crossOrigin="anonymous"
-                />
                 <link rel="preconnect" href="https://www.google.com" />
                 <link
                     rel="preconnect"
@@ -155,6 +161,22 @@ export default function RootLayout({
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(faqSchema),
+                    }}
+                />
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            name: "INVARITECH",
+                            url: "https://www.invaritech.ai",
+                            logo: "https://www.invaritech.ai/logo-image.png",
+                            sameAs: [
+                                "https://www.linkedin.com/company/invaritech",
+                                "https://x.com/invaritech",
+                            ],
+                        }),
                     }}
                 />
             </head>
