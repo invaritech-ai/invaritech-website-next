@@ -99,21 +99,22 @@ export default function FullStackDeveloperPage() {
                                 Invaritech is looking for a curious and
                                 proactive{" "}
                                 <strong>Full-Stack Software Engineer</strong> to
-                                join our growing team. This is a unique
+                                join our growing team. This is a hands-on
                                 opportunity for a junior-to-mid-level engineer
-                                to work directly with founders, build scalable
-                                products, and accelerate their career growth.
+                                to work directly with founders, build real
+                                production systems, and grow quickly through
+                                direct exposure to real-world problems.
                             </p>
                             <p className="mt-4 text-muted-foreground">
-                                You will work across the entire stack—from
+                                You&apos;ll work across the entire stack—from
                                 building responsive frontends in React to
                                 designing backend workflows in Python. We
                                 don&apos;t expect you to know everything on day
-                                one, but we do expect a hunger to learn. This
-                                role is designed to be a springboard:
+                                one, but we do expect a strong willingness to
+                                learn. This role is designed as a springboard:
                                 you&apos;ll start by contributing to features
-                                under guidance and grow into a Senior Full-Stack
-                                & Cloud/DevOps Engineer over time.
+                                with guidance and gradually grow into a Senior
+                                Full-Stack / Cloud / DevOps Engineer over time.
                             </p>
                         </div>
                     </section>
@@ -125,14 +126,14 @@ export default function FullStackDeveloperPage() {
                         </h2>
                         <div className="grid gap-4">
                             {[
-                                "Implement and maintain user-facing features in our web and mobile apps.",
-                                "Work on backend APIs, integrations, and data processing workflows.",
+                                "Implement and maintain user-facing features in our web and mobile applications.",
+                                "Build and extend backend APIs, integrations, and data-processing workflows.",
                                 "Collaborate with designers and senior engineers to translate requirements into technical tasks.",
                                 "Write clean, understandable, and maintainable code with basic tests.",
-                                "Debug and fix bugs across the stack (frontend, backend, and integrations).",
-                                "Work with databases (relational and NoSQL) for CRUD operations and basic queries.",
-                                "Use automation tools like N8N to connect different systems.",
-                                "Learn and adopt new tools, frameworks, and best practices as required.",
+                                "Debug and fix issues across the stack (frontend, backend, integrations).",
+                                "Work with relational and NoSQL databases for CRUD operations and basic queries.",
+                                "Use automation tools like n8n to connect systems and reduce manual work.",
+                                "Learn and adopt new tools, frameworks, and best practices as needed.",
                             ].map((item, index) => (
                                 <div key={index} className="flex gap-3">
                                     <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
@@ -150,9 +151,9 @@ export default function FullStackDeveloperPage() {
                             Our Tech Stack
                         </h2>
                         <p className="text-muted-foreground mb-6">
-                            You aren&apos;t required to know all of these
-                            immediately, but familiarity with some and a strong
-                            desire to learn the rest is essential.
+                            You don&apos;t need to know everything below
+                            immediately. Familiarity with some of these—and a
+                            strong desire to learn the rest—is what matters.
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div className="bg-card border rounded-xl p-5">
@@ -219,12 +220,12 @@ export default function FullStackDeveloperPage() {
                                 </h3>
                                 <ul className="space-y-3">
                                     {[
-                                        "0–2 years of experience in software development (professional or strong personal projects).",
-                                        "Hands-on experience with modern frontend frameworks (ideally React).",
-                                        "Understanding of backend development (Python or similar).",
+                                        "0–2 years of software development experience (professional or strong personal projects).",
+                                        "Hands-on experience with a modern frontend framework (ideally React).",
+                                        "Basic backend development experience (Python or similar).",
                                         "Basic understanding of SQL and willingness to learn NoSQL.",
                                         "Strong curiosity and ability to learn independently.",
-                                        "Good communication skills and reliability in a remote environment.",
+                                        "Clear communication and reliability in a remote setup.",
                                     ].map((item, index) => (
                                         <li
                                             key={index}
@@ -244,7 +245,7 @@ export default function FullStackDeveloperPage() {
                                     {[
                                         "Experience with Next.js, React Native, or Tailwind CSS.",
                                         "Familiarity with GSAP or other animation libraries.",
-                                        "Experience with N8N or other automation tools.",
+                                        "Experience with n8n or similar automation tools.",
                                         "Familiarity with Git and branching workflows.",
                                         "Exposure to cloud platforms (AWS, GCP, Azure).",
                                     ].map((item, index) => (
@@ -269,24 +270,27 @@ export default function FullStackDeveloperPage() {
                         </h2>
                         <div className="space-y-4 text-muted-foreground">
                             <p>
-                                We believe in full transparency. This is an{" "}
-                                <strong>hourly contract role</strong> with a
-                                rate of <strong>HKD 32–39 per hour</strong>,
+                                We believe in being upfront about how we work
+                                together. This role is an{" "}
+                                <strong>hourly contract position</strong>, with
+                                a rate of <strong>HKD 32–39 per hour</strong>,
                                 depending on experience.
                             </p>
                             <p>
-                                To ensure accurate billing and productivity for
-                                this remote role, we require the use of our{" "}
-                                <strong>
-                                    productivity/monitoring software
-                                </strong>{" "}
-                                while working. This software tracks active work
-                                time to guarantee you are paid for every minute
-                                you contribute.
+                                Because the team is fully remote, we use a
+                                lightweight time-tracking tool during working
+                                hours. This helps keep billing accurate and
+                                ensures you&apos;re paid fairly for the time you
+                                actually work.
+                            </p>
+                            <p>
+                                The tool records active work time only (not
+                                personal activity), and its sole purpose is to
+                                maintain clarity and trust on both sides.
                             </p>
                             <p className="text-sm italic">
-                                * Without this software active, work will not be
-                                considered billable.
+                                Hours worked without the tracker active
+                                can&apos;t be counted as billable.
                             </p>
                         </div>
                     </section>
@@ -299,7 +303,7 @@ export default function FullStackDeveloperPage() {
                             </h2>
                             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
                                 If you&apos;re eager to learn, build, and solve
-                                real problems, we want to hear from you.
+                                real problems, we&apos;d love to hear from you.
                             </p>
 
                             <div className="max-w-md mx-auto text-left bg-background p-6 rounded-xl border mb-8 shadow-sm">
@@ -325,8 +329,8 @@ export default function FullStackDeveloperPage() {
                                     </li>
                                     <li className="flex gap-2">
                                         <span className="text-primary">3.</span>
-                                        Links to projects, GitHub, or portfolio
-                                        (unfinished projects are welcome!)
+                                        Links to projects, GitHub, or a portfolio
+                                        (unfinished projects are welcome)
                                     </li>
                                 </ul>
                             </div>
