@@ -52,7 +52,14 @@ export const Chatbot = () => {
                     blurredBackgroundColor: "rgba(0, 0, 0, 0.4)",
                     backgroundColor: "#ffffff",
                 },
-                customCSS: ``,
+                customCSS: `
+                    .flowise-process-flow,
+                    .source-docs,
+                    [class*="process-flow"],
+                    [class*="source-docs"] {
+                        display: none !important;
+                    }
+                `,
                 chatWindow: {
                     showTitle: true,
                     showAgentMessages: true,
@@ -74,7 +81,8 @@ export const Chatbot = () => {
                     ],
                     starterPromptFontSize: 14,
                     clearChatOnReload: false,
-                    sourceDocsTitle: "Sources:",
+                    sourceDocsTitle: "",
+                    showSourceDocuments: false,
                     renderHTML: true,
                     botMessage: {
                         backgroundColor: "#F3F4F6",
