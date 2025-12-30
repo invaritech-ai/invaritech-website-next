@@ -130,6 +130,7 @@ export const metadata: Metadata = {
 
 import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
+import { Chatbot } from "@/components/chatbot";
 
 // ... imports ...
 
@@ -192,6 +193,7 @@ export default function RootLayout({
                     <HeroHeader />
                     {children}
                     <FooterSection />
+                    <Chatbot />
                 </ThemeProvider>
 
                 {/* Third-party scripts with optimized loading strategies */}
