@@ -1,6 +1,13 @@
 "use client";
 
-import { BubbleChat } from "flowise-embed-react";
+import dynamic from "next/dynamic";
+
+const BubbleChat = dynamic(
+    () => import("flowise-embed-react").then((mod) => mod.BubbleChat),
+    {
+        ssr: false,
+    }
+);
 
 export const Chatbot = () => {
     return (
