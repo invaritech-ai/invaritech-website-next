@@ -14,6 +14,9 @@ export const Chatbot = () => {
         <BubbleChat
             chatflowid="a6759d77-8fe9-459f-abb2-7a9aacd22ccf"
             apiHost="https://flowise.avishekmajumder.com"
+            chatflowConfig={{
+                returnSourceDocuments: false,
+            }}
             observersConfig={{
                 observeUserInput: () => {},
                 observeLoading: () => {},
@@ -56,13 +59,23 @@ export const Chatbot = () => {
                     .flowise-process-flow,
                     .source-docs,
                     [class*="process-flow"],
-                    [class*="source-docs"] {
+                    [class*="source-docs"],
+                    [class*="sourceDocs"],
+                    [class*="SourceDocs"],
+                    [id*="source"],
+                    [id*="Source"],
+                    .source-documents-container,
+                    .process-flow-container {
                         display: none !important;
+                        visibility: hidden !important;
+                        opacity: 0 !important;
+                        height: 0 !important;
+                        overflow: hidden !important;
                     }
                 `,
                 chatWindow: {
                     showTitle: true,
-                    showAgentMessages: true,
+                    showAgentMessages: false,
                     title: "Iris",
                     titleAvatarSrc: "https://www.invaritech.ai/iris.png",
                     welcomeMessage:
@@ -82,7 +95,6 @@ export const Chatbot = () => {
                     starterPromptFontSize: 14,
                     clearChatOnReload: false,
                     sourceDocsTitle: "",
-                    showSourceDocuments: false,
                     renderHTML: true,
                     botMessage: {
                         backgroundColor: "#F3F4F6",
