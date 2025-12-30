@@ -49,10 +49,10 @@ export default function TermsPage() {
                             1. Acceptance of Terms
                         </TextEffect>
                         <p className="text-muted-foreground leading-relaxed">
-                            By accessing and using INVARITECH's website,
-                            services, or chatbot ("Iris"), you accept and agree
-                            to be bound by the terms and provision of this
-                            agreement. If you do not agree to abide by the
+                            By accessing and using INVARITECH&apos;s website,
+                            services, or chatbot (&quot;Iris&quot;), you accept
+                            and agree to be bound by the terms and provision of
+                            this agreement. If you do not agree to abide by the
                             above, please do not use this service.
                         </p>
                     </section>
@@ -69,10 +69,10 @@ export default function TermsPage() {
                             2. Use of Chatbot
                         </TextEffect>
                         <p className="text-muted-foreground leading-relaxed mb-4">
-                            Our chatbot ("Iris") is designed to provide
-                            information and assistance regarding automation
-                            solutions and business processes. By using Iris, you
-                            agree that:
+                            Our chatbot (&quot;Iris&quot;) is designed to
+                            provide information and assistance regarding
+                            automation solutions and business processes. By
+                            using Iris, you agree that:
                         </p>
                         <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                             <li>
