@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -109,7 +108,6 @@ const solutions = [
 export default function Solutions() {
     return (
         <>
-            <HeroHeader />
             <main className="pt-24 md:pt-36">
                 {/* Hero Section */}
                 <section className="pt-24 pb-16 md:pt-32 md:pb-24">

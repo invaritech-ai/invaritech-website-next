@@ -59,7 +59,7 @@ export default function HeroSection() {
                         className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-0 -z-20"
                     >
                         <Image
-                            src="/hero-bg.webp"
+                            src="/hero-bg.jpg"
                             alt="INVARITECH digital solutions background"
                             className="size-full object-cover object-top invert dark:invert-0"
                             fill

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
+import { HeroHeader } from "@/components/header";
 import { structuredData } from "./structured-data";
 import { faqSchema } from "@/lib/faq-schema";
 import "./globals.css";
@@ -136,6 +137,7 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
+                    <HeroHeader />
                     {children}
                 </ThemeProvider>
             </body>
