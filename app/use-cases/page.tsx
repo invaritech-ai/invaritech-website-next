@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import FooterSection from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -272,7 +271,6 @@ export default function UseCases() {
                     </div>
                 </section>
             </main>
-            <FooterSection />
         </>
     );
 }

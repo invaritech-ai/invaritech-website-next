@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import FooterSection from "@/components/footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MiniCase } from "@/components/mini-case";
@@ -310,7 +309,6 @@ export default function Results() {
                     </div>
                 </section>
             </main>
-            <FooterSection />
         </>
     );
 }

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import FooterSection from "@/components/footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -230,7 +229,6 @@ export default function Solutions() {
                     </div>
                 </section>
             </main>
-            <FooterSection />
         </>
     );
 }

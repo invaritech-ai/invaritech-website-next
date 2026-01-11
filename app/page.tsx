@@ -8,7 +8,6 @@ import RecentWork from "@/components/recent-work";
 import QualificationGuardrails from "@/components/qualification-guardrails";
 import AsteriskMath from "@/components/asterisk-math";
 import ContactSection from "@/components/contact";
-import FooterSection from "@/components/footer";
 import IntegrationsSection from "@/components/integrations-2";
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
             <IntegrationsSection />
             {/* <Testimonials /> */}
             <ContactSection />
-            <FooterSection />
         </main>
     );
 }

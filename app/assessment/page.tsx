@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import FooterSection from "@/components/footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -713,7 +712,6 @@ export default function Assessment() {
                     </div>
                 </section>
             </main>
-            <FooterSection />
         </>
     );
 }
