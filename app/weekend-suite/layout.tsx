@@ -1,0 +1,33 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "WeekendSuite - Admin Suite for Freelancers",
+    description:
+        "WeekendSuite turns every new inquiry into a same-day proposal, signed contract, and first invoice. A simple admin suite for freelancers and tiny agencies.",
+    openGraph: {
+        title: "WeekendSuite - Admin Suite for Freelancers",
+        description:
+            "WeekendSuite turns every new inquiry into a same-day proposal, signed contract, and first invoice. Join the waitlist.",
+        url: "https://www.invaritech.ai/weekend-suite/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "WeekendSuite - Admin Suite for Freelancers",
+                type: "image/webp",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.invaritech.ai/weekend-suite/",
+    },
+};
+
+export default function WeekendSuiteLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
+    return children;
+}

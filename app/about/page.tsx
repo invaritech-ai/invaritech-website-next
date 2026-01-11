@@ -1,465 +1,330 @@
-import Metadata from "next";
-import FooterSection from "@/components/footer";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import { ArrowRight, Network, PenTool } from "lucide-react";
+import Image from "next/image";
+import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-    Target,
-    Users,
-    Globe,
-    Mail,
-    Award,
-    GraduationCap,
-    Building,
-    CheckCircle,
-} from "lucide-react";
-import Link from "next/link";
+import { Metadata } from "next";
+import { PageLayout } from "@/components/page-layout";
+import { TextEffect } from "@/components/ui/text-effect";
 
 export const metadata: Metadata = {
-    title: "About Invaritech - Intelligent Systems, Measurable Outcomes",
+    title: "About Us - The Studio Model",
     description:
-        "Invaritech: Intelligent systems. Measurable outcomes. Led by Aditi Garg (CEO) and Avishek Majumder (CTO) with 15+ years combined experience in AI, automation, and enterprise solutions.",
-    keywords: [
-        "about",
-        "team",
-        "leadership",
-        "Aditi Garg",
-        "Avishek Majumder",
-        "CEO",
-        "CTO",
-        "Indian Institute of Science",
-        "AI",
-        "automation",
-    ],
+        "INVARITECH is a boutique automation studio. We design and build custom systems that help small teams stop losing time between their tools.",
+    openGraph: {
+        title: "About INVARITECH - Boutique Automation Studio",
+        description:
+            "Small by design, expert by trade. We build automation systems for regulated firms and freelancers. No body shops, no bloat.",
+        url: "https://www.invaritech.ai/about/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "About INVARITECH - Boutique Automation Studio",
+                type: "image/webp",
+            },
+        ],
+    },
+    alternates: {
+        canonical: "https://www.invaritech.ai/about/",
+    },
 };
 
-const principles = [
-    {
-        title: "Operational excellence beats headcount growth",
-        description:
-            "We believe in making existing teams more efficient rather than simply adding more people to solve problems.",
-    },
-    {
-        title: "Small senior team, short cycles",
-        description:
-            "Our lean team of experts delivers results in weeks, not quarters, with rapid iteration and continuous improvement.",
-    },
-    {
-        title: "Visible metrics drive decisions",
-        description:
-            "Every implementation includes measurable KPIs and real-time dashboards to track ROI and efficiency gains.",
-    },
-    {
-        title: "Security and compliance by design",
-        description:
-            "All solutions are built with enterprise-grade security, audit trails, and compliance requirements from day one.",
-    },
-];
-
-const regions = [
-    {
-        name: "EU/UK",
-        description: "GDPR-compliant solutions with local data residency",
-        clients: "Financial services, manufacturing, retail",
-    },
-    {
-        name: "North America",
-        description: "SOC 2 Type II certified infrastructure",
-        clients: "Technology, healthcare, professional services",
-    },
-    {
-        name: "Australia/NZ",
-        description: "Regional compliance with local data protection",
-        clients: "Mining, agriculture, financial services",
-    },
-];
-
-export default function About() {
+export default function AboutPage() {
     return (
-        <>
-            <main className="pt-24 md:pt-36">
-                {/* Hero Section */}
-                <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="text-center">
-                            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                                Invaritech
-                            </h1>
-                            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                                Intelligent systems. Measurable outcomes.
-                            </p>
-                        </div>
+        <PageLayout maxWidth="6xl">
+            {/* Hero */}
+            <div className="mb-16 max-w-3xl">
+                <Badge variant="secondary" className="mb-6">
+                    Our Philosophy
+                </Badge>
+                <TextEffect
+                    per="word"
+                    as="h1"
+                    preset="fade"
+                    className="text-4xl font-bold tracking-tight sm:text-6xl mb-6"
+                >
+                    Small by Design. Expert by Trade.
+                </TextEffect>
+                <TextEffect
+                    per="line"
+                    as="p"
+                    preset="fade"
+                    delay={0.3}
+                    className="text-xl md:text-2xl font-medium text-foreground/80 mb-6 leading-relaxed"
+                >
+                    We are not a traditional agency. We are a boutique
+                    automation studio.
+                </TextEffect>
+                <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                    Modern businesses don&apos;t need armies of junior staff.
+                    They need smart systems and expert architects who can
+                    design, implement, and continuously improve those systems.
+                </p>
+                <p className="text-lg text-muted-foreground leading-relaxed">
+                    We build those systems.
+                </p>
+            </div>
+
+            {/* The Vision */}
+            <div className="grid gap-12 md:grid-cols-2 mb-32 items-center">
+                <div>
+                    <h2 className="text-3xl font-bold mb-6">Why We Exist</h2>
+                    <div className="space-y-4 text-lg text-muted-foreground">
+                        <p>
+                            The &quot;digital transformation&quot; industry is
+                            broken. It sells bloat, complexity, and multi-year
+                            roadmaps to companies that mostly just want to work
+                            faster, with fewer errors and less chaos.
+                        </p>
+                        <p>
+                            We built Invaritech to prove that a small, focused
+                            team armed with the right automation tools can
+                            outmaneuver a giant corporation.
+                        </p>
+                        <p>
+                            Our mission is to give regulated firms and
+                            freelancers the same operational superpowers that
+                            tech giants have, without the headcount,
+                            bureaucracy, or fragile one-off hacks.
+                        </p>
                     </div>
-                </section>
-
-                {/* What we believe */}
-                <section id="principles" className="py-16 md:py-24">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                What we believe
-                            </h2>
-                            <p className="text-lg text-muted-foreground">
-                                Our core principles guide every project
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {principles.map((principle, index) => (
-                                <Card
-                                    key={index}
-                                    className="hover:shadow-lg transition-all duration-300"
-                                >
-                                    <CardContent className="p-6">
-                                        <h3 className="text-xl font-semibold mb-3">
-                                            {principle.title}
-                                        </h3>
-                                        <p className="text-muted-foreground">
-                                            {principle.description}
-                                        </p>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-
-                {/* How we work */}
-                <section className="py-16 md:py-24 bg-muted">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                How we work
-                            </h2>
-                            <p className="text-lg text-muted-foreground">
-                                Our approach to delivering results
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8">
-                            <Card className="text-center">
-                                <CardContent className="p-6">
-                                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <Users className="w-8 h-8 text-primary" />
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-3">
-                                        Small senior team
-                                    </h3>
-                                    <p className="text-muted-foreground">
-                                        Expert practitioners with 15+ years
-                                        combined experience in AI, automation,
-                                        and enterprise solutions.
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="p-6">
-                                    <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <Target className="w-8 h-8 text-accent" />
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-3">
-                                        Short cycles
-                                    </h3>
-                                    <p className="text-muted-foreground">
-                                        Rapid delivery in weeks, not quarters.
-                                        Quick wins that prove value and build
-                                        momentum for larger initiatives.
-                                    </p>
-                                </CardContent>
-                            </Card>
-
-                            <Card className="text-center">
-                                <CardContent className="p-6">
-                                    <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                        <CheckCircle className="w-8 h-8 text-primary" />
-                                    </div>
-                                    <h3 className="text-xl font-semibold mb-3">
-                                        Visible metrics
-                                    </h3>
-                                    <p className="text-muted-foreground">
-                                        Real-time dashboards and KPIs that track
-                                        ROI, efficiency gains, and business
-                                        impact from day one.
-                                    </p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Leadership Team */}
-                <section id="team" className="py-16 md:py-24">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                Leadership team
-                            </h2>
-                            <p className="text-lg text-muted-foreground">
-                                Industry veterans with proven track records
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {/* Aditi Garg - CEO */}
-                            <Card className="hover:shadow-lg transition-all duration-300">
-                                <CardHeader>
-                                    <div className="flex items-center mb-4">
-                                        <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mr-4">
-                                            <Award className="w-8 h-8 text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-2xl font-semibold">
-                                                Aditi Garg
-                                            </h3>
-                                            <p className="text-primary font-medium">
-                                                CEO & Director
-                                            </p>
-                                            <a
-                                                href="mailto:aditi@invaritech.ai"
-                                                className="text-sm text-muted-foreground hover:text-primary"
-                                            >
-                                                aditi@invaritech.ai
-                                            </a>
-                                        </div>
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div className="flex items-center">
-                                        <GraduationCap className="w-5 h-5 text-muted-foreground mr-2" />
-                                        <span className="text-sm">
-                                            MTech (Gold Medalist), Indian
-                                            Institute of Science
-                                        </span>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-semibold mb-2">
-                                            Experience:
-                                        </h4>
-                                        <p className="text-sm text-muted-foreground mb-2">
-                                            7+ years in customer relationship AI
-                                            and query resolution systems
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-semibold mb-2">
-                                            Notable Clients:
-                                        </h4>
-                                        <div className="flex flex-wrap gap-2">
-                                            {[
-                                                "BMW",
-                                                "Goldman Sachs",
-                                                "Citibank",
-                                                "Uber",
-                                            ].map((client, index) => (
-                                                <Badge
-                                                    key={index}
-                                                    variant="outline"
-                                                    className="text-xs"
-                                                >
-                                                    {client}
-                                                </Badge>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-muted/30 rounded-lg p-3">
-                                        <p className="text-sm text-muted-foreground">
-                                            <strong>Specialization:</strong>{" "}
-                                            AI-powered customer experience,
-                                            enterprise automation, and scalable
-                                            system architecture.
-                                        </p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-
-                            {/* Avishek Majumder - CTO */}
-                            <Card className="hover:shadow-lg transition-all duration-300">
-                                <CardHeader>
-                                    <div className="flex items-center mb-4">
-                                        <div className="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mr-4">
-                                            <Building className="w-8 h-8 text-accent" />
-                                        </div>
-                                        <div>
-                                            <h3 className="text-2xl font-semibold">
-                                                Avishek Majumder
-                                            </h3>
-                                            <p className="text-accent font-medium">
-                                                CTO
-                                            </p>
-                                            <a
-                                                href="mailto:avishek@invaritech.ai"
-                                                className="text-sm text-muted-foreground hover:text-primary"
-                                            >
-                                                avishek@invaritech.ai
-                                            </a>
-                                        </div>
-                                    </div>
-                                </CardHeader>
-                                <CardContent className="space-y-4">
-                                    <div className="flex items-center">
-                                        <GraduationCap className="w-5 h-5 text-muted-foreground mr-2" />
-                                        <span className="text-sm">
-                                            MSc (Computer Vision), Indian
-                                            Institute of Science
-                                        </span>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-semibold mb-2">
-                                            Experience:
-                                        </h4>
-                                        <p className="text-sm text-muted-foreground mb-2">
-                                            8+ years in computer vision, OCR,
-                                            and agentic solutions
-                                        </p>
-                                    </div>
-
-                                    <div>
-                                        <h4 className="font-semibold mb-2">
-                                            Technical Expertise:
-                                        </h4>
-                                        <div className="flex flex-wrap gap-2">
-                                            {[
-                                                "Object Detection",
-                                                "OCR",
-                                                "Document Processing",
-                                                "Agentic Workflows",
-                                                "Predictive Maintenance",
-                                            ].map((skill, index) => (
-                                                <Badge
-                                                    key={index}
-                                                    variant="outline"
-                                                    className="text-xs"
-                                                >
-                                                    {skill}
-                                                </Badge>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    <div className="bg-muted/30 rounded-lg p-3">
-                                        <p className="text-sm text-muted-foreground">
-                                            <strong>Specialization:</strong>{" "}
-                                            Computer vision research, smart
-                                            billing systems, document archival,
-                                            and contextual retrieval for
-                                            enterprise applications.
-                                        </p>
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Where we've delivered */}
-                <section className="py-16 md:py-24 bg-muted">
-                    <div className="mx-auto max-w-6xl px-6">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                Where we&apos;ve delivered
-                            </h2>
-                            <p className="text-lg text-muted-foreground">
-                                Global reach with local compliance
-                            </p>
-                        </div>
-
-                        <div className="grid md:grid-cols-3 gap-8">
-                            {regions.map((region, index) => (
-                                <Card
-                                    key={index}
-                                    className="text-center hover:shadow-lg transition-all duration-300"
-                                >
-                                    <CardContent className="p-6">
-                                        <div className="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                                            <Globe className="w-8 h-8 text-primary" />
-                                        </div>
-                                        <h3 className="text-xl font-semibold mb-3">
-                                            {region.name}
-                                        </h3>
-                                        <p className="text-sm text-muted-foreground mb-4">
-                                            {region.description}
-                                        </p>
-                                        <div className="bg-muted/30 rounded-lg p-3">
-                                            <p className="text-xs font-medium text-primary mb-1">
-                                                Sample Clients:
-                                            </p>
-                                            <p className="text-xs text-muted-foreground">
-                                                {region.clients}
-                                            </p>
-                                        </div>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-
-                        <div className="mt-12 text-center">
-                            <Card className="max-w-2xl mx-auto">
-                                <CardContent className="p-6">
-                                    <h3 className="text-lg font-semibold mb-2">
-                                        Recent Work
-                                    </h3>
-                                    <p className="text-muted-foreground mb-4">
-                                        EUDR compliance backend (France): Built
-                                        compliance-grade backend APIs and
-                                        workflows for data intake, validation,
-                                        auditability, and
-                                        integrations—observable, secure, and
-                                        ready to scale.
-                                    </p>
-                                    <Button asChild variant="outline">
-                                        <Link href="/results#eudr">
-                                            Read the case study
-                                        </Link>
-                                    </Button>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Contact */}
-                <section className="py-16 md:py-24">
-                    <div className="mx-auto max-w-4xl px-6">
-                        <div className="text-center">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                                Contact
-                            </h2>
-                            <p className="text-lg text-muted-foreground mb-8">
-                                Ready to discuss your efficiency challenges?
-                            </p>
-
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                                <a
-                                    href="mailto:aditi@invaritech.ai"
-                                    className="flex items-center justify-center px-6 py-3 border border-border rounded-lg hover:bg-muted transition-colors"
-                                >
-                                    <Mail className="w-4 h-4 mr-2" />
-                                    aditi@invaritech.ai
-                                </a>
-                                <a
-                                    href="mailto:avishek@invaritech.ai"
-                                    className="flex items-center justify-center px-6 py-3 border border-border rounded-lg hover:bg-muted transition-colors"
-                                >
-                                    <Mail className="w-4 h-4 mr-2" />
-                                    avishek@invaritech.ai
-                                </a>
+                </div>
+                <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12">
+                    <blockquote className="text-xl font-medium italic mb-6">
+                        &quot;Automation doesn&apos;t just save time. It frees
+                        human expertise from boring admin so it can be used
+                        where it actually moves the needle.&quot;
+                    </blockquote>
+                    <div className="flex items-center gap-4">
+                        <Avatar className="h-16 w-16">
+                            <AvatarImage
+                                src="/aditi.webp"
+                                alt="Aditi Garg"
+                                className="object-cover object-top"
+                            />
+                            <AvatarFallback className="text-primary bg-primary-foreground">
+                                AG
+                            </AvatarFallback>
+                        </Avatar>
+                        <div>
+                            <div className="font-semibold text-primary-foreground">
+                                Aditi Garg
                             </div>
-
-                            <Button asChild size="lg">
-                                <Link href="/ops-efficiency-sprint">
-                                    See the Sprint
-                                </Link>
-                            </Button>
+                            <div className="text-sm text-primary-foreground/80">
+                                Director & Founder
+                            </div>
                         </div>
                     </div>
-                </section>
-            </main>
-            <FooterSection />
-        </>
+                </div>
+            </div>
+
+            {/* The Model */}
+            <div className="mb-32">
+                <div className="mb-16 max-w-3xl">
+                    <h2 className="text-3xl font-bold mb-4">
+                        How We Work: The Studio Model
+                    </h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                        We reject the &quot;body shop&quot; agency model. No
+                        anonymous teams. No endless hand-offs. No slideware that
+                        never ships. Instead, we operate as a high-precision
+                        studio.
+                    </p>
+                </div>
+
+                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-5xl divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16 md:grid-cols-2 md:divide-x md:divide-y-0">
+                    <div className="group p-6 md:p-8">
+                        <CardHeader className="pb-3 p-0">
+                            <CardDecorator>
+                                <PenTool className="size-6" aria-hidden />
+                            </CardDecorator>
+
+                            <h3 className="mt-6 font-medium text-xl">
+                                The Architects
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-2">
+                                You work directly with the principals.
+                            </p>
+                        </CardHeader>
+
+                        <CardContent className="pb-6 p-0 mt-6">
+                            <p className="text-muted-foreground mb-6">
+                                We (the founders) architect every solution,
+                                define the strategy, and own the outcome. There
+                                are no &quot;account managers&quot; buffering
+                                communication or diluting decisions.
+                            </p>
+                            <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
+                                <li className="flex gap-3">
+                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
+                                    We map your real-world processes and
+                                    constraints
+                                </li>
+                                <li className="flex gap-3">
+                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
+                                    We design the automation architecture and
+                                    control layers
+                                </li>
+                                <li className="flex gap-3">
+                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
+                                    We stay involved until it works in
+                                    production and your team actually uses it
+                                </li>
+                            </ul>
+                        </CardContent>
+                    </div>
+
+                    <div className="group p-6 md:p-8">
+                        <CardHeader className="pb-3 p-0">
+                            <CardDecorator>
+                                <Network className="size-6" aria-hidden />
+                            </CardDecorator>
+
+                            <h3 className="mt-6 font-medium text-xl">
+                                The Network
+                            </h3>
+                            <p className="text-sm text-muted-foreground mt-2">
+                                For execution, we draw on a curated private
+                                network of elite specialists.
+                            </p>
+                        </CardHeader>
+
+                        <CardContent className="pb-6 p-0 mt-6">
+                            <p className="text-muted-foreground mb-6">
+                                Developers, designers, and compliance experts
+                                we’ve vetted over years of projects. You get
+                                big-firm capability, without big-firm overhead:
+                            </p>
+                            <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
+                                <li className="flex gap-3">
+                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
+                                    The right specialist for each component
+                                </li>
+                                <li className="flex gap-3">
+                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
+                                    Senior oversight on every decision
+                                </li>
+                                <li className="flex gap-3">
+                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
+                                    Clear, accountable ownership end-to-end
+                                </li>
+                            </ul>
+                        </CardContent>
+                    </div>
+                </Card>
+            </div>
+
+            <Separator className="my-24" />
+
+            {/* Leadership */}
+            <div className="mb-24">
+                <div className="mb-16 max-w-3xl">
+                    <h2 className="text-3xl font-bold mb-4">The Team</h2>
+                </div>
+
+                <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+                    {/* Aditi Card */}
+                    <Card className="overflow-hidden bg-transparent border-none shadow-none">
+                        <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
+                            <Image
+                                src="/aditi.webp"
+                                alt="Aditi Garg - Director & Founder"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
+                            />
+                        </div>
+                        <CardContent className="p-0">
+                            <h3 className="text-2xl font-bold mb-1">
+                                Aditi Garg
+                            </h3>
+                            <div className="text-primary font-medium mb-4">
+                                Director & Founder
+                            </div>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Aditi is a solutions and customer success leader
+                                who has helped organisations like Goldman Sachs,
+                                Uber, BMW and Citi Bank get real value from
+                                complex platforms. As VP of Central Support at
+                                Trilogy Ltd and Director at Invaritech, she
+                                specialises in turning messy support operations
+                                into measurable, automated, high-NPS
+                                experiences.
+                            </p>
+                        </CardContent>
+                    </Card>
+
+                    {/* Avishek Card */}
+                    <Card className="overflow-hidden bg-transparent border-none shadow-none">
+                        <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
+                            <Image
+                                src="/avishek.webp"
+                                alt="Avishek Majumder - CEO & Co-founder"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                priority
+                            />
+                        </div>
+                        <CardContent className="p-0">
+                            <h3 className="text-2xl font-bold mb-1">
+                                Avishek Majumder
+                            </h3>
+                            <div className="text-primary font-medium mb-4">
+                                CEO & Co-founder
+                            </div>
+                            <p className="text-muted-foreground leading-relaxed">
+                                Avishek is a data engineer and scientist who has
+                                spent his career building and deploying
+                                predictive systems in regulated, high-stakes
+                                environments across energy and finance. At
+                                Invaritech, he designs the automation
+                                architectures that let lean teams operate with
+                                enterprise-grade reliability.
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
+            </div>
+
+            {/* CTA */}
+            <div className="max-w-3xl">
+                <h2 className="text-3xl font-bold mb-6">Ready to Build?</h2>
+                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                    If you&apos;re a regulated firm or independent expert who&apos;s
+                    outgrown spreadsheets, manual checklists, and duct-taped
+                    tools, we should talk.
+                </p>
+                <p className="text-lg font-medium text-foreground mb-8 leading-relaxed">
+                    Let&apos;s design the system that makes your operations feel
+                    inevitable, not improvisational.
+                </p>
+                <Button asChild size="lg" className="rounded-xl px-8 text-base">
+                    <a
+                        href="https://calendly.com/hello-invaritech/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Work with us <ArrowRight className="ml-2 size-4" />
+                    </a>
+                </Button>
+            </div>
+        </PageLayout>
     );
 }
+
+const CardDecorator = ({ children }: { children: ReactNode }) => (
+    <div className="relative mx-auto size-16 flex items-center justify-center">
+        <div className="bg-muted/50 rounded-xl p-3 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:scale-105">
+            <div className="text-foreground/70 group-hover:text-foreground transition-colors duration-200">
+                {children}
+            </div>
+        </div>
+    </div>
+);
