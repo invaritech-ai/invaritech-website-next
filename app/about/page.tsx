@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     },
 };
 
+const SHOW_AVISHEK = false;
+
 export default function AboutPage() {
     return (
         <PageLayout maxWidth="6xl">
@@ -261,35 +263,37 @@ export default function AboutPage() {
                     </Card>
 
                     {/* Avishek Card */}
-                    <Card className="overflow-hidden bg-transparent border-none shadow-none">
-                        <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
-                            <Image
-                                src="/avishek.webp"
-                                alt="Avishek Majumder - CEO & Co-founder"
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                priority
-                            />
-                        </div>
-                        <CardContent className="p-0">
-                            <h3 className="text-2xl font-bold mb-1">
-                                Avishek Majumder
-                            </h3>
-                            <div className="text-primary font-medium mb-4">
-                                CEO & Co-founder
+                    {SHOW_AVISHEK && (
+                        <Card className="overflow-hidden bg-transparent border-none shadow-none">
+                            <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
+                                <Image
+                                    src="/avishek.webp"
+                                    alt="Avishek Majumder - CEO & Co-founder"
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    priority
+                                />
                             </div>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Avishek is a data engineer and scientist who has
-                                spent his career building and deploying
-                                predictive systems in regulated, high-stakes
-                                environments across energy and finance. At
-                                Invaritech, he designs the automation
-                                architectures that let lean teams operate with
-                                enterprise-grade reliability.
-                            </p>
-                        </CardContent>
-                    </Card>
+                            <CardContent className="p-0">
+                                <h3 className="text-2xl font-bold mb-1">
+                                    Avishek Majumder
+                                </h3>
+                                <div className="text-primary font-medium mb-4">
+                                    CEO & Co-founder
+                                </div>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    Avishek is a data engineer and scientist who
+                                    has spent his career building and deploying
+                                    predictive systems in regulated, high-stakes
+                                    environments across energy and finance. At
+                                    Invaritech, he designs the automation
+                                    architectures that let lean teams operate
+                                    with enterprise-grade reliability.
+                                </p>
+                            </CardContent>
+                        </Card>
+                    )}
                 </div>
             </div>
 
