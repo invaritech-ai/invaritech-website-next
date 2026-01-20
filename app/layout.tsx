@@ -1,53 +1,69 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { ThemeProvider } from "@/providers/theme-provider";
-import { HeroHeader } from "@/components/header";
-import FooterSection from "@/components/footer";
-import { Chatbot } from "@/components/chatbot";
 import { structuredData } from "./structured-data";
 import { faqSchema } from "@/lib/faq-schema";
+import Script from "next/script";
 import "./globals.css";
 
-const geistSans = Geist({
+const geistSans = localFont({
+    src: [
+        {
+            path: "./fonts/Geist-Variable.woff2",
+            weight: "100 900",
+            style: "normal",
+        },
+    ],
     variable: "--font-geist-sans",
-    subsets: ["latin"],
+    display: "swap",
+    preload: true,
+    fallback: ["system-ui", "arial"],
 });
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+    src: [
+        {
+            path: "./fonts/GeistMono-Variable.woff2",
+            weight: "100 900",
+            style: "normal",
+        },
+    ],
     variable: "--font-geist-mono",
-    subsets: ["latin"],
+    display: "swap",
+    fallback: ["monospace"],
 });
 
 export const metadata: Metadata = {
     title: {
-        default: "Invaritech - Intelligent Automation for Growth Companies",
-        template: "%s | Invaritech - Intelligent Automation",
+        default:
+            "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
+        template: "%s | INVARITECH",
     },
     description:
-        "Intelligent automation for growth companies—cut 30 hours per person in 60 days. Ops Efficiency Sprint delivers measurable results without platform rip-and-replace. SSO/RBAC, audit logs, compliance-grade solutions.",
+        "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
     keywords: [
-        "ops efficiency sprint",
-        "intelligent automation",
-        "operations automation",
-        "efficiency gains",
-        "ROI automation",
-        "compliance-grade solutions",
-        "SSO RBAC",
-        "audit logs",
-        "data residency",
-        "knowledge management",
-        "agentic workflows",
-        "document processing",
-        "finance automation",
-        "enterprise automation",
-        "workflow optimization",
-        "business process automation",
-        "AI-powered operations",
-        "measurable outcomes",
-        "growth companies",
-        "operations leaders",
+        "INVARITECH",
+        "business automation",
+        "workflow automation",
+        "compliance automation",
+        "back-office systems",
+        "data pipelines",
+        "API integration",
+        "freelancer tools",
+        "agency management",
+        "custom automation",
+        "small business software",
+        "process automation",
+        "compliance bridge",
+        "weekendsuite",
+        "backend development",
+        "AI automation",
+        "custom software",
+        "database design",
+        "web development",
+        "digital transformation",
     ],
-    authors: [{ name: "INVARITECH", url: "https://invaritech.ai" }],
+    authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
     publisher: "INVARITECH",
     formatDetection: {
@@ -55,10 +71,8 @@ export const metadata: Metadata = {
         address: false,
         telephone: false,
     },
-    metadataBase: new URL("https://invaritech.ai"),
-    alternates: {
-        canonical: "/",
-    },
+    metadataBase: new URL("https://www.invaritech.ai"),
+
     robots: {
         index: true,
         follow: true,
@@ -75,29 +89,29 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://invaritech.ai",
-        title: "Invaritech - Intelligent Automation for Growth Companies",
+        url: "https://www.invaritech.ai",
+        title: "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
         description:
-            "Intelligent automation for growth companies—cut 30 hours per person in 60 days. Ops Efficiency Sprint delivers measurable results without platform rip-and-replace.",
-        siteName: "Invaritech",
+            "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+        siteName: "INVARITECH",
         images: [
             {
-                url: "/logo.png",
+                url: "/og-image.webp",
                 width: 1200,
                 height: 630,
-                alt: "Invaritech - Intelligent Automation for Growth Companies",
-                type: "image/png",
+                alt: "INVARITECH - Automation & Back-Office Systems",
+                type: "image/webp",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Invaritech - Intelligent Automation for Growth Companies",
+        title: "INVARITECH - Automation & Back-Office Systems",
         description:
-            "Intelligent automation for growth companies—cut 30 hours per person in 60 days. Ops Efficiency Sprint delivers measurable results without platform rip-and-replace.",
-        images: ["/logo.png"],
-        creator: "@invaritech",
-        site: "@invaritech",
+            "Custom automation for small service businesses. Compliance bridges, data pipelines, and admin suites. Stop losing time between your tools.",
+        images: ["/og-image.webp"],
+        creator: "@invaritechai",
+        site: "@invaritechai",
     },
     verification: {
         google: "your-google-verification-code",
@@ -107,7 +121,18 @@ export const metadata: Metadata = {
     category: "technology",
     classification: "Business",
     referrer: "origin-when-cross-origin",
+    icons: {
+        icon: "/favicon.ico",
+        shortcut: "/favicon.ico",
+        apple: "/favicon.ico",
+    },
 };
+
+import { HeroHeader } from "@/components/header";
+import FooterSection from "@/components/footer";
+import { Chatbot } from "@/components/chatbot";
+
+// ... imports ...
 
 export default function RootLayout({
     children,
@@ -117,6 +142,16 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
             <head>
+                {/* Resource hints for external domains */}
+                <link rel="preconnect" href="https://www.google.com" />
+                <link
+                    rel="preconnect"
+                    href="https://www.googletagmanager.com"
+                />
+                <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
+                <link rel="dns-prefetch" href="https://r2.leadsy.ai" />
+
+                {/* Structured data - inline scripts are fine, they don't block */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -129,6 +164,22 @@ export default function RootLayout({
                         __html: JSON.stringify(faqSchema),
                     }}
                 />
+                {/* <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            name: "INVARITECH",
+                            url: "https://www.invaritech.ai",
+                            logo: "https://www.invaritech.ai/logo-image.png",
+                            sameAs: [
+                                "https://linkedin.com/company/invaritechai",
+                                "https://x.com/invaritechai",
+                            ],
+                        }),
+                    }}
+                /> */}
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -144,6 +195,34 @@ export default function RootLayout({
                     <FooterSection />
                     <Chatbot />
                 </ThemeProvider>
+
+                {/* Third-party scripts with optimized loading strategies */}
+                <Script
+                    src="https://www.googletagmanager.com/gtag/js?id=G-JJPJBB10G7"
+                    strategy="afterInteractive"
+                />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+                        gtag('config', 'G-JJPJBB10G7');
+                    `}
+                </Script>
+
+                <Script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
+                    strategy="lazyOnload"
+                />
+
+                <Script
+                    id="vtag-ai-js"
+                    src="https://r2.leadsy.ai/tag.js"
+                    data-pid="1rQPfvIzStzrxlsWj"
+                    data-version="062024"
+                    strategy="lazyOnload"
+                />
             </body>
         </html>
     );

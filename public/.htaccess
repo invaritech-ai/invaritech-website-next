@@ -1,3 +1,12 @@
+# Add WebP MIME type support
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+</IfModule>
+
 # Enable compression
 <IfModule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/plain
@@ -9,41 +18,80 @@
     AddOutputFilterByType DEFLATE application/rss+xml
     AddOutputFilterByType DEFLATE application/javascript
     AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
 </IfModule>
 
 # Enable browser caching
 <IfModule mod_expires.c>
     ExpiresActive on
+    # HTML files - shorter cache for static site updates
+    ExpiresByType text/html "access plus 1 hour"
+    # CSS and JavaScript - long cache
     ExpiresByType text/css "access plus 1 year"
     ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    # Images - long cache
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
     ExpiresByType image/webp "access plus 1 year"
+    # Fonts - long cache
     ExpiresByType font/woff "access plus 1 year"
     ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    # Other static assets
+    ExpiresByType application/json "access plus 1 hour"
 </IfModule>
 
-# Security headers
+# Security and performance headers
 <IfModule mod_headers.c>
+    # Security headers
     Header always set X-Content-Type-Options nosniff
     Header always set X-Frame-Options DENY
     Header always set X-XSS-Protection "1; mode=block"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Cache control headers for static assets
+    <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Cache control for HTML files
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
-# Handle client-side routing for SPA
+# Handle client-side routing and trailing slash redirects
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /
+    
+    # Redirect non-www to www (must be first redirect rule)
+    RewriteCond %{HTTP_HOST} ^invaritech\.ai$ [NC]
+    RewriteRule ^(.*)$ https://www.invaritech.ai/$1 [R=301,L]
+    
+    # Redirect non-trailing slash URLs to trailing slash (except home page and files)
+    # Skip if it's a file (has extension) or already has trailing slash
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !(.*)/$
+    RewriteCond %{REQUEST_URI} !^/$
+    RewriteCond %{REQUEST_URI} !\.(html|htm|css|js|jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|json|xml|txt|pdf)$ [NC]
+    RewriteRule ^(.*)$ $1/ [R=301,L]
     
     # Handle Angular and React Router
-    RewriteBase /
     RewriteRule ^index\.html$ - [L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    # Exclude robots.txt, sitemap.xml, and llms.txt from catch-all redirect
+    RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC]
+    RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC]
+    RewriteCond %{REQUEST_URI} !^/llms\.txt$ [NC]
     RewriteRule . /index.html [L]
 </IfModule>
 

@@ -1,6 +1,6 @@
 export const seoConfig = {
     siteName: "INVARITECH",
-    siteUrl: "https://invaritech.ai",
+    siteUrl: "https://www.invaritech.ai",
     defaultTitle:
         "INVARITECH - Premium Digital Solutions & AI-Powered Development",
     titleTemplate: "%s | INVARITECH - Premium Digital Solutions",
@@ -9,9 +9,9 @@ export const seoConfig = {
 
     // Social Media
     social: {
-        twitter: "@invaritech",
-        linkedin: "https://linkedin.com/company/invaritech",
-        github: "https://github.com/invaritech",
+        twitter: "@invaritechai",
+        linkedin: "https://linkedin.com/company/invaritechai",
+        github: "https://github.com/invaritech-ai",
     },
 
     // Contact Information
@@ -91,7 +91,7 @@ export const seoConfig = {
     // Performance
     performance: {
         preload: ["/logo.png", "/logo-image.png"],
-        prefetch: ["/services", "/contact"],
+        prefetch: ["/services/compliance-bridge/", "/contact/"],
     },
 
     // Analytics & Tracking
@@ -122,8 +122,14 @@ export const generateMetadata = (pageData?: {
     const description = pageData?.description || seoConfig.defaultDescription;
     const keywords = pageData?.keywords || seoConfig.keywords.primary;
     const image = pageData?.image || "/logo.png";
-    const url = pageData?.url || seoConfig.siteUrl;
+    let url = pageData?.url || seoConfig.siteUrl;
     const type = pageData?.type || "website";
+
+    // Add trailing slash to URLs except home page
+    // Home page is exactly the siteUrl, all others should have trailing slash
+    if (url !== seoConfig.siteUrl && !url.endsWith("/")) {
+        url = `${url}/`;
+    }
 
     return {
         title,

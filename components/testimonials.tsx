@@ -20,13 +20,6 @@ export default function Testimonials() {
                     {/* Large featured testimonial - spans 2 columns and 2 rows */}
                     <Card className="sm:col-span-2 lg:col-span-2 lg:row-span-2">
                         <CardHeader className="pb-3">
-                            {/* <img
-                                className="h-6 w-fit invert dark:invert-0"
-                                src="https://html.tailus.io/blocks/customers/nike.svg"
-                                alt="Nike Logo"
-                                height="24"
-                                width="auto"
-                            /> */}
                         </CardHeader>
                         <CardContent className="pt-0">
                             <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">

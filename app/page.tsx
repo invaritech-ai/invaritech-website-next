@@ -1,30 +1,39 @@
 import HeroSection from "@/components/hero-section";
-import WhoWeHelp from "@/components/who-we-help";
-import WhatWeBuild from "@/components/what-we-build";
-import HowItWorks from "@/components/how-it-works";
-import RiskControl from "@/components/risk-control";
-import ExpectedResults from "@/components/expected-results";
-import RecentWork from "@/components/recent-work";
-import QualificationGuardrails from "@/components/qualification-guardrails";
-import AsteriskMath from "@/components/asterisk-math";
-import ContactSection from "@/components/contact";
-import IntegrationsSection from "@/components/integrations-2";
+import dynamic from "next/dynamic";
+import { Metadata } from "next";
+
+// Lazy load below-the-fold components for better performance
+const WhatWeDoSection = dynamic(
+    () => import("@/components/what-we-do-section"),
+    {
+        loading: () => <div className="min-h-[400px]" />,
+    }
+);
+
+const SelectedWorkSection = dynamic(
+    () => import("@/components/selected-work"),
+    {
+        loading: () => <div className="min-h-[400px]" />,
+    }
+);
+
+const HowWeWorkSection = dynamic(() => import("@/components/how-we-work"), {
+    loading: () => <div className="min-h-[400px]" />,
+});
+
+export const metadata: Metadata = {
+    alternates: {
+        canonical: "https://www.invaritech.ai",
+    },
+};
 
 export default function Home() {
     return (
         <main>
             <HeroSection />
-            <WhoWeHelp />
-            <WhatWeBuild />
-            <HowItWorks />
-            <RiskControl />
-            <ExpectedResults />
-            <RecentWork />
-            <QualificationGuardrails />
-            <AsteriskMath />
-            <IntegrationsSection />
-            {/* <Testimonials /> */}
-            <ContactSection />
+            <WhatWeDoSection />
+            <SelectedWorkSection />
+            <HowWeWorkSection />
         </main>
     );
 }

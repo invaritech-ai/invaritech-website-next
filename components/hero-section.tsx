@@ -35,45 +35,45 @@ export default function HeroSection() {
                     <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
                     <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
                 </div>
-                <section className="relative min-h-screen flex items-center">
-                    <AnimatedGroup
-                        variants={{
-                            container: {
-                                visible: {
-                                    transition: {
-                                        delayChildren: 1,
+                <section>
+                    <div className="relative pt-24 md:pt-36">
+                        <AnimatedGroup
+                            variants={{
+                                container: {
+                                    visible: {
+                                        transition: {
+                                            delayChildren: 1,
+                                        },
                                     },
                                 },
-                            },
-                            item: {
-                                hidden: {
-                                    opacity: 0,
-                                    y: 20,
+                                item: {
+                                    hidden: {
+                                        opacity: 0,
+                                        y: 20,
+                                    },
+                                    visible: {
+                                        opacity: 1,
+                                        y: 0,
+                                    },
                                 },
-                                visible: {
-                                    opacity: 1,
-                                    y: 0,
-                                },
-                            },
-                        }}
-                        className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-0 -z-20"
-                    >
-                        <Image
-                            src="/hero-bg.jpg"
-                            alt="INVARITECH digital solutions background"
-                            className="size-full object-cover object-top invert dark:invert-0"
-                            fill
-                            sizes="100vw"
-                            priority
+                            }}
+                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32"
+                        >
+                            <Image
+                                src="/hero-bg.webp"
+                                alt="INVARITECH digital solutions background"
+                                className="size-full object-cover object-top invert dark:invert-0"
+                                fill
+                                sizes="100vw"
+                                priority
+                            />
+                        </AnimatedGroup>
+
+                        <div
+                            aria-hidden
+                            className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
                         />
-                    </AnimatedGroup>
 
-                    <div
-                        aria-hidden
-                        className="absolute inset-0 -z-10 size-full [background:linear-gradient(to_bottom,transparent_0%,transparent_20%,var(--color-background)_85%),radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
-                    />
-
-                    <div className="relative w-full pt-24 md:pt-36 pb-24 md:pb-36">
                         <div className="mx-auto max-w-7xl px-3 sm:px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                                 <TextEffect
@@ -88,10 +88,10 @@ export default function HeroSection() {
                                     preset="fade-in-blur"
                                     speedSegment={0.3}
                                     as="h1"
-                                    className="mx-auto mt-0 max-w-full sm:max-w-4xl text-balance text-4xl max-md:font-semibold md:text-6xl xl:text-5xl"
+                                    className="mx-auto mt-0 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl xl:text-[5.25rem]"
                                 >
-                                    Time is your most valuable asset. Reclaim
-                                    it.
+                                    Automation & Back-Office Systems for Small
+                                    Service Businesses
                                 </TextEffect>
                                 <TextEffect
                                     per="line"
@@ -101,9 +101,10 @@ export default function HeroSection() {
                                     as="p"
                                     className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
                                 >
-                                    We permanently remove repetitive work so the
-                                    same team frees hours that translate into
-                                    revenue.
+                                    Invaritech designs and builds custom
+                                    automation – from compliance bridges and
+                                    data pipelines to a new admin suite for
+                                    freelancers and tiny agencies.
                                 </TextEffect>
 
                                 <AnimatedGroup
@@ -135,7 +136,8 @@ export default function HeroSection() {
                                                 rel="noopener noreferrer"
                                             >
                                                 <span className="text-nowrap">
-                                                    Reclaim your time
+                                                    Talk about an automation
+                                                    project
                                                 </span>
                                             </a>
                                         </Button>
@@ -161,7 +163,7 @@ export default function HeroSection() {
                             </div>
                         </div>
 
-                        {/* <AnimatedGroup
+                        <AnimatedGroup
                             variants={{
                                 container: {
                                     visible: {
@@ -185,7 +187,7 @@ export default function HeroSection() {
                                     />
                                 </div>
                             </div>
-                        </AnimatedGroup> */}
+                        </AnimatedGroup>
                     </div>
                 </section>
             </div>

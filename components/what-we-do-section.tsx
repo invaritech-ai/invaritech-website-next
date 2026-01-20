@@ -1,97 +1,66 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Database, Zap, Bot, ShoppingCart } from "lucide-react";
+import { Database, Bot, ArrowRight } from "lucide-react";
+import Link from "next/link";
 import { ReactNode } from "react";
 
 export default function WhatWeDoSection() {
     return (
-        <section id="what-we-do" className="bg-muted py-16 md:py-32">
+        <section
+            id="what-we-do"
+            className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent"
+        >
             <div className="@container mx-auto max-w-5xl px-6">
                 <div className="text-center">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
                         What We Do
                     </h2>
-                    <p className="mt-4">
-                        We focus on building technology that takes work off your
-                        plate and creates lasting value.
+                    <p className="mt-4 max-w-2xl mx-auto">
+                        We help small teams stop losing time in the gaps between their tools.
+                        Most of our clients already use tools like Google Workspace, HubSpot, Notion, or custom portals. We connect and automate these so work stops falling through the cracks.
                     </p>
                 </div>
-                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-4 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden *:text-center md:mt-16">
-                    <div className="group">
+                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+                    <Link href="/services/compliance-bridge/" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Database className="size-6" aria-hidden />
                             </CardDecorator>
 
                             <h3 className="mt-6 font-medium">
-                                Backend Development
+                                For Regulated Service Firms
                             </h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
-                            <p className="text-sm">
-                                We design APIs, databases, and infrastructure
-                                that are reliable, secure, and built to scale as
-                                your business grows.
+                            <h4 className="font-bold text-lg mb-2">Compliance Workflow Bridge</h4>
+                            <p className="text-sm text-muted-foreground">
+                                We turn your most painful compliance/reporting workflow into one auditable, automated pipeline in 6 weeks.
                             </p>
+                            <div className="mt-4 text-primary text-sm font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                                Learn more <ArrowRight className="size-4" />
+                            </div>
                         </CardContent>
-                    </div>
+                    </Link>
 
-                    <div className="group">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Zap className="size-6" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium">Automation</h3>
-                        </CardHeader>
-
-                        <CardContent className="pb-6">
-                            <p className="mt-3 text-sm">
-                                We streamline repetitive tasks with smart
-                                workflows that save time, reduce mistakes, and
-                                lower costs.
-                            </p>
-                        </CardContent>
-                    </div>
-
-                    <div className="group">
+                    <Link href="/weekend-suite/" className="group shadow-zinc-950/5 cursor-pointer block h-full">
                         <CardHeader className="pb-3">
                             <CardDecorator>
                                 <Bot className="size-6" aria-hidden />
                             </CardDecorator>
 
-                            <h3 className="mt-6 font-medium">AI Solutions</h3>
+                            <h3 className="mt-6 font-medium">For Freelancers & Agencies</h3>
                         </CardHeader>
 
                         <CardContent className="pb-6">
-                            <p className="mt-3 text-sm">
-                                From customer-facing chatbots to autonomous
-                                workflows, we create AI-powered tools that
-                                handle complex processes and provide real
-                                business impact.
+                            <h4 className="font-bold text-lg mb-2">WeekendSuite</h4>
+                            <p className="mt-3 text-sm text-muted-foreground">
+                                A simple admin suite to turn every lead into a signed project in a weekend. Proposals, contracts, and invoices in one flow.
                             </p>
+                            <div className="mt-4 text-primary text-sm font-medium flex items-center justify-center gap-1 group-hover:gap-2 transition-all">
+                                Join Waitlist <ArrowRight className="size-4" />
+                            </div>
                         </CardContent>
-                    </div>
-
-                    <div className="group">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <ShoppingCart className="size-6" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium">
-                                E-Commerce Stores
-                            </h3>
-                        </CardHeader>
-
-                        <CardContent className="pb-6">
-                            <p className="mt-3 text-sm">
-                                We build and optimize Shopify and custom online
-                                stores designed for performance, seamless
-                                integrations, and strong conversion rates.
-                            </p>
-                        </CardContent>
-                    </div>
+                    </Link>
                 </Card>
             </div>
         </section>

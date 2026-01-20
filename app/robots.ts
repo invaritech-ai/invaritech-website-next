@@ -30,7 +30,7 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ["/private/", "/admin/", "/api/"],
             },
         ],
-        sitemap: "https://invaritech.ai/sitemap.xml",
-        host: "https://invaritech.ai",
+        sitemap: "https://www.invaritech.ai/sitemap.xml",
+        host: "https://www.invaritech.ai",
     };
 }

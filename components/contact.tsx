@@ -8,12 +8,14 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { Calendar, Mail, CheckCircle2, ArrowRight } from "lucide-react";
 
 interface FormData {
     name: string;
     email: string;
     phone: string;
     country: string;
+    company: string;
     message: string;
 }
 
@@ -29,6 +31,7 @@ export default function ContactSection() {
         email: "",
         phone: "",
         country: "",
+        company: "",
         message: "",
     });
 
@@ -134,6 +137,7 @@ export default function ContactSection() {
                 email: "",
                 phone: "",
                 country: "",
+                company: "",
                 message: "",
             });
         } catch (error) {
@@ -151,15 +155,19 @@ export default function ContactSection() {
 
     if (formState.isSuccess) {
         return (
-            <section className="py-32">
-                <div className="mx-auto max-w-4xl px-4 lg:px-0">
-                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center">
-                        <h3 className="text-xl font-semibold text-primary mb-4">
-                            Thank You!
+            <section className="py-12 md:py-24">
+                <div className="mx-auto max-w-7xl px-4 lg:px-8">
+                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center border-none shadow-2xl bg-background/50 backdrop-blur-sm">
+                        <div className="flex justify-center mb-6">
+                            <div className="rounded-full bg-green-100 p-3 dark:bg-green-900/30">
+                                <CheckCircle2 className="h-12 w-12 text-green-600 dark:text-green-400" />
+                            </div>
+                        </div>
+                        <h3 className="text-2xl font-bold mb-4">
+                            Message Sent!
                         </h3>
-                        <p className="text-sm mb-6">
-                            Your information has been submitted successfully.
-                            We&apos;ll get back to you soon!
+                        <p className="text-muted-foreground mb-8 text-lg">
+                            Thanks for reaching out. We&apos;ve received your message and will get back to you shortly.
                         </p>
                         <Button
                             onClick={() =>
@@ -170,8 +178,9 @@ export default function ContactSection() {
                                 })
                             }
                             variant="outline"
+                            className="w-full sm:w-auto"
                         >
-                            Submit Another
+                            Send Another Message
                         </Button>
                     </Card>
                 </div>
@@ -180,119 +189,189 @@ export default function ContactSection() {
     }
 
     return (
-        <section id="contact" className="py-32">
-            <div className="mx-auto max-w-4xl px-4 lg:px-0">
-                <h2 className="mb-12 text-center text-4xl font-semibold lg:text-5xl">
-                    Let&apos;s Build Something Great Together
-                </h2>
-
-                <div className="border p-6 sm:p-12 text-center">
-                    <h3 className="mb-3 text-lg font-semibold">Get in Touch</h3>
-                    <Link
-                        href="mailto:hello@invaritech.ai"
-                        className="text-lg text-accent hover:underline"
-                    >
-                        hello@invaritech.ai
-                    </Link>
-                </div>
-
-                <div className="h-3 border-x bg-[repeating-linear-gradient(-45deg,var(--color-border),var(--color-border)_1px,transparent_1px,transparent_6px)]"></div>
-                <form
-                    onSubmit={handleSubmit}
-                    className="border px-4 py-12 lg:px-0 lg:py-24"
-                >
-                    <Card className="mx-auto max-w-lg p-8 sm:p-16">
-                        <h3 className="text-xl font-semibold">Work With Us</h3>
-                        <p className="mt-4 text-sm">
-                            We&apos;re a global remote team that partners
-                            closely with each client. Whether you need to launch
-                            an MVP quickly or overhaul an existing system,
-                            we&apos;ll make sure the technology fits your goals.
-                        </p>
-
-                        <div className="**:[&>label]:block mt-12 space-y-6 *:space-y-3">
+        <section id="contact" className="pb-24">
+            <div className="mx-auto max-w-7xl px-4 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-24">
+                    {/* Left Column - Info & Context */}
+                    <div className="flex flex-col justify-between space-y-12">
+                        <div className="space-y-8">
                             <div>
-                                <Label htmlFor="name" className="space-y-2">
-                                    Full name *
-                                </Label>
-                                <Input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <Label htmlFor="email" className="space-y-2">
-                                    Email *
-                                </Label>
-                                <Input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <Label htmlFor="phone" className="space-y-2">
-                                    Phone
-                                </Label>
-                                <Input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    value={formData.phone}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
-                            <div>
-                                <Label htmlFor="country" className="space-y-2">
-                                    Country *
-                                </Label>
-                                <Input
-                                    type="text"
-                                    id="country"
-                                    name="country"
-                                    value={formData.country}
-                                    onChange={handleInputChange}
-                                    required
-                                />
-                            </div>
-                            <div>
-                                <Label htmlFor="message" className="space-y-2">
-                                    Message *
-                                </Label>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    value={formData.message}
-                                    onChange={handleInputChange}
-                                    rows={3}
-                                    required
-                                />
+                                <h2 className="text-2xl font-semibold mb-4">
+                                    Why partner with Invaritech?
+                                </h2>
+                                <p className="text-muted-foreground text-lg leading-relaxed">
+                                    We&apos;re not just a dev shop. We&apos;re a strategic partner that helps you navigate complex technical challenges. From compliance bridges to data pipelines, we build the infrastructure that powers your business.
+                                </p>
                             </div>
 
-                            {formState.error && (
-                                <div className="text-destructive text-sm bg-destructive/10 p-3 rounded-md">
-                                    {formState.error}
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="mt-1 rounded-lg bg-primary/10 p-2">
+                                        <Calendar className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-medium mb-1">Book a Consultation</h3>
+                                        <p className="text-sm text-muted-foreground mb-3">
+                                            Skip the email tag. Schedule a 30-minute call directly with our team.
+                                        </p>
+                                        <Button
+                                            asChild
+                                            variant="default"
+                                            className="group"
+                                        >
+                                            <a
+                                                href="https://calendly.com/hello-invaritech/30min"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                Schedule on Calendly
+                                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                            </a>
+                                        </Button>
+                                    </div>
                                 </div>
-                            )}
 
-                            <Button
-                                type="submit"
-                                disabled={formState.isSubmitting}
-                            >
-                                {formState.isSubmitting
-                                    ? "Submitting..."
-                                    : "Submit"}
-                            </Button>
+                                <div className="flex items-start gap-4">
+                                    <div className="mt-1 rounded-lg bg-primary/10 p-2">
+                                        <Mail className="h-5 w-5 text-primary" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-medium mb-1">Email Us</h3>
+                                        <p className="text-sm text-muted-foreground mb-3">
+                                            Prefer to write it down? Send us an email and we&apos;ll respond within 24 hours.
+                                        </p>
+                                        <Link
+                                            href="mailto:hello@invaritech.ai"
+                                            className="text-primary hover:underline font-medium"
+                                        >
+                                            hello@invaritech.ai
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </Card>
-                </form>
+                    </div>
+
+                    {/* Right Column - Form */}
+                    <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl blur-3xl opacity-20 -z-10" />
+                        <Card className="border-none shadow-xl bg-background/80 backdrop-blur-sm p-6 sm:p-8 md:p-10">
+                            <div className="mb-8">
+                                <h3 className="text-xl font-semibold mb-2">
+                                    Send us a message
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Tell us a bit about your project and we&apos;ll be in touch.
+                                </p>
+                            </div>
+
+                            <form onSubmit={handleSubmit} className="space-y-5">
+                                <div className="grid sm:grid-cols-2 gap-5">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="name">Full name *</Label>
+                                        <Input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            placeholder="John Doe"
+                                            value={formData.name}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="bg-background/50"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="email">Email *</Label>
+                                        <Input
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            placeholder="john@company.com"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="bg-background/50"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid sm:grid-cols-2 gap-5">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="phone">Phone</Label>
+                                        <Input
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            placeholder="+1 (555) 000-0000"
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                            className="bg-background/50"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="country">Country *</Label>
+                                        <Input
+                                            type="text"
+                                            id="country"
+                                            name="country"
+                                            placeholder="United States"
+                                            value={formData.country}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="bg-background/50"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <Label htmlFor="company">Company / Website</Label>
+                                    <Input
+                                        type="text"
+                                        id="company"
+                                        name="company"
+                                        placeholder="acme.com"
+                                        value={formData.company}
+                                        onChange={handleInputChange}
+                                        className="bg-background/50"
+                                    />
+                                </div>
+
+                                <div className="space-y-2">
+                                    <Label htmlFor="message">
+                                        What would you like to automate or build? *
+                                    </Label>
+                                    <Textarea
+                                        id="message"
+                                        name="message"
+                                        placeholder="Tell us about your project goals, timeline, and requirements..."
+                                        value={formData.message}
+                                        onChange={handleInputChange}
+                                        rows={4}
+                                        required
+                                        className="bg-background/50 resize-none"
+                                    />
+                                </div>
+
+                                {formState.error && (
+                                    <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive flex items-center gap-2">
+                                        <span className="font-medium">Error:</span> {formState.error}
+                                    </div>
+                                )}
+
+                                <Button
+                                    type="submit"
+                                    disabled={formState.isSubmitting}
+                                    className="w-full"
+                                    size="lg"
+                                >
+                                    {formState.isSubmitting
+                                        ? "Sending..."
+                                        : "Send Message"}
+                                </Button>
+                            </form>
+                        </Card>
+                    </div>
+                </div>
             </div>
         </section>
     );
