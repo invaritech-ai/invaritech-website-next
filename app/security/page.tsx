@@ -30,6 +30,9 @@ export const metadata: Metadata = {
         "data residency",
         "encryption",
     ],
+    alternates: {
+        canonical: "https://www.invaritech.ai/security/",
+    },
 };
 
 const securityAreas = [

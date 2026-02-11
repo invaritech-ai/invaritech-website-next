@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
-import { faqSchema } from "@/lib/faq-schema";
 import Script from "next/script";
 import "./globals.css";
 
@@ -32,6 +31,18 @@ const geistMono = localFont({
     display: "swap",
     fallback: ["monospace"],
 });
+
+const metadataVerification: Metadata["verification"] = {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+        ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+        : {}),
+    ...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION
+        ? { yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION }
+        : {}),
+    ...(process.env.NEXT_PUBLIC_YAHOO_VERIFICATION
+        ? { yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION }
+        : {}),
+};
 
 export const metadata: Metadata = {
     title: {
@@ -113,11 +124,7 @@ export const metadata: Metadata = {
         creator: "@invaritechai",
         site: "@invaritechai",
     },
-    verification: {
-        google: "your-google-verification-code",
-        yandex: "your-yandex-verification-code",
-        yahoo: "your-yahoo-verification-code",
-    },
+    verification: metadataVerification,
     category: "technology",
     classification: "Business",
     referrer: "origin-when-cross-origin",
@@ -156,12 +163,6 @@ export default function RootLayout({
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(structuredData),
-                    }}
-                />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(faqSchema),
                     }}
                 />
                 {/* <script

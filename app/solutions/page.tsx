@@ -23,6 +23,9 @@ export const metadata: Metadata = {
         "finance automation",
         "engineering discipline",
     ],
+    alternates: {
+        canonical: "https://www.invaritech.ai/solutions/",
+    },
 };
 
 const solutions = [

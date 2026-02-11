@@ -62,6 +62,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/solutions/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/use-cases/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/ops-efficiency-sprint/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/results/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/security/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/assessment/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/blogs/`,
             lastModified: currentDate,
             changeFrequency: "weekly",
@@ -85,6 +121,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: currentDate,
             changeFrequency: "monthly",
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/terms/`,
+            lastModified: currentDate,
+            changeFrequency: "yearly",
+            priority: 0.3,
         },
     ];
 }

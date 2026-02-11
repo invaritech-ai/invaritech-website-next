@@ -24,6 +24,9 @@ export const metadata: Metadata = {
         "approvals",
         "workflow automation",
     ],
+    alternates: {
+        canonical: "https://www.invaritech.ai/use-cases/",
+    },
 };
 
 const useCases = [

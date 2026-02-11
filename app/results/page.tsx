@@ -19,6 +19,9 @@ export const metadata: Metadata = {
         "SLA improvement",
         "error reduction",
     ],
+    alternates: {
+        canonical: "https://www.invaritech.ai/results/",
+    },
 };
 
 const exampleCase = {

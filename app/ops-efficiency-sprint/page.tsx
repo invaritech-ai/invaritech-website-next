@@ -30,6 +30,9 @@ export const metadata: Metadata = {
         "efficiency",
         "60 days",
     ],
+    alternates: {
+        canonical: "https://www.invaritech.ai/ops-efficiency-sprint/",
+    },
 };
 
 const lanes = [
