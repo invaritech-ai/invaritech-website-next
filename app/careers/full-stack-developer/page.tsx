@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import { HIRING_OPEN, HIRING_STATUS_MESSAGE } from "@/lib/careers";
 
 export const metadata: Metadata = {
     title: "Full-Stack Software Engineer - Careers",
@@ -78,12 +79,35 @@ export default function FullStackDeveloperPage() {
                                 </div>
                             </div>
                         </div>
-                        <Button asChild size="lg" className="shrink-0">
-                            <a href="mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer">
-                                Apply Now <ArrowRight className="ml-2 size-4" />
-                            </a>
-                        </Button>
+                        {HIRING_OPEN ? (
+                            <Button asChild size="lg" className="shrink-0">
+                                <a href="mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer">
+                                    Apply Now{" "}
+                                    <ArrowRight className="ml-2 size-4" />
+                                </a>
+                            </Button>
+                        ) : (
+                            <Button
+                                size="lg"
+                                disabled
+                                variant="outline"
+                                className="shrink-0 border-emerald-500/30 text-emerald-700 dark:text-emerald-300"
+                            >
+                                Position Filled
+                            </Button>
+                        )}
                     </div>
+                    {!HIRING_OPEN && (
+                        <div className="rounded-2xl border border-emerald-500/30 bg-gradient-to-r from-emerald-500/15 via-emerald-400/10 to-transparent p-5 shadow-lg shadow-emerald-500/10">
+                            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
+                                <CheckCircle2 className="size-3.5" />
+                                Applications Closed
+                            </div>
+                            <p className="text-sm text-foreground/85 leading-relaxed">
+                                {HIRING_STATUS_MESSAGE}
+                            </p>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -297,55 +321,87 @@ export default function FullStackDeveloperPage() {
 
                     {/* How to Apply */}
                     <section className="border-t pt-16">
-                        <div className="bg-primary/5 rounded-3xl p-8 sm:p-12 text-center">
-                            <h2 className="text-3xl font-bold mb-4">
-                                Ready to Grow?
-                            </h2>
-                            <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-                                If you&apos;re eager to learn, build, and solve
-                                real problems, we&apos;d love to hear from you.
-                            </p>
-
-                            <div className="max-w-md mx-auto text-left bg-background p-6 rounded-xl border mb-8 shadow-sm">
-                                <p className="font-medium mb-4">
-                                    Please email{" "}
-                                    <a
-                                        href="mailto:hello@invaritech.ai"
-                                        className="text-primary hover:underline"
-                                    >
-                                        hello@invaritech.ai
-                                    </a>{" "}
-                                    with:
+                        {HIRING_OPEN ? (
+                            <div className="bg-primary/5 rounded-3xl p-8 sm:p-12 text-center">
+                                <h2 className="text-3xl font-bold mb-4">
+                                    Ready to Grow?
+                                </h2>
+                                <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+                                    If you&apos;re eager to learn, build, and
+                                    solve real problems, we&apos;d love to hear
+                                    from you.
                                 </p>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    <li className="flex gap-2">
-                                        <span className="text-primary">1.</span>
-                                        Your CV
-                                    </li>
-                                    <li className="flex gap-2">
-                                        <span className="text-primary">2.</span>
-                                        A short note on why you want to join and
-                                        what you&apos;re currently learning
-                                    </li>
-                                    <li className="flex gap-2">
-                                        <span className="text-primary">3.</span>
-                                        Links to projects, GitHub, or a portfolio
-                                        (unfinished projects are welcome)
-                                    </li>
-                                </ul>
-                            </div>
 
-                            <Button
-                                asChild
-                                size="lg"
-                                className="w-full sm:w-auto"
-                            >
-                                <a href="mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer">
-                                    Send Application{" "}
-                                    <ArrowRight className="ml-2 size-4" />
-                                </a>
-                            </Button>
-                        </div>
+                                <div className="max-w-md mx-auto text-left bg-background p-6 rounded-xl border mb-8 shadow-sm">
+                                    <p className="font-medium mb-4">
+                                        Please email{" "}
+                                        <a
+                                            href="mailto:hello@invaritech.ai"
+                                            className="text-primary hover:underline"
+                                        >
+                                            hello@invaritech.ai
+                                        </a>{" "}
+                                        with:
+                                    </p>
+                                    <ul className="space-y-2 text-sm text-muted-foreground">
+                                        <li className="flex gap-2">
+                                            <span className="text-primary">
+                                                1.
+                                            </span>
+                                            Your CV
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <span className="text-primary">
+                                                2.
+                                            </span>
+                                            A short note on why you want to join
+                                            and what you&apos;re currently
+                                            learning
+                                        </li>
+                                        <li className="flex gap-2">
+                                            <span className="text-primary">
+                                                3.
+                                            </span>
+                                            Links to projects, GitHub, or a
+                                            portfolio (unfinished projects are
+                                            welcome)
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    className="w-full sm:w-auto"
+                                >
+                                    <a href="mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer">
+                                        Send Application{" "}
+                                        <ArrowRight className="ml-2 size-4" />
+                                    </a>
+                                </Button>
+                            </div>
+                        ) : (
+                            <div className="rounded-3xl border border-emerald-500/30 bg-gradient-to-br from-emerald-500/15 via-emerald-400/10 to-card p-8 sm:p-12 text-center shadow-xl shadow-emerald-500/10">
+                                <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
+                                    <CheckCircle2 className="size-3.5" />
+                                    Position Filled
+                                </div>
+                                <h2 className="text-3xl font-bold mb-4">
+                                    This Role Is Closed
+                                </h2>
+                                <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+                                    Thanks for your interest. We&apos;re not
+                                    accepting applications for this posting at
+                                    the moment.
+                                </p>
+                                <Button asChild variant="outline" size="lg">
+                                    <Link href="/careers/">
+                                        Back to Careers{" "}
+                                        <ArrowRight className="ml-2 size-4" />
+                                    </Link>
+                                </Button>
+                            </div>
+                        )}
                     </section>
                 </div>
             </div>

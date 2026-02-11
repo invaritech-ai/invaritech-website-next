@@ -1,7 +1,11 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Network, PenTool } from "lucide-react";
+import {
+    ArrowRight,
+    Network,
+    PenTool,
+} from "lucide-react";
 import Image from "next/image";
 import { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
@@ -34,7 +38,16 @@ export const metadata: Metadata = {
     },
 };
 
-const SHOW_AVISHEK = false;
+const SHOW_AVISHEK = true;
+const visibleFounderCards = SHOW_AVISHEK ? 3 : 2;
+const founderGridClassName =
+    visibleFounderCards === 3
+        ? "grid gap-8 lg:grid-cols-3"
+        : "grid gap-8 lg:grid-cols-2";
+const founderImageSizes =
+    visibleFounderCards === 3
+        ? "(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
+        : "(max-width: 768px) 100vw, (min-width: 1024px) 50vw, 50vw";
 
 export default function AboutPage() {
     return (
@@ -105,7 +118,7 @@ export default function AboutPage() {
                     <div className="flex items-center gap-4">
                         <Avatar className="h-16 w-16">
                             <AvatarImage
-                                src="/aditi.webp"
+                                src="/aditi-1.webp"
                                 alt="Aditi Garg"
                                 className="object-cover object-top"
                             />
@@ -226,74 +239,154 @@ export default function AboutPage() {
             {/* Leadership */}
             <div className="mb-24">
                 <div className="mb-16 max-w-3xl">
+                    <Badge variant="secondary" className="mb-4">
+                        Leadership
+                    </Badge>
                     <h2 className="text-3xl font-bold mb-4">The Team</h2>
+                    <p className="text-muted-foreground leading-relaxed">
+                        Built by founders with complementary strengths in
+                        operations, AI systems, and automation architecture.
+                    </p>
                 </div>
 
-                <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-                    {/* Aditi Card */}
-                    <Card className="overflow-hidden bg-transparent border-none shadow-none">
-                        <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
-                            <Image
-                                src="/aditi.webp"
-                                alt="Aditi Garg - Director & Founder"
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                priority
+                <div className="relative mx-auto max-w-6xl">
+                    <div
+                        aria-hidden
+                        className="pointer-events-none absolute -inset-x-6 top-16 -z-10 h-[32rem] rounded-[2.5rem] bg-[radial-gradient(ellipse_at_top,theme(colors.primary/.16),transparent_62%)] blur-3xl"
+                    />
+                    <div className={founderGridClassName}>
+                        {/* Aditi Card */}
+                        <Card className="group relative isolate overflow-hidden rounded-[1.75rem] border border-primary/30 bg-gradient-to-br from-primary/[0.14] via-card to-card p-4 shadow-lg shadow-primary/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/15">
+                            <div
+                                aria-hidden
+                                className="pointer-events-none absolute -left-10 -top-10 size-36 rounded-full bg-primary/20 blur-2xl"
                             />
-                        </div>
-                        <CardContent className="p-0">
-                            <h3 className="text-2xl font-bold mb-1">
-                                Aditi Garg
-                            </h3>
-                            <div className="text-primary font-medium mb-4">
-                                Director & Founder
-                            </div>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Aditi is a solutions and customer success leader
-                                who has helped organisations like Goldman Sachs,
-                                Uber, BMW and Citi Bank get real value from
-                                complex platforms. As VP of Central Support at
-                                Trilogy Ltd and Director at Invaritech, she
-                                specialises in turning messy support operations
-                                into measurable, automated, high-NPS
-                                experiences.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    {/* Avishek Card */}
-                    {SHOW_AVISHEK && (
-                        <Card className="overflow-hidden bg-transparent border-none shadow-none">
-                            <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
+                            <div className="aspect-[4/5] bg-zinc-200 dark:bg-zinc-800 relative rounded-[1.35rem] border border-border/60 overflow-hidden mb-6">
                                 <Image
-                                    src="/avishek.webp"
-                                    alt="Avishek Majumder - CEO & Co-founder"
+                                    src="/aditi-1.webp"
+                                    alt="Aditi Garg - Director & Founder"
                                     fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover transition duration-500 group-hover:scale-105"
+                                    sizes={founderImageSizes}
                                     priority
                                 />
                             </div>
                             <CardContent className="p-0">
+                                <div className="mb-3 inline-flex items-center rounded-full border border-primary/25 bg-primary/12 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-primary">
+                                    Founder
+                                </div>
                                 <h3 className="text-2xl font-bold mb-1">
-                                    Avishek Majumder
+                                    Aditi Garg
                                 </h3>
-                                <div className="text-primary font-medium mb-4">
-                                    CEO & Co-founder
+                                <div className="text-primary font-medium mb-4 min-h-[3rem]">
+                                    Director and Founder, Invaritech Ltd
                                 </div>
                                 <p className="text-muted-foreground leading-relaxed">
-                                    Avishek is a data engineer and scientist who
-                                    has spent his career building and deploying
-                                    predictive systems in regulated, high-stakes
-                                    environments across energy and finance. At
-                                    Invaritech, he designs the automation
-                                    architectures that let lean teams operate
-                                    with enterprise-grade reliability.
+                                    Aditi is a customer success and operations
+                                    leader who has helped organisations such as
+                                    Goldman Sachs, Uber, BMW, and Citi Bank
+                                    turn complex platforms into measurable
+                                    business outcomes. As VP of Central Support
+                                    at Trilogy Ltd and now Director at
+                                    Invaritech, she designs systems that reduce
+                                    manual friction, improve service quality,
+                                    and raise customer trust. Her work focuses
+                                    on transforming fragmented support processes
+                                    into automated, high-NPS operating models
+                                    that scale with lean teams.
                                 </p>
                             </CardContent>
                         </Card>
-                    )}
+
+                        {/* Abhishek Card */}
+                        <Card className="group relative isolate overflow-hidden rounded-[1.75rem] border border-primary/30 bg-gradient-to-br from-primary/[0.14] via-card to-card p-4 shadow-lg shadow-primary/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/15">
+                            <div
+                                aria-hidden
+                                className="pointer-events-none absolute -left-10 -top-10 size-36 rounded-full bg-primary/20 blur-2xl"
+                            />
+                            <div className="aspect-[4/5] bg-zinc-200 dark:bg-zinc-800 relative rounded-[1.35rem] border border-border/60 overflow-hidden mb-6">
+                                <Image
+                                    src="/abhishek.webp"
+                                    alt="Abhishek Agarwal - Co-founder"
+                                    fill
+                                    className="object-cover transition duration-500 group-hover:scale-105"
+                                    sizes={founderImageSizes}
+                                />
+                            </div>
+                            <CardContent className="p-0">
+                                <div className="mb-3 inline-flex items-center rounded-full border border-primary/25 bg-primary/12 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-primary">
+                                    Co-founder
+                                </div>
+                                <h3 className="text-2xl font-bold mb-1">
+                                    Abhishek Agarwal
+                                </h3>
+                                <div className="text-primary font-medium mb-4 min-h-[3rem]">
+                                    <div>Founder & CEO, Codeacious Tech</div>
+                                    <div>Co-founder, Invaritech Ltd</div>
+                                </div>
+                                <p className="text-muted-foreground leading-relaxed">
+                                    Abhishek is the Founder & CEO of Codeacious
+                                    Technologies and creator of coot.ai, with a
+                                    hands-on track record in production AI
+                                    delivery. He has led programs spanning data
+                                    pipelines, vector search, RAG assistants,
+                                    and workflow automation for e-commerce and
+                                    enterprise teams. He works from architecture
+                                    through rollout with a focus on security,
+                                    performance, and cost-efficient scale.
+                                    Across distributed teams in the USA, India,
+                                    Malaysia, Hong Kong, the UK, and Canada, he
+                                    has supported outcomes including roughly
+                                    $30M raised and $80M+ in product value.
+                                </p>
+                            </CardContent>
+                        </Card>
+
+                        {/* Avishek Card */}
+                        {SHOW_AVISHEK && (
+                            <Card className="group relative isolate overflow-hidden rounded-[1.75rem] border border-primary/30 bg-gradient-to-br from-primary/[0.14] via-card to-card p-4 shadow-lg shadow-primary/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/15">
+                                <div
+                                    aria-hidden
+                                    className="pointer-events-none absolute -left-10 -top-10 size-36 rounded-full bg-primary/20 blur-2xl"
+                                />
+                                <div className="aspect-[4/5] bg-zinc-200 dark:bg-zinc-800 relative rounded-[1.35rem] border border-border/60 overflow-hidden mb-6">
+                                    <Image
+                                        src="/avishek.webp"
+                                        alt="Avishek Majumder - CEO & Co-founder"
+                                        fill
+                                        className="object-cover transition duration-500 group-hover:scale-105"
+                                        sizes={founderImageSizes}
+                                    />
+                                </div>
+                                <CardContent className="p-0">
+                                    <div className="mb-3 inline-flex items-center rounded-full border border-primary/25 bg-primary/12 px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-primary">
+                                        Co-founder
+                                    </div>
+                                    <h3 className="text-2xl font-bold mb-1">
+                                        Avishek Majumder
+                                    </h3>
+                                    <div className="text-primary font-medium mb-4 min-h-[3rem]">
+                                        Co-founder & CEO, Invaritech Ltd
+                                    </div>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        Avishek is a data engineer and applied
+                                        scientist who has built predictive and
+                                        decision-support systems for regulated,
+                                        high-stakes environments across energy
+                                        and finance. At Invaritech, he leads
+                                        automation architecture for data
+                                        quality, orchestration, and reliability
+                                        so lean teams can operate with
+                                        enterprise-grade control. His focus is
+                                        practical: resilient pipelines,
+                                        auditable workflows, and models that
+                                        move from prototype to production
+                                        without operational drag.
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        )}
+                    </div>
                 </div>
             </div>
 

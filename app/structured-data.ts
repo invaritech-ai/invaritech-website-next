@@ -62,15 +62,6 @@ export const structuredData = {
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                    "@type": "EntryPoint",
-                    urlTemplate:
-                        "https://www.invaritech.ai/search?q={search_term_string}",
-                },
-                "query-input": "required name=search_term_string",
-            },
         },
         {
             "@type": "WebPage",
