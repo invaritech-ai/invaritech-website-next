@@ -8,7 +8,16 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
-import { Calendar, Mail, CheckCircle2, ArrowRight } from "lucide-react";
+import {
+    Calendar,
+    Mail,
+    CheckCircle2,
+    ArrowRight,
+    MapPin,
+    PhoneCall,
+    Building2,
+    Globe2,
+} from "lucide-react";
 
 interface FormData {
     name: string;
@@ -24,6 +33,63 @@ interface FormState {
     isSuccess: boolean;
     error: string | null;
 }
+
+interface OfficeLocation {
+    region: string;
+    address: string[];
+    phone?: string;
+    phoneHref?: string;
+    email?: string;
+}
+
+const OFFICE_LOCATIONS: OfficeLocation[] = [
+    {
+        region: "Hong Kong",
+        address: [
+            "15/F, 69 Jervois Street",
+            "Sheung Wan",
+            "Hong Kong Island",
+        ],
+        phone: "+852 5744 5060",
+        phoneHref: "+85257445060",
+        email: "hello@invaritech.ai",
+    },
+    {
+        region: "US California",
+        address: ["34786 Blackstone Way,", "California 94555"],
+        phone: "+1 (408) 821-8283",
+        phoneHref: "+14088218283",
+        email: "hello@codeacious.tech",
+    },
+    {
+        region: "US Dover",
+        address: ["8 The Green STE A,", "Dover, DE 19901"],
+        phone: "+1 (408) 821-8283",
+        phoneHref: "+14088218283",
+        email: "hello@codeacious.tech",
+    },
+    {
+        region: "India",
+        address: [
+            "AltF CoWorking Space, Sector 142,",
+            "Noida, Uttar Pradesh 201304",
+        ],
+        phone: "+91 94100 60107",
+        phoneHref: "+919410060107",
+        email: "hello@codeacious.tech",
+    },
+    {
+        region: "Malaysia",
+        address: [
+            "6, Danau Desa Business Center,",
+            "Jalan 4/109F, Taman Danau Desa,",
+            "58100 Kuala Lumpur",
+        ],
+        phone: "+603 7972 5186",
+        phoneHref: "+60379725186",
+        email: "info@crestsolution.com.my",
+    },
+];
 
 export default function ContactSection() {
     const [formData, setFormData] = useState<FormData>({
@@ -370,6 +436,90 @@ export default function ContactSection() {
                                 </Button>
                             </form>
                         </Card>
+                    </div>
+                </div>
+
+                <div className="mt-16 lg:mt-20">
+                    <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-card via-card/90 to-primary/5 p-6 sm:p-8 md:p-10">
+                        <div
+                            aria-hidden
+                            className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-primary/20 blur-3xl"
+                        />
+                        <div
+                            aria-hidden
+                            className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-secondary/20 blur-3xl"
+                        />
+
+                        <div className="relative mb-8 sm:mb-10">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                                <Globe2 className="h-3.5 w-3.5" />
+                                Sister Companies
+                            </div>
+                            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+                                Global Office Addresses
+                            </h3>
+                            <p className="max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
+                                You can reach our wider group through these
+                                sister-company locations across APAC and North
+                                America.
+                            </p>
+                        </div>
+
+                        <div className="relative grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
+                            {OFFICE_LOCATIONS.map((office) => (
+                                <article
+                                    key={office.region}
+                                    className="group relative overflow-hidden rounded-2xl border border-border/70 bg-background/75 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                                >
+                                    <div
+                                        aria-hidden
+                                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(46,143,123,0.18),transparent_45%)]"
+                                    />
+                                    <div className="relative">
+                                        <div className="mb-4 flex items-center gap-2">
+                                            <div className="rounded-lg bg-primary/10 p-2">
+                                                <Building2 className="h-4 w-4 text-primary" />
+                                            </div>
+                                            <h4 className="text-lg font-semibold">
+                                                {office.region}
+                                            </h4>
+                                        </div>
+
+                                        <div className="mb-4 flex items-start gap-2.5">
+                                            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary/80" />
+                                            <address className="not-italic text-sm leading-relaxed text-foreground/85">
+                                                {office.address.map((line) => (
+                                                    <div key={line}>{line}</div>
+                                                ))}
+                                            </address>
+                                        </div>
+
+                                        {(office.phone || office.email) && (
+                                            <div className="space-y-2 border-t border-border/60 pt-3 text-sm">
+                                                {office.phone && (
+                                                    <a
+                                                        href={`tel:${office.phoneHref ?? office.phone}`}
+                                                        className="flex items-center gap-2 text-primary hover:underline"
+                                                    >
+                                                        <PhoneCall className="h-3.5 w-3.5" />
+                                                        {office.phone}
+                                                    </a>
+                                                )}
+                                                {office.email && (
+                                                    <a
+                                                        href={`mailto:${office.email}`}
+                                                        className="flex items-center gap-2 text-primary hover:underline break-all"
+                                                    >
+                                                        <Mail className="h-3.5 w-3.5" />
+                                                        {office.email}
+                                                    </a>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                </article>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
