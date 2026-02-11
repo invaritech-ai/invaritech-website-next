@@ -39,6 +39,11 @@ export const metadata: Metadata = {
 };
 
 const SHOW_AVISHEK = true;
+const visibleFounderCards = SHOW_AVISHEK ? 3 : 2;
+const founderGridClassName =
+    visibleFounderCards === 3
+        ? "grid gap-8 lg:grid-cols-3"
+        : "grid gap-8 lg:grid-cols-2";
 
 export default function AboutPage() {
     return (
@@ -245,7 +250,7 @@ export default function AboutPage() {
                         aria-hidden
                         className="pointer-events-none absolute -inset-x-6 top-16 -z-10 h-[32rem] rounded-[2.5rem] bg-[radial-gradient(ellipse_at_top,theme(colors.primary/.16),transparent_62%)] blur-3xl"
                     />
-                    <div className="grid gap-8 lg:grid-cols-3">
+                    <div className={founderGridClassName}>
                         {/* Aditi Card */}
                         <Card className="group relative isolate overflow-hidden rounded-[1.75rem] border border-primary/30 bg-gradient-to-br from-primary/[0.14] via-card to-card p-4 shadow-lg shadow-primary/10 backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/15">
                             <div
@@ -258,7 +263,7 @@ export default function AboutPage() {
                                     alt="Aditi Garg - Director & Founder"
                                     fill
                                     className="object-cover transition duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    sizes="(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
                                     priority
                                 />
                             </div>
@@ -301,7 +306,7 @@ export default function AboutPage() {
                                     alt="Abhishek Agarwal - Co-founder"
                                     fill
                                     className="object-cover transition duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    sizes="(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
                                 />
                             </div>
                             <CardContent className="p-0">
@@ -346,7 +351,7 @@ export default function AboutPage() {
                                         alt="Avishek Majumder - CEO & Co-founder"
                                         fill
                                         className="object-cover transition duration-500 group-hover:scale-105"
-                                        sizes="(max-width: 768px) 100vw, 50vw"
+                                        sizes="(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
                                     />
                                 </div>
                                 <CardContent className="p-0">
