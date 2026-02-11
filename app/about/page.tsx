@@ -44,6 +44,10 @@ const founderGridClassName =
     visibleFounderCards === 3
         ? "grid gap-8 lg:grid-cols-3"
         : "grid gap-8 lg:grid-cols-2";
+const founderImageSizes =
+    visibleFounderCards === 3
+        ? "(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
+        : "(max-width: 768px) 100vw, (min-width: 1024px) 50vw, 50vw";
 
 export default function AboutPage() {
     return (
@@ -263,7 +267,7 @@ export default function AboutPage() {
                                     alt="Aditi Garg - Director & Founder"
                                     fill
                                     className="object-cover transition duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
+                                    sizes={founderImageSizes}
                                     priority
                                 />
                             </div>
@@ -306,7 +310,7 @@ export default function AboutPage() {
                                     alt="Abhishek Agarwal - Co-founder"
                                     fill
                                     className="object-cover transition duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
+                                    sizes={founderImageSizes}
                                 />
                             </div>
                             <CardContent className="p-0">
@@ -351,7 +355,7 @@ export default function AboutPage() {
                                         alt="Avishek Majumder - CEO & Co-founder"
                                         fill
                                         className="object-cover transition duration-500 group-hover:scale-105"
-                                        sizes="(max-width: 768px) 100vw, (min-width: 1024px) 33vw, 50vw"
+                                        sizes={founderImageSizes}
                                     />
                                 </div>
                                 <CardContent className="p-0">
