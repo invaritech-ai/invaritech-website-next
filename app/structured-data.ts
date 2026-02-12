@@ -5,9 +5,9 @@ export const structuredData = {
             "@type": "Organization",
             "@id": "https://www.invaritech.ai/#organization",
             name: "INVARITECH",
-            alternateName: "INVARITECH Automation Studio",
+            alternateName: "INVARITECH AI Automation Studio",
             description:
-                "INVARITECH is a boutique automation studio. We design and build custom automation for small service businesses. From compliance bridges and data pipelines to admin suites for freelancers and agencies.",
+                "INVARITECH delivers drop-in AI automations for medium and enterprise teams. We plug intelligence into existing ERP, CRM, and internal workflows without disruptive rebuilds.",
             url: "https://www.invaritech.ai",
             logo: {
                 "@type": "ImageObject",
@@ -23,7 +23,7 @@ export const structuredData = {
             },
             contactPoint: {
                 "@type": "ContactPoint",
-                contactType: "customer service",
+                contactType: "sales",
                 email: "hello@invaritech.ai",
                 availableLanguage: ["English"],
                 areaServed: "Worldwide",
@@ -38,27 +38,24 @@ export const structuredData = {
                 addressCountry: "US",
             },
             foundingDate: "2025",
-            numberOfEmployees: "1-10",
             industry: "Technology",
             knowsAbout: [
-                "Business Automation",
+                "Enterprise AI Automation",
                 "Workflow Automation",
-                "Compliance Automation",
-                "Back-Office Systems",
-                "Data Pipelines",
-                "API Integration",
-                "Compliance Bridges",
-                "Admin Suites",
-                "Process Automation",
+                "ERP Integration",
+                "CRM Integration",
+                "Operational Efficiency",
+                "AI Guardrails",
+                "Production AI Systems",
             ],
         },
         {
             "@type": "WebSite",
             "@id": "https://www.invaritech.ai/#website",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Automation & Back-Office Systems",
+            name: "INVARITECH - Drop-In AI Automations for Enterprises",
             description:
-                "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+                "Drop-In AI automations for enterprises that cannot afford disruption. One production-grade automation in 30 days.",
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
@@ -67,9 +64,9 @@ export const structuredData = {
             "@type": "WebPage",
             "@id": "https://www.invaritech.ai/#webpage",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
+            name: "INVARITECH - Drop-In AI Automations for Enterprises That Cannot Afford Disruption",
             description:
-                "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+                "We add intelligence to your existing systems safely, incrementally, and measurably. In 30 days you get one production-grade AI automation with measurable before/after impact.",
             isPartOf: {
                 "@id": "https://www.invaritech.ai/#website",
             },
@@ -87,43 +84,34 @@ export const structuredData = {
         },
         {
             "@type": "Service",
-            name: "Compliance Workflow Bridge",
+            name: "30-Day Drop-In AI Automation Sprint",
             description:
-                "We turn your most painful compliance/reporting workflow into one auditable, automated pipeline in 6 weeks. Using tools you already have, we replace manual chaos with a single, reliable flow.",
+                "In 30 days, INVARITECH delivers one production-grade AI automation running on top of your existing infrastructure, solving one clearly defined bottleneck with measurable before/after impact.",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Automation & Compliance",
+            serviceType: "Enterprise AI Automation Sprint",
             areaServed: "Worldwide",
             audience: {
-                "@type": "Audience",
-                audienceType: "Regulated B2B Service Firms",
+                "@type": "BusinessAudience",
+                audienceType: "COO, Head of Operations, CTO, Tech Lead",
+            },
+            offers: {
+                "@type": "Offer",
+                priceCurrency: "GBP",
+                lowPrice: "8000",
+                highPrice: "12000",
             },
         },
         {
             "@type": "Service",
-            name: "WeekendSuite",
+            name: "Custom Software on Existing Infrastructure",
             description:
-                "A simple admin suite for freelancers and tiny agencies. Turns every new inquiry into a same-day proposal, signed contract, and first invoice. Set up a professional client flow in a single weekend.",
+                "Custom software and AI layers that make current enterprise systems smarter without replatforming or locking teams into new vendors.",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Admin Suite & Automation",
-            areaServed: "Worldwide",
-            audience: {
-                "@type": "Audience",
-                audienceType: "Freelancers & Small Agencies",
-            },
-        },
-        {
-            "@type": "Service",
-            name: "Custom Automation",
-            description:
-                "Custom automation solutions for small service businesses. We help identify bottlenecks and deliver automation solutions within 6 weeks to give hours back to your business.",
-            provider: {
-                "@id": "https://www.invaritech.ai/#organization",
-            },
-            serviceType: "Business Automation",
+            serviceType: "Custom Software Development",
             areaServed: "Worldwide",
         },
     ],

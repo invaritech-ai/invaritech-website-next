@@ -7,10 +7,14 @@ import {
     DollarSign,
     CheckCircle2,
     Sparkles,
+    Terminal,
 } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { HIRING_OPEN, HIRING_STATUS_MESSAGE } from "@/lib/careers";
+import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { TextEffect } from "@/components/ui/text-effect";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
     title: "Careers - Join Our Team",
@@ -51,106 +55,135 @@ export default function CareersPage() {
     ];
 
     return (
-        <main className="min-h-screen pt-24 pb-16">
-            <section className="container mx-auto px-6">
-                <div className="mx-auto max-w-4xl text-center">
-                    <h1 className="text-4xl font-bold tracking-tight sm:text-6xl mb-6">
-                        Join Our Team
+        <main className="min-h-screen bg-black relative overflow-hidden">
+            <ArtisticBackground />
+            
+            {/* Hero Section */}
+            <section className="pt-32 pb-16 px-6 relative z-10">
+                <div className="max-w-[90vw] mx-auto text-center md:text-left">
+                    <TextEffect 
+                        per="char" 
+                        preset="fade" 
+                        className="text-xs md:text-sm font-mono tracking-[0.2em] text-primary mb-8 block text-center md:text-left"
+                    >
+                        CAREER OPPORTUNITIES
+                    </TextEffect>
+                    
+                    <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-white">
+                        <TextEffect per="word" preset="slide" className="inline-block">
+                            BUILD THE
+                        </TextEffect>
+                        <br />
+                        <span className="text-white/20">FUTURE</span>
                     </h1>
-                    <p className="text-muted-foreground text-lg sm:text-xl mb-12 max-w-2xl mx-auto">
-                        Build the future with us. We&apos;re looking for
-                        passionate individuals to help us craft
-                        precision-engineered digital solutions.
+                    
+                    <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light leading-relaxed mx-auto md:mx-0">
+                        Join a team of obsessive engineers and designers. We don't just build software; we architect the operating systems of tomorrow's enterprises.
                     </p>
-                    {!HIRING_OPEN && (
-                        <div className="mx-auto mb-10 max-w-2xl rounded-2xl border border-emerald-500/35 bg-gradient-to-r from-emerald-500/15 via-emerald-400/10 to-transparent p-5 text-left shadow-lg shadow-emerald-500/10">
-                            <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-700 dark:text-emerald-300">
-                                <CheckCircle2 className="size-3.5" />
-                                Hiring Pause
+                </div>
+            </section>
+
+            {/* Hiring Status Termimal */}
+            <section className="px-6 pb-24 relative z-10">
+                <div className="max-w-4xl mx-auto">
+                    {!HIRING_OPEN ? (
+                         <div className="relative overflow-hidden rounded-3xl border border-red-500/20 bg-red-950/10 backdrop-blur-md p-8 md:p-12">
+                            <div className="flex items-start gap-6">
+                                <div className="p-4 rounded-2xl bg-red-500/10 border border-red-500/20 hidden md:block">
+                                    <Terminal className="size-8 text-red-500" />
+                                </div>
+                                <div>
+                                    <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-red-500 mb-6">
+                                        <div className="size-2 rounded-full bg-red-500 animate-pulse" />
+                                        Hiring Paused
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-4">Protocol: Standby</h3>
+                                    <p className="text-lg text-muted-foreground/80 leading-relaxed font-mono">
+                                        {HIRING_STATUS_MESSAGE}
+                                    </p>
+                                </div>
                             </div>
-                            <p className="text-sm text-foreground/85 leading-relaxed">
-                                {HIRING_STATUS_MESSAGE}
-                            </p>
+                        </div>
+                    ) : (
+                        <div className="relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-emerald-950/10 backdrop-blur-md p-8 md:p-12">
+                             <div className="flex items-start gap-6">
+                                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 hidden md:block">
+                                    <CheckCircle2 className="size-8 text-emerald-500" />
+                                </div>
+                                <div>
+                                    <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-emerald-500 mb-6">
+                                        <div className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+                                        Positions Open
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white mb-4">Protocol: Recruitment Active</h3>
+                                    <p className="text-lg text-muted-foreground/80 leading-relaxed font-mono">
+                                        We are actively seeking exceptional talent to join our core engineering unit.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
+            </section>
 
-                <div className="mx-auto max-w-4xl mt-16">
-                    <h2 className="text-2xl font-semibold mb-8">
-                        {HIRING_OPEN
-                            ? "Open Positions"
-                            : "Recently Filled Positions"}
+            {/* Job Listings / Archive */}
+            <section className="px-6 pb-32 relative z-10">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-[4vw] font-bold leading-none mb-12 opacity-20 text-center md:text-left">
+                        {HIRING_OPEN ? "MISSION PARAMETERS" : "ARCHIVED ROLES"}
                     </h2>
+
                     <div className="grid gap-6">
                         {jobs.map((job) => (
                             <div
                                 key={job.id}
-                                className={`group relative overflow-hidden rounded-2xl border bg-card p-6 transition-all ${
+                                className={`group relative overflow-hidden rounded-3xl border p-8 transition-all duration-500 ${
                                     HIRING_OPEN
-                                        ? "hover:shadow-lg"
-                                        : "border-border/70 bg-muted/20 saturate-[0.8]"
+                                        ? "bg-white/5 border-white/10 hover:border-primary/50 hover:bg-white/10"
+                                        : "bg-white/0 border-white/5 opacity-60"
                                 }`}
                             >
-                                {!HIRING_OPEN && (
-                                    <>
-                                        <div
-                                            aria-hidden
-                                            className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(135deg,rgba(120,120,120,0.08)_0px,rgba(120,120,120,0.08)_10px,transparent_10px,transparent_20px)]"
-                                        />
-                                        <div className="pointer-events-none absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-emerald-700 dark:text-emerald-300">
-                                            <Sparkles className="size-3" />
-                                            Position Filled
+                                <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
+                                    <div className="space-y-4">
+                                        <div className="flex flex-wrap gap-3">
+                                            <span className="text-xs font-mono uppercase tracking-widest text-primary/80 border border-primary/20 px-2 py-1 rounded">
+                                                {job.department}
+                                            </span>
+                                            <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground border border-white/10 px-2 py-1 rounded">
+                                                {job.location}
+                                            </span>
                                         </div>
-                                    </>
-                                )}
-                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                                    <div>
-                                        <h3 className="text-xl font-semibold mb-2">
+                                        
+                                        <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-primary transition-colors">
                                             {job.title}
                                         </h3>
-                                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                                            <div className="flex items-center gap-1.5">
-                                                <Briefcase className="size-4" />
-                                                {job.department}
-                                            </div>
-                                            <div className="flex items-center gap-1.5">
-                                                <MapPin className="size-4" />
-                                                {job.location}
-                                            </div>
-                                            <div className="flex items-center gap-1.5">
-                                                <Clock className="size-4" />
-                                                {job.type}
-                                            </div>
-                                            <div className="flex items-center gap-1.5">
-                                                <DollarSign className="size-4" />
-                                                {job.pay}
-                                            </div>
+                                        
+                                        <div className="flex flex-wrap gap-6 text-sm font-mono text-muted-foreground">
+                                            <span className="flex items-center gap-2">
+                                                <Clock className="size-4" /> {job.type}
+                                            </span>
+                                            <span className="flex items-center gap-2">
+                                                <DollarSign className="size-4" /> {job.pay}
+                                            </span>
                                         </div>
-                                        <p className="text-muted-foreground">
+                                        
+                                        <p className="text-muted-foreground max-w-xl">
                                             {job.description}
                                         </p>
                                     </div>
-                                    <div className="flex items-center">
+
+                                    <div className="flex-shrink-0">
                                         {HIRING_OPEN ? (
-                                            <Button
-                                                asChild
-                                                className="w-full sm:w-auto"
-                                            >
-                                                <Link
-                                                    href={`/careers/${job.id}/`}
-                                                >
-                                                    Apply Now{" "}
-                                                    <ArrowRight className="ml-2 size-4" />
-                                                </Link>
-                                            </Button>
+                                            <Link href={`/careers/${job.id}/`}>
+                                                <MagneticButton strength={0.3} className="bg-white text-black font-bold">
+                                                    Initiate Application <ArrowRight className="ml-2 w-4 h-4" />
+                                                </MagneticButton>
+                                            </Link>
                                         ) : (
-                                            <Button
-                                                disabled
-                                                variant="outline"
-                                                className="w-full sm:w-auto border-emerald-500/30 text-emerald-700 dark:text-emerald-300"
-                                            >
+                                            <div className="px-6 py-3 rounded-full border border-white/10 text-white/40 font-mono text-sm uppercase tracking-wider flex items-center gap-2">
+                                                <Sparkles className="size-4" />
                                                 Position Filled
-                                            </Button>
+                                            </div>
                                         )}
                                     </div>
                                 </div>

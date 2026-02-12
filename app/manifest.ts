@@ -4,10 +4,10 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "INVARITECH - Premium Digital Solutions & AI-Powered Development",
+        name: "INVARITECH - Drop-In AI Automations for Enterprises",
         short_name: "INVARITECH",
         description:
-            "INVARITECH crafts precision-engineered digital solutions, luxury-grade experiences, and scalable systems. Expert backend development, AI automation, and e-commerce solutions.",
+            "INVARITECH delivers drop-in AI automations for enterprises on existing systems. One production-grade automation in 30 days.",
         start_url: "/",
         display: "standalone",
         background_color: "#000000",
@@ -37,7 +37,7 @@ export default function manifest(): MetadataRoute.Manifest {
                 sizes: "1280x720",
                 type: "image/png",
                 form_factor: "wide",
-                label: "INVARITECH Homepage",
+                label: "INVARITECH Enterprise AI Automation Homepage",
             },
         ],
     };

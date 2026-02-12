@@ -6,15 +6,16 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
+import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 export const metadata: Metadata = {
     title: "Compliance Workflow Bridge - Services",
     description:
-        "We turn your most painful compliance workflow into one auditable, automated pipeline in 6 weeks. Using tools you already have.",
+        "We turn painful compliance workflows into one auditable, automated pipeline in 30 days, using the systems you already run.",
     openGraph: {
         title: "Compliance Workflow Bridge - Services",
         description:
-            "We turn your most painful compliance workflow into one auditable, automated pipeline in 6 weeks.",
+            "We turn your most painful compliance workflow into one auditable, automated pipeline in 30 days.",
         url: "https://www.invaritech.ai/services/compliance-bridge/",
         images: [
             {
@@ -63,7 +64,8 @@ export default function ComplianceBridgePage() {
                     delay={0.5}
                     className="text-lg text-muted-foreground mb-8 leading-relaxed"
                 >
-                    No big IT project, no surprise costs. Just a production-grade workflow in 6 weeks.
+                    No big IT project, no surprise costs. Just a
+                    production-grade workflow in 30 days.
                 </TextEffect>
                 <Button
                     asChild
@@ -71,11 +73,11 @@ export default function ComplianceBridgePage() {
                     className="rounded-xl px-8 text-base"
                 >
                     <a
-                        href="https://calendly.com/hello-invaritech/30min"
+                        href={BOOK_MEETING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Book a free consultation{" "}
+                        {BOOK_MEETING_CTA}{" "}
                         <ArrowRight className="ml-2 size-4" />
                     </a>
                 </Button>
@@ -293,7 +295,7 @@ export default function ComplianceBridgePage() {
                     <div className="bg-card border rounded-2xl p-8 shadow-sm">
                         <p className="text-xl font-medium mb-4 leading-relaxed">
                             We deliver a production-grade, auditable pipeline in
-                            6 weeks using your existing tools.
+                            30 days using your existing tools.
                         </p>
                         <div className="h-px bg-border my-6" />
                         <p className="text-muted-foreground leading-relaxed">
@@ -414,11 +416,11 @@ export default function ComplianceBridgePage() {
                         className="rounded-xl px-8 text-base"
                     >
                         <a
-                            href="https://calendly.com/hello-invaritech/30min"
+                            href={BOOK_MEETING_URL}
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Book a free consultation{" "}
+                            {BOOK_MEETING_CTA}{" "}
                             <ArrowRight className="ml-2 size-4" />
                         </a>
                     </Button>

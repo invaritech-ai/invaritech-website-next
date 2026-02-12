@@ -51,6 +51,6 @@ dist/*
 api-server/*
 
 
-.agents
+.agent*
 .claude
 .cline

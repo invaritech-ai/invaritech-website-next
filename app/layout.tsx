@@ -4,6 +4,11 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import Script from "next/script";
 import "./globals.css";
+import { LenisScroll } from "@/components/ui/LenisScroll";
+import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { HeroHeader } from "@/components/header"; 
+import FooterSection from "@/components/footer";
+import { Chatbot } from "@/components/chatbot";
 
 const geistSans = localFont({
     src: [
@@ -47,32 +52,27 @@ const metadataVerification: Metadata["verification"] = {
 export const metadata: Metadata = {
     title: {
         default:
-            "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
+            "INVARITECH - Drop-In AI Automations for Enterprises",
         template: "%s | INVARITECH",
     },
     description:
-        "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+        "Drop-In AI automations for enterprises that cannot afford disruption. In 30 days, INVARITECH delivers one production-grade automation on top of your existing systems with measurable impact.",
     keywords: [
         "INVARITECH",
-        "business automation",
+        "enterprise AI automation",
+        "drop-in automation",
+        "ops automation sprint",
+        "30-day AI automation sprint",
         "workflow automation",
-        "compliance automation",
-        "back-office systems",
-        "data pipelines",
-        "API integration",
-        "freelancer tools",
-        "agency management",
-        "custom automation",
-        "small business software",
-        "process automation",
-        "compliance bridge",
-        "weekendsuite",
-        "backend development",
-        "AI automation",
         "custom software",
-        "database design",
-        "web development",
-        "digital transformation",
+        "ERP integration",
+        "CRM integration",
+        "production AI systems",
+        "operational efficiency",
+        "process automation",
+        "infrastructure augmentation",
+        "AI ops",
+        "enterprise software delivery",
     ],
     authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
@@ -101,25 +101,25 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         url: "https://www.invaritech.ai",
-        title: "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
+        title: "INVARITECH - Drop-In AI Automations for Enterprises",
         description:
-            "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+            "We add intelligence to your existing systems safely, incrementally, and measurably. One production-grade automation in 30 days.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.webp",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH - Automation & Back-Office Systems",
+                alt: "INVARITECH - Drop-In AI Automations for Enterprises",
                 type: "image/webp",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH - Automation & Back-Office Systems",
+        title: "INVARITECH - Drop-In AI Automations for Enterprises",
         description:
-            "Custom automation for small service businesses. Compliance bridges, data pipelines, and admin suites. Stop losing time between your tools.",
+            "In 30 days, get one production-grade AI automation on top of your existing systems, with measurable before/after impact.",
         images: ["/og-image.webp"],
         creator: "@invaritechai",
         site: "@invaritechai",
@@ -135,19 +135,13 @@ export const metadata: Metadata = {
     },
 };
 
-import { HeroHeader } from "@/components/header";
-import FooterSection from "@/components/footer";
-import { Chatbot } from "@/components/chatbot";
-
-// ... imports ...
-
 export default function RootLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning className="dark">
             <head>
                 {/* Resource hints for external domains */}
                 <link rel="preconnect" href="https://www.google.com" />
@@ -165,36 +159,25 @@ export default function RootLayout({
                         __html: JSON.stringify(structuredData),
                     }}
                 />
-                {/* <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "Organization",
-                            name: "INVARITECH",
-                            url: "https://www.invaritech.ai",
-                            logo: "https://www.invaritech.ai/logo-image.png",
-                            sameAs: [
-                                "https://linkedin.com/company/invaritechai",
-                                "https://x.com/invaritechai",
-                            ],
-                        }),
-                    }}
-                /> */}
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
             >
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
-                    enableSystem
+                    defaultTheme="dark"
+                    enableSystem={false}
                     disableTransitionOnChange
                 >
-                    <HeroHeader />
-                    {children}
-                    <FooterSection />
-                    <Chatbot />
+                    <LenisScroll>
+                        <ArtisticBackground />
+                        <div className="relative z-10">
+                            <HeroHeader />
+                            {children}
+                            <FooterSection />
+                        </div>
+                        <Chatbot />
+                    </LenisScroll>
                 </ThemeProvider>
 
                 {/* Third-party scripts with optimized loading strategies */}

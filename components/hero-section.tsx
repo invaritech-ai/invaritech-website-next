@@ -1,15 +1,19 @@
 import React from "react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
+import {
+    BOOK_MEETING_CTA,
+    BOOK_MEETING_URL,
+    BRAND_EYEBROW,
+} from "@/lib/marketing";
 
 const transitionVariants = {
     hidden: {
         opacity: 0,
         filter: "blur(12px)",
-        y: 12,
+        y: 14,
     },
     visible: {
         opacity: 1,
@@ -17,150 +21,66 @@ const transitionVariants = {
         y: 0,
         transition: {
             type: "spring" as const,
-            bounce: 0.3,
-            duration: 1.5,
+            bounce: 0.2,
+            duration: 1.1,
         },
     },
 };
 
+const proofPoints = [
+    "One bottleneck, one production automation",
+    "No migration and no vendor lock-in",
+    "Guardrails, fallbacks, and rollback paths",
+    "Before/after KPI validation",
+];
+
 export default function HeroSection() {
     return (
-        <>
-            <div className="overflow-hidden">
-                <div
-                    aria-hidden
-                    className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block"
-                >
-                    <div className="w-140 h-320 -translate-y-87.5 absolute left-0 top-0 -rotate-45 rounded-full bg-[radial-gradient(68.54%_68.72%_at_55.02%_31.46%,hsla(0,0%,85%,.08)_0,hsla(0,0%,55%,.02)_50%,hsla(0,0%,45%,0)_80%)]" />
-                    <div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
-                    <div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
-                </div>
-                <section>
-                    <div className="relative pt-24 md:pt-36">
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            delayChildren: 1,
-                                        },
-                                    },
-                                },
-                                item: {
-                                    hidden: {
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        opacity: 1,
-                                        y: 0,
-                                    },
-                                },
-                            }}
-                            className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-20 -z-20 lg:top-32"
+        <section className="relative isolate overflow-hidden pb-28 pt-28 md:pb-36 md:pt-36">
+            <div aria-hidden className="pointer-events-none absolute inset-0 -z-30">
+                <div className="absolute inset-0 bg-[linear-gradient(125deg,#031714_0%,#0a3830_48%,#03100e_100%)] dark:bg-[linear-gradient(125deg,#02110f_0%,#0b2c27_48%,#010707_100%)]" />
+                <div className="absolute inset-0 opacity-30 [background-image:linear-gradient(to_right,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:52px_52px]" />
+                <div className="absolute -left-16 top-10 h-96 w-96 rounded-full bg-primary/35 blur-3xl" />
+                <div className="absolute -right-16 top-36 h-96 w-96 rounded-full bg-cyan-300/20 blur-3xl" />
+                <div className="absolute bottom-0 left-0 right-0 h-52 bg-[linear-gradient(180deg,transparent_0%,#041916_70%,#05201b_100%)]" />
+            </div>
+
+            <div className="mx-auto max-w-7xl px-3 sm:px-6">
+                <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
+                    <div className="text-white">
+                        <TextEffect
+                            per="char"
+                            preset="fade-in-blur"
+                            as="p"
+                            className="mb-5 block text-sm font-medium uppercase tracking-[0.26em] text-white/80 md:text-base"
                         >
-                            <Image
-                                src="/hero-bg.webp"
-                                alt="INVARITECH digital solutions background"
-                                className="size-full object-cover object-top invert dark:invert-0"
-                                fill
-                                sizes="100vw"
-                                priority
-                            />
-                        </AnimatedGroup>
+                            {BRAND_EYEBROW}
+                        </TextEffect>
 
-                        <div
-                            aria-hidden
-                            className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
-                        />
+                        <TextEffect
+                            preset="fade-in-blur"
+                            speedSegment={0.45}
+                            as="h1"
+                            className="max-w-4xl text-balance text-5xl font-semibold leading-[0.9] md:text-7xl xl:text-[5.45rem]"
+                        >
+                            Enterprise AI Automation Without Disruption
+                        </TextEffect>
 
-                        <div className="mx-auto max-w-7xl px-3 sm:px-6">
-                            <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <TextEffect
-                                    per="char"
-                                    preset="fade-in-blur"
-                                    as="p"
-                                    className="mx-auto mb-4 block w-full max-w-2xl text-balance text-sm font-medium uppercase tracking-widest text-muted-foreground md:text-base"
-                                >
-                                    Your vision, intelligently executed
-                                </TextEffect>
-                                <TextEffect
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    as="h1"
-                                    className="mx-auto mt-0 max-w-full sm:max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl xl:text-[5.25rem]"
-                                >
-                                    Automation & Back-Office Systems for Small
-                                    Service Businesses
-                                </TextEffect>
-                                <TextEffect
-                                    per="line"
-                                    preset="fade-in-blur"
-                                    speedSegment={0.3}
-                                    delay={0.5}
-                                    as="p"
-                                    className="mx-auto mt-8 max-w-full sm:max-w-2xl text-balance text-lg"
-                                >
-                                    Invaritech designs and builds custom
-                                    automation – from compliance bridges and
-                                    data pipelines to a new admin suite for
-                                    freelancers and tiny agencies.
-                                </TextEffect>
+                        <TextEffect
+                            per="line"
+                            preset="fade-in-blur"
+                            speedSegment={0.4}
+                            delay={0.35}
+                            as="p"
+                            className="mt-8 max-w-2xl text-balance text-xl text-white/85"
+                        >
+                            We add intelligence to your existing systems safely,
+                            incrementally, and measurably.
+                        </TextEffect>
 
-                                <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        item: transitionVariants,
-                                    }}
-                                    className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
-                                >
-                                    <div
-                                        key={1}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-                                    >
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="rounded-xl px-5 text-base"
-                                        >
-                                            <a
-                                                href="https://calendly.com/hello-invaritech/30min"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                <span className="text-nowrap">
-                                                    Talk about an automation
-                                                    project
-                                                </span>
-                                            </a>
-                                        </Button>
-                                    </div>
-                                    <div
-                                        key={2}
-                                        className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-                                    >
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            variant="outline"
-                                            className="rounded-xl px-5 text-base"
-                                        >
-                                            <Link href="/work/">
-                                                <span className="text-nowrap">
-                                                    See our work
-                                                </span>
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                </AnimatedGroup>
-                            </div>
+                        <div className="mt-7 inline-flex items-center rounded-full border border-primary/50 bg-primary/20 px-5 py-2 text-sm font-medium text-white">
+                            £8,000-£12,000 per sprint · fixed scope for faster
+                            internal approval
                         </div>
 
                         <AnimatedGroup
@@ -169,28 +89,107 @@ export default function HeroSection() {
                                     visible: {
                                         transition: {
                                             staggerChildren: 0.05,
-                                            delayChildren: 0.75,
+                                            delayChildren: 0.62,
                                         },
                                     },
                                 },
                                 item: transitionVariants,
                             }}
+                            className="mt-9"
                         >
-                            <div className="mask-b-from-55% relative mr-0 mt-8 overflow-hidden px-1 sm:px-2 sm:mt-12 md:mt-20">
-                                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-2 sm:p-4 shadow-lg shadow-zinc-950/15 ring-1">
-                                    <Image
-                                        className="bg-background aspect-15/8 relative rounded-2xl scale-x-[-1]"
-                                        src="/app.webp"
-                                        alt="INVARITECH application interface showcasing premium digital solutions"
-                                        width="2700"
-                                        height="1440"
-                                    />
-                                </div>
+                            <div className="inline-block rounded-2xl border border-white/45 bg-white/10 p-1 backdrop-blur">
+                                <Button
+                                    asChild
+                                    size="lg"
+                                    className="rounded-xl bg-primary px-8 text-base font-semibold text-primary-foreground shadow-[0_0_35px_rgba(45,219,188,0.35)] hover:bg-primary/90"
+                                >
+                                    <a
+                                        href={BOOK_MEETING_URL}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        {BOOK_MEETING_CTA}
+                                    </a>
+                                </Button>
                             </div>
                         </AnimatedGroup>
+
+                        <AnimatedGroup
+                            variants={{
+                                container: {
+                                    visible: {
+                                        transition: {
+                                            staggerChildren: 0.04,
+                                            delayChildren: 0.86,
+                                        },
+                                    },
+                                },
+                                item: transitionVariants,
+                            }}
+                            className="mt-8 grid gap-3 sm:grid-cols-2"
+                        >
+                            {proofPoints.map((point) => (
+                                <div
+                                    key={point}
+                                    className="rounded-xl border border-white/25 bg-black/25 px-4 py-3 text-sm font-medium text-white/90 backdrop-blur-md"
+                                >
+                                    {point}
+                                </div>
+                            ))}
+                        </AnimatedGroup>
                     </div>
-                </section>
+
+                    <AnimatedGroup
+                        variants={{
+                            container: {
+                                visible: {
+                                    transition: {
+                                        staggerChildren: 0.05,
+                                        delayChildren: 0.45,
+                                    },
+                                },
+                            },
+                            item: transitionVariants,
+                        }}
+                        className="relative"
+                    >
+                        <div className="relative rounded-[2rem] border border-white/15 bg-black/35 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-6">
+                            <div className="mb-4 flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-white">
+                                <span>30-Day Drop-In AI Automation Sprint</span>
+                                <span className="rounded-full border border-primary/45 bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">
+                                    Live Build
+                                </span>
+                            </div>
+
+                            <div className="relative overflow-hidden rounded-2xl border border-white/15">
+                                <Image
+                                    className="aspect-[16/10] object-cover"
+                                    src="/app.webp"
+                                    alt="INVARITECH automation dashboard"
+                                    width="1600"
+                                    height="1000"
+                                    priority
+                                />
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_18%,rgba(58,255,213,0.35),transparent_32%)]" />
+                            </div>
+
+                            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                                <div className="rounded-xl border border-white/15 bg-black/30 px-3 py-2 text-xs font-medium text-white/90">
+                                    Week 1: Bottleneck audit + KPI baseline
+                                </div>
+                                <div className="rounded-xl border border-white/15 bg-black/30 px-3 py-2 text-xs font-medium text-white/90">
+                                    Week 2-4: Build, harden, deploy
+                                </div>
+                            </div>
+                        </div>
+                    </AnimatedGroup>
+                </div>
             </div>
-        </>
+
+            <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-20 left-1/2 h-48 w-[120%] -translate-x-1/2 rounded-[100%] bg-[radial-gradient(70%_70%_at_50%_45%,rgba(9,51,44,0.95)_0%,rgba(8,31,28,0.8)_45%,transparent_100%)] blur-2xl"
+            />
+        </section>
     );
 }

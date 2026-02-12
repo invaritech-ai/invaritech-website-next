@@ -2,11 +2,14 @@ import { Metadata } from "next";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog-posts";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Share2, Printer } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Script from "next/script";
+import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { TextEffect } from "@/components/ui/text-effect";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -152,194 +155,153 @@ export default async function BlogPostPage({ params }: Props) {
                     __html: JSON.stringify(articleSchema),
                 }}
             />
-            <main className="min-h-screen bg-background relative overflow-hidden pt-24 md:pt-32 pb-16 md:pb-32">
-                {/* Background Pattern */}
-                <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-black bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]">
-                    <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]"></div>
-                </div>
+            <main className="min-h-screen bg-black relative overflow-hidden">
+                <ArtisticBackground />
 
-                <article className="mx-auto max-w-4xl px-6">
-                    {/* Back Button */}
-                    <Link
-                        href="/blogs/"
-                        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-8 group"
-                    >
-                        <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
-                        Back to all posts
-                    </Link>
+                <article className="relative z-10 pt-32 pb-24 px-6 md:px-0">
+                    <div className="max-w-4xl mx-auto">
+                        {/* Header Area */}
+                        <header className="mb-16 border-b border-white/10 pb-12">
+                            {/* Meta Top Bar */}
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 font-mono text-xs text-muted-foreground uppercase tracking-widest border-l-2 border-primary/50 pl-4">
+                                <Link
+                                    href="/blogs/"
+                                    className="flex items-center gap-2 hover:text-white transition-colors group"
+                                >
+                                    <ArrowLeft className="size-3 transition-transform group-hover:-translate-x-1" />
+                                    Return to Archive
+                                </Link>
+                                <div className="flex gap-6">
+                                    <span className="flex items-center gap-2">
+                                        <Calendar className="size-3" />
+                                        {formatDate(post.publishedAt)}
+                                    </span>
+                                    <span className="flex items-center gap-2">
+                                        <Clock className="size-3" />
+                                        {estimateReadingTime(post.content)} MIN READ
+                                    </span>
+                                </div>
+                            </div>
 
-                    {/* Header */}
-                    <header className="mb-12">
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-2 mb-6">
-                            {post.tags.map((tag) => (
-                                <Badge key={tag} variant="secondary">
-                                    {tag}
-                                </Badge>
-                            ))}
-                        </div>
+                            {/* Tags */}
+                            <div className="flex flex-wrap gap-2 mb-8">
+                                {post.tags.map((tag) => (
+                                    <span key={tag} className="text-xs font-mono px-2 py-1 border border-white/10 text-primary bg-primary/5 rounded">
+                                        #{tag}
+                                    </span>
+                                ))}
+                            </div>
 
-                        {/* Title */}
-                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                            {post.title}
-                        </h1>
+                            {/* Title */}
+                            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-8 leading-[0.9] text-white mix-blend-difference">
+                                <TextEffect per="word" preset="slide">
+                                    {post.title}
+                                </TextEffect>
+                            </h1>
 
-                        {/* Excerpt */}
-                        <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-                            {post.excerpt}
-                        </p>
-
-                        {/* Meta Info */}
-                        <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground pb-8 border-b">
-                            <div className="flex items-center gap-2">
-                                <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
+                            {/* Author */}
+                            <div className="flex items-center gap-4 text-sm">
+                                <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-white border border-white/20">
                                     {post.author.name.charAt(0)}
                                 </div>
-                                <div>
-                                    <div className="font-medium text-foreground">
-                                        {post.author.name}
-                                    </div>
-                                    <div className="text-xs">
-                                        {post.author.role}
-                                    </div>
+                                <div className="flex flex-col">
+                                    <span className="font-bold text-white">{post.author.name}</span>
+                                    <span className="text-muted-foreground text-xs font-mono uppercase">{post.author.role}</span>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <Calendar className="size-4" />
-                                <span>{formatDate(post.publishedAt)}</span>
+                        </header>
+
+                         {/* Cover Image */}
+                        {post.coverImage && (
+                            <div className="aspect-[21/9] relative overflow-hidden rounded-sm mb-16 border-y border-white/10 group">
+                                <Image
+                                    src={post.coverImage}
+                                    alt={post.title}
+                                    fill
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                    priority
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                                <div className="absolute bottom-4 right-4 font-mono text-[10px] text-white/50 tracking-widest">
+                                    IMG_REF: {slug.toUpperCase()}
+                                </div>
                             </div>
-                            <div className="flex items-center gap-1">
-                                <Clock className="size-4" />
-                                <span>
-                                    {estimateReadingTime(post.content)} min read
-                                </span>
-                            </div>
-                        </div>
-                    </header>
+                        )}
 
-                    {/* Cover Image */}
-                    {post.coverImage && (
-                        <div className="aspect-[4/3] relative overflow-hidden rounded-2xl mb-12 bg-muted">
-                            <Image
-                                src={post.coverImage}
-                                alt={post.title}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        </div>
-                    )}
-
-                    {/* Content */}
-                    <div className="prose prose-lg dark:prose-invert max-w-none">
-                        <ReactMarkdown
-                            components={{
-                                h1: ({ children }) => (
-                                    <h1 className="text-4xl font-bold mt-12 mb-6 leading-tight">
-                                        {children}
-                                    </h1>
-                                ),
-                                h2: ({ children }) => (
-                                    <h2 className="text-3xl font-bold mt-10 mb-4 leading-tight">
-                                        {children}
-                                    </h2>
-                                ),
-                                h3: ({ children }) => (
-                                    <h3 className="text-2xl font-bold mt-8 mb-3 leading-tight">
-                                        {children}
-                                    </h3>
-                                ),
-                                p: ({ children }) => (
-                                    <p className="text-lg leading-relaxed mb-6 text-foreground/90">
-                                        {children}
-                                    </p>
-                                ),
-                                a: ({ href, children }) => (
-                                    <a
-                                        href={href}
-                                        className="text-primary hover:underline font-medium"
-                                        target={
-                                            href?.startsWith("http")
-                                                ? "_blank"
-                                                : undefined
-                                        }
-                                        rel={
-                                            href?.startsWith("http")
-                                                ? "noopener noreferrer"
-                                                : undefined
-                                        }
-                                    >
-                                        {children}
-                                    </a>
-                                ),
-                                ul: ({ children }) => (
-                                    <ul className="list-disc list-outside ml-6 space-y-2 mb-6 text-lg">
-                                        {children}
-                                    </ul>
-                                ),
-                                ol: ({ children }) => (
-                                    <ol className="list-decimal list-outside ml-6 space-y-2 mb-6 text-lg">
-                                        {children}
-                                    </ol>
-                                ),
-                                li: ({ children }) => (
-                                    <li className="text-foreground/90 leading-relaxed pl-2">
-                                        {children}
-                                    </li>
-                                ),
-                                strong: ({ children }) => (
-                                    <strong className="font-bold text-foreground">
-                                        {children}
-                                    </strong>
-                                ),
-                                blockquote: ({ children }) => (
-                                    <blockquote className="border-l-4 border-primary pl-6 italic my-6 text-muted-foreground">
-                                        {children}
-                                    </blockquote>
-                                ),
-                                code: ({ children }) => (
-                                    <code className="bg-muted px-2 py-1 rounded text-sm font-mono">
-                                        {children}
-                                    </code>
-                                ),
-                            }}
-                        >
-                            {post.content}
-                        </ReactMarkdown>
-                    </div>
-
-                    {/* Footer CTA */}
-                    <div className="mt-16 pt-8 border-t">
-                        <div className="bg-muted/50 rounded-2xl p-8 md:p-12">
-                            <h2 className="text-2xl font-bold mb-4">
-                                Ready to automate your workflow?
-                            </h2>
-                            <p className="text-muted-foreground mb-6 text-lg">
-                                Schedule a 30-minute call to discuss your
-                                automation needs. We&apos;ll help you identify
-                                your biggest bottleneck and show you what&apos;s
-                                possible.
-                            </p>
-                            <a
-                                href="https://calendly.com/hello-invaritech/30min"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                        {/* Content */}
+                        <div className="prose prose-lg prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:text-muted-foreground prose-p:leading-relaxed prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-sm">
+                            <ReactMarkdown
+                                components={{
+                                    h1: ({ children }) => (
+                                        <h1 className="text-3xl md:text-4xl font-bold mt-16 mb-8 text-white border-l-4 border-primary pl-6">
+                                            {children}
+                                        </h1>
+                                    ),
+                                    h2: ({ children }) => (
+                                        <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-6 text-white">
+                                            {children}
+                                        </h2>
+                                    ),
+                                    h3: ({ children }) => (
+                                        <h3 className="text-xl md:text-2xl font-bold mt-10 mb-4 text-white">
+                                            {children}
+                                        </h3>
+                                    ),
+                                    blockquote: ({ children }) => (
+                                        <blockquote className="border border-white/10 bg-white/5 p-8 my-8 rounded-2xl not-italic relative overflow-hidden">
+                                            <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
+                                            <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">// SYSTEM NOTE</div>
+                                            <div className="text-lg text-white/90">{children}</div>
+                                        </blockquote>
+                                    ),
+                                    ul: ({ children }) => (
+                                        <ul className="list-disc list-outside ml-6 space-y-2 mb-6 text-muted-foreground marker:text-primary">
+                                            {children}
+                                        </ul>
+                                    ),
+                                    li: ({ children }) => (
+                                        <li className="pl-2">
+                                            {children}
+                                        </li>
+                                    ),
+                                    strong: ({ children }) => (
+                                        <strong className="font-bold text-white">
+                                            {children}
+                                        </strong>
+                                    ),
+                                }}
                             >
-                                Schedule a Call
-                            </a>
+                                {post.content}
+                            </ReactMarkdown>
                         </div>
-                    </div>
 
-                    {/* Back to Blog */}
-                    <div className="mt-12 text-center">
-                        <Link
-                            href="/blogs/"
-                            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
-                        >
-                            <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
-                            Back to all posts
-                        </Link>
+                        {/* Footer CTA */}
+                        <div className="mt-24 pt-12 border-t border-white/10">
+                            <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 text-center md:text-left relative overflow-hidden">
+                                <div className="absolute top-0 right-0 p-32 bg-primary/10 blur-[100px] rounded-full" />
+                                
+                                <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+                                    <div>
+                                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+                                            Ready to automate your workflow?
+                                        </h2>
+                                        <p className="text-muted-foreground text-lg mb-0 max-w-xl">
+                                            Schedule a 30-minute call to scope your biggest bottleneck.
+                                        </p>
+                                    </div>
+                                    
+                                    <a
+                                        href="https://calendly.com/hello-invaritech/30min"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <MagneticButton className="bg-primary text-black font-bold px-8 py-4">
+                                            Start Transmission
+                                        </MagneticButton>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </article>
             </main>
