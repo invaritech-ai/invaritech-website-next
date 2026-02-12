@@ -93,12 +93,12 @@ export const HeroHeader = () => {
                     )}>
                         <div className="relative size-6">
                             <span className={cn(
-                                "absolute w-full h-0.5 bg-white transition-all duration-300",
-                                isOpen ? "top-3 rotate-45" : "top-2"
+                                "absolute left-0 w-full h-0.5 bg-white transition-all duration-300",
+                                isOpen ? "top-[11px] rotate-45" : "top-[7px]"
                             )} />
                             <span className={cn(
-                                "absolute w-full h-0.5 bg-white transition-all duration-300",
-                                isOpen ? "top-3 -rotate-45" : "bottom-2"
+                                "absolute left-0 w-full h-0.5 bg-white transition-all duration-300",
+                                isOpen ? "top-[11px] -rotate-45" : "top-[15px]"
                             )} />
                         </div>
                     </div>
