@@ -165,14 +165,17 @@ export default function SprintClient() {
                                     </MagneticButton>
                                 </Link>
                             </div>
-                            <p className="mt-6 text-sm text-muted-foreground/60 font-mono">
-                                Limited capacity. Best fit if we can start within 2 weeks.
-                            </p>
-                        </div>
-                        <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
-                            <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-6">Built For Production</h3>
-                            <ul className="space-y-4">
-                                {["Access control & audit logs", "Deterministic fallbacks", "Measurable impact (before/after)", "Runbook & handover"].map(item => (
+	                            <p className="mt-6 text-sm text-muted-foreground/60 font-mono">
+	                                Limited capacity. Best fit if we can start within 2 weeks.
+	                            </p>
+	                            <p className="mt-2 text-xs text-white/40 font-mono uppercase tracking-widest">
+	                                Ideal for: COOs, CTOs, Heads of Product, Ops leaders
+	                            </p>
+	                        </div>
+	                        <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
+	                            <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-6">Built For Production</h3>
+	                            <ul className="space-y-4">
+	                                {["Access control & audit logs", "Deterministic fallbacks", "Measurable impact (before/after)", "Runbook & handover"].map(item => (
                                     <li key={item} className="flex items-center gap-3 text-white/80">
                                         <Check className="w-5 h-5 text-primary" /> {item}
                                     </li>
@@ -217,30 +220,46 @@ export default function SprintClient() {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
-                            <h2 className="text-4xl font-bold mb-8">Who It’s For</h2>
-                            <ul className="space-y-6 stagger-list">
-                                {[
-                                    "Teams with real workflows (not toy demos)",
-                                    "Production data and real stakeholders",
-                                    "Bought tools but still rely on manual coordination",
-                                    "Paid vendors who missed deadlines",
-                                    "Need execution, not another AI strategy deck"
-                                ].map((item, i) => (
-                                    <li key={i} className="stagger-item flex items-start gap-3 text-lg text-muted-foreground">
+	                            <h2 className="text-4xl font-bold mb-8">Who It’s For</h2>
+	                            <ul className="space-y-6 stagger-list">
+	                                {[
+	                                    "Teams with real workflows (not toy demos)",
+	                                    "Production data and real stakeholders",
+	                                    "Tried internal AI experiments that never reached production",
+	                                    "Bought tools but still rely on manual coordination",
+	                                    "Paid vendors who missed deadlines",
+	                                    "Need execution, not another AI strategy deck"
+	                                ].map((item, i) => (
+	                                    <li key={i} className="stagger-item flex items-start gap-3 text-lg text-muted-foreground">
                                         <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
                                         {item}
                                     </li>
                                 ))}
                             </ul>
-	                            <div className="mt-12 p-6 border border-white/10 rounded-xl bg-white/5">
-	                                <p className="text-white/80 italic">
-	                                    &ldquo;If engagement cannot begin within 2 weeks, this is not a fit.&rdquo;
-	                                </p>
-	                            </div>
-                        </div>
-                        <div>
-                            <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-8">Typical Triggers</h3>
-                            <div className="grid gap-4 stagger-list">
+		                            <div className="mt-12 p-6 border border-white/10 rounded-xl bg-white/5">
+		                                <p className="text-white/80 italic">
+		                                    &ldquo;If engagement cannot begin within 2 weeks, this is not a fit.&rdquo;
+		                                </p>
+		                            </div>
+		                            <div className="mt-6 p-6 border border-white/10 rounded-xl bg-black/40">
+		                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
+		                                <ul className="space-y-3 text-sm text-muted-foreground stagger-list">
+		                                    {[
+		                                        "You want a “magic bullet” to fix every organizational problem at once",
+		                                        "Your primary goal is to replace humans rather than scale their output",
+		                                        "You believe a production-grade system can be built over a weekend",
+		                                        "You want open-ended AI without explicit constraints and approvals",
+		                                    ].map((item) => (
+		                                        <li key={item} className="stagger-item flex gap-2">
+		                                            <X className="w-4 h-4 text-red-400 mt-0.5" /> {item}
+		                                        </li>
+		                                    ))}
+		                                </ul>
+		                            </div>
+	                        </div>
+	                        <div>
+	                            <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-8">Typical Triggers</h3>
+	                            <div className="grid gap-4 stagger-list">
                                 {[
                                     { role: "CEO", quote: "We need a new angle shipped." },
                                     { role: "COO", quote: "Improve throughput without retraining the org." },
@@ -266,14 +285,14 @@ export default function SprintClient() {
                          <p className="text-muted-foreground">By Day 30, you have production-grade behavior. Not a sandbox toy.</p>
                     </div>
                     
-                    <div className="grid md:grid-cols-3 gap-8 stagger-list">
-                        {[
-                            { title: "Working Pilot", desc: "Deployment-ready automation tied to one bottleneck.", icon: Zap },
-                            { title: "Measurement Plan", desc: "Baseline vs Actuals: time, errors, throughput, cost.", icon: Clock },
-                            { title: "Controlled Integration", desc: "Works with your existing systems. No replatforming.", icon: Server },
-                            { title: "Guardrails", desc: "Permissions, approvals, logs, fallbacks, rollback.", icon: ShieldCheck },
-                            { title: "Handover", desc: "Runbook, operating guidance, next-step roadmap.", icon: Check }
-                        ].map((item, i) => (
+	                    <div className="grid md:grid-cols-3 gap-8 stagger-list">
+	                        {[
+	                            { title: "Working Pilot", desc: "Deployment-ready automation tied to one bottleneck.", icon: Zap },
+	                            { title: "Measurement Plan", desc: "Baseline vs Actuals: time, errors, throughput, cost.", icon: Clock },
+	                            { title: "Controlled Integration", desc: "Works with your existing systems. No replatforming.", icon: Server },
+	                            { title: "Guardrails", desc: "Permissions, approvals, logs, fallbacks, rollback.", icon: ShieldCheck },
+	                            { title: "Handover", desc: "Runbook, operating guidance, next-step roadmap.", icon: Check }
+	                        ].map((item, i) => (
                             <div key={i} className="stagger-item bg-black/40 border border-white/10 p-8 rounded-2xl hover:bg-white/5 transition-colors group">
                                 <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                                     <item.icon className="w-6 h-6" />
@@ -283,14 +302,47 @@ export default function SprintClient() {
                             </div>
                         ))}
                     </div>
-                </div>
-            </section>
+	                </div>
+	            </section>
 
-            {/* Real Bottlenecks */}
-            <section className="reveal-section py-24 px-6 relative z-10">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-16">Real Bottlenecks We Fix</h2>
-                    <div className="grid md:grid-cols-3 gap-8 text-left">
+	            {/* Governance & Guardrails */}
+	            <section className="reveal-section py-24 px-6 relative z-10 bg-black/20 border-y border-white/10 backdrop-blur-sm">
+	                <div className="max-w-6xl mx-auto">
+	                    <div className="grid md:grid-cols-2 gap-16 items-start">
+	                        <div>
+	                            <h2 className="text-4xl font-bold mb-6">Governance & Guardrails</h2>
+	                            <p className="text-lg text-muted-foreground leading-relaxed">
+	                                We don’t ship open-ended “autonomous agents” to make business-critical decisions.
+	                                We build the engine. You keep the steering wheel.
+	                            </p>
+	                        </div>
+	                        <div className="stagger-list space-y-4">
+	                            {[
+	                                "System-altering actions require explicit human approval",
+	                                "Role-based access control, least-privilege permissions, and clear ownership",
+	                                "Audit logs and traceability across prompts, tools, and outcomes",
+	                                "Deterministic fallbacks and rollback paths when the model is uncertain",
+	                            ].map((item) => (
+	                                <div key={item} className="stagger-item flex items-start gap-3 p-4 rounded-xl bg-white/5 border border-white/5">
+	                                    <div className="bg-primary/10 p-2 rounded-lg text-primary">
+	                                        <ShieldCheck className="w-5 h-5" />
+	                                    </div>
+	                                    <p className="text-white/90 pt-1">{item}</p>
+	                                </div>
+	                            ))}
+	                            <p className="stagger-item text-xs text-white/50 font-mono pt-4 border-t border-white/10">
+	                                Outcome: production-grade behavior your team can operate and trust, not a demo that collapses under real constraints.
+	                            </p>
+	                        </div>
+	                    </div>
+	                </div>
+	            </section>
+
+	            {/* Real Bottlenecks */}
+	            <section className="reveal-section py-24 px-6 relative z-10">
+	                <div className="max-w-6xl mx-auto">
+	                    <h2 className="text-4xl font-bold mb-16">Real Bottlenecks We Fix</h2>
+	                    <div className="grid md:grid-cols-3 gap-8 text-left">
                         {bottlenecks.map((item, i) => (
                             <div key={i} className="border-l-2 border-primary/30 pl-6 py-2 hover:border-primary transition-colors">
                                 <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
@@ -455,7 +507,7 @@ export default function SprintClient() {
                     </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">
                         30-minute diagnostic. One ROI wedge. Go / no-go. <br/>
-                        <span className="text-sm mt-4 block text-white/40 font-mono uppercase tracking-widest">Ideal for: COOs, CTOs, Heads of Product</span>
+                        <span className="text-sm mt-4 block text-white/40 font-mono uppercase tracking-widest">Ideal for: COOs, CTOs, Heads of Product, Ops leaders</span>
                     </p>
                     <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
                         <MagneticButton 
