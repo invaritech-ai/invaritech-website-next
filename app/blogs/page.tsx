@@ -3,10 +3,9 @@ import { getAllPosts } from "@/lib/blog-posts";
 import { Badge } from "@/components/ui/badge";
 import { TextEffect } from "@/components/ui/text-effect";
 import Link from "next/link";
-import { Calendar, Clock, ArrowRight, MoveUpRight } from "lucide-react";
+import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
     title: "Blogs - Case Studies, Build Notes, and BOFU Answers",
@@ -95,14 +94,14 @@ export default function BlogsPage() {
             {/* Blog Posts Grid */}
             <section className="px-6 pb-32 relative z-10">
                 <div className="max-w-[95vw] mx-auto">
-                    {posts.length === 0 ? (
-                        <div className="text-center py-24 border border-dashed border-white/10 rounded-3xl">
-                            <p className="text-muted-foreground text-xl font-mono">
-                                // ARCHIVE EMPTY // <br/>
-                                <span className="text-sm opacity-50">Transmissions pending...</span>
-                            </p>
-                        </div>
-                    ) : (
+	                    {posts.length === 0 ? (
+	                        <div className="text-center py-24 border border-dashed border-white/10 rounded-3xl">
+	                            <p className="text-muted-foreground text-xl font-mono">
+	                                {"// ARCHIVE EMPTY //"} <br />
+	                                <span className="text-sm opacity-50">Transmissions pending...</span>
+	                            </p>
+	                        </div>
+	                    ) : (
                         <div className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
                             {posts.map((post, index) => (
                                 <Link

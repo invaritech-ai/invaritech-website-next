@@ -1,14 +1,9 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Network, PenTool } from "lucide-react";
 import Image from "next/image";
-import { ReactNode } from "react";
-import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
-import Link from "next/link";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
@@ -60,18 +55,18 @@ export default function AboutPage() {
                 <div className="space-y-6">
                     <h2 className="text-3xl font-bold tracking-tight">De-bloating Operation</h2>
                     <div className="space-y-6 text-lg text-muted-foreground font-light">
-                        <p>
-                            The "digital transformation" industry sells complexity and multi-year roadmaps to companies that just want to work faster.
-                        </p>
+	                        <p>
+	                            The &quot;digital transformation&quot; industry sells complexity and multi-year roadmaps to companies that just want to work faster.
+	                        </p>
                         <p>
                             We prove that a small, focused team armed with the right automation tools can outmaneuver a giant corporation.
                         </p>
                     </div>
                 </div>
                 <div className="relative border border-primary/20 bg-primary/5 p-12 rounded-none backdrop-blur-sm">
-                    <blockquote className="text-2xl font-light italic leading-relaxed text-foreground/90">
-                        "Automation doesn't just save time. It frees human expertise from boring admin so it can be used where it actually moves the needle."
-                    </blockquote>
+	                    <blockquote className="text-2xl font-light italic leading-relaxed text-foreground/90">
+	                        &ldquo;Automation doesn&apos;t just save time. It frees human expertise from boring admin so it can be used where it actually moves the needle.&rdquo;
+	                    </blockquote>
                     <div className="mt-8 flex items-center gap-4">
                         <Avatar className="h-12 w-12 border border-primary/50">
                             <AvatarImage src="/aditi-1.webp" className="object-cover" />
@@ -95,18 +90,18 @@ export default function AboutPage() {
                         <p className="text-muted-foreground mb-6">
                             You work directly with the founders. No account managers, no diluted decisions. We architect every solution.
                         </p>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                            <li className="flex gap-2 items-center"><div className="w-1 h-1 bg-primary rounded-full" /> No "B-Team" handoffs</li>
-                            <li className="flex gap-2 items-center"><div className="w-1 h-1 bg-primary rounded-full" /> Direct strategic ownership</li>
-                        </ul>
+	                        <ul className="space-y-2 text-sm text-muted-foreground">
+	                            <li className="flex gap-2 items-center"><div className="w-1 h-1 bg-primary rounded-full" /> No &quot;B-Team&quot; handoffs</li>
+	                            <li className="flex gap-2 items-center"><div className="w-1 h-1 bg-primary rounded-full" /> Direct strategic ownership</li>
+	                        </ul>
                     </div>
 
                     <div className="group border border-white/10 p-8 hover:bg-white/5 transition-colors duration-500">
                         <Network className="w-12 h-12 mb-8 text-primary opacity-80" />
                         <h3 className="text-2xl font-bold mb-4">The Network</h3>
-                        <p className="text-muted-foreground mb-6">
-                            For execution, we draw on a private network of elite specialists we've vetted over years.
-                        </p>
+	                        <p className="text-muted-foreground mb-6">
+	                            For execution, we draw on a private network of elite specialists we&apos;ve vetted over years.
+	                        </p>
                         <ul className="space-y-2 text-sm text-muted-foreground">
                             <li className="flex gap-2 items-center"><div className="w-1 h-1 bg-primary rounded-full" /> Specialists for every component</li>
                             <li className="flex gap-2 items-center"><div className="w-1 h-1 bg-primary rounded-full" /> Scalable execution power</li>

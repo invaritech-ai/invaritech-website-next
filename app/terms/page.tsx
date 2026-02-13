@@ -1,7 +1,6 @@
 
 
 import { Metadata } from "next";
-import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
 import { Separator } from "@/components/ui/separator";
 

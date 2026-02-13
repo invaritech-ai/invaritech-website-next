@@ -1,8 +1,7 @@
 import { Metadata } from "next";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog-posts";
 import { notFound } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowLeft, Share2, Printer } from "lucide-react";
+import { Calendar, Clock, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
@@ -247,13 +246,15 @@ export default async function BlogPostPage({ params }: Props) {
                                             {children}
                                         </h3>
                                     ),
-                                    blockquote: ({ children }) => (
-                                        <blockquote className="border border-white/10 bg-white/5 p-8 my-8 rounded-2xl not-italic relative overflow-hidden">
-                                            <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
-                                            <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">// SYSTEM NOTE</div>
-                                            <div className="text-lg text-white/90">{children}</div>
-                                        </blockquote>
-                                    ),
+	                                    blockquote: ({ children }) => (
+	                                        <blockquote className="border border-white/10 bg-white/5 p-8 my-8 rounded-2xl not-italic relative overflow-hidden">
+	                                            <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
+	                                            <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest">
+	                                                {"// SYSTEM NOTE"}
+	                                            </div>
+	                                            <div className="text-lg text-white/90">{children}</div>
+	                                        </blockquote>
+	                                    ),
                                     ul: ({ children }) => (
                                         <ul className="list-disc list-outside ml-6 space-y-2 mb-6 text-muted-foreground marker:text-primary">
                                             {children}

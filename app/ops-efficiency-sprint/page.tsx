@@ -1,22 +1,20 @@
 import { Metadata } from "next";
-import { Badge } from "@/components/ui/badge";
 import {
-    BOOK_MEETING_CTA,
-    BOOK_MEETING_URL,
-    BRAND_EYEBROW,
+	    BOOK_MEETING_CTA,
+	    BOOK_MEETING_URL,
+	    BRAND_EYEBROW,
 } from "@/lib/marketing";
 import {
     ArrowRight,
     Check,
     Shield,
     Gauge,
-    Workflow,
-    Lock,
-    CircleDollarSign,
-    Briefcase,
-    Cpu,
-    LineChart,
-} from "lucide-react";
+	    Workflow,
+	    Lock,
+	    CircleDollarSign,
+	    Cpu,
+	    LineChart,
+	} from "lucide-react";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { TextEffect } from "@/components/ui/text-effect";

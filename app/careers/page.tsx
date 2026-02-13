@@ -1,13 +1,10 @@
-import { Button } from "@/components/ui/button";
 import {
-    ArrowRight,
-    Briefcase,
-    MapPin,
-    Clock,
-    DollarSign,
-    CheckCircle2,
-    Sparkles,
-    Terminal,
+	    ArrowRight,
+	    Clock,
+	    DollarSign,
+	    CheckCircle2,
+	    Sparkles,
+	    Terminal,
 } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -77,9 +74,9 @@ export default function CareersPage() {
                         <span className="text-white/20">FUTURE</span>
                     </h1>
                     
-                    <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light leading-relaxed mx-auto md:mx-0">
-                        Join a team of obsessive engineers and designers. We don't just build software; we architect the operating systems of tomorrow's enterprises.
-                    </p>
+	                    <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light leading-relaxed mx-auto md:mx-0">
+	                        Join a team of obsessive engineers and designers. We don&apos;t just build software; we architect the operating systems of tomorrow&apos;s enterprises.
+	                    </p>
                 </div>
             </section>
 

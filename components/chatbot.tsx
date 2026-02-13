@@ -14,7 +14,6 @@ export const Chatbot = () => {
     const irisIconSrc = "/iris.png";
     const PRIMARY_COLOR = "#D97706"; // Amber/Orange to match site accents
     const BG_COLOR = "#050505";
-    const TEXT_COLOR = "#ffffff";
     const MUTED_COLOR = "#A3A3A3";
     const BOT_BG = "#171717";
     const USER_BG = "#262626";

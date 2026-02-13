@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Users, TrendingUp } from "lucide-react";
 import Link from "next/link";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -86,13 +85,13 @@ export default function Results() {
                         <span className="text-white/50">CAN MEASURE</span>
                     </h1>
 
-                    <div className="flex flex-col md:flex-row gap-8 items-start border-t border-white/10 pt-12">
-                        <p className="max-w-xl text-xl md:text-2xl font-light text-muted-foreground leading-relaxed">
-                            We don't sell theory. We sell hours saved, costs avoided, and errors eliminated.
-                        </p>
-                    </div>
-                </div>
-            </section>
+	                    <div className="flex flex-col md:flex-row gap-8 items-start border-t border-white/10 pt-12">
+	                        <p className="max-w-xl text-xl md:text-2xl font-light text-muted-foreground leading-relaxed">
+	                            We don&apos;t sell theory. We sell hours saved, costs avoided, and errors eliminated.
+	                        </p>
+	                    </div>
+	                </div>
+	            </section>
 
             {/* Featured Impact - Massive Number */}
             <section className="py-24 px-6 border-y border-white/5 bg-black/20 backdrop-blur-sm">

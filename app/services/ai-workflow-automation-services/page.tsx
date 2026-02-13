@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Check, ArrowRight } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";

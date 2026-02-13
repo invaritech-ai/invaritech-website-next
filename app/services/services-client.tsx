@@ -3,7 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Check, Zap, Database, MessageSquare, Code, Cpu, Workflow } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { TextEffect } from "@/components/ui/text-effect";
@@ -91,6 +91,7 @@ const faqs = [
 export default function ServicesPage() {
     const containerRef = useRef<HTMLDivElement>(null);
     const counterRef = useRef<HTMLSpanElement>(null);
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
 
     useGSAP(() => {
         // Hero entrance
@@ -99,8 +100,8 @@ export default function ServicesPage() {
             {
                 y: 0,
                 opacity: 1,
-                duration: 1,
-                stagger: 0.2,
+                duration: 0.2, // Faster
+                stagger: 0.05, // Faster stagger
                 ease: "power4.out",
             }
         );
@@ -111,12 +112,12 @@ export default function ServicesPage() {
             {
                 scrollTrigger: {
                     trigger: ".start-here-card",
-                    start: "top 80%",
+                    start: "top 85%",
                 },
                 y: 0,
                 opacity: 1,
-                duration: 1.2,
-                ease: "power3.out",
+                duration: 0.2, // Max speed as requested
+                ease: "power2.out",
             }
         );
 
@@ -125,11 +126,11 @@ export default function ServicesPage() {
             const counterObj = { value: 0 };
             gsap.to(counterObj, {
                 value: 30,
-                duration: 2.5,
+                duration: 0.5, // Kept slightly longer so it's visible, but fast
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: ".start-here-card",
-                    start: "top 80%",
+                    start: "top 85%",
                 },
                 onUpdate: () => {
                     if (counterRef.current) {
@@ -149,8 +150,8 @@ export default function ServicesPage() {
                 },
                 x: 0,
                 opacity: 1,
-                duration: 0.8,
-                stagger: 0.2,
+                duration: 0.2,
+                stagger: 0.05,
                 ease: "power2.out",
             }
         );
@@ -165,8 +166,8 @@ export default function ServicesPage() {
                 },
                 y: 0,
                 opacity: 1,
-                duration: 1,
-                stagger: 0.3,
+                duration: 0.2,
+                stagger: 0.05,
                 ease: "power3.out",
             }
         );
@@ -178,12 +179,12 @@ export default function ServicesPage() {
             {
                 scrollTrigger: {
                     trigger: ".service-cards-grid",
-                    start: "top 75%",
+                    start: "top 85%",
                 },
                 y: 0,
                 opacity: 1,
-                duration: 0.8,
-                stagger: 0.15,
+                duration: 0.2,
+                stagger: 0.05,
                 ease: "power2.out",
             }
         );
@@ -199,7 +200,7 @@ export default function ServicesPage() {
                     },
                     y: 0,
                     opacity: 1,
-                    duration: 1,
+                    duration: 0.2,
                     ease: "power2.out",
                 }
             );
@@ -470,11 +471,25 @@ export default function ServicesPage() {
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl font-bold mb-16 text-center">FAQ</h2>
-                    <div className="space-y-8">
+                    <div className="space-y-4">
                         {faqs.map((faq, i) => (
-                            <div key={i} className="border-b border-white/10 pb-8 last:border-0 last:pb-0">
-                                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
-                                <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                            <div key={i} className="border border-white/10 rounded-xl overflow-hidden bg-white/5">
+                                <button 
+                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                                >
+                                    <span className="font-bold text-white">{faq.question}</span>
+                                    <span className={`text-primary transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}>
+                                        <ArrowRight className="w-5 h-5 rotate-90 sm:rotate-0" />
+                                    </span>
+                                </button>
+                                <div className={`grid transition-all duration-300 ease-in-out ${openFaq === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
+                                            {faq.answer}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
