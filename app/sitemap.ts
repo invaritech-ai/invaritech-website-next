@@ -56,6 +56,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
+            url: `${baseUrl}/services/ai-automation-sprint/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/services/ai-workflow-automation-services/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/services/ai-integration-services/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/services/enterprise-ai-chatbot-deployment/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/services/generative-ai-backend-development/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/services/ai-automation-consulting/`,
+            lastModified: currentDate,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
             url: `${baseUrl}/services/compliance-bridge/`,
             lastModified: currentDate,
             changeFrequency: "monthly",

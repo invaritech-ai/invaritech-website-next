@@ -2,17 +2,16 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Logo, LogoIcon } from "@/components/logo";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { LogoIcon } from "@/components/logo";
+import { ArrowUpRight } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { MagneticButton } from "@/components/ui/MagneticButton";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 const menuItems = [
     { name: "Home", href: "/", id: "01" },
-    { name: "The Sprint", href: "/ai-automation-sprint/", id: "02" },
+    { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
     { name: "Services", href: "/services/", id: "03" },
     { name: "Results", href: "/results/", id: "04" },
     { name: "Intel", href: "/blogs/", id: "05" }, // Renamed for "Bold" feel
@@ -124,7 +123,7 @@ export const HeroHeader = () => {
 
                         {/* Navigation Links */}
                         <nav className="flex flex-col items-center gap-2 md:gap-4 w-full max-w-4xl mx-auto my-12">
-                            {menuItems.map((item, index) => (
+                            {menuItems.map((item) => (
                                 <div key={item.name} className="menu-item w-full group">
                                     <Link 
                                         href={item.href}
