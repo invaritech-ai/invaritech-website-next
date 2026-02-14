@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Shield, Activity, Gauge, Ban, Lock, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -65,7 +64,7 @@ export default function WhatWeDoSection() {
                         </h2>
                         
                         <p className="mt-8 max-w-xl text-lg text-white/60 leading-relaxed">
-                            We don't do broad transformation. We find <span className="text-white font-semibold">one broken workflow</span>, build a governed AI layer over it, and prove the ROI in 4 weeks.
+                            Not a broad transformation program. We isolate <span className="text-white font-semibold">one bottleneck workflow</span>, build a governed AI layer over your existing tools, and validate impact against an agreed baseline in four weeks.
                         </p>
 
                         <div className="mt-12 p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent">
@@ -117,7 +116,7 @@ export default function WhatWeDoSection() {
                             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2">Ready to verify fit?</h3>
-                                    <p className="text-sm text-white/60">Check the prerequisites before you book.</p>
+                                    <p className="text-sm text-white/60">Review scope, guardrails, and prerequisites before you book.</p>
                                 </div>
                                 <Button asChild size="lg" className="rounded-none bg-primary text-black hover:bg-white font-bold">
                                     <Link href="/ai-automation-sprint/">

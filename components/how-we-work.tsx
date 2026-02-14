@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
@@ -50,17 +49,17 @@ export default function HowWeWorkSection() {
                         </div>
                         <h2 className="text-balance text-5xl font-bold leading-[0.9] md:text-7xl tracking-tight text-white">
                             FOUR WEEKS.<br/>
-                            <span className="text-primary">ZERO FRICTION.</span>
+                            <span className="text-primary">MEASURED IMPACT.</span>
                         </h2>
                         <p className="mt-8 text-white/60 text-lg leading-relaxed max-w-2xl">
-                            We've stripped away the fluff. No discovery workshops, no steered committees. Just a deterministic pipeline from audit to production.
+                            Structured enough for governance and fast enough for momentum. A deterministic pipeline from bottleneck audit to production, with baseline and handover built in.
                         </p>
                     </div>
                     
                     <div className="p-6 border border-white/10 bg-white/5 backdrop-blur-sm">
                         <p className="text-xs font-mono uppercase tracking-widest text-white/50 mb-2">Fixed Engagement Fee</p>
-                        <div className="text-2xl font-bold text-white">$10,000 – $15,000 USD</div>
-                        <div className="text-sm text-white/40 mt-1">$78,000 – $117,000 HKD</div>
+                        <div className="text-2xl font-bold text-white">$10,000-$15,000 USD</div>
+                        <div className="text-sm text-white/40 mt-1">$78,000-$117,000 HKD</div>
                     </div>
                 </div>
 
@@ -68,7 +67,7 @@ export default function HowWeWorkSection() {
                     {/* Circuit Line */}
                     <div className="absolute top-12 left-0 w-full h-px bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 hidden md:block"></div>
 
-                    {sprintPhases.map((phase, i) => (
+                    {sprintPhases.map((phase) => (
                         <div key={phase.week} className="relative group">
                             {/* Node */}
                             <div className="w-4 h-4 rounded-full bg-[#050507] border-2 border-primary relative z-10 mb-8 mx-auto md:mx-0 transition-transform group-hover:scale-150 duration-300">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
@@ -49,7 +48,7 @@ export default function SelectedWorkSection() {
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-400/50">LEVERAGE</span>
                         </h2>
                         <p className="text-white/60 max-w-xl text-lg">
-                            Outcomes you can defend in a governance review. Real production deltas, not demo-ware.
+                            Outcomes and controls you can defend internally. Production-grade delivery with auditability, fallbacks, and measurable deltas.
                         </p>
                     </div>
                     
@@ -103,10 +102,10 @@ export default function SelectedWorkSection() {
                      <div className="md:col-span-3 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 p-8 flex flex-col justify-center items-start group hover:border-primary/40 transition-colors">
                          <h3 className="text-3xl font-bold text-white mb-4">Start Your Sprint</h3>
                          <p className="text-white/60 mb-8 max-w-sm">
-                             Ready to build your own proof point? Book a fit assessment to identify your wedge.
+                             Ready to build your own proof point? Book a 30-minute diagnostic to identify one ROI wedge.
                          </p>
                          <Button asChild size="lg" className="rounded-none bg-primary text-black hover:bg-white font-bold">
-                             <a href={BOOK_MEETING_URL} target="_blank">
+                             <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
                                  {BOOK_MEETING_CTA}
                              </a>
                          </Button>

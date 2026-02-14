@@ -22,7 +22,7 @@ const faqs = [
         a: "Only when it leads into sprint execution or a delivery track.",
     },
     {
-        q: "What do you mean by “governed”?",
+        q: "What do you mean by 'governed'?",
         a: "Permissions, audit trails, fallbacks, and rollback paths are built into the implementation.",
     },
     {
@@ -35,7 +35,7 @@ const faqs = [
     },
     {
         q: "Are you expensive?",
-        a: "We’re priced for accountability. If we can’t identify an ROI that outweighs the fee, we won’t take the engagement.",
+        a: "We're priced for accountability. If we can't identify an ROI that outweighs the fee, we won't take the engagement.",
     },
 ];
 
@@ -59,12 +59,12 @@ export default function HomeFitFaqCta() {
                             </p>
                         </div>
                         <h2 className="text-balance text-4xl font-bold leading-[0.95] md:text-6xl tracking-tight mb-8">
-                            READY FOR<br/>
-                            INTELLIGENCE?
+                            WE&apos;RE A FIT IF YOU CAN START<br/>
+                            IN 1-2 WEEKS WITH:
                         </h2>
 
                         <div className="space-y-4">
-                            {fitBullets.map((bullet, i) => (
+                            {fitBullets.map((bullet) => (
                                 <div
                                     key={bullet}
                                     className="group flex items-center gap-4 border border-white/10 bg-white/5 px-6 py-4 hover:border-primary/50 transition-colors"
@@ -80,7 +80,7 @@ export default function HomeFitFaqCta() {
                         </div>
 
                         <p className="mt-8 text-white/50 text-sm max-w-md">
-                            <span className="text-primary">*</span> If any of these are missing, we'll identify the gap during the assessment.
+                            <span className="text-primary">*</span> If any of these are missing, we&apos;ll tell you what&apos;s missing and why.
                         </p>
 
                         <div className="mt-12 flex flex-wrap items-center gap-6">
@@ -153,9 +153,20 @@ export default function HomeFitFaqCta() {
 
                 {/* Final CTA - "Ignition" */}
                 <div className="mt-24 border-t border-white/10 pt-24 text-center">
-                    <h2 className="text-5xl font-bold tracking-tight text-white md:text-8xl mb-12">
-                        FIND YOUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-text-shimmer bg-[length:200%_auto]">WEDGE</span>
+                    <h2 className="text-5xl font-bold tracking-tight text-white md:text-8xl mb-10">
+                        READY TO FIND YOUR{" "}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-text-shimmer bg-[length:200%_auto]">
+                            ROI WEDGE
+                        </span>
+                        ?
                     </h2>
+
+                    <p className="mx-auto mb-10 max-w-2xl text-lg text-white/60 leading-relaxed">
+                        This is a 30-minute diagnostic to identify one ROI wedge
+                        and confirm whether your stack is ready for intelligence
+                        layering. If it isn&apos;t, we&apos;ll tell you what&apos;s missing
+                        and why, for free.
+                    </p>
 
                     <div className="flex flex-col items-center justify-center gap-6">
                         <a
@@ -168,7 +179,7 @@ export default function HomeFitFaqCta() {
                                 className="rounded-full bg-white text-black px-12 py-6 text-xl font-bold hover:bg-primary hover:scale-105 transition-all duration-300"
                                 textClassName="group-hover:text-black"
                             >
-                                Start Assessment
+                                {BOOK_MEETING_CTA}
                             </MagneticButton>
                         </a>
                         
@@ -176,7 +187,7 @@ export default function HomeFitFaqCta() {
                             href="/contact/"
                             className="mt-4 text-xs font-mono uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
                         >
-                            Or contact via email
+                            Prefer procurement-first? Contact us
                         </Link>
                     </div>
                 </div>
@@ -184,4 +195,3 @@ export default function HomeFitFaqCta() {
         </section>
     );
 }
-

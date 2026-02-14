@@ -77,26 +77,27 @@ export default function HomeHero() {
                             as="p"
                             className="mt-8 max-w-2xl text-balance text-xl text-white/85"
                         >
-                            In 30 days, we ship one production-grade automation
-                            on top of your ERP/CRM/legacy stack with guardrails,
-                            auditability, and measurable before/after impact.
+                            In 30 days, we ship one production-grade AI
+                            automation on top of your ERP/CRM/legacy stack with
+                            guardrails, auditability, and measurable
+                            before/after impact.
                         </TextEffect>
 
                         <div className="mt-7 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-none border border-white/20 bg-black/25 px-5 py-3 text-sm font-medium text-white backdrop-blur">
                             <span className="text-white/80">
                                 Fixed scope:{" "}
                                 <span className="font-semibold text-white">
-                                    $10,000–$15,000 USD
+                                    $10,000-$15,000 USD
                                 </span>{" "}
                                 <span className="text-white/60">
-                                    ($78,000–$117,000 HKD)
+                                    ($78,000-$117,000 HKD)
                                 </span>
                             </span>
                             <span className="hidden sm:inline text-white/25">
                                 ·
                             </span>
                             <span className="text-white/75">
-                                Start in 1–2 weeks if qualified
+                                Start in 1-2 weeks if qualified
                             </span>
                         </div>
 
@@ -215,7 +216,7 @@ export default function HomeHero() {
                                     Week 1: Bottleneck audit + KPI baseline
                                 </div>
                                 <div className="rounded-none border border-white/15 bg-black/30 px-3 py-2 text-xs font-medium text-white/90">
-                                    Week 2–4: Build, harden, deploy
+                                    Week 2-4: Build, harden, deploy
                                 </div>
                             </div>
                         </div>
@@ -230,4 +231,3 @@ export default function HomeHero() {
         </section>
     );
 }
-

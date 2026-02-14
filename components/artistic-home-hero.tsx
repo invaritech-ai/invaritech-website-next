@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
-import { ArrowRight, Play, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
 import {
     BOOK_MEETING_CTA,
     BOOK_MEETING_URL,
@@ -54,17 +54,9 @@ export default function ArtisticHomeHero() {
       setMouse({ x: e.clientX, y: e.clientY });
     };
     
-    // Auto-drift if no interaction
-    let autoDriftTime = 0;
-    const autoDriftInterval = setInterval(() => {
-        autoDriftTime += 0.01;
-         // Only if mouse hasn't moved recently? simplifying for now
-    }, 16);
-
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
         window.removeEventListener("mousemove", handleMouseMove);
-        clearInterval(autoDriftInterval);
     };
   }, []);
 
@@ -115,7 +107,7 @@ export default function ArtisticHomeHero() {
       });
     }
 
-    const animate = (time: number) => {
+    const animate = () => {
       // Clear with very slight transparency for long trails
       ctx.fillStyle = "rgba(3, 3, 5, 0.2)"; 
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -258,9 +250,9 @@ export default function ArtisticHomeHero() {
                 transition={{ duration: 1, delay: 1 }}
                 className="mt-12 max-w-2xl text-lg md:text-xl text-white/60 leading-relaxed"
             >
-                In 30 days, we ship one production-grade automation on top of your existing stack. 
+                In 30 days, we ship one production-grade AI automation for enterprise teams on top of your existing stack with governance built in: permissions, audit logs, fallbacks, and rollback.
                 <span className="text-primary/80 block mt-2 font-mono text-sm uppercase tracking-widest">
-                    No migration. No vendor lock-in. Pure leverage.
+                    No migration. No vendor lock-in. Measured before/after impact.
                 </span>
             </motion.p>
 
@@ -276,7 +268,7 @@ export default function ArtisticHomeHero() {
                     size="lg" 
                     className="h-14 px-8 rounded-none bg-primary text-black font-bold text-lg hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,140,0,0.3)]"
                 >
-                    <a href={BOOK_MEETING_URL} target="_blank">
+                    <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
                         {BOOK_MEETING_CTA} <ArrowRight className="ml-2 h-5 w-5" />
                     </a>
                 </Button>
@@ -302,10 +294,10 @@ export default function ArtisticHomeHero() {
                 className="mt-20 flex flex-wrap justify-center gap-4 opacity-70"
             >
                 {[
-                    "Fixed Scope: $10-15k", 
-                    "Audit Trails included", 
-                    "1-2 week start time", 
-                    "KPI Validated"
+                    "Fixed scope: $10,000-$15,000 USD ($78,000-$117,000 HKD)",
+                    "Governed by default: audit logs + approvals",
+                    "Start in 1-2 weeks if qualified",
+                    "Baseline + after KPI validation",
                 ].map((text, i) => (
                     <div key={i} className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs font-mono text-white/50">
                         <div className="w-1 h-1 bg-primary rounded-full"></div>

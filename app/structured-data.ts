@@ -97,10 +97,11 @@ export const structuredData = {
                 audienceType: "COO, Head of Operations, CTO, Tech Lead",
             },
             offers: {
-                "@type": "Offer",
-                priceCurrency: "GBP",
-                lowPrice: "8000",
-                highPrice: "12000",
+                "@type": "AggregateOffer",
+                priceCurrency: "USD",
+                lowPrice: "10000",
+                highPrice: "15000",
+                offerCount: "1",
             },
         },
         {

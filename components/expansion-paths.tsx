@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { ArrowUpRight, Network, Workflow, MessagesSquare, ServerCog, Target } from "lucide-react";
+import { Network, Workflow, MessagesSquare, ServerCog, Target } from "lucide-react";
 
 const paths = [
     {
@@ -60,12 +59,12 @@ export default function ExpansionPathsSection() {
                         <span className="text-white/40">JUST THE ENTRY POINT.</span>
                     </h2>
                     <p className="mt-8 text-white/60 text-lg leading-relaxed">
-                        Once the wedge proves ROI, we expand the governance layer across the enterprise.
+                        Once the wedge proves ROI, we expand the intelligence layer across the enterprise with workflow automation, integrations, governed assistants, and GenAI backend engineering.
                     </p>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {paths.map((path, index) => (
+                    {paths.map((path) => (
                         <div
                             key={path.title}
                             className="group relative p-8 border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300"
@@ -102,4 +101,3 @@ export default function ExpansionPathsSection() {
         </section>
     );
 }
-
