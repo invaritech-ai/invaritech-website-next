@@ -12,6 +12,7 @@ const proofSignals = [
             "A regulated workflow moved from manual handling into a fully auditable production flow with rollback controls.",
         metric: "Thousands of submissions compressed into minutes",
         image: "/eudr-preview.webp",
+        href: "/work/eudr-compliance-bridge/",
     },
     {
         title: "Existing Stack, Smarter Throughput",
@@ -19,6 +20,7 @@ const proofSignals = [
             "Custom logic layered over existing tools removed re-keying and delay chains while preserving core systems.",
         metric: "Zero replatforming required",
         image: "/app.webp",
+        href: "/work/",
     },
     {
         title: "Operating Model Discipline",
@@ -26,6 +28,7 @@ const proofSignals = [
             "Each sprint closes with ownership, baseline comparison, and handover so internal teams can operate safely.",
         metric: "Before and after KPI validation",
         image: "/ccc-isometric.webp",
+        href: "/work/",
     },
 ];
 
@@ -59,9 +62,10 @@ export default function SelectedWorkSection() {
 
                 <div className="grid gap-8 md:grid-cols-6">
                     {proofSignals.map((signal, index) => (
-                        <div
+                        <Link
                             key={signal.title}
-                            className={`group relative overflow-hidden bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 ${
+                            href={signal.href}
+                            className={`group relative overflow-hidden bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 block ${
                                 index === 0 ? "md:col-span-4 aspect-[16/9]" : "md:col-span-2 aspect-square md:aspect-auto"
                             } ${index === 2 ? "md:col-span-3 aspect-[16/8]" : ""} ${index === 1 ? "md:col-span-2" : ""}`}
                         >
@@ -92,7 +96,7 @@ export default function SelectedWorkSection() {
                             <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-2 group-hover:translate-x-0">
                                 <ArrowUpRight className="w-8 h-8 text-white" />
                             </div>
-                        </div>
+                        </Link>
                     ))}
                     
                     {/* Filler Card for Grid Balance if needed, or just keep as is */}
