@@ -142,15 +142,15 @@ export default function Assessment() {
             <main>
                 {/* Results Section */}
                 <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-                    <div className="mx-auto max-w-4xl px-6">
-                        <div className="text-center mb-12">
-                            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                                Your Ops Efficiency Score
-                            </h1>
-                            <div className="flex items-center justify-center mb-6">
-                                <div className="text-6xl font-bold text-primary mr-4">
-                                    {result.score}
-                                </div>
+	                    <div className="mx-auto max-w-4xl px-6">
+	                        <div className="text-center mb-12">
+	                            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+	                                Your Ops Efficiency Score
+	                            </h2>
+	                            <div className="flex items-center justify-center mb-6">
+	                                <div className="text-6xl font-bold text-primary mr-4">
+	                                    {result.score}
+	                                </div>
                                 <div>
                                     <Badge
                                         variant={

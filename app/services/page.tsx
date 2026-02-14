@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ServicesClient from "./services-client";
 
 export const metadata: Metadata = {
-    title: "AI Automation & Integration Services | 30-Day Sprint | INVARITECH",
+    title: "AI Automation & Integration Services | 30-Day Sprint",
     description:
         "Build production-grade AI on the infrastructure you already own. Start with a 30-day Sprint, then scale via workflow automation, integrations, enterprise chatbots, and GenAI backend engineering.",
     openGraph: {

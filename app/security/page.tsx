@@ -385,18 +385,18 @@ export default function Security() {
                                 compliance certifications, and security
                                 architecture.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button asChild size="lg">
-                                    <Link href="/contact">
-                                        Request our Security Overview
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg">
-                                    <Link href="/ops-efficiency-sprint">
-                                        See the Sprint
-                                    </Link>
-                                </Button>
-                            </div>
+	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                <Button asChild size="lg">
+	                                    <Link href="/contact/">
+	                                        Request our Security Overview
+	                                    </Link>
+	                                </Button>
+	                                <Button asChild variant="outline" size="lg">
+	                                    <Link href="/ai-automation-sprint/">
+	                                        See the Sprint
+	                                    </Link>
+	                                </Button>
+	                            </div>
                         </div>
                     </div>
                 </section>

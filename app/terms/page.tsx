@@ -33,22 +33,24 @@ export default function TermsPage() {
         <main className="min-h-screen bg-background pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
             <div className="max-w-4xl mx-auto relative z-10">
                 <div className="mb-20">
-                    <TextEffect
-                        per="word"
-                        as="h1"
-                        preset="fade"
-                        className="text-6xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-foreground mix-blend-difference uppercase"
-                    >
-                        Terms &
-                    </TextEffect>
-                    <TextEffect
-                        per="word"
-                        as="h1"
-                        preset="fade"
-                        className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-foreground mix-blend-difference uppercase"
-                    >
-                        Protocols
-                    </TextEffect>
+                    <h1 className="text-6xl md:text-8xl font-bold tracking-tighter mb-8 leading-[0.9] text-foreground mix-blend-difference uppercase">
+                        <TextEffect
+                            per="word"
+                            as="span"
+                            preset="fade"
+                            className="block"
+                        >
+                            Terms &
+                        </TextEffect>
+                        <TextEffect
+                            per="word"
+                            as="span"
+                            preset="fade"
+                            className="block"
+                        >
+                            Protocols
+                        </TextEffect>
+                    </h1>
                     <TextEffect
                         per="line"
                         as="p"

@@ -19,7 +19,7 @@ const HowWeWorkSection = dynamic(() => import("@/components/how-we-work"), {
 
 export const metadata: Metadata = {
     alternates: {
-        canonical: "https://www.invaritech.ai",
+        canonical: "https://www.invaritech.ai/",
     },
 };
 

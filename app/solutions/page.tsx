@@ -122,11 +122,11 @@ export default function Solutions() {
                                 Intelligent systems that reduce cost-to-serve
                                 and make work auditable.
                             </p>
-                            <Button asChild size="lg">
-                                <Link href="/ops-efficiency-sprint">
-                                    See the Ops Efficiency Sprint
-                                </Link>
-                            </Button>
+	                            <Button asChild size="lg">
+	                                <Link href="/ai-automation-sprint/">
+	                                    See the Ops Efficiency Sprint
+	                                </Link>
+	                            </Button>
                         </div>
                     </div>
                 </section>
@@ -216,18 +216,18 @@ export default function Solutions() {
                                 Choose your highest-ROI workflow and see
                                 measurable results in 60 days.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button asChild size="lg">
-                                    <Link href="/ops-efficiency-sprint">
-                                        See the Ops Efficiency Sprint
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg">
-                                    <Link href="/assessment">
-                                        Get your Ops Efficiency Score
-                                    </Link>
-                                </Button>
-                            </div>
+	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                <Button asChild size="lg">
+	                                    <Link href="/ai-automation-sprint/">
+	                                        See the Ops Efficiency Sprint
+	                                    </Link>
+	                                </Button>
+	                                <Button asChild variant="outline" size="lg">
+	                                    <Link href="/assessment/">
+	                                        Get your Ops Efficiency Score
+	                                    </Link>
+	                                </Button>
+	                            </div>
                         </div>
                     </div>
                 </section>

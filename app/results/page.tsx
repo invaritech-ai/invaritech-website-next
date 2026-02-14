@@ -108,7 +108,7 @@ export default function Results() {
                             Replacing manual ctrl+f with semantic search and citation.
                         </p>
                         <div className="mt-8">
-                             <Link href="/ops-efficiency-sprint">
+                             <Link href="/ai-automation-sprint/">
                                 <MagneticButton className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50">
                                     Read the Full Case
                                 </MagneticButton>
@@ -181,7 +181,7 @@ export default function Results() {
                     </p>
                     
                     <div className="flex flex-col md:flex-row justify-center gap-6">
-                        <Link href="/ops-efficiency-sprint">
+                        <Link href="/ai-automation-sprint/">
                             <MagneticButton 
                                 strength={0.4}
                                 className="bg-primary text-black px-12 py-6 text-lg font-bold"

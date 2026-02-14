@@ -229,23 +229,23 @@ export default async function BlogPostPage({ params }: Props) {
 
                         {/* Content */}
                         <div className="prose prose-lg prose-invert max-w-none prose-headings:font-bold prose-headings:tracking-tight prose-p:text-muted-foreground prose-p:leading-relaxed prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-sm">
-                            <ReactMarkdown
-                                components={{
-                                    h1: ({ children }) => (
-                                        <h1 className="text-3xl md:text-4xl font-bold mt-16 mb-8 text-white border-l-4 border-primary pl-6">
-                                            {children}
-                                        </h1>
-                                    ),
-                                    h2: ({ children }) => (
-                                        <h2 className="text-2xl md:text-3xl font-bold mt-12 mb-6 text-white">
-                                            {children}
-                                        </h2>
-                                    ),
-                                    h3: ({ children }) => (
-                                        <h3 className="text-xl md:text-2xl font-bold mt-10 mb-4 text-white">
-                                            {children}
-                                        </h3>
-                                    ),
+	                            <ReactMarkdown
+	                                components={{
+	                                    h1: ({ children }) => (
+	                                        <h2 className="text-3xl md:text-4xl font-bold mt-16 mb-8 text-white border-l-4 border-primary pl-6">
+	                                            {children}
+	                                        </h2>
+	                                    ),
+	                                    h2: ({ children }) => (
+	                                        <h3 className="text-2xl md:text-3xl font-bold mt-12 mb-6 text-white">
+	                                            {children}
+	                                        </h3>
+	                                    ),
+	                                    h3: ({ children }) => (
+	                                        <h4 className="text-xl md:text-2xl font-bold mt-10 mb-4 text-white">
+	                                            {children}
+	                                        </h4>
+	                                    ),
 	                                    blockquote: ({ children }) => (
 	                                        <blockquote className="border border-white/10 bg-white/5 p-8 my-8 rounded-2xl not-italic relative overflow-hidden">
 	                                            <div className="absolute top-0 left-0 w-1 h-full bg-primary" />
