@@ -31,86 +31,82 @@ const proofSignals = [
 
 export default function SelectedWorkSection() {
     return (
-        <section className="relative overflow-hidden py-20 md:py-28">
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,color-mix(in_oklch,var(--background)_89%,black)_0%,color-mix(in_oklch,var(--background)_96%,black)_100%)]"
-            />
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(70%_80%_at_50%_0%,color-mix(in_oklch,var(--primary)_26%,transparent)_0%,transparent_70%)]"
-            />
-
+        <section className="relative overflow-hidden py-32 bg-[#030305]">
             <div className="mx-auto max-w-7xl px-6">
-                <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-                    <div className="max-w-2xl">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                            Proof Layer
-                        </p>
-                        <h2 className="mt-3 text-balance text-4xl font-semibold md:text-5xl">
-                            Outcomes and Controls You Can Defend Internally
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+                    <div>
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="h-px w-8 bg-primary/60"></div>
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                                Phase 2: The Build
+                            </p>
+                        </div>
+                        <h2 className="text-balance text-5xl font-bold leading-[0.9] md:text-7xl tracking-tight text-white mb-6">
+                            PROOF OF<br/>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-400/50">LEVERAGE</span>
                         </h2>
-                        <p className="mt-4 text-muted-foreground">
-                            Each implementation is designed to survive real
-                            operations, not just a demo environment.
+                        <p className="text-white/60 max-w-xl text-lg">
+                            Outcomes you can defend in a governance review. Real production deltas, not demo-ware.
                         </p>
                     </div>
-                    <div className="flex flex-col gap-3 sm:flex-row">
-                        <Button asChild size="lg" className="rounded-xl">
-                            <a
-                                href={BOOK_MEETING_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {BOOK_MEETING_CTA}
-                            </a>
-                        </Button>
-                        <Button
-                            asChild
-                            size="lg"
-                            variant="outline"
-                            className="rounded-xl"
-                        >
-                            <Link href="/work/">View Work</Link>
+                    
+                    <div className="flex gap-4">
+                        <Button asChild variant="outline" size="lg" className="rounded-none border-white/10 bg-transparent text-white hover:bg-white hover:text-black transition-colors">
+                            <Link href="/work/">View All Work</Link>
                         </Button>
                     </div>
                 </div>
 
-                <div className="grid gap-6 md:grid-cols-6">
+                <div className="grid gap-8 md:grid-cols-6">
                     {proofSignals.map((signal, index) => (
-                        <Card
+                        <div
                             key={signal.title}
-                            className={`group overflow-hidden border-border/70 bg-card/80 backdrop-blur ${
-                                index === 0 ? "md:col-span-4" : "md:col-span-2"
-                            } ${index === 2 ? "md:col-span-3" : ""}`}
+                            className={`group relative overflow-hidden bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 ${
+                                index === 0 ? "md:col-span-4 aspect-[16/9]" : "md:col-span-2 aspect-square md:aspect-auto"
+                            } ${index === 2 ? "md:col-span-3 aspect-[16/8]" : ""} ${index === 1 ? "md:col-span-2" : ""}`}
                         >
-                            <div className="relative aspect-[16/10] overflow-hidden">
-                                <Image
-                                    src={signal.image}
-                                    alt={signal.title}
-                                    fill
-                                    className="object-cover transition duration-500 group-hover:scale-105"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                    loading="lazy"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-                            </div>
-                            <CardHeader>
-                                <h3 className="text-xl font-semibold leading-tight">
+                            <Image
+                                src={signal.image}
+                                alt={signal.title}
+                                fill
+                                className="object-cover transition duration-700 group-hover:scale-105 opacity-60 group-hover:opacity-40"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                            />
+                            
+                            {/* Cinematic Glow */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                            
+                            <div className="absolute bottom-0 left-0 p-8 w-full">
+                                <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wider">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                    {signal.metric}
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                                     {signal.title}
                                 </h3>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-sm text-muted-foreground">
+                                <p className="text-white/60 text-sm max-w-md line-clamp-2 group-hover:text-white/80 transition-colors">
                                     {signal.detail}
                                 </p>
-                                <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-xs font-semibold text-foreground">
-                                    {signal.metric}
-                                    <ArrowUpRight className="h-3.5 w-3.5" />
-                                </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                            
+                            <div className="absolute top-6 right-6 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-2 group-hover:translate-x-0">
+                                <ArrowUpRight className="w-8 h-8 text-white" />
+                            </div>
+                        </div>
                     ))}
+                    
+                    {/* Filler Card for Grid Balance if needed, or just keep as is */}
+                     <div className="md:col-span-3 bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 p-8 flex flex-col justify-center items-start group hover:border-primary/40 transition-colors">
+                         <h3 className="text-3xl font-bold text-white mb-4">Start Your Sprint</h3>
+                         <p className="text-white/60 mb-8 max-w-sm">
+                             Ready to build your own proof point? Book a fit assessment to identify your wedge.
+                         </p>
+                         <Button asChild size="lg" className="rounded-none bg-primary text-black hover:bg-white font-bold">
+                             <a href={BOOK_MEETING_URL} target="_blank">
+                                 {BOOK_MEETING_CTA}
+                             </a>
+                         </Button>
+                     </div>
                 </div>
             </div>
         </section>

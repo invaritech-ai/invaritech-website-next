@@ -37,9 +37,9 @@ export default function FooterSection() {
                         <Link href="/" aria-label="go home" className="group">
                              <div className="flex items-center gap-3">
                                 <LogoIcon className="size-12 group-hover:drop-shadow-[0_0_10px_rgba(255,140,0,0.5)] transition-all duration-300" />
-                                <div className="flex flex-col">
+                                <div className="flex flex-col items-center">
                                     <Logo />
-                                    <span className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold">Visionary Intelligence</span>
+                                    <span className="text-[10px] uppercase tracking-[0.3em] text-primary font-bold text-center">Visionary Intelligence</span>
                                 </div>
                              </div>
                         </Link>

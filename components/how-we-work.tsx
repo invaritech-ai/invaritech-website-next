@@ -35,68 +35,76 @@ const sprintPhases = [
 
 export default function HowWeWorkSection() {
     return (
-        <section className="relative overflow-hidden bg-muted/30 py-20 md:py-32">
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-60 bg-[radial-gradient(65%_90%_at_50%_0%,color-mix(in_oklch,var(--primary)_22%,transparent)_0%,transparent_72%)]"
-            />
-
-            <div className="mx-auto max-w-6xl px-6">
-                <div className="mb-12 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
+        <section className="relative overflow-hidden bg-[#050507] py-32 border-t border-white/5">
+            {/* Background Details */}
+            <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay"></div>
+            
+            <div className="mx-auto max-w-7xl px-6 relative z-10">
+                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 mb-20">
                     <div className="max-w-3xl">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                            Delivery System
-                        </p>
-                        <h2 className="mt-3 text-balance text-4xl font-semibold md:text-5xl">
-                            Four Weeks. One Automation. Measured Impact.
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="h-px w-8 bg-primary/60"></div>
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                                Phase 3: Delivery System
+                            </p>
+                        </div>
+                        <h2 className="text-balance text-5xl font-bold leading-[0.9] md:text-7xl tracking-tight text-white">
+                            FOUR WEEKS.<br/>
+                            <span className="text-primary">ZERO FRICTION.</span>
                         </h2>
-                        <p className="mt-4 text-muted-foreground">
-                            Structured enough for enterprise governance and fast
-                            enough for operational momentum.
+                        <p className="mt-8 text-white/60 text-lg leading-relaxed max-w-2xl">
+                            We've stripped away the fluff. No discovery workshops, no steered committees. Just a deterministic pipeline from audit to production.
                         </p>
                     </div>
-                    <div className="rounded-2xl border border-primary/30 bg-primary/10 px-5 py-4 text-sm font-medium">
-                        Pricing: <span className="font-semibold">$10,000 – $15,000 USD</span> <span className="text-muted-foreground ml-1">($78,000 – $117,000 HKD)</span>
+                    
+                    <div className="p-6 border border-white/10 bg-white/5 backdrop-blur-sm">
+                        <p className="text-xs font-mono uppercase tracking-widest text-white/50 mb-2">Fixed Engagement Fee</p>
+                        <div className="text-2xl font-bold text-white">$10,000 – $15,000 USD</div>
+                        <div className="text-sm text-white/40 mt-1">$78,000 – $117,000 HKD</div>
                     </div>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2">
-                    {sprintPhases.map((phase) => (
-                        <Card
-                            key={phase.week}
-                            className="group relative overflow-hidden border-border/70 bg-card/85"
-                        >
-                            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-primary/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-                            <CardHeader>
-                                <p className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                <div className="relative grid gap-8 md:grid-cols-4">
+                    {/* Circuit Line */}
+                    <div className="absolute top-12 left-0 w-full h-px bg-gradient-to-r from-primary/0 via-primary/50 to-primary/0 hidden md:block"></div>
+
+                    {sprintPhases.map((phase, i) => (
+                        <div key={phase.week} className="relative group">
+                            {/* Node */}
+                            <div className="w-4 h-4 rounded-full bg-[#050507] border-2 border-primary relative z-10 mb-8 mx-auto md:mx-0 transition-transform group-hover:scale-150 duration-300">
+                                <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-20"></div>
+                            </div>
+                            
+                            <div className="pt-8 md:pt-4 border-l md:border-l-0 border-primary/20 pl-8 md:pl-0 ml-2 md:ml-0 relative">
+                                <p className="text-xs font-mono uppercase tracking-[0.2em] text-primary/80 mb-3">
                                     {phase.week}
                                 </p>
-                                <h3 className="text-2xl font-semibold">
+                                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
                                     {phase.title}
                                 </h3>
-                            </CardHeader>
-                            <CardContent>
-                                <p className="text-muted-foreground">
+                                <p className="text-white/50 text-sm leading-relaxed mb-6 h-20">
                                     {phase.description}
                                 </p>
-                                <div className="mt-4 rounded-xl border border-border/70 bg-background/80 px-3 py-2 text-sm font-medium">
-                                    Output: {phase.output}
+                                
+                                <div className="p-3 bg-white/5 border border-white/5 text-xs text-white/80 font-mono">
+                                    <span className="text-primary mr-2">➜</span> {phase.output}
                                 </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </div>
                     ))}
                 </div>
 
-                <div className="mt-10 text-left">
+                <div className="mt-24 text-center">
                     <a
                         href={BOOK_MEETING_URL}
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="inline-block"
                     >
                         <MagneticButton
                             strength={0.3}
-                            className="bg-primary text-black px-12 py-6 text-xl font-bold rounded-xl"
-                            textClassName="group-hover:text-black"
+                            className="bg-primary text-black px-16 py-8 text-xl font-bold hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,198,46,0.2)] rounded-none"
+                            textClassName="group-hover:text-black tracking-wide"
                         >
                             {BOOK_MEETING_CTA}
                         </MagneticButton>

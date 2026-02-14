@@ -42,58 +42,61 @@ const paths = [
 
 export default function ExpansionPathsSection() {
     return (
-        <section className="relative overflow-hidden py-20 md:py-28">
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,color-mix(in_oklch,var(--background)_92%,black)_0%,color-mix(in_oklch,var(--background)_97%,black)_100%)]"
-            />
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-64 bg-[radial-gradient(70%_80%_at_50%_0%,color-mix(in_oklch,var(--primary)_22%,transparent)_0%,transparent_70%)]"
-            />
+        <section className="relative overflow-hidden py-32 bg-[#030305] border-t border-white/5">
+             {/* Void Background with simple noise */}
+            <div className="absolute inset-0 -z-30 bg-[#030305]"></div>
+            <div className="absolute inset-0 -z-20 opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay"></div>
 
-            <div className="mx-auto max-w-7xl px-6">
-                <div className="mb-12 max-w-3xl">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                        Expansion Paths
-                    </p>
-                    <h2 className="mt-3 text-balance text-4xl font-semibold md:text-5xl">
-                        After the wedge proves ROI, we scale the layer.
+            <div className="mx-auto max-w-7xl px-6 relative z-10">
+                <div className="mb-16 max-w-3xl">
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="h-px w-8 bg-primary/60"></div>
+                        <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                            Phase 4: Scale
+                        </p>
+                    </div>
+                    <h2 className="text-balance text-5xl font-bold leading-[0.9] md:text-7xl tracking-tight text-white">
+                        THE SPRINT IS<br/>
+                        <span className="text-white/40">JUST THE ENTRY POINT.</span>
                     </h2>
-                    <p className="mt-4 text-muted-foreground">
-                        The sprint is the entry point. The system is what you
-                        keep.
+                    <p className="mt-8 text-white/60 text-lg leading-relaxed">
+                        Once the wedge proves ROI, we expand the governance layer across the enterprise.
                     </p>
                 </div>
 
-                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    {paths.map((path) => (
-                        <Card
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {paths.map((path, index) => (
+                        <div
                             key={path.title}
-                            className="group relative overflow-hidden border-border/70 bg-card/80 backdrop-blur"
+                            className="group relative p-8 border border-white/5 bg-white/5 hover:bg-white/10 transition-all duration-300"
                         >
-                            <div className="absolute -right-10 -top-10 h-24 w-24 rounded-full bg-primary/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-                            <CardHeader className="pb-3">
-                                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-none border border-primary/25 bg-primary/10">
-                                    <path.icon className="h-5 w-5 text-primary" />
-                                </div>
-                                <h3 className="text-xl font-semibold leading-tight">
-                                    {path.title}
-                                </h3>
-                            </CardHeader>
-                            <CardContent className="space-y-5">
-                                <p className="text-sm text-muted-foreground">
-                                    {path.description}
-                                </p>
-                                <Link
-                                    href={path.href}
-                                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
-                                >
-                                    Explore service <ArrowUpRight className="h-4 w-4" />
-                                </Link>
-                            </CardContent>
-                        </Card>
+                            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/50 transition-all duration-500"></div>
+                            
+                            <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-white/10 bg-black/50 text-primary group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
+                                <path.icon className="h-5 w-5 relative z-10" />
+                                <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                            </div>
+                            
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+                                {path.title}
+                            </h3>
+                            <p className="text-white/50 text-sm leading-relaxed mb-6 min-h-[60px]">
+                                {path.description}
+                            </p>
+                            
+                            <Link
+                                href={path.href}
+                                className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-white/70 hover:text-white transition-colors group/link"
+                            >
+                                <span className="w-4 h-px bg-primary/50 group-hover/link:w-8 transition-all duration-300"></span>
+                                Explore
+                            </Link>
+                        </div>
                     ))}
+                    
+                    {/* "Connect the Dots" background graphic idea - simple SVG lines connecting cards? 
+                        Maybe too complex for now, sticking to grid 
+                    */}
                 </div>
             </div>
         </section>

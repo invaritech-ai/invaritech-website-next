@@ -165,3 +165,4 @@ body {
     -webkit-text-stroke: 2px var(--foreground);
     color: transparent;
 }
+@keyframes scan { 0% { top: 0% } 50% { top: 100% } 100% { top: 0% } }

@@ -43,49 +43,47 @@ export default function HomeFitFaqCta() {
     const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     return (
-        <section className="relative overflow-hidden py-20 md:py-28">
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(180deg,#050505_0%,#071b17_45%,#050505_100%)]"
-            />
-            <div
-                aria-hidden
-                className="pointer-events-none absolute inset-0 -z-10 opacity-25 [background-image:linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:48px_48px]"
-            />
+        <section className="relative overflow-hidden py-32 bg-[#050507] border-t border-white/5">
+             {/* Void Background with simple noise */}
+            <div className="absolute inset-0 -z-30 bg-[#030305]"></div>
+            <div className="absolute inset-0 -z-20 opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay"></div>
 
-            <div className="mx-auto max-w-7xl px-6">
-                <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-                    {/* Fit Check */}
+            <div className="mx-auto max-w-7xl px-6 relative z-10">
+                <div className="grid gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+                    {/* Fit Assessment - "System Scan" */}
                     <div className="text-white">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/90">
-                            Fit Assessment
-                        </p>
-                        <h2 className="mt-4 text-balance text-4xl font-semibold leading-[0.95] md:text-5xl">
-                            We’re a fit if you can start within 1–2 weeks with:
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="h-px w-8 bg-primary/60"></div>
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                                System Check
+                            </p>
+                        </div>
+                        <h2 className="text-balance text-4xl font-bold leading-[0.95] md:text-6xl tracking-tight mb-8">
+                            READY FOR<br/>
+                            INTELLIGENCE?
                         </h2>
 
-                        <div className="mt-7 space-y-3">
-                            {fitBullets.map((bullet) => (
+                        <div className="space-y-4">
+                            {fitBullets.map((bullet, i) => (
                                 <div
                                     key={bullet}
-                                    className="flex items-start gap-3 border border-white/10 bg-white/5 px-4 py-3 backdrop-blur"
+                                    className="group flex items-center gap-4 border border-white/10 bg-white/5 px-6 py-4 hover:border-primary/50 transition-colors"
                                 >
-                                    <div className="mt-0.5 inline-flex h-7 w-7 items-center justify-center border border-primary/25 bg-primary/10">
-                                        <Check className="h-4 w-4 text-primary" />
+                                    <div className="flex h-6 w-6 items-center justify-center rounded-sm border border-primary/40 bg-primary/10 text-primary group-hover:bg-primary group-hover:text-black transition-colors">
+                                        <Check className="h-3 w-3" />
                                     </div>
-                                    <p className="text-base text-white/85">
+                                    <p className="text-lg text-white/80 font-light">
                                         {bullet}
                                     </p>
                                 </div>
                             ))}
                         </div>
 
-                        <p className="mt-6 text-lg text-white/70">
-                            If that’s not true yet, we’ll tell you what’s
-                            missing and why.
+                        <p className="mt-8 text-white/50 text-sm max-w-md">
+                            <span className="text-primary">*</span> If any of these are missing, we'll identify the gap during the assessment.
                         </p>
 
-                        <div className="mt-8 flex flex-wrap items-center gap-4">
+                        <div className="mt-12 flex flex-wrap items-center gap-6">
                             <a
                                 href={BOOK_MEETING_URL}
                                 target="_blank"
@@ -97,51 +95,40 @@ export default function HomeFitFaqCta() {
                                     textClassName="group-hover:text-black"
                                 >
                                     {BOOK_MEETING_CTA}
-                                    <ArrowUpRight className="h-5 w-5" />
+                                    <ArrowUpRight className="h-5 w-5 ml-2" />
                                 </MagneticButton>
                             </a>
-
-                            <Link
-                                href="/contact/"
-                                className="text-sm font-mono uppercase tracking-[0.22em] text-white/70 hover:text-primary"
-                            >
-                                Contact
-                            </Link>
                         </div>
                     </div>
 
-                    {/* FAQ */}
+                    {/* FAQ - "Terminal" Style */}
                     <div className="text-white">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/90">
-                            FAQ
-                        </p>
-                        <h3 className="mt-4 text-balance text-3xl font-semibold md:text-4xl">
-                            Objections that kill deals, answered directly.
-                        </h3>
-
-                        <div className="mt-8 space-y-4">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="h-px w-8 bg-white/20"></div>
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-white/40">
+                                Knowledge Base
+                            </p>
+                        </div>
+                        
+                        <div className="space-y-px bg-white/10 border border-white/10">
                             {faqs.map((faq, i) => (
                                 <div
                                     key={faq.q}
-                                    className="overflow-hidden border border-white/10 bg-white/5 backdrop-blur"
+                                    className="bg-[#050507] hover:bg-white/5 transition-colors"
                                 >
                                     <button
-                                        onClick={() =>
-                                            setOpenFaq(openFaq === i ? null : i)
-                                        }
-                                        className="flex w-full items-center justify-between gap-6 p-5 text-left hover:bg-white/5 transition-colors"
+                                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                        className="flex w-full items-center justify-between gap-6 p-6 text-left"
                                     >
-                                        <span className="text-base font-semibold text-white">
+                                        <span className={`text-lg font-medium transition-colors ${openFaq === i ? "text-primary" : "text-white"}`}>
                                             {faq.q}
                                         </span>
                                         <span
-                                            className={`text-primary transition-transform duration-300 ${
-                                                openFaq === i
-                                                    ? "rotate-45"
-                                                    : ""
+                                            className={`text-white/40 transition-transform duration-300 ${
+                                                openFaq === i ? "rotate-45 text-primary" : ""
                                             }`}
                                         >
-                                            <ArrowRight className="h-5 w-5 rotate-90 sm:rotate-0" />
+                                            <ArrowRight className="h-5 w-5" />
                                         </span>
                                     </button>
 
@@ -153,8 +140,8 @@ export default function HomeFitFaqCta() {
                                         }`}
                                     >
                                         <div className="overflow-hidden">
-                                            <div className="px-5 pb-5 text-white/75 leading-relaxed">
-                                                {faq.a}
+                                            <div className="px-6 pb-6 text-white/60 leading-relaxed max-w-xl font-light">
+                                                 <span className="text-primary mr-2 font-mono">&gt;&gt;</span> {faq.a}
                                             </div>
                                         </div>
                                     </div>
@@ -164,44 +151,33 @@ export default function HomeFitFaqCta() {
                     </div>
                 </div>
 
-                {/* Final CTA */}
-                <div className="mt-16 border-t border-white/10 pt-16 md:mt-20 md:pt-20">
-                    <div className="mx-auto max-w-5xl text-center text-white">
-                        <h2 className="text-balance text-4xl font-semibold tracking-tight md:text-6xl">
-                            Ready to find your{" "}
-                            <span className="text-primary">ROI wedge</span>?
-                        </h2>
+                {/* Final CTA - "Ignition" */}
+                <div className="mt-24 border-t border-white/10 pt-24 text-center">
+                    <h2 className="text-5xl font-bold tracking-tight text-white md:text-8xl mb-12">
+                        FIND YOUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-text-shimmer bg-[length:200%_auto]">WEDGE</span>
+                    </h2>
 
-                        <p className="mx-auto mt-6 max-w-2xl text-lg text-white/75 md:text-xl">
-                            This is a 30-minute diagnostic to identify one ROI
-                            wedge and confirm whether your stack is ready for
-                            intelligence layering. If it isn’t, we’ll tell you
-                            what’s missing and why, for free.
-                        </p>
-
-                        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                            <a
-                                href={BOOK_MEETING_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                    <div className="flex flex-col items-center justify-center gap-6">
+                        <a
+                            href={BOOK_MEETING_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <MagneticButton
+                                strength={0.32}
+                                className="rounded-full bg-white text-black px-12 py-6 text-xl font-bold hover:bg-primary hover:scale-105 transition-all duration-300"
+                                textClassName="group-hover:text-black"
                             >
-                                <MagneticButton
-                                    strength={0.32}
-                                    className="rounded-none bg-primary text-black px-12 py-6 text-xl font-bold hover:bg-white transition-colors"
-                                    textClassName="group-hover:text-black"
-                                >
-                                    {BOOK_MEETING_CTA}
-                                </MagneticButton>
-                            </a>
-
-                            <Link
-                                href="/contact/"
-                                className="inline-flex items-center gap-2 text-sm font-semibold text-white/75 hover:text-primary"
-                            >
-                                Prefer procurement-first? Contact us{" "}
-                                <ArrowUpRight className="h-4 w-4" />
-                            </Link>
-                        </div>
+                                Start Assessment
+                            </MagneticButton>
+                        </a>
+                        
+                         <Link
+                            href="/contact/"
+                            className="mt-4 text-xs font-mono uppercase tracking-[0.2em] text-white/40 hover:text-white transition-colors"
+                        >
+                            Or contact via email
+                        </Link>
                     </div>
                 </div>
             </div>
