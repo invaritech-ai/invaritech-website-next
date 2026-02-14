@@ -1,26 +1,26 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Shield, Activity, Gauge, Ban, Lock, Server } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
+import Link from "next/link";
 
 const outcomes = [
     {
         icon: Activity,
         title: "One Real Bottleneck",
         description:
-            "We isolate the workflow draining margin or capacity and scope exactly one high-cost failure point.",
+            "We scope one failure point that’s draining margin or capacity.",
     },
     {
         icon: Gauge,
         title: "One Production Automation",
         description:
-            "A working AI layer runs on top of your current stack with deterministic fallbacks and operator visibility.",
+            "A governed AI layer runs on top of your current systems with operator visibility.",
     },
     {
         icon: Shield,
         title: "One Measurable Delta",
         description:
-            "Before and after metrics are validated against baseline so decisions are made on proof, not opinion.",
+            "Baseline vs. after is validated so decisions are made on proof, not opinion.",
     },
 ];
 
@@ -57,8 +57,7 @@ export default function WhatWeDoSection() {
                             30-Day Drop-In AI Automation Sprint
                         </h2>
                         <p className="mt-5 max-w-xl text-lg text-white/80">
-                            Execution with constraints for enterprise teams that
-                            need operational lift without operational chaos.
+                            One wedge. One build. One measurable delta.
                         </p>
 
                         <div className="mt-8 rounded-2xl border border-white/20 bg-black/25 p-5 backdrop-blur-md">
@@ -107,17 +106,14 @@ export default function WhatWeDoSection() {
                         <Card className="md:col-span-2 border-primary/35 bg-primary/15 text-white">
                             <CardContent className="flex flex-col gap-4 p-6 md:flex-row md:items-center md:justify-between">
                                 <p className="max-w-xl text-sm text-white/85 md:text-base">
-                                    Pricing remains fixed at $10,000 - $15,000 USD ($78,000 – $117,000 HKD) per sprint to keep decisions fast and
-                                    delivery accountable.
+                                    See the exact scope, governance model, and
+                                    qualification prerequisites before you
+                                    book.
                                 </p>
                                 <Button asChild size="lg" className="rounded-xl px-8">
-                                    <a
-                                        href={BOOK_MEETING_URL}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        {BOOK_MEETING_CTA}
-                                    </a>
+                                    <Link href="/ai-automation-sprint/">
+                                        See Sprint details
+                                    </Link>
                                 </Button>
                             </CardContent>
                         </Card>

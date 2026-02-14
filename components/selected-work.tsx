@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
+import Link from "next/link";
 
 const proofSignals = [
     {
@@ -54,15 +55,25 @@ export default function SelectedWorkSection() {
                             operations, not just a demo environment.
                         </p>
                     </div>
-                    <Button asChild size="lg" variant="outline" className="rounded-xl">
-                        <a
-                            href={BOOK_MEETING_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                        <Button asChild size="lg" className="rounded-xl">
+                            <a
+                                href={BOOK_MEETING_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                {BOOK_MEETING_CTA}
+                            </a>
+                        </Button>
+                        <Button
+                            asChild
+                            size="lg"
+                            variant="outline"
+                            className="rounded-xl"
                         >
-                            {BOOK_MEETING_CTA}
-                        </a>
-                    </Button>
+                            <Link href="/work/">View Work</Link>
+                        </Button>
+                    </div>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-6">
