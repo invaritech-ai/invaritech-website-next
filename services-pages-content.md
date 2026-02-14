@@ -4,7 +4,7 @@ Generated from TSX source by `scripts/extract-services-pages-md.js`. Best-effort
 
 # /services/
 
-**Title:** AI Automation & Integration Services | 30-Day Sprint | INVARITECH
+**Title:** AI Automation & Integration Services | 30-Day Sprint
 **Meta description:** Build production-grade AI on the infrastructure you already own. Start with a 30-day Sprint, then scale via workflow automation, integrations, enterprise chatbots, and GenAI backend engineering.
 **Canonical:** https://www.invaritech.ai/services/
 
@@ -35,6 +35,7 @@ We do the opposite:
 - Keep your stack intact.
 - Add an intelligence layer where it creates measurable leverage.
 - Govern it like production software: permissions, logs, fallbacks, rollback.
+Start with AI PoC development services  to validate one measurable wedge on top of your existing stack, without replatforming. If you need a lower-friction entry point with strict governance, deploy AI chatbot development services  as the interface: permissioned, auditable, and cost-controlled. Once ROI is proven, expand with workflow automation consulting services  and AI integration services  to operationalize the system across teams and systems of record. When scale is the constraint, implement generative AI development services  and AI automation consulting services  to harden architecture, control unit cost, and protect margins.
 We do not burn money on AI where simpler systems work better.
 ## The Invaritech Method
 
@@ -337,7 +338,7 @@ Service Offering
 # AI AUTOMATION <br/>CONSULTING
 
 Consulting for leadership teams who need clarity before committing capital.
-Our AI automation consulting for businesses is designed for teams that need execution clarity, not inspiration.
+Our AI automation consulting services for businesses are designed for teams that need execution clarity, not inspiration.
 We identify the highest-ROI workflow wedge, define governance boundaries, and produce a build-ready execution plan. Unlike other AI automation consulting firms, we do not stop at strategy.
 If you’re evaluating AI process automation consulting, the output should be a build-ready spec tied to measurable outcomes, not a deck of ideas.
 We provide AI and automation consulting for businesses that need infrastructure-level discipline, including AI infrastructure automation consulting when reliability and ownership matter.
@@ -460,7 +461,7 @@ Book a Consulting Fit Call
 
 # /services/ai-workflow-automation-services/
 
-**Title:** AI Workflow Automation Services | High-Governance Workflow Automation Consulting
+**Title:** Workflow Automation Consulting Services | AI Workflow Automation Services
 **Meta description:** Move from manual sprawl to audited pipelines. We deliver AI workflow automation services built for scale: deterministic fallbacks, human-in-the-loop approvals, and measurable ROI.
 **Canonical:** https://www.invaritech.ai/services/ai-workflow-automation-services/
 **Keywords:** workflow automation consulting, workflow automation consulting services, ai workflow automation services, ai workflow automation consulting, business process automation services, intelligent process automation services, process automation services, intelligent process automation, business process automation
@@ -471,10 +472,10 @@ Back to Services
 
 Service Offering
 
-# WORKFLOW AUTOMATION <br/>CONSULTING SERVICES(AI-Enabled)
+# WORKFLOW AUTOMATION <br/>CONSULTING SERVICES (AI-Enabled)
 
 Workflow automation consulting services that turn operational friction into operational liquidity.
-Our workflow automation consulting services combine AI workflow automation services with deterministic process automation services. We do AI workflow automation consulting where AI is appropriate (intelligent process automation services), and traditional process automation services where it wins. This includes business process automation services when the bottleneck is approvals, handoffs, and reconciliation.
+Our workflow automation consulting services combine deterministic process automation services with selective AI workflow automation services. We do AI workflow automation consulting when it improves throughput, and we deploy process automation services (including intelligent process automation services and business process automation services) when the safer win is simply removing handoffs, approvals, and reconciliation drag.
 We don’t sell the “magic bullet” of total human replacement. We build governed systems that remove the fatigue tax: the repetitive, high-friction work that silently caps throughput.
 One audited pipeline. No agentic havoc. Scalability by design.
 ### Ideally Suited For
@@ -602,14 +603,14 @@ It can include those techniques, but the point is governance: audited pipelines 
 ### Is this just a bunch of Zaps?
 No. No-code is a tool. Operational liquidity is the goal. When reliability and auditability matter, we build custom pipelines.
 
-## Build for Scalenot Just <br/>Efficiency.
+## Build for Scale not Just <br/>Efficiency.
 
 30 minutes. One workflow map. Zero magic bullets.
 Request a Workflow Diagnostic
 
 # /services/ai-integration-services/
 
-**Title:** Generative AI Integration Services | Model-Agnostic AI System Integration
+**Title:** AI Integration Services | Generative AI System Integration (Model-Agnostic)
 **Meta description:** Generative AI integration services for enterprises. We build a governed integration layer (custom gateway) to connect AI to ERP/CRM/legacy systems with idempotency, audit logs, RBAC, fallbacks, and deployment flexibility.
 **Canonical:** https://www.invaritech.ai/services/ai-integration-services/
 **Keywords:** ai integration services, ai integration consulting services, ai system integration services, enterprise ai integration services, ai integration services for businesses, generative ai integration services, gen ai integration services, ai agent integration services, ai tool integration services, integration services for ai tools, model-agnostic ai integration
@@ -625,7 +626,7 @@ Service Offering
 Custom Gateways for Sovereign Data.
 Our AI integration services connect large language models and AI tools into your existing ERP, CRM, and internal systems without replacing your infrastructure.
 We provide AI system integration services and generative AI integration services for enterprises that require governance and data sovereignty. We can deliver AI integration consulting services or build the integration layer end-to-end, with visibility, controls, and safe failure modes.
-Teams also call this AI integration services for businesses, gen AI integration services, AI tool integration services, integration services for AI tools, or AI agent integration services for businesses. The name doesn’t matter. Ownership, auditability, and safe failure modes do.
+Teams hire us for AI integration services for businesses under different labels: gen AI integration services, AI tool integration services, integration services for AI tools, or AI agent integration services. The name doesn’t matter. Ownership, auditability, and safe failure modes do.
 No replatforming. No shadow AI. No brittle “glue code.”
 ### Support Line
 
@@ -727,7 +728,7 @@ Request an Infrastructure Audit
 
 # /services/enterprise-ai-chatbot-deployment/
 
-**Title:** Enterprise AI Chatbot Deployment | AI Chatbot Development Services
+**Title:** AI Chatbot Development Services | Enterprise Deployment (Governed & Multilingual)
 **Meta description:** AI chatbot development services for enterprises that need governance. Deploy a controlled enterprise AI chatbot solution with RBAC/ABAC, audit logs, citations, tool boundaries, and multilingual support.
 **Canonical:** https://www.invaritech.ai/services/enterprise-ai-chatbot-deployment/
 **Keywords:** ai chatbot development services, enterprise ai chatbot development, generative ai chatbot development, ai chatbot for business website, cantonese ai chatbot for website, mandarin ai chatbot development, bahasa ai chatbot development, ai agent development services, custom chatbot development services, multilingual ai chatbot development, enterprise ai chatbot solution
@@ -738,11 +739,12 @@ Back to Services
 
 Service Offering
 
-# AI CHATBOT <br/>DEVELOPMENT SERVICES(Governed & Multilingual)
+# AI CHATBOT <br/>DEVELOPMENT SERVICES (Governed &amp; Multilingual)
 
 Control, not Curiosity.
 We deploy a governed enterprise AI chatbot solution inside your existing systems with RBAC/ABAC, audit logs, deterministic tool usage, and multilingual capability.
-We provide AI chatbot development services for business websites, internal operations, and multilingual customer support. If you need an AI chatbot for business website use, we deploy it inside governed workflows with RBAC/ABAC and audit logs. This includes multilingual AI chatbot development like Cantonese AI chatbot for website deployments, Mandarin AI chatbot development, and Bahasa AI chatbot development. Our enterprise AI chatbot development and generative AI chatbot development approach focuses on governance, not novelty. If you need AI agent development services, we scope them inside explicit tool boundaries and audit logs.
+We provide AI chatbot development services for business websites, internal operations, and multilingual support. Our enterprise AI chatbot development and generative AI chatbot development approach is governance-first: RBAC/ABAC, audit logs, deterministic tool use, and explicit escalation paths.
+This includes multilingual AI chatbot development, including Cantonese AI chatbot for website deployments, Mandarin AI chatbot development, and Bahasa AI chatbot development. If you need an AI chatbot for business website use, or you’re evaluating AI agent development services, we keep scope inside explicit tool boundaries and approval gates.
 No open-ended experiments. No token-burning toys. No shadow AI.
 ### Support Line
 
@@ -846,7 +848,7 @@ We deploy inside your existing systems, enforce governance, tie the bot to defin
 ### How do we start?
 Start with a Sprint if you want a governed pilot in 30 days, or begin with a Fit Audit to define objective + access boundaries.
 
-## One Objective. Clear Boundaries. <br/>Go / No-Go.
+## One Objective. Clear Boundaries. <br/> Go / No-Go.
 
 30 minutes. Request a Chatbot Fit Audit.
 Request a Chatbot Fit Audit
@@ -864,12 +866,12 @@ Back to Services
 
 Service Offering
 
-# GENERATIVE AI <br/>DEVELOPMENT SERVICESFor Production-Scale Systems
+# GENERATIVE AI <br/>DEVELOPMENT SERVICES For Production-Scale Systems
 
 ## Turn brittle GenAI prototypes into production-grade AI backends.
 
 Stop building prototypes that scale costs faster than revenue. We design AI-native microservices that are cost-controlled, versioned, testable, and governed by default.
-Our generative AI development services combine AI engineering services and AI/ML development services (including AI ML development services and AI and ML development services) to deliver production-grade systems, not experimental features.
+Our generative AI development services combine AI engineering services with AI ML development services and AI/ML development services (AI/ml development services), including AI and ML development services, to deliver production-grade systems, not experimental features.
 Usage scales. Margins stay protected.
 ### Support Line
 
@@ -904,15 +906,15 @@ The Standard
 ## Prompts as Code
 
 We don’t treat prompts as “messages” or “settings.” Prompts are code. Outcome: prompt updates stop being a gamble.
-- Version ControlPrompts and configs are versioned in Git like core infrastructure.
-- Deterministic EvaluationEvaluation harnesses with golden datasets to prevent regressions. No subjective &quot;looks good&quot;.
-- Release DisciplinePrompt/model changes ship behind flags, with rollback paths.
-gitcommit -m &quot;feat: optimize categorization prompt&quot;
+- Version Control Prompts and configs are versioned in Git like core infrastructure.
+- Deterministic Evaluation Evaluation harnesses with golden datasets to prevent regressions. No subjective &quot;looks good&quot;.
+- Release Discipline Prompt/model changes ship behind flags, with rollback paths.
+git commit -m &quot;feat: optimize categorization prompt&quot;
 Running evaluators...
 ✓ extraction_accuracy: 98.5% (+2.1%)
 ✓ toxicity_check: PASSED
 ✓ cost_per_token: $0.0002 (-15%)
-Deployment approved.Rolling out to 5% canary.
+Deployment approved.  Rolling out to 5% canary.
 ## The Right-Tool Architecture
 
 We don’t use LLMs where traditional ML or deterministic code wins. We architect for efficiency.

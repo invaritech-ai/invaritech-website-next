@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import WorkflowClient from "./workflow-client";
 
 export const metadata: Metadata = {
-    title: "AI Workflow Automation Services | High-Governance Workflow Automation Consulting",
+    title: "Workflow Automation Consulting Services | AI Workflow Automation Services",
     description: "Move from manual sprawl to audited pipelines. We deliver AI workflow automation services built for scale: deterministic fallbacks, human-in-the-loop approvals, and measurable ROI.",
     keywords: [
         "workflow automation consulting",

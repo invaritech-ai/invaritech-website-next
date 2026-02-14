@@ -84,21 +84,21 @@ export function Hero() {
                     We craft digital intelligence. Elevating enterprise operations into a streamlined art form.
                 </p>
                 
-                <div ref={ctaRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <Link
-                        href="/work"
-                        className="group relative px-8 py-4 bg-foreground text-background font-bold text-lg rounded-none hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
-                    >
-                        VIEW OUR WORK
-                        <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </Link>
-                    <Link
-                        href="/contact"
-                        className="px-8 py-4 border border-foreground/20 text-foreground font-bold text-lg hover:border-primary hover:text-primary transition-colors duration-300 rounded-none backdrop-blur-sm"
-                    >
-                        START THE SPRINT
-                    </Link>
-                </div>
+	                <div ref={ctaRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+	                    <Link
+	                        href="/work/"
+	                        className="group relative px-8 py-4 bg-foreground text-background font-bold text-lg rounded-none hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+	                    >
+	                        VIEW OUR WORK
+	                        <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+	                    </Link>
+	                    <Link
+	                        href="/ai-automation-sprint/"
+	                        className="px-8 py-4 border border-foreground/20 text-foreground font-bold text-lg hover:border-primary hover:text-primary transition-colors duration-300 rounded-none backdrop-blur-sm"
+	                    >
+	                        VIEW THE AI AUTOMATION SPRINT
+	                    </Link>
+	                </div>
             </div>
 
             {/* Decorative background elements */}

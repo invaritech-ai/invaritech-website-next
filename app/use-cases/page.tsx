@@ -149,13 +149,13 @@ export default function UseCases() {
                             </h1>
                             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                                 Pick one workflow to start. Prove value. Expand.
-                            </p>
-                            <Button asChild size="lg">
-                                <Link href="/assessment">
-                                    Get your Ops Efficiency Score
-                                </Link>
-                            </Button>
-                        </div>
+	                            </p>
+	                            <Button asChild size="lg">
+	                                <Link href="/assessment/">
+	                                    Get your Ops Efficiency Score
+	                                </Link>
+	                            </Button>
+	                        </div>
                     </div>
                 </section>
 
@@ -258,18 +258,18 @@ export default function UseCases() {
                                 Start with one use case and expand based on
                                 proven results.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button asChild size="lg">
-                                    <Link href="/assessment">
-                                        Get your Ops Efficiency Score
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg">
-                                    <Link href="/ops-efficiency-sprint">
-                                        See the Sprint
-                                    </Link>
-                                </Button>
-                            </div>
+	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                <Button asChild size="lg">
+	                                    <Link href="/assessment/">
+	                                        Get your Ops Efficiency Score
+	                                    </Link>
+	                                </Button>
+	                                <Button asChild variant="outline" size="lg">
+	                                    <Link href="/services/ai-automation-sprint/">
+	                                        See the Sprint
+	                                    </Link>
+	                                </Button>
+	                            </div>
                         </div>
                     </div>
                 </section>

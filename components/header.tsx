@@ -11,7 +11,7 @@ import { useGSAP } from "@gsap/react";
 
 const menuItems = [
     { name: "Home", href: "/", id: "01" },
-    { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
+    { name: "The Sprint", href: "/ai-automation-sprint/", id: "02" },
     { name: "Services", href: "/services/", id: "03" },
     { name: "Results", href: "/results/", id: "04" },
     { name: "Intel", href: "/blogs/", id: "05" }, // Renamed for "Bold" feel

@@ -128,7 +128,13 @@ export default function IntegrationClient() {
 	                                We provide AI system integration services and generative AI integration services for enterprises that require governance and data sovereignty. We can deliver AI integration consulting services or build the integration layer end-to-end, with visibility, controls, and safe failure modes.
 	                            </p>
 	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                Teams also call this AI integration services for businesses, gen AI integration services, AI tool integration services, integration services for AI tools, or AI agent integration services for businesses. The name doesn’t matter. Ownership, auditability, and safe failure modes do.
+	                                Teams hire us for AI integration services for
+	                                businesses under different labels: gen AI
+	                                integration services, AI tool integration
+	                                services, integration services for AI tools,
+	                                or AI agent integration services. The name
+	                                doesn’t matter. Ownership, auditability, and
+	                                safe failure modes do.
 	                            </p>
 	                            <p className="text-lg text-white/80 font-mono">
 	                                No replatforming. No shadow AI. No brittle “glue code.”

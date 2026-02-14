@@ -333,20 +333,20 @@ export default function ServicesPage() {
 	                                    >
 	                                        AI PoC development services
 	                                    </Link>{" "}
-	                                    to prove one measurable wedge without replatforming.
+	                                    to validate one measurable wedge on top of your existing stack, without replatforming.
 	                                </span>
 	                                <span className="block mt-4">
-	                                    If the objective is clear and lower-friction, deploy{" "}
+	                                    If you need a lower-friction entry point with strict governance, deploy{" "}
 	                                    <Link
 	                                        href="/services/enterprise-ai-chatbot-deployment/"
 	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
 	                                    >
 	                                        AI chatbot development services
 	                                    </Link>{" "}
-	                                    as a governed, cost-controlled entry point.
+	                                    as the interface: permissioned, auditable, and cost-controlled.
 	                                </span>
 	                                <span className="block mt-4">
-	                                    Once ROI is validated, expand through{" "}
+	                                    Once ROI is proven, expand with{" "}
 	                                    <Link
 	                                        href="/services/ai-workflow-automation-services/"
 	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
@@ -360,10 +360,10 @@ export default function ServicesPage() {
 	                                    >
 	                                        AI integration services
 	                                    </Link>{" "}
-	                                    to operationalize the system across teams.
+	                                    to operationalize the system across teams and systems of record.
 	                                </span>
 	                                <span className="block mt-4">
-	                                    When scale becomes the priority, implement{" "}
+	                                    When scale is the constraint, implement{" "}
 	                                    <Link
 	                                        href="/services/generative-ai-backend-development/"
 	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
@@ -377,7 +377,7 @@ export default function ServicesPage() {
 	                                    >
 	                                        AI automation consulting services
 	                                    </Link>{" "}
-	                                    to harden architecture, control cost, and protect margins.
+	                                    to harden architecture, control unit cost, and protect margins.
 	                                </span>
 	                            </p>
 	                            <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl mt-8">

@@ -151,13 +151,13 @@ export default function Security() {
                             </h1>
                             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                                 Security by design. Audit trails by default.
-                            </p>
-                            <Button asChild size="lg">
-                                <Link href="/contact">
-                                    Request our Security Overview
-                                </Link>
-                            </Button>
-                        </div>
+	                            </p>
+	                            <Button asChild size="lg">
+	                                <Link href="/contact/">
+	                                    Request our Security Overview
+	                                </Link>
+	                            </Button>
+	                        </div>
                     </div>
                 </section>
 
@@ -392,7 +392,7 @@ export default function Security() {
 	                                    </Link>
 	                                </Button>
 	                                <Button asChild variant="outline" size="lg">
-	                                    <Link href="/ai-automation-sprint/">
+	                                    <Link href="/services/ai-automation-sprint/">
 	                                        See the Sprint
 	                                    </Link>
 	                                </Button>

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import IntegrationClient from "./integration-client";
 
 export const metadata: Metadata = {
-    title: "Generative AI Integration Services | Model-Agnostic AI System Integration",
+    title: "AI Integration Services | Generative AI System Integration (Model-Agnostic)",
     description: "Generative AI integration services for enterprises. We build a governed integration layer (custom gateway) to connect AI to ERP/CRM/legacy systems with idempotency, audit logs, RBAC, fallbacks, and deployment flexibility.",
     keywords: [
         "ai integration services",

@@ -126,7 +126,7 @@ export default function ConsultingClient() {
 	                                Consulting for leadership teams who need clarity before committing capital.
 	                            </p>
 	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                Our AI automation consulting for businesses is designed for teams that need execution clarity, not inspiration.
+	                                Our AI automation consulting services for businesses are designed for teams that need execution clarity, not inspiration.
 	                            </p>
 	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
 	                                We identify the highest-ROI workflow wedge, define governance boundaries, and produce a build-ready execution plan. Unlike other AI automation consulting firms, we do not stop at strategy.
@@ -157,7 +157,7 @@ export default function ConsultingClient() {
                                 Book a Consulting Fit Call
                             </MagneticButton>
                         </a>
-	                        <Link href="/services/ai-automation-sprint/">
+	                            <Link href="/services/ai-automation-sprint/">
 	                            <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10">
 	                                View the 30-Day Sprint
 	                            </MagneticButton>

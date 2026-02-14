@@ -161,8 +161,10 @@ export default function BackendClient() {
                         <span className="text-white/50">
                             DEVELOPMENT SERVICES
                         </span>
-                        {/* <span className="block text-white/30 text-base md:text-lg font-mono mt-4">For Production-Scale Systems</span> */}
                     </h1>
+                    <div className="text-primary/80 text-sm md:text-base font-mono uppercase tracking-[0.2em] mb-12">
+                        For Production-Scale Systems
+                    </div>
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
@@ -178,9 +180,10 @@ export default function BackendClient() {
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                                 Our generative AI development services combine
-                                AI engineering services and AI/ML development
-                                services (including AI ML development services
-                                and AI and ML development services) to deliver
+                                AI engineering services with AI ML development
+                                services and AI/ML development services (AI/ml
+                                development services), including AI and ML
+                                development services, to deliver
                                 production-grade systems, not experimental
                                 features.
                             </p>

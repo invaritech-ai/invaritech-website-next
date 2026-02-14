@@ -163,9 +163,7 @@ export default function ContactSection() {
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
         try {
-            const apiUrl =
-                process.env.NEXT_PUBLIC_API_URL ||
-                "https://your-api-domain.vercel.app";
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
 
             // Execute reCAPTCHA
             let recaptchaToken = null;

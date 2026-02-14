@@ -123,7 +123,7 @@ export default function Solutions() {
                                 and make work auditable.
                             </p>
 	                            <Button asChild size="lg">
-	                                <Link href="/ai-automation-sprint/">
+	                                <Link href="/services/ai-automation-sprint/">
 	                                    See the Ops Efficiency Sprint
 	                                </Link>
 	                            </Button>
@@ -218,7 +218,7 @@ export default function Solutions() {
                             </p>
 	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
 	                                <Button asChild size="lg">
-	                                    <Link href="/ai-automation-sprint/">
+	                                    <Link href="/services/ai-automation-sprint/">
 	                                        See the Ops Efficiency Sprint
 	                                    </Link>
 	                                </Button>

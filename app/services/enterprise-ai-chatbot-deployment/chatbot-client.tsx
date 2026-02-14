@@ -151,8 +151,10 @@ export default function ChatbotClient() {
                         <span className="text-white/50">
                             DEVELOPMENT SERVICES
                         </span>
-                        {/* <span className="block text-white/30 text-base md:text-lg font-mono mt-4">(Governed & Multilingual)</span> */}
                     </h1>
+                    <div className="text-purple-400/80 text-sm md:text-base font-mono uppercase tracking-[0.2em] mb-12">
+                        (Governed &amp; Multilingual)
+                    </div>
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
@@ -168,18 +170,21 @@ export default function ChatbotClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 We provide AI chatbot development services for
                                 business websites, internal operations, and
-                                multilingual customer support. If you need an AI
-                                chatbot for business website use, we deploy it
-                                inside governed workflows with RBAC/ABAC and
-                                audit logs. This includes multilingual AI
-                                chatbot development like Cantonese AI chatbot
-                                for website deployments, Mandarin AI chatbot
+                                multilingual support. Our enterprise AI chatbot
+                                development and generative AI chatbot
+                                development approach is governance-first:
+                                RBAC/ABAC, audit logs, deterministic tool use,
+                                and explicit escalation paths.
+                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                                This includes multilingual AI chatbot
+                                development, including Cantonese AI chatbot for
+                                website deployments, Mandarin AI chatbot
                                 development, and Bahasa AI chatbot development.
-                                Our enterprise AI chatbot development and
-                                generative AI chatbot development approach
-                                focuses on governance, not novelty. If you need
-                                AI agent development services, we scope them
-                                inside explicit tool boundaries and audit logs.
+                                If you need an AI chatbot for business website
+                                use, or you’re evaluating AI agent development
+                                services, we keep scope inside explicit tool
+                                boundaries and approval gates.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
                                 No open-ended experiments. No token-burning

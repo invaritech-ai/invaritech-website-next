@@ -74,7 +74,7 @@ export default function HowItWorks() {
 
                 <div className="text-center">
                     <Button asChild variant="outline" size="lg">
-                        <Link href="/ops-efficiency-sprint">
+                        <Link href="/ai-automation-sprint/">
                             Download the Sprint overview
                         </Link>
                     </Button>

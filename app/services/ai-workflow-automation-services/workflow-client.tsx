@@ -149,8 +149,10 @@ export default function WorkflowClient() {
                         <span className="text-white/50">
                             CONSULTING SERVICES
                         </span>
-                        {/* <span className="block text-white/30 text-base md:text-lg font-mono mt-4">(AI-Enabled)</span> */}
                     </h1>
+                    <div className="text-primary/80 text-sm md:text-base font-mono uppercase tracking-[0.2em] mb-12">
+                        (AI-Enabled)
+                    </div>
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
@@ -161,14 +163,15 @@ export default function WorkflowClient() {
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 Our workflow automation consulting services
-                                combine AI workflow automation services with
-                                deterministic process automation services. We do
-                                AI workflow automation consulting where AI is
-                                appropriate (intelligent process automation
-                                services), and traditional process automation
-                                services where it wins. This includes business
-                                process automation services when the bottleneck
-                                is approvals, handoffs, and reconciliation.
+                                combine deterministic process automation
+                                services with selective AI workflow automation
+                                services. We do AI workflow automation
+                                consulting when it improves throughput, and we
+                                deploy process automation services (including
+                                intelligent process automation services and
+                                business process automation services) when the
+                                safer win is simply removing handoffs,
+                                approvals, and reconciliation drag.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 We don’t sell the “magic bullet” of total human

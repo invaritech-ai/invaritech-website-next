@@ -8,7 +8,7 @@
         "build:static": "next build",
         "start": "next start",
         "lint": "eslint",
-        "export": "next build && next export"
+        "export": "next build"
     },
     "dependencies": {
         "@gsap/react": "^2.1.2",

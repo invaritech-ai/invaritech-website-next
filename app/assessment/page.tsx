@@ -285,22 +285,22 @@ export default function Assessment() {
                                         🎉 Excellent fit! You&apos;re ready for
                                         the Ops Efficiency Sprint.
                                     </h3>
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <Button asChild size="lg">
-                                            <Link href="/contact">
-                                                Book Architecture & Roadmap
-                                            </Link>
-                                        </Button>
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            size="lg"
-                                        >
-                                            <Link href="/ops-efficiency-sprint">
-                                                See the Sprint
-                                            </Link>
-                                        </Button>
-                                    </div>
+	                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                        <Button asChild size="lg">
+	                                            <Link href="/contact/">
+	                                                Book Architecture & Roadmap
+	                                            </Link>
+	                                        </Button>
+	                                        <Button
+	                                            asChild
+	                                            variant="outline"
+	                                            size="lg"
+	                                        >
+	                                            <Link href="/services/ai-automation-sprint/">
+	                                                See the Sprint
+	                                            </Link>
+	                                        </Button>
+	                                    </div>
                                 </div>
                             ) : result.tier === "warm" ? (
                                 <div className="space-y-4">
@@ -308,22 +308,22 @@ export default function Assessment() {
                                         🤔 Good potential. Let&apos;s discuss
                                         your specific needs.
                                     </h3>
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <Button asChild size="lg">
-                                            <Link href="/contact">
-                                                Book Architecture & Roadmap
-                                            </Link>
-                                        </Button>
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            size="lg"
-                                        >
-                                            <Link href="/ops-efficiency-sprint">
-                                                See the 6-week Demo Plan
-                                            </Link>
-                                        </Button>
-                                    </div>
+	                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                        <Button asChild size="lg">
+	                                            <Link href="/contact/">
+	                                                Book Architecture & Roadmap
+	                                            </Link>
+	                                        </Button>
+	                                        <Button
+	                                            asChild
+	                                            variant="outline"
+	                                            size="lg"
+	                                        >
+	                                            <Link href="/services/ai-automation-sprint/">
+	                                                See the 6-week Demo Plan
+	                                            </Link>
+	                                        </Button>
+	                                    </div>
                                 </div>
                             ) : (
                                 <div className="space-y-4">
@@ -331,22 +331,22 @@ export default function Assessment() {
                                         📋 Let&apos;s explore alternative
                                         approaches for your situation.
                                     </h3>
-                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                        <Button asChild size="lg">
-                                            <Link href="/contact">
-                                                Discuss Alternatives
-                                            </Link>
-                                        </Button>
-                                        <Button
-                                            asChild
-                                            variant="outline"
-                                            size="lg"
-                                        >
-                                            <Link href="/about">
-                                                Learn More About Us
-                                            </Link>
-                                        </Button>
-                                    </div>
+	                                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                        <Button asChild size="lg">
+	                                            <Link href="/contact/">
+	                                                Discuss Alternatives
+	                                            </Link>
+	                                        </Button>
+	                                        <Button
+	                                            asChild
+	                                            variant="outline"
+	                                            size="lg"
+	                                        >
+	                                            <Link href="/about/">
+	                                                Learn More About Us
+	                                            </Link>
+	                                        </Button>
+	                                    </div>
                                 </div>
                             )}
                         </div>

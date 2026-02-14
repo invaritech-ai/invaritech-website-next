@@ -91,18 +91,18 @@ export default function QualificationGuardrails() {
                             gains.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                            <a
-                                href="/assessment"
-                                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-                            >
-                                Get your Ops Efficiency Score
-                            </a>
-                            <a
-                                href="/contact"
-                                className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg hover:bg-muted transition-colors"
-                            >
-                                Book Architecture & Roadmap
-                            </a>
+	                            <a
+	                                href="/assessment/"
+	                                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+	                            >
+	                                Get your Ops Efficiency Score
+	                            </a>
+	                            <a
+	                                href="/contact/"
+	                                className="inline-flex items-center justify-center px-6 py-3 border border-border rounded-lg hover:bg-muted transition-colors"
+	                            >
+	                                Book Architecture & Roadmap
+	                            </a>
                         </div>
                     </div>
                 </div>
