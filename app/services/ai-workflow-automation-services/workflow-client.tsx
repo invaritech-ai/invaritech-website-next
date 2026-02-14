@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Check, ArrowRight, X, Clock, ShieldCheck, Zap, Server, Database, MessageSquare, Briefcase, FileText, GitBranch, Lock } from "lucide-react";
 import Link from "next/link";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { useRef, useState } from "react";
@@ -93,7 +93,7 @@ export default function WorkflowClient() {
 
     return (
         <main ref={containerRef} className="min-h-screen bg-background relative overflow-hidden">
-            <ArtisticBackground />
+            <ServiceBackground theme="blue" />
 
             {/* Nav Back */}
             <div className="absolute top-24 left-6 z-20 md:top-32 md:left-12 hero-content">

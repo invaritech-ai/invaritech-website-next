@@ -3,7 +3,7 @@ import { ArrowLeft, Check } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function GenAIBackendPage() {
     return (
         <main className="min-h-screen bg-background relative overflow-hidden">
-            <ArtisticBackground />
+            <ServiceBackground theme="crimson" />
 
             {/* Nav Back */}
             <div className="absolute top-24 left-6 z-20 md:top-32 md:left-12">
