@@ -56,7 +56,7 @@ export default function HowWeWorkSection() {
                         </p>
                     </div>
                     <div className="rounded-2xl border border-primary/30 bg-primary/10 px-5 py-4 text-sm font-medium">
-                        Pricing anchor: <span className="font-semibold">£8,000-£12,000</span>
+                        Pricing: <span className="font-semibold">$10,000 – $15,000 USD</span> <span className="text-muted-foreground ml-1">($78,000 – $117,000 HKD)</span>
                     </div>
                 </div>
 

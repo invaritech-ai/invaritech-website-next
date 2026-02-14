@@ -107,8 +107,7 @@ export default function WhatWeDoSection() {
                         <Card className="md:col-span-2 border-primary/35 bg-primary/15 text-white">
                             <CardContent className="flex flex-col gap-4 p-6 md:flex-row md:items-center md:justify-between">
                                 <p className="max-w-xl text-sm text-white/85 md:text-base">
-                                    Pricing anchor remains fixed at £8,000 to
-                                    £12,000 per sprint to keep decisions fast and
+                                    Pricing remains fixed at $10,000 - $15,000 USD ($78,000 – $117,000 HKD) per sprint to keep decisions fast and
                                     delivery accountable.
                                 </p>
                                 <Button asChild size="lg" className="rounded-xl px-8">

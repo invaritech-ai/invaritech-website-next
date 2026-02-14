@@ -280,8 +280,11 @@ export default function SprintMarketingPage() {
                             <div className="text-sm font-mono tracking-widest uppercase text-primary mb-3">
                                 Investment
                             </div>
-                            <div className="text-5xl md:text-7xl font-bold mb-6 tracking-tighter">
-                                £8k-12k
+                            <div className="text-5xl md:text-7xl font-bold mb-2 tracking-tighter">
+                                $10k – $15k USD
+                            </div>
+                            <div className="text-xl md:text-2xl font-mono text-muted-foreground mb-6">
+                                ($78k – $117k HKD)
                             </div>
                             <div className="space-y-4 mb-8">
                                 {pricingReasons.map((reason) => (

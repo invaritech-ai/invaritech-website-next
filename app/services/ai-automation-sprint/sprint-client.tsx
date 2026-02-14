@@ -466,7 +466,8 @@ export default function SprintClient() {
                             </ul>
                             <div className="mt-8 pt-8 border-t border-white/10">
                                 <p className="text-sm text-white/50 mb-2">Investment</p>
-                                <p className="text-2xl font-bold text-white">£8k – £12k</p>
+                                <p className="text-2xl font-bold text-white">$10k – $15k USD</p>
+                                <p className="text-sm font-mono text-white/60 mb-1">($78k – $117k HKD)</p>
                                 <p className="text-xs text-white/40">For a tightly scoped wedge</p>
                             </div>
                         </div>

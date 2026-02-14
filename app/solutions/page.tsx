@@ -190,14 +190,14 @@ export default function Solutions() {
                                                 variant="outline"
                                                 className="w-full"
                                             >
-                                                <Link
-                                                    href={`/solutions#${solution.anchor}`}
-                                                >
-                                                    Learn more
-                                                    <ArrowRight className="w-4 h-4 ml-2" />
-                                                </Link>
-                                            </Button>
-                                        </div>
+	                                        <Link
+	                                            href={`/solutions/#${solution.anchor}`}
+	                                        >
+	                                            Learn more
+	                                            <ArrowRight className="w-4 h-4 ml-2" />
+	                                        </Link>
+	                                    </Button>
+	                                </div>
                                     </CardContent>
                                 </Card>
                             ))}

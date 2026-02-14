@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRef, useState } from "react";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { CoreThesisSection } from "@/app/components/services/core-thesis-section";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import gsap from "gsap";
@@ -296,130 +297,7 @@ export default function ServicesPage() {
             </section>
 
             {/* Core Thesis & Method */}
-            <section className="py-24 px-6 relative z-10">
-                <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-24">
-                    {/* Core Thesis */}
-                    <div>
-                        <h2 className="text-2xl font-mono text-primary mb-8 tracking-widest uppercase">
-                            Core Thesis: Layered Intelligence
-                        </h2>
-                        <div className="space-y-8 text-lg text-muted-foreground">
-                            <p>
-                                Most AI projects fail because they start by replacing systems of record.
-                            </p>
-                            <p className="text-white font-medium text-xl">
-                                We do the opposite:
-                            </p>
-	                            <ul className="space-y-4">
-	                                <li className="thesis-item flex items-start gap-3">
-	                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-	                                    <span>Keep your stack intact.</span>
-	                                </li>
-	                                <li className="thesis-item flex items-start gap-3">
-	                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-	                                    <span>Add an intelligence layer where it creates measurable leverage.</span>
-	                                </li>
-	                                <li className="thesis-item flex items-start gap-3">
-	                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-	                                    <span>Govern it like production software: permissions, logs, fallbacks, rollback.</span>
-	                                </li>
-	                            </ul>
-	                            <p>
-	                                <span className="block">
-	                                    Start with{" "}
-	                                    <Link
-	                                        href="/services/ai-automation-sprint/"
-	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
-	                                    >
-	                                        AI PoC development services
-	                                    </Link>{" "}
-	                                    to validate one measurable wedge on top of your existing stack, without replatforming.
-	                                </span>
-	                                <span className="block mt-4">
-	                                    If you need a lower-friction entry point with strict governance, deploy{" "}
-	                                    <Link
-	                                        href="/services/enterprise-ai-chatbot-deployment/"
-	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
-	                                    >
-	                                        AI chatbot development services
-	                                    </Link>{" "}
-	                                    as the interface: permissioned, auditable, and cost-controlled.
-	                                </span>
-	                                <span className="block mt-4">
-	                                    Once ROI is proven, expand with{" "}
-	                                    <Link
-	                                        href="/services/ai-workflow-automation-services/"
-	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
-	                                    >
-	                                        workflow automation consulting services
-	                                    </Link>{" "}
-	                                    and{" "}
-	                                    <Link
-	                                        href="/services/ai-integration-services/"
-	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
-	                                    >
-	                                        AI integration services
-	                                    </Link>{" "}
-	                                    to operationalize the system across teams and systems of record.
-	                                </span>
-	                                <span className="block mt-4">
-	                                    When scale is the constraint, implement{" "}
-	                                    <Link
-	                                        href="/services/generative-ai-backend-development/"
-	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
-	                                    >
-	                                        generative AI development services
-	                                    </Link>{" "}
-	                                    and{" "}
-	                                    <Link
-	                                        href="/services/ai-automation-consulting/"
-	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
-	                                    >
-	                                        AI automation consulting services
-	                                    </Link>{" "}
-	                                    to harden architecture, control unit cost, and protect margins.
-	                                </span>
-	                            </p>
-	                            <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl mt-8">
-	                                <p className="text-white font-bold">
-	                                    We do not burn money on AI where simpler systems work better.
-	                                </p>
-	                            </div>
-	                        </div>
-                    </div>
-
-                    {/* Method */}
-                    <div>
-                        <h2 className="text-2xl font-mono text-primary mb-8 tracking-widest uppercase">
-                            The Invaritech Method
-                        </h2>
-                        <div className="space-y-12 relative before:absolute before:left-[19px] before:top-4 before:bottom-4 before:w-px before:bg-white/10">
-                            {[
-                                {
-                                    step: "Identify",
-                                    desc: "Define the ROI wedge: one workflow, one owner, one baseline, one acceptance criteria."
-                                },
-                                {
-                                    step: "Validate",
-                                    desc: "Ship a working pilot under real constraints with governance built in."
-                                },
-                                {
-                                    step: "Scale",
-                                    desc: "Turn the pilot into durable production: automation across teams, integrations across systems, governed assistants, and GenAI backend engineering."
-                                }
-                            ].map((method, i) => (
-                                <div key={method.step} className="method-step relative z-10 pl-16">
-                                    <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-background border border-white/20 flex items-center justify-center text-sm font-bold text-white/50">
-                                        {i + 1}
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white mb-3">{method.step}</h3>
-                                    <p className="text-muted-foreground leading-relaxed">{method.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <CoreThesisSection />
 
             {/* Services Directory */}
             <section className="py-24 px-6 relative z-10 bg-black/20">

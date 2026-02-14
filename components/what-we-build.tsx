@@ -103,7 +103,7 @@ export default function WhatWeBuild() {
 
                 <div className="text-center">
                     <Button asChild variant="outline" size="lg">
-                        <Link href="/solutions">
+                        <Link href="/solutions/">
                             Explore a sample: See the minimal live demo
                         </Link>
                     </Button>
