@@ -115,10 +115,11 @@ export default function ChatbotClient() {
                     
                     <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
                         <TextEffect per="word" preset="slide" className="inline-block">
-                            ENTERPRISE AI
+                            AI CHATBOT
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">CHATBOTS</span>
+                        <span className="text-white/50">DEVELOPMENT SERVICES</span>
+                        <span className="block text-white/30 text-base md:text-lg font-mono mt-4">(Governed & Multilingual)</span>
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
@@ -129,6 +130,9 @@ export default function ChatbotClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 We deploy a governed enterprise AI chatbot solution inside your existing systems with RBAC/ABAC, audit logs, deterministic tool usage, and multilingual capability.
                             </p>
+	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+	                                We provide AI chatbot development services for business websites, internal operations, and multilingual customer support. If you need an AI chatbot for business website use, we deploy it inside governed workflows with RBAC/ABAC and audit logs. This includes multilingual AI chatbot development like Cantonese AI chatbot for website deployments, Mandarin AI chatbot development, and Bahasa AI chatbot development. Our enterprise AI chatbot development and generative AI chatbot development approach focuses on governance, not novelty. If you need AI agent development services, we scope them inside explicit tool boundaries and audit logs.
+	                            </p>
                             <p className="text-lg text-white/80 font-mono">
                                 No open-ended experiments. No token-burning toys. No shadow AI.
                             </p>
@@ -163,7 +167,7 @@ export default function ChatbotClient() {
                  <div className="max-w-5xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Who It's For</h2>
+	                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Who It&apos;s For</h2>
                             <p className="text-lg text-muted-foreground mb-8">
                                 If you just need an open-ended chatbot, ChatGPT already exists. This is for teams that need governance and clear ownership.
                             </p>

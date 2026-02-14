@@ -134,7 +134,7 @@ export default function SprintClient() {
                                     AI POC
                                 </TextEffect>
                                 <br />
-                                <span className="text-white/50">DEVELOPMENT</span>
+                                <span className="text-white/50">DEVELOPMENT SERVICES</span>
                             </h1>
                         </div>
                         <div className="md:max-w-md md:mb-4">
@@ -149,10 +149,11 @@ export default function SprintClient() {
                     
                     <div className="border-t border-white/10 pt-12 grid md:grid-cols-2 gap-12">
                         <div>
-                            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                                <strong className="text-white">AI PoC development services for teams that need proof, not hype.</strong><br/>
-                                In 30 days, we deliver one scoped AI pilot project on top of your existing systems, with governance and a measurable before/after delta.
-                            </p>
+	                            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+	                                <strong className="text-white">AI PoC development services for teams that need proof, not hype.</strong><br/>
+	                                In 30 days, we deliver one scoped AI pilot project development track on top of your existing systems, with governance and a measurable before/after delta.
+                                    These AI proof of concept development services include an AI discovery workshop, an AI readiness assessment service, and an AI feasibility study up front. If leadership alignment is missing, we run an AI strategy workshop to lock decisions fast.
+	                            </p>
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
                                     <MagneticButton className="bg-primary text-black px-8 py-4 text-lg font-bold hover:bg-white transition-colors">
@@ -219,8 +220,11 @@ export default function SprintClient() {
              <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
-                        <div>
+	                        <div>
 	                            <h2 className="text-4xl font-bold mb-8">Who It’s For</h2>
+                                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                                    These AI PoC development services are built for teams with real workflows, real data, and real owners.
+                                </p>
 	                            <ul className="space-y-6 stagger-list">
 	                                {[
 	                                    "Teams with real workflows (not toy demos)",

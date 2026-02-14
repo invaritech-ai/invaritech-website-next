@@ -123,11 +123,17 @@ export default function IntegrationClient() {
                                 Custom Gateways for Sovereign Data.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                Integrate AI into your existing systems without surrendering your data or your stack. We build a high-governance integration layer that connects models to your ERP, CRM, and internal databases with visibility, controls, and safe failure modes.
+                                Our AI integration services connect large language models and AI tools into your existing ERP, CRM, and internal systems without replacing your infrastructure.
                             </p>
-                            <p className="text-lg text-white/80 font-mono">
-                                No replatforming. No shadow AI. No brittle “glue code.”
-                            </p>
+	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+	                                We provide AI system integration services and generative AI integration services for enterprises that require governance and data sovereignty. We can deliver AI integration consulting services or build the integration layer end-to-end, with visibility, controls, and safe failure modes.
+	                            </p>
+	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+	                                Teams also call this AI integration services for businesses, gen AI integration services, AI tool integration services, integration services for AI tools, or AI agent integration services for businesses. The name doesn’t matter. Ownership, auditability, and safe failure modes do.
+	                            </p>
+	                            <p className="text-lg text-white/80 font-mono">
+	                                No replatforming. No shadow AI. No brittle “glue code.”
+	                            </p>
                         </div>
                         <div className="md:w-1/3">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">

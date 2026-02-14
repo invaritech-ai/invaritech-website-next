@@ -111,17 +111,21 @@ export default function WorkflowClient() {
                     
                     <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
                         <TextEffect per="word" preset="slide" className="inline-block">
-                            AI WORKFLOW
+                            WORKFLOW AUTOMATION
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">AUTOMATION</span>
+                        <span className="text-white/50">CONSULTING SERVICES</span>
+                        <span className="block text-white/30 text-base md:text-lg font-mono mt-4">(AI-Enabled)</span>
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
                             <p className="text-xl md:text-2xl text-white font-medium mb-6">
-                                Workflow automation consulting that turns operational friction into operational liquidity.
+                                Workflow automation consulting services that turn operational friction into operational liquidity.
                             </p>
+	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+	                                Our workflow automation consulting services combine AI workflow automation services with deterministic process automation services. We do AI workflow automation consulting where AI is appropriate (intelligent process automation services), and traditional process automation services where it wins. This includes business process automation services when the bottleneck is approvals, handoffs, and reconciliation.
+	                            </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 We don’t sell the “magic bullet” of total human replacement. We build governed systems that remove the fatigue tax: the repetitive, high-friction work that silently caps throughput.
                             </p>
@@ -197,9 +201,9 @@ export default function WorkflowClient() {
                                     When people hear “workflow automation services,” they picture a messy tangle of hidden logic: 400 disconnected automations, no owner, and no audit trail.
                                 </p>
                                 <div className="p-6 bg-red-900/10 border border-red-500/20 rounded-xl">
-                                    <h4 className="text-red-400 font-bold mb-2 flex items-center gap-2">
-                                        <X className="w-4 h-4" /> The "Messy Tangle"
-                                    </h4>
+	                                    <h4 className="text-red-400 font-bold mb-2 flex items-center gap-2">
+	                                        <X className="w-4 h-4" /> The &ldquo;Messy Tangle&rdquo;
+	                                    </h4>
                                     <p className="text-sm text-red-200/60">Legacy automation often means silent failures, unknown errors, and debugging nightmares.</p>
                                 </div>
                             </div>

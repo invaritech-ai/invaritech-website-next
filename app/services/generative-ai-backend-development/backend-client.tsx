@@ -122,7 +122,8 @@ export default function BackendClient() {
                             GENERATIVE AI
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">BACKEND DEV</span>
+                        <span className="text-white/50">DEVELOPMENT SERVICES</span>
+                        <span className="block text-white/30 text-base md:text-lg font-mono mt-4">For Production-Scale Systems</span>
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
@@ -132,6 +133,9 @@ export default function BackendClient() {
                             </h2>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                                 Stop building prototypes that scale costs faster than revenue. We design AI-native microservices that are cost-controlled, versioned, testable, and governed by default.
+                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                                Our generative AI development services combine AI engineering services and AI/ML development services (including AI ML development services and AI and ML development services) to deliver production-grade systems, not experimental features.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
                                 Usage scales. Margins stay protected.
@@ -206,13 +210,13 @@ export default function BackendClient() {
             {/* What this service is */}
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold mb-8">Engineering Discipline Applied to AI</h2>
-                    <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-                        This is not a generic “AI dev shop” offering. We engineer the layer that makes AI safe, profitable, and maintainable.
-                    </p>
+	                    <h2 className="text-3xl md:text-5xl font-bold mb-8">Engineering Discipline Applied to AI</h2>
+	                    <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+	                        This is not generic AI software development services or AI development services. We engineer the layer that makes AI safe, profitable, and maintainable.
+	                    </p>
                     <div className="grid md:grid-cols-3 gap-6 stagger-list text-left">
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h3 className="font-bold text-white mb-2">Beyond Works "Sometimes"</h3>
+	                            <h3 className="font-bold text-white mb-2">Beyond Works &quot;Sometimes&quot;</h3>
                             <p className="text-sm text-muted-foreground">For teams that need reliability and uptime, not just a cool demo.</p>
                         </div>
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
@@ -251,7 +255,7 @@ export default function BackendClient() {
                                     <Check className="w-6 h-6 text-primary shrink-0" />
                                     <div>
                                         <strong className="text-white block">Deterministic Evaluation</strong>
-                                        <span className="text-muted-foreground text-sm">Evaluation harnesses with golden datasets to prevent regressions. No subjective "looks good".</span>
+	                                        <span className="text-muted-foreground text-sm">Evaluation harnesses with golden datasets to prevent regressions. No subjective &quot;looks good&quot;.</span>
                                     </div>
                                 </li>
                                 <li className="flex gap-3">
@@ -270,7 +274,7 @@ export default function BackendClient() {
                                 <span className="w-3 h-3 rounded-full bg-green-500/50" />
                             </div>
                             <div className="space-y-2">
-                                <p><span className="text-purple-400">git</span> commit -m "feat: optimize categorization prompt"</p>
+	                                <p><span className="text-purple-400">git</span> commit -m &quot;feat: optimize categorization prompt&quot;</p>
                                 <p><span className="text-blue-400">Running evaluators...</span></p>
                                 <p className="pl-4">✓ extraction_accuracy: 98.5% <span className="text-green-500">(+2.1%)</span></p>
                                 <p className="pl-4">✓ toxicity_check: PASSED</p>
@@ -436,10 +440,10 @@ export default function BackendClient() {
             {/* Why This vs Full Stack */}
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-3xl font-bold mb-6">Why This vs. A "Full Stack" Shop</h2>
-                    <p className="text-xl text-muted-foreground mb-8">
-                        Generalist shops build "AI features". We engineer the layer that makes AI safe, profitable, and maintainable.
-                    </p>
+	                    <h2 className="text-3xl font-bold mb-6">Why This vs. A &quot;Full Stack&quot; Shop</h2>
+	                    <p className="text-xl text-muted-foreground mb-8">
+	                        Generalist shops build &quot;AI features&quot;. We engineer the layer that makes AI safe, profitable, and maintainable.
+	                    </p>
                     <div className="inline-block border border-white/20 rounded-xl p-8 bg-black/40">
                         <p className="font-mono text-primary text-lg mb-4">The Difference is the Plumbing</p>
                         <div className="flex flex-wrap justify-center gap-4 text-sm text-white/70">
