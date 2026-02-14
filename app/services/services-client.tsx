@@ -310,26 +310,82 @@ export default function ServicesPage() {
                             <p className="text-white font-medium text-xl">
                                 We do the opposite:
                             </p>
-                            <ul className="space-y-4">
-                                <li className="thesis-item flex items-start gap-3">
-                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                    <span>Keep your stack intact.</span>
-                                </li>
-                                <li className="thesis-item flex items-start gap-3">
-                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                    <span>Add an intelligence layer where it creates measurable leverage.</span>
-                                </li>
-                                <li className="thesis-item flex items-start gap-3">
-                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                    <span>Govern it like production software: permissions, logs, fallbacks, rollback.</span>
-                                </li>
-                            </ul>
-                            <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl mt-8">
-                                <p className="text-white font-bold">
-                                    We do not burn money on AI where simpler systems work better.
-                                </p>
-                            </div>
-                        </div>
+	                            <ul className="space-y-4">
+	                                <li className="thesis-item flex items-start gap-3">
+	                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+	                                    <span>Keep your stack intact.</span>
+	                                </li>
+	                                <li className="thesis-item flex items-start gap-3">
+	                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+	                                    <span>Add an intelligence layer where it creates measurable leverage.</span>
+	                                </li>
+	                                <li className="thesis-item flex items-start gap-3">
+	                                    <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+	                                    <span>Govern it like production software: permissions, logs, fallbacks, rollback.</span>
+	                                </li>
+	                            </ul>
+	                            <p>
+	                                <span className="block">
+	                                    Start with{" "}
+	                                    <Link
+	                                        href="/services/ai-automation-sprint/"
+	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
+	                                    >
+	                                        AI PoC development services
+	                                    </Link>{" "}
+	                                    to prove one measurable wedge without replatforming.
+	                                </span>
+	                                <span className="block mt-4">
+	                                    If the objective is clear and lower-friction, deploy{" "}
+	                                    <Link
+	                                        href="/services/enterprise-ai-chatbot-deployment/"
+	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
+	                                    >
+	                                        AI chatbot development services
+	                                    </Link>{" "}
+	                                    as a governed, cost-controlled entry point.
+	                                </span>
+	                                <span className="block mt-4">
+	                                    Once ROI is validated, expand through{" "}
+	                                    <Link
+	                                        href="/services/ai-workflow-automation-services/"
+	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
+	                                    >
+	                                        workflow automation consulting services
+	                                    </Link>{" "}
+	                                    and{" "}
+	                                    <Link
+	                                        href="/services/ai-integration-services/"
+	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
+	                                    >
+	                                        AI integration services
+	                                    </Link>{" "}
+	                                    to operationalize the system across teams.
+	                                </span>
+	                                <span className="block mt-4">
+	                                    When scale becomes the priority, implement{" "}
+	                                    <Link
+	                                        href="/services/generative-ai-backend-development/"
+	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
+	                                    >
+	                                        generative AI development services
+	                                    </Link>{" "}
+	                                    and{" "}
+	                                    <Link
+	                                        href="/services/ai-automation-consulting/"
+	                                        className="text-white underline decoration-white/20 underline-offset-4 hover:decoration-primary/70 hover:text-primary transition-colors"
+	                                    >
+	                                        AI automation consulting services
+	                                    </Link>{" "}
+	                                    to harden architecture, control cost, and protect margins.
+	                                </span>
+	                            </p>
+	                            <div className="p-6 bg-primary/10 border border-primary/20 rounded-xl mt-8">
+	                                <p className="text-white font-bold">
+	                                    We do not burn money on AI where simpler systems work better.
+	                                </p>
+	                            </div>
+	                        </div>
                     </div>
 
                     {/* Method */}

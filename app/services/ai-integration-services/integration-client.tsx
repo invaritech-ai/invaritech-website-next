@@ -1,9 +1,9 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Check, ArrowRight, X, Clock, ShieldCheck, Zap, Server, Database, Lock, Globe, Layers, Key, Eye, AlertTriangle } from "lucide-react";
+import { ArrowLeft, ArrowRight, X, ShieldCheck, Zap, Server, Database, Lock, Eye, AlertTriangle } from "lucide-react";
 import Link from "next/link";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
+import { BOOK_MEETING_URL } from "@/lib/marketing";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -11,7 +11,6 @@ import { useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { cn } from "@/lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 

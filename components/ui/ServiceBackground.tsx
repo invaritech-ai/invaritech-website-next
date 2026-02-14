@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { } from "react";
 
 export type ServiceTheme = "orange" | "blue" | "green" | "purple" | "crimson" | "teal";
 
@@ -9,6 +9,33 @@ interface ServiceBackgroundProps {
 }
 
 export function ServiceBackground({ theme }: ServiceBackgroundProps) {
+    // --- SIMPLIFIED ABSTRACT BACKGROUND (Active) ---
+    // User requested to simplify backgrounds (remove detailed animations) but keep bold colors.
+    // Using radial gradients to create a "glow" effect behind the content.
+    
+    const colors: Record<ServiceTheme, string> = {
+        orange: "rgba(255, 100, 0, 0.15)",   // Sprint
+        blue: "rgba(50, 150, 255, 0.15)",    // Workflow
+        green: "rgba(50, 255, 100, 0.12)",   // Integration
+        purple: "rgba(140, 60, 255, 0.15)",  // Chatbot
+        crimson: "rgba(255, 50, 50, 0.12)",  // Backend
+        teal: "rgba(0, 255, 200, 0.12)"      // Consulting
+    };
+
+    const color = colors[theme] || colors.orange;
+
+    return (
+        <div 
+            className="fixed inset-0 z-[1] pointer-events-none"
+            style={{
+                background: `radial-gradient(circle at 50% 30%, ${color}, transparent 70%)`
+            }}
+        />
+    );
+
+    /* --- ORIGINAL GENERATIVE ART IMPLEMENTATION (Inactive) ---
+    // Kept for potential future reactivation
+    
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
@@ -527,4 +554,5 @@ export function ServiceBackground({ theme }: ServiceBackgroundProps) {
             className="fixed inset-0 z-[1] pointer-events-none mix-blend-screen opacity-100" // Increased opacity for boldness
         />
     );
+    */
 }
