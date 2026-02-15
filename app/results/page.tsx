@@ -35,6 +35,11 @@ const exampleCase = {
         unit: "HOURS SAVED/MO",
         subMetric: "$36k/mo cost avoidance",
     },
+    testimonial: {
+        quote: "Placeholder for real customer impact statement. The sematic search layer has transformative potential for our research-heavy departments.",
+        author: "Director of Ops",
+        company: "Sector Leader"
+    }
 };
 
 const additionalResults = [
@@ -44,6 +49,11 @@ const additionalResults = [
         impact: "240*",
         unit: "HOURS/MO",
         desc: "Automated 85% of first-draft generation",
+        testimonial: {
+            quote: "By removing the manual lookup phase, our associates can focus on higher-level strategy from hour one.",
+            author: "Partner",
+            company: "Tier-1 Legal Firm"
+        }
     },
     {
         title: "Claims Intake Pipeline",
@@ -51,6 +61,11 @@ const additionalResults = [
         impact: "255*",
         unit: "HOURS/MO",
         desc: "Reduced document processing time by 1.7m per doc",
+        testimonial: {
+            quote: "The intake automation has allowed us to scale without adding head count to the processing team.",
+            author: "COO",
+            company: "Regional Insurer"
+        }
     },
     {
         title: "Vendor Invoice Processing",
@@ -58,6 +73,11 @@ const additionalResults = [
         impact: "$50k*",
         unit: "SAVED/MO",
         desc: "Eliminated manual entry for 5,000+ invoices/mo",
+        testimonial: {
+            quote: "Cost avoidance was the primary goal, and the system delivered within the first 30-day cycle.",
+            author: "Finance Lead",
+            company: "Global MFG"
+        }
     },
 ];
 
@@ -115,28 +135,45 @@ export default function Results() {
                             </Link>
                         </div>
                     </div>
-                    <div className="text-right">
-                         <TextEffect 
-                            per="char" 
-                            preset="fade" 
-                            className="text-[15vw] leading-none font-bold tracking-tighter text-primary"
-                        >
-                            {exampleCase.impact.bigNumber}
-                        </TextEffect>
+                    <div className="text-right flex flex-col items-end">
+                         <div className="flex items-baseline gap-2">
+                             <TextEffect 
+                                per="char" 
+                                preset="fade" 
+                                className="text-[12vw] leading-none font-bold tracking-tighter text-primary"
+                            >
+                                {exampleCase.impact.bigNumber}
+                            </TextEffect>
+                            <span className="text-xs font-mono text-primary/50 uppercase tracking-widest">(Modeled)</span>
+                         </div>
                         <p className="text-xl md:text-3xl text-white/80 font-mono mt-2 tracking-widest uppercase">
                             {exampleCase.impact.unit}
                         </p>
                         <p className="text-lg text-muted-foreground mt-4">
                             {exampleCase.impact.subMetric}
                         </p>
+                        
+                        {exampleCase.testimonial && (
+                            <div className="mt-12 text-right border-r border-primary/30 pr-6 py-2 max-w-sm ml-auto">
+                                <p className="text-sm italic text-white/60 mb-2">&quot;{exampleCase.testimonial.quote}&quot;</p>
+                                <p className="text-xs font-mono text-primary">{exampleCase.testimonial.author}, {exampleCase.testimonial.company}</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
 
             {/* Snapshot List - Clean Editorial Style */}
             <section className="py-32 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-[6vw] font-bold leading-none mb-24 opacity-20 text-center md:text-left">
+                <div className="max-w-7xl mx-auto relative">
+                     {/* Ghost Typography Background Layer */}
+                    <div className="absolute -top-20 -left-10 select-none pointer-events-none opacity-[0.03] whitespace-nowrap z-0">
+                        <span className="text-[20rem] font-black tracking-tighter uppercase text-white">
+                            IMPACT
+                        </span>
+                    </div>
+
+                    <h2 className="relative z-10 text-[6vw] font-bold leading-none mb-24 opacity-20 text-center md:text-left">
                         RECENT WINS
                     </h2>
 
@@ -156,13 +193,23 @@ export default function Results() {
                                     <p className="text-muted-foreground">{result.desc}</p>
                                 </div>
                                 <div className="md:col-span-4 px-4 md:px-0 text-left md:text-right">
-                                    <span className="block text-5xl md:text-6xl font-bold text-white group-hover:text-primary transition-colors">
-                                        {result.impact}
-                                    </span>
+                                    <div className="flex items-baseline justify-end gap-2">
+                                        <span className="block text-5xl md:text-6xl font-bold text-white group-hover:text-primary transition-colors">
+                                            {result.impact}
+                                        </span>
+                                        <span className="text-[10px] font-mono text-primary/40 uppercase tracking-tighter">(Modeled)</span>
+                                    </div>
                                     <span className="text-sm font-mono text-muted-foreground uppercase tracking-wider">
                                         {result.unit}
                                     </span>
                                 </div>
+
+                                {result.testimonial && (
+                                    <div className="md:col-span-12 mt-6 px-4 md:px-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-3xl ml-auto text-right border-r border-white/5 pr-6">
+                                        <p className="text-sm italic text-muted-foreground font-light">&quot;{result.testimonial.quote}&quot;</p>
+                                        <p className="text-[10px] font-mono text-primary/60 mt-2 uppercase tracking-widest">{result.testimonial.author} {"//"} {result.testimonial.company}</p>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

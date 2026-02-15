@@ -11,7 +11,8 @@ const proofSignals = [
             "A regulated workflow moved from manual handling into a fully auditable production flow with rollback controls.",
         metric: "Thousands of submissions compressed into minutes",
         image: "/eudr-preview.webp",
-        href: "/work/eudr-compliance-bridge/",
+        href: "/work/",
+        category: "Automation",
     },
     {
         title: "Existing Stack, Smarter Throughput",
@@ -20,14 +21,16 @@ const proofSignals = [
         metric: "Zero replatforming required",
         image: "/app.webp",
         href: "/work/",
+        category: "Integration",
     },
     {
-        title: "Operating Model Discipline",
+        title: "China Coast Community",
         detail:
-            "Each sprint closes with ownership, baseline comparison, and handover so internal teams can operate safely.",
-        metric: "Before and after KPI validation",
+            "Modernizing operational flow and donor engagement for a premier elderly care charity in Hong Kong.",
+        metric: "Review Phase",
         image: "/ccc-isometric.webp",
-        href: "/work/",
+        href: "https://reclaim-emergent-code.vercel.app",
+        category: "Web & Automation",
     },
 ];
 
@@ -79,10 +82,15 @@ export default function SelectedWorkSection() {
                             {/* Cinematic Glow */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                             
-                            <div className="absolute bottom-0 left-0 p-8 w-full">
-                                <div className="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wider">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
-                                    {signal.metric}
+                            <div className="absolute bottom-0 left-0 p-8 w-full z-20">
+                                <div className="flex flex-col gap-1 mb-4">
+                                     <span className="text-primary text-[10px] font-mono uppercase tracking-[0.3em] mb-1">
+                                        {signal.category}
+                                    </span>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wider w-fit">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                        {signal.metric}
+                                    </div>
                                 </div>
                                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                                     {signal.title}
