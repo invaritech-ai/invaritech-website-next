@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         follow: true,
     },
     alternates: {
-        canonical: "https://www.invaritech.ai/ai-automation-sprint/",
+        canonical: "https://www.invaritech.ai/services/ai-automation-sprint/",
     },
 };
 

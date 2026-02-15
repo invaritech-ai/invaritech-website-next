@@ -23,6 +23,21 @@ export const metadata: Metadata = {
         "finance automation",
         "engineering discipline",
     ],
+    openGraph: {
+        title: "Solutions - Intelligent Systems for Modern Operations | INVARITECH",
+        description:
+            "Intelligent systems that reduce cost-to-serve and make work auditable. Knowledge & Decision Support, Agentic Workflows, Intake & Processing, Finance & Back-Office, and Engineering discipline.",
+        url: "https://www.invaritech.ai/solutions/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Solutions - Intelligent Systems | INVARITECH",
+                type: "image/webp",
+            },
+        ],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/solutions/",
     },

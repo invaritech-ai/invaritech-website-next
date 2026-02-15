@@ -30,6 +30,21 @@ export const metadata: Metadata = {
         "data residency",
         "encryption",
     ],
+    openGraph: {
+        title: "Security & Governance - Built for Compliance and Control | INVARITECH",
+        description:
+            "Built for governance, compliance, and control. Security by design. Audit trails by default. Identity & Access, Auditability, Data handling, Reliability, Compliance posture.",
+        url: "https://www.invaritech.ai/security/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Security & Governance | INVARITECH",
+                type: "image/webp",
+            },
+        ],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/security/",
     },
