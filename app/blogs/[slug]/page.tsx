@@ -247,9 +247,9 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
 
                             {/* Prose Feed */}
-                            <div className="prose prose-lg prose-invert max-w-none flex-1
+                            <div className="prose prose-lg md:prose-xl prose-invert max-w-none flex-1
                                 prose-headings:text-white prose-headings:tracking-tight 
-                                prose-p:text-muted-foreground prose-p:leading-relaxed 
+                                prose-p:text-gray-300 prose-p:leading-relaxed 
                                 prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:border-b prose-a:border-primary/30 hover:prose-a:border-primary prose-a:transition-all
                                 prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-white/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
                                 prose-strong:text-white prose-strong:font-bold prose-strong:text-shadow-sm
@@ -257,18 +257,18 @@ export default async function BlogPostPage({ params }: Props) {
                                 <ReactMarkdown
                                     components={{
                                         h1: ({ children }) => (
-                                            <h2 className="text-3xl md:text-4xl font-bold mt-20 mb-8 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
+                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
                                                 {children}
                                             </h2>
                                         ),
                                         h2: ({ children }) => (
-                                            <h3 className="text-2xl md:text-3xl font-bold mt-16 mb-6 text-white group flex items-center">
+                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-white group flex items-center">
                                                 <span className="text-primary/40 mr-4 font-mono text-lg group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 -ml-10 w-6 text-right">#</span>
                                                 {children}
                                             </h3>
                                         ),
                                         h3: ({ children }) => (
-                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-4 text-white flex items-center gap-3">
+                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-white flex items-center gap-3">
                                                 <span className="w-2 h-2 bg-primary/50 rounded-sm rotate-45" />
                                                 {children}
                                             </h4>

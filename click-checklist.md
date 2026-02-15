@@ -2,7 +2,7 @@
 
 Generated from exported HTML in `dist/`.
 
-Pages found: **34**
+Pages found: **35**
 Global threshold: appears on >= **21** pages
 
 ## Global Clickables (Header/Footer/Common UI)
@@ -10,22 +10,23 @@ Global threshold: appears on >= **21** pages
 ### Links
 
 - [ ] 01 Home -> `/` (yes)
-- [ ] go home -> `/` (yes)
 - [ ] Home -> `/` (yes)
 - [ ] INVARITECH -> `/` (yes)
+- [ ] Visionary Intelligence -> `/` (yes)
 - [ ] About -> `/about/` (yes)
-- [ ] 02 The Sprint -> `/ai-automation-sprint/` (yes)
-- [ ] 05 Intel -> `/blogs/` (yes)
+- [ ] 04 Intel -> `/blogs/` (yes)
 - [ ] Blogs -> `/blogs/` (yes)
 - [ ] Careers -> `/careers/` (yes)
-- [ ] 06 Contact -> `/contact/` (yes)
+- [ ] 05 Contact -> `/contact/` (yes)
 - [ ] Contact -> `/contact/` (yes)
-- [ ] 04 Results -> `/results/` (yes)
+- [ ] Privacy Policy -> `/privacy/` (yes)
 - [ ] 03 Services -> `/services/` (yes)
 - [ ] Services -> `/services/` (yes)
+- [ ] 02 The Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] Terms of Service -> `/terms/` (yes)
 - [ ] Work -> `/work/` (yes)
 - [ ] LinkedIn -> `https://linkedin.com/company/invaritechai` (external)
-- [ ] X/Twitter -> `https://x.com/invaritechai` (external)
+- [ ] X -> `https://x.com/invaritechai` (external)
 - [ ] hello@invaritech.ai -> `mailto:hello@invaritech.ai` (mailto)
 
 ### Buttons
@@ -38,13 +39,28 @@ Source: `dist/index.html`
 
 ### Links
 
-- [ ] VIEW THE AI AUTOMATION SPRINT -> `/ai-automation-sprint/` (yes)
-- [ ] VIEW OUR WORK -> `/work/` (yes)
+- [ ] Prefer procurement-first? Contact us -> `/contact/` (yes)
+- [ ] Explore -> `/services/ai-automation-consulting/` (yes)
+- [ ] Explore the Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] View Sprint Details -> `/services/ai-automation-sprint/` (yes)
+- [ ] Explore -> `/services/ai-integration-services/` (yes)
+- [ ] Explore -> `/services/ai-workflow-automation-services/` (yes)
+- [ ] Explore -> `/services/enterprise-ai-chatbot-deployment/` (yes)
+- [ ] Explore -> `/services/generative-ai-backend-development/` (yes)
+- [ ] Compliance Backend Automation -> `/work/` (yes)
+- [ ] Existing Stack, Smarter Throughput -> `/work/` (yes)
+- [ ] View All Work -> `/work/` (yes)
 - [ ] Book a Meeting -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
+- [ ] China Coast Community -> `https://reclaim-emergent-code.vercel.app` (external)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Are you expensive?
+- [ ] Can you work with our internal engineers?
+- [ ] Do you do AI strategy only?
+- [ ] Do you replace our systems?
+- [ ] How do you measure impact?
+- [ ] What do you mean by 'governed'?
 
 ## /404.html
 
@@ -52,7 +68,7 @@ Source: `dist/404.html`
 
 ### Links
 
-- [ ] Back to Home -> `/` (yes)
+- [ ] Initiate Warp Jump -> `/` (yes)
 
 ### Buttons
 
@@ -64,7 +80,7 @@ Source: `dist/404/index.html`
 
 ### Links
 
-- [ ] Back to Home -> `/` (yes)
+- [ ] Initiate Warp Jump -> `/` (yes)
 
 ### Buttons
 
@@ -76,11 +92,11 @@ Source: `dist/about/index.html`
 
 ### Links
 
-- [ ] WORK WITH US -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
+- [ ] Book a Meeting -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-- [ ] WORK WITH US
+- [ ] Book a Meeting
 
 ## /ai-automation-sprint/
 
@@ -139,16 +155,18 @@ Source: `dist/blogs/building-vs-buying-custom-automation/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
-- [ ] The strategic case for RegOps in consulting firms -> `/blogs/regops-strategy/` (yes)
-- [ ] See the technical architecture of a RegOps Bridge -> `/blogs/regops-technical/` (yes)
-- [ ] See why manual EUDR compliance fails at scale here -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
-- [ ] Let's discuss the right approach for you. -> `/contact/` (yes)
+- [ ] Why Manual EUDR Compliance Fails at Scale -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] AI Automation Consulting -> `/services/ai-automation-consulting/` (yes)
+- [ ] AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] AI Integration Services -> `/services/ai-integration-services/` (yes)
+- [ ] Enterprise AI Chatbot Deployment (Governed) -> `/services/enterprise-ai-chatbot-deployment/` (yes)
+- [ ] EUDR Compliance Bridge: Automating EUDR submissions at scale -> `/work/eudr-compliance-bridge/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
-- [ ] Retool build vs buy guide -> `https://retool.com/blog/build-vs-buy-guide-for-internal-tools/` (external)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /blogs/compliance-automation-done-right/
 
@@ -157,19 +175,16 @@ Source: `dist/blogs/compliance-automation-done-right/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
-- [ ] Read our full framework -> `/blogs/building-vs-buying-custom-automation/` (yes)
-- [ ] Ready to build? -> `/blogs/regops-strategy/` (yes)
-- [ ] See our RegOps Bridge architecture -> `/blogs/regops-technical/` (yes)
-- [ ] See the business case for RegOps here. -> `/blogs/why-consultancies-get-stuck/` (yes)
-- [ ] Learn why manual compliance fails at scale -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
-- [ ] See a real-world example of this approach: The EUDR Compliance Bridge -> `/work/eudr-compliance-bridge/` (yes)
-- [ ] Let's talk about building a compliance system you can actually trust -> `https://calendly.com/hello-invaritech/30min` (external)
+- [ ] Building vs. Buying: When Custom Automation Makes Sense -> `/blogs/building-vs-buying-custom-automation/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] AI Automation Consulting (Quantified Diagnostic) -> `/services/ai-automation-consulting/` (yes)
+- [ ] 30-Day AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] AI Integration Services -> `/services/ai-integration-services/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
-- [ ] FlowForma's A14 IDT case study -> `https://www.flowforma.com/blog/compliance-workflow-automation` (external)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /blogs/consultancy-trap/
 
@@ -178,18 +193,17 @@ Source: `dist/blogs/consultancy-trap/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
-- [ ] Read more on how RegOps protects your margins and de-risks scale -> `/blogs/regops-strategy/` (yes)
-- [ ] We unpack the RegOps Bridge philosophy here -> `/blogs/regops-strategy/` (yes)
-- [ ] We break down how this fragmentation kills scalability here -> `/blogs/regops-strategy/#the-old-way-vs-the-regops-way` (yes (hash))
-- [ ] See how we wired an EUDR RegOps Bridge into the EU's SOAP interface -> `/blogs/regops-technical/` (yes)
-- [ ] The Manual Middle -> `/blogs/regops-technical/#the-challenge-the-manual-middle` (yes (hash))
-- [ ] Learn why hiring more people doesn't fix the problem -> `/blogs/why-consultancies-get-stuck/` (yes)
-- [ ] Let's sketch your workflow -> `/contact/` (yes)
+- [ ] RegOps Bridge anatomy -> `/blogs/regops-technical/` (yes)
+- [ ] Why Manual EUDR Compliance Fails at Scale -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] AI Automation Consulting -> `/services/ai-automation-consulting/` (yes)
+- [ ] 30-Day AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] EUDR Compliance Bridge Case Study -> `/work/eudr-compliance-bridge/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /blogs/regops-strategy/
 
@@ -198,18 +212,18 @@ Source: `dist/blogs/regops-strategy/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
+- [ ] Building vs Buying: When Custom Automation Makes Sense -> `/blogs/building-vs-buying-custom-automation/` (yes)
+- [ ] Compliance Automation Done Right -> `/blogs/compliance-automation-done-right/` (yes)
 - [ ] The Consultancy Trap -> `/blogs/consultancy-trap/` (yes)
-- [ ] See how we built a RegOps Bridge for a high-volume EUDR filing process -> `/blogs/regops-technical/` (yes)
-- [ ] the technical architecture of a Bridge -> `/blogs/regops-technical/` (yes)
-- [ ] technical deep dive on the logic layer -> `/blogs/regops-technical/#2-the-logic-layer-codifying-the-heroic-analyst` (yes (hash))
-- [ ] breaking the "heroic ceiling" -> `/blogs/why-consultancies-get-stuck/` (yes)
-- [ ] Read more on the trap of manual scaling -> `/blogs/why-consultancies-get-stuck/` (yes)
-- [ ] Book a 20-minute diagnostic call here -> `/contact/` (yes)
+- [ ] Anatomy of a RegOps Bridge -> `/blogs/regops-technical/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] AI Automation Consulting -> `/services/ai-automation-consulting/` (yes)
+- [ ] 30-Day AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /blogs/regops-technical/
 
@@ -218,17 +232,17 @@ Source: `dist/blogs/regops-technical/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
-- [ ] RegOps Strategy -> `/blogs/regops-strategy/` (yes)
-- [ ] Start with the architecture patterns in our RegOps Strategy guide -> `/blogs/regops-strategy/` (yes)
-- [ ] strategy analysis -> `/blogs/regops-strategy/#why-generic-ai-wont-fix-this` (yes (hash))
-- [ ] the bottleneck that creates the Consultancy Trap -> `/blogs/why-consultancies-get-stuck/` (yes)
-- [ ] the business case for building this kind of bridge now -> `/blogs/why-consultancies-get-stuck/` (yes)
-- [ ] Contact our engineering team for hands-on help connecting your tools -> `/contact/` (yes)
+- [ ] Compliance Automation Done Right -> `/blogs/compliance-automation-done-right/` (yes)
+- [ ] Why Manual EUDR Compliance Fails at Scale -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] 30-Day AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] AI Integration Services -> `/services/ai-integration-services/` (yes)
+- [ ] EUDR Compliance Bridge Case Study -> `/work/eudr-compliance-bridge/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /blogs/why-consultancies-get-stuck/
 
@@ -237,19 +251,17 @@ Source: `dist/blogs/why-consultancies-get-stuck/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
-- [ ] Read about "The Consultancy Trap" and how it caps revenue -> `/blogs/consultancy-trap/` (yes)
-- [ ] RegOps strategy overview -> `/blogs/regops-strategy/` (yes)
-- [ ] Understand the strategic case for RegOps here -> `/blogs/regops-strategy/` (yes)
-- [ ] Why a RegOps Bridge beats "just hiring more people" -> `/blogs/regops-strategy/` (yes)
-- [ ] EUDR RegOps Bridge -> `/blogs/regops-technical/` (yes)
-- [ ] See how we build these bridges step by step -> `/blogs/regops-technical/` (yes)
-- [ ] We break it down here -> `/blogs/regops-technical/` (yes)
-- [ ] Let's talk about what a RegOps Bridge would mean for your firm -> `https://calendly.com/hello-invaritech/30min` (external)
+- [ ] RegOps strategy -> `/blogs/regops-strategy/` (yes)
+- [ ] RegOps Bridge anatomy -> `/blogs/regops-technical/` (yes)
+- [ ] Why manual EUDR compliance fails at scale -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] AI Automation Consulting -> `/services/ai-automation-consulting/` (yes)
+- [ ] EUDR Compliance Bridge case study -> `/work/eudr-compliance-bridge/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /blogs/why-manual-eudr-compliance-fails/
 
@@ -258,15 +270,18 @@ Source: `dist/blogs/why-manual-eudr-compliance-fails/index.html`
 ### Links
 
 - [ ] Return to Archive -> `/blogs/` (yes)
-- [ ] Automation -> `/blogs/compliance-automation-done-right/` (yes)
-- [ ] our technical guide -> `/blogs/regops-technical/` (yes)
-- [ ] contact -> `/contact/` (yes)
-- [ ] call -> `https://calendly.com/hello-invaritech/30min` (external)
+- [ ] Building vs Buying: When Custom Automation Makes Sense -> `/blogs/building-vs-buying-custom-automation/` (yes)
+- [ ] Compliance Automation Done Right: Deterministic Systems vs Black-Box AI -> `/blogs/compliance-automation-done-right/` (yes)
+- [ ] Services Hub -> `/services/` (yes)
+- [ ] AI Automation Consulting -> `/services/ai-automation-consulting/` (yes)
+- [ ] 30-Day AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] AI Integration Services -> `/services/ai-integration-services/` (yes)
+- [ ] EUDR Compliance Bridge: DDS Submission at Scale -> `/work/eudr-compliance-bridge/` (yes)
 - [ ] Start Transmission -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Start Transmission
 
 ## /careers/
 
@@ -322,6 +337,18 @@ Source: `dist/ops-efficiency-sprint/index.html`
 
 _No page-unique buttons (only global buttons)._
 
+## /privacy/
+
+Source: `dist/privacy/index.html`
+
+### Links
+
+_No page-unique links (only global links)._
+
+### Buttons
+
+_No page-unique buttons (only global buttons)._
+
 ## /results/
 
 Source: `dist/results/index.html`
@@ -355,7 +382,6 @@ Source: `dist/services/index.html`
 
 ### Links
 
-- [ ] See Work / Results -> `/results/` (yes)
 - [ ] AI automation consulting services -> `/services/ai-automation-consulting/` (yes)
 - [ ] AI Automation Consulting Services -> `/services/ai-automation-consulting/` (yes)
 - [ ] AI PoC development services -> `/services/ai-automation-sprint/` (yes)
@@ -407,7 +433,6 @@ Source: `dist/services/ai-automation-sprint/index.html`
 
 ### Links
 
-- [ ] See Work / Results -> `/results/` (yes)
 - [ ] Back to Services -> `/services/` (yes)
 - [ ] Book a Meeting -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 - [ ] See If You Qualify -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
@@ -569,13 +594,15 @@ Source: `dist/work/index.html`
 
 ### Links
 
-- [ ] View Case Study -> `/work/eudr-compliance-bridge/` (yes)
+- [ ] View Case -> `/work/eudr-compliance-bridge/` (yes)
 - [ ] Talk to Us -> `https://calendly.com/hello-invaritech/30min` (external)
+- [ ] Review Phase -> `https://reclaim-emergent-code.vercel.app` (external)
 
 ### Buttons
 
+- [ ] Review Phase
 - [ ] Talk to Us
-- [ ] View Case Study
+- [ ] View Case
 
 ## /work/eudr-compliance-bridge/
 
@@ -583,14 +610,15 @@ Source: `dist/work/eudr-compliance-bridge/index.html`
 
 ### Links
 
-- [ ] when custom automation makes sense -> `/blogs/building-vs-buying-custom-automation/` (yes)
-- [ ] deterministic compliance automation -> `/blogs/compliance-automation-done-right/` (yes)
-- [ ] Read the technical deep dive. -> `/blogs/regops-technical/` (yes)
+- [ ] building vs buying custom automation -> `/blogs/building-vs-buying-custom-automation/` (yes)
+- [ ] deterministic compliance systems -> `/blogs/compliance-automation-done-right/` (yes)
 - [ ] why manual compliance fails here -> `/blogs/why-manual-eudr-compliance-fails/` (yes)
+- [ ] AI Automation Sprint -> `/services/ai-automation-sprint/` (yes)
+- [ ] AI Integration Services -> `/services/ai-integration-services/` (yes)
 - [ ] Back to Work -> `/work/` (yes)
-- [ ] Get in Touch -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
+- [ ] Book a Meeting -> `https://calendly.com/hello-invaritech/30min` (external) (target=_blank, rel=noopener noreferrer)
 
 ### Buttons
 
-_No page-unique buttons (only global buttons)._
+- [ ] Book a Meeting
 

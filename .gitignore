@@ -55,3 +55,4 @@ api-server/
 .agent*
 .claude
 .cline
+.codex

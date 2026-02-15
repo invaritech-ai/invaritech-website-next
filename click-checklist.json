@@ -22,7 +22,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -38,16 +38,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -55,7 +47,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -70,16 +62,104 @@
           "exists": ""
         },
         {
-          "href": "/work/",
-          "label": "VIEW OUR WORK",
+          "href": "https://calendly.com/hello-invaritech/30min",
+          "label": "Book a Meeting",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "kind": "external",
+          "exists": ""
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "Explore the Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
-          "label": "VIEW THE AI AUTOMATION SPRINT",
+          "href": "/services/ai-automation-sprint/",
+          "label": "View Sprint Details",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/work/",
+          "label": "View All Work",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/work/",
+          "label": "Compliance Backend Automation",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/work/",
+          "label": "Existing Stack, Smarter Throughput",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "https://reclaim-emergent-code.vercel.app",
+          "label": "China Coast Community",
+          "target": "",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        },
+        {
+          "href": "/services/ai-workflow-automation-services/",
+          "label": "Explore",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-integration-services/",
+          "label": "Explore",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/enterprise-ai-chatbot-deployment/",
+          "label": "Explore",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/generative-ai-backend-development/",
+          "label": "Explore",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-consulting/",
+          "label": "Explore",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "Prefer procurement-first? Contact us",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -87,7 +167,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -150,10 +230,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -161,15 +257,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
-          "kind": "external",
-          "exists": ""
-        },
-        {
-          "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "Book a Meeting",
-          "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -179,6 +267,36 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Do you replace our systems?",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "Do you do AI strategy only?",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "What do you mean by 'governed'?",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "Can you work with our internal engineers?",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "How do you measure impact?",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "Are you expensive?",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -204,7 +322,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -220,16 +338,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -237,7 +347,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -253,7 +363,7 @@
         },
         {
           "href": "/",
-          "label": "Back to Home",
+          "label": "Initiate Warp Jump",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -261,7 +371,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -324,10 +434,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -335,7 +461,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -370,7 +496,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -386,16 +512,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -403,7 +521,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -419,7 +537,7 @@
         },
         {
           "href": "/",
-          "label": "Back to Home",
+          "label": "Initiate Warp Jump",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -427,7 +545,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -490,10 +608,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -501,7 +635,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -536,7 +670,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -552,16 +686,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -569,7 +695,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -585,7 +711,7 @@
         },
         {
           "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "WORK WITH US",
+          "label": "Book a Meeting",
           "target": "_blank",
           "rel": "noopener noreferrer",
           "kind": "external",
@@ -593,7 +719,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -656,10 +782,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -667,7 +809,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -679,7 +821,7 @@
           "ariaLabel": "Toggle Menu"
         },
         {
-          "label": "WORK WITH US",
+          "label": "Book a Meeting",
           "type": "",
           "ariaLabel": ""
         }
@@ -707,7 +849,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -723,16 +865,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -740,7 +874,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -764,7 +898,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -827,10 +961,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -838,7 +988,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -873,7 +1023,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -889,16 +1039,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -906,7 +1048,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -922,7 +1064,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -985,10 +1127,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -996,7 +1154,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -1076,7 +1234,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -1092,16 +1250,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1109,7 +1259,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1181,7 +1331,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1244,10 +1394,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -1255,7 +1421,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -1290,7 +1456,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -1306,16 +1472,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1323,7 +1481,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1347,39 +1505,47 @@
         },
         {
           "href": "/blogs/why-manual-eudr-compliance-fails/",
-          "label": "See why manual EUDR compliance fails at scale here",
+          "label": "Why Manual EUDR Compliance Fails at Scale",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "https://retool.com/blog/build-vs-buy-guide-for-internal-tools/",
-          "label": "Retool build vs buy guide",
-          "target": "",
-          "rel": "",
-          "kind": "external",
-          "exists": ""
-        },
-        {
-          "href": "/blogs/regops-strategy/",
-          "label": "The strategic case for RegOps in consulting firms",
+          "href": "/work/eudr-compliance-bridge/",
+          "label": "EUDR Compliance Bridge: Automating EUDR submissions at scale",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "See the technical architecture of a RegOps Bridge",
+          "href": "/services/ai-integration-services/",
+          "label": "AI Integration Services",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/contact/",
-          "label": "Let's discuss the right approach for you.",
+          "href": "/services/ai-automation-sprint/",
+          "label": "AI Automation Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/enterprise-ai-chatbot-deployment/",
+          "label": "Enterprise AI Chatbot Deployment (Governed)",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1394,8 +1560,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1458,10 +1632,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -1469,7 +1659,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -1479,6 +1669,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -1504,7 +1699,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -1520,16 +1715,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1537,7 +1724,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1560,68 +1747,36 @@
           "exists": "yes"
         },
         {
-          "href": "https://www.flowforma.com/blog/compliance-workflow-automation",
-          "label": "FlowForma's A14 IDT case study",
-          "target": "",
-          "rel": "",
-          "kind": "external",
-          "exists": ""
-        },
-        {
-          "href": "/work/eudr-compliance-bridge/",
-          "label": "See a real-world example of this approach: The EUDR Compliance Bridge",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
-          "label": "Learn why manual compliance fails at scale",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/regops-technical/",
-          "label": "See our RegOps Bridge architecture",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/building-vs-buying-custom-automation/",
-          "label": "Read our full framework",
+          "label": "Building vs. Buying: When Custom Automation Makes Sense",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
-          "label": "Ready to build?",
+          "href": "/services/ai-automation-sprint/",
+          "label": "30-Day AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-consultancies-get-stuck/",
-          "label": "See the business case for RegOps here.",
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting (Quantified Diagnostic)",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "Let's talk about building a compliance system you can actually trust",
+          "href": "/services/ai-integration-services/",
+          "label": "AI Integration Services",
           "target": "",
           "rel": "",
-          "kind": "external",
-          "exists": ""
+          "kind": "internal",
+          "exists": "yes"
         },
         {
           "href": "https://calendly.com/hello-invaritech/30min",
@@ -1632,8 +1787,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1696,10 +1859,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -1707,7 +1886,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -1717,6 +1896,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -1742,7 +1926,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -1758,16 +1942,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1775,7 +1951,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1798,56 +1974,40 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/#the-challenge-the-manual-middle",
-          "label": "The Manual Middle",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes (hash)"
-        },
-        {
-          "href": "/blogs/regops-strategy/#the-old-way-vs-the-regops-way",
-          "label": "We break down how this fragmentation kills scalability here",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes (hash)"
-        },
-        {
-          "href": "/blogs/regops-strategy/",
-          "label": "We unpack the RegOps Bridge philosophy here",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/regops-technical/",
-          "label": "See how we wired an EUDR RegOps Bridge into the EU's SOAP interface",
+          "label": "RegOps Bridge anatomy",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
-          "label": "Read more on how RegOps protects your margins and de-risks scale",
+          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "label": "Why Manual EUDR Compliance Fails at Scale",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-consultancies-get-stuck/",
-          "label": "Learn why hiring more people doesn't fix the problem",
+          "href": "/work/eudr-compliance-bridge/",
+          "label": "EUDR Compliance Bridge Case Study",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/contact/",
-          "label": "Let's sketch your workflow",
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "30-Day AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1862,8 +2022,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1926,10 +2094,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -1937,7 +2121,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -1947,6 +2131,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -1972,7 +2161,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -1988,16 +2177,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2005,7 +2186,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2037,47 +2218,39 @@
         },
         {
           "href": "/blogs/regops-technical/",
-          "label": "the technical architecture of a Bridge",
+          "label": "Anatomy of a RegOps Bridge",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/#2-the-logic-layer-codifying-the-heroic-analyst",
-          "label": "technical deep dive on the logic layer",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes (hash)"
-        },
-        {
-          "href": "/blogs/why-consultancies-get-stuck/",
-          "label": "breaking the \"heroic ceiling\"",
+          "href": "/blogs/compliance-automation-done-right/",
+          "label": "Compliance Automation Done Right",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "See how we built a RegOps Bridge for a high-volume EUDR filing process",
+          "href": "/blogs/building-vs-buying-custom-automation/",
+          "label": "Building vs Buying: When Custom Automation Makes Sense",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-consultancies-get-stuck/",
-          "label": "Read more on the trap of manual scaling",
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/contact/",
-          "label": "Book a 20-minute diagnostic call here",
+          "href": "/services/ai-automation-sprint/",
+          "label": "30-Day AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2092,8 +2265,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2156,10 +2337,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -2167,7 +2364,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -2177,6 +2374,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -2202,7 +2404,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -2218,16 +2420,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2235,7 +2429,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2258,48 +2452,40 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
-          "label": "RegOps Strategy",
+          "href": "/work/eudr-compliance-bridge/",
+          "label": "EUDR Compliance Bridge Case Study",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-consultancies-get-stuck/",
-          "label": "the bottleneck that creates the Consultancy Trap",
+          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "label": "Why Manual EUDR Compliance Fails at Scale",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/#why-generic-ai-wont-fix-this",
-          "label": "strategy analysis",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes (hash)"
-        },
-        {
-          "href": "/blogs/why-consultancies-get-stuck/",
-          "label": "the business case for building this kind of bridge now",
+          "href": "/blogs/compliance-automation-done-right/",
+          "label": "Compliance Automation Done Right",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
-          "label": "Start with the architecture patterns in our RegOps Strategy guide",
+          "href": "/services/ai-integration-services/",
+          "label": "AI Integration Services",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/contact/",
-          "label": "Contact our engineering team for hands-on help connecting your tools",
+          "href": "/services/ai-automation-sprint/",
+          "label": "30-Day AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2314,8 +2500,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2378,10 +2572,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -2389,7 +2599,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -2399,6 +2609,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -2424,7 +2639,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -2440,16 +2655,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2457,7 +2664,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2481,7 +2688,7 @@
         },
         {
           "href": "/blogs/regops-technical/",
-          "label": "We break it down here",
+          "label": "RegOps Bridge anatomy",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2489,59 +2696,35 @@
         },
         {
           "href": "/blogs/regops-strategy/",
-          "label": "RegOps strategy overview",
+          "label": "RegOps strategy",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "EUDR RegOps Bridge",
+          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "label": "Why manual EUDR compliance fails at scale",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
-          "label": "Why a RegOps Bridge beats \"just hiring more people\"",
+          "href": "/work/eudr-compliance-bridge/",
+          "label": "EUDR Compliance Bridge case study",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
-          "label": "Understand the strategic case for RegOps here",
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
-        },
-        {
-          "href": "/blogs/regops-technical/",
-          "label": "See how we build these bridges step by step",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/consultancy-trap/",
-          "label": "Read about \"The Consultancy Trap\" and how it caps revenue",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "Let's talk about what a RegOps Bridge would mean for your firm",
-          "target": "",
-          "rel": "",
-          "kind": "external",
-          "exists": ""
         },
         {
           "href": "https://calendly.com/hello-invaritech/30min",
@@ -2552,8 +2735,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2616,10 +2807,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -2627,7 +2834,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -2637,6 +2844,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -2662,7 +2874,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -2678,16 +2890,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2695,7 +2899,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2718,36 +2922,52 @@
           "exists": "yes"
         },
         {
+          "href": "/work/eudr-compliance-bridge/",
+          "label": "EUDR Compliance Bridge: DDS Submission at Scale",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-integration-services/",
+          "label": "AI Integration Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "30-Day AI Automation Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/blogs/compliance-automation-done-right/",
-          "label": "Automation",
+          "label": "Compliance Automation Done Right: Deterministic Systems vs Black-Box AI",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "our technical guide",
+          "href": "/blogs/building-vs-buying-custom-automation/",
+          "label": "Building vs Buying: When Custom Automation Makes Sense",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
-        },
-        {
-          "href": "/contact/",
-          "label": "contact",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "call",
-          "target": "",
-          "rel": "",
-          "kind": "external",
-          "exists": ""
         },
         {
           "href": "https://calendly.com/hello-invaritech/30min",
@@ -2758,8 +2978,16 @@
           "exists": ""
         },
         {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2822,10 +3050,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -2833,7 +3077,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -2843,6 +3087,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []
@@ -2868,7 +3117,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -2884,16 +3133,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2901,7 +3142,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2917,7 +3158,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2980,10 +3221,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -2991,7 +3248,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -3026,7 +3283,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -3042,16 +3299,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3059,7 +3308,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3083,7 +3332,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3146,10 +3395,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -3157,7 +3422,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -3197,7 +3462,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -3213,16 +3478,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3230,7 +3487,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3246,7 +3503,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3309,10 +3566,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -3320,7 +3593,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -3416,7 +3689,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -3432,16 +3705,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3449,7 +3714,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3473,7 +3738,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3536,10 +3801,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -3547,7 +3828,173 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Toggle Menu",
+          "type": "",
+          "ariaLabel": "Toggle Menu"
+        }
+      ],
+      "inputs": []
+    },
+    {
+      "route": "/privacy/",
+      "file": "dist/privacy/index.html",
+      "anchors": [
+        {
+          "href": "/",
+          "label": "INVARITECH",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "01 Home",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "02 The Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/",
+          "label": "03 Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blogs/",
+          "label": "04 Intel",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "05 Contact",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "mailto:hello@invaritech.ai",
+          "label": "hello@invaritech.ai",
+          "target": "",
+          "rel": "",
+          "kind": "mailto",
+          "exists": ""
+        },
+        {
+          "href": "/",
+          "label": "Visionary Intelligence",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "Home",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/about/",
+          "label": "About",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/",
+          "label": "Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/work/",
+          "label": "Work",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blogs/",
+          "label": "Blogs",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/careers/",
+          "label": "Careers",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "Contact",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "https://x.com/invaritechai",
+          "label": "X",
+          "target": "_blank",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        },
+        {
+          "href": "https://linkedin.com/company/invaritechai",
+          "label": "LinkedIn",
+          "target": "_blank",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -3582,7 +4029,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -3598,16 +4045,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3615,7 +4054,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3655,7 +4094,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3718,10 +4157,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -3729,7 +4184,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -3764,7 +4219,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -3780,16 +4235,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3797,7 +4244,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3829,7 +4276,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3892,10 +4339,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -3903,7 +4366,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -3938,7 +4401,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -3954,16 +4417,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3971,7 +4426,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3992,14 +4447,6 @@
           "rel": "noopener noreferrer",
           "kind": "external",
           "exists": ""
-        },
-        {
-          "href": "/results/",
-          "label": "See Work / Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
         },
         {
           "href": "/services/ai-automation-sprint/",
@@ -4131,7 +4578,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4194,10 +4641,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -4205,7 +4668,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -4265,7 +4728,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -4281,16 +4744,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4298,7 +4753,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4346,7 +4801,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4409,10 +4864,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -4420,7 +4891,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -4480,7 +4951,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -4496,16 +4967,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4513,7 +4976,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4544,14 +5007,6 @@
           "exists": ""
         },
         {
-          "href": "/results/",
-          "label": "See Work / Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "https://calendly.com/hello-invaritech/30min",
           "label": "Book a Meeting",
           "target": "_blank",
@@ -4561,7 +5016,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4624,10 +5079,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -4635,7 +5106,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -4695,7 +5166,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -4711,16 +5182,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4728,7 +5191,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4768,7 +5231,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4831,10 +5294,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -4842,7 +5321,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -4897,7 +5376,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -4913,16 +5392,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4930,7 +5401,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4962,7 +5433,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5025,10 +5496,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -5036,7 +5523,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -5091,7 +5578,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -5107,16 +5594,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5124,7 +5603,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5196,7 +5675,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5259,10 +5738,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -5270,7 +5765,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -5305,7 +5800,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -5321,16 +5816,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5338,7 +5825,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5378,7 +5865,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5441,10 +5928,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -5452,7 +5955,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -5512,7 +6015,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -5528,16 +6031,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5545,7 +6040,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5585,7 +6080,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5648,10 +6143,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -5659,7 +6170,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -5724,7 +6235,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -5740,16 +6251,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5757,7 +6260,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5829,7 +6332,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5892,10 +6395,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -5903,7 +6422,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -5938,7 +6457,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -5954,16 +6473,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5971,7 +6482,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5987,7 +6498,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6050,10 +6561,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -6061,7 +6588,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -6096,7 +6623,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -6112,16 +6639,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6129,7 +6648,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6161,7 +6680,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6224,10 +6743,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -6235,7 +6770,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -6270,7 +6805,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -6286,16 +6821,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6303,7 +6830,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6319,7 +6846,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6382,10 +6909,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -6393,7 +6936,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -6433,7 +6976,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -6449,16 +6992,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6466,7 +7001,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6482,11 +7017,19 @@
         },
         {
           "href": "/work/eudr-compliance-bridge/",
-          "label": "View Case Study",
+          "label": "View Case",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
+        },
+        {
+          "href": "https://reclaim-emergent-code.vercel.app",
+          "label": "Review Phase",
+          "target": "",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
         },
         {
           "href": "https://calendly.com/hello-invaritech/30min",
@@ -6498,7 +7041,7 @@
         },
         {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6561,10 +7104,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -6572,7 +7131,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -6584,7 +7143,12 @@
           "ariaLabel": "Toggle Menu"
         },
         {
-          "label": "View Case Study",
+          "label": "View Case",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "Review Phase",
           "type": "",
           "ariaLabel": ""
         },
@@ -6617,7 +7181,7 @@
           "exists": "yes"
         },
         {
-          "href": "/ai-automation-sprint/",
+          "href": "/services/ai-automation-sprint/",
           "label": "02 The Sprint",
           "target": "",
           "rel": "",
@@ -6633,16 +7197,8 @@
           "exists": "yes"
         },
         {
-          "href": "/results/",
-          "label": "04 Results",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/blogs/",
-          "label": "05 Intel",
+          "label": "04 Intel",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6650,7 +7206,7 @@
         },
         {
           "href": "/contact/",
-          "label": "06 Contact",
+          "label": "05 Contact",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6681,8 +7237,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "Read the technical deep dive.",
+          "href": "/services/ai-integration-services/",
+          "label": "AI Integration Services",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6690,7 +7246,7 @@
         },
         {
           "href": "/blogs/compliance-automation-done-right/",
-          "label": "deterministic compliance automation",
+          "label": "deterministic compliance systems",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6698,7 +7254,7 @@
         },
         {
           "href": "/blogs/building-vs-buying-custom-automation/",
-          "label": "when custom automation makes sense",
+          "label": "building vs buying custom automation",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6706,15 +7262,23 @@
         },
         {
           "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "Get in Touch",
+          "label": "Book a Meeting",
           "target": "_blank",
           "rel": "noopener noreferrer",
           "kind": "external",
           "exists": ""
         },
         {
+          "href": "/services/ai-automation-sprint/",
+          "label": "AI Automation Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/",
-          "label": "go home",
+          "label": "Visionary Intelligence",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6777,10 +7341,26 @@
           "exists": "yes"
         },
         {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "https://x.com/invaritechai",
-          "label": "X/Twitter",
+          "label": "X",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         },
@@ -6788,7 +7368,7 @@
           "href": "https://linkedin.com/company/invaritechai",
           "label": "LinkedIn",
           "target": "_blank",
-          "rel": "noopener noreferrer",
+          "rel": "",
           "kind": "external",
           "exists": ""
         }
@@ -6798,6 +7378,11 @@
           "label": "Toggle Menu",
           "type": "",
           "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Book a Meeting",
+          "type": "",
+          "ariaLabel": ""
         }
       ],
       "inputs": []

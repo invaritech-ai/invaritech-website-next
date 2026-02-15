@@ -4,11 +4,11 @@
     "components",
     "lib"
   ],
-  "totalLinks": 91,
+  "totalLinks": 85,
   "totalsByType": {
     "external": 53,
     "hash": 1,
-    "internal": 33,
+    "internal": 27,
     "mailto": 3,
     "tel": 1
   },
@@ -43,7 +43,7 @@
       ],
       "occurrences": 8,
       "sources": [
-        "components/footer.tsx",
+        "components/artistic-404.tsx",
         "components/logo.tsx",
         "components/logos/Gemini.tsx",
         "components/logos/GooglePaLM.tsx",
@@ -82,18 +82,12 @@
       "kinds": [
         "href",
         "http",
-        "md",
         "resolved"
       ],
-      "occurrences": 8,
+      "occurrences": 3,
       "sources": [
-        "app/about/page.tsx",
         "app/blogs/[slug]/page.tsx",
-        "app/work/eudr-compliance-bridge/page.tsx",
         "app/work/page.tsx",
-        "lib/blog-posts/compliance-automation-done-right.ts",
-        "lib/blog-posts/why-consultancies-get-stuck.ts",
-        "lib/blog-posts/why-manual-eudr-compliance-fails.ts",
         "lib/marketing.ts"
       ]
     },
@@ -114,10 +108,9 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 2,
+      "occurrences": 1,
       "sources": [
-        "app/structured-data.ts",
-        "lib/seo.ts"
+        "app/structured-data.ts"
       ]
     },
     {
@@ -127,11 +120,10 @@
         "href",
         "http"
       ],
-      "occurrences": 3,
+      "occurrences": 2,
       "sources": [
         "app/structured-data.ts",
-        "components/footer.tsx",
-        "lib/seo.ts"
+        "components/footer.tsx"
       ]
     },
     {
@@ -158,15 +150,15 @@
       ]
     },
     {
-      "url": "https://retool.com/blog/build-vs-buy-guide-for-internal-tools/",
+      "url": "https://reclaim-emergent-code.vercel.app",
       "type": "external",
       "kinds": [
-        "http",
-        "md"
+        "http"
       ],
-      "occurrences": 1,
+      "occurrences": 2,
       "sources": [
-        "lib/blog-posts/building-vs-buying-custom-automation.ts"
+        "app/work/page.tsx",
+        "components/selected-work.tsx"
       ]
     },
     {
@@ -175,11 +167,10 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 3,
+      "occurrences": 2,
       "sources": [
         "app/blogs/[slug]/page.tsx",
-        "app/structured-data.ts",
-        "lib/faq-schema.ts"
+        "app/structured-data.ts"
       ]
     },
     {
@@ -227,18 +218,6 @@
       ]
     },
     {
-      "url": "https://www.flowforma.com/blog/compliance-workflow-automation",
-      "type": "external",
-      "kinds": [
-        "http",
-        "md"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "lib/blog-posts/compliance-automation-done-right.ts"
-      ]
-    },
-    {
       "url": "https://www.google.com",
       "type": "external",
       "kinds": [
@@ -279,15 +258,14 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 7,
+      "occurrences": 6,
       "sources": [
         "app/blogs/[slug]/page.tsx",
         "app/layout.tsx",
         "app/robots.ts",
         "app/sitemap.ts",
         "app/structured-data.ts",
-        "components/chatbot.tsx",
-        "lib/seo.ts"
+        "components/chatbot.tsx"
       ]
     },
     {
@@ -351,9 +329,8 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 2,
+      "occurrences": 1,
       "sources": [
-        "app/ai-automation-sprint/page.tsx",
         "app/ops-efficiency-sprint/page.tsx"
       ]
     },
@@ -435,6 +412,17 @@
       ]
     },
     {
+      "url": "https://www.invaritech.ai/privacy/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/privacy/page.tsx"
+      ]
+    },
+    {
       "url": "https://www.invaritech.ai/results/",
       "type": "external",
       "kinds": [
@@ -484,9 +472,11 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 1,
+      "occurrences": 3,
       "sources": [
-        "app/services/ai-automation-sprint/page.tsx"
+        "app/ai-automation-sprint/page.tsx",
+        "app/services/ai-automation-sprint/page.tsx",
+        "app/structured-data.ts"
       ]
     },
     {
@@ -655,7 +645,7 @@
       ],
       "occurrences": 3,
       "sources": [
-        "app/not-found.tsx",
+        "components/artistic-404.tsx",
         "components/footer.tsx",
         "components/header.tsx"
       ]
@@ -669,20 +659,6 @@
       "occurrences": 1,
       "sources": [
         "app/assessment/page.tsx"
-      ]
-    },
-    {
-      "url": "/ai-automation-sprint/",
-      "type": "internal",
-      "kinds": [
-        "href"
-      ],
-      "occurrences": 4,
-      "sources": [
-        "components/Hero.tsx",
-        "components/expected-results.tsx",
-        "components/how-it-works.tsx",
-        "components/risk-control.tsx"
       ]
     },
     {
@@ -728,11 +704,13 @@
         "href",
         "md"
       ],
-      "occurrences": 3,
+      "occurrences": 5,
       "sources": [
         "app/services/compliance-bridge/page.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
-        "lib/blog-posts/compliance-automation-done-right.ts"
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
     {
@@ -742,85 +720,17 @@
         "href",
         "md"
       ],
-      "occurrences": 3,
+      "occurrences": 5,
       "sources": [
         "app/services/compliance-bridge/page.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/regops-technical.ts",
         "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
     {
       "url": "/blogs/consultancy-trap/",
-      "type": "internal",
-      "kinds": [
-        "md"
-      ],
-      "occurrences": 2,
-      "sources": [
-        "lib/blog-posts/regops-strategy.ts",
-        "lib/blog-posts/why-consultancies-get-stuck.ts"
-      ]
-    },
-    {
-      "url": "/blogs/regops-strategy/",
-      "type": "internal",
-      "kinds": [
-        "href",
-        "md"
-      ],
-      "occurrences": 6,
-      "sources": [
-        "app/services/compliance-bridge/page.tsx",
-        "lib/blog-posts/building-vs-buying-custom-automation.ts",
-        "lib/blog-posts/compliance-automation-done-right.ts",
-        "lib/blog-posts/consultancy-trap.ts",
-        "lib/blog-posts/regops-technical.ts",
-        "lib/blog-posts/why-consultancies-get-stuck.ts"
-      ]
-    },
-    {
-      "url": "/blogs/regops-strategy/#the-old-way-vs-the-regops-way",
-      "type": "internal",
-      "kinds": [
-        "md"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "lib/blog-posts/consultancy-trap.ts"
-      ]
-    },
-    {
-      "url": "/blogs/regops-strategy/#why-generic-ai-wont-fix-this",
-      "type": "internal",
-      "kinds": [
-        "md"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "lib/blog-posts/regops-technical.ts"
-      ]
-    },
-    {
-      "url": "/blogs/regops-technical/",
-      "type": "internal",
-      "kinds": [
-        "href",
-        "md"
-      ],
-      "occurrences": 8,
-      "sources": [
-        "app/services/compliance-bridge/page.tsx",
-        "app/work/eudr-compliance-bridge/page.tsx",
-        "lib/blog-posts/building-vs-buying-custom-automation.ts",
-        "lib/blog-posts/compliance-automation-done-right.ts",
-        "lib/blog-posts/consultancy-trap.ts",
-        "lib/blog-posts/regops-strategy.ts",
-        "lib/blog-posts/why-consultancies-get-stuck.ts",
-        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
-      ]
-    },
-    {
-      "url": "/blogs/regops-technical/#2-the-logic-layer-codifying-the-heroic-analyst",
       "type": "internal",
       "kinds": [
         "md"
@@ -831,28 +741,31 @@
       ]
     },
     {
-      "url": "/blogs/regops-technical/#the-challenge-the-manual-middle",
+      "url": "/blogs/regops-strategy/",
       "type": "internal",
       "kinds": [
+        "href",
         "md"
       ],
-      "occurrences": 1,
+      "occurrences": 2,
       "sources": [
-        "lib/blog-posts/consultancy-trap.ts"
+        "app/services/compliance-bridge/page.tsx",
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
       ]
     },
     {
-      "url": "/blogs/why-consultancies-get-stuck/",
+      "url": "/blogs/regops-technical/",
       "type": "internal",
       "kinds": [
+        "href",
         "md"
       ],
       "occurrences": 4,
       "sources": [
-        "lib/blog-posts/compliance-automation-done-right.ts",
+        "app/services/compliance-bridge/page.tsx",
         "lib/blog-posts/consultancy-trap.ts",
         "lib/blog-posts/regops-strategy.ts",
-        "lib/blog-posts/regops-technical.ts"
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
       ]
     },
     {
@@ -862,12 +775,14 @@
         "href",
         "md"
       ],
-      "occurrences": 4,
+      "occurrences": 6,
       "sources": [
         "app/services/compliance-bridge/page.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
         "lib/blog-posts/building-vs-buying-custom-automation.ts",
-        "lib/blog-posts/compliance-automation-done-right.ts"
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
       ]
     },
     {
@@ -896,19 +811,14 @@
       "url": "/contact/",
       "type": "internal",
       "kinds": [
-        "href",
-        "md"
+        "href"
       ],
-      "occurrences": 8,
+      "occurrences": 4,
       "sources": [
         "app/assessment/page.tsx",
         "app/security/page.tsx",
-        "components/qualification-guardrails.tsx",
-        "lib/blog-posts/building-vs-buying-custom-automation.ts",
-        "lib/blog-posts/consultancy-trap.ts",
-        "lib/blog-posts/regops-strategy.ts",
-        "lib/blog-posts/regops-technical.ts",
-        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+        "components/home-fit-faq-cta.tsx",
+        "components/qualification-guardrails.tsx"
       ]
     },
     {
@@ -940,8 +850,9 @@
       "kinds": [
         "href"
       ],
-      "occurrences": 6,
+      "occurrences": 7,
       "sources": [
+        "app/blogs/[slug]/page.tsx",
         "app/services/ai-automation-consulting/consulting-client.tsx",
         "app/services/ai-automation-sprint/sprint-client.tsx",
         "app/services/ai-integration-services/integration-client.tsx",
@@ -954,20 +865,28 @@
       "url": "/services/ai-automation-consulting/",
       "type": "internal",
       "kinds": [
-        "href"
+        "href",
+        "md"
       ],
-      "occurrences": 1,
+      "occurrences": 7,
       "sources": [
-        "app/components/services/core-thesis-section.tsx"
+        "app/components/services/core-thesis-section.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
     {
       "url": "/services/ai-automation-sprint/",
       "type": "internal",
       "kinds": [
-        "href"
+        "href",
+        "md"
       ],
-      "occurrences": 8,
+      "occurrences": 22,
       "sources": [
         "app/assessment/page.tsx",
         "app/components/services/core-thesis-section.tsx",
@@ -976,18 +895,38 @@
         "app/services/ai-automation-consulting/consulting-client.tsx",
         "app/services/services-client.tsx",
         "app/solutions/page.tsx",
-        "app/use-cases/page.tsx"
+        "app/use-cases/page.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "components/Hero.tsx",
+        "components/artistic-home-hero.tsx",
+        "components/expected-results.tsx",
+        "components/home-hero.tsx",
+        "components/how-it-works.tsx",
+        "components/risk-control.tsx",
+        "components/what-we-do-section.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
     {
       "url": "/services/ai-integration-services/",
       "type": "internal",
       "kinds": [
-        "href"
+        "href",
+        "md"
       ],
-      "occurrences": 1,
+      "occurrences": 6,
       "sources": [
-        "app/components/services/core-thesis-section.tsx"
+        "app/components/services/core-thesis-section.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
     {
@@ -1005,11 +944,13 @@
       "url": "/services/enterprise-ai-chatbot-deployment/",
       "type": "internal",
       "kinds": [
-        "href"
+        "href",
+        "md"
       ],
-      "occurrences": 1,
+      "occurrences": 2,
       "sources": [
-        "app/components/services/core-thesis-section.tsx"
+        "app/components/services/core-thesis-section.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts"
       ]
     },
     {
@@ -1051,13 +992,15 @@
       "kinds": [
         "href"
       ],
-      "occurrences": 5,
+      "occurrences": 7,
       "sources": [
         "app/services/enterprise-ai-chatbot-deployment/chatbot-client.tsx",
         "app/services/generative-ai-backend-development/backend-client.tsx",
         "app/services/services-client.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
-        "components/Hero.tsx"
+        "components/Hero.tsx",
+        "components/home-hero.tsx",
+        "components/selected-work.tsx"
       ]
     },
     {
@@ -1067,11 +1010,15 @@
         "href",
         "md"
       ],
-      "occurrences": 3,
+      "occurrences": 7,
       "sources": [
         "app/services/compliance-bridge/page.tsx",
         "app/services/services-client.tsx",
-        "lib/blog-posts/compliance-automation-done-right.ts"
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
     {
@@ -1091,9 +1038,10 @@
       "kinds": [
         "href"
       ],
-      "occurrences": 4,
+      "occurrences": 5,
       "sources": [
         "app/careers/full-stack-developer/page.tsx",
+        "app/privacy/page.tsx",
         "app/terms/page.tsx",
         "components/contact.tsx",
         "components/header.tsx"
