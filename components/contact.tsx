@@ -163,7 +163,12 @@ export default function ContactSection() {
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
         try {
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+            if (!apiUrl || apiUrl.trim() === "") {
+                throw new Error(
+                    "Contact API is not configured. Please set NEXT_PUBLIC_API_URL in your environment."
+                );
+            }
 
             // Execute reCAPTCHA
             let recaptchaToken = null;

@@ -41,6 +41,7 @@ export function ArtisticBackground() {
 
         let mouseX = 0;
         let mouseY = 0;
+        let rafId: number;
 
         const handleMouseMove = (e: MouseEvent) => {
             mouseX = e.clientX;
@@ -94,14 +95,15 @@ export function ArtisticBackground() {
                 ctx.fill();
             });
 
-            requestAnimationFrame(render);
+            rafId = requestAnimationFrame(render);
         };
 
-        const animationId = requestAnimationFrame(render);
+        rafId = requestAnimationFrame(render);
 
         return () => {
             window.removeEventListener("resize", resize);
-            cancelAnimationFrame(animationId);
+            window.removeEventListener("mousemove", handleMouseMove);
+            cancelAnimationFrame(rafId);
         };
     }, []);
 

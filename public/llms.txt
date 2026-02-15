@@ -81,6 +81,11 @@ When estimating impact for unlaunched projects, we use the following formula:
 `Cost avoidance = Hours saved × Standard FTE fully loaded hourly rate`
 
 We typically assume:
-- 15% rework rate for manual drafting tasks
+- 15% rework rate (automation friction) for manual drafting tasks
 - 90% time reduction for search/retrieval tasks
 - 60% reduction for complex drafting tasks
+
+Implementation details (lib/assessment-calculator.ts):
+- Workflow-specific savings: knowledge=0.90, drafting=0.70, intake/finance/other=0.60
+- Automation friction: 0.15 for drafting workflows, 0.05 for knowledge retrieval
+- standardFteHourlyRate: configurable (default $65)

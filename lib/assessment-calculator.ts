@@ -1,3 +1,8 @@
+/** Config for savings calculations. Default standardFteHourlyRate: $65 */
+export interface AssessmentCalculatorConfig {
+    standardFteHourlyRate?: number;
+}
+
 export interface AssessmentInputs {
     // 1. Context & Viability
     companySize: string;
@@ -54,7 +59,8 @@ export interface AssessmentResult {
 }
 
 export function calculateAssessmentScore(
-    inputs: AssessmentInputs
+    inputs: AssessmentInputs,
+    config: AssessmentCalculatorConfig = {}
 ): AssessmentResult {
     const reasoning: string[] = [];
     const nextSteps: string[] = [];
@@ -306,34 +312,14 @@ export function calculateAssessmentScore(
     }
 
     // --- 5. Savings Calculations ---
-    // const volumeMultiplier = getVolumeMultiplier(inputs.monthlyVolumeBand);
-    // const ahtMultiplier = getAHTMultiplier(inputs.currentAHTBand);
-    // const teamSizeMultiplier = getTeamSizeMultiplier(inputs.companySize);
+    // Hours saved = (Volume × minutesSavedPerCase ÷ 60) × (1 - automationFriction)
+    // Workflow-specific: knowledge=0.90, drafting=0.70, intake/finance/other=0.60
+    // Automation friction: 0.15 for drafting, 0.05 for knowledge retrieval
+    const { min: minHours, max: maxHours } = calculateHoursSaved(inputs);
+    const projectedHoursSaved = { min: minHours, max: maxHours };
 
-    // Base math: (Vol cases/mo * AHT mins / 60) * efficiency gain (est 60-90%)
-    // But we use multipliers for abstract scoring. Let's try to be a bit more concrete if we can,
-    // or stick to the abstract relative scale if exact numbers are hard.
-    // Let's refine the "Base Hours" to be more realistic based on Volume * AHT.
-
-    const volNum = getAverageVolume(inputs.monthlyVolumeBand);
-    const ahtNum = getAverageAHT(inputs.currentAHTBand);
-    // Total hours spent currently = Volume * AHT / 60
-    const totalCurrentHours = (volNum * ahtNum) / 60;
-
-    // Est savings: 40% to 80% usually
-    const minSavingPct = 0.4;
-    const maxSavingPct = 0.8;
-
-    const projectedHoursSaved = {
-        min: Math.round(totalCurrentHours * minSavingPct),
-        max: Math.round(totalCurrentHours * maxSavingPct),
-    };
-
-    const hourlyRate = 65; // Conservative blended internal cost
-    const projectedCostAvoided = {
-        min: Math.round(projectedHoursSaved.min * hourlyRate),
-        max: Math.round(projectedHoursSaved.max * hourlyRate),
-    };
+    const hourlyRate = config.standardFteHourlyRate ?? 65;
+    const projectedCostAvoided = calculateCostAvoidance(projectedHoursSaved, hourlyRate);
 
     return {
         viabilityScore,
@@ -352,6 +338,58 @@ export function calculateAssessmentScore(
 }
 
 // Helpers
+
+/**
+ * Hours saved = (Volume × minutesSavedPerCase ÷ 60) × (1 - automationFriction)
+ * Workflow-specific: knowledge=0.90, drafting=0.70, intake/finance/other=0.60
+ * Automation friction: 0.15 for drafting (rework), 0.05 for knowledge retrieval
+ */
+export function calculateHoursSaved(inputs: {
+    monthlyVolumeBand: string;
+    currentAHTBand: string;
+    primaryWorkflowGoal: string;
+}): { min: number; max: number } {
+    const volNum = getAverageVolume(inputs.monthlyVolumeBand);
+    const ahtNum = getAverageAHT(inputs.currentAHTBand);
+    const { savings, automationFriction } = getWorkflowSavingsParams(inputs.primaryWorkflowGoal);
+
+    // minutesSavedPerCase = AHT × savings fraction
+    const minutesSavedPerCase = ahtNum * savings;
+    const frictionFactor = 1 - automationFriction;
+
+    const hoursSaved = (volNum * minutesSavedPerCase) / 60 * frictionFactor;
+
+    // Min/max: apply ±15% range for modeled estimate uncertainty
+    const min = Math.round(hoursSaved * 0.85);
+    const max = Math.round(hoursSaved * 1.15);
+    return { min, max };
+}
+
+export function calculateCostAvoidance(
+    hoursSaved: { min: number; max: number },
+    standardFteHourlyRate: number
+): { min: number; max: number } {
+    return {
+        min: Math.round(hoursSaved.min * standardFteHourlyRate),
+        max: Math.round(hoursSaved.max * standardFteHourlyRate),
+    };
+}
+
+function getWorkflowSavingsParams(primaryWorkflowGoal: string): {
+    savings: number;
+    automationFriction: number;
+} {
+    switch (primaryWorkflowGoal) {
+        case "knowledge":
+            return { savings: 0.9, automationFriction: 0.05 };
+        case "drafting":
+            return { savings: 0.7, automationFriction: 0.15 };
+        case "intake":
+        case "finance":
+        default:
+            return { savings: 0.6, automationFriction: 0.15 };
+    }
+}
 
 function getAverageVolume(band: string): number {
     switch (band) {

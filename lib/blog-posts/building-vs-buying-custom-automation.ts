@@ -150,7 +150,7 @@ No demos. No slides. Just math, architecture, and execution.
         role: "Automation Specialists",
     },
     publishedAt: "2025-10-20T10:00:00Z",
-    dateModified: "2025-02-15T10:00:00Z",
+    dateModified: "2026-02-15T10:00:00Z",
     tags: ["Strategy", "Automation", "Decision Making"],
     coverImage: "/blog/buy-vs-build.webp",
 };

@@ -112,7 +112,7 @@ RegOps is not about replacing consultants. It is about ensuring your consultancy
         role: "Director and Founder",
     },
     publishedAt: "2025-10-10T10:00:00Z",
-    dateModified: "2025-02-15T10:00:00Z",
+    dateModified: "2026-02-15T10:00:00Z",
     tags: ["RegOps", "ConsultancyGrowth", "Automation", "Scalability", "ESG"],
     coverImage: "/blog/regops-strategy.webp",
 };

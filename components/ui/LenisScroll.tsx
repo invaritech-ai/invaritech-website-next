@@ -25,25 +25,18 @@ export function LenisScroll({ children }: { children: React.ReactNode }) {
 
         lenisRef.current = lenis;
 
-        function raf(time: number) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
-
-        requestAnimationFrame(raf);
-
-        // Integrate with GSAP ScrollTrigger
-        lenis.on('scroll', ScrollTrigger.update);
-        gsap.ticker.add((time) => {
+        // Stable callback reference so cleanup removes the same handler
+        const onTicker = (time: number) => {
             lenis.raf(time * 1000);
-        });
+        };
+
+        lenis.on("scroll", ScrollTrigger.update);
+        gsap.ticker.add(onTicker);
         gsap.ticker.lagSmoothing(0);
 
         return () => {
             lenis.destroy();
-            gsap.ticker.remove((time) => {
-                 lenis.raf(time * 1000);
-            });
+            gsap.ticker.remove(onTicker);
         };
     }, []);
 

@@ -41,6 +41,11 @@ export default function HomeCoreThesis() {
         restDelta: 0.001,
     });
 
+    const topSpring = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+    });
+
     return (
         <section
             ref={containerRef}
@@ -85,8 +90,8 @@ export default function HomeCoreThesis() {
                     />
                     
                     {/* Beam Head */}
-                    <motion.div 
-                        style={{ top: useSpring(scrollYProgress, { stiffness: 100, damping: 30 }) }} // Approximate tracking
+                    <motion.div
+                        style={{ top: topSpring }}
                         className="absolute left-[15px] md:left-1/2 md:-translate-x-1/2 w-4 h-12 bg-primary blur-lg opacity-50 -translate-y-full"
                     />
 

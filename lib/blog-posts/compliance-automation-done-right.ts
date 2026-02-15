@@ -105,7 +105,7 @@ Deterministic logic, transparent audit trails, and controlled failure handling a
         role: "CEO",
     },
     publishedAt: "2025-10-30T10:00:00Z",
-    dateModified: "2025-02-15T10:00:00Z",
+    dateModified: "2026-02-15T10:00:00Z",
     tags: ["RegOps", "Compliance", "Automation", "Auditing", "Risk"],
     coverImage: "/blog/compliance-done-right.webp",
 };

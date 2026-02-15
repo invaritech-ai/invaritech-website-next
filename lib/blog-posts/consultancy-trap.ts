@@ -153,7 +153,7 @@ This is not about replacing consultants. It is about protecting your ability to 
         role: "Director and Founder",
     },
     publishedAt: "2025-11-20T10:00:00Z",
-    dateModified: "2025-02-15T10:00:00Z",
+    dateModified: "2026-02-15T10:00:00Z",
     tags: ["ConsultancyGrowth", "RegOps", "Scalability", "ESG", "Automation"],
     coverImage: "/blog/consultancy-trap.webp",
 };

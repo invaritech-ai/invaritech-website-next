@@ -22,7 +22,7 @@ interface Particle {
 export default function Artistic404() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
+  const mouseRef = useRef({ x: 0, y: 0 });
   const requestRef = useRef<number>(0);
 
   // Initialize dimensions on mount and resize
@@ -33,8 +33,7 @@ export default function Artistic404() {
           width: window.innerWidth,
           height: window.innerHeight,
         });
-        // Center mouse initially
-        setMouse({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+        mouseRef.current = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
       }
     };
 
@@ -43,15 +42,15 @@ export default function Artistic404() {
     return () => window.removeEventListener("resize", updateDimensions);
   }, []);
 
-  // Mouse tracking
+  // Mouse tracking - update ref only, no re-renders
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMouse({ x: e.clientX, y: e.clientY });
+      mouseRef.current = { x: e.clientX, y: e.clientY };
     };
 
     const handleTouchMove = (e: TouchEvent) => {
       if (e.touches.length > 0) {
-        setMouse({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        mouseRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
       }
     };
 
@@ -114,9 +113,10 @@ export default function Artistic404() {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Mouse influence on camera/vanishing point (parallax)
-      // We shift the "center" based on mouse to look around
-      const targetCX = mouse.x;
-      const targetCY = mouse.y;
+      // We shift the "center" based on mouse to look around (read from ref to avoid re-renders)
+      const { x: mx, y: my } = mouseRef.current;
+      const targetCX = mx;
+      const targetCY = my;
       
       // Smooth camera movement could go here, but direct is more responsive
       const cx = targetCX;
@@ -174,7 +174,7 @@ export default function Artistic404() {
     animate();
 
     return () => cancelAnimationFrame(requestRef.current);
-  }, [dimensions, mouse]);
+  }, [dimensions]);
 
   return (
     <div className="relative h-screen w-full bg-[#050505] overflow-hidden text-white font-sans selection:bg-primary/30">
