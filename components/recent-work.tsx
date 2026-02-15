@@ -78,11 +78,11 @@ export default function RecentWork() {
                         </div>
 
                         <div className="text-center">
-                            <Button asChild variant="outline" size="lg">
-                                <Link href="/results/#eudr">
-                                    Read the mini-case
-                                </Link>
-                            </Button>
+{/* <Button asChild variant="outline" size="lg">
+    <Link href="/results/#eudr">
+        Read the mini-case
+    </Link>
+</Button> */}
                         </div>
                     </CardContent>
                 </Card>

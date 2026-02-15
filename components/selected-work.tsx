@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const proofSignals = [
@@ -67,9 +68,12 @@ export default function SelectedWorkSection() {
                         <Link
                             key={signal.title}
                             href={signal.href}
-                            className={`group relative overflow-hidden bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 block ${
-                                index === 0 ? "md:col-span-4 aspect-[16/9]" : "md:col-span-2 aspect-square md:aspect-auto"
-                            } ${index === 2 ? "md:col-span-3 aspect-[16/8]" : ""} ${index === 1 ? "md:col-span-2" : ""}`}
+                            className={cn(
+                                "group relative overflow-hidden bg-white/5 border border-white/5 hover:border-white/20 transition-all duration-500 block w-full",
+                                index === 0 ? "md:col-span-4 aspect-[16/10] md:aspect-[16/9]" : "md:col-span-2 aspect-square md:aspect-auto",
+                                index === 2 && "md:col-span-3 md:aspect-[16/8]",
+                                index === 1 && "md:col-span-2"
+                            )}
                         >
                             <Image
                                 src={signal.image}

@@ -18,6 +18,10 @@ export const metadata: Metadata = {
         "SLA improvement",
         "error reduction",
     ],
+    robots: {
+        index: false,
+        follow: false,
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/results/",
     },

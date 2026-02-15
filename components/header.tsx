@@ -13,9 +13,9 @@ const menuItems = [
     { name: "Home", href: "/", id: "01" },
     { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
     { name: "Services", href: "/services/", id: "03" },
-    { name: "Results", href: "/results/", id: "04" },
-    { name: "Intel", href: "/blogs/", id: "05" }, // Renamed for "Bold" feel
-    { name: "Contact", href: "/contact/", id: "06" },
+    // { name: "Results", href: "/results/", id: "04" },
+    { name: "Intel", href: "/blogs/", id: "04" }, // Renamed for "Bold" feel
+    { name: "Contact", href: "/contact/", id: "05" },
 ];
 
 export const HeroHeader = () => {

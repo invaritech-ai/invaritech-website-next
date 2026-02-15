@@ -247,11 +247,11 @@ export default function ServicesPage() {
                                 {BOOK_MEETING_CTA}
                             </MagneticButton>
                         </a>
-                        <Link href="/results/">
-                            <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors">
-                                See Work / Results
-                            </MagneticButton>
-                        </Link>
+{/* <Link href="/results/">
+    <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors">
+        See Work / Results
+    </MagneticButton>
+</Link> */}
                     </div>
                 </div>
             </section>

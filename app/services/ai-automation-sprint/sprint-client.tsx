@@ -160,11 +160,11 @@ export default function SprintClient() {
                                         See If You Qualify
                                     </MagneticButton>
                                 </a>
-                                <Link href="/results/">
-                                    <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors">
-                                        See Work / Results
-                                    </MagneticButton>
-                                </Link>
+{/* <Link href="/results/">
+    <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors">
+        See Work / Results
+    </MagneticButton>
+</Link> */}
                             </div>
 	                            <p className="mt-6 text-sm text-muted-foreground/60 font-mono">
 	                                Limited capacity. Best fit if we can start within 2 weeks.
