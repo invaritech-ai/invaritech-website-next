@@ -134,6 +134,23 @@ export function calculateAssessmentScore(
             break;
     }
 
+    // Company Size (Max 5) - larger orgs have more runway for pilots
+    switch (inputs.companySize) {
+        case "2000+":
+            viabilityRaw += 5;
+            break;
+        case "1000-2000":
+        case "500-1000":
+            viabilityRaw += 3;
+            break;
+        case "200-500":
+        case "50-200":
+            viabilityRaw += 0;
+            break;
+        default:
+            break;
+    }
+
     const viabilityScore = Math.min(viabilityRaw, 100);
 
     // --- 2. Calculate Readiness Score (Feasibility) ---
@@ -207,7 +224,7 @@ export function calculateAssessmentScore(
     const readinessScore = Math.min(readinessRaw, 100);
 
     // --- 3. Calculate Risk Score (Complexity/Safety) ---
-    // Factors: Error Tolerance, Data Sensitivity (implied by sector usually, but simplified here)
+    // Factors: Error Tolerance, Data Structure, Workflow Goal (finance/legal = higher risk)
     let riskRaw = 50; // Base risk
 
     // Error Tolerance
@@ -223,6 +240,26 @@ export function calculateAssessmentScore(
             riskRaw += 0; // Low risk
             reasoning.push("Low error impact allows for more aggressive autonomous patterns.");
             break;
+    }
+
+    // Data Structure - scattered/unstructured adds risk
+    switch (inputs.dataStructure) {
+        case "scattered":
+            riskRaw += 15;
+            break;
+        case "unstructured":
+            riskRaw += 10;
+            break;
+        case "semi":
+            riskRaw += 5;
+            break;
+        default:
+            break;
+    }
+
+    // Workflow Goal - finance/legal implies higher stakes
+    if (inputs.primaryWorkflowGoal === "finance" || inputs.functionFocus === "legal") {
+        riskRaw += 10;
     }
 
     const riskScore = Math.min(riskRaw, 100);

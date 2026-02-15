@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -19,6 +19,7 @@ import {
     BarChart3,
     Zap,
     Loader2,
+    Share2,
 } from "lucide-react";
 import Link from "next/link";
 import { calculateAssessmentScore, AssessmentInputs, AssessmentResult } from "@/lib/assessment-calculator";
@@ -46,7 +47,7 @@ const functionFocusOptions = [
 
 const workflowGoalOptions = [
     { value: "knowledge", label: "Knowledge Retrieval (Policy/Product Info)" },
-    { value: "drafting", label: "Drafting Assitance (Reports/Emails)" },
+    { value: "drafting", label: "Drafting Assistance (Reports/Emails)" },
     { value: "intake", label: "Intake Processing (Forms/Applications)" },
     { value: "finance", label: "Data Reconciliation / Extraction" },
 ];
@@ -134,10 +135,12 @@ export default function AssessmentPage() {
         name: "",
         email: "",
         company: "",
+        phone: "",
     });
 
     const [result, setResult] = useState<AssessmentResult | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [leadSubmitted, setLeadSubmitted] = useState(false);
 
     const handleInputChange = (field: keyof AssessmentInputs, value: string | string[]) => {
         setInputs((prev) => ({ ...prev, [field]: value }));
@@ -160,9 +163,29 @@ export default function AssessmentPage() {
         setTimeout(() => {
             const res = calculateAssessmentScore(inputs);
             setResult(res);
+            try {
+                sessionStorage.setItem("assessment_result", JSON.stringify(res));
+                sessionStorage.setItem("assessment_step", "6");
+            } catch {
+                // Ignore if sessionStorage unavailable
+            }
             setStep(6); // Lead capture
         }, 1500);
     };
+
+    useEffect(() => {
+        try {
+            const storedResult = sessionStorage.getItem("assessment_result");
+            const storedStep = sessionStorage.getItem("assessment_step");
+            if (storedResult && (storedStep === "6" || storedStep === "7")) {
+                const parsed = JSON.parse(storedResult) as AssessmentResult;
+                setResult(parsed);
+                setStep(parseInt(storedStep, 10));
+            }
+        } catch {
+            // Ignore
+        }
+    }, []);
 
     const submitLead = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -178,7 +201,7 @@ export default function AssessmentPage() {
                     email: leadData.email,
                     company: leadData.company,
                     country: "Assessment Lead",
-                    phone: "N/A",
+                    phone: leadData.phone || "N/A",
                     // Pack the assessment results into the message body
                     message: `
 Assessment Results for ${leadData.company}:
@@ -201,6 +224,12 @@ Inputs:
             });
 
             if (response.ok) {
+                setLeadSubmitted(true);
+                try {
+                    sessionStorage.setItem("assessment_step", "7");
+                } catch {
+                    // Ignore
+                }
                 setStep(7); // Show results
             } else {
                 // Fallback if API fails, still show results to user
@@ -229,14 +258,32 @@ Inputs:
                 Discover your organization&apos;s &quot;Automation Archetype&quot; and get a tailored roadmap.
                 We analyze Viability, Readiness, and Risk to tell you exactly where to start.
             </p>
+            <p className="text-sm text-muted-foreground">
+                Join 200+ teams who&apos;ve discovered their automation archetype.
+            </p>
             <Button size="lg" className="h-14 px-8 text-lg rounded-full" onClick={nextStep}>
                 Start Assessment <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
         </div>
     );
 
+    const formStepCount = 4;
+    const ProgressIndicator = ({ stepNum }: { stepNum: number }) => (
+        <div className="text-center mb-6">
+            <p className="text-sm text-muted-foreground mb-2">Step {stepNum} of {formStepCount}</p>
+            <div className="h-1.5 bg-muted rounded-full overflow-hidden max-w-xs mx-auto">
+                <div
+                    className="h-full bg-primary transition-all duration-300"
+                    style={{ width: `${(stepNum / formStepCount) * 100}%` }}
+                />
+            </div>
+        </div>
+    );
+
     const renderStep1 = () => (
-        <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
+        <>
+            <ProgressIndicator stepNum={1} />
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
             <CardHeader>
                 <h2 className="text-2xl font-semibold">1. Organizational Context</h2>
                 <p className="text-muted-foreground">Tell us about the team and process.</p>
@@ -276,10 +323,13 @@ Inputs:
                 </div>
             </CardContent>
         </Card>
+        </>
     );
 
     const renderStep2 = () => (
-        <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
+        <>
+            <ProgressIndicator stepNum={2} />
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
             <CardHeader>
                 <h2 className="text-2xl font-semibold">2. Impact & Scale</h2>
                 <p className="text-muted-foreground">Quantify the opportunity.</p>
@@ -320,10 +370,13 @@ Inputs:
                 </div>
             </CardContent>
         </Card>
+        </>
     );
 
     const renderStep3 = () => (
-        <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
+        <>
+            <ProgressIndicator stepNum={3} />
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
             <CardHeader>
                 <h2 className="text-2xl font-semibold">3. Technical Readiness</h2>
                 <p className="text-muted-foreground">Assess feasibility of implementation.</p>
@@ -382,10 +435,13 @@ Inputs:
                 </div>
             </CardContent>
         </Card>
+        </>
     );
 
     const renderStep4 = () => (
-        <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
+        <>
+            <ProgressIndicator stepNum={4} />
+            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
              <CardHeader>
                 <h2 className="text-2xl font-semibold">4. Commercial Fit</h2>
                 <p className="text-muted-foreground">Final checks before analysis.</p>
@@ -418,6 +474,7 @@ Inputs:
                 </div>
             </CardContent>
         </Card>
+        </>
     );
 
     const renderCalculating = () => (
@@ -434,7 +491,7 @@ Inputs:
                 <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-4" />
                 <h2 className="text-3xl font-bold">Analysis Complete</h2>
                 <p className="text-muted-foreground">
-                    We&apos;ve identified your Automation Archetype. <br/>Enter your details to reveal your full roadmap and ROI calculation.
+                    Your results are ready—enter your details to unlock your personalized roadmap and ROI calculation. See how you compare to similar enterprises.
                 </p>
             </CardHeader>
             <CardContent>
@@ -465,6 +522,15 @@ Inputs:
                             placeholder="Acme Corp"
                              value={leadData.company}
                             onChange={(e) => setLeadData(p => ({...p, company: e.target.value}))}
+                        />
+                    </div>
+                    <div className="space-y-2">
+                        <Label>Phone <span className="text-muted-foreground font-normal">(optional—for faster follow-up)</span></Label>
+                        <Input
+                            type="tel"
+                            placeholder="+1 (555) 000-0000"
+                            value={leadData.phone}
+                            onChange={(e) => setLeadData(p => ({...p, phone: e.target.value}))}
                         />
                     </div>
                     <Button type="submit" size="lg" className="w-full mt-4" disabled={isSubmitting}>
@@ -501,7 +567,7 @@ Inputs:
                             <div className="text-5xl font-bold text-foreground">{result.viabilityScore}</div>
                         </CardHeader>
                         <CardContent className="text-center text-sm text-balance">
-                           Measure of potential ROI based on volume and complexity.
+                           Potential ROI based on volume and complexity.
                         </CardContent>
                     </Card>
                     <Card className="border-t-4 border-t-blue-500 bg-card/50">
@@ -510,7 +576,7 @@ Inputs:
                              <div className="text-5xl font-bold text-foreground">{result.readinessScore}</div>
                         </CardHeader>
                          <CardContent className="text-center text-sm text-balance">
-                           Measure of technical maturity and data availability.
+                           Technical maturity and data availability.
                         </CardContent>
                     </Card>
                     <Card className="border-t-4 border-t-orange-500 bg-card/50">
@@ -519,7 +585,7 @@ Inputs:
                              <div className="text-5xl font-bold text-foreground">{result.riskScore}</div>
                         </CardHeader>
                          <CardContent className="text-center text-sm text-balance">
-                           Measure of complexity and error tolerance requirements.
+                           Complexity and error tolerance requirements.
                         </CardContent>
                     </Card>
                 </div>
@@ -578,11 +644,55 @@ Inputs:
                     </Card>
                 </div>
 
-                {/* CTAs */}
-                <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
-                     <Button size="lg" className="h-14 px-8 text-lg" asChild>
-                        <Link href="/contact">Book Strategy Call</Link>
+                {/* Email confirmation */}
+                {leadSubmitted && leadData.email && (
+                    <p className="text-center text-sm text-muted-foreground">
+                        We&apos;ve also emailed your results to {leadData.email}.
+                    </p>
+                )}
+
+                {/* Share */}
+                <div className="flex justify-center">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                            const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://www.invaritech.ai";
+                            const assessmentUrl = `${baseUrl}/assessment/`;
+                            const text = `I just discovered my Automation Archetype: ${result.archetypeTitle}. ${result.archetypeDescription} Take the assessment: ${assessmentUrl}`;
+                            if (typeof navigator !== "undefined" && navigator.share) {
+                                navigator.share({
+                                    title: "My Automation Archetype",
+                                    text,
+                                    url: assessmentUrl,
+                                }).catch(() => {
+                                    navigator.clipboard?.writeText(text);
+                                });
+                            } else {
+                                navigator.clipboard?.writeText(text);
+                            }
+                        }}
+                    >
+                        <Share2 className="w-4 h-4 mr-2" />
+                        Share your archetype
                     </Button>
+                </div>
+
+                {/* CTAs - archetype-specific */}
+                <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
+                    {result.archetype === "velocity-architect" ? (
+                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
+                            <Link href="/services/ai-automation-sprint">See the Sprint</Link>
+                        </Button>
+                    ) : result.archetype === "explorer" ? (
+                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
+                            <Link href="/contact">Book Discovery Call</Link>
+                        </Button>
+                    ) : (
+                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
+                            <Link href="/contact">Book Strategy Call</Link>
+                        </Button>
+                    )}
                     <Button size="lg" variant="outline" className="h-14 px-8 text-lg" asChild>
                         <Link href="/services">Explore Services</Link>
                     </Button>
@@ -595,7 +705,7 @@ Inputs:
 
     return (
         <main className="min-h-screen relative overflow-hidden">
-            {step === 0 && <ServiceBackground theme="blue" />} {/* Dynamic background for intro */}
+            {(step === 0 || (step >= 1 && step <= 4)) && <ServiceBackground theme="blue" />}
 
             <div className="relative z-10 container mx-auto px-4 pb-20">
                 <AnimatePresence mode="wait">
