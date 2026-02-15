@@ -77,8 +77,7 @@ export default function Artistic404() {
 
     // 3D Config
     const focalLength = 400;
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
+
     
     // Particle System Configuration
     // Increase count for density in 3D space
