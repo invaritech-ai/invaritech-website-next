@@ -138,7 +138,7 @@ export default function HomeHero() {
                                     variant="outline"
                                     className="rounded-none border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white"
                                 >
-                                    <Link href="/ai-automation-sprint/">
+                                    <Link href="/services/ai-automation-sprint/">
                                         View the Sprint
                                     </Link>
                                 </Button>

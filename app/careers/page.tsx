@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Careers at INVARITECH - Build Automation Solutions",
         description:
-            "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for small service businesses.",
+            "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for high-growth organizations.",
         url: "https://www.invaritech.ai/careers/",
         images: [
             {

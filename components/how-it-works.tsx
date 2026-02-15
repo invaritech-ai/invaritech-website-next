@@ -16,7 +16,7 @@ const steps = [
         title: "Ops Efficiency Sprint",
         description:
             "Crude PoC by week 3 (Milestone Gate). If accepted, we polish to production-grade v1 by day 60.",
-        duration: "6 weeks",
+        duration: "30 days",
     },
     {
         icon: TrendingUp,
@@ -74,7 +74,7 @@ export default function HowItWorks() {
 
                 <div className="text-center">
                     <Button asChild variant="outline" size="lg">
-                        <Link href="/ai-automation-sprint/">
+                        <Link href="/services/ai-automation-sprint/">
                             Download the Sprint overview
                         </Link>
                     </Button>

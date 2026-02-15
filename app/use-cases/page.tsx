@@ -54,7 +54,7 @@ const useCases = [
             ],
         },
         metrics:
-            "8,000 lookups/month → 400 hours saved/month (~$36k/month at $90/hr)",
+            "8,000 lookups/month → 400 hours saved/month (~$36k/month at $90/hr)*",
     },
     {
         icon: FileText,
@@ -80,7 +80,7 @@ const useCases = [
             ],
         },
         metrics:
-            "1,200 drafts/month → 240 hours saved/month; −15% rework at $250 each → +$4.5k/month",
+            "1,200 drafts/month → 240 hours saved/month; −15% rework at $250 each → +$4.5k/month*",
     },
     {
         icon: Upload,
@@ -106,7 +106,7 @@ const useCases = [
             ],
         },
         metrics:
-            "9,000 docs/month → 255 hours saved/month (~$19k/month at $75/hr)",
+            "9,000 docs/month → 255 hours saved/month (~$19k/month at $75/hr)*",
     },
     {
         icon: Calculator,
@@ -132,7 +132,7 @@ const useCases = [
             ],
         },
         metrics:
-            "Reduced reconciliation time by 70% → $25k/month in avoided costs",
+            "Reduced reconciliation time by 70% → $25k/month in avoided costs*",
     },
 ];
 
@@ -274,6 +274,15 @@ export default function UseCases() {
                     </div>
                 </section>
             </main>
+            
+            {/* Disclaimer */}
+            <section className="py-12 px-6 border-t border-muted bg-muted/50">
+                <div className="max-w-5xl mx-auto text-center">
+                    <p className="text-sm text-muted-foreground/60 italic">
+                        *Modeled Estimate: Projections based on client-provided data, industry benchmarks for task duration, and standard hourly rates. Actual results may vary based on implementation scope and adoption.
+                    </p>
+                </div>
+            </section>
         </>
     );
 }

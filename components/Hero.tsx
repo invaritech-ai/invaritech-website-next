@@ -93,7 +93,7 @@ export function Hero() {
 	                        <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
 	                    </Link>
 	                    <Link
-	                        href="/ai-automation-sprint/"
+	                        href="/services/ai-automation-sprint/"
 	                        className="px-8 py-4 border border-foreground/20 text-foreground font-bold text-lg hover:border-primary hover:text-primary transition-colors duration-300 rounded-none backdrop-blur-sm"
 	                    >
 	                        VIEW THE AI AUTOMATION SPRINT

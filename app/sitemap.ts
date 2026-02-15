@@ -49,12 +49,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            // Canonical Sprint marketing page (Option A). Keep in sitemap.
-            url: `${baseUrl}/ai-automation-sprint/`,
-            changeFrequency: "weekly",
-            priority: 0.95,
-        },
-        {
             url: `${baseUrl}/services/ai-workflow-automation-services/`,
             changeFrequency: "monthly",
             priority: 0.85,
@@ -134,6 +128,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${baseUrl}/contact/`,
             changeFrequency: "monthly",
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/privacy/`,
+            changeFrequency: "yearly",
+            priority: 0.3,
         },
         {
             url: `${baseUrl}/terms/`,

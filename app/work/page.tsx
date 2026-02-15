@@ -7,7 +7,7 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 export const metadata: Metadata = {
     title: "Our Work - Automation Projects",
     description:
-        "See how INVARITECH builds compliance bridges, data pipelines, and custom automation for small service businesses.",
+        "See how INVARITECH builds compliance bridges, data pipelines, and custom automation for enterprise and mid-market organizations.",
     openGraph: {
         title: "Our Work - Automation Projects & Case Studies",
         url: "https://www.invaritech.ai/work/",
@@ -42,7 +42,7 @@ const projects = [
         id: "custom",
         title: "Your Custom Solution",
         category: "Consulting & Development",
-        description: "We identify your biggest bottleneck and deliver a custom automation solution within 6 weeks.",
+        description: "We identify your biggest bottleneck and deliver a custom automation solution within 30 days.",
         tags: ["Analysis", "Strategy", "Custom Build"],
         image: "/work/custom-solution.webp",
         link: "https://calendly.com/hello-invaritech/30min",

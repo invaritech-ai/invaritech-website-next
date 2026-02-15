@@ -279,7 +279,7 @@ export default function ArtisticHomeHero() {
                     size="lg" 
                     className="h-14 px-8 rounded-none border-white/20 bg-transparent text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300 group"
                 >
-                    <Link href="/ai-automation-sprint/">
+                    <Link href="/services/ai-automation-sprint/">
                         <Terminal className="mr-2 h-5 w-5 text-primary group-hover:text-white transition-colors" />
                         Explore the Sprint
                     </Link>

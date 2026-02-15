@@ -119,7 +119,7 @@ export default function WhatWeDoSection() {
                                     <p className="text-sm text-white/60">Review scope, guardrails, and prerequisites before you book.</p>
                                 </div>
                                 <Button asChild size="lg" className="rounded-none bg-primary text-black hover:bg-white font-bold">
-                                    <Link href="/ai-automation-sprint/">
+                                    <Link href="/services/ai-automation-sprint/">
                                         View Sprint Details
                                     </Link>
                                 </Button>

@@ -73,7 +73,7 @@ export default function ExpectedResults() {
 
                 <div className="text-center">
                     <Button asChild variant="outline" size="lg">
-                        <Link href="/ai-automation-sprint/">
+                        <Link href="/services/ai-automation-sprint/">
                             See the math behind the numbers
                         </Link>
                     </Button>

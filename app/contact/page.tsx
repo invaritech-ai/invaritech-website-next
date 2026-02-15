@@ -41,7 +41,7 @@ export default function ContactPage() {
                         delay={0.5}
                         className="text-xl text-muted-foreground md:text-2xl leading-relaxed max-w-2xl font-light"
                     >
-                        Whether you need to automate complex workflows or build a custom platform, we are ready to engineer your solution.
+                        Whether you need to automate complex workflows or configure a custom solution, we are ready to engineer your solution.
                     </TextEffect>
                 </div>
                 

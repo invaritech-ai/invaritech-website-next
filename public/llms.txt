@@ -19,7 +19,7 @@ We build with enterprise-grade controls: permissions, audit logs, fallbacks, and
 ## Key Pages
 
 - Home: https://www.invaritech.ai
-- The Sprint: https://www.invaritech.ai/ai-automation-sprint/
+- The Sprint: https://www.invaritech.ai/services/ai-automation-sprint/
 - Services: https://www.invaritech.ai/services/
 - Work & Case Studies: https://www.invaritech.ai/work/
 - About the Team: https://www.invaritech.ai/about/
@@ -66,3 +66,21 @@ Primary engagement: a fixed-scope 30-day sprint:
 ---
 
 Last Updated: 2026-02-14
+
+## Verification Policy
+
+INVARITECH distinguishes between "Verified" and "Modeled" results in all public communications:
+
+- **Verified Results**: Outcomes measured post-launch on client systems with ≥30 days of production volume.
+- **Modeled Estimates**: Projections based on client-provided data, industry benchmarks for task duration, and standard hourly rates. These are explicitly labeled as "Modeled Estimates" or marked with an asterisk (*).
+
+## Modeling Methodology
+
+When estimating impact for unlaunched projects, we use the following formula:
+`Hours saved = (Monthly cases × minutes saved per case ÷ 60) × (1 - automation friction)`
+`Cost avoidance = Hours saved × Standard FTE fully loaded hourly rate`
+
+We typically assume:
+- 15% rework rate for manual drafting tasks
+- 90% time reduction for search/retrieval tasks
+- 60% reduction for complex drafting tasks

@@ -31,7 +31,7 @@ const exampleCase = {
         label: "LOOKUPS/MO",
     },
     impact: {
-        bigNumber: "400",
+        bigNumber: "400*",
         unit: "HOURS SAVED/MO",
         subMetric: "$36k/mo cost avoidance",
     },
@@ -41,21 +41,21 @@ const additionalResults = [
     {
         title: "Legal Report Drafting",
         industry: "LEGAL SERVICES",
-        impact: "240",
+        impact: "240*",
         unit: "HOURS/MO",
         desc: "Automated 85% of first-draft generation",
     },
     {
         title: "Claims Intake Pipeline",
         industry: "INSURANCE",
-        impact: "255",
+        impact: "255*",
         unit: "HOURS/MO",
         desc: "Reduced document processing time by 1.7m per doc",
     },
     {
         title: "Vendor Invoice Processing",
         industry: "MANUFACTURING",
-        impact: "$50k",
+        impact: "$50k*",
         unit: "SAVED/MO",
         desc: "Eliminated manual entry for 5,000+ invoices/mo",
     },
@@ -177,7 +177,7 @@ export default function Results() {
                     </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
                         Backend APIs for data intake, validation, and auditability.
-                        Deployed in 6 weeks.
+                        Deployed in 30 days.
                     </p>
                     
                     <div className="flex flex-col md:flex-row justify-center gap-6">
@@ -199,6 +199,15 @@ export default function Results() {
                             </MagneticButton>
                         </Link>
                     </div>
+                </div>
+            </section>
+
+            {/* Disclaimer */}
+            <section className="py-12 px-6 border-t border-white/10">
+                <div className="max-w-5xl mx-auto text-center">
+                    <p className="text-sm text-muted-foreground/60 italic">
+                        *Modeled Estimate: Projections based on client-provided data, industry benchmarks for task duration, and standard hourly rates. Actual results may vary based on implementation scope and adoption.
+                    </p>
                 </div>
             </section>
         </main>

@@ -115,19 +115,19 @@ const complianceStandards = [
     {
         name: "GDPR",
         description: "General Data Protection Regulation compliance",
-        status: "Fully Compliant",
+        status: "Aligned with",
         icon: Globe,
     },
     {
         name: "SOC 2",
         description: "Security, availability, and confidentiality controls",
-        status: "Type II Certified",
+        status: "Aligned with controls",
         icon: Shield,
     },
     {
         name: "ISO 27001",
         description: "Information security management system",
-        status: "Certified",
+        status: "Designed for",
         icon: Lock,
     },
     {

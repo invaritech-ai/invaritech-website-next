@@ -87,6 +87,7 @@ export const structuredData = {
             name: "30-Day Drop-In AI Automation Sprint",
             description:
                 "In 30 days, INVARITECH delivers one production-grade AI automation running on top of your existing infrastructure, solving one clearly defined bottleneck with measurable before/after impact.",
+            url: "https://www.invaritech.ai/services/ai-automation-sprint/",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
