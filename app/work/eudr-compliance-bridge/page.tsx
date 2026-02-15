@@ -76,7 +76,7 @@ export default function EudrCaseStudyPage() {
                         A French operator preparing for EU Deforestation
                         Regulation (EUDR) enforcement needed the capacity to
                         process up to <span className="text-foreground font-medium">100,000 Due Diligence Statements (DDS)</span>{" "}
-                        per month. Manual submission was operationally unstable. We engineered a backend infrastructure built for high-volume regulatory submission automation.
+                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blogs/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered a backend infrastructure built for high-volume regulatory submission automation.
                     </p>
                 </div>
 
@@ -117,6 +117,12 @@ export default function EudrCaseStudyPage() {
                      <div className="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Solution Overview</h2>
                         <span className="font-mono text-xs text-muted-foreground hidden md:block">02 — ARCHITECTURE</span>
+                    </div>
+
+                    <div className="mb-16 max-w-3xl">
+                        <p className="text-lg text-muted-foreground leading-relaxed">
+                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. This is the type of work we deliver under <Link href="/services/ai-integration-services/" className="text-foreground underline decoration-primary/50 hover:decoration-primary transition-all">AI Integration Services</Link>, even when the core constraint is protocol and governance, not AI.
+                        </p>
                     </div>
 
                     <div className="space-y-24">
@@ -241,6 +247,12 @@ export default function EudrCaseStudyPage() {
                             ))}
                         </div>
                     </div>
+                    
+                    <div className="mt-12 pt-8 border-t border-white/5 text-center">
+                        <p className="text-sm text-muted-foreground">
+                            Related reading: <Link href="/blogs/compliance-automation-done-right/" className="text-primary hover:underline">deterministic compliance systems</Link> and <Link href="/blogs/building-vs-buying-custom-automation/" className="text-primary hover:underline">building vs buying custom automation</Link>.
+                        </p>
+                    </div>
                 </section>
 
 
@@ -310,9 +322,9 @@ export default function EudrCaseStudyPage() {
                             </a>
                         </MagneticButton>
                     </div>
-                    <div className="mt-12 text-sm text-muted-foreground">
+                    <div className="mt-12 text-sm text-muted-foreground max-w-lg mx-auto">
                         <p>
-                            Or explore the <Link href="/services/ai-automation-sprint/" className="underline hover:text-foreground text-primary/80">AI Automation Sprint</Link> for a structured start.
+                            For teams that want a structured path to EUDR backend development, we typically start with the <Link href="/services/ai-automation-sprint/" className="underline hover:text-foreground text-primary/80">AI Automation Sprint</Link>.
                         </p>
                     </div>
                 </section>
