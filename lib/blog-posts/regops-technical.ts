@@ -16,6 +16,8 @@ That gap is where analysts become human middleware.
 
 A RegOps Bridge exists to eliminate that middleware layer without forcing operational replatforming.
 
+---
+
 ## What a RegOps Bridge Actually Connects
 
 A RegOps Bridge sits between three surfaces:
@@ -25,6 +27,8 @@ A RegOps Bridge sits between three surfaces:
 - Regulatory surface: legacy portals, strict APIs, SOAP endpoints, schema-bound submission systems
 
 The bridge does not replace these tools. It formalizes how they communicate. That is the difference.
+
+---
 
 ## Case Example: EUDR Submission Pipeline
 
@@ -39,6 +43,8 @@ See the full breakdown:
 If you want the scale failure mode first, read:
 
 - **[Why Manual EUDR Compliance Fails at Scale](/blogs/why-manual-eudr-compliance-fails/)**
+
+---
 
 ## Architecture: Three Explicit Layers
 
@@ -83,6 +89,8 @@ A proper submission layer:
 
 Nothing should disappear silently.
 
+---
+
 ## State Is the Core Asset
 
 At scale, you are not submitting forms. You are operating a record stream.
@@ -105,11 +113,15 @@ You do not need a giant enterprise platform. A real-world RegOps stack often inc
 
 The objective is visibility and control, not feature accumulation.
 
+---
+
 ## When You Actually Need a RegOps Bridge
 
 You likely need one when volume is growing but systems are not, analysts spend time moving data between tools, filing cycles depend on memory, regulator interfaces are strict and brittle, and audit defensibility matters.
 
 This is not about automation for convenience. It is about preserving margin and credibility as volume increases.
+
+---
 
 ## Next Step
 

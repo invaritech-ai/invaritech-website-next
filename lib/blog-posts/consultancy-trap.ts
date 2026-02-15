@@ -18,6 +18,8 @@ The firm depends on experienced consultants who remember portal quirks, filing e
 
 If one person leaving breaks you, you do not have a business. You have dependency.
 
+---
+
 ## The Quiet Cost of "Heroic" Compliance Work
 
 Some compliance firms take weeks to file what should take days. They request documents in fragments. They go back and forth unnecessarily. Complexity quietly increases.
@@ -33,17 +35,21 @@ Heroics erode:
 
 Most firms plateau not because demand dries up, but because delivery capacity becomes constrained by fear of failure.
 
+---
+
 ## The Self-Deception Layer
 
 The most common sentence in these firms is: "We'll systemize later."
 
-Closely followed by: "We can always add more personnel."
+Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck—**[Why Consultancies Get Stuck](/blogs/why-consultancies-get-stuck/)** explains why.
 
 And sometimes: "We already have a system," which means copying data into Excel sheets with slightly better formatting.
 
 Hiring is linear scaling. Linear scaling caps margin.
 
 At some point, adding headcount increases coordination complexity faster than it increases output. You start managing people instead of improving throughput.
+
+---
 
 ## The Revenue Constraint Nobody Talks About
 
@@ -53,6 +59,8 @@ Larger contracts feel risky. Volume increases create anxiety. Recurring work fee
 
 That is not a sales issue. It is an operating model issue.
 
+---
+
 ## When Automation Is Not the Answer
 
 Automation is premature when the client base is still small and manageable, the founding team can directly oversee every case, each engagement is truly bespoke with no repeatable pattern, or there is no stable manual process yet.
@@ -60,6 +68,8 @@ Automation is premature when the client base is still small and manageable, the 
 If every case is unique and requires independent legal interpretation, forcing automation is artificial.
 
 Infrastructure should follow repeatability, not precede it.
+
+---
 
 ## When You Have Crossed the Line
 
@@ -75,6 +85,8 @@ At that stage, hiring more analysts increases complexity without increasing resi
 
 The problem is not talent. It is system design.
 
+---
+
 ## What Replaces Heroics
 
 You replace memory with structure.
@@ -89,7 +101,9 @@ You shift humans toward exception handling and advisory work.
 
 This is RegOps: operational infrastructure that supports revenue expansion without increasing fragility.
 
-If you want the architecture pattern behind this shift, see **[RegOps Bridge anatomy](/blogs/regops-technical/)**.
+If you want the architecture pattern behind this shift, see **[Anatomy of a RegOps Bridge](/blogs/regops-technical/)**.
+
+---
 
 ## A Concrete Example: EUDR
 
@@ -97,6 +111,8 @@ Regulatory submission pipelines make the problem obvious. Manual heroics collaps
 
 - **[Why Manual EUDR Compliance Fails at Scale](/blogs/why-manual-eudr-compliance-fails/)**
 - **[EUDR Compliance Bridge Case Study](/work/eudr-compliance-bridge/)**
+
+---
 
 ## Valuation and Risk
 
@@ -106,6 +122,8 @@ Enterprise buyers and investors look for delivery resilience. If your operating 
 
 It may not show up in your monthly P&L. It shows up in valuation confidence.
 
+---
+
 ## The Strategic Question
 
 Do you want to scale headcount, or scale throughput?
@@ -113,6 +131,8 @@ Do you want to scale headcount, or scale throughput?
 Headcount growth increases cost linearly. Throughput growth requires infrastructure.
 
 If you cannot confidently double volume without doubling stress, your workflow is the constraint.
+
+---
 
 ## Next Step
 
@@ -122,6 +142,7 @@ If that mapping feels uncomfortable, that discomfort is signal.
 
 Start with:
 
+- **[Assessment](/assessment/)** (map your workflow gaps)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 
@@ -132,6 +153,7 @@ This is not about replacing consultants. It is about protecting your ability to 
         role: "Director and Founder",
     },
     publishedAt: "2025-11-20T10:00:00Z",
+    dateModified: "2025-02-15T10:00:00Z",
     tags: ["ConsultancyGrowth", "RegOps", "Scalability", "ESG", "Automation"],
     coverImage: "/blog/consultancy-trap.webp",
 };

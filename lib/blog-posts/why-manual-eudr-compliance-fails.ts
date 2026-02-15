@@ -14,6 +14,8 @@ EUDR compliance is a regulated submission system with strict schemas, geo-data v
 
 This case study outlines what those limits look like in practice and what changes when EUDR is treated as an engineered system rather than a clerical task.
 
+---
+
 ## What EUDR Implementation Actually Requires
 
 EUDR is not data entry. It is regulator-facing integration.
@@ -27,6 +29,8 @@ Operators preparing for production-level EUDR DDS submission typically need the 
 - maintain auditable state per DDS
 
 Each Due Diligence Statement is a formal declaration of sourcing. Every submission is a write into a regulatory system. That carries legal exposure, and at volume that exposure becomes operational risk.
+
+---
 
 ## The Technical Surface That Manual Work Cannot Sustain
 
@@ -54,6 +58,8 @@ At volume, DDS submission is not a single action. It is a stream of records movi
 
 If lifecycle state is tracked through spreadsheets and portal searches, throughput becomes constrained by reconciliation effort. Reconciliation effort grows faster than submission volume.
 
+---
+
 ## What Breaks as Volume Rises
 
 Manual EUDR compliance rarely fails dramatically. It degrades operationally.
@@ -64,6 +70,8 @@ Manual EUDR compliance rarely fails dramatically. It degrades operationally.
 - Review time increases while visibility decreases.
 
 Teams spend more time locating status than moving submissions forward. At that point, compliance stops being administrative overhead and becomes a growth constraint.
+
+---
 
 ## Case Study: Engineering an EUDR Submission System
 
@@ -85,6 +93,8 @@ The shift was operational, not cosmetic. Entry work reduced, failures became dia
 
 This is the difference between operating inside a portal and operating submission infrastructure.
 
+---
+
 For technical architecture detail:
 
 - **[EUDR Compliance Bridge: DDS Submission at Scale](/work/eudr-compliance-bridge/)**
@@ -97,11 +107,15 @@ When compliance volume increases, manual reconciliation absorbs hours that do no
 
 Deterministic EUDR compliance automation converts entry work into exception oversight. Exception oversight scales better than data entry. That shift protects throughput and protects reputation.
 
+---
+
 ## When Manual EUDR Compliance Is Still Acceptable
 
 Manual workflows remain reasonable when submission volume is low, exposure is limited, there is no burst behavior, and lifecycle complexity is minimal.
 
 Once submission counts move into the thousands per month, EUDR becomes an integration and state-management problem. At that stage, infrastructure thinking replaces staffing adjustments.
+
+---
 
 ## Evaluating EUDR Compliance Automation
 
@@ -112,6 +126,8 @@ If you are assessing EUDR automation readiness, start with:
 - integration surface with ERP or internal systems
 - required audit depth
 - failure classification requirements
+
+---
 
 ## Next Step
 
@@ -124,6 +140,8 @@ For broader system philosophy:
 
 - **[Compliance Automation Done Right: Deterministic Systems vs Black-Box AI](/blogs/compliance-automation-done-right/)**
 - **[Building vs Buying: When Custom Automation Makes Sense](/blogs/building-vs-buying-custom-automation/)**
+
+---**
 
 ## Final Position
 

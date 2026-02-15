@@ -88,6 +88,7 @@ function generateArticleSchema(post: {
     content: string;
     author: { name: string; role: string };
     publishedAt: string;
+    dateModified?: string;
     coverImage?: string;
     slug: string;
 }) {
@@ -109,7 +110,7 @@ function generateArticleSchema(post: {
             height: 630,
         },
         datePublished: post.publishedAt,
-        dateModified: post.publishedAt,
+        dateModified: post.dateModified ?? post.publishedAt,
         author: {
             "@type": "Person",
             name: post.author.name,
@@ -130,7 +131,7 @@ function generateArticleSchema(post: {
             "@id": url,
         },
         url: url,
-        articleSection: "Technology",
+        articleSection: "Regulatory Compliance",
         keywords: post.title,
     };
 }

@@ -12,6 +12,8 @@ If you run an ESG, EUDR, or regulatory consultancy, you have likely normalized a
 
 They are not advising or applying judgment. They are making tools agree. That is not a staffing problem. It is a throughput architecture problem.
 
+---
+
 ## Why Hiring More People Does Not Fix It
 
 Hiring feels like the obvious lever, and it rarely fixes the bottleneck, because you are adding people into the same manual pipeline. More hands. Same constraint.
@@ -36,6 +38,8 @@ Experts do not want to spend their week in portals and spreadsheets.
 
 They leave, and you recruit again.
 
+---
+
 ## The Question That Unlocks Scale
 
 Stop asking: "How many more people do we need?"
@@ -43,6 +47,8 @@ Stop asking: "How many more people do we need?"
 Start asking: "Which parts of this workflow can run deterministically in the background?"
 
 That is the shift from headcount to infrastructure.
+
+---
 
 ## Three Types of Work (Only One Needs a Human)
 
@@ -60,7 +66,9 @@ Edge cases, ambiguity, and client trade-offs. This is where your people are valu
 
 High-performing teams automate Types 1 and 2 and reserve humans for Type 3.
 
-To see the architecture, read **[RegOps Bridge anatomy](/blogs/regops-technical/)** and the operating model framing in **[RegOps strategy](/blogs/regops-strategy/)**.
+To see the architecture, read **[Anatomy of a RegOps Bridge](/blogs/regops-technical/)** and the operating model framing in **[RegOps strategy](/blogs/regops-strategy/)**.
+
+---
 
 ## What Robust Automation Looks Like
 
@@ -79,16 +87,21 @@ Robust automation:
 - complete logs
 - clear exception queues
 
+---
+
 ## An EUDR Example
 
 EUDR submission volume makes the failure mode obvious: manual work collapses, systems scale.
 
 - **[EUDR Compliance Bridge case study](/work/eudr-compliance-bridge/)**
 
+---
+
 ## Next Step
 
 If you want a quantified view of where your bottleneck is, start here:
 
+- **[Assessment](/assessment/)** (map your workflow gaps)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 `,
@@ -97,6 +110,7 @@ If you want a quantified view of where your bottleneck is, start here:
         role: "CEO",
     },
     publishedAt: "2025-10-01T10:00:00Z",
+    dateModified: "2025-02-15T10:00:00Z",
     tags: [
         "RegOps",
         "ConsultancyGrowth",

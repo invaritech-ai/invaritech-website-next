@@ -27,6 +27,8 @@ Payroll. Basic accounting. Standard HR flows. Cookie consent. Commodity tooling.
 
 If you are comfortable adapting your process to the tool, and integration depth is minimal, buying is rational.
 
+---
+
 ## Where Buying Breaks Down
 
 Buying becomes inefficient when the workflow is:
@@ -40,6 +42,8 @@ Buying becomes inefficient when the workflow is:
 At that point, you are not buying convenience.
 You are outsourcing operational leverage.
 
+---
+
 ## Example: Regulatory Submission Pipelines (EUDR)
 
 In regulatory environments like EUDR, submission pipelines need to handle:
@@ -51,6 +55,8 @@ In regulatory environments like EUDR, submission pipelines need to handle:
 - audit logs and traceable state transitions
 
 That is not a feature toggle inside a generic platform.
+
+---
 
 If you want the failure mode at scale:
 
@@ -73,7 +79,11 @@ Before building anything, quantify:
 
 If you cannot calculate the delta, do not build.
 
+---
+
 Automation without a measurable objective is theater.
+
+---
 
 ## When Custom Automation Becomes Rational
 
@@ -88,6 +98,8 @@ Custom automation makes sense when most of the following are true:
 In those cases, a focused automation layer often outperforms a broad SaaS platform.
 
 Not because SaaS is bad, but because your workflow is not average.
+
+---
 
 ## Build Does Not Mean Rebuilding the World
 
@@ -105,6 +117,8 @@ For integration-heavy environments, implement the bridge layer without replatfor
 
 - **[AI Integration Services](/services/ai-integration-services/)**
 
+---
+
 ## A Practical Test
 
 You are likely in build territory if:
@@ -119,10 +133,13 @@ If fewer than three apply, buying is usually correct.
 
 There is no virtue in building early.
 
+---
+
 ## Next Step
 
 If you are evaluating whether your workflow justifies custom infrastructure:
 
+- **[Assessment](/assessment/)** (map your workflow before building)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)** (quantified diagnostic)
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30-day measurable wedge)
 
@@ -133,6 +150,7 @@ No demos. No slides. Just math, architecture, and execution.
         role: "Automation Specialists",
     },
     publishedAt: "2025-10-20T10:00:00Z",
+    dateModified: "2025-02-15T10:00:00Z",
     tags: ["Strategy", "Automation", "Decision Making"],
     coverImage: "/blog/buy-vs-build.webp",
 };
