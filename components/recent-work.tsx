@@ -1,7 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield } from "lucide-react";
-import Link from "next/link";
 
 export default function RecentWork() {
     return (
@@ -78,11 +76,11 @@ export default function RecentWork() {
                         </div>
 
                         <div className="text-center">
-                            <Button asChild variant="outline" size="lg">
-                                <Link href="/results#eudr">
-                                    Read the mini-case
-                                </Link>
-                            </Button>
+                            {/* <Button asChild variant="outline" size="lg">
+    <Link href="/results/#eudr">
+        Read the mini-case
+    </Link>
+</Button> */}
                         </div>
                     </CardContent>
                 </Card>

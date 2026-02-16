@@ -17,6 +17,7 @@ export interface BlogPost {
         role: string;
     };
     publishedAt: string; // ISO date string
+    dateModified?: string; // ISO date string, when content was last updated
     tags: string[];
     coverImage?: string;
 }
@@ -31,6 +32,7 @@ export interface BlogPostMetadata {
         role: string;
     };
     publishedAt: string;
+    dateModified?: string;
     tags: string[];
     coverImage?: string;
 }
@@ -56,6 +58,7 @@ export function getAllPosts(): BlogPostMetadata[] {
             content: post.content,
             author: post.author,
             publishedAt: post.publishedAt,
+            dateModified: post.dateModified,
             tags: post.tags,
             coverImage: post.coverImage,
         }))

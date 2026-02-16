@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: "*",
             allow: "/",
-            disallow: ["/private/", "/admin/", "/api/", "/google-apps-script/"],
+            disallow: ["/private/", "/admin/", "/api/", "/google-apps-script/", "/results/"],
         },
         sitemap: "https://www.invaritech.ai/sitemap.xml",
         host: "https://www.invaritech.ai",

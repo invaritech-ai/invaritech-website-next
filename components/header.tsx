@@ -1,109 +1,165 @@
 "use client";
+
 import Link from "next/link";
-import { Logo, LogoIcon } from "@/components/logo";
-import { Menu, X } from "lucide-react";
-import { ModeToggle } from "@/components/mode-toggle";
-import React from "react";
+import { usePathname } from "next/navigation";
+import { LogoIcon } from "@/components/logo";
+import { ArrowUpRight } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about/" },
-    { name: "Services", href: "/services/" },
-    { name: "Work", href: "/work/" },
-    { name: "Blogs", href: "/blogs/" },
-    { name: "Contact", href: "/contact/" },
+    { name: "Home", href: "/", id: "01" },
+    { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
+    { name: "Services", href: "/services/", id: "03" },
+    // { name: "Results", href: "/results/", id: "04" },
+    { name: "Intel", href: "/blogs/", id: "04" }, // Renamed for "Bold" feel
+    { name: "Contact", href: "/contact/", id: "05" },
 ];
 
 export const HeroHeader = () => {
-    const [menuState, setMenuState] = React.useState(false);
-    const [isScrolled, setIsScrolled] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const menuRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    // Lock scroll when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    }, [isOpen]);
+
+    // GSAP Animation for Menu
+    useGSAP(() => {
+        if (isOpen) {
+            const tl = gsap.timeline();
+            
+            tl.to(menuRef.current, {
+                y: "0%",
+                duration: 0.8,
+                ease: "power4.inOut",
+            })
+            .fromTo(".menu-item", 
+                { y: 100, opacity: 0 },
+                { y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: "power3.out" },
+                "-=0.4"
+            )
+            .fromTo(".menu-footer",
+                { opacity: 0, y: 20 },
+                { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+                "-=0.2"
+            );
+        } else {
+            gsap.to(menuRef.current, {
+                y: "-100%",
+                duration: 0.8,
+                ease: "power4.inOut",
+            });
+        }
+    }, [isOpen]);
+
     return (
-        <header>
-            <nav
-                data-state={menuState && "active"}
-                className="fixed z-50 w-full px-2"
-            >
-                <div
-                    className={cn(
-                        "mx-auto max-w-6xl px-6 transition-all duration-300 lg:px-12",
-                        isScrolled &&
-                            "bg-background/80 border border-border/50 backdrop-blur-xl rounded-2xl shadow-lg"
-                    )}
+        <header ref={containerRef} className="fixed top-0 left-0 right-0 z-[100] pointer-events-none">
+            {/* Top Bar */}
+            <div className="relative z-[102] flex items-center justify-between px-6 py-6 md:px-12 md:py-8">
+                {/* Logo - Always visible */}
+                <Link 
+                    href="/" 
+                    className="pointer-events-auto flex items-center gap-3 group mix-blend-difference text-white"
+                    onClick={() => setIsOpen(false)}
                 >
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
-                            <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2"
-                            >
-                                <LogoIcon className="size-10" />
-                                <Logo />
-                            </Link>
+                    <div className="relative size-10 overflow-hidden">
+                        <LogoIcon className="size-10 transition-transform duration-700 ease-in-out group-hover:rotate-180" />
+                    </div>
+                    <span className="font-bold tracking-tight text-xl hidden md:block">
+                        INVARITECH
+                    </span>
+                </Link>
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={
-                                    menuState == true
-                                        ? "Close Menu"
-                                        : "Open Menu"
-                                }
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-                            >
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
+                {/* Menu Toggle Button */}
+                <button 
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="pointer-events-auto group relative flex items-center justify-center"
+                    aria-label="Toggle Menu"
+                >
+                    <div className={cn(
+                        "relative flex items-center justify-center size-14 md:size-16 rounded-full transition-all duration-300 backdrop-blur-md border border-white/10 shadow-lg",
+                        isOpen ? "bg-transparent border-transparent" : "bg-black/20 hover:bg-white/10"
+                    )}>
+                        <div className="relative size-6">
+                            <span className={cn(
+                                "absolute left-0 w-full h-0.5 bg-white transition-all duration-300",
+                                isOpen ? "top-[11px] rotate-45" : "top-[7px]"
+                            )} />
+                            <span className={cn(
+                                "absolute left-0 w-full h-0.5 bg-white transition-all duration-300",
+                                isOpen ? "top-[11px] -rotate-45" : "top-[15px]"
+                            )} />
                         </div>
+                    </div>
+                </button>
+            </div>
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                                        >
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+            {/* Menu Overlay */}
+            <div 
+                ref={menuRef}
+                className="fixed inset-0 z-[101] w-full h-[100dvh] bg-[#050505] transform -translate-y-full pointer-events-auto flex flex-col"
+            >
+                {/* Background Texture */}
+                <div className="absolute inset-0 z-0 opacity-20 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+                
+                {/* Scrollable Container */}
+                <div 
+                    className="relative z-10 w-full h-full overflow-y-auto overscroll-contain"
+                    data-lenis-prevent
+                >
+                    <div className="min-h-full flex flex-col justify-between p-6 md:p-12">
+                         {/* Spacer for Top Bar */}
+                        <div className="h-24 md:h-32 shrink-0" />
 
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent z-50">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                onClick={() =>
-                                                    setMenuState(false)
-                                                }
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                                            >
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
+                        {/* Navigation Links */}
+                        <nav className="flex flex-col items-center gap-2 md:gap-4 w-full max-w-4xl mx-auto my-12">
+                            {menuItems.map((item) => (
+                                <div key={item.name} className="menu-item w-full group">
+                                    <Link 
+                                        href={item.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="relative flex items-center justify-between w-full p-4 md:p-6 border-b border-white/10 hover:border-white/40 transition-colors duration-300"
+                                    >
+                                        <span className="text-sm font-mono text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                                            {item.id}
+                                        </span>
+                                        <span className={cn(
+                                            "text-4xl md:text-7xl lg:text-8xl font-bold tracking-tighter transition-all duration-300 uppercase",
+                                            pathname === item.href ? "text-primary" : "text-white/80 group-hover:text-white"
+                                        )}>
+                                            {item.name}
+                                        </span>
+                                        <ArrowUpRight className="size-6 md:size-10 text-muted-foreground group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0" />
+                                    </Link>
+                                </div>
+                            ))}
+                        </nav>
+
+                        {/* Footer Info in Menu */}
+                        <div className="menu-footer w-full flex justify-between items-end text-xs md:text-sm font-mono text-muted-foreground uppercase tracking-wider shrink-0">
+                            <div className="hidden md:block">
+                                Global Strategic Hubs<br />
+                                US • HK • IN • MY
                             </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <ModeToggle />
+                            <div className="text-right">
+                                <a href="mailto:hello@invaritech.ai" className="hover:text-white transition-colors">
+                                    hello@invaritech.ai
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </nav>
+            </div>
         </header>
     );
 };

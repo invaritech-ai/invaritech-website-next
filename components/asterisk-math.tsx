@@ -11,7 +11,7 @@ const formulas = [
             "Hours saved = (Monthly cases × minutes saved per case ÷ 60) ÷ number of involved FTEs",
         details: [
             "Baseline via time-motion or logs",
-            "Measured post-launch on ≥300 cases or ≥6 weeks of volume",
+            "Measured post-launch on ≥300 cases or ≥30 days of volume",
         ],
     },
     {
@@ -125,12 +125,12 @@ export default function AsteriskMath() {
                                 projections based on your specific workflow and
                                 team size.
                             </p>
-                            <a
-                                href="/assessment"
-                                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
-                            >
-                                Get your Ops Efficiency Score
-                            </a>
+	                            <a
+	                                href="/assessment/"
+	                                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+	                            >
+	                                Get your Ops Efficiency Score
+	                            </a>
                         </CardContent>
                     </Card>
                 </div>

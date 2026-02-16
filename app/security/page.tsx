@@ -30,6 +30,21 @@ export const metadata: Metadata = {
         "data residency",
         "encryption",
     ],
+    openGraph: {
+        title: "Security & Governance - Built for Compliance and Control | INVARITECH",
+        description:
+            "Built for governance, compliance, and control. Security by design. Audit trails by default. Identity & Access, Auditability, Data handling, Reliability, Compliance posture.",
+        url: "https://www.invaritech.ai/security/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Security & Governance | INVARITECH",
+                type: "image/webp",
+            },
+        ],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/security/",
     },
@@ -115,19 +130,19 @@ const complianceStandards = [
     {
         name: "GDPR",
         description: "General Data Protection Regulation compliance",
-        status: "Fully Compliant",
+        status: "Aligned with",
         icon: Globe,
     },
     {
         name: "SOC 2",
         description: "Security, availability, and confidentiality controls",
-        status: "Type II Certified",
+        status: "Aligned with controls",
         icon: Shield,
     },
     {
         name: "ISO 27001",
         description: "Information security management system",
-        status: "Certified",
+        status: "Designed for",
         icon: Lock,
     },
     {
@@ -151,13 +166,13 @@ export default function Security() {
                             </h1>
                             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                                 Security by design. Audit trails by default.
-                            </p>
-                            <Button asChild size="lg">
-                                <Link href="/contact">
-                                    Request our Security Overview
-                                </Link>
-                            </Button>
-                        </div>
+	                            </p>
+	                            <Button asChild size="lg">
+	                                <Link href="/contact/">
+	                                    Request our Security Overview
+	                                </Link>
+	                            </Button>
+	                        </div>
                     </div>
                 </section>
 
@@ -385,18 +400,18 @@ export default function Security() {
                                 compliance certifications, and security
                                 architecture.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button asChild size="lg">
-                                    <Link href="/contact">
-                                        Request our Security Overview
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg">
-                                    <Link href="/ops-efficiency-sprint">
-                                        See the Sprint
-                                    </Link>
-                                </Button>
-                            </div>
+	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                <Button asChild size="lg">
+	                                    <Link href="/contact/">
+	                                        Request our Security Overview
+	                                    </Link>
+	                                </Button>
+	                                <Button asChild variant="outline" size="lg">
+	                                    <Link href="/services/ai-automation-sprint/">
+	                                        See the Sprint
+	                                    </Link>
+	                                </Button>
+	                            </div>
                         </div>
                     </div>
                 </section>

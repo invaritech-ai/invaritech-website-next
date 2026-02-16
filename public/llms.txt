@@ -1,28 +1,28 @@
-# Invaritech AI - LLM Context
+# INVARITECH - LLM Context
 
-> Invaritech is a boutique development studio specializing in backend automation, 
-> custom integrations, and workflow optimization for small businesses and agencies.
+> INVARITECH delivers drop-in, governed AI automation for enterprise teams.
+> In 30 days, we ship one production-grade automation on top of your existing systems with measurable before/after impact.
 
 ## About
 
-Invaritech operates as a "studio model" - a small team of architects who design 
-and build custom solutions, supported by a trusted network of specialists for 
-specific needs. We focus on solving the single biggest bottleneck costing our 
-clients 100+ hours per month.
+INVARITECH layers intelligence onto the infrastructure you already own (ERP/CRM/internal tools) instead of replacing systems of record.
+We build with enterprise-grade controls: permissions, audit logs, fallbacks, and rollback.
 
 ## Core Services
 
-- **Backend Development & Automation**: Custom APIs, integrations, and workflow automation
-- **System Integration**: Connecting existing tools into reliable, automated workflows
-- **Compliance Solutions**: Building bridges and automation for regulatory requirements
-- **Product Development**: Creating focused tools for specific business needs
+- **30-Day Drop-In AI Automation Sprint**: One bottleneck, one governed build, one measurable delta
+- **Workflow Automation**: Reduce handoffs, exceptions, and reconciliation drag
+- **AI Integrations**: Connect systems of record through reliable pipelines and approvals
+- **Governed Enterprise Chat**: Permissioned access, traceability, operating model
+- **GenAI Backend Engineering**: Orchestration, evaluation, observability, latency and cost control
 
 ## Key Pages
 
 - Home: https://www.invaritech.ai
+- The Sprint: https://www.invaritech.ai/services/ai-automation-sprint/
+- Services: https://www.invaritech.ai/services/
 - Work & Case Studies: https://www.invaritech.ai/work/
 - About the Team: https://www.invaritech.ai/about/
-- WeekendSuite Product: https://www.invaritech.ai/weekend-suite/
 - Careers: https://www.invaritech.ai/careers/
 - Contact: https://www.invaritech.ai/contact/
 
@@ -36,19 +36,6 @@ through a simple REST API and dashboard.
 **Tech Stack**: Python, FastAPI, PostgreSQL, SOAP
 **Link**: https://www.invaritech.ai/work/eudr-compliance-bridge/
 
-### China Coast Community Website Redesign
-Redesigned a Hong Kong charity's website and donation flow to simplify the donor 
-experience and streamline content management for staff.
-
-**Tech Stack**: Next.js, Stripe, CMS Integration
-**Status**: Ongoing
-
-### WeekendSuite (In Development)
-An in-house product: a weekend-sized admin suite for freelancers and tiny agencies. 
-Handles the messy middle from lead → proposal → contract → onboarding → invoice.
-
-**Link**: https://www.invaritech.ai/weekend-suite/
-
 ## Team
 
 - **Avishek Majumder** (CEO & Co-founder): Data engineer and scientist who has spent his career building and deploying predictive systems in regulated, high-stakes environments across energy and finance. At Invaritech, he designs the automation architectures that let lean teams operate with enterprise-grade reliability.
@@ -58,24 +45,47 @@ Handles the messy middle from lead → proposal → contract → onboarding → 
 ## Technology Focus
 
 - **Backend**: Python (FastAPI), Node.js, PostgreSQL, REST/SOAP APIs
-- **Frontend**: Next.js, React, TypeScript, Modern CSS
-- **Integration**: Stripe, CRM systems, custom API bridges
-- **Infrastructure**: Cloud deployment, monitoring, retry queues
+- **Frontend**: Next.js, React, TypeScript
+- **Integration**: ERP/CRM/helpdesk/internal APIs, webhooks, approvals
+- **Infrastructure**: Cloud deployment, monitoring, retries/queues, audit logging
 
 ## Business Model
 
-We deliver custom automation solutions within 6 weeks, focusing on:
-1. Identifying the biggest time-consuming bottleneck
-2. Designing an elegant, maintainable solution
-3. Building and deploying the automation
-4. Giving clients their time back
+Primary engagement: a fixed-scope 30-day sprint:
+1. Identify one bottleneck and lock a baseline
+2. Build a governed AI automation on top of your existing stack
+3. Harden for production (access control, logs, fallbacks, rollback)
+4. Deploy + validate before/after + handover
 
 ## Contact
 
 - Website: https://www.invaritech.ai
-- Email: Available via contact form at https://www.invaritech.ai/contact/
-- Location: Hong Kong
+- Email: hello@invaritech.ai
+- Service area: Worldwide
 
 ---
 
-Last Updated: 2025-11-23
+Last Updated: 2026-02-14
+
+## Verification Policy
+
+INVARITECH distinguishes between "Verified" and "Modeled" results in all public communications:
+
+- **Verified Results**: Outcomes measured post-launch on client systems with ≥30 days of production volume.
+- **Modeled Estimates**: Projections based on client-provided data, industry benchmarks for task duration, and standard hourly rates. These are explicitly labeled as "Modeled Estimates" or marked with an asterisk (*).
+
+## Modeling Methodology
+
+When estimating impact for unlaunched projects, we use the following formula:
+`Hours saved = (Monthly cases × minutes saved per case ÷ 60) × (1 - automation friction)`
+`Cost avoidance = Hours saved × Standard FTE fully loaded hourly rate`
+
+We typically assume:
+- 15% rework rate (automation friction) for manual drafting tasks
+- 90% time reduction for search/retrieval tasks
+- 60% reduction for complex drafting tasks
+
+Implementation details (lib/assessment-calculator.ts):
+- Workflow-specific savings: knowledge=0.90, drafting=0.70, intake/finance/other=0.60
+- Automation friction: 0.15 for drafting workflows, 0.05 for knowledge retrieval
+- standardFteHourlyRate: configurable (default $65)

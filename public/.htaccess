@@ -86,13 +86,9 @@
     
     # Handle Angular and React Router
     RewriteRule ^index\.html$ - [L]
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    # Exclude robots.txt, sitemap.xml, and llms.txt from catch-all redirect
-    RewriteCond %{REQUEST_URI} !^/robots\.txt$ [NC]
-    RewriteCond %{REQUEST_URI} !^/sitemap\.xml$ [NC]
-    RewriteCond %{REQUEST_URI} !^/llms\.txt$ [NC]
-    RewriteRule . /index.html [L]
+    
+    # Custom 404 handling for static site
+    ErrorDocument 404 /404.html
 </IfModule>
 
 # Prevent access to sensitive files

@@ -49,8 +49,10 @@ next-env.d.ts
 .augment/rules/byterover-rules.md
 dist/*
 api-server/*
+api-server/
 
 
-.agents
+.agent*
 .claude
 .cline
+.codex

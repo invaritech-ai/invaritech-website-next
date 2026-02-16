@@ -68,7 +68,7 @@ export default function RiskControl() {
 
                 <div className="text-center">
                     <Button asChild variant="outline" size="lg">
-                        <Link href="/ops-efficiency-sprint#milestone-gate">
+                        <Link href="/services/ai-automation-sprint/">
                             Review acceptance criteria
                         </Link>
                     </Button>

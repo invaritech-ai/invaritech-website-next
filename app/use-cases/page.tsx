@@ -24,6 +24,21 @@ export const metadata: Metadata = {
         "approvals",
         "workflow automation",
     ],
+    openGraph: {
+        title: "Use Cases - High-ROI Workflows We Implement in Weeks | INVARITECH",
+        description:
+            "High-ROI use cases we implement in weeks. Policy lookup & procedure guidance, Report/estimate drafting, Intake automation, Reconciliations & approvals.",
+        url: "https://www.invaritech.ai/use-cases/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Use Cases - High-ROI Workflows | INVARITECH",
+                type: "image/webp",
+            },
+        ],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/use-cases/",
     },
@@ -54,7 +69,7 @@ const useCases = [
             ],
         },
         metrics:
-            "8,000 lookups/month → 400 hours saved/month (~$36k/month at $90/hr)",
+            "8,000 lookups/month → 400 hours saved/month (~$36k/month at $90/hr)*",
     },
     {
         icon: FileText,
@@ -80,7 +95,7 @@ const useCases = [
             ],
         },
         metrics:
-            "1,200 drafts/month → 240 hours saved/month; −15% rework at $250 each → +$4.5k/month",
+            "1,200 drafts/month → 240 hours saved/month; −15% rework at $250 each → +$4.5k/month*",
     },
     {
         icon: Upload,
@@ -106,7 +121,7 @@ const useCases = [
             ],
         },
         metrics:
-            "9,000 docs/month → 255 hours saved/month (~$19k/month at $75/hr)",
+            "9,000 docs/month → 255 hours saved/month (~$19k/month at $75/hr)*",
     },
     {
         icon: Calculator,
@@ -132,7 +147,7 @@ const useCases = [
             ],
         },
         metrics:
-            "Reduced reconciliation time by 70% → $25k/month in avoided costs",
+            "Reduced reconciliation time by 70% → $25k/month in avoided costs*",
     },
 ];
 
@@ -149,13 +164,13 @@ export default function UseCases() {
                             </h1>
                             <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
                                 Pick one workflow to start. Prove value. Expand.
-                            </p>
-                            <Button asChild size="lg">
-                                <Link href="/assessment">
-                                    Get your Ops Efficiency Score
-                                </Link>
-                            </Button>
-                        </div>
+	                            </p>
+	                            <Button asChild size="lg">
+	                                <Link href="/assessment/">
+	                                    Get your Ops Efficiency Score
+	                                </Link>
+	                            </Button>
+	                        </div>
                     </div>
                 </section>
 
@@ -258,22 +273,31 @@ export default function UseCases() {
                                 Start with one use case and expand based on
                                 proven results.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button asChild size="lg">
-                                    <Link href="/assessment">
-                                        Get your Ops Efficiency Score
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg">
-                                    <Link href="/ops-efficiency-sprint">
-                                        See the Sprint
-                                    </Link>
-                                </Button>
-                            </div>
+	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                <Button asChild size="lg">
+	                                    <Link href="/assessment/">
+	                                        Get your Ops Efficiency Score
+	                                    </Link>
+	                                </Button>
+	                                <Button asChild variant="outline" size="lg">
+	                                    <Link href="/services/ai-automation-sprint/">
+	                                        See the Sprint
+	                                    </Link>
+	                                </Button>
+	                            </div>
                         </div>
                     </div>
                 </section>
             </main>
+            
+            {/* Disclaimer */}
+            <section className="py-12 px-6 border-t border-muted bg-muted/50">
+                <div className="max-w-5xl mx-auto text-center">
+                    <p className="text-sm text-muted-foreground/60 italic">
+                        *Modeled Estimate: Projections based on client-provided data, industry benchmarks for task duration, and standard hourly rates. Actual results may vary based on implementation scope and adoption.
+                    </p>
+                </div>
+            </section>
         </>
     );
 }

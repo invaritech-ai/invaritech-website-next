@@ -18,6 +18,7 @@ import {
     Building2,
     Globe2,
 } from "lucide-react";
+import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 interface FormData {
     name: string;
@@ -162,9 +163,12 @@ export default function ContactSection() {
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
         try {
-            const apiUrl =
-                process.env.NEXT_PUBLIC_API_URL ||
-                "https://your-api-domain.vercel.app";
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+            if (!apiUrl || apiUrl.trim() === "") {
+                throw new Error(
+                    "Contact API is not configured. Please set NEXT_PUBLIC_API_URL in your environment."
+                );
+            }
 
             // Execute reCAPTCHA
             let recaptchaToken = null;
@@ -266,7 +270,11 @@ export default function ContactSection() {
                                     Why partner with Invaritech?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    We&apos;re not just a dev shop. We&apos;re a strategic partner that helps you navigate complex technical challenges. From compliance bridges to data pipelines, we build the infrastructure that powers your business.
+                                    Invaritech leads architecture, delivery, and
+                                    accountability. Our partner engineering
+                                    network extends execution capacity, but you
+                                    always have one accountable owner for
+                                    outcomes.
                                 </p>
                             </div>
 
@@ -276,9 +284,11 @@ export default function ContactSection() {
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1">Book a Consultation</h3>
+                                        <h3 className="font-medium mb-1">Book a Meeting</h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Skip the email tag. Schedule a 30-minute call directly with our team.
+                                            Skip the email loop and book a
+                                            focused session directly with our
+                                            team.
                                         </p>
                                         <Button
                                             asChild
@@ -286,11 +296,11 @@ export default function ContactSection() {
                                             className="group"
                                         >
                                             <a
-                                                href="https://calendly.com/hello-invaritech/30min"
+                                                href={BOOK_MEETING_URL}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                             >
-                                                Schedule on Calendly
+                                                {BOOK_MEETING_CTA}
                                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                             </a>
                                         </Button>
@@ -453,15 +463,16 @@ export default function ContactSection() {
                         <div className="relative mb-8 sm:mb-10">
                             <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                                 <Globe2 className="h-3.5 w-3.5" />
-                                Sister Companies
+                                Invaritech-Led Delivery Network
                             </div>
                             <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
                                 Global Office Addresses
                             </h3>
                             <p className="max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-                                You can reach our wider group through these
-                                sister-company locations across APAC and North
-                                America.
+                                Invaritech remains the primary commercial and
+                                delivery lead. These offices represent partner
+                                companies in our operating network across APAC
+                                and North America.
                             </p>
                         </div>
 

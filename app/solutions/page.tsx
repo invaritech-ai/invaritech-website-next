@@ -23,6 +23,21 @@ export const metadata: Metadata = {
         "finance automation",
         "engineering discipline",
     ],
+    openGraph: {
+        title: "Solutions - Intelligent Systems for Modern Operations | INVARITECH",
+        description:
+            "Intelligent systems that reduce cost-to-serve and make work auditable. Knowledge & Decision Support, Agentic Workflows, Intake & Processing, Finance & Back-Office, and Engineering discipline.",
+        url: "https://www.invaritech.ai/solutions/",
+        images: [
+            {
+                url: "/og-image.webp",
+                width: 1200,
+                height: 630,
+                alt: "Solutions - Intelligent Systems | INVARITECH",
+                type: "image/webp",
+            },
+        ],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/solutions/",
     },
@@ -122,11 +137,11 @@ export default function Solutions() {
                                 Intelligent systems that reduce cost-to-serve
                                 and make work auditable.
                             </p>
-                            <Button asChild size="lg">
-                                <Link href="/ops-efficiency-sprint">
-                                    See the Ops Efficiency Sprint
-                                </Link>
-                            </Button>
+	                            <Button asChild size="lg">
+	                                <Link href="/services/ai-automation-sprint/">
+	                                    See the Ops Efficiency Sprint
+	                                </Link>
+	                            </Button>
                         </div>
                     </div>
                 </section>
@@ -190,14 +205,14 @@ export default function Solutions() {
                                                 variant="outline"
                                                 className="w-full"
                                             >
-                                                <Link
-                                                    href={`/solutions#${solution.anchor}`}
-                                                >
-                                                    Learn more
-                                                    <ArrowRight className="w-4 h-4 ml-2" />
-                                                </Link>
-                                            </Button>
-                                        </div>
+	                                        <Link
+	                                            href={`/solutions/#${solution.anchor}`}
+	                                        >
+	                                            Learn more
+	                                            <ArrowRight className="w-4 h-4 ml-2" />
+	                                        </Link>
+	                                    </Button>
+	                                </div>
                                     </CardContent>
                                 </Card>
                             ))}
@@ -216,18 +231,18 @@ export default function Solutions() {
                                 Choose your highest-ROI workflow and see
                                 measurable results in 60 days.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                                <Button asChild size="lg">
-                                    <Link href="/ops-efficiency-sprint">
-                                        See the Ops Efficiency Sprint
-                                    </Link>
-                                </Button>
-                                <Button asChild variant="outline" size="lg">
-                                    <Link href="/assessment">
-                                        Get your Ops Efficiency Score
-                                    </Link>
-                                </Button>
-                            </div>
+	                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+	                                <Button asChild size="lg">
+	                                    <Link href="/services/ai-automation-sprint/">
+	                                        See the Ops Efficiency Sprint
+	                                    </Link>
+	                                </Button>
+	                                <Button asChild variant="outline" size="lg">
+	                                    <Link href="/assessment/">
+	                                        Get your Ops Efficiency Score
+	                                    </Link>
+	                                </Button>
+	                            </div>
                         </div>
                     </div>
                 </section>

@@ -1,0 +1,1073 @@
+{
+  "scannedRoots": [
+    "app",
+    "components",
+    "lib"
+  ],
+  "totalLinks": 85,
+  "totalsByType": {
+    "external": 53,
+    "hash": 1,
+    "internal": 27,
+    "mailto": 3,
+    "tel": 1
+  },
+  "items": [
+    {
+      "url": "http://localhost:3001",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/weekend-suite/page.tsx"
+      ]
+    },
+    {
+      "url": "http://www.w3.org/1999/xlink",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/logos/MediaWiki.tsx"
+      ]
+    },
+    {
+      "url": "http://www.w3.org/2000/svg",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 8,
+      "sources": [
+        "components/artistic-404.tsx",
+        "components/logo.tsx",
+        "components/logos/Gemini.tsx",
+        "components/logos/GooglePaLM.tsx",
+        "components/logos/MagicUI.tsx",
+        "components/logos/MediaWiki.tsx",
+        "components/logos/Replit.tsx",
+        "components/logos/VSCodium.tsx"
+      ]
+    },
+    {
+      "url": "https://analytics.ahrefs.com",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://analytics.ahrefs.com/analytics.js",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://calendly.com/hello-invaritech/30min",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http",
+        "resolved"
+      ],
+      "occurrences": 3,
+      "sources": [
+        "app/blogs/[slug]/page.tsx",
+        "app/work/page.tsx",
+        "lib/marketing.ts"
+      ]
+    },
+    {
+      "url": "https://flowise.avishekmajumder.com",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/chatbot.tsx"
+      ]
+    },
+    {
+      "url": "https://github.com/invaritech-ai",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://linkedin.com/company/invaritechai",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/structured-data.ts",
+        "components/footer.tsx"
+      ]
+    },
+    {
+      "url": "https://r2.leadsy.ai",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://r2.leadsy.ai/tag.js",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://reclaim-emergent-code.vercel.app",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/work/page.tsx",
+        "components/selected-work.tsx"
+      ]
+    },
+    {
+      "url": "https://schema.org",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/blogs/[slug]/page.tsx",
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://tailus.io/images/reviews/jonathan.webp",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/testimonials.tsx"
+      ]
+    },
+    {
+      "url": "https://tailus.io/images/reviews/rodrigo.webp",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/testimonials.tsx"
+      ]
+    },
+    {
+      "url": "https://tailus.io/images/reviews/shekinah.webp",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/testimonials.tsx"
+      ]
+    },
+    {
+      "url": "https://tailus.io/images/reviews/yucel.webp",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/testimonials.tsx"
+      ]
+    },
+    {
+      "url": "https://www.google.com",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://www.googletagmanager.com",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://www.googletagmanager.com/gtag/js?id=G-JJPJBB10G7",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 6,
+      "sources": [
+        "app/blogs/[slug]/page.tsx",
+        "app/layout.tsx",
+        "app/robots.ts",
+        "app/sitemap.ts",
+        "app/structured-data.ts",
+        "components/chatbot.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/#organization",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/#webpage",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/#website",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/about/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/about/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/ai-automation-sprint/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/ops-efficiency-sprint/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/assessment/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/assessment/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/blogs/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/blogs/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/blogs/${post.slug}/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/blogs/[slug]/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/careers/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/careers/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/careers/full-stack-developer/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/careers/full-stack-developer/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/contact/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/contact/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/logo-image.png",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/privacy/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/privacy/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/results/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/results/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/security/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/security/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/ai-automation-consulting/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/ai-automation-consulting/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/ai-automation-sprint/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 3,
+      "sources": [
+        "app/ai-automation-sprint/page.tsx",
+        "app/services/ai-automation-sprint/page.tsx",
+        "app/structured-data.ts"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/ai-integration-services/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/ai-integration-services/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/ai-workflow-automation-services/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/ai-workflow-automation-services/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/compliance-bridge/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/enterprise-ai-chatbot-deployment/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/enterprise-ai-chatbot-deployment/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/services/generative-ai-backend-development/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/services/generative-ai-backend-development/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/sitemap.xml",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/robots.ts"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/solutions/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/solutions/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/terms/",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/terms/page.tsx",
+        "components/chatbot.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/use-cases/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/use-cases/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/weekend-suite/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/weekend-suite/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/work/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/work/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/work/eudr-compliance-bridge/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/work/eudr-compliance-bridge/page.tsx"
+      ]
+    },
+    {
+      "url": "https://x.com/invaritechai",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/structured-data.ts",
+        "components/footer.tsx"
+      ]
+    },
+    {
+      "url": "#contact",
+      "type": "hash",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/results/page.tsx"
+      ]
+    },
+    {
+      "url": "/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 3,
+      "sources": [
+        "components/artistic-404.tsx",
+        "components/footer.tsx",
+        "components/header.tsx"
+      ]
+    },
+    {
+      "url": "/about/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/assessment/page.tsx"
+      ]
+    },
+    {
+      "url": "/assessment/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 4,
+      "sources": [
+        "app/solutions/page.tsx",
+        "app/use-cases/page.tsx",
+        "components/asterisk-math.tsx",
+        "components/qualification-guardrails.tsx"
+      ]
+    },
+    {
+      "url": "/blogs/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/blogs/[slug]/page.tsx"
+      ]
+    },
+    {
+      "url": "/blogs/${post.slug}/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/blogs/page.tsx"
+      ]
+    },
+    {
+      "url": "/blogs/building-vs-buying-custom-automation/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 5,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+      ]
+    },
+    {
+      "url": "/blogs/compliance-automation-done-right/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 5,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+      ]
+    },
+    {
+      "url": "/blogs/consultancy-trap/",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "lib/blog-posts/regops-strategy.ts"
+      ]
+    },
+    {
+      "url": "/blogs/regops-strategy/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx",
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
+      ]
+    },
+    {
+      "url": "/blogs/regops-technical/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 4,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
+      ]
+    },
+    {
+      "url": "/blogs/why-manual-eudr-compliance-fails/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 6,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
+      ]
+    },
+    {
+      "url": "/careers/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/careers/full-stack-developer/page.tsx"
+      ]
+    },
+    {
+      "url": "/careers/${job.id}/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/careers/page.tsx"
+      ]
+    },
+    {
+      "url": "/contact/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 4,
+      "sources": [
+        "app/assessment/page.tsx",
+        "app/security/page.tsx",
+        "components/home-fit-faq-cta.tsx",
+        "components/qualification-guardrails.tsx"
+      ]
+    },
+    {
+      "url": "/results/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/services/ai-automation-sprint/sprint-client.tsx",
+        "app/services/services-client.tsx"
+      ]
+    },
+    {
+      "url": "/results/#eudr",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/recent-work.tsx"
+      ]
+    },
+    {
+      "url": "/services/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 7,
+      "sources": [
+        "app/blogs/[slug]/page.tsx",
+        "app/services/ai-automation-consulting/consulting-client.tsx",
+        "app/services/ai-automation-sprint/sprint-client.tsx",
+        "app/services/ai-integration-services/integration-client.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "app/services/enterprise-ai-chatbot-deployment/chatbot-client.tsx",
+        "app/services/generative-ai-backend-development/backend-client.tsx"
+      ]
+    },
+    {
+      "url": "/services/ai-automation-consulting/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 7,
+      "sources": [
+        "app/components/services/core-thesis-section.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+      ]
+    },
+    {
+      "url": "/services/ai-automation-sprint/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 22,
+      "sources": [
+        "app/assessment/page.tsx",
+        "app/components/services/core-thesis-section.tsx",
+        "app/results/page.tsx",
+        "app/security/page.tsx",
+        "app/services/ai-automation-consulting/consulting-client.tsx",
+        "app/services/services-client.tsx",
+        "app/solutions/page.tsx",
+        "app/use-cases/page.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "components/Hero.tsx",
+        "components/artistic-home-hero.tsx",
+        "components/expected-results.tsx",
+        "components/home-hero.tsx",
+        "components/how-it-works.tsx",
+        "components/risk-control.tsx",
+        "components/what-we-do-section.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+      ]
+    },
+    {
+      "url": "/services/ai-integration-services/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 6,
+      "sources": [
+        "app/components/services/core-thesis-section.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+      ]
+    },
+    {
+      "url": "/services/ai-workflow-automation-services/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/components/services/core-thesis-section.tsx"
+      ]
+    },
+    {
+      "url": "/services/enterprise-ai-chatbot-deployment/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/components/services/core-thesis-section.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts"
+      ]
+    },
+    {
+      "url": "/services/generative-ai-backend-development/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/components/services/core-thesis-section.tsx"
+      ]
+    },
+    {
+      "url": "/solutions/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/what-we-build.tsx"
+      ]
+    },
+    {
+      "url": "/solutions/#${solution.anchor}",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/solutions/page.tsx"
+      ]
+    },
+    {
+      "url": "/work/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 7,
+      "sources": [
+        "app/services/enterprise-ai-chatbot-deployment/chatbot-client.tsx",
+        "app/services/generative-ai-backend-development/backend-client.tsx",
+        "app/services/services-client.tsx",
+        "app/work/eudr-compliance-bridge/page.tsx",
+        "components/Hero.tsx",
+        "components/home-hero.tsx",
+        "components/selected-work.tsx"
+      ]
+    },
+    {
+      "url": "/work/eudr-compliance-bridge/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 7,
+      "sources": [
+        "app/services/compliance-bridge/page.tsx",
+        "app/services/services-client.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+      ]
+    },
+    {
+      "url": "mailto:${office.email}",
+      "type": "mailto",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/contact.tsx"
+      ]
+    },
+    {
+      "url": "mailto:hello@invaritech.ai",
+      "type": "mailto",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 5,
+      "sources": [
+        "app/careers/full-stack-developer/page.tsx",
+        "app/privacy/page.tsx",
+        "app/terms/page.tsx",
+        "components/contact.tsx",
+        "components/header.tsx"
+      ]
+    },
+    {
+      "url": "mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer",
+      "type": "mailto",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/careers/full-stack-developer/page.tsx"
+      ]
+    },
+    {
+      "url": "tel:${office.phoneHref ?? office.phone}",
+      "type": "tel",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/contact.tsx"
+      ]
+    }
+  ]
+}

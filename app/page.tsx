@@ -1,39 +1,26 @@
-import HeroSection from "@/components/hero-section";
-import dynamic from "next/dynamic";
 import { Metadata } from "next";
-
-// Lazy load below-the-fold components for better performance
-const WhatWeDoSection = dynamic(
-    () => import("@/components/what-we-do-section"),
-    {
-        loading: () => <div className="min-h-[400px]" />,
-    }
-);
-
-const SelectedWorkSection = dynamic(
-    () => import("@/components/selected-work"),
-    {
-        loading: () => <div className="min-h-[400px]" />,
-    }
-);
-
-const HowWeWorkSection = dynamic(() => import("@/components/how-we-work"), {
-    loading: () => <div className="min-h-[400px]" />,
-});
+import ArtisticHomeHero from "@/components/artistic-home-hero";
+import WhatWeDoSection from "@/components/what-we-do-section";
+import SelectedWorkSection from "@/components/selected-work";
+import HowWeWorkSection from "@/components/how-we-work";
+import ExpansionPathsSection from "@/components/expansion-paths";
+import HomeFitFaqCta from "@/components/home-fit-faq-cta";
 
 export const metadata: Metadata = {
-    alternates: {
-        canonical: "https://www.invaritech.ai",
-    },
+  alternates: {
+    canonical: 'https://www.invaritech.ai/',
+  },
 };
 
 export default function Home() {
-    return (
-        <main>
-            <HeroSection />
-            <WhatWeDoSection />
-            <SelectedWorkSection />
-            <HowWeWorkSection />
-        </main>
-    );
+  return (
+    <main className="flex min-h-screen flex-col bg-[#030305] selection:bg-primary/30 selection:text-primary">
+      <ArtisticHomeHero />
+      <WhatWeDoSection />
+      <SelectedWorkSection />
+      <HowWeWorkSection />
+      <ExpansionPathsSection />
+      <HomeFitFaqCta />
+    </main>
+  );
 }
