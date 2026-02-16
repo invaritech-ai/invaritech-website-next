@@ -12,11 +12,10 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai/services/",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "AI Automation & Integration Services",
-                type: "image/webp",
             },
         ],
     },

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "About INVARITECH — Tactical AI Delivery Unit",
         url: "https://www.invaritech.ai/about/",
-        images: ["/og-image.webp"],
+        images: ["/og-image.png"],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/about/",

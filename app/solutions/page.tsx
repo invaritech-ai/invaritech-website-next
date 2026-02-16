@@ -30,11 +30,10 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai/solutions/",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Solutions - Intelligent Systems | INVARITECH",
-                type: "image/webp",
             },
         ],
     },
