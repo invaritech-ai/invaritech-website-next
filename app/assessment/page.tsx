@@ -254,62 +254,6 @@ export default function AssessmentPage() {
         }
     }, []);
 
-    const submitLead = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        try {
-            // Send to existing contact API
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: leadData.name,
-                    email: leadData.email,
-                    company: leadData.company,
-                    country: "Assessment Lead",
-                    phone: leadData.phone || "N/A",
-                    // Pack the assessment results into the message body
-                    message: `
-Assessment Results for ${leadData.company}:
-Tier: ${result?.tier.toUpperCase()}
-Archetype: ${result?.archetypeTitle}
-
-Scores:
-- Viability: ${result?.viabilityScore}/100
-- Readiness: ${result?.readinessScore}/100
-- Risk: ${result?.riskScore}/100
-
-Inputs:
-- Function: ${inputs.functionFocus}
-- Goal: ${inputs.primaryWorkflowGoal}
-- Volume: ${inputs.monthlyVolumeBand}
-- AHT: ${inputs.currentAHTBand}
-                    `.trim(),
-                    source: "Assessment Tool",
-                }),
-            });
-
-            if (response.ok) {
-                setLeadSubmitted(true);
-                try {
-                    sessionStorage.setItem("assessment_step", "7");
-                } catch {
-                    // Ignore
-                }
-                setStep(7); // Show results
-            } else {
-                // Fallback if API fails, still show results to user
-                console.error("Failed to save lead");
-                setStep(7);
-            }
-        } catch (err) {
-            console.error(err);
-            setStep(7);
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
 
     // --- Render Steps ---
 
@@ -688,7 +632,7 @@ Inputs:
                             Readiness
                         </div>
                         <p className="text-xs text-muted-foreground leading-relaxed">
-                            Evaluates data and process maturity. Scores above 70 mean you have the necessary documentation and data to start building. Below 40 requires a "Foundation" phase.
+                            Evaluates data and process maturity. Scores above 70 mean you have the necessary documentation and data to start building. Below 40 requires a {"\""}Foundation{"\""} phase.
                         </p>
                     </div>
                     <div className="space-y-2">
@@ -841,7 +785,7 @@ Inputs:
                             color: black !important;
                             -webkit-print-color-adjust: exact;
                         }
-                        .Card, .p-6, .grid {
+                        [class*="bg-card"], [class*="rounded-"], .grid, .p-6 {
                             background: white !important;
                             border-color: #eee !important;
                             color: black !important;
