@@ -190,6 +190,7 @@ export default function AssessmentPage() {
 
         // Always calculate deterministic scores first (instant)
         const clientResult = calculateAssessmentScore(inputs);
+        let resultToSave = clientResult;
         setStep(6); // Show "Analyzing..." screen
 
         try {
@@ -222,20 +223,20 @@ export default function AssessmentPage() {
             
             const data = await response.json();
             if (data.success && data.result) {
-                setResult(data.result);
+                resultToSave = data.result;
                 setLeadSubmitted(true);
-            } else {
-                setResult(clientResult);
             }
         } catch (err) {
             setApiError(err instanceof Error ? err.message : "An unexpected error occurred");
-            setResult(clientResult);
         }
 
-        // Always show results regardless of API success/failure
+        const finalResult = resultToSave || clientResult;
+        setResult(finalResult);
         setIsSubmitting(false);
+
         try {
             sessionStorage.setItem("assessment_step", "7");
+            sessionStorage.setItem("assessment_result", JSON.stringify(finalResult));
         } catch { /* ignore */ }
         setStep(7);
     };
@@ -729,7 +730,7 @@ export default function AssessmentPage() {
                         </div>
                     </div>
                     <p className="mt-6 text-[10px] text-muted-foreground leading-relaxed italic border-t border-border/50 pt-4 print:text-gray-500">
-                        * Calculations are based on industry benchmarks for {formatLabel(inputs.functionFocus)} workflows and assume an 80-90% success rate for initial AI pilots. Costs reflect standard HKD (USD) blended FTE rates.
+                        * Calculations are based on industry benchmarks for {formatLabel(inputs.functionFocus || result.calculationBasis.functionFocus)} workflows and assume an 80-90% success rate for initial AI pilots. Costs reflect standard HKD (USD) blended FTE rates.
                     </p>
                 </div>
 
