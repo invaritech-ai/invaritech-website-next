@@ -311,14 +311,14 @@ export function calculateAssessmentScore(
             strategicAdvice = `You have the perfect storm for automation: high volume, well-documented processes, and a tolerance for iteration. You are ready to deploy autonomous agents that can execute end-to-end tasks with minimal supervision, potentially unlocking 10x operational throughput.`;
             tier = "hot";
         }
-    } else if (viabilityScore > 60 && readinessScore <= 70) {
+    } else if (viabilityScore > 60 && readinessScore < 70) {
         // Worth doing, but not ready
         archetype = "foundation-builder";
         title = "The Foundation Builder";
         description = "High potential that needs infrastructure investment first.";
         strategicAdvice = `The ROI potential is clearly there, but your data or process maturity isn't quite ready for advanced AI agents yet. Jumping straight to code would be risky. The winning move is a 'Foundation Sprint'—formalizing your SOPs and data, then layering AI on top.`;
         tier = "warm";
-    } else if (viabilityScore > 60 && readinessScore > 70) {
+    } else if (viabilityScore > 60 && readinessScore >= 70) {
         // Ready, but maybe moderate ROI
         archetype = "opportunity-accelerator";
         title = "The Opportunity Accelerator";
