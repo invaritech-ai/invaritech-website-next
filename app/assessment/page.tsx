@@ -25,6 +25,7 @@ import Link from "next/link";
 import { calculateAssessmentScore, AssessmentInputs, AssessmentResult } from "@/lib/assessment-calculator";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { motion, AnimatePresence } from "motion/react";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 // --- Options Constants (Moved to top level) ---
 
@@ -152,6 +153,13 @@ export default function AssessmentPage() {
     const [leadSubmitted, setLeadSubmitted] = useState(false);
     const [apiError, setApiError] = useState<string | null>(null);
 
+    // reCAPTCHA v3 (invisible)
+    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    const { executeRecaptcha } = useRecaptcha({
+        siteKey: recaptchaSiteKey || "",
+        action: "assessment_submit",
+    });
+
     const handleInputChange = (field: keyof AssessmentInputs, value: string | string[]) => {
         setInputs((prev) => ({ ...prev, [field]: value }));
     };
@@ -188,14 +196,20 @@ export default function AssessmentPage() {
             const controller = new AbortController();
             const timeout = setTimeout(() => controller.abort(), 15000);
 
+            // Get reCAPTCHA token
+            let recaptchaToken = null;
+            if (recaptchaSiteKey) {
+                recaptchaToken = await executeRecaptcha();
+                console.log("[Assessment] reCAPTCHA token:", recaptchaToken ? "obtained" : "failed");
+            }
+
             const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
             console.log("[Assessment] Calling API at:", `${apiUrl}/api/assessment`);
-            console.log("[Assessment] Payload:", JSON.stringify({ inputs, leadData }).slice(0, 200));
 
             const response = await fetch(`${apiUrl}/api/assessment`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ inputs, leadData }),
+                body: JSON.stringify({ inputs, leadData, recaptchaToken }),
                 signal: controller.signal,
             });
             clearTimeout(timeout);
