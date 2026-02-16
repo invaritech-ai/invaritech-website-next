@@ -215,6 +215,7 @@ export default function AssessmentPage() {
             const data = await response.json();
             if (data.success && data.result) {
                 setResult(data.result);
+                setLeadSubmitted(true);
             } else {
                 setResult(clientResult);
             }
@@ -223,7 +224,6 @@ export default function AssessmentPage() {
         }
 
         // Always show results regardless of API success/failure
-        setLeadSubmitted(true);
         setIsSubmitting(false);
         try {
             sessionStorage.setItem("assessment_step", "7");
@@ -707,10 +707,12 @@ Inputs:
                     </Card>
                 </div>
 
-                {/* Email confirmation */}
-                {leadSubmitted && leadData.email && (
+                {/* Persistence status */}
+                {leadData.email && (
                     <p className="text-center text-sm text-muted-foreground">
-                        Your results have been saved.
+                        {leadSubmitted
+                            ? "Your results have been saved."
+                            : "Results generated locally. Your data was not submitted — please try again or contact us."}
                     </p>
                 )}
 
