@@ -125,7 +125,7 @@ const toolingOptions = [
 
 export default function AssessmentPage() {
     const [step, setStep] = useState<number>(0);
-    // 0: Intro, 1: Context, 2: Volume/Value, 3: Readiness, 4: Commercial, 5: Calculating, 6: Lead Capture, 7: Results
+    // 0: Intro, 1: Context, 2: Volume/Value, 3: Readiness, 4: Commercial, 5: Lead Capture, 6: Calculating, 7: Results
 
     const [inputs, setInputs] = useState<AssessmentInputs>({
         companySize: "",
@@ -193,10 +193,10 @@ export default function AssessmentPage() {
         let resultToSave = clientResult;
         setStep(6); // Show "Analyzing..." screen
 
-        try {
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 15000);
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 15000);
 
+        try {
             // Get reCAPTCHA token
             let recaptchaToken = null;
             if (recaptchaSiteKey) {
@@ -217,7 +217,6 @@ export default function AssessmentPage() {
                 body: JSON.stringify({ inputs, leadData, recaptchaToken }),
                 signal: controller.signal,
             });
-            clearTimeout(timeout);
 
             if (!response.ok) throw new Error(`API error: ${response.status}`);
             
@@ -228,6 +227,8 @@ export default function AssessmentPage() {
             }
         } catch (err) {
             setApiError(err instanceof Error ? err.message : "An unexpected error occurred");
+        } finally {
+            clearTimeout(timeout);
         }
 
         const finalResult = resultToSave || clientResult;
@@ -248,7 +249,10 @@ export default function AssessmentPage() {
             if (storedResult && (storedStep === "6" || storedStep === "7")) {
                 const parsed = JSON.parse(storedResult) as AssessmentResult;
                 setResult(parsed);
-                setStep(parseInt(storedStep, 10));
+                // Always restore to results (step 7); restoring to step 6
+                // ("Calculating…" spinner) would leave the user stuck with no
+                // active API request to advance the flow.
+                setStep(7);
             }
         } catch {
             // Ignore
