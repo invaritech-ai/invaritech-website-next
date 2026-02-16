@@ -83,7 +83,7 @@ When estimating impact for unlaunched projects, we use the following formula:
 We typically assume:
 - 15% rework rate (automation friction) for manual drafting tasks
 - 90% time reduction for search/retrieval tasks
-- 60% reduction for complex drafting tasks
+- 70% reduction for complex drafting tasks
 
 Implementation details (lib/assessment-calculator.ts):
 - Workflow-specific savings: knowledge=0.90, drafting=0.70, intake/finance/other=0.60

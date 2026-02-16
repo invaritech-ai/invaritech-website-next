@@ -1,11 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
     Select,
     SelectContent,
@@ -13,109 +9,142 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import {
+import { 
     ArrowRight,
-    CheckCircle2,
-    BarChart3,
-    Zap,
-    Loader2,
-    Share2,
 } from "lucide-react";
-import Link from "next/link";
-import { calculateAssessmentScore, AssessmentInputs, AssessmentResult } from "@/lib/assessment-calculator";
+import { 
+    calculateAssessmentScore, 
+    AssessmentInputs, 
+    AssessmentResult 
+} from "@/lib/assessment-calculator";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { motion, AnimatePresence } from "motion/react";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
+import { MagneticButton } from "@/components/ui/MagneticButton";
+import { cn } from "@/lib/utils";
+import { AssessmentIntro } from "@/components/assessment/AssessmentIntro";
+import { LeadCaptureForm } from "@/components/assessment/LeadCaptureForm";
+import { CalculatingState } from "@/components/assessment/CalculatingState";
+import { AssessmentResults } from "@/components/assessment/AssessmentResults";
 
-// --- Options Constants (Moved to top level) ---
+// --- Options Constants ---
 
 const companySizeOptions = [
-    { value: "50-200", label: "50-200 employees" },
-    { value: "200-500", label: "200-500 employees" },
-    { value: "500-1000", label: "500-1000 employees" },
-    { value: "1000-2000", label: "1000-2000 employees" },
-    { value: "2000+", label: "2000+ employees" },
+    { value: "50-200", label: "50-200 EMPLOYEES" },
+    { value: "200-500", label: "200-500 EMPLOYEES" },
+    { value: "500-1000", label: "500-1000 EMPLOYEES" },
+    { value: "1000-2000", label: "1000-2000 EMPLOYEES" },
+    { value: "2000+", label: "2000+ EMPLOYEES" },
 ];
 
 const functionFocusOptions = [
-    { value: "ops", label: "Operations" },
-    { value: "support", label: "Support / CX" },
-    { value: "finance", label: "Finance / Accounting" },
-    { value: "legal", label: "Legal / Compliance" },
-    { value: "hr", label: "HR / People Ops" },
-    { value: "other", label: "Other" },
+    { value: "ops", label: "OPERATIONS" },
+    { value: "support", label: "SUPPORT / CX" },
+    { value: "sales", label: "SALES / REVENUE OPS" },
+    { value: "marketing", label: "MARKETING" },
+    { value: "finance", label: "FINANCE / ACCOUNTING" },
+    { value: "legal", label: "LEGAL / COMPLIANCE" },
+    { value: "hr", label: "HR / PEOPLE OPS" },
+    { value: "health-fitness", label: "HEALTH / WELLNESS" },
+    { value: "product", label: "PRODUCT / ENGINEERING" },
+    { value: "other", label: "OTHER" },
 ];
 
 const workflowGoalOptions = [
-    { value: "knowledge", label: "Knowledge Retrieval (Policy/Product Info)" },
-    { value: "drafting", label: "Drafting Assistance (Reports/Emails)" },
-    { value: "intake", label: "Intake Processing (Forms/Applications)" },
-    { value: "finance", label: "Data Reconciliation / Extraction" },
+    { value: "knowledge", label: "KNOWLEDGE RETRIEVAL" },
+    { value: "drafting", label: "DRAFTING ASSISTANCE" },
+    { value: "intake", label: "INTAKE PROCESSING" },
+    { value: "finance", label: "DATA RECONCILIATION" },
+    { value: "lead-qualification", label: "LEAD QUALIFICATION" },
+    { value: "client-onboarding", label: "CLIENT ONBOARDING" },
+    { value: "scheduling", label: "SCHEDULING / BOOKING" },
+    { value: "reporting", label: "REPORTING / DASHBOARDS" },
+    { value: "content-generation", label: "CONTENT GENERATION" },
 ];
 
 const volumeBandOptions = [
-    { value: "100-500", label: "100-500 cases/month" },
-    { value: "500-1000", label: "500-1000 cases/month" },
-    { value: "1000-2000", label: "1000-2000 cases/month" },
-    { value: "2000-5000", label: "2000-5000 cases/month" },
-    { value: "5000+", label: "5000+ cases/month" },
+    { value: "100-500", label: "100-500 CASES/MO" },
+    { value: "500-1000", label: "500-1000 CASES/MO" },
+    { value: "1000-2000", label: "1000-2000 CASES/MO" },
+    { value: "2000-5000", label: "2000-5000 CASES/MO" },
+    { value: "5000+", label: "5000+ CASES/MO" },
 ];
 
 const ahtBandOptions = [
-    { value: "<1 min", label: "<1 minute (Quick tasks)" },
-    { value: "1-3 min", label: "1-3 minutes (Standard)" },
-    { value: "3-5 min", label: "3-5 minutes (Complex)" },
-    { value: "5+ min", label: "5+ minutes (Deep work)" },
+    { value: "<1 min", label: "<1 MINUTE" },
+    { value: "1-3 min", label: "1-3 MINUTES" },
+    { value: "3-5 min", label: "3-5 MINUTES" },
+    { value: "5+ min", label: "5+ MINUTES" },
 ];
 
 const errorToleranceOptions = [
-    { value: "critical", label: "Zero Tolerance (Financial/Legal Risk)" },
-    { value: "rework", label: "Moderate (Requires Rework)" },
-    { value: "minimal", label: "Low (Minor Annoyance)" },
+    { value: "critical", label: "ZERO TOLERANCE" },
+    { value: "rework", label: "MODERATE REWORK" },
+    { value: "minimal", label: "LOW IMPACT" },
 ];
 
 const processMaturityOptions = [
-    { value: "documented", label: "Fully Documented SOPs" },
-    { value: "partial", label: "Partially Documented / Outdated" },
-    { value: "tribal", label: "Undocumented / Tribal Knowledge" },
+    { value: "documented", label: "FULLY DOCUMENTED" },
+    { value: "partial", label: "PARTIALLY DOCUMENTED" },
+    { value: "tribal", label: "TRIBAL KNOWLEDGE" },
 ];
 
 const dataStructureOptions = [
-    { value: "structured", label: "Structured (SQL, API, CSV)" },
-    { value: "semi", label: "Semi-Structured (Spreadsheets)" },
-    { value: "unstructured", label: "Unstructured (PDFs, Docs)" },
-    { value: "scattered", label: "Scattered (Emails, Chats)" },
+    { value: "structured", label: "STRUCTURED (SQL/API)" },
+    { value: "semi", label: "SEMI (SPREADSHEETS)" },
+    { value: "unstructured", label: "UNSTRUCTURED (PDF/DOCS)" },
+    { value: "scattered", label: "SCATTERED (EMAIL/CHAT)" },
 ];
 
 const dataAccessOptions = [
-    { value: "minimal", label: "Minimal / API Access Available" },
-    { value: "synthetic", label: "Can provide Synthetic Data" },
-    { value: "blocked", label: "Highly Restricted / On-Prem Only" },
+    { value: "minimal", label: "API ACCESS AVAILABLE" },
+    { value: "synthetic", label: "SYNTHETIC DATA POSSIBLE" },
+    { value: "blocked", label: "HIGHLY RESTRICTED" },
 ];
 
 const budgetOptions = [
-    { value: "≥$25k", label: "≥$25k (Enterprise Pilot)" },
-    { value: "$10-25k", label: "$10-25k (Standard Sprint)" },
-    { value: "<$10k", label: "<$10k (Exploratory)" },
+    { value: "≥$25k", label: "≥$25K (ENTERPRISE)" },
+    { value: "$10-25k", label: "$10-25K (STANDARD)" },
+    { value: "<$10k", label: "<$10K (EXPLORATORY)" },
 ];
 
-const toolingOptions = [
-    { value: "slack", label: "Slack" },
-    { value: "teams", label: "Microsoft Teams" },
-    { value: "salesforce", label: "Salesforce" },
-    { value: "hubspot", label: "HubSpot" },
-    { value: "zendesk", label: "Zendesk" },
-    { value: "jira", label: "Jira" },
-    { value: "sharepoint", label: "SharePoint/OneDrive" },
-    { value: "gdrive", label: "Google Drive" },
-    { value: "postgres", label: "PostgreSQL/SQL" },
-];
+// --- Sub-components ---
 
-// --- Application Component ---
+const VisionaryContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <div className={cn("border border-white/10 bg-black/40 backdrop-blur-md p-8 md:p-12 rounded-none relative overflow-hidden", className)}>
+        <div className="absolute top-0 left-0 w-24 h-[1px] bg-primary/50" />
+        <div className="absolute top-0 left-0 w-[1px] h-24 bg-primary/50" />
+        {children}
+    </div>
+);
+
+const VisionaryLabel = ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <Label className={cn("text-xs font-mono tracking-widest uppercase text-muted-foreground mb-3 block", className)}>
+        {children}
+    </Label>
+);
+
+const VisionaryProgress = ({ current, total }: { current: number; total: number }) => (
+    <div className="mb-12">
+        <div className="flex justify-between items-end mb-4">
+            <span className="text-[10px] font-mono tracking-[0.2em] text-primary uppercase">System Scan: {Math.round((current / total) * 100)}%</span>
+            <span className="text-[10px] font-mono tracking-[0.2em] text-muted-foreground uppercase">Phase 0{current} / 0{total}</span>
+        </div>
+        <div className="h-[2px] w-full bg-white/5 relative">
+            <motion.div 
+                className="absolute top-0 left-0 h-full bg-primary"
+                initial={{ width: 0 }}
+                animate={{ width: `${(current / total) * 100}%` }}
+                transition={{ duration: 0.5, ease: "circOut" }}
+            />
+        </div>
+    </div>
+);
+
+// --- Main Component ---
 
 export default function AssessmentPage() {
     const [step, setStep] = useState<number>(0);
-    // 0: Intro, 1: Context, 2: Volume/Value, 3: Readiness, 4: Commercial, 5: Calculating, 6: Lead Capture, 7: Results
-
     const [inputs, setInputs] = useState<AssessmentInputs>({
         companySize: "",
         functionFocus: "",
@@ -140,594 +169,331 @@ export default function AssessmentPage() {
 
     const [result, setResult] = useState<AssessmentResult | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [leadSubmitted, setLeadSubmitted] = useState(false);
+
+    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    const { executeRecaptcha } = useRecaptcha({
+        siteKey: recaptchaSiteKey || "",
+        action: "assessment_submit",
+    });
+
+    // Navigation warning for step 6
+    useEffect(() => {
+        const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+            if (isSubmitting) {
+                e.preventDefault();
+                e.returnValue = "";
+            }
+        };
+        window.addEventListener("beforeunload", handleBeforeUnload);
+        return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+    }, [isSubmitting]);
 
     const handleInputChange = (field: keyof AssessmentInputs, value: string | string[]) => {
         setInputs((prev) => ({ ...prev, [field]: value }));
     };
 
-    const handleToolingChange = (tool: string, checked: boolean) => {
-        setInputs((prev) => ({
-            ...prev,
-            tooling: checked
-                ? [...prev.tooling, tool]
-                : prev.tooling.filter((t) => t !== tool),
-        }));
-    };
-
     const nextStep = () => setStep((s) => s + 1);
     const prevStep = () => setStep((s) => s - 1);
 
-    const calculateResult = () => {
-        setStep(5); // Calculation screen
-        setTimeout(() => {
-            const res = calculateAssessmentScore(inputs);
-            setResult(res);
-            try {
-                sessionStorage.setItem("assessment_result", JSON.stringify(res));
-                sessionStorage.setItem("assessment_step", "6");
-            } catch {
-                // Ignore if sessionStorage unavailable
+    const submitAssessment = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStep(6); // Show analyzing screen
+
+        const clientResult = calculateAssessmentScore(inputs);
+        let resultToSave = clientResult;
+
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+
+        try {
+            let recaptchaToken = null;
+            if (recaptchaSiteKey) {
+                recaptchaToken = await executeRecaptcha();
             }
-            setStep(6); // Lead capture
-        }, 1500);
+
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+            if (apiUrl && apiUrl.trim() !== "") {
+                const response = await fetch(`${apiUrl}/api/assessment`, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ inputs, leadData, recaptchaToken }),
+                    signal: controller.signal,
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success && data.result) {
+                        resultToSave = data.result;
+                    }
+                }
+            }
+        } catch (err) {
+            console.error("Submission error:", err);
+            // Non-fatal, use client results
+        } finally {
+            clearTimeout(timeout);
+        }
+
+        setResult(resultToSave);
+        setIsSubmitting(false);
+        
+        try {
+            sessionStorage.setItem("assessment_step", "7");
+            sessionStorage.setItem("assessment_result", JSON.stringify(resultToSave));
+        } catch { /* ignore */ }
+        setStep(7);
     };
 
     useEffect(() => {
         try {
             const storedResult = sessionStorage.getItem("assessment_result");
             const storedStep = sessionStorage.getItem("assessment_step");
-            if (storedResult && (storedStep === "6" || storedStep === "7")) {
-                const parsed = JSON.parse(storedResult) as AssessmentResult;
-                setResult(parsed);
-                setStep(parseInt(storedStep, 10));
-            }
-        } catch {
-            // Ignore
-        }
-    }, []);
-
-    const submitLead = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        try {
-            // Send to existing contact API
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: leadData.name,
-                    email: leadData.email,
-                    company: leadData.company,
-                    country: "Assessment Lead",
-                    phone: leadData.phone || "N/A",
-                    // Pack the assessment results into the message body
-                    message: `
-Assessment Results for ${leadData.company}:
-Tier: ${result?.tier.toUpperCase()}
-Archetype: ${result?.archetypeTitle}
-
-Scores:
-- Viability: ${result?.viabilityScore}/100
-- Readiness: ${result?.readinessScore}/100
-- Risk: ${result?.riskScore}/100
-
-Inputs:
-- Function: ${inputs.functionFocus}
-- Goal: ${inputs.primaryWorkflowGoal}
-- Volume: ${inputs.monthlyVolumeBand}
-- AHT: ${inputs.currentAHTBand}
-                    `.trim(),
-                    source: "Assessment Tool",
-                }),
-            });
-
-            if (response.ok) {
-                setLeadSubmitted(true);
-                try {
-                    sessionStorage.setItem("assessment_step", "7");
-                } catch {
-                    // Ignore
-                }
-                setStep(7); // Show results
-            } else {
-                // Fallback if API fails, still show results to user
-                console.error("Failed to save lead");
+            if (storedResult && (storedStep === "7")) {
+                setResult(JSON.parse(storedResult));
                 setStep(7);
             }
-        } catch (err) {
-            console.error(err);
-            setStep(7);
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
+        } catch { /* ignore */ }
+    }, []);
 
-    // --- Render Steps ---
+    // --- Renders ---
 
-    const renderIntro = () => (
-        <div className="text-center max-w-2xl mx-auto space-y-8 pt-12 md:pt-24 relative z-10">
-            <Badge variant="outline" className="mb-4">
-                Strategic Automation Assessment
-            </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
-                Are you ready to automate?
-            </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-                Discover your organization&apos;s &quot;Automation Archetype&quot; and get a tailored roadmap.
-                We analyze Viability, Readiness, and Risk to tell you exactly where to start.
-            </p>
-            <p className="text-sm text-muted-foreground">
-                Join 200+ teams who&apos;ve discovered their automation archetype.
-            </p>
-            <Button size="lg" className="h-14 px-8 text-lg rounded-full" onClick={nextStep}>
-                Start Assessment <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-        </div>
-    );
-
-    const formStepCount = 4;
-    const ProgressIndicator = ({ stepNum }: { stepNum: number }) => (
-        <div className="text-center mb-6">
-            <p className="text-sm text-muted-foreground mb-2">Step {stepNum} of {formStepCount}</p>
-            <div className="h-1.5 bg-muted rounded-full overflow-hidden max-w-xs mx-auto">
-                <div
-                    className="h-full bg-primary transition-all duration-300"
-                    style={{ width: `${(stepNum / formStepCount) * 100}%` }}
-                />
-            </div>
-        </div>
-    );
+    const renderIntro = () => <AssessmentIntro onStart={nextStep} />;
 
     const renderStep1 = () => (
-        <>
-            <ProgressIndicator stepNum={1} />
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
-            <CardHeader>
-                <h2 className="text-2xl font-semibold">1. Organizational Context</h2>
-                <p className="text-muted-foreground">Tell us about the team and process.</p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-                <div>
-                    <Label>Company Size</Label>
-                    <Select value={inputs.companySize} onValueChange={(v) => handleInputChange("companySize", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select size" /></SelectTrigger>
-                        <SelectContent>
-                            {companySizeOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
+        <div className="max-w-2xl mx-auto">
+            <VisionaryProgress current={1} total={4} />
+            <VisionaryContainer>
+                <h2 className="text-4xl font-bold tracking-tighter mb-10">01. CONTEXT</h2>
+                <div className="space-y-8">
+                    <div>
+                        <VisionaryLabel>Company Size</VisionaryLabel>
+                        <Select value={inputs.companySize} onValueChange={(v) => handleInputChange("companySize", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT SIZE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {companySizeOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div>
+                        <VisionaryLabel>Focus Vertical</VisionaryLabel>
+                        <Select value={inputs.functionFocus} onValueChange={(v) => handleInputChange("functionFocus", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT VERTICAL" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {functionFocusOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div>
+                        <VisionaryLabel>Core Workflow Goal</VisionaryLabel>
+                        <Select value={inputs.primaryWorkflowGoal} onValueChange={(v) => handleInputChange("primaryWorkflowGoal", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT GOAL" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {workflowGoalOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div className="flex justify-end pt-4">
+                        <MagneticButton 
+                            onClick={nextStep} 
+                            disabled={!inputs.companySize || !inputs.functionFocus || !inputs.primaryWorkflowGoal}
+                            className="w-full md:w-auto"
+                        >
+                            CONTINUE <ArrowRight className="ml-2 w-4 h-4" />
+                        </MagneticButton>
+                    </div>
                 </div>
-                <div>
-                    <Label>Primary Function</Label>
-                    <Select value={inputs.functionFocus} onValueChange={(v) => handleInputChange("functionFocus", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select function" /></SelectTrigger>
-                        <SelectContent>
-                            {functionFocusOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div>
-                    <Label>What is the goal of this workflow?</Label>
-                    <Select value={inputs.primaryWorkflowGoal} onValueChange={(v) => handleInputChange("primaryWorkflowGoal", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select goal" /></SelectTrigger>
-                        <SelectContent>
-                            {workflowGoalOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div className="flex justify-end pt-4">
-                    <Button onClick={nextStep} disabled={!inputs.companySize || !inputs.functionFocus || !inputs.primaryWorkflowGoal}>
-                        Next Step <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                </div>
-            </CardContent>
-        </Card>
-        </>
+            </VisionaryContainer>
+        </div>
     );
 
     const renderStep2 = () => (
-        <>
-            <ProgressIndicator stepNum={2} />
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
-            <CardHeader>
-                <h2 className="text-2xl font-semibold">2. Impact & Scale</h2>
-                <p className="text-muted-foreground">Quantify the opportunity.</p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-                <div>
-                    <Label>Monthly Case Volume</Label>
-                    <Select value={inputs.monthlyVolumeBand} onValueChange={(v) => handleInputChange("monthlyVolumeBand", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select volume range" /></SelectTrigger>
-                        <SelectContent>
-                            {volumeBandOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div>
-                    <Label>Average Handle Time (per case)</Label>
-                    <Select value={inputs.currentAHTBand} onValueChange={(v) => handleInputChange("currentAHTBand", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select time per case" /></SelectTrigger>
-                        <SelectContent>
-                            {ahtBandOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div>
-                    <Label>Error Tolerance (Risk)</Label>
-                     <Select value={inputs.errorTolerance} onValueChange={(v) => handleInputChange("errorTolerance", v)}>
-                        <SelectTrigger><SelectValue placeholder="What happens if the AI makes a mistake?" /></SelectTrigger>
-                        <SelectContent>
-                            {errorToleranceOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div className="flex justify-between pt-4">
-                    <Button variant="ghost" onClick={prevStep}>Back</Button>
-                    <Button onClick={nextStep} disabled={!inputs.monthlyVolumeBand || !inputs.currentAHTBand || !inputs.errorTolerance}>
-                        Next Step <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                </div>
-            </CardContent>
-        </Card>
-        </>
-    );
-
-    const renderStep3 = () => (
-        <>
-            <ProgressIndicator stepNum={3} />
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
-            <CardHeader>
-                <h2 className="text-2xl font-semibold">3. Technical Readiness</h2>
-                <p className="text-muted-foreground">Assess feasibility of implementation.</p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-                <div>
-                    <Label>Process Documentation Maturity</Label>
-                    <Select value={inputs.processMaturity} onValueChange={(v) => handleInputChange("processMaturity", v)}>
-                        <SelectTrigger><SelectValue placeholder="Is the process written down?" /></SelectTrigger>
-                        <SelectContent>
-                            {processMaturityOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div>
-                    <Label>Data Structure</Label>
-                    <Select value={inputs.dataStructure} onValueChange={(v) => handleInputChange("dataStructure", v)}>
-                        <SelectTrigger><SelectValue placeholder="Where does the data live?" /></SelectTrigger>
-                        <SelectContent>
-                            {dataStructureOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div>
-                    <Label>Data Access Constraints</Label>
-                    <Select value={inputs.dataAccessReadiness} onValueChange={(v) => handleInputChange("dataAccessReadiness", v)}>
-                        <SelectTrigger><SelectValue placeholder="Can we access the data?" /></SelectTrigger>
-                        <SelectContent>
-                            {dataAccessOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                 <div>
-                    <Label className="mb-3 block">Key Tooling (Select all that apply)</Label>
-                    <div className="grid grid-cols-2 gap-3">
-                        {toolingOptions.map(t => (
-                            <div key={t.value} className="flex items-center space-x-2">
-                                <input
-                                    type="checkbox"
-                                    id={t.value}
-                                    className="rounded border-primary/50 text-primary focus:ring-primary"
-                                    checked={inputs.tooling.includes(t.value)}
-                                    onChange={(e) => handleToolingChange(t.value, e.target.checked)}
-                                />
-                                <label htmlFor={t.value} className="text-sm cursor-pointer select-none">{t.label}</label>
-                            </div>
-                        ))}
+        <div className="max-w-2xl mx-auto">
+            <VisionaryProgress current={2} total={4} />
+            <VisionaryContainer>
+                <h2 className="text-4xl font-bold tracking-tighter mb-10">02. SCALE</h2>
+                <div className="space-y-8">
+                    <div>
+                        <VisionaryLabel>Monthly Volume</VisionaryLabel>
+                        <Select value={inputs.monthlyVolumeBand} onValueChange={(v) => handleInputChange("monthlyVolumeBand", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT BAND" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {volumeBandOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div>
+                        <VisionaryLabel>Average Handle Time</VisionaryLabel>
+                        <Select value={inputs.currentAHTBand} onValueChange={(v) => handleInputChange("currentAHTBand", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT TIME" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {ahtBandOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div>
+                        <VisionaryLabel>Error Sensitivity</VisionaryLabel>
+                        <Select value={inputs.errorTolerance} onValueChange={(v) => handleInputChange("errorTolerance", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT RISK PROFILE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {errorToleranceOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div className="flex justify-between gap-4 pt-4">
+                        <button onClick={prevStep} className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors">BACK</button>
+                        <MagneticButton 
+                            onClick={nextStep} 
+                            disabled={!inputs.monthlyVolumeBand || !inputs.currentAHTBand || !inputs.errorTolerance}
+                            className="flex-1 md:flex-none"
+                        >
+                            CONTINUE <ArrowRight className="ml-2 w-4 h-4" />
+                        </MagneticButton>
                     </div>
                 </div>
-
-                <div className="flex justify-between pt-4">
-                    <Button variant="ghost" onClick={prevStep}>Back</Button>
-                    <Button onClick={nextStep} disabled={!inputs.processMaturity || !inputs.dataStructure || !inputs.dataAccessReadiness}>
-                        Next Step <ArrowRight className="ml-2 w-4 h-4" />
-                    </Button>
-                </div>
-            </CardContent>
-        </Card>
-        </>
-    );
-
-    const renderStep4 = () => (
-        <>
-            <ProgressIndicator stepNum={4} />
-            <Card className="border-primary/20 bg-background/50 backdrop-blur-xl">
-             <CardHeader>
-                <h2 className="text-2xl font-semibold">4. Commercial Fit</h2>
-                <p className="text-muted-foreground">Final checks before analysis.</p>
-            </CardHeader>
-            <CardContent className="space-y-6">
-                 <div>
-                    <Label>Is there an Executive Sponsor?</Label>
-                    <Select value={inputs.sponsorReady} onValueChange={(v) => handleInputChange("sponsorReady", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select sponsor status" /></SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="yes">Yes, we have leadership buy-in</SelectItem>
-                            <SelectItem value="no">No, we are exploring to build a case</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div>
-                    <Label>Rough Budget Range</Label>
-                    <Select value={inputs.budgetFit} onValueChange={(v) => handleInputChange("budgetFit", v)}>
-                        <SelectTrigger><SelectValue placeholder="Select budget" /></SelectTrigger>
-                        <SelectContent>
-                            {budgetOptions.map(o => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
-                        </SelectContent>
-                    </Select>
-                </div>
-                 <div className="flex justify-between pt-4">
-                    <Button variant="ghost" onClick={prevStep}>Back</Button>
-                    <Button onClick={calculateResult} disabled={!inputs.sponsorReady || !inputs.budgetFit} size="lg" className="w-40">
-                        Analyze <BarChart3 className="ml-2 w-4 h-4" />
-                    </Button>
-                </div>
-            </CardContent>
-        </Card>
-        </>
-    );
-
-    const renderCalculating = () => (
-        <div className="flex flex-col items-center justify-center py-20 text-center">
-            <Loader2 className="w-16 h-16 animate-spin text-primary mb-6" />
-            <h2 className="text-2xl font-semibold mb-2">Analyzing your inputs...</h2>
-            <p className="text-muted-foreground">Calculating viability, readiness, and risk scores.</p>
+            </VisionaryContainer>
         </div>
     );
 
-     const renderLeadCapture = () => (
-        <Card className="border-primary/20 bg-background/50 backdrop-blur-xl max-w-lg mx-auto">
-            <CardHeader className="text-center">
-                <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h2 className="text-3xl font-bold">Analysis Complete</h2>
-                <p className="text-muted-foreground">
-                    Your results are ready—enter your details to unlock your personalized roadmap and ROI calculation. See how you compare to similar enterprises.
-                </p>
-            </CardHeader>
-            <CardContent>
-                <form onSubmit={submitLead} className="space-y-4">
-                    <div className="space-y-2">
-                        <Label>Full Name</Label>
-                        <Input
-                            required
-                            placeholder="Jane Doe"
-                            value={leadData.name}
-                            onChange={(e) => setLeadData(p => ({...p, name: e.target.value}))}
-                        />
+    const renderStep3 = () => (
+        <div className="max-w-2xl mx-auto">
+            <VisionaryProgress current={3} total={4} />
+            <VisionaryContainer>
+                <h2 className="text-4xl font-bold tracking-tighter mb-10">03. READINESS</h2>
+                <div className="space-y-8">
+                    <div>
+                        <VisionaryLabel>SOP Maturity</VisionaryLabel>
+                        <Select value={inputs.processMaturity} onValueChange={(v) => handleInputChange("processMaturity", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT MATURITY" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {processMaturityOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
                     </div>
-                    <div className="space-y-2">
-                        <Label>Work Email</Label>
-                        <Input
-                            required
-                            type="email"
-                            placeholder="jane@company.com"
-                             value={leadData.email}
-                            onChange={(e) => setLeadData(p => ({...p, email: e.target.value}))}
-                        />
+                    <div>
+                        <VisionaryLabel>Data Architecture</VisionaryLabel>
+                        <Select value={inputs.dataStructure} onValueChange={(v) => handleInputChange("dataStructure", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT STRUCTURE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {dataStructureOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
                     </div>
-                     <div className="space-y-2">
-                        <Label>Company Name</Label>
-                        <Input
-                            required
-                            placeholder="Acme Corp"
-                             value={leadData.company}
-                            onChange={(e) => setLeadData(p => ({...p, company: e.target.value}))}
-                        />
+                    <div>
+                        <VisionaryLabel>Access Controls</VisionaryLabel>
+                        <Select value={inputs.dataAccessReadiness} onValueChange={(v) => handleInputChange("dataAccessReadiness", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT ACCESS LEVEL" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {dataAccessOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
                     </div>
-                    <div className="space-y-2">
-                        <Label>Phone <span className="text-muted-foreground font-normal">(optional—for faster follow-up)</span></Label>
-                        <Input
-                            type="tel"
-                            placeholder="+1 (555) 000-0000"
-                            value={leadData.phone}
-                            onChange={(e) => setLeadData(p => ({...p, phone: e.target.value}))}
-                        />
+                    <div className="flex justify-between gap-4 pt-4">
+                        <button onClick={prevStep} className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors">BACK</button>
+                        <MagneticButton 
+                            onClick={nextStep} 
+                            disabled={!inputs.processMaturity || !inputs.dataStructure || !inputs.dataAccessReadiness}
+                            className="flex-1 md:flex-none"
+                        >
+                            CONTINUE <ArrowRight className="ml-2 w-4 h-4" />
+                        </MagneticButton>
                     </div>
-                    <Button type="submit" size="lg" className="w-full mt-4" disabled={isSubmitting}>
-                        {isSubmitting ? <Loader2 className="animate-spin" /> : "Reveal My Results"}
-                    </Button>
-                     <p className="text-xs text-center text-muted-foreground mt-4">
-                        We value your privacy. No spam.
-                    </p>
-                </form>
-            </CardContent>
-        </Card>
+                </div>
+            </VisionaryContainer>
+        </div>
     );
 
-
-    const renderResults = () => {
-        if (!result) return null;
-
-        return (
-            <div className="space-y-8 max-w-5xl mx-auto pb-20">
-                {/* Header Archetype */}
-                <div className="text-center space-y-4 mb-12">
-                    <div className="inline-block px-4 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-2">
-                        YOUR AUTOMATION ARCHETYPE
+    const renderStep4 = () => (
+        <div className="max-w-2xl mx-auto">
+            <VisionaryProgress current={4} total={4} />
+            <VisionaryContainer>
+                <h2 className="text-4xl font-bold tracking-tighter mb-10">04. COMMERCIAL</h2>
+                <div className="space-y-8">
+                    <div>
+                        <VisionaryLabel>Executive Buy-in</VisionaryLabel>
+                        <Select value={inputs.sponsorReady} onValueChange={(v) => handleInputChange("sponsorReady", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SPONSORSHIP STATUS" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                <SelectItem value="yes" className="font-mono text-xs uppercase tracking-widest">YES, LEADERSHIP ALIGNED</SelectItem>
+                                <SelectItem value="no" className="font-mono text-xs uppercase tracking-widest">NO, EXPLORING ROI CASE</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-foreground">{result.archetypeTitle}</h1>
-                    <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{result.archetypeDescription}</p>
+                    <div>
+                        <VisionaryLabel>Investment Capacity</VisionaryLabel>
+                        <Select value={inputs.budgetFit} onValueChange={(v) => handleInputChange("budgetFit", v)}>
+                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT RANGE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                                {budgetOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div className="flex justify-between gap-4 pt-4">
+                        <button onClick={prevStep} className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors">BACK</button>
+                        <MagneticButton 
+                            onClick={() => setStep(5)} 
+                            disabled={!inputs.sponsorReady || !inputs.budgetFit}
+                            className="flex-1 md:flex-none"
+                        >
+                            FINALIZE <ArrowRight className="ml-2 w-4 h-4" />
+                        </MagneticButton>
+                    </div>
                 </div>
+            </VisionaryContainer>
+        </div>
+    );
 
-                {/* Score Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="border-t-4 border-t-primary bg-card/50">
-                        <CardHeader className="text-center pb-2">
-                            <h3 className="text-lg font-medium text-muted-foreground">Viability Score</h3>
-                            <div className="text-5xl font-bold text-foreground">{result.viabilityScore}</div>
-                        </CardHeader>
-                        <CardContent className="text-center text-sm text-balance">
-                           Potential ROI based on volume and complexity.
-                        </CardContent>
-                    </Card>
-                    <Card className="border-t-4 border-t-blue-500 bg-card/50">
-                        <CardHeader className="text-center pb-2">
-                            <h3 className="text-lg font-medium text-muted-foreground">Readiness Score</h3>
-                             <div className="text-5xl font-bold text-foreground">{result.readinessScore}</div>
-                        </CardHeader>
-                         <CardContent className="text-center text-sm text-balance">
-                           Technical maturity and data availability.
-                        </CardContent>
-                    </Card>
-                    <Card className="border-t-4 border-t-orange-500 bg-card/50">
-                        <CardHeader className="text-center pb-2">
-                            <h3 className="text-lg font-medium text-muted-foreground">Risk Score</h3>
-                             <div className="text-5xl font-bold text-foreground">{result.riskScore}</div>
-                        </CardHeader>
-                         <CardContent className="text-center text-sm text-balance">
-                           Complexity and error tolerance requirements.
-                        </CardContent>
-                    </Card>
-                </div>
+    const renderLeadCapture = () => (
+        <LeadCaptureForm 
+            onSubmit={submitAssessment}
+            leadData={leadData}
+            onChange={setLeadData}
+            isSubmitting={isSubmitting}
+        />
+    );
 
-                {/* Strategic Advice */}
-                <Card className="bg-primary/5 border-primary/20">
-                    <CardHeader>
-                        <div className="flex items-center gap-3">
-                            <Zap className="w-6 h-6 text-primary" />
-                            <h2 className="text-2xl font-bold">Strategic Recommendation</h2>
-                        </div>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                        <p className="text-lg leading-relaxed">
-                            {result.strategicAdvice}
-                        </p>
+    const renderCalculating = () => <CalculatingState />;
 
-                        <div className="grid md:grid-cols-2 gap-8 pt-4">
-                            <div>
-                                <h3 className="font-semibold mb-3 flex items-center"><CheckCircle2 className="w-4 h-4 mr-2" /> What looks good</h3>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    {result.reasoning.map((r, i) => <li key={i}>• {r}</li>)}
-                                </ul>
-                            </div>
-                            <div>
-                                 <h3 className="font-semibold mb-3 flex items-center"><ArrowRight className="w-4 h-4 mr-2" /> Recommended Next Steps</h3>
-                                <ul className="space-y-2 text-sm text-muted-foreground">
-                                    {result.nextSteps.map((r, i) => <li key={i}>• {r}</li>)}
-                                </ul>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
+    const renderResults = () => result ? <AssessmentResults result={result} inputs={inputs} /> : null;
 
-                {/* Savings Projection */}
-                <div className="grid md:grid-cols-2 gap-6">
-                     <Card>
-                        <CardHeader>
-                             <h3 className="text-lg font-semibold">Projected Hours Saved / Mo</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-4xl font-bold text-primary">
-                                {result.projectedHoursSaved.min} - {result.projectedHoursSaved.max} hrs
-                            </div>
-                        </CardContent>
-                    </Card>
-                     <Card>
-                        <CardHeader>
-                             <h3 className="text-lg font-semibold">Projected Cost Avoidance / Mo</h3>
-                        </CardHeader>
-                        <CardContent>
-                             <div className="text-4xl font-bold text-green-500">
-                                ${result.projectedCostAvoided.min.toLocaleString()} - ${result.projectedCostAvoided.max.toLocaleString()}
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
-
-                {/* Email confirmation */}
-                {leadSubmitted && leadData.email && (
-                    <p className="text-center text-sm text-muted-foreground">
-                        We&apos;ve also emailed your results to {leadData.email}.
-                    </p>
-                )}
-
-                {/* Share */}
-                <div className="flex justify-center">
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        onClick={() => {
-                            const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://www.invaritech.ai";
-                            const assessmentUrl = `${baseUrl}/assessment/`;
-                            const text = `I just discovered my Automation Archetype: ${result.archetypeTitle}. ${result.archetypeDescription} Take the assessment: ${assessmentUrl}`;
-                            if (typeof navigator !== "undefined" && navigator.share) {
-                                navigator.share({
-                                    title: "My Automation Archetype",
-                                    text,
-                                    url: assessmentUrl,
-                                }).catch(() => {
-                                    navigator.clipboard?.writeText(text);
-                                });
-                            } else {
-                                navigator.clipboard?.writeText(text);
-                            }
-                        }}
-                    >
-                        <Share2 className="w-4 h-4 mr-2" />
-                        Share your archetype
-                    </Button>
-                </div>
-
-                {/* CTAs - archetype-specific */}
-                <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
-                    {result.archetype === "velocity-architect" ? (
-                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
-                            <Link href="/services/ai-automation-sprint">See the Sprint</Link>
-                        </Button>
-                    ) : result.archetype === "explorer" ? (
-                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
-                            <Link href="/contact">Book Discovery Call</Link>
-                        </Button>
-                    ) : (
-                        <Button size="lg" className="h-14 px-8 text-lg" asChild>
-                            <Link href="/contact">Book Strategy Call</Link>
-                        </Button>
-                    )}
-                    <Button size="lg" variant="outline" className="h-14 px-8 text-lg" asChild>
-                        <Link href="/services">Explore Services</Link>
-                    </Button>
-                </div>
-            </div>
-        );
-    }
-
-    // --- Main Layout ---
+    // --- Layout Wrapper ---
 
     return (
-        <main className="min-h-screen relative overflow-hidden">
-            {(step === 0 || (step >= 1 && step <= 4)) && <ServiceBackground theme="blue" />}
-
-            <div className="relative z-10 container mx-auto px-4 pb-20">
+        <main className="min-h-screen relative overflow-hidden bg-black selection:bg-primary selection:text-black">
+            <ServiceBackground theme="blue" />
+            
+            <div className="relative z-10 container mx-auto px-6 md:px-12">
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={step}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-full max-w-3xl mx-auto pt-20"
+                        initial={{ opacity: 0, scale: 0.98 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 1.02 }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        className="w-full pt-32 pb-32"
                     >
                         {step === 0 && renderIntro()}
                         {step === 1 && renderStep1()}
                         {step === 2 && renderStep2()}
                         {step === 3 && renderStep3()}
                         {step === 4 && renderStep4()}
-                        {step === 5 && renderCalculating()}
-                        {step === 6 && renderLeadCapture()}
+                        {step === 5 && renderLeadCapture()}
+                        {step === 6 && renderCalculating()}
                         {step === 7 && renderResults()}
                     </motion.div>
                 </AnimatePresence>
             </div>
+            
+            {/* Global navigation warning UI overlay during calc */}
+            {isSubmitting && (
+                 <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="fixed bottom-0 left-0 right-0 z-[60] bg-primary p-2 text-black text-[10px] font-mono tracking-[0.3em] text-center"
+                 >
+                    SECURITY LOCKED: DO NOT REFRESH SESSION
+                 </motion.div>
+            )}
         </main>
     );
 }

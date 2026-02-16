@@ -166,7 +166,7 @@ export default function ContactSection() {
             const apiUrl = process.env.NEXT_PUBLIC_API_URL;
             if (!apiUrl || apiUrl.trim() === "") {
                 throw new Error(
-                    "Contact API is not configured. Please set NEXT_PUBLIC_API_URL in your environment."
+                    "Contact service is unavailable. Please try again later."
                 );
             }
 
