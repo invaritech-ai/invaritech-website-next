@@ -39,9 +39,13 @@ const companySizeOptions = [
 const functionFocusOptions = [
     { value: "ops", label: "Operations" },
     { value: "support", label: "Support / CX" },
+    { value: "sales", label: "Sales / Revenue Ops" },
+    { value: "marketing", label: "Marketing" },
     { value: "finance", label: "Finance / Accounting" },
     { value: "legal", label: "Legal / Compliance" },
     { value: "hr", label: "HR / People Ops" },
+    { value: "health-fitness", label: "Health / Wellness" },
+    { value: "product", label: "Product / Engineering" },
     { value: "other", label: "Other" },
 ];
 
@@ -50,6 +54,11 @@ const workflowGoalOptions = [
     { value: "drafting", label: "Drafting Assistance (Reports/Emails)" },
     { value: "intake", label: "Intake Processing (Forms/Applications)" },
     { value: "finance", label: "Data Reconciliation / Extraction" },
+    { value: "lead-qualification", label: "Lead Qualification / Scoring" },
+    { value: "client-onboarding", label: "Client Onboarding" },
+    { value: "scheduling", label: "Scheduling / Booking" },
+    { value: "reporting", label: "Reporting / Dashboards" },
+    { value: "content-generation", label: "Content Generation" },
 ];
 
 const volumeBandOptions = [
@@ -141,6 +150,7 @@ export default function AssessmentPage() {
     const [result, setResult] = useState<AssessmentResult | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [leadSubmitted, setLeadSubmitted] = useState(false);
+    const [apiError, setApiError] = useState<string | null>(null);
 
     const handleInputChange = (field: keyof AssessmentInputs, value: string | string[]) => {
         setInputs((prev) => ({ ...prev, [field]: value }));
@@ -158,19 +168,64 @@ export default function AssessmentPage() {
     const nextStep = () => setStep((s) => s + 1);
     const prevStep = () => setStep((s) => s - 1);
 
-    const calculateResult = () => {
-        setStep(5); // Calculation screen
-        setTimeout(() => {
-            const res = calculateAssessmentScore(inputs);
-            setResult(res);
-            try {
-                sessionStorage.setItem("assessment_result", JSON.stringify(res));
-                sessionStorage.setItem("assessment_step", "6");
-            } catch {
-                // Ignore if sessionStorage unavailable
+    // After completing the 4 assessment steps, go to lead capture
+    const proceedToLeadCapture = () => {
+        setStep(5); // Lead capture
+    };
+
+    // After lead form submission, call API
+    const submitAssessment = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setApiError(null);
+
+        // Always calculate deterministic scores first (instant)
+        const clientResult = calculateAssessmentScore(inputs);
+        console.log("[Assessment] Deterministic result:", clientResult);
+        setStep(6); // Show "Analyzing..." screen
+
+        try {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 15000);
+
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+            console.log("[Assessment] Calling API at:", `${apiUrl}/api/assessment`);
+            console.log("[Assessment] Payload:", JSON.stringify({ inputs, leadData }).slice(0, 200));
+
+            const response = await fetch(`${apiUrl}/api/assessment`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ inputs, leadData }),
+                signal: controller.signal,
+            });
+            clearTimeout(timeout);
+
+            console.log("[Assessment] Response status:", response.status);
+
+            if (!response.ok) throw new Error(`API error: ${response.status}`);
+            
+            const data = await response.json();
+            console.log("[Assessment] API response data:", data);
+
+            if (data.success && data.result) {
+                setResult(data.result);
+            } else {
+                console.warn("[Assessment] API returned non-success, using deterministic");
+                setResult(clientResult);
             }
-            setStep(6); // Lead capture
-        }, 1500);
+        } catch (err) {
+            console.error("[Assessment] API call failed:", err);
+            setResult(clientResult);
+        }
+
+        // Always show results regardless of API success/failure
+        setLeadSubmitted(true);
+        setIsSubmitting(false);
+        try {
+            sessionStorage.setItem("assessment_step", "7");
+        } catch { /* ignore */ }
+        console.log("[Assessment] Moving to results step");
+        setStep(7);
     };
 
     useEffect(() => {
@@ -259,7 +314,7 @@ Inputs:
                 We analyze Viability, Readiness, and Risk to tell you exactly where to start.
             </p>
             <p className="text-sm text-muted-foreground">
-                Join 200+ teams who&apos;ve discovered their automation archetype.
+                4 steps · 2 minutes · AI-powered insights
             </p>
             <Button size="lg" className="h-14 px-8 text-lg rounded-full" onClick={nextStep}>
                 Start Assessment <ArrowRight className="ml-2 w-5 h-5" />
@@ -468,8 +523,8 @@ Inputs:
                 </div>
                  <div className="flex justify-between pt-4">
                     <Button variant="ghost" onClick={prevStep}>Back</Button>
-                    <Button onClick={calculateResult} disabled={!inputs.sponsorReady || !inputs.budgetFit} size="lg" className="w-40">
-                        Analyze <BarChart3 className="ml-2 w-4 h-4" />
+                    <Button onClick={proceedToLeadCapture} disabled={!inputs.sponsorReady || !inputs.budgetFit} size="lg" className="w-40">
+                        Continue <ArrowRight className="ml-2 w-4 h-4" />
                     </Button>
                 </div>
             </CardContent>
@@ -480,22 +535,27 @@ Inputs:
     const renderCalculating = () => (
         <div className="flex flex-col items-center justify-center py-20 text-center">
             <Loader2 className="w-16 h-16 animate-spin text-primary mb-6" />
-            <h2 className="text-2xl font-semibold mb-2">Analyzing your inputs...</h2>
-            <p className="text-muted-foreground">Calculating viability, readiness, and risk scores.</p>
+            <h2 className="text-2xl font-semibold mb-2">Generating your insights...</h2>
+            <p className="text-muted-foreground">Our AI is analyzing your inputs and crafting personalized recommendations.</p>
         </div>
     );
 
      const renderLeadCapture = () => (
         <Card className="border-primary/20 bg-background/50 backdrop-blur-xl max-w-lg mx-auto">
             <CardHeader className="text-center">
-                <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-4" />
-                <h2 className="text-3xl font-bold">Analysis Complete</h2>
+                <BarChart3 className="w-16 h-16 text-primary mx-auto mb-4" />
+                <h2 className="text-3xl font-bold">Almost There</h2>
                 <p className="text-muted-foreground">
-                    Your results are ready—enter your details to unlock your personalized roadmap and ROI calculation. See how you compare to similar enterprises.
+                    Enter your details to unlock your personalized AI readiness analysis with strategic recommendations.
                 </p>
             </CardHeader>
             <CardContent>
-                <form onSubmit={submitLead} className="space-y-4">
+                {apiError && (
+                    <div className="mb-4 p-3 bg-destructive/10 border border-destructive/20 rounded-md text-sm text-destructive">
+                        {apiError}
+                    </div>
+                )}
+                <form onSubmit={submitAssessment} className="space-y-4">
                     <div className="space-y-2">
                         <Label>Full Name</Label>
                         <Input
@@ -525,7 +585,7 @@ Inputs:
                         />
                     </div>
                     <div className="space-y-2">
-                        <Label>Phone <span className="text-muted-foreground font-normal">(optional—for faster follow-up)</span></Label>
+                        <Label>Phone <span className="text-muted-foreground font-normal">(optional)</span></Label>
                         <Input
                             type="tel"
                             placeholder="+1 (555) 000-0000"
@@ -534,7 +594,7 @@ Inputs:
                         />
                     </div>
                     <Button type="submit" size="lg" className="w-full mt-4" disabled={isSubmitting}>
-                        {isSubmitting ? <Loader2 className="animate-spin" /> : "Reveal My Results"}
+                        {isSubmitting ? <Loader2 className="animate-spin" /> : "Generate My Assessment"}
                     </Button>
                      <p className="text-xs text-center text-muted-foreground mt-4">
                         We value your privacy. No spam.
@@ -647,7 +707,7 @@ Inputs:
                 {/* Email confirmation */}
                 {leadSubmitted && leadData.email && (
                     <p className="text-center text-sm text-muted-foreground">
-                        We&apos;ve also emailed your results to {leadData.email}.
+                        Your results have been saved.
                     </p>
                 )}
 
@@ -722,8 +782,8 @@ Inputs:
                         {step === 2 && renderStep2()}
                         {step === 3 && renderStep3()}
                         {step === 4 && renderStep4()}
-                        {step === 5 && renderCalculating()}
-                        {step === 6 && renderLeadCapture()}
+                        {step === 5 && renderLeadCapture()}
+                        {step === 6 && renderCalculating()}
                         {step === 7 && renderResults()}
                     </motion.div>
                 </AnimatePresence>

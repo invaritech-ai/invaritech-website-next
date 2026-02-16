@@ -6,8 +6,6 @@ export const post: BlogPost = {
     excerpt:
         "Compliance automation must be deterministic to be audit-safe. Learn what black-box AI gets wrong, where AI fits, and how to start with a measurable wedge.",
     content: `
-## Compliance Automation Done Right: Deterministic Systems vs. Black-Box AI
-
 Organizations evaluating compliance automation software are usually trying to fix one of three problems: manual, document-heavy workflows that do not scale; fragmented or unreliable audit trails; and increasing regulatory exposure as volume grows.
 
 Most vendors promise speed through AI. Few explain how their systems behave under audit. In regulated or audit-sensitive environments, that difference determines whether automation reduces risk or compounds it.
