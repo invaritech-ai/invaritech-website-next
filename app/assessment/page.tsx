@@ -632,33 +632,73 @@ Inputs:
 
                 {/* Score Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <Card className="border-t-4 border-t-primary bg-card/50">
+                    <Card className={`border-t-4 bg-card/50 ${
+                        result.viabilityScore > 70 ? 'border-t-green-500' : 
+                        result.viabilityScore >= 40 ? 'border-t-amber-500' : 'border-t-red-500'
+                    }`}>
                         <CardHeader className="text-center pb-2">
                             <h3 className="text-lg font-medium text-muted-foreground">Viability Score</h3>
-                            <div className="text-5xl font-bold text-foreground">{result.viabilityScore}</div>
+                            <div className="text-5xl font-bold text-foreground">{result.viabilityScore} <span className="text-2xl font-normal text-muted-foreground">/ 100</span></div>
                         </CardHeader>
                         <CardContent className="text-center text-sm text-balance">
                            Potential ROI based on volume and complexity.
                         </CardContent>
                     </Card>
-                    <Card className="border-t-4 border-t-blue-500 bg-card/50">
+                    <Card className={`border-t-4 bg-card/50 ${
+                        result.readinessScore > 70 ? 'border-t-green-500' : 
+                        result.readinessScore >= 40 ? 'border-t-amber-500' : 'border-t-red-500'
+                    }`}>
                         <CardHeader className="text-center pb-2">
                             <h3 className="text-lg font-medium text-muted-foreground">Readiness Score</h3>
-                             <div className="text-5xl font-bold text-foreground">{result.readinessScore}</div>
+                             <div className="text-5xl font-bold text-foreground">{result.readinessScore} <span className="text-2xl font-normal text-muted-foreground">/ 100</span></div>
                         </CardHeader>
                          <CardContent className="text-center text-sm text-balance">
                            Technical maturity and data availability.
                         </CardContent>
                     </Card>
-                    <Card className="border-t-4 border-t-orange-500 bg-card/50">
+                    <Card className={`border-t-4 bg-card/50 ${
+                        result.riskScore > 60 ? 'border-t-red-500' : 
+                        result.riskScore >= 30 ? 'border-t-amber-500' : 'border-t-green-500'
+                    }`}>
                         <CardHeader className="text-center pb-2">
                             <h3 className="text-lg font-medium text-muted-foreground">Risk Score</h3>
-                             <div className="text-5xl font-bold text-foreground">{result.riskScore}</div>
+                             <div className="text-5xl font-bold text-foreground">{result.riskScore} <span className="text-2xl font-normal text-muted-foreground">/ 100</span></div>
                         </CardHeader>
                          <CardContent className="text-center text-sm text-balance">
                            Complexity and error tolerance requirements.
                         </CardContent>
                     </Card>
+                </div>
+
+                {/* Score Legend */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4 py-8 bg-muted/30 rounded-2xl border border-border/50">
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2 font-semibold text-primary">
+                            <BarChart3 className="w-4 h-4" />
+                            Viability
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                            Measures the expected ROI. High scores (70+) indicate high-volume, high-impact tasks. Low scores ({"<"}40) suggest the workflow might be too complex or rare for custom AI.
+                        </p>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2 font-semibold text-blue-500">
+                            <CheckCircle2 className="w-4 h-4" />
+                            Readiness
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                            Evaluates data and process maturity. Scores above 70 mean you have the necessary documentation and data to start building. Below 40 requires a "Foundation" phase.
+                        </p>
+                    </div>
+                    <div className="space-y-2">
+                        <div className="flex items-center gap-2 font-semibold text-orange-500">
+                            <Zap className="w-4 h-4" />
+                            Risk
+                        </div>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                            Tracks implementation difficulty and error tolerance. High risk (60+) implies sensitive data or zero-error requirements, necessitating a human-in-the-loop (HITL) approach.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Strategic Advice */}
