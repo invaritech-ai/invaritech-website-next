@@ -460,6 +460,6 @@ function getAverageAHT(band: string): number {
     }
 }
 
-function formatLabel(slug: string): string {
+export function formatLabel(slug: string): string {
     return slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
