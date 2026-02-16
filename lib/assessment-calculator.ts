@@ -55,6 +55,15 @@ export interface AssessmentResult {
         max: number;
     };
 
+    // Metadata for breakdown
+    calculationBasis: {
+        monthlyVolume: number;
+        averageAHT: number;
+        efficiencyGain: number;
+        readinessFactor: number;
+        hourlyRate: number;
+    };
+
     // Feedback
     reasoning: string[];
     nextSteps: string[];
@@ -326,10 +335,13 @@ export function calculateAssessmentScore(
     }
 
     // --- 5. Savings Calculations ---
-    const { min: minHours, max: maxHours, theoreticalMax } = calculateHoursSaved(inputs, readinessScore);
-    const projectedHoursSaved = { min: minHours, max: maxHours, theoreticalMax };
-
+    const volNum = getAverageVolume(inputs.monthlyVolumeBand);
+    const ahtNum = getAverageAHT(inputs.currentAHTBand);
+    const { savings: efficiencyGain } = getWorkflowSavingsParams(inputs.primaryWorkflowGoal);
     const hourlyRate = config.standardFteHourlyRate ?? 65;
+
+    const { min: minHours, max: maxHours, theoreticalMax, readinessFactor } = calculateHoursSaved(inputs, readinessScore);
+    const projectedHoursSaved = { min: minHours, max: maxHours, theoreticalMax };
     const projectedCostAvoided = calculateCostAvoidance(projectedHoursSaved, hourlyRate);
 
     // Filter reasoning/nextSteps to be unique and max 5 items
@@ -346,6 +358,13 @@ export function calculateAssessmentScore(
         archetypeDescription: description,
         projectedHoursSaved,
         projectedCostAvoided,
+        calculationBasis: {
+            monthlyVolume: volNum,
+            averageAHT: ahtNum,
+            efficiencyGain,
+            readinessFactor,
+            hourlyRate,
+        },
         reasoning: uniqueReasoning,
         nextSteps: uniqueNextSteps,
         strategicAdvice
@@ -357,7 +376,7 @@ export function calculateAssessmentScore(
 export function calculateHoursSaved(
     inputs: AssessmentInputs, 
     readinessScore: number
-): { min: number; max: number; theoreticalMax: number } {
+): { min: number; max: number; theoreticalMax: number; readinessFactor: number } {
     const volNum = getAverageVolume(inputs.monthlyVolumeBand);
     const ahtNum = getAverageAHT(inputs.currentAHTBand);
     const { savings, automationFriction } = getWorkflowSavingsParams(inputs.primaryWorkflowGoal);
@@ -379,7 +398,7 @@ export function calculateHoursSaved(
     // Min/max range
     const min = Math.round(baseHoursSaved * 0.85);
     const max = Math.round(baseHoursSaved * 1.15);
-    return { min, max, theoreticalMax };
+    return { min, max, theoreticalMax, readinessFactor };
 }
 
 export function calculateCostAvoidance(

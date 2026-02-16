@@ -19,10 +19,11 @@ import {
     BarChart3,
     Zap,
     Loader2,
-    Share2,
+    Download,
+    Calculator,
 } from "lucide-react";
 import Link from "next/link";
-import { calculateAssessmentScore, AssessmentInputs, AssessmentResult } from "@/lib/assessment-calculator";
+import { calculateAssessmentScore, formatLabel, AssessmentInputs, AssessmentResult } from "@/lib/assessment-calculator";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { motion, AnimatePresence } from "motion/react";
 import { useRecaptcha } from "@/hooks/useRecaptcha";
@@ -755,6 +756,39 @@ Inputs:
                     </Card>
                 </div>
 
+                {/* Calculation Basis Breakdown */}
+                <div className="p-6 rounded-2xl bg-muted/20 border border-border/50 print:bg-white print:border-gray-300">
+                    <div className="flex items-center gap-2 mb-4 text-xs font-bold tracking-widest text-primary print:text-black uppercase">
+                        <Calculator className="w-4 h-4" />
+                        The Math Behind Your Savings
+                    </div>
+                    <div className="grid grid-cols-2 md:grid-cols-5 gap-6 text-sm">
+                        <div className="space-y-1">
+                            <span className="text-muted-foreground text-xs block">Volume</span>
+                            <span className="font-semibold">{result.calculationBasis.monthlyVolume} cases/mo</span>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-muted-foreground text-xs block">Current AHT</span>
+                            <span className="font-semibold">{result.calculationBasis.averageAHT} mins</span>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-muted-foreground text-xs block">AI Efficiency</span>
+                            <span className="font-semibold">{Math.round(result.calculationBasis.efficiencyGain * 100)}%</span>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-muted-foreground text-xs block">Readiness Factor</span>
+                            <span className="font-semibold">{Math.round(result.calculationBasis.readinessFactor * 100)}%</span>
+                        </div>
+                        <div className="space-y-1">
+                            <span className="text-muted-foreground text-xs block">FTE Rate</span>
+                            <span className="font-semibold">${result.calculationBasis.hourlyRate}/hr</span>
+                        </div>
+                    </div>
+                    <p className="mt-6 text-[10px] text-muted-foreground leading-relaxed italic border-t border-border/50 pt-4 print:text-gray-500">
+                        * Calculations are based on industry benchmarks for {formatLabel(inputs.functionFocus)} workflows and assume an 80-90% success rate for initial AI pilots. Costs reflect standard HKD (USD) blended FTE rates.
+                    </p>
+                </div>
+
                 {/* Persistence status */}
                 {leadData.email && (
                     <p className="text-center text-sm text-muted-foreground">
@@ -764,30 +798,16 @@ Inputs:
                     </p>
                 )}
 
-                {/* Share */}
-                <div className="flex justify-center">
+                {/* Share/Print */}
+                <div className="flex justify-center no-print">
                     <Button
                         variant="outline"
-                        size="sm"
-                        onClick={() => {
-                            const baseUrl = typeof window !== "undefined" ? window.location.origin : "https://www.invaritech.ai";
-                            const assessmentUrl = `${baseUrl}/assessment/`;
-                            const text = `I just discovered my Automation Archetype: ${result.archetypeTitle}. ${result.archetypeDescription} Take the assessment: ${assessmentUrl}`;
-                            if (typeof navigator !== "undefined" && navigator.share) {
-                                navigator.share({
-                                    title: "My Automation Archetype",
-                                    text,
-                                    url: assessmentUrl,
-                                }).catch(() => {
-                                    navigator.clipboard?.writeText(text);
-                                });
-                            } else {
-                                navigator.clipboard?.writeText(text);
-                            }
-                        }}
+                        size="lg"
+                        className="gap-2 border-primary/20 hover:bg-primary/5"
+                        onClick={() => window.print()}
                     >
-                        <Share2 className="w-4 h-4 mr-2" />
-                        Share your archetype
+                        <Download className="w-4 h-4" />
+                        Download PDF Report
                     </Button>
                 </div>
 
@@ -810,6 +830,39 @@ Inputs:
                         <Link href="/services">Explore Services</Link>
                     </Button>
                 </div>
+
+                <style jsx global>{`
+                    @media print {
+                        nav, footer, .no-print, button, form, .ServiceBackground {
+                            display: none !important;
+                        }
+                        body {
+                            background: white !important;
+                            color: black !important;
+                            -webkit-print-color-adjust: exact;
+                        }
+                        .Card, .p-6, .grid {
+                            background: white !important;
+                            border-color: #eee !important;
+                            color: black !important;
+                            box-shadow: none !important;
+                        }
+                        .text-primary, .text-green-500, .text-orange-500, .text-foreground {
+                            color: black !important;
+                        }
+                        .text-muted-foreground {
+                            color: #666 !important;
+                        }
+                        .max-w-5xl {
+                            max-width: 100% !important;
+                            margin: 0 !important;
+                            padding: 20px !important;
+                        }
+                        h1, h2, h3 {
+                            color: black !important;
+                        }
+                    }
+                `}</style>
             </div>
         );
     }
