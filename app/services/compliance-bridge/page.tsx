@@ -23,7 +23,6 @@ export const metadata: Metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Compliance Workflow Bridge - Services",
-                type: "image/webp",
             },
         ],
     },

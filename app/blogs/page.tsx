@@ -22,7 +22,6 @@ export const metadata: Metadata = {
                 width: 1200,
                 height: 630,
                 alt: "INVARITECH Blog - Enterprise AI Automation Insights",
-                type: "image/webp",
             },
         ],
     },

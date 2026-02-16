@@ -16,7 +16,6 @@ export const metadata: Metadata = {
                 width: 1200,
                 height: 630,
                 alt: "AI Automation & Integration Services",
-                type: "image/webp",
             },
         ],
     },

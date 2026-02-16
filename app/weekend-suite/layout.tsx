@@ -15,7 +15,6 @@ export const metadata: Metadata = {
                 width: 1200,
                 height: 630,
                 alt: "WeekendSuite - Admin Suite for Freelancers",
-                type: "image/webp",
             },
         ],
     },

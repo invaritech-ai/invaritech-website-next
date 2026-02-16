@@ -35,7 +35,6 @@ export const metadata: Metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Use Cases - High-ROI Workflows | INVARITECH",
-                type: "image/webp",
             },
         ],
     },
