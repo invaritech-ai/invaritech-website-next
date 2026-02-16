@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai/careers/full-stack-developer/",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Full-Stack Software Engineer - Careers",

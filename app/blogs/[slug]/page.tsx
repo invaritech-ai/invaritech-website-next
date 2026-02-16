@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         };
     }
 
-    const imageUrl = post.coverImage || "/og-image.webp";
+    const imageUrl = post.coverImage || "/og-image.png";
 
     return {
         title: `${post.title} - INVARITECH Blog`,
@@ -96,7 +96,7 @@ function generateArticleSchema(post: {
     const url = `${baseUrl}/blogs/${post.slug}/`;
     const imageUrl = post.coverImage
         ? `${baseUrl}${post.coverImage}`
-        : `${baseUrl}/og-image.webp`;
+        : `${baseUrl}/og-image.png`;
 
     return {
         "@context": "https://schema.org",

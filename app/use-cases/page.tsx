@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai/use-cases/",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Use Cases - High-ROI Workflows | INVARITECH",

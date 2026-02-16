@@ -107,11 +107,10 @@ export const metadata: Metadata = {
         siteName: "INVARITECH",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "INVARITECH - Drop-In AI Automations for Enterprises",
-                type: "image/webp",
             },
         ],
     },
@@ -120,8 +119,7 @@ export const metadata: Metadata = {
         title: "INVARITECH - Drop-In AI Automations for Enterprises",
         description:
             "In 30 days, get one production-grade AI automation on top of your existing systems, with measurable before/after impact.",
-        images: ["/og-image.webp"],
-        creator: "@invaritechai",
+        images: ["/og-image.png"],
         site: "@invaritechai",
     },
     verification: metadataVerification,

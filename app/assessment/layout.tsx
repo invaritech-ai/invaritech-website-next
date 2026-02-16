@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai/assessment/",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
                 alt: "Ops Efficiency Assessment | INVARITECH",

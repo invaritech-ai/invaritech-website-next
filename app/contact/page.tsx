@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Contact INVARITECH - Book a Meeting",
         url: "https://www.invaritech.ai/contact/",
-        images: ["/og-image.webp"],
+        images: ["/og-image.png"],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/contact/",

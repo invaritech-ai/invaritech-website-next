@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Our Work - Automation Projects & Case Studies",
         url: "https://www.invaritech.ai/work/",
-        images: ["/og-image.webp"],
+        images: ["/og-image.png"],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/work/",
