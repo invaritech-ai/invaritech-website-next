@@ -568,7 +568,7 @@ Inputs:
                 )}
                 <form onSubmit={submitAssessment} className="space-y-4">
                     <div className="space-y-2">
-                        <Label>Full Name</Label>
+                        <Label>Full Name <span className="text-destructive">*</span></Label>
                         <Input
                             required
                             placeholder="Jane Doe"
@@ -577,7 +577,7 @@ Inputs:
                         />
                     </div>
                     <div className="space-y-2">
-                        <Label>Work Email</Label>
+                        <Label>Work Email <span className="text-destructive">*</span></Label>
                         <Input
                             required
                             type="email"
@@ -587,7 +587,7 @@ Inputs:
                         />
                     </div>
                      <div className="space-y-2">
-                        <Label>Company Name</Label>
+                        <Label>Company Name <span className="text-destructive">*</span></Label>
                         <Input
                             required
                             placeholder="Acme Corp"
