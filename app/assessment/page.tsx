@@ -199,9 +199,16 @@ export default function AssessmentPage() {
             let recaptchaToken = null;
             if (recaptchaSiteKey) {
                 recaptchaToken = await executeRecaptcha();
+                if (!recaptchaToken) {
+                    throw new Error("reCAPTCHA verification failed. Please try again.");
+                }
             }
 
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+            if (!apiUrl || apiUrl.trim() === "") {
+                throw new Error("Assessment service is unavailable. Please try again later.");
+            }
+
             const response = await fetch(`${apiUrl}/api/assessment`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -219,7 +226,8 @@ export default function AssessmentPage() {
             } else {
                 setResult(clientResult);
             }
-        } catch {
+        } catch (err) {
+            setApiError(err instanceof Error ? err.message : "An unexpected error occurred");
             setResult(clientResult);
         }
 

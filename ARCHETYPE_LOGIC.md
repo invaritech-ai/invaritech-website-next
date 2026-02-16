@@ -81,7 +81,7 @@ Example:
 - Readiness: 100%
 
 Base = (3000 × 4 × 0.9) / 60 × 0.95 = 171 hrs
-Realistic = 171 × 1.2 = 171 hrs (capped at 100% readiness)
+Realistic = 171 × max(0.4, min(1.0, 1.0 + 0.2)) = 171 × 1.0 = 171 hrs
 
 If Readiness was 50%:
 Realistic = 171 × 0.7 = 120 hrs

@@ -461,5 +461,6 @@ function getAverageAHT(band: string): number {
 }
 
 export function formatLabel(slug: string): string {
+    if (!slug) return "Unknown";
     return slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
 }
