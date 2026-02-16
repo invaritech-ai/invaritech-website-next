@@ -189,7 +189,6 @@ export default function AssessmentPage() {
 
         // Always calculate deterministic scores first (instant)
         const clientResult = calculateAssessmentScore(inputs);
-        console.log("[Assessment] Deterministic result:", clientResult);
         setStep(6); // Show "Analyzing..." screen
 
         try {
@@ -200,12 +199,9 @@ export default function AssessmentPage() {
             let recaptchaToken = null;
             if (recaptchaSiteKey) {
                 recaptchaToken = await executeRecaptcha();
-                console.log("[Assessment] reCAPTCHA token:", recaptchaToken ? "obtained" : "failed");
             }
 
             const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-            console.log("[Assessment] Calling API at:", `${apiUrl}/api/assessment`);
-
             const response = await fetch(`${apiUrl}/api/assessment`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -214,21 +210,15 @@ export default function AssessmentPage() {
             });
             clearTimeout(timeout);
 
-            console.log("[Assessment] Response status:", response.status);
-
             if (!response.ok) throw new Error(`API error: ${response.status}`);
             
             const data = await response.json();
-            console.log("[Assessment] API response data:", data);
-
             if (data.success && data.result) {
                 setResult(data.result);
             } else {
-                console.warn("[Assessment] API returned non-success, using deterministic");
                 setResult(clientResult);
             }
-        } catch (err) {
-            console.error("[Assessment] API call failed:", err);
+        } catch {
             setResult(clientResult);
         }
 
@@ -238,7 +228,6 @@ export default function AssessmentPage() {
         try {
             sessionStorage.setItem("assessment_step", "7");
         } catch { /* ignore */ }
-        console.log("[Assessment] Moving to results step");
         setStep(7);
     };
 
