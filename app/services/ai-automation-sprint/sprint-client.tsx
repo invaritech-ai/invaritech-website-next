@@ -38,12 +38,20 @@ const faqs = [
         a: "It starts with an AI discovery workshop, but it ends in build and measurable validation."
     },
     {
-        q: "Do you build “AI strategy”?",
-        a: "Yes, but only when strategy is the shortest path to safe execution."
+        q: "What fits into a 30-day POC?",
+        a: "One Outcome. Production-Ready. We focus on a single mission-critical loop that can be fully automated in 30 days. Examples: 1. Instant Reputation Feedback — Google Business reviews routed to your mobile the second they are posted. 2. Automated Bookkeeping — Image/PDF invoices converted into instant, Xero/QuickBooks importable data. 3. Real-Time Lead Triage — Website signals turned into qualified sales alerts in seconds."
     },
     {
         q: "What if we need more than 30 days?",
         a: "Then this becomes phase 1 of a delivery track. The goal is to prove value first."
+    },
+    // {
+    //     q: "If a 4-week POC is $10k, is a 6-month project $60k?",
+    //     a: "No. De-risk first, scale second. The POC is a fixed-price move to prove ROI. Enterprise-scale builds involve deeper legacy integrations and higher-stakes governance, meaning pricing does not scale linearly. We use the POC to define the actual enterprise investment."
+    // },
+    {
+        q: "Do you build “AI strategy”?",
+        a: "Yes, but only when strategy is the shortest path to safe execution."
     },
     {
         q: "Will our team be involved?",
@@ -468,7 +476,7 @@ export default function SprintClient() {
                                 <p className="text-sm text-white/50 mb-2">Investment</p>
                                 <p className="text-2xl font-bold text-white">$10k – $15k USD</p>
                                 <p className="text-sm font-mono text-white/60 mb-1">($78k – $117k HKD)</p>
-                                <p className="text-xs text-white/40">For a tightly scoped wedge</p>
+                                <p className="text-xs text-white/40 leading-relaxed">For a tightly scoped, high-impact wedge. Complex enterprise builds are priced based on depth and integration scale.</p>
                             </div>
                         </div>
                      </div>
