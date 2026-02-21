@@ -50,7 +50,7 @@ export default function WhatWeDoSection() {
 
             <div className="mx-auto max-w-7xl px-6 relative z-10">
                 <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-                    <div className="text-white sticky top-32">
+                    <div className="text-white lg:sticky lg:top-32">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-8 bg-primary/60"></div>
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
