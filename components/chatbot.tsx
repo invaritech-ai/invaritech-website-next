@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 const BubbleChat = dynamic(
@@ -17,6 +17,24 @@ export const Chatbot = () => {
     const MUTED_COLOR = "#A3A3A3";
     const BOT_BG = "#171717";
     const USER_BG = "#262626";
+    const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(max-width: 640px)");
+        const updateIsMobile = () => setIsMobile(mediaQuery.matches);
+        updateIsMobile();
+
+        mediaQuery.addEventListener("change", updateIsMobile);
+        return () => mediaQuery.removeEventListener("change", updateIsMobile);
+    }, []);
+
+    const mobileMode = isMobile ?? false;
+    const bubbleSize = mobileMode ? 60 : 80;
+    const bubbleRight = mobileMode ? 12 : 20;
+    const bubbleBottom = mobileMode ? 12 : 20;
+    const chatWindowOffset = bubbleBottom + bubbleSize + 10;
+    const chatWindowHeight = mobileMode ? 500 : 550;
+    const chatWindowWidth = mobileMode ? 360 : 400;
 
     useEffect(() => {
         const findAndClickChatButton = () => {
@@ -127,8 +145,11 @@ export const Chatbot = () => {
         };
     }, []);
 
+    if (isMobile === null) return null;
+
     return (
         <BubbleChat
+            key={mobileMode ? "mobile" : "desktop"}
             chatflowid="a6759d77-8fe9-459f-abb2-7a9aacd22ccf"
             apiHost="https://flowise.avishekmajumder.com"
             chatflowConfig={{
@@ -142,10 +163,10 @@ export const Chatbot = () => {
             theme={{
                 button: {
                     backgroundColor: "#000000",
-                    right: 20,
-                    bottom: 20,
-                    size: 80, // Much bigger as requested
-                    dragAndDrop: true,
+                    right: bubbleRight,
+                    bottom: bubbleBottom,
+                    size: bubbleSize,
+                    dragAndDrop: !mobileMode,
                     iconColor: "white",
                     customIconSrc: irisIconSrc,
                     autoWindowOpen: {
@@ -155,8 +176,8 @@ export const Chatbot = () => {
                     },
                 },
                 tooltip: {
-                    showTooltip: true,
-                    tooltipMessage: "Ask Iris (Cmd+K)",
+                    showTooltip: !mobileMode,
+                    tooltipMessage: "Ask Iris",
                     tooltipBackgroundColor: "#000000",
                     tooltipTextColor: "white",
                     tooltipFontSize: 12,
@@ -178,15 +199,15 @@ export const Chatbot = () => {
                     }
                     /* Position the outer fixed wrapper — applies to both .chatbot-container AND the close button */
                     div.fixed {
-                        bottom: 110px !important; /* 20px button-bottom + 80px button-size + 10px gap */
-                        right: 20px !important;
+                        bottom: calc(env(safe-area-inset-bottom, 0px) + ${chatWindowOffset}px) !important;
+                        right: ${bubbleRight}px !important;
                     }
                     /* Force Dark Mode Overrides */
                     .chatbot-container {
                         border: 1px solid #D97706 !important; /* Thin orange outline for window */
                         box-shadow: 0 20px 50px rgba(0,0,0,0.5) !important;
                         font-family: 'IBM Plex Mono', monospace !important;
-                        max-height: calc(100vh - 140px) !important; /* Prevent clipping */
+                        max-height: min(78dvh, calc(100vh - 140px)) !important;
                     }
                     /* Fix Close Button — override Flowise's right-[-8px] that pushes it outside */
                     button[class*="absolute"][class*="right-"] {
@@ -198,12 +219,12 @@ export const Chatbot = () => {
                     /* Mobile Responsiveness */
                     @media (max-width: 640px) {
                         div.fixed {
-                            width: 90% !important;
-                            right: 5% !important;
-                            bottom: 110px !important;
+                            width: min(92vw, 360px) !important;
+                            right: 12px !important;
+                            bottom: calc(env(safe-area-inset-bottom, 0px) + ${chatWindowOffset}px) !important;
                         }
                         .chatbot-container {
-                            max-height: 70vh !important;
+                            max-height: min(68dvh, 500px) !important;
                         }
                     }
 
@@ -281,8 +302,8 @@ export const Chatbot = () => {
                         "Connection Interrupted. Retrying...",
                     backgroundColor: BG_COLOR,
                     backgroundImage: "",
-                    height: 550, // Reduced height to fit smaller screens and sit lower
-                    width: 400,
+                    height: chatWindowHeight,
+                    width: chatWindowWidth,
                     fontSize: 14,
                     starterPrompts: [
                         "Analyze my workflow",
