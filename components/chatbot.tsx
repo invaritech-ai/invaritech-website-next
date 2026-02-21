@@ -20,19 +20,12 @@ export const Chatbot = () => {
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
     useEffect(() => {
-        if (typeof window === "undefined") return;
-
         const mediaQuery = window.matchMedia("(max-width: 640px)");
         const updateIsMobile = () => setIsMobile(mediaQuery.matches);
         updateIsMobile();
 
-        if (mediaQuery.addEventListener) {
-            mediaQuery.addEventListener("change", updateIsMobile);
-            return () => mediaQuery.removeEventListener("change", updateIsMobile);
-        }
-
-        mediaQuery.addListener(updateIsMobile);
-        return () => mediaQuery.removeListener(updateIsMobile);
+        mediaQuery.addEventListener("change", updateIsMobile);
+        return () => mediaQuery.removeEventListener("change", updateIsMobile);
     }, []);
 
     const mobileMode = isMobile ?? false;
@@ -228,7 +221,7 @@ export const Chatbot = () => {
                         div.fixed {
                             width: min(92vw, 360px) !important;
                             right: 12px !important;
-                            bottom: calc(env(safe-area-inset-bottom, 0px) + 82px) !important;
+                            bottom: calc(env(safe-area-inset-bottom, 0px) + ${chatWindowOffset}px) !important;
                         }
                         .chatbot-container {
                             max-height: min(68dvh, 500px) !important;
