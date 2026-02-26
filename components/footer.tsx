@@ -6,7 +6,7 @@ const navigationLinks = [
     { title: "About", href: "/about/" },
     { title: "Services", href: "/services/" },
     { title: "Work", href: "/work/" },
-    { title: "Blogs", href: "/blogs/" },
+    { title: "Blog", href: "/blog/" },
     { title: "Careers", href: "/careers/" },
     { title: "Contact", href: "/contact/" },
 ];

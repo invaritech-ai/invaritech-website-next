@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         openGraph: {
             title: post.title,
             description: post.excerpt,
-            url: `https://www.invaritech.ai/blogs/${post.slug}/`,
+            url: `https://www.invaritech.ai/blog/${post.slug}/`,
             type: "article",
             publishedTime: post.publishedAt,
             authors: [post.author.name],
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             images: [imageUrl],
         },
         alternates: {
-            canonical: `https://www.invaritech.ai/blogs/${post.slug}/`,
+            canonical: `https://www.invaritech.ai/blog/${post.slug}/`,
         },
     };
 }
@@ -93,7 +93,7 @@ function generateArticleSchema(post: {
     slug: string;
 }) {
     const baseUrl = "https://www.invaritech.ai";
-    const url = `${baseUrl}/blogs/${post.slug}/`;
+    const url = `${baseUrl}/blog/${post.slug}/`;
     const imageUrl = post.coverImage
         ? `${baseUrl}${post.coverImage}`
         : `${baseUrl}/og-image.png`;
@@ -165,7 +165,7 @@ export default async function BlogPostPage({ params }: Props) {
                             {/* Meta Top Bar */}
                             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 font-mono text-xs text-muted-foreground uppercase tracking-widest border-l-2 border-primary/50 pl-4">
                                 <Link
-                                    href="/blogs/"
+                                    href="/blog/"
                                     className="flex items-center gap-2 hover:text-white transition-colors group"
                                 >
                                     <ArrowLeft className="size-3 transition-transform group-hover:-translate-x-1" />

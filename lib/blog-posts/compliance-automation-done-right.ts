@@ -73,7 +73,7 @@ Custom compliance workflow automation becomes rational when your processes encod
 
 At that point, the question shifts from "Which tool?" to "What architecture?" A deeper decision framework is outlined here:
 
-- **[Building vs. Buying: When Custom Automation Makes Sense](/blogs/building-vs-buying-custom-automation/)**
+- **[Building vs. Buying: When Custom Automation Makes Sense](/blog/building-vs-buying-custom-automation/)**
 
 ---
 

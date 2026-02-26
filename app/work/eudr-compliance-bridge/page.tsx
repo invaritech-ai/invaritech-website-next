@@ -75,7 +75,7 @@ export default function EudrCaseStudyPage() {
                         A French operator preparing for EU Deforestation
                         Regulation (EUDR) enforcement needed the capacity to
                         process up to <span className="text-foreground font-medium">100,000 Due Diligence Statements (DDS)</span>{" "}
-                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blogs/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered a backend infrastructure built for high-volume regulatory submission automation.
+                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blog/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered a backend infrastructure built for high-volume regulatory submission automation.
                     </p>
                 </div>
 
@@ -249,7 +249,7 @@ export default function EudrCaseStudyPage() {
                     
                     <div className="mt-12 pt-8 border-t border-white/5 text-center">
                         <p className="text-sm text-muted-foreground">
-                            Related reading: <Link href="/blogs/compliance-automation-done-right/" className="text-primary hover:underline">deterministic compliance systems</Link> and <Link href="/blogs/building-vs-buying-custom-automation/" className="text-primary hover:underline">building vs buying custom automation</Link>.
+                            Related reading: <Link href="/blog/compliance-automation-done-right/" className="text-primary hover:underline">deterministic compliance systems</Link> and <Link href="/blog/building-vs-buying-custom-automation/" className="text-primary hover:underline">building vs buying custom automation</Link>.
                         </p>
                     </div>
                 </section>

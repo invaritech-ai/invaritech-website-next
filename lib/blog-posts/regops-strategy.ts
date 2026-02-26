@@ -12,7 +12,7 @@ Most ESG and regulatory consultancies present themselves as structured, risk-awa
 
 Clients pay for assurance. The internal system depends on coordination effort. That mismatch becomes visible as volume increases.
 
-If this feels familiar, read **[The Consultancy Trap](/blogs/consultancy-trap/)**.
+If this feels familiar, read **[The Consultancy Trap](/blog/consultancy-trap/)**.
 
 ---
 
@@ -32,7 +32,7 @@ The bridge accepts structured intake, validates inputs deterministically, applie
 
 Your experts still make judgment calls. They stop acting as data routers.
 
-For technical architecture, read **[Anatomy of a RegOps Bridge](/blogs/regops-technical/)**.
+For technical architecture, read **[Anatomy of a RegOps Bridge](/blog/regops-technical/)**.
 
 ---
 
@@ -67,7 +67,7 @@ AI can assist with document reads and classification. AI should not own regulato
 
 If a system submits to a regulator, it must behave predictably. Deterministic logic is defensible. Probabilistic submission is not.
 
-Full argument here: **[Compliance Automation Done Right](/blogs/compliance-automation-done-right/)**.
+Full argument here: **[Compliance Automation Done Right](/blog/compliance-automation-done-right/)**.
 
 ---
 
@@ -83,7 +83,7 @@ Many ESG consultancies stall not because demand is weak. They stall because deli
 
 Senior staff begin doing data movement. Larger mandates create operational fear. Recurring revenue feels unstable under deadline pressure.
 
-That is not a sales problem. It is an operations design problem. For the full breakdown of why hiring rarely fixes the bottleneck, see **[Why Consultancies Get Stuck](/blogs/why-consultancies-get-stuck/)**.
+That is not a sales problem. It is an operations design problem. For the full breakdown of why hiring rarely fixes the bottleneck, see **[Why Consultancies Get Stuck](/blog/why-consultancies-get-stuck/)**.
 
 ---
 

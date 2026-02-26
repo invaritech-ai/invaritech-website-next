@@ -11,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Generate sitemap entries for blog posts
     const blogPostEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-        url: `${baseUrl}/blogs/${post.slug}/`,
+        url: `${baseUrl}/blog/${post.slug}/`,
         lastModified: new Date(post.publishedAt),
         changeFrequency: "monthly" as const,
         priority: 0.6,
@@ -109,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/blogs/`,
+            url: `${baseUrl}/blog/`,
             changeFrequency: "weekly",
             priority: 0.7,
         },

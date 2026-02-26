@@ -42,7 +42,7 @@ See the full breakdown:
 
 If you want the scale failure mode first, read:
 
-- **[Why Manual EUDR Compliance Fails at Scale](/blogs/why-manual-eudr-compliance-fails/)**
+- **[Why Manual EUDR Compliance Fails at Scale](/blog/why-manual-eudr-compliance-fails/)**
 
 ---
 
@@ -73,7 +73,7 @@ Probabilistic decision paths are rarely defensible in regulator-facing systems.
 
 For architectural philosophy, read:
 
-- **[Compliance Automation Done Right](/blogs/compliance-automation-done-right/)**
+- **[Compliance Automation Done Right](/blog/compliance-automation-done-right/)**
 
 ### 3. Submission layer
 

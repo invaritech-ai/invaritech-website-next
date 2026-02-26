@@ -60,7 +60,7 @@ That is not a feature toggle inside a generic platform.
 
 If you want the failure mode at scale:
 
-- **[Why Manual EUDR Compliance Fails at Scale](/blogs/why-manual-eudr-compliance-fails/)**
+- **[Why Manual EUDR Compliance Fails at Scale](/blog/why-manual-eudr-compliance-fails/)**
 
 If you want the infrastructure baseline:
 

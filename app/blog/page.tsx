@@ -15,7 +15,7 @@ export const metadata: Metadata = {
         title: "INVARITECH Blog - Enterprise AI Automation Insights",
         description:
             "Case studies, engineering notes, founder POV, and BOFU guidance for teams implementing AI automation on existing infrastructure.",
-        url: "https://www.invaritech.ai/blogs/",
+        url: "https://www.invaritech.ai/blog/",
         images: [
             {
                 url: "/og-image.png",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
         ],
     },
     alternates: {
-        canonical: "https://www.invaritech.ai/blogs/",
+        canonical: "https://www.invaritech.ai/blog/",
     },
 };
 
@@ -105,7 +105,7 @@ export default function BlogsPage() {
                             {posts.map((post, index) => (
                                 <Link
                                     key={post.slug}
-                                    href={`/blogs/${post.slug}/`}
+                                    href={`/blog/${post.slug}/`}
                                     className="group block"
                                 >
                                     <article className="h-full flex flex-col">

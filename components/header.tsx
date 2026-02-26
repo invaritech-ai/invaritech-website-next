@@ -14,7 +14,7 @@ const menuItems = [
     { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
     { name: "Services", href: "/services/", id: "03" },
     // { name: "Results", href: "/results/", id: "04" },
-    { name: "Intel", href: "/blogs/", id: "04" }, // Renamed for "Bold" feel
+    { name: "Intel", href: "/blog/", id: "04" }, // Renamed for "Bold" feel
     { name: "Contact", href: "/contact/", id: "05" },
 ];
 

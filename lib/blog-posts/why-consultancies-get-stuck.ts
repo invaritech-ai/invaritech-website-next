@@ -66,7 +66,7 @@ Edge cases, ambiguity, and client trade-offs. This is where your people are valu
 
 High-performing teams automate Types 1 and 2 and reserve humans for Type 3.
 
-To see the architecture, read **[Anatomy of a RegOps Bridge](/blogs/regops-technical/)** and the operating model framing in **[RegOps strategy](/blogs/regops-strategy/)**.
+To see the architecture, read **[Anatomy of a RegOps Bridge](/blog/regops-technical/)** and the operating model framing in **[RegOps strategy](/blog/regops-strategy/)**.
 
 ---
 

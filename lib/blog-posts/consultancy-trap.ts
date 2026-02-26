@@ -41,7 +41,7 @@ Most firms plateau not because demand dries up, but because delivery capacity be
 
 The most common sentence in these firms is: "We'll systemize later."
 
-Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck—**[Why Consultancies Get Stuck](/blogs/why-consultancies-get-stuck/)** explains why.
+Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck—**[Why Consultancies Get Stuck](/blog/why-consultancies-get-stuck/)** explains why.
 
 And sometimes: "We already have a system," which means copying data into Excel sheets with slightly better formatting.
 
@@ -101,7 +101,7 @@ You shift humans toward exception handling and advisory work.
 
 This is RegOps: operational infrastructure that supports revenue expansion without increasing fragility.
 
-If you want the architecture pattern behind this shift, see **[Anatomy of a RegOps Bridge](/blogs/regops-technical/)**.
+If you want the architecture pattern behind this shift, see **[Anatomy of a RegOps Bridge](/blog/regops-technical/)**.
 
 ---
 
@@ -109,7 +109,7 @@ If you want the architecture pattern behind this shift, see **[Anatomy of a RegO
 
 Regulatory submission pipelines make the problem obvious. Manual heroics collapse under volume.
 
-- **[Why Manual EUDR Compliance Fails at Scale](/blogs/why-manual-eudr-compliance-fails/)**
+- **[Why Manual EUDR Compliance Fails at Scale](/blog/why-manual-eudr-compliance-fails/)**
 - **[EUDR Compliance Bridge Case Study](/work/eudr-compliance-bridge/)**
 
 ---
