@@ -33,18 +33,24 @@ export const useRecaptcha = ({ siteKey, action }: UseRecaptchaOptions) => {
         }
     }, [siteKey]);
 
-    const executeRecaptcha = useCallback(async (): Promise<string | null> => {
-        if (typeof window === "undefined" || !window.grecaptcha) {
-            console.error("reCAPTCHA not loaded");
-            return null;
-        }
+    const executeRecaptcha = useCallback((): Promise<string | null> => {
+        return new Promise((resolve) => {
+            if (typeof window === "undefined" || !window.grecaptcha) {
+                console.error("reCAPTCHA not loaded");
+                resolve(null);
+                return;
+            }
 
-        try {
-            return await window.grecaptcha.execute(siteKey, { action });
-        } catch (error) {
-            console.error("reCAPTCHA execution failed:", error);
-            return null;
-        }
+            window.grecaptcha.ready(async () => {
+                try {
+                    const token = await window.grecaptcha.execute(siteKey, { action });
+                    resolve(token);
+                } catch (error) {
+                    console.error("reCAPTCHA execution failed:", error);
+                    resolve(null);
+                }
+            });
+        });
     }, [siteKey, action]);
 
     return { executeRecaptcha };
