@@ -141,6 +141,10 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning className="dark">
             <head>
+                <meta
+                    name="facebook-domain-verification"
+                    content="40eogslk5htol3s1lsoqadxgh2h657"
+                />
                 {/* Resource hints for external domains */}
                 <link rel="preconnect" href="https://www.google.com" />
                 <link

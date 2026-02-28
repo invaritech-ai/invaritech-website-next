@@ -9,6 +9,7 @@ import { Card } from "@/components/ui/card";
 import { CheckCircle2 } from "lucide-react";
 import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
+import { useRecaptcha } from "@/hooks/useRecaptcha";
 
 export default function WeekendSuitePage() {
     const [formData, setFormData] = useState({
@@ -21,6 +22,12 @@ export default function WeekendSuitePage() {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
+    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+    const { executeRecaptcha } = useRecaptcha({
+        siteKey: recaptchaSiteKey || "",
+        action: "weekend_waitlist_submit",
+    });
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
@@ -31,6 +38,8 @@ export default function WeekendSuitePage() {
         setIsSubmitting(true);
 
         try {
+            const recaptchaToken = recaptchaSiteKey ? await executeRecaptcha() : null;
+
             const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
             const response = await fetch(`${apiUrl}/api/weekend-waitlist`, {
                 method: "POST",
@@ -39,6 +48,7 @@ export default function WeekendSuitePage() {
                     ...formData,
                     message: `WeekendSuite Waitlist: ${formData.workType} - ${formData.headache}`,
                     source: "WeekendSuite Waitlist",
+                    recaptchaToken,
                 }),
             });
 
