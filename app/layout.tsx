@@ -6,9 +6,10 @@ import Script from "next/script";
 import "./globals.css";
 import { LenisScroll } from "@/components/ui/LenisScroll";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
-import { HeroHeader } from "@/components/header"; 
+import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = localFont({
     src: [
@@ -51,8 +52,7 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default:
-            "INVARITECH - Drop-In AI Automations for Enterprises",
+        default: "INVARITECH - Drop-In AI Automations for Enterprises",
         template: "%s | INVARITECH",
     },
     description:
@@ -200,7 +200,6 @@ export default function RootLayout({
                     data-key="A6OV+c4YNtaqQiY6VZk1eg"
                     strategy="lazyOnload"
                 />
-
             </body>
         </html>
     );
