@@ -8,7 +8,7 @@ const ratelimit = new Ratelimit({
     prefix: "invaritech",
 });
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
     const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
     const { success } = await ratelimit.limit(ip);
     if (!success) {
