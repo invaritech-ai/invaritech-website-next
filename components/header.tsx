@@ -13,9 +13,9 @@ const menuItems = [
     { name: "Home", href: "/", id: "01" },
     { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
     { name: "Services", href: "/services/", id: "03" },
-    // { name: "Results", href: "/results/", id: "04" },
-    { name: "Intel", href: "/blog/", id: "04" }, // Renamed for "Bold" feel
-    { name: "Contact", href: "/contact/", id: "05" },
+    { name: "Intel", href: "/blog/", id: "04" },
+    { name: "Assessment", href: "/assessment/", id: "05" },
+    { name: "Contact", href: "/contact/", id: "06" },
 ];
 
 export const HeroHeader = () => {
@@ -81,7 +81,7 @@ export const HeroHeader = () => {
                 </Link>
 
                 {/* Menu Toggle Button */}
-                <button 
+                <button
                     onClick={() => setIsOpen(!isOpen)}
                     className="pointer-events-auto group relative flex items-center justify-center"
                     aria-label="Toggle Menu"

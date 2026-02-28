@@ -104,30 +104,26 @@ export default function HomeFitFaqCta() {
                     {/* FAQ - "Terminal" Style */}
                     <div className="text-white">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-px w-8 bg-white/20"></div>
-                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-white/40">
+                            <div className="h-px w-8 bg-primary/30"></div>
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary/50">
                                 Knowledge Base
                             </p>
                         </div>
                         
-                        <div className="space-y-px bg-white/10 border border-white/10">
+                        <div className="space-y-4">
                             {faqs.map((faq, i) => (
                                 <div
                                     key={faq.q}
-                                    className="bg-[#050507] hover:bg-white/5 transition-colors"
+                                    className="border border-white/10 rounded-xl overflow-hidden bg-white/5"
                                 >
                                     <button
                                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                        className="flex w-full items-center justify-between gap-6 p-6 text-left"
+                                        className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
                                     >
-                                        <span className={`text-lg font-medium transition-colors ${openFaq === i ? "text-primary" : "text-white"}`}>
+                                        <span className="font-bold text-white">
                                             {faq.q}
                                         </span>
-                                        <span
-                                            className={`text-white/40 transition-transform duration-300 ${
-                                                openFaq === i ? "rotate-45 text-primary" : ""
-                                            }`}
-                                        >
+                                        <span className={`text-primary transition-transform duration-300 shrink-0 ${openFaq === i ? "rotate-45" : ""}`}>
                                             <ArrowRight className="h-5 w-5" />
                                         </span>
                                     </button>
@@ -140,8 +136,8 @@ export default function HomeFitFaqCta() {
                                         }`}
                                     >
                                         <div className="overflow-hidden">
-                                            <div className="px-6 pb-6 text-white/60 leading-relaxed max-w-xl font-light">
-                                                 <span className="text-primary mr-2 font-mono">&gt;&gt;</span> {faq.a}
+                                            <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
+                                                {faq.a}
                                             </div>
                                         </div>
                                     </div>
@@ -176,7 +172,7 @@ export default function HomeFitFaqCta() {
                         >
                             <MagneticButton
                                 strength={0.32}
-                                className="rounded-full bg-white text-black px-12 py-6 text-xl font-bold hover:bg-primary hover:scale-105 transition-all duration-300"
+                                className="rounded-none bg-primary text-black px-12 py-6 text-xl font-bold hover:bg-white shadow-[0_0_35px_rgba(255,198,46,0.2)] hover:scale-[1.02] transition-all duration-300"
                                 textClassName="group-hover:text-black"
                             >
                                 {BOOK_MEETING_CTA}

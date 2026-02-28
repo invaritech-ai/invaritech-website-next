@@ -39,11 +39,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/weekend-suite/`,
-            changeFrequency: "weekly",
-            priority: 0.8,
-        },
-        {
             url: `${baseUrl}/services/`,
             changeFrequency: "monthly",
             priority: 0.9,
@@ -74,21 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.85,
         },
         {
-            url: `${baseUrl}/services/compliance-bridge/`,
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/solutions/`,
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/use-cases/`,
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
             url: `${baseUrl}/services/ai-automation-sprint/`,
             changeFrequency: "weekly",
             priority: 0.95,
@@ -98,11 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: "monthly",
             priority: 0.7,
         }, */
-        {
-            url: `${baseUrl}/security/`,
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
         {
             url: `${baseUrl}/assessment/`,
             changeFrequency: "monthly",
@@ -116,11 +91,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         ...blogPostEntries,
         {
             url: `${baseUrl}/careers/`,
-            changeFrequency: "monthly",
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/careers/full-stack-developer/`,
             changeFrequency: "monthly",
             priority: 0.6,
         },

@@ -2,20 +2,28 @@ import { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-    title: "Ops Efficiency Assessment - Score Your Workflow ROI",
+    title: "AI Automation Readiness Assessment — Free ROI Calculator | INVARITECH",
     description:
-        "Get your Ops Efficiency Score in minutes. Estimate hours saved, cost avoided, and the highest-ROI automation lane for your team.",
+        "Score your workflow's AI automation potential in 2 minutes. Get a Viability Score, Readiness Score, Risk Index, and projected monthly ROI — free, no subscription.",
+    keywords: [
+        "AI automation readiness assessment",
+        "AI ROI calculator",
+        "enterprise AI feasibility tool",
+        "AI workflow automation readiness",
+        "AI implementation readiness",
+        "automation viability score",
+    ],
     openGraph: {
-        title: "Ops Efficiency Assessment - Score Your Workflow ROI | INVARITECH",
+        title: "AI Automation Readiness Assessment — Free ROI Calculator | INVARITECH",
         description:
-            "Get your Ops Efficiency Score in minutes. Estimate hours saved, cost avoided, and the highest-ROI automation lane for your team.",
+            "Score your workflow's AI automation potential in 2 minutes. Viability, Readiness, and Risk scores plus projected ROI — free for enterprise and mid-market teams.",
         url: "https://www.invaritech.ai/assessment/",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Ops Efficiency Assessment | INVARITECH",
+                alt: "AI Automation Readiness Assessment | INVARITECH",
             },
         ],
     },

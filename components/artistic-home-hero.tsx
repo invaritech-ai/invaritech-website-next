@@ -250,9 +250,9 @@ export default function ArtisticHomeHero() {
                 transition={{ duration: 0.5, delay: 0 }}
                 className="mt-12 max-w-2xl text-lg md:text-xl text-white/60 leading-relaxed"
             >
-                In 30 days, we ship one production-grade AI automation for enterprise teams on top of your existing stack with governance built in: permissions, audit logs, fallbacks, and rollback.
+                One production-grade AI automation, live in 30 days — layered on your existing stack with governance built in: permissions, audit logs, and rollback paths.
                 <span className="text-primary/80 block mt-2 font-mono text-sm uppercase tracking-widest">
-                    No migration. No vendor lock-in. Measured before/after impact.
+                    No migration. No vendor lock-in. Before/after KPI validation.
                 </span>
             </motion.p>
 
@@ -297,7 +297,7 @@ export default function ArtisticHomeHero() {
                     "Fixed scope: $10,000-$15,000 USD ($78,000-$117,000 HKD)",
                     "Governed by default: audit logs + approvals",
                     "Start in 1-2 weeks if qualified",
-                    "Baseline + after KPI validation",
+                    "Before/after KPI validation",
                 ].map((text, i) => (
                     <div key={i} className="flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/5 rounded-full text-xs font-mono text-white/50">
                         <div className="w-1 h-1 bg-primary rounded-full"></div>

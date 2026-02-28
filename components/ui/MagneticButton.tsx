@@ -71,7 +71,7 @@ export function MagneticButton({
             <button
                 ref={buttonRef}
                 className={cn(
-                    "relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium border border-primary/20 bg-background/50 backdrop-blur-sm transition-colors hover:border-primary group rounded-full",
+                    "relative inline-flex items-center justify-center px-8 py-4 overflow-hidden font-medium border border-primary/20 bg-background/50 backdrop-blur-sm transition-colors hover:border-primary group rounded-none",
                     className
                 )}
                 {...props}
@@ -79,7 +79,7 @@ export function MagneticButton({
                 <span ref={textRef} className={cn("relative z-10 flex items-center gap-2 group-hover:text-primary transition-colors", textClassName)}>
                     {children}
                 </span>
-                <div className="absolute inset-0 z-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full blur-xl" />
+                <div className="absolute inset-0 z-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-none" />
             </button>
         </div>
     );

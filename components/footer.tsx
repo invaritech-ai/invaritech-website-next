@@ -7,6 +7,7 @@ const navigationLinks = [
     { title: "Services", href: "/services/" },
     { title: "Work", href: "/work/" },
     { title: "Blog", href: "/blog/" },
+    { title: "Assessment", href: "/assessment/" },
     { title: "Careers", href: "/careers/" },
     { title: "Contact", href: "/contact/" },
 ];
@@ -44,7 +45,7 @@ export default function FooterSection() {
                              </div>
                         </Link>
                         <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
-                            Engineering the edge of possibility. We build AI-enabled platforms and high-stakes automation for the next generation of industry leaders.
+                            Governed AI systems for enterprises that need proof, not promises. We deliver one production-grade automation in 30 days, layered on top of what you already run.
                         </p>
                     </div>
 

@@ -59,10 +59,11 @@ export default function HomeCoreThesis() {
             <div className="mx-auto max-w-7xl px-6">
                 <div className="mb-12 grid gap-6 md:mb-16 lg:grid-cols-[1fr_auto] lg:items-end">
                     <div className="max-w-3xl text-white">
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/90">
-                            Core Thesis
-                        </p>
-                        <h2 className="mt-4 text-balance text-4xl font-semibold leading-[0.95] md:text-6xl">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="h-px w-8 bg-primary/60"></div>
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">Core Thesis</p>
+                        </div>
+                        <h2 className="text-balance text-4xl font-semibold leading-[0.95] md:text-6xl">
                             Layered intelligence beats replacement.
                         </h2>
                         <p className="mt-5 max-w-2xl text-lg text-white/75">

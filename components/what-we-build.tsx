@@ -1,4 +1,3 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain, FileText, Eye, DollarSign, Code } from "lucide-react";
 import { ReactNode } from "react";
@@ -35,7 +34,7 @@ const solutions = [
     },
     {
         icon: Code,
-        title: "Engineering discipline",
+        title: "Engineering Discipline",
         description:
             "Secure APIs, queues, batching, rate limits, observability; versioned model routing, A/B tests, and canary rollouts for safe change management.",
         outcomes:
@@ -44,67 +43,63 @@ const solutions = [
 ];
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
-    <div className="relative mx-auto size-16 flex items-center justify-center">
-        <div className="bg-muted/50 rounded-xl p-3 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:scale-105">
-            <div className="text-foreground/70 group-hover:text-foreground transition-colors duration-200">
-                {children}
-            </div>
+    <div className="size-10 flex items-center justify-center rounded-none bg-primary/10 border border-white/10 group-hover:border-primary/40 group-hover:bg-primary/15 transition-colors">
+        <div className="text-primary">
+            {children}
         </div>
     </div>
 );
 
 export default function WhatWeBuild() {
     return (
-        <section className="bg-muted py-16 md:py-32">
+        <section className="relative overflow-hidden py-16 md:py-32 bg-[#030305] border-t border-white/5">
+            <div className="absolute inset-0 -z-10 opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay" />
+
             <div className="mx-auto max-w-6xl px-6">
-                <div className="text-center mb-12">
-                    <h2 className="text-balance text-4xl font-semibold lg:text-5xl mb-4">
-                        What we build
+                <div className="mb-12">
+                    <div className="flex items-center gap-3 mb-6">
+                        <div className="h-px w-8 bg-primary/60"></div>
+                        <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                            What We Build
+                        </p>
+                    </div>
+                    <h2 className="text-balance text-5xl font-bold leading-[0.9] tracking-tight text-white md:text-7xl mb-4">
+                        Intelligent systems<br/>that reduce cost-to-serve.
                     </h2>
-                    <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                        Intelligent systems that reduce cost-to-serve and make
-                        work auditable.
+                    <p className="text-lg text-white/60 max-w-2xl">
+                        Every engagement delivers one production-grade automation—auditable, governed, and measurably better than the baseline.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {solutions.map((solution, index) => (
-                        <Card
-                            key={index}
-                            className="group hover:shadow-lg transition-all duration-300"
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 mb-px">
+                    {solutions.map((solution) => (
+                        <div
+                            key={solution.title}
+                            className="group bg-[#030305] p-6 hover:bg-white/[0.02] transition-colors border border-white/5 hover:border-primary/20"
                         >
-                            <CardHeader className="pb-3">
-                                <CardDecorator>
-                                    <solution.icon
-                                        className="size-6"
-                                        aria-hidden
-                                    />
-                                </CardDecorator>
-                                <h3 className="mt-6 font-semibold text-lg">
-                                    {solution.title}
-                                </h3>
-                            </CardHeader>
-                            <CardContent className="pb-6">
-                                <p className="text-sm text-muted-foreground mb-4">
-                                    {solution.description}
+                            <CardDecorator>
+                                <solution.icon className="size-5" aria-hidden />
+                            </CardDecorator>
+                            <h3 className="mt-5 font-semibold text-white text-base">
+                                {solution.title}
+                            </h3>
+                            <p className="mt-2 text-sm text-white/50 leading-relaxed mb-4">
+                                {solution.description}
+                            </p>
+                            <div className="border-l-2 border-primary/30 bg-primary/5 pl-3 py-1.5">
+                                <p className="text-xs font-mono text-primary/80 mb-0.5">Outcomes</p>
+                                <p className="text-xs text-white/40 leading-relaxed">
+                                    {solution.outcomes}
                                 </p>
-                                <div className="bg-muted/30 rounded-lg p-3">
-                                    <p className="text-xs font-medium text-primary mb-1">
-                                        Outcomes:
-                                    </p>
-                                    <p className="text-xs text-muted-foreground">
-                                        {solution.outcomes}
-                                    </p>
-                                </div>
-                            </CardContent>
-                        </Card>
+                            </div>
+                        </div>
                     ))}
                 </div>
 
-                <div className="text-center">
-                    <Button asChild variant="outline" size="lg">
-                        <Link href="/solutions/">
-                            Explore a sample: See the minimal live demo
+                <div className="mt-10">
+                    <Button asChild variant="outline" size="lg" className="rounded-none border-white/10 bg-transparent text-white hover:bg-white hover:text-black transition-colors">
+                        <Link href="/work/">
+                            See proof of delivery →
                         </Link>
                     </Button>
                 </div>

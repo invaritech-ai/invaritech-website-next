@@ -220,17 +220,17 @@ export default function ContactSection() {
         return (
             <section className="py-12 md:py-24">
                 <div className="mx-auto max-w-7xl px-4 lg:px-8">
-                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center border-none shadow-2xl bg-background/50 backdrop-blur-sm">
+                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center rounded-none border border-white/10 bg-black/40 backdrop-blur-md shadow-none">
                         <div className="flex justify-center mb-6">
-                            <div className="rounded-full bg-green-100 p-3 dark:bg-green-900/30">
-                                <CheckCircle2 className="h-12 w-12 text-green-600 dark:text-green-400" />
+                            <div className="bg-primary/10 p-3 border border-primary/20">
+                                <CheckCircle2 className="h-12 w-12 text-primary" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4">
-                            Message Sent!
+                        <h3 className="text-2xl font-bold mb-4 text-white">
+                            Message Sent.
                         </h3>
-                        <p className="text-muted-foreground mb-8 text-lg">
-                            Thanks for reaching out. We&apos;ve received your message and will get back to you shortly.
+                        <p className="text-white/60 mb-8 text-lg">
+                            We&apos;ve received your message and will get back to you shortly.
                         </p>
                         <Button
                             onClick={() =>
@@ -241,7 +241,7 @@ export default function ContactSection() {
                                 })
                             }
                             variant="outline"
-                            className="w-full sm:w-auto"
+                            className="w-full sm:w-auto rounded-none border-white/10"
                         >
                             Send Another Message
                         </Button>
@@ -259,10 +259,10 @@ export default function ContactSection() {
                     <div className="flex flex-col justify-between space-y-12">
                         <div className="space-y-8">
                             <div>
-                                <h2 className="text-2xl font-semibold mb-4">
+                                <h2 className="text-2xl font-semibold mb-4 text-white">
                                     Why partner with Invaritech?
                                 </h2>
-                                <p className="text-muted-foreground text-lg leading-relaxed">
+                                <p className="text-white/60 text-lg leading-relaxed">
                                     Invaritech leads architecture, delivery, and
                                     accountability. Our partner engineering
                                     network extends execution capacity, but you
@@ -273,12 +273,12 @@ export default function ContactSection() {
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="mt-1 rounded-lg bg-primary/10 p-2">
+                                    <div className="mt-1 bg-primary/10 border border-white/10 p-2">
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1">Book a Meeting</h3>
-                                        <p className="text-sm text-muted-foreground mb-3">
+                                        <h3 className="font-medium mb-1 text-white">Book a Meeting</h3>
+                                        <p className="text-sm text-white/50 mb-3">
                                             Skip the email loop and book a
                                             focused session directly with our
                                             team.
@@ -286,7 +286,7 @@ export default function ContactSection() {
                                         <Button
                                             asChild
                                             variant="default"
-                                            className="group"
+                                            className="group rounded-none"
                                         >
                                             <a
                                                 href={BOOK_MEETING_URL}
@@ -301,17 +301,17 @@ export default function ContactSection() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="mt-1 rounded-lg bg-primary/10 p-2">
+                                    <div className="mt-1 bg-primary/10 border border-white/10 p-2">
                                         <Mail className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1">Email Us</h3>
-                                        <p className="text-sm text-muted-foreground mb-3">
+                                        <h3 className="font-medium mb-1 text-white">Email Us</h3>
+                                        <p className="text-sm text-white/50 mb-3">
                                             Prefer to write it down? Send us an email and we&apos;ll respond within 24 hours.
                                         </p>
                                         <Link
                                             href="mailto:hello@invaritech.ai"
-                                            className="text-primary hover:underline font-medium"
+                                            className="text-primary hover:underline font-medium font-mono text-sm"
                                         >
                                             hello@invaritech.ai
                                         </Link>
@@ -323,13 +323,12 @@ export default function ContactSection() {
 
                     {/* Right Column - Form */}
                     <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl blur-3xl opacity-20 -z-10" />
-                        <Card className="border-none shadow-xl bg-background/80 backdrop-blur-sm p-6 sm:p-8 md:p-10">
+                        <Card className="rounded-none border border-white/10 bg-black/40 backdrop-blur-md shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
-                                <h3 className="text-xl font-semibold mb-2">
+                                <h3 className="text-xl font-semibold mb-2 text-white">
                                     Send us a message
                                 </h3>
-                                <p className="text-sm text-muted-foreground">
+                                <p className="text-sm text-white/50">
                                     Tell us a bit about your project and we&apos;ll be in touch.
                                 </p>
                             </div>
@@ -337,7 +336,7 @@ export default function ContactSection() {
                             <form onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="name">Full name *</Label>
+                                        <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-white/50">Full name *</Label>
                                         <Input
                                             type="text"
                                             id="name"
@@ -346,11 +345,11 @@ export default function ContactSection() {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             required
-                                            className="bg-background/50"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="email">Email *</Label>
+                                        <Label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-white/50">Email *</Label>
                                         <Input
                                             type="email"
                                             id="email"
@@ -359,14 +358,14 @@ export default function ContactSection() {
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             required
-                                            className="bg-background/50"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="phone">Phone</Label>
+                                        <Label htmlFor="phone" className="text-xs font-mono uppercase tracking-widest text-white/50">Phone</Label>
                                         <Input
                                             type="tel"
                                             id="phone"
@@ -374,11 +373,11 @@ export default function ContactSection() {
                                             placeholder="+1 (555) 000-0000"
                                             value={formData.phone}
                                             onChange={handleInputChange}
-                                            className="bg-background/50"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="country">Country *</Label>
+                                        <Label htmlFor="country" className="text-xs font-mono uppercase tracking-widest text-white/50">Country *</Label>
                                         <Input
                                             type="text"
                                             id="country"
@@ -387,13 +386,13 @@ export default function ContactSection() {
                                             value={formData.country}
                                             onChange={handleInputChange}
                                             required
-                                            className="bg-background/50"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="company">Company / Website</Label>
+                                    <Label htmlFor="company" className="text-xs font-mono uppercase tracking-widest text-white/50">Company / Website</Label>
                                     <Input
                                         type="text"
                                         id="company"
@@ -401,12 +400,12 @@ export default function ContactSection() {
                                         placeholder="acme.com"
                                         value={formData.company}
                                         onChange={handleInputChange}
-                                        className="bg-background/50"
+                                        className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="message">
+                                    <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-white/50">
                                         What would you like to automate or build? *
                                     </Label>
                                     <Textarea
@@ -417,20 +416,20 @@ export default function ContactSection() {
                                         onChange={handleInputChange}
                                         rows={4}
                                         required
-                                        className="bg-background/50 resize-none"
+                                        className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20 resize-none"
                                     />
                                 </div>
 
                                 {formState.error && (
-                                    <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive flex items-center gap-2">
-                                        <span className="font-medium">Error:</span> {formState.error}
+                                    <div className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2">
+                                        <span className="font-mono font-medium">ERR:</span> {formState.error}
                                     </div>
                                 )}
 
                                 <Button
                                     type="submit"
                                     disabled={formState.isSubmitting}
-                                    className="w-full"
+                                    className="w-full rounded-none"
                                     size="lg"
                                 >
                                     {formState.isSubmitting

@@ -7,19 +7,19 @@ const outcomes = [
         icon: Activity,
         title: "One Real Bottleneck",
         description:
-            "We scope one failure point that’s draining margin or capacity.",
+            "We scope one bottleneck, name the owner, and agree what measurably better looks like before we start.",
     },
     {
         icon: Gauge,
         title: "One Production Automation",
         description:
-            "A governed AI layer runs on top of your current systems with operator visibility.",
+            "A governed AI layer runs over your existing systems—operators can approve, trace, and roll back from day one.",
     },
     {
         icon: Shield,
         title: "One Measurable Delta",
         description:
-            "Baseline vs. after is validated so decisions are made on proof, not opinion.",
+            "Before and after is measured against the agreed baseline—you see the delta, not just the code.",
     },
 ];
 
@@ -64,7 +64,7 @@ export default function WhatWeDoSection() {
                         </h2>
                         
                         <p className="mt-8 max-w-xl text-lg text-white/60 leading-relaxed">
-                            Not a broad transformation program. We isolate <span className="text-white font-semibold">one bottleneck workflow</span>, build a governed AI layer over your existing tools, and validate impact against an agreed baseline in four weeks.
+                            Not a broad transformation program. We isolate <span className="text-white font-semibold">one bottleneck workflow</span>, build a governed AI layer over your existing tools, and validate impact against an agreed baseline.
                         </p>
 
                         <div className="mt-12 p-1 rounded-2xl bg-gradient-to-br from-white/10 to-transparent">
@@ -88,12 +88,10 @@ export default function WhatWeDoSection() {
                     </div>
 
                     <div className="grid gap-4">
-                        {outcomes.map((item, index) => (
+                        {outcomes.map((item) => (
                             <div
                                 key={item.title}
-                                className={`group relative p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 hover:border-primary/30 ${
-                                    index === 0 ? "md:min-h-[280px]" : ""
-                                }`}
+                                className="group relative p-8 border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 hover:border-primary/30"
                             >
                                 <div className="absolute top-4 right-4 opacity-50 group-hover:opacity-100 transition-opacity text-primary">
                                     <item.icon className="w-6 h-6" />

@@ -17,9 +17,10 @@ import { motion } from "motion/react";
 interface AssessmentResultsProps {
     result: AssessmentResult;
     inputs: AssessmentInputs;
+    onReset: () => void;
 }
 
-export function AssessmentResults({ result, inputs }: AssessmentResultsProps) {
+export function AssessmentResults({ result, inputs, onReset }: AssessmentResultsProps) {
     const [showCopied, setShowCopied] = useState(false);
 
     const copyToClipboard = useCallback(() => {
@@ -164,7 +165,7 @@ Full analysis at: ${window.location.origin}/assessment
                                 {showCopied ? "SUMMARY COPIED" : "EXPORT DATA PACKAGE"}
                                 <Copy className="w-4 h-4 opacity-50" />
                             </MagneticButton>
-                            
+
                             {result.archetype === "velocity-architect" ? (
                                 <Link href="/services/ai-automation-sprint" className="block">
                                     <button className="w-full h-16 bg-primary text-black font-bold tracking-tighter text-xl hover:bg-white transition-all transform active:scale-[0.98]">
@@ -178,6 +179,13 @@ Full analysis at: ${window.location.origin}/assessment
                                     </button>
                                 </Link>
                             )}
+
+                            <button
+                                onClick={onReset}
+                                className="w-full h-12 border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 font-mono text-xs tracking-widest uppercase transition-colors"
+                            >
+                                Retake Assessment
+                            </button>
                          </div>
                      </div>
                 </div>

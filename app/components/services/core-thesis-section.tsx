@@ -215,7 +215,7 @@ function ThesisCard({ point, index }: { point: Point, index: number }) {
                 animate={{ opacity: isInView ? 1 : 0, x: isInView ? 0 : (isEven ? -50 : 50), filter: isInView ? "blur(0px)" : "blur(10px)" }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className={cn(
-                    "ml-[60px] md:ml-0 md:w-[45%] p-8 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:border-primary/30",
+                    "ml-[60px] md:ml-0 md:w-[45%] p-8 rounded-3xl border border-white/5 bg-white/5 backdrop-blur-sm transition-[colors,border-color,background-color,box-shadow] duration-500 hover:bg-white/10 hover:border-primary/30",
                     isThesis ? "hover:shadow-[0_0_30px_-5px_var(--color-primary)] hover:shadow-primary/10" : "hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.5)] hover:shadow-blue-500/10"
                 )}
             >

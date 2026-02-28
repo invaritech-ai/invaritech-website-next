@@ -49,7 +49,7 @@ export default function SelectedWorkSection() {
                         </div>
                         <h2 className="text-balance text-5xl font-bold leading-[0.9] md:text-7xl tracking-tight text-white mb-6">
                             PROOF OF<br/>
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-400/50">LEVERAGE</span>
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-text-shimmer bg-[length:200%_auto]">LEVERAGE</span>
                         </h2>
                         <p className="text-white/60 max-w-xl text-lg">
                             Outcomes and controls you can defend internally. Production-grade delivery with auditability, fallbacks, and measurable deltas.
@@ -91,8 +91,8 @@ export default function SelectedWorkSection() {
                                      <span className="text-primary text-[10px] font-mono uppercase tracking-[0.3em] mb-1">
                                         {signal.category}
                                     </span>
-                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 text-xs font-mono tracking-wider w-fit">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-none border border-primary/30 bg-primary/10 text-primary text-xs font-mono tracking-wider w-fit">
+                                        <div className="w-1.5 h-1.5 rounded-none bg-primary animate-pulse"></div>
                                         {signal.metric}
                                     </div>
                                 </div>

@@ -13,21 +13,21 @@ const paths = [
         icon: Network,
         title: "AI Integration Services",
         description:
-            "Connect data, approvals, and systems of record into a reliable pipeline.",
+            "Connect data, approvals, and systems of record into one governed, auditable pipeline—no point-to-point duct tape.",
         href: "/services/ai-integration-services/",
     },
     {
         icon: MessagesSquare,
         title: "Enterprise AI Chatbot Deployment",
         description:
-            "A governed interface: permissioned access, traceability, operating model.",
+            "A governed assistant that answers from your own data—permissioned access, full audit trails, and operator controls built in.",
         href: "/services/enterprise-ai-chatbot-deployment/",
     },
     {
         icon: ServerCog,
         title: "Generative AI Backend Development",
         description:
-            "Orchestration, evaluation, observability, latency and cost control.",
+            "Production-grade AI backend engineering: versioned model routing, eval harnesses, observability, and cost guardrails.",
         href: "/services/generative-ai-backend-development/",
     },
     {
@@ -59,7 +59,7 @@ export default function ExpansionPathsSection() {
                         <span className="text-white/40">JUST THE ENTRY POINT.</span>
                     </h2>
                     <p className="mt-8 text-white/60 text-lg leading-relaxed">
-                        Once the wedge proves ROI, we expand the intelligence layer across the enterprise with workflow automation, integrations, governed assistants, and GenAI backend engineering.
+                        Once the wedge validates ROI, we expand the intelligence layer—more workflows, more systems, more teams—until automation becomes a structural advantage, not a one-off project.
                     </p>
                 </div>
 
