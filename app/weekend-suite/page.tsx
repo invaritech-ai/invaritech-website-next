@@ -40,8 +40,7 @@ export default function WeekendSuitePage() {
         try {
             const recaptchaToken = recaptchaSiteKey ? await executeRecaptcha() : null;
 
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
-            const response = await fetch(`${apiUrl}/api/weekend-waitlist`, {
+            const response = await fetch("/api/weekend-waitlist", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

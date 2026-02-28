@@ -11,7 +11,7 @@ const BubbleChat = dynamic(
 );
 
 export const Chatbot = () => {
-    const irisIconSrc = "/iris.png";
+    const irisIconSrc = "/iris.webp";
     const PRIMARY_COLOR = "#D97706"; // Amber/Orange to match site accents
     const BG_COLOR = "#050505";
     const MUTED_COLOR = "#A3A3A3";

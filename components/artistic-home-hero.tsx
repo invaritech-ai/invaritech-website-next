@@ -203,10 +203,10 @@ export default function ArtisticHomeHero() {
         <div className="relative z-10 container mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
             
             {/* Tagline */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 className="mb-8 mt-32 flex items-center gap-3 rounded-full border border-white/10 bg-white/5 py-1 px-4 backdrop-blur-md"
             >
                 <div className="h-2 w-2 rounded-full bg-primary animate-pulse"></div>
@@ -217,37 +217,37 @@ export default function ArtisticHomeHero() {
 
             {/* Main Headline */}
             <h1 className="max-w-6xl mx-auto flex flex-col gap-2 font-bold tracking-tighter text-white select-none">
-                <motion.span 
+                <motion.span
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-5xl md:text-8xl lg:text-9xl leading-[0.9] block mix-blend-screen"
                 >
                     BUILD
                 </motion.span>
-                <motion.span 
+                <motion.span
                      initial={{ opacity: 0, scale: 0.9 }}
                      animate={{ opacity: 1, scale: 1 }}
-                     transition={{ duration: 0.8, delay: 0.6 }}
+                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="text-5xl md:text-8xl lg:text-9xl leading-[0.9] block text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-primary animate-text-shimmer bg-[length:200%_auto]"
                 >
                    GOVERNED AI
                 </motion.span>
-                <motion.div 
+                <motion.div
                      initial={{ opacity: 0, x: 50 }}
                      animate={{ opacity: 1, x: 0 }}
-                     transition={{ duration: 0.8, delay: 0.8 }}
+                     transition={{ duration: 0.6, delay: 0.4 }}
                     className="text-3xl md:text-6xl lg:text-7xl leading-[0.9] block text-white/40 font-light tracking-wide mt-2"
                 >
                     ON YOUR INFRASTRUCTURE
                 </motion.div>
             </h1>
 
-            {/* Subheadline */}
-            <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+            {/* Subheadline — LCP element: always visible, no opacity-hide */}
+            <motion.p
+                initial={{ y: 16 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
                 className="mt-12 max-w-2xl text-lg md:text-xl text-white/60 leading-relaxed"
             >
                 In 30 days, we ship one production-grade AI automation for enterprise teams on top of your existing stack with governance built in: permissions, audit logs, fallbacks, and rollback.
@@ -257,10 +257,10 @@ export default function ArtisticHomeHero() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
                 className="mt-12 flex flex-col sm:flex-row items-center gap-6"
             >
                 <Button 
@@ -287,10 +287,10 @@ export default function ArtisticHomeHero() {
             </motion.div>
 
             {/* Proof Chips */}
-             <motion.div 
+            <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1.5 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
                 className="mt-20 flex flex-wrap justify-center gap-4 opacity-70"
             >
                 {[

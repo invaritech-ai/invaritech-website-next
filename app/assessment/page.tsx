@@ -212,20 +212,17 @@ export default function AssessmentPage() {
                 recaptchaToken = await executeRecaptcha();
             }
 
-            const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-            if (apiUrl && apiUrl.trim() !== "") {
-                const response = await fetch(`${apiUrl}/api/assessment`, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ inputs, leadData, recaptchaToken }),
-                    signal: controller.signal,
-                });
+            const response = await fetch("/api/assessment", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ inputs, leadData, recaptchaToken }),
+                signal: controller.signal,
+            });
 
-                if (response.ok) {
-                    const data = await response.json();
-                    if (data.success && data.result) {
-                        resultToSave = data.result;
-                    }
+            if (response.ok) {
+                const data = await response.json();
+                if (data.success && data.result) {
+                    resultToSave = data.result;
                 }
             }
         } catch (err) {
