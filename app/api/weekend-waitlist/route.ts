@@ -6,17 +6,30 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
     }
 
-    const body = await request.json();
+    try {
+        const body = await request.json();
 
-    const response = await fetch(`${apiUrl}/api/weekend-waitlist`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-Internal-Secret": process.env.INTERNAL_SECRET ?? "",
-        },
-        body: JSON.stringify(body),
-    });
+        const response = await fetch(`${apiUrl}/api/weekend-waitlist`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-Internal-Secret": process.env.INTERNAL_SECRET ?? "",
+            },
+            body: JSON.stringify(body),
+        });
 
-    const data = await response.json();
-    return NextResponse.json(data, { status: response.status });
+        const text = await response.text();
+        let data: unknown;
+        try {
+            data = JSON.parse(text);
+        } catch {
+            console.error("api-server /api/weekend-waitlist non-JSON response:", response.status, text.slice(0, 200));
+            return NextResponse.json({ error: "Upstream error" }, { status: 502 });
+        }
+
+        return NextResponse.json(data, { status: response.status });
+    } catch (err) {
+        console.error("Proxy /api/weekend-waitlist error:", err);
+        return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    }
 }
