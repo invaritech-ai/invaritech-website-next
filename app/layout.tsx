@@ -10,6 +10,7 @@ import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = localFont({
     src: [
@@ -200,6 +201,8 @@ export default function RootLayout({
                     data-key="A6OV+c4YNtaqQiY6VZk1eg"
                     strategy="lazyOnload"
                 />
+                <Analytics />
+                <SpeedInsights />
             </body>
         </html>
     );
