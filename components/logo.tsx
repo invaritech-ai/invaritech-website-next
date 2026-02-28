@@ -9,10 +9,10 @@ export const Logo = ({
 }) => {
     return (
         <Image
-            src="/logo-text.png"
+            src="/logo-text.webp"
             alt="Invaritech Logo"
-            width={120}
-            height={32}
+            width={480}
+            height={64}
             className={cn(
                 "h-8 w-auto brightness-75 dark:brightness-100",
                 className
@@ -30,7 +30,7 @@ export const LogoIcon = ({
 }) => {
     return (
         <Image
-            src="/logo-image.png"
+            src="/logo-image.webp"
             alt="Invaritech Icon"
             width={32}
             height={32}
