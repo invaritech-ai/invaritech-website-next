@@ -9,10 +9,15 @@ const ratelimit = new Ratelimit({
 });
 
 export async function proxy(request: NextRequest) {
-    const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
-    const { success } = await ratelimit.limit(ip);
-    if (!success) {
-        return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+    try {
+        const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
+        const { success } = await ratelimit.limit(ip);
+        if (!success) {
+            return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+        }
+    } catch (err) {
+        // Fail open — if Upstash is unavailable, allow the request through
+        console.error("Rate limit check failed:", err);
     }
     return NextResponse.next();
 }
