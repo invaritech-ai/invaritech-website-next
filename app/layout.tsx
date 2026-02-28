@@ -152,7 +152,6 @@ export default function RootLayout({
                     href="https://www.googletagmanager.com"
                 />
                 <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-                <link rel="dns-prefetch" href="https://r2.leadsy.ai" />
 
                 {/* Structured data - inline scripts are fine, they don't block */}
                 <script
@@ -202,13 +201,6 @@ export default function RootLayout({
                     strategy="lazyOnload"
                 />
 
-                <Script
-                    id="vtag-ai-js"
-                    src="https://r2.leadsy.ai/tag.js"
-                    data-pid="1rQPfvIzStzrxlsWj"
-                    data-version="062024"
-                    strategy="lazyOnload"
-                />
             </body>
         </html>
     );
