@@ -122,30 +122,29 @@ export default function IntegrationClient() {
                                 Custom Gateways for Sovereign Data.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                Our AI integration services connect large language models and AI tools into your existing ERP, CRM, and internal systems without replacing your infrastructure.
+                                We build the connection layer between your AI tools and your existing ERP, CRM, and internal systems — without replacing your infrastructure or exposing your data.
                             </p>
-	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                We provide AI system integration services and generative AI integration services for enterprises that require governance and data sovereignty. We can deliver AI integration consulting services or build the integration layer end-to-end, with visibility, controls, and safe failure modes.
-	                            </p>
-	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                Teams hire us for AI integration services for
-	                                businesses under different labels: gen AI
-	                                integration services, AI tool integration
-	                                services, integration services for AI tools,
-	                                or AI agent integration services. The name
-	                                doesn’t matter. Ownership, auditability, and
-	                                safe failure modes do.
-	                            </p>
-	                            <p className="text-lg text-white/80 font-mono">
-	                                No replatforming. No shadow AI. No brittle “glue code.”
-	                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                                For organisations with strict data residency, security policies, or regulatory constraints, we design the gateway first: VPC-deployable, auditable, model-agnostic, and owned by you. Switch providers without rewriting the workflow.
+                            </p>
+                            <p className="text-lg text-white/80 font-mono">
+                                No replatforming. No shadow AI. No brittle "glue code."
+                            </p>
                         </div>
-                        <div className="md:w-1/3">
+                        <div className="md:w-1/3 space-y-4">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Support Line</h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    Available as a standalone build or a managed service (host & maintain).
+                                    CTOs and engineering leads connecting AI to ERP, CRM, or internal systems where data residency or governance is non-negotiable.
                                 </p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
+                                <p className="text-sm text-muted-foreground">1-week infrastructure audit → architecture spec → Sprint build.</p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
+                                <p className="text-sm text-muted-foreground">You own the integration layer. Optional managed service retainer or clean handoff to your team.</p>
                             </div>
                         </div>
                     </div>
@@ -203,7 +202,7 @@ export default function IntegrationClient() {
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">Bring the AI to the Data</h2>
                             <p className="text-xl text-muted-foreground">
-                                For sensitive workloads, we don’t force “data export as a strategy.”
+                                For sensitive workloads, we don’t force "data export as a strategy."
                             </p>
                         </div>
 
@@ -300,7 +299,7 @@ export default function IntegrationClient() {
                             </Badge>
                             <h2 className="text-3xl md:text-5xl font-bold mb-6">Integrations Shouldn’t Be a Black Box</h2>
                             <p className="text-xl text-muted-foreground leading-relaxed">
-                                We turn “shadow AI” into boring infrastructure. We replace silent corruption and API anxiety with visible tickets and safe, human-led overrides.
+                                We turn "shadow AI" into boring infrastructure. We replace silent corruption and API anxiety with visible tickets and safe, human-led overrides.
                             </p>
                         </div>
                         <div className="md:w-1/2 w-full space-y-4 stagger-list">
@@ -336,7 +335,7 @@ export default function IntegrationClient() {
                     <div className="bg-red-900/10 border border-red-500/20 p-8 rounded-2xl text-left max-w-2xl mx-auto">
                         <h4 className="font-bold text-red-400 mb-4">We also won’t build:</h4>
                         <ul className="space-y-3 text-red-100/80">
-                            <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> “Black box” automations where we can’t baseline outcomes</li>
+                            <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> "Black box" automations where we can’t baseline outcomes</li>
                             <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> Production workflows with ungoverned model autonomy for writes</li>
                         </ul>
                     </div>
@@ -383,13 +382,21 @@ export default function IntegrationClient() {
                         30 minutes. We review your stack, your integration surface, and your data policies.
                     </p>
                     <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                        <MagneticButton 
+                        <MagneticButton
                             strength={0.3}
                             className="bg-primary text-black px-12 py-6 text-xl font-bold hover:bg-white transition-colors"
                         >
                             Request an Infrastructure Audit
                         </MagneticButton>
                     </a>
+                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/generative-ai-backend-development/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Need production GenAI backends?
+                        </Link>
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

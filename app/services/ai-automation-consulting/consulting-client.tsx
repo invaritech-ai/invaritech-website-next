@@ -121,32 +121,34 @@ export default function ConsultingClient() {
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
-	                        <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-	                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
-	                                Consulting for leadership teams who need clarity before committing capital.
-	                            </p>
-	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                Our AI automation consulting services for businesses are designed for teams that need execution clarity, not inspiration.
-	                            </p>
-	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                We identify the highest-ROI workflow wedge, define governance boundaries, and produce a build-ready execution plan. Unlike other AI automation consulting firms, we do not stop at strategy.
-	                            </p>
-	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                If you’re evaluating AI process automation consulting, the output should be a build-ready spec tied to measurable outcomes, not a deck of ideas.
-	                            </p>
-	                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-	                                We provide AI and automation consulting for businesses that need infrastructure-level discipline, including AI infrastructure automation consulting when reliability and ownership matter.
-	                            </p>
-	                            <p className="text-lg text-white/80 font-mono italic border-t border-white/10 pt-6">
-	                                &ldquo;If AI cannot be tied to a measurable operational objective, it should not be funded.&rdquo;
-	                            </p>
-	                        </div>
-                        <div className="md:w-1/3">
+                        <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
+                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                                Consulting for leadership teams who need clarity before committing capital.
+                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                                We identify the highest-ROI workflow wedge, define governance boundaries, and produce a build-ready execution plan. Every engagement ends with something your CTO can build, your COO can own, and your CEO can approve.
+                            </p>
+                            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                                If scope is already clear, go straight to the Sprint. Choose consulting when you have multiple automation ideas with no clear prioritisation, a compliance blocker, or stakeholders who disagree on what success looks like.
+                            </p>
+                            <p className="text-lg text-white/80 font-mono italic border-t border-white/10 pt-6">
+                                &ldquo;If AI cannot be tied to a measurable operational objective, it should not be funded.&rdquo;
+                            </p>
+                        </div>
+                        <div className="md:w-1/3 space-y-4">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Authority</h3>
-                                <p className="text-sm text-muted-foreground leading-relaxed italic">
-                                    We work with companies prepared to act on the outcome — not workshop it indefinitely.
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    Leadership teams with multiple automation ideas and no clear prioritisation, a compliance blocker, or stakeholders who disagree on success criteria.
                                 </p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
+                                <p className="text-sm text-muted-foreground">2–4 week engagement, ending in a Sprint-ready execution spec.</p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
+                                <p className="text-sm text-muted-foreground">Most clients proceed directly to the 30-Day Sprint. The spec is ready to build.</p>
                             </div>
                         </div>
                     </div>
@@ -366,13 +368,21 @@ export default function ConsultingClient() {
                         30 minutes. One workflow map. Go / no-go.
                     </p>
                     <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                        <MagneticButton 
+                        <MagneticButton
                             strength={0.3}
                             className="bg-primary text-black px-12 py-6 text-xl font-bold hover:bg-white transition-colors"
                         >
                             Book a Consulting Fit Call
                         </MagneticButton>
                     </a>
+                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Scope already clear? See the Sprint
+                        </Link>
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Workflow optimisation
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

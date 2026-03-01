@@ -36,7 +36,7 @@ const faqs = [
         answer: "Business-critical actions never run on guesses. If the AI is unsure, the system stops, falls back, or requests human approval.",
     },
     {
-        question: "Is this just “intelligent process automation” or RPA?",
+        question: "Is this just ‘intelligent process automation’ or RPA?",
         answer: "It can include those techniques, but the point is governance: audited pipelines with clear ownership and safe failure modes.",
     },
     {
@@ -162,39 +162,30 @@ export default function WorkflowClient() {
                                 liquidity.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                Our workflow automation consulting services
-                                combine deterministic process automation
-                                services with selective AI workflow automation
-                                services. We do AI workflow automation
-                                consulting when it improves throughput, and we
-                                deploy process automation services (including
-                                intelligent process automation services and
-                                business process automation services) when the
-                                safer win is simply removing handoffs,
-                                approvals, and reconciliation drag.
+                                We map your highest-friction workflows, remove the handoffs and reconciliation drag, and deploy the right tool — deterministic automation, AI, or both — to get more output without more headcount.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                We don’t sell the “magic bullet” of total human
-                                replacement. We build governed systems that
-                                remove the fatigue tax: the repetitive,
-                                high-friction work that silently caps
-                                throughput.
+                                We work at the process layer, not the chatbot layer. Shorter cycle times, earlier exception surfacing, and measurable SLA improvement — with a governance model that doesn’t break at scale.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
                                 One audited pipeline. No agentic havoc.
                                 Scalability by design.
                             </p>
                         </div>
-                        <div className="md:w-1/3">
+                        <div className="md:w-1/3 space-y-4">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">
-                                    Ideally Suited For
-                                </h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    Teams moving from prototype thinking to
-                                    production reality. Best for COOs and Ops
-                                    leaders who need to scale without linearity.
+                                    COOs and ops leaders with 100+ recurring workflow instances per month, or throughput ceilings that headcount alone won’t fix.
                                 </p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
+                                <p className="text-sm text-muted-foreground">2-week diagnostic → 30-day Sprint → optional 90-day stabilisation retainer.</p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
+                                <p className="text-sm text-muted-foreground">KPI dashboard, 90-day stabilisation, and an optional expansion track to the next workflow.</p>
                             </div>
                         </div>
                     </div>
@@ -274,15 +265,15 @@ export default function WorkflowClient() {
                                 The Governance Gap
                             </h2>
                             <p className="text-xl text-muted-foreground">
-                                Why “no-code automation” often breaks at scale.
+                                Why "no-code automation" often breaks at scale.
                             </p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
                                 <p className="text-muted-foreground leading-relaxed">
-                                    When people hear “workflow automation
-                                    services,” they picture a messy tangle of
+                                    When people hear "workflow automation
+                                    services," they picture a messy tangle of
                                     hidden logic: 400 disconnected automations,
                                     no owner, and no audit trail.
                                 </p>
@@ -333,7 +324,7 @@ export default function WorkflowClient() {
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Our “No-Guess” Architecture
+                            Our "No-Guess" Architecture
                         </h2>
                         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
                             Most AI agencies rely on probability and hope. We
@@ -499,7 +490,7 @@ export default function WorkflowClient() {
                                 Safety First
                             </Badge>
                             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                                The “Anti-Havoc” Guardrails
+                                The "Anti-Havoc" Guardrails
                             </h2>
                             <p className="text-xl text-muted-foreground leading-relaxed">
                                 We don’t gamble with company secrets or public
@@ -659,6 +650,14 @@ export default function WorkflowClient() {
                             Request a Workflow Diagnostic
                         </MagneticButton>
                     </a>
+                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
+                        </Link>
+                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Need system integration?
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

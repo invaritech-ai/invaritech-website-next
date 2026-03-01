@@ -296,24 +296,20 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* Core Thesis & Method */}
-            <CoreThesisSection />
-
             {/* Services Directory */}
             <section className="py-24 px-6 relative z-10 bg-black/20">
                 <div className="max-w-[1800px] mx-auto">
-                    <div className="flex items-center justify-between mb-16">
-                         <h2 className="text-[5vw] font-bold leading-none opacity-20">
-                            SERVICES
-                        </h2>
+                    <div className="flex items-center gap-3 mb-16">
+                        <div className="h-px w-8 bg-primary/60" />
+                        <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">All Services</p>
                     </div>
 
                     <div className="service-cards-grid grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {services.map((service, index) => {
                             const Icon = service.icon;
                             return (
-                                <Link 
-                                    href={service.link} 
+                                <Link
+                                    href={service.link}
                                     key={service.title}
                                     className="service-card group relative p-8 rounded-3xl border border-white/5 bg-white/5 hover:bg-white/10 hover:border-primary/20 transition-all duration-300 flex flex-col h-full"
                                 >
@@ -323,22 +319,22 @@ export default function ServicesPage() {
                                         </div>
                                         <span className="text-xs font-mono text-white/20">0{index + 1}</span>
                                     </div>
-                                    
+
                                     <h3 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors">
                                         {service.title}
                                     </h3>
-                                    
+
                                     <p className="text-muted-foreground mb-6 leading-relaxed flex-grow">
                                         {service.description}
                                     </p>
-                                    
+
                                     <div className="mt-auto space-y-6">
                                         <div className="pl-4 border-l border-white/10 py-1">
                                             <p className="text-sm text-white/70 italic">
                                                 Outcome: <span className="text-white">{service.outcome}</span>
                                             </p>
                                         </div>
-                                        
+
                                         <div className="flex items-center text-primary text-sm font-bold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
                                             {service.cta} <ArrowRight className="ml-2 size-4" />
                                         </div>
@@ -349,6 +345,9 @@ export default function ServicesPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Core Thesis & Method */}
+            <CoreThesisSection />
 
             {/* Fit Section */}
             <section className="reveal-section py-24 px-6 relative z-10">
