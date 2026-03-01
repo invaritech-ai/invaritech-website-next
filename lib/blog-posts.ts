@@ -6,6 +6,7 @@ import { post as whyManualEudrComplianceFails } from "./blog-posts/why-manual-eu
 import { post as regopsTechnical } from "./blog-posts/regops-technical";
 import { post as regopsStrategy } from "./blog-posts/regops-strategy";
 import { post as consultancyTrap } from "./blog-posts/consultancy-trap";
+import { post as monthEndCloseAutomation } from "./blog-posts/month-end-close-automation";
 
 export interface BlogPost {
     slug: string;
@@ -46,6 +47,7 @@ export const blogPosts: BlogPost[] = [
     regopsTechnical,
     regopsStrategy,
     consultancyTrap,
+    monthEndCloseAutomation,
 ];
 
 // Helper functions
