@@ -179,37 +179,26 @@ export default function BackendClient() {
                                 and governed by default.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                                Our generative AI development services combine
-                                AI engineering services with AI ML development
-                                services and AI/ML development services (AI/ml
-                                development services), including AI and ML
-                                development services, to deliver
-                                production-grade systems, not experimental
-                                features.
+                                We engineer the production layer that keeps costs controlled, outputs testable, and AI decisions auditable — so your margins don&apos;t erode as you scale.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
                                 Usage scales. Margins stay protected.
                             </p>
                         </div>
-                        <div className="md:w-1/3">
+                        <div className="md:w-1/3 space-y-4">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">
-                                    Support Line
-                                </h3>
-                                <div className="space-y-2">
-                                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                        <Check className="w-4 h-4 text-primary" />{" "}
-                                        Microservice-first
-                                    </div>
-                                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                        <Check className="w-4 h-4 text-primary" />{" "}
-                                        Stack-agnostic
-                                    </div>
-                                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                        <Check className="w-4 h-4 text-primary" />{" "}
-                                        AI-native
-                                    </div>
-                                </div>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    CTOs and technical founders who have shipped a GenAI feature and are watching token bills climb or reliability erode at scale.
+                                </p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
+                                <p className="text-sm text-muted-foreground">Technical audit (1 week) → architecture → sprint build → eval harness + monitoring.</p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
+                                <p className="text-sm text-muted-foreground">Production-grade microservice with eval harness, observability stack, and guardrails. Handoff or retainer.</p>
                             </div>
                         </div>
                     </div>
@@ -793,6 +782,14 @@ export default function BackendClient() {
                             Request a Technical Audit
                         </MagneticButton>
                     </a>
+                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Validate first with the 30-Day Sprint
+                        </Link>
+                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Need system integration?
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

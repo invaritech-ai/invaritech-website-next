@@ -168,38 +168,30 @@ export default function ChatbotClient() {
                                 and multilingual capability.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                We provide AI chatbot development services for
-                                business websites, internal operations, and
-                                multilingual support. Our enterprise AI chatbot
-                                development and generative AI chatbot
-                                development approach is governance-first:
-                                RBAC/ABAC, audit logs, deterministic tool use,
-                                and explicit escalation paths.
+                                Our enterprise AI chatbot development approach is governance-first: RBAC/ABAC, audit logs, deterministic tool use, and explicit escalation paths. If there is no defined objective and a clear owner, we don&apos;t deploy.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                This includes multilingual AI chatbot
-                                development, including Cantonese AI chatbot for
-                                website deployments, Mandarin AI chatbot
-                                development, and Bahasa AI chatbot development.
-                                If you need an AI chatbot for business website
-                                use, or you’re evaluating AI agent development
-                                services, we keep scope inside explicit tool
-                                boundaries and approval gates.
+                                Multilingual deployment included — English, Cantonese, Mandarin, and Bahasa. Language is identity; governed AI should respect that.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
                                 No open-ended experiments. No token-burning
                                 toys. No shadow AI.
                             </p>
                         </div>
-                        <div className="md:w-1/3">
+                        <div className="md:w-1/3 space-y-4">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">
-                                    Support Line
-                                </h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    If there isn’t a defined objective, we don’t
-                                    deploy.
+                                    Ops teams handling sensitive knowledge — finance, HR, legal — who need governance and measurable outcomes, not a cool bot.
                                 </p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
+                                <p className="text-sm text-muted-foreground">Chatbot Fit Audit → governed pilot (30 days) → measurement + optional expansion.</p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
+                                <p className="text-sm text-muted-foreground">You own the deployment. Runbook and operating model included. Retainer available for updates and model drift.</p>
                             </div>
                         </div>
                     </div>
@@ -564,6 +556,14 @@ export default function ChatbotClient() {
                             Request a Chatbot Fit Audit
                         </MagneticButton>
                     </a>
+                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Automate the workflow behind the chat
+                        </Link>
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
+                        </Link>
+                    </div>
                 </div>
             </section>
         </main>

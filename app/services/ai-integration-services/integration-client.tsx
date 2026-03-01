@@ -164,6 +164,20 @@ export default function IntegrationClient() {
                 </div>
             </section>
 
+            {/* What It Is NOT */}
+            <section className="reveal-section py-6 px-6 relative z-10">
+                <div className="max-w-5xl mx-auto">
+                    <div className="border border-white/10 bg-white/[0.02] p-5 flex flex-col sm:flex-row gap-4 items-start">
+                        <span className="text-xs font-mono uppercase tracking-widest text-white/30 shrink-0 pt-1">Not this</span>
+                        <div className="flex flex-wrap gap-3">
+                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not a chatbot layer — chat is an interface, this is infrastructure</span>
+                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not a no-code connector — Zapier/Make break at governance scale</span>
+                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not vendor middleware — you own every line of the integration we build</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Gateway Philosophy */}
             <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
                 <div className="max-w-5xl mx-auto">

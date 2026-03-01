@@ -159,8 +159,7 @@ export default function SprintClient() {
                         <div>
 	                            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
 	                                <strong className="text-white">AI PoC development services for teams that need proof, not hype.</strong><br/>
-	                                In 30 days, we deliver one scoped AI pilot project development track on top of your existing systems, with governance and a measurable before/after delta.
-                                    These AI proof of concept development services include an AI discovery workshop, an AI readiness assessment service, and an AI feasibility study up front. If leadership alignment is missing, we run an AI strategy workshop to lock decisions fast.
+	                                In 30 days, we deliver one scoped, production-ready automation on top of your existing systems — governance baked in and a measurable before/after delta. Starts with a focused discovery and readiness check. If leadership alignment is missing, we handle that first.
 	                            </p>
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
@@ -181,15 +180,21 @@ export default function SprintClient() {
 	                                Ideal for: COOs, CTOs, Heads of Product, Ops leaders
 	                            </p>
 	                        </div>
-	                        <div className="bg-white/5 rounded-2xl p-8 border border-white/10">
-	                            <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-6">Built For Production</h3>
-	                            <ul className="space-y-4">
-	                                {["Access control & audit logs", "Deterministic fallbacks", "Measurable impact (before/after)", "Runbook & handover"].map(item => (
-                                    <li key={item} className="flex items-center gap-3 text-white/80">
-                                        <Check className="w-5 h-5 text-primary" /> {item}
-                                    </li>
-                                ))}
-                            </ul>
+                        <div className="space-y-4">
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">
+                                    COOs, CTOs, and ops leaders who need one measurable automation in 30 days — not a roadmap, a result.
+                                </p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
+                                <p className="text-sm text-muted-foreground">Discovery (Days 1–7) → Build (Days 8–21) → Hardening (Days 22–27) → Validation + Handover (Days 28–30).</p>
+                            </div>
+                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
+                                <p className="text-sm text-muted-foreground">Runbook, operating model, and measurable delta. Most clients expand to the next wedge or move to workflow automation.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -530,6 +535,14 @@ export default function SprintClient() {
                             {BOOK_MEETING_CTA}
                         </MagneticButton>
                     </a>
+                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Scale with Workflow Automation
+                        </Link>
+                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Need system integration?
+                        </Link>
+                    </div>
                 </div>
             </section>
 
