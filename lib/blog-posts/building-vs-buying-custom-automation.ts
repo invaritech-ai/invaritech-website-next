@@ -44,6 +44,23 @@ You are outsourcing operational leverage.
 
 ---
 
+## The Hidden Variable: Your Data
+
+Before the build vs. buy question, there is a data readiness question.
+
+If your source data is:
+
+- spread across disconnected systems
+- inconsistently structured
+- missing validation logic
+- inaccessible without manual extraction
+
+Neither path works. The SaaS tool ingests garbage. The custom layer has nothing clean to route.
+
+The operational leverage only appears after the data contract is defined. That is usually a week of architecture work, not a six-month governance project.
+
+---
+
 ## Example: Regulatory Submission Pipelines (EUDR)
 
 In regulatory environments like EUDR, submission pipelines need to handle:
@@ -150,7 +167,7 @@ No demos. No slides. Just math, architecture, and execution.
         role: "Automation Specialists",
     },
     publishedAt: "2025-10-20T10:00:00Z",
-    dateModified: "2026-02-15T10:00:00Z",
+    dateModified: "2026-03-01T10:00:00Z",
     tags: ["Strategy", "Automation", "Decision Making"],
     coverImage: "/blog/buy-vs-build.webp",
 };
