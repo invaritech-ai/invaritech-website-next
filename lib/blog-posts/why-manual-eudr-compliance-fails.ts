@@ -141,7 +141,7 @@ For broader system philosophy:
 - **[Compliance Automation Done Right: Deterministic Systems vs Black-Box AI](/blog/compliance-automation-done-right/)**
 - **[Building vs Buying: When Custom Automation Makes Sense](/blog/building-vs-buying-custom-automation/)**
 
----**
+---
 
 ## Final Position
 
