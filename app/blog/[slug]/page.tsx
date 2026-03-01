@@ -5,6 +5,7 @@ import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Script from "next/script";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { TextEffect } from "@/components/ui/text-effect";
@@ -256,7 +257,18 @@ export default async function BlogPostPage({ params }: Props) {
                                 prose-strong:text-white prose-strong:font-bold prose-strong:text-shadow-sm
                                 prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-code:font-mono prose-code:text-sm">
                                 <ReactMarkdown
+                                    remarkPlugins={[remarkGfm]}
                                     components={{
+                                        table: ({ children }) => (
+                                            <div className="overflow-x-auto my-10">
+                                                <table className="w-full border-collapse font-mono text-sm">{children}</table>
+                                            </div>
+                                        ),
+                                        thead: ({ children }) => <thead className="border-b border-primary/40">{children}</thead>,
+                                        tbody: ({ children }) => <tbody>{children}</tbody>,
+                                        tr: ({ children }) => <tr className="border-b border-white/10 hover:bg-white/[0.03] transition-colors">{children}</tr>,
+                                        th: ({ children }) => <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>,
+                                        td: ({ children }) => <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>,
                                         h1: ({ children }) => (
                                             <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
                                                 {children}
