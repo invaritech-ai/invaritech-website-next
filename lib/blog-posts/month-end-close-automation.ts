@@ -165,5 +165,5 @@ Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-C
     publishedAt: "2026-03-02T10:00:00Z",
     dateModified: "2026-03-03T12:00:00Z",
     tags: ["Finance", "Automation", "ERP", "Strategy"],
-    coverImage: "/images/month-end-close.png",
+    coverImage: "/images/month-end-close.webp",
 };
