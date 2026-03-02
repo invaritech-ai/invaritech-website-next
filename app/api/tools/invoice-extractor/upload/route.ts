@@ -33,16 +33,28 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        // Buffer the file fully before forwarding — undici (Node.js fetch) can
+        // fail to close a multipart stream correctly when forwarding a File object
+        // from request.formData() directly, causing UND_ERR_SOCKET on the backend.
+        const fileBuffer = await file.arrayBuffer();
+        const blob = new Blob([fileBuffer], { type: file.type });
         const backendForm = new FormData();
-        backendForm.append("file", file);
+        backendForm.append("file", blob, file.name);
 
-        const response = await fetch(`${backendUrl}/api/v1/jobs`, {
-            method: "POST",
-            headers: {
-                "X-API-Key": apiKey,
-            },
-            body: backendForm,
-        });
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 60_000);
+
+        let response: Response;
+        try {
+            response = await fetch(`${backendUrl}/api/v1/jobs`, {
+                method: "POST",
+                headers: { "X-API-Key": apiKey },
+                body: backendForm,
+                signal: controller.signal,
+            });
+        } finally {
+            clearTimeout(timeout);
+        }
 
         const text = await response.text();
         let data: unknown;
@@ -55,6 +67,9 @@ export async function POST(request: NextRequest) {
 
         return NextResponse.json(data, { status: response.status });
     } catch (err) {
+        if (err instanceof Error && err.name === "AbortError") {
+            return NextResponse.json({ error: "Backend timed out. Please try again." }, { status: 504 });
+        }
         console.error("Invoice upload error:", err);
         return NextResponse.json({ error: "Internal server error" }, { status: 500 });
     }

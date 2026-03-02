@@ -164,6 +164,9 @@ export function InvoiceExtractor() {
         if (!file) return;
         setPhase("uploading");
 
+        const controller = new AbortController();
+        const uploadTimeout = setTimeout(() => controller.abort(), 90_000);
+
         try {
             const formData = new FormData();
             formData.append("file", file);
@@ -171,8 +174,10 @@ export function InvoiceExtractor() {
             const res = await fetch("/api/tools/invoice-extractor/upload", {
                 method: "POST",
                 body: formData,
+                signal: controller.signal,
             });
 
+            clearTimeout(uploadTimeout);
             const data = await res.json();
 
             if (res.status === 429) {
@@ -189,8 +194,13 @@ export function InvoiceExtractor() {
 
             setJobId(data.job_id);
             setPhase("polling");
-        } catch {
-            setError({ code: "network_error", message: "Network error. Please check your connection." });
+        } catch (err) {
+            clearTimeout(uploadTimeout);
+            if (err instanceof Error && err.name === "AbortError") {
+                setError({ code: "timeout", message: "Upload timed out. Please try again." });
+            } else {
+                setError({ code: "network_error", message: "Network error. Please check your connection." });
+            }
             setPhase("failed");
         }
     };
