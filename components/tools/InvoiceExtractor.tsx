@@ -39,6 +39,7 @@ export function InvoiceExtractor() {
     const [jobId, setJobId] = useState<string | null>(null);
     const [result, setResult] = useState<InvoiceData | null>(null);
     const [error, setError] = useState<{ code: string; message: string } | null>(null);
+    const [uploadProgress, setUploadProgress] = useState(0);
     const [pollingLabel, setPollingLabel] = useState("INITIALIZING");
     const [pollingProgress, setPollingProgress] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
@@ -54,6 +55,7 @@ export function InvoiceExtractor() {
         setJobId(null);
         setResult(null);
         setError(null);
+        setUploadProgress(0);
         setPollingLabel("INITIALIZING");
         setPollingProgress(0);
         setClientError(null);
@@ -160,49 +162,54 @@ export function InvoiceExtractor() {
         };
     }, [phase, jobId, fetchResult]);
 
-    const handleSubmit = async () => {
+    const handleSubmit = () => {
         if (!file) return;
         setPhase("uploading");
+        setUploadProgress(0);
 
-        const controller = new AbortController();
-        const uploadTimeout = setTimeout(() => controller.abort(), 90_000);
+        const formData = new FormData();
+        formData.append("file", file);
 
-        try {
-            const formData = new FormData();
-            formData.append("file", file);
+        const xhr = new XMLHttpRequest();
 
-            const res = await fetch("/api/tools/invoice-extractor/upload", {
-                method: "POST",
-                body: formData,
-                signal: controller.signal,
-            });
+        xhr.upload.onprogress = (e) => {
+            if (e.lengthComputable) {
+                setUploadProgress(Math.round((e.loaded / e.total) * 100));
+            }
+        };
 
-            clearTimeout(uploadTimeout);
-            const data = await res.json();
-
-            if (res.status === 429) {
-                setError({ code: "rate_limited", message: "Daily limit reached. Resets at midnight UTC." });
+        xhr.onload = () => {
+            try {
+                const data = JSON.parse(xhr.responseText);
+                if (xhr.status === 429) {
+                    setError({ code: "rate_limited", message: "Daily limit reached. Resets at midnight UTC." });
+                    setPhase("failed");
+                } else if (xhr.status >= 400) {
+                    setError({ code: data?.error ?? "upload_failed", message: data?.error ?? "Upload failed. Please try again." });
+                    setPhase("failed");
+                } else {
+                    setJobId(data.job_id);
+                    setPhase("polling");
+                }
+            } catch {
+                setError({ code: "parse_error", message: "Unexpected response from server." });
                 setPhase("failed");
-                return;
             }
+        };
 
-            if (!res.ok) {
-                setError({ code: data?.error ?? "upload_failed", message: data?.error ?? "Upload failed. Please try again." });
-                setPhase("failed");
-                return;
-            }
-
-            setJobId(data.job_id);
-            setPhase("polling");
-        } catch (err) {
-            clearTimeout(uploadTimeout);
-            if (err instanceof Error && err.name === "AbortError") {
-                setError({ code: "timeout", message: "Upload timed out. Please try again." });
-            } else {
-                setError({ code: "network_error", message: "Network error. Please check your connection." });
-            }
+        xhr.onerror = () => {
+            setError({ code: "network_error", message: "Network error. Please check your connection." });
             setPhase("failed");
-        }
+        };
+
+        xhr.ontimeout = () => {
+            setError({ code: "timeout", message: "Upload timed out. Please try again." });
+            setPhase("failed");
+        };
+
+        xhr.timeout = 90_000;
+        xhr.open("POST", "/api/tools/invoice-extractor/upload");
+        xhr.send(formData);
     };
 
     const downloadCSV = async (type: "items_csv" | "summary_csv") => {
@@ -299,12 +306,32 @@ export function InvoiceExtractor() {
 
                 {/* ── UPLOADING ── */}
                 {phase === "uploading" && (
-                    <div className="py-16 text-center space-y-6">
-                        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto" />
-                        <p className="text-primary font-mono text-xs tracking-widest uppercase">
-                            TRANSMITTING FILE...
+                    <div className="py-12 space-y-8">
+                        <div className="flex items-center justify-between">
+                            <p className="text-primary font-mono text-xs tracking-widest uppercase">
+                                TRANSMITTING FILE...
+                            </p>
+                            <p className="text-primary font-mono text-xs tabular-nums">
+                                {uploadProgress}%
+                            </p>
+                        </div>
+
+                        <div className="relative h-px w-full bg-white/10">
+                            <div
+                                className="absolute inset-y-0 left-0 bg-primary transition-all duration-300 ease-out"
+                                style={{ width: `${uploadProgress}%` }}
+                            />
+                            {uploadProgress > 0 && uploadProgress < 100 && (
+                                <div
+                                    className="absolute top-1/2 -translate-y-1/2 w-1 h-3 bg-primary blur-sm transition-all duration-300 ease-out"
+                                    style={{ left: `${uploadProgress}%` }}
+                                />
+                            )}
+                        </div>
+
+                        <p className="text-white/20 font-mono text-[10px] tracking-widest truncate">
+                            {file?.name}
                         </p>
-                        <p className="text-white/30 font-mono text-xs">{file?.name}</p>
                     </div>
                 )}
 
