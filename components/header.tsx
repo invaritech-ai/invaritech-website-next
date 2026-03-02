@@ -14,8 +14,9 @@ const menuItems = [
     { name: "The Sprint", href: "/services/ai-automation-sprint/", id: "02" },
     { name: "Services", href: "/services/", id: "03" },
     { name: "Intel", href: "/blog/", id: "04" },
-    { name: "Assessment", href: "/assessment/", id: "05" },
-    { name: "Contact", href: "/contact/", id: "06" },
+    { name: "Tools", href: "/tools/", id: "05" },
+    { name: "Assessment", href: "/assessment/", id: "06" },
+    { name: "Contact", href: "/contact/", id: "07" },
 ];
 
 export const HeroHeader = () => {

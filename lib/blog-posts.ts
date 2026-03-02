@@ -7,6 +7,7 @@ import { post as regopsTechnical } from "./blog-posts/regops-technical";
 import { post as regopsStrategy } from "./blog-posts/regops-strategy";
 import { post as consultancyTrap } from "./blog-posts/consultancy-trap";
 import { post as monthEndCloseAutomation } from "./blog-posts/month-end-close-automation";
+import { post as aiInvoiceDataExtraction } from "./blog-posts/ai-invoice-data-extraction";
 
 export interface BlogPost {
     slug: string;
@@ -48,6 +49,7 @@ export const blogPosts: BlogPost[] = [
     regopsStrategy,
     consultancyTrap,
     monthEndCloseAutomation,
+    aiInvoiceDataExtraction,
 ];
 
 // Helper functions

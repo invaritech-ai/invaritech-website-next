@@ -5,24 +5,80 @@ import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { InvoiceExtractor } from "@/components/tools/InvoiceExtractor";
 
 export const metadata: Metadata = {
-    title: "Invoice Data Extractor — INVARITECH Tools",
+    title: "Free AI Invoice Data Extractor — PDF to CSV | INVARITECH Tools",
     description:
-        "Upload a PDF or image invoice and extract structured line-item data as JSON or CSV. Powered by AI document parsing.",
+        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Free. No signup. Works with GST, SST, and VAT invoices.",
+    keywords: [
+        "invoice data extractor",
+        "PDF invoice parser",
+        "invoice to CSV",
+        "AI invoice extraction",
+        "extract invoice line items",
+        "invoice OCR tool",
+        "receipt data extractor",
+        "AP automation tool",
+    ],
     alternates: {
         canonical: "https://www.invaritech.ai/tools/invoice-extractor/",
     },
     openGraph: {
-        title: "Invoice Data Extractor — INVARITECH Tools",
+        title: "Free AI Invoice Data Extractor — PDF to CSV",
         description:
-            "Upload a PDF or image invoice and extract structured line-item data as JSON or CSV. Powered by AI document parsing.",
+            "Upload any invoice or receipt. AI extracts supplier, line items, totals, and tax into a clean CSV. Free, no signup. Works with GST, SST, and VAT.",
         url: "https://www.invaritech.ai/tools/invoice-extractor/",
         type: "website",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Free AI Invoice Data Extractor — INVARITECH Tools",
+            },
+        ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Free AI Invoice Data Extractor — PDF to CSV",
+        description:
+            "Upload any invoice or receipt. AI extracts line items and totals into a clean CSV. Free, no signup.",
+        images: ["/og-image.png"],
+    },
+};
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Invoice Data Extractor",
+    "description": "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Works with GST, SST, and VAT invoices.",
+    "url": "https://www.invaritech.ai/tools/invoice-extractor/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+    },
+    "provider": {
+        "@type": "Organization",
+        "name": "INVARITECH",
+        "url": "https://www.invaritech.ai",
+    },
+    "featureList": [
+        "Extract invoice line items to CSV",
+        "Supports PDF, JPG, and PNG invoices",
+        "Handles GST, SST, and VAT invoices",
+        "Exports items CSV and summary CSV",
+        "No signup required",
+    ],
 };
 
 export default function InvoiceExtractorPage() {
     return (
         <main className="min-h-screen bg-[#030305] relative overflow-hidden">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
             <ArtisticBackground />
 
             <div className="relative z-10 pt-32 pb-24 px-6">

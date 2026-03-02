@@ -7,6 +7,7 @@ const navigationLinks = [
     { title: "Services", href: "/services/" },
     { title: "Work", href: "/work/" },
     { title: "Blog", href: "/blog/" },
+    { title: "Tools", href: "/tools/" },
     { title: "Assessment", href: "/assessment/" },
     { title: "Careers", href: "/careers/" },
     { title: "Contact", href: "/contact/" },
