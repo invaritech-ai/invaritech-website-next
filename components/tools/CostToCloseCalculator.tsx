@@ -428,7 +428,7 @@ export function CostToCloseCalculator() {
                     Ready to close in 3 days? We will map your exact blueprint on a free call.
                 </p>
                 <Link
-                    href="/assessment/"
+                    href="/tools/assessment/"
                     className="flex items-center gap-2 bg-primary text-black px-6 py-3 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white transition-colors shrink-0"
                 >
                     Book Assessment
