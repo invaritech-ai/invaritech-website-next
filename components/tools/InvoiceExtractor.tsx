@@ -12,17 +12,12 @@ const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const ALLOWED_TYPES = ["application/pdf", "image/jpeg", "image/jpg", "image/png"];
 const ALLOWED_EXTENSIONS = ".pdf,.jpg,.jpeg,.png";
 
-const POLLING_LABELS: Record<string, string> = {
-    queued: "QUEUED — AWAITING PROCESSOR",
-    processing: "PARSING DOCUMENT STRUCTURE",
+const STEP_LABELS: Record<string, string> = {
+    extracting_pdf_text: "READING DOCUMENT",
+    parsing_structured_data: "EXTRACTING FIELDS",
+    running_vision_fallback: "RUNNING OCR FALLBACK",
+    ocr_image: "PROCESSING IMAGE",
 };
-
-const POLLING_CYCLE = [
-    "READING DOCUMENT",
-    "PARSING STRUCTURE",
-    "EXTRACTING FIELDS",
-    "NORMALIZING DATA",
-];
 
 function formatCurrency(value: number | null, currency: string | null): string {
     if (value === null) return "—";
@@ -45,11 +40,11 @@ export function InvoiceExtractor() {
     const [result, setResult] = useState<InvoiceData | null>(null);
     const [error, setError] = useState<{ code: string; message: string } | null>(null);
     const [pollingLabel, setPollingLabel] = useState("INITIALIZING");
+    const [pollingProgress, setPollingProgress] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [clientError, setClientError] = useState<string | null>(null);
 
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const pollingCycleRef = useRef(0);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -60,6 +55,7 @@ export function InvoiceExtractor() {
         setResult(null);
         setError(null);
         setPollingLabel("INITIALIZING");
+        setPollingProgress(0);
         setClientError(null);
         if (fileInputRef.current) fileInputRef.current.value = "";
     };
@@ -134,13 +130,14 @@ export function InvoiceExtractor() {
                     setError({ code: "expired", message: "Job expired before completion. Please try again." });
                     setPhase("failed");
                 } else {
-                    // queued or processing — update label
-                    const backendLabel = POLLING_LABELS[job.status];
-                    if (backendLabel) {
-                        setPollingLabel(backendLabel);
-                    } else {
-                        setPollingLabel(POLLING_CYCLE[pollingCycleRef.current % POLLING_CYCLE.length]);
-                        pollingCycleRef.current += 1;
+                    // queued or processing — update progress + label
+                    if (typeof job.progress === "number") {
+                        setPollingProgress(job.progress);
+                    }
+                    if (job.step && STEP_LABELS[job.step]) {
+                        setPollingLabel(STEP_LABELS[job.step]);
+                    } else if (job.status === "queued") {
+                        setPollingLabel("QUEUED — AWAITING PROCESSOR");
                     }
                 }
             } catch {
@@ -303,27 +300,35 @@ export function InvoiceExtractor() {
 
                 {/* ── POLLING ── */}
                 {phase === "polling" && (
-                    <div className="py-16 text-center space-y-6">
-                        <div className="relative w-12 h-12 mx-auto">
-                            <div className="absolute inset-0 border-2 border-primary/20 rounded-full" />
-                            <div className="absolute inset-0 border-2 border-primary border-t-transparent rounded-full animate-spin" />
-                            <div className="absolute inset-2 border border-primary/10 rounded-full animate-ping" />
-                        </div>
-                        <div className="space-y-2">
-                            <p className="text-primary font-mono text-xs tracking-widest uppercase animate-pulse">
+                    <div className="py-12 space-y-8">
+                        {/* Step label + percentage */}
+                        <div className="flex items-center justify-between">
+                            <p className="text-primary font-mono text-xs tracking-widest uppercase">
                                 {pollingLabel}
                             </p>
-                            <div className="flex items-center justify-center gap-1">
-                                {[0, 1, 2].map((i) => (
-                                    <div
-                                        key={i}
-                                        className="w-1 h-1 bg-primary/50 rounded-full animate-bounce"
-                                        style={{ animationDelay: `${i * 150}ms` }}
-                                    />
-                                ))}
-                            </div>
+                            <p className="text-primary font-mono text-xs tabular-nums">
+                                {pollingProgress}%
+                            </p>
                         </div>
-                        <p className="text-white/20 font-mono text-xs">JOB {jobId}</p>
+
+                        {/* Progress bar */}
+                        <div className="relative h-px w-full bg-white/10">
+                            <div
+                                className="absolute inset-y-0 left-0 bg-primary transition-all duration-700 ease-out"
+                                style={{ width: `${pollingProgress}%` }}
+                            />
+                            {/* Glow at the leading edge */}
+                            {pollingProgress > 0 && pollingProgress < 100 && (
+                                <div
+                                    className="absolute top-1/2 -translate-y-1/2 w-1 h-3 bg-primary blur-sm transition-all duration-700 ease-out"
+                                    style={{ left: `${pollingProgress}%` }}
+                                />
+                            )}
+                        </div>
+
+                        <p className="text-white/20 font-mono text-[10px] tracking-widest">
+                            JOB {jobId}
+                        </p>
                     </div>
                 )}
 

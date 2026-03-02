@@ -3,6 +3,10 @@ export type JobStatus = "queued" | "processing" | "completed" | "failed" | "expi
 export interface Job {
     job_id: string;
     status: JobStatus;
+    progress?: number; // 0–100
+    step?: string;     // e.g. "extracting_pdf_text", "parsing_structured_data"
+    page_count?: number;
+    pages_processed?: number;
     error?: { code: string; message: string; details: Record<string, unknown> };
 }
 
