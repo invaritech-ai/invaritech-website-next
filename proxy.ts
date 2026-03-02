@@ -9,6 +9,12 @@ const ratelimit = new Ratelimit({
 });
 
 export async function proxy(request: NextRequest) {
+    // Invoice extractor routes are rate-limited by the backend itself (5/day per IP).
+    // Skip the Upstash check so status polls don't incur Redis latency on every call.
+    if (request.nextUrl.pathname.startsWith("/api/tools/invoice-extractor")) {
+        return NextResponse.next();
+    }
+
     try {
         const ip = request.headers.get("cf-connecting-ip") ?? "unknown";
         const { success } = await ratelimit.limit(ip);

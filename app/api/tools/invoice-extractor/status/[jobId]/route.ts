@@ -12,10 +12,19 @@ export async function GET(
         return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
     }
 
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60_000);
+
     try {
-        const response = await fetch(`${backendUrl}/api/v1/jobs/${jobId}`, {
-            headers: { "X-API-Key": apiKey },
-        });
+        let response: Response;
+        try {
+            response = await fetch(`${backendUrl}/api/v1/jobs/${jobId}`, {
+                headers: { "X-API-Key": apiKey },
+                signal: controller.signal,
+            });
+        } finally {
+            clearTimeout(timeout);
+        }
 
         const text = await response.text();
         let data: unknown;
@@ -28,6 +37,9 @@ export async function GET(
 
         return NextResponse.json(data, { status: response.status });
     } catch (err) {
+        if (err instanceof Error && err.name === "AbortError") {
+            return NextResponse.json({ error: "Backend timed out. Please try again." }, { status: 504 });
+        }
         console.error("Invoice status error:", err);
         return NextResponse.json({ error: "Internal server error" }, { status: 500 });
     }
