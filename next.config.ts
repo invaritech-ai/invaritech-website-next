@@ -48,6 +48,28 @@ const nextConfig: NextConfig = {
                 destination: "/work/eudr-compliance-bridge/",
                 permanent: true,
             },
+            // Old /use-cases/ → /work/
+            {
+                source: "/use-cases",
+                destination: "/work/",
+                permanent: true,
+            },
+            {
+                source: "/use-cases/",
+                destination: "/work/",
+                permanent: true,
+            },
+            // Old /weekend-suite/ → 30-Day Sprint
+            {
+                source: "/weekend-suite",
+                destination: "/services/ai-automation-sprint/",
+                permanent: true,
+            },
+            {
+                source: "/weekend-suite/",
+                destination: "/services/ai-automation-sprint/",
+                permanent: true,
+            },
             // Old career detail page → careers index
             {
                 source: "/careers/full-stack-developer",
