@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Generate sitemap entries for blog posts
     const blogPostEntries: MetadataRoute.Sitemap = blogPosts.map((post) => ({
         url: `${baseUrl}/blog/${post.slug}/`,
-        lastModified: new Date(post.publishedAt),
+        lastModified: new Date(post.dateModified ?? post.publishedAt),
         changeFrequency: "monthly" as const,
         priority: 0.6,
     }));
@@ -79,19 +79,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         }, */
         {
-            url: `${baseUrl}/assessment/`,
-            changeFrequency: "monthly",
-            priority: 0.7,
-        },
-        {
             url: `${baseUrl}/tools/`,
             changeFrequency: "weekly",
             priority: 0.85,
         },
         {
+            url: `${baseUrl}/tools/assessment/`,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/tools/invoice-extractor/`,
             changeFrequency: "monthly",
             priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/tools/cost-to-close-calculator/`,
+            changeFrequency: "monthly",
+            priority: 0.75,
         },
         {
             url: `${baseUrl}/blog/`,
