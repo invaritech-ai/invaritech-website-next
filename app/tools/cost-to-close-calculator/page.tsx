@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { CostToCloseCalculator } from "@/components/tools/CostToCloseCalculator";
 
@@ -84,6 +84,21 @@ export default function CostToCloseCalculatorPage() {
 
             <div className="relative z-10 pt-32 pb-24 px-6">
                 <div className="max-w-4xl mx-auto">
+                    {/* Breadcrumb */}
+                    <div className="flex items-center gap-2 mb-10">
+                        <Link
+                            href="/tools/"
+                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/30 hover:text-primary transition-colors"
+                        >
+                            <ArrowLeft className="w-3 h-3" />
+                            All Tools
+                        </Link>
+                        <span className="text-white/15 font-mono text-[10px]">/</span>
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/20">
+                            Cost-to-Close Calculator
+                        </span>
+                    </div>
+
                     {/* Header */}
                     <header className="mb-16">
                         <div className="flex items-center gap-3 mb-6">

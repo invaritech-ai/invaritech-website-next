@@ -1,4 +1,6 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { AssessmentWizard } from "@/components/assessment/AssessmentWizard";
 
 export const metadata: Metadata = {
@@ -94,6 +96,25 @@ export default function AssessmentPage() {
               immediately available in static HTML — no JS required.
               Visually, the wizard's own intro screen is the first thing users see.
             */}
+            {/* Breadcrumb — sits below fixed site header */}
+            <div className="fixed top-[88px] left-0 right-0 z-50 px-6 pointer-events-none">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex items-center gap-2 pointer-events-auto">
+                        <Link
+                            href="/tools/"
+                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/30 hover:text-primary transition-colors"
+                        >
+                            <ArrowLeft className="w-3 h-3" />
+                            All Tools
+                        </Link>
+                        <span className="text-white/15 font-mono text-[10px]">/</span>
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/20">
+                            AI Readiness Assessment
+                        </span>
+                    </div>
+                </div>
+            </div>
+
             <div className="sr-only">
                 <h1>AI Automation Readiness Assessment — Free ROI Calculator</h1>
                 <p>
