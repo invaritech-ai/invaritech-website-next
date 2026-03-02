@@ -11,7 +11,7 @@ export const post: BlogPost = {
     },
     publishedAt: "2026-03-02T08:00:00.000Z",
     dateModified: "2026-03-03T12:00:00.000Z",
-    coverImage: "/images/HiddenTimeTax.png",
+    coverImage: "/images/HiddenTimeTax.webp",
     tags: [
         "AP automation",
         "accounts payable automation",
