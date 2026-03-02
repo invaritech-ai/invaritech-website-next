@@ -147,6 +147,13 @@ export default async function BlogPostPage({ params }: Props) {
 
     const articleSchema = generateArticleSchema(post);
 
+    // If the post has a cover image, split content at the first --- so the
+    // image appears after the intro paragraphs rather than before all content.
+    const hrIndex = post.coverImage ? post.content.indexOf("\n---\n") : -1;
+    const hasIntroSplit = hrIndex !== -1;
+    const introContent = hasIntroSplit ? post.content.slice(0, hrIndex) : null;
+    const bodyContent = hasIntroSplit ? post.content.slice(hrIndex + 5) : post.content;
+
     return (
         <>
             <Script
@@ -220,23 +227,6 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
                         </header>
 
-                         {/* Cover Image */}
-                        {post.coverImage && (
-                            <div className="aspect-[21/9] relative overflow-hidden rounded-sm mb-24 border-y border-white/10 group">
-                                <Image
-                                    src={post.coverImage}
-                                    alt={post.title}
-                                    fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                                    priority
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/80 via-transparent to-transparent" />
-                                <div className="absolute bottom-4 right-4 font-mono text-[10px] text-white/50 tracking-widest">
-                                    IMG_REF: {slug.toUpperCase()}
-                                </div>
-                            </div>
-                        )}
-
                         {/* Content */}
                         <div className="relative flex gap-8 md:gap-12">
                             {/* Marginalia Track */}
@@ -250,12 +240,118 @@ export default async function BlogPostPage({ params }: Props) {
 
                             {/* Prose Feed */}
                             <div className="prose prose-lg md:prose-xl prose-invert max-w-none flex-1
-                                prose-headings:text-white prose-headings:tracking-tight 
-                                prose-p:text-gray-300 prose-p:leading-relaxed 
+                                prose-headings:text-white prose-headings:tracking-tight
+                                prose-p:text-gray-300 prose-p:leading-relaxed
                                 prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:border-b prose-a:border-primary/30 hover:prose-a:border-primary prose-a:transition-all
                                 prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-white/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
                                 prose-strong:text-white prose-strong:font-bold prose-strong:text-shadow-sm
                                 prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-code:font-mono prose-code:text-sm">
+
+                                {/* Intro — rendered before the cover image when split is active */}
+                                {hasIntroSplit && (
+                                    <ReactMarkdown
+                                        remarkPlugins={[remarkGfm]}
+                                        components={{
+                                        table: ({ children }) => (
+                                            <div className="overflow-x-auto my-10">
+                                                <table className="w-full border-collapse font-mono text-sm">{children}</table>
+                                            </div>
+                                        ),
+                                        thead: ({ children }) => <thead className="border-b border-primary/40">{children}</thead>,
+                                        tbody: ({ children }) => <tbody>{children}</tbody>,
+                                        tr: ({ children }) => <tr className="border-b border-white/10 hover:bg-white/[0.03] transition-colors">{children}</tr>,
+                                        th: ({ children }) => <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>,
+                                        td: ({ children }) => <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>,
+                                        h1: ({ children }) => (
+                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
+                                                {children}
+                                            </h2>
+                                        ),
+                                        h2: ({ children }) => (
+                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-white group flex items-center">
+                                                <span className="text-primary/40 mr-4 font-mono text-lg group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 -ml-10 w-6 text-right">#</span>
+                                                {children}
+                                            </h3>
+                                        ),
+                                        h3: ({ children }) => (
+                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-white flex items-center gap-3">
+                                                <span className="w-2 h-2 bg-primary/50 rounded-sm rotate-45" />
+                                                {children}
+                                            </h4>
+                                        ),
+                                        a: ({ href, children }) => {
+                                            if (href?.startsWith("/")) {
+                                                return (
+                                                    <Link href={href} className="text-primary font-bold no-underline border-b-2 border-primary/30 hover:border-primary transition-all hover:bg-primary/5 px-1 -mx-1 rounded-sm">
+                                                        {children}
+                                                    </Link>
+                                                );
+                                            }
+                                            return (
+                                                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary font-bold no-underline border-b-2 border-primary/30 hover:border-primary transition-all hover:bg-primary/5 px-1 -mx-1 rounded-sm">
+                                                    {children}
+                                                </a>
+                                            );
+                                        },
+                                        blockquote: ({ children }) => (
+                                            <blockquote className="border-l-4 border-primary bg-white/5 p-8 my-10 rounded-r-xl not-italic relative overflow-hidden group">
+                                                <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest opacity-70 group-hover:opacity-100 transition-opacity flex items-center gap-2">
+                                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+                                                    {"// SYSTEM NOTE"}
+                                                </div>
+                                                <div className="text-lg md:text-xl text-white/90 leading-relaxed font-light">{children}</div>
+                                            </blockquote>
+                                        ),
+                                        hr: () => (
+                                            <div className="my-16 relative flex items-center justify-center group">
+                                                <div className="absolute inset-0 flex items-center">
+                                                    <div className="w-full border-t border-primary/20 group-hover:border-primary/40 transition-colors"></div>
+                                                </div>
+                                                <div className="relative z-10 bg-[#030305] px-4 font-mono text-[10px] text-primary/50 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">
+                                                    {"// SYSTEM_BREAK //"}
+                                                </div>
+                                            </div>
+                                        ),
+                                        ul: ({ children }) => (
+                                            <ul className="space-y-4 my-8 pl-0 list-none">
+                                                {children}
+                                            </ul>
+                                        ),
+                                        li: ({ children }) => (
+                                            <li className="flex items-start gap-4 text-muted-foreground group">
+                                                <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
+                                                <span className="leading-relaxed group-hover:text-white/80 transition-colors">{children}</span>
+                                            </li>
+                                        ),
+                                        strong: ({ children }) => (
+                                            <strong className="font-bold text-white bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+                                                {children}
+                                            </strong>
+                                        )
+                                        }}
+                                    >
+                                        {introContent}
+                                    </ReactMarkdown>
+                                )}
+
+                                {/* Cover image — after intro when split, hidden otherwise */}
+                                {post.coverImage && (
+                                    <div className="aspect-[21/9] relative overflow-hidden rounded-sm my-12 border-y border-white/10 group not-prose">
+                                        <Image
+                                            src={post.coverImage}
+                                            alt={post.title}
+                                            fill
+                                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                            priority
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/80 via-transparent to-transparent" />
+                                        <div className="absolute bottom-4 right-4 font-mono text-[10px] text-white/50 tracking-widest">
+                                            IMG_REF: {slug.toUpperCase()}
+                                        </div>
+                                    </div>
+                                )}
+
+                                {/* Main body content */}
                                 <ReactMarkdown
                                     remarkPlugins={[remarkGfm]}
                                     components={{
@@ -337,7 +433,7 @@ export default async function BlogPostPage({ params }: Props) {
                                         )
                                     }}
                                 >
-                                    {post.content}
+                                    {bodyContent}
                                 </ReactMarkdown>
                             </div>
                         </div>
