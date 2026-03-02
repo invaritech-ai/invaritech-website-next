@@ -39,7 +39,7 @@ export default function AssessmentBannerSection() {
                             give you a projected monthly ROI and your Automation Archetype.
                         </p>
 
-                        <Link href="/assessment/">
+                        <Link href="/tools/assessment/">
                             <button className="group relative px-8 py-4 bg-primary text-black font-bold text-lg overflow-hidden transition-all hover:scale-[1.02] shadow-[0_0_35px_rgba(255,198,46,0.2)]">
                                 <span className="relative z-10 flex items-center">
                                     Score My Readiness

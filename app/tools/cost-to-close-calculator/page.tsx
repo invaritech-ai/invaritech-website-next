@@ -1,7 +1,5 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, ArrowLeft } from "lucide-react";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
+import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { CostToCloseCalculator } from "@/components/tools/CostToCloseCalculator";
 
 export const metadata: Metadata = {
@@ -75,75 +73,21 @@ const jsonLd = {
 
 export default function CostToCloseCalculatorPage() {
     return (
-        <main className="min-h-screen bg-[#030305] relative overflow-hidden">
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <ArtisticBackground />
-
-            <div className="relative z-10 pt-32 pb-24 px-6">
-                <div className="max-w-4xl mx-auto">
-                    {/* Breadcrumb */}
-                    <div className="flex items-center gap-2 mb-10">
-                        <Link
-                            href="/tools/"
-                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/30 hover:text-primary transition-colors"
-                        >
-                            <ArrowLeft className="w-3 h-3" />
-                            All Tools
-                        </Link>
-                        <span className="text-white/15 font-mono text-[10px]">/</span>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/20">
-                            Cost-to-Close Calculator
-                        </span>
-                    </div>
-
-                    {/* Header */}
-                    <header className="mb-16">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="h-px w-8 bg-primary/60" />
-                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                LIVE TOOL // FINANCE
-                            </p>
-                        </div>
-
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-white mb-6">
-                            Cost-to-Close{" "}
-                            <span className="text-primary">Calculator</span>
-                        </h1>
-
-                        <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-                            Three inputs. Instant result. See exactly how much your current close
-                            cycle costs and how much automation saves — benchmarked against 100
-                            finance teams across Southeast Asia.
-                        </p>
-                    </header>
-
-                    {/* Tool */}
-                    <CostToCloseCalculator />
-
-                    {/* Footer context */}
-                    <div className="mt-20 pt-12 border-t border-white/10">
-                        <p className="text-white/30 font-mono text-xs uppercase tracking-widest mb-4">
-                            WHAT THIS DEMONSTRATES
-                        </p>
-                        <p className="text-white/50 text-sm leading-relaxed max-w-xl mb-8">
-                            This calculator uses the same cost model we run for clients during our
-                            AI readiness assessments. The 70% reduction figure is conservative —
-                            clients in Hong Kong and Singapore typically see 75–85% in manual hour
-                            reduction after a full 30-Day Sprint.
-                        </p>
-                        <Link
-                            href="/blog/month-end-close-automation/"
-                            className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors"
-                        >
-                            <ArrowRight className="w-3 h-3" />
-                            Read: How to Cut Your Close from 10 Days to 3
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </main>
+        <ToolPageShell
+            breadcrumb="Cost-to-Close Calculator"
+            eyebrow="LIVE TOOL // FINANCE"
+            titleParts={["Cost-to-Close", "Calculator"]}
+            description="Three inputs. Instant result. See exactly how much your current close cycle costs and how much automation saves — benchmarked against 100 finance teams across Southeast Asia."
+            maxWidth="4xl"
+            jsonLd={jsonLd}
+            footerLabel="WHAT THIS DEMONSTRATES"
+            footerText="This calculator uses the same cost model we run for clients during our AI readiness assessments. The 70% reduction figure is conservative — clients in Hong Kong and Singapore typically see 75–85% in manual hour reduction after a full 30-Day Sprint."
+            footerLink={{
+                href: "/blog/month-end-close-automation/",
+                label: "Read: How to Cut Your Close from 10 Days to 3",
+            }}
+        >
+            <CostToCloseCalculator />
+        </ToolPageShell>
     );
 }

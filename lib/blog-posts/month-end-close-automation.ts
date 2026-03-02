@@ -63,6 +63,8 @@ Missing documentation is the number one reason the close stalls on Day 7.
 
 **The fix:** Early failure detection. Flag unmatched bank transactions on Day 1. Instead of chasing a vendor on Day 9, your team has a missing document dashboard immediately. The difference between proactive and reactive is a week of the close cycle.
 
+An [invoice data extraction pipeline for AP teams](/blog/ai-invoice-data-extraction/) eliminates the upstream gap — documents are parsed and matched on arrival, before the close even starts.
+
 ---
 
 ### 4. Spreadsheet Drift
@@ -148,7 +150,7 @@ A one-page financial model for the business case. Take it into your next board o
 
 ## Calculate Your "Manual Tax" Live
 
-Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-Close Calculator](/tools/cost-to-close-calculator/) to see your annual manual tax in under 30 seconds — no signup required. Then [book an AI readiness assessment](/assessment/) with our engineering team to map your exact blueprint for a 3-day close.
+Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-Close Calculator](/tools/cost-to-close-calculator/) to see your annual manual tax in under 30 seconds — no signup required. Then [book an AI readiness assessment](/tools/assessment/) with our engineering team to map your exact blueprint for a 3-day close.
 
 **[See the 30-Day Sprint →](/services/ai-automation-sprint/)**
 
@@ -161,7 +163,7 @@ Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-C
         role: "Finance Automation Specialists",
     },
     publishedAt: "2026-03-02T10:00:00Z",
-    dateModified: "2026-03-02T16:00:00Z",
+    dateModified: "2026-03-03T12:00:00Z",
     tags: ["Finance", "Automation", "ERP", "Strategy"],
     coverImage: "/images/month-end-close.png",
 };

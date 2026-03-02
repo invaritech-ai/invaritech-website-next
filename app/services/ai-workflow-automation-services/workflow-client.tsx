@@ -447,6 +447,13 @@ export default function WorkflowClient() {
                                         fewer expensive exceptions, full
                                         auditability.
                                     </p>
+                                    <Link
+                                        href="/blog/ai-invoice-data-extraction/"
+                                        className="mt-3 inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/60 hover:text-primary transition-colors"
+                                    >
+                                        <ArrowRight className="w-3 h-3" />
+                                        Automated invoice processing workflow design
+                                    </Link>
                                 </div>
                             </div>
                         </div>

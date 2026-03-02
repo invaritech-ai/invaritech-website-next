@@ -128,7 +128,7 @@ const jsonLd = [
                     "item": {
                         "@type": "SoftwareApplication",
                         "name": "AI Automation Readiness Assessment",
-                        "url": "https://www.invaritech.ai/assessment/",
+                        "url": "https://www.invaritech.ai/tools/assessment/",
                         "description":
                             "Free 4-step AI automation readiness assessment. Answer 11 questions about your workflow, data, and team. Receive a Viability Score, Readiness Score, Risk Index, projected monthly hours saved, and Automation Archetype profile.",
                         "applicationCategory": "BusinessApplication",
@@ -229,7 +229,7 @@ const liveTools = [
         accepts: "11 questions",
         output: "Score + archetype + roadmap",
         time: "2–5 minutes",
-        href: "/assessment/",
+        href: "/tools/assessment/",
         icon: "gauge",
     },
 ];
