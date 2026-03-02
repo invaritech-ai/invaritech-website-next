@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, FileSpreadsheet, Clock, Lock, Calculator, Gauge } from "lucide-react";
+import { ArrowRight, FileSpreadsheet, Clock, Lock, Calculator, Gauge, Download } from "lucide-react";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 
@@ -342,6 +342,27 @@ export default function ToolsPage() {
                         model our engineers run during client discovery calls.
                     </dd>
                 </dl>
+
+                <h2>Free Finance Downloads — No Email Required</h2>
+                <p>
+                    Three free downloadable PDF resources for finance teams running month-end close.
+                    No signup or email required. Download directly.
+                </p>
+                <ul>
+                    <li>
+                        3-Day Close Checklist (PDF) — Day-by-day task checklist for running a 3-day
+                        month-end close. Includes owner assignment fields and ERP posting confirmation.
+                    </li>
+                    <li>
+                        Bank File Health Check (PDF) — Pre-close audit checklist for bank statement
+                        exports. Catches merged cells, date format mismatches, and missing column
+                        headers before they stall Day 1 reconciliation.
+                    </li>
+                    <li>
+                        ROI Summary (PDF) — One-page financial model for the automation business case.
+                        Shows current close cost calculation and projected return on automation investment.
+                    </li>
+                </ul>
             </div>
 
             <ArtisticBackground />
@@ -534,6 +555,86 @@ export default function ToolsPage() {
                                     </span>
                                 </div>
                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Free Downloads */}
+            <section className="relative z-10 px-6 pb-32">
+                <div className="max-w-7xl mx-auto">
+                    <div className="text-[10px] font-mono tracking-[0.3em] text-white/30 uppercase mb-8 flex items-center gap-3">
+                        <span className="w-12 h-[1px] bg-white/10" />
+                        Free Downloads — No Email Required
+                    </div>
+
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
+                        {[
+                            {
+                                title: "3-Day Close Checklist",
+                                description:
+                                    "Day-by-day task checklist for a 3-day close. Assign owners, track sign-off checkpoints, and confirm ERP posting. Print it, share it, run it.",
+                                tags: ["FINANCE", "CLOSE CYCLE"],
+                                href: "/3-day-close-checklist.pdf",
+                                filename: "3-day-close-checklist.pdf",
+                            },
+                            {
+                                title: "Bank File Health Check",
+                                description:
+                                    "Pre-close audit for your bank statement exports. Catches merged cells, date format mismatches, and missing headers before they stall Day 1 reconciliation.",
+                                tags: ["FINANCE", "RECONCILIATION"],
+                                href: "/bank-file-health-check.pdf",
+                                filename: "bank-file-health-check.pdf",
+                            },
+                            {
+                                title: "ROI Summary",
+                                description:
+                                    "One-page financial model for the business case. Quantifies your current close cost and projected return on automation. Use it in your next board or finance committee meeting.",
+                                tags: ["FINANCE", "ROI"],
+                                href: "/roi-summary.pdf",
+                                filename: "roi-summary.pdf",
+                            },
+                        ].map((doc) => (
+                            <a
+                                key={doc.title}
+                                href={doc.href}
+                                download={doc.filename}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group block border border-white/8 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/15 transition-all duration-300 p-8 relative overflow-hidden"
+                            >
+                                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/0 to-transparent group-hover:via-white/15 transition-all duration-500" />
+
+                                <div className="flex gap-2 flex-wrap mb-8">
+                                    {doc.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="text-[9px] font-mono tracking-widest uppercase text-white/25 border border-white/10 px-2 py-0.5"
+                                        >
+                                            {tag}
+                                        </span>
+                                    ))}
+                                    <span className="text-[9px] font-mono tracking-widest uppercase text-white/25 border border-white/10 px-2 py-0.5 ml-auto">
+                                        PDF
+                                    </span>
+                                </div>
+
+                                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-white/8 bg-black/50 text-white/40 group-hover:text-white/70 transition-colors">
+                                    <Download className="h-5 w-5" />
+                                </div>
+
+                                <h3 className="text-xl font-bold tracking-tight text-white/60 group-hover:text-white/90 transition-colors mb-3">
+                                    {doc.title}
+                                </h3>
+                                <p className="text-sm text-white/25 group-hover:text-white/40 leading-relaxed transition-colors">
+                                    {doc.description}
+                                </p>
+
+                                <div className="mt-6 flex items-center gap-2 text-[9px] font-mono tracking-widest uppercase text-white/25 group-hover:text-white/50 transition-colors">
+                                    <Download className="w-2.5 h-2.5" />
+                                    DOWNLOAD PDF
+                                </div>
+                            </a>
                         ))}
                     </div>
                 </div>

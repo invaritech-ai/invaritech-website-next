@@ -131,6 +131,21 @@ We execute this as a definitive 30-Day Sprint:
 
 ---
 
+## Free Downloads
+
+Before your next close, take these three reference documents. No email required.
+
+**[↓ 3-Day Close Checklist (PDF)](/3-day-close-checklist.pdf)**
+A day-by-day task checklist for running a 3-day close. Use it as your close calendar, assign owners to each step, and track sign-off checkpoints through to ERP posting.
+
+**[↓ Bank File Health Check (PDF)](/bank-file-health-check.pdf)**
+A pre-close audit checklist for your bank statement exports. Catches format issues — merged cells, date mismatches, missing headers — before they stall Day 1 reconciliation.
+
+**[↓ ROI Summary (PDF)](/roi-summary.pdf)**
+A one-page financial model for the business case. Take it into your next board or finance committee meeting to quantify the cost of your current close cycle and the projected return on automation.
+
+---
+
 ## Calculate Your "Manual Tax" Live
 
 Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-Close Calculator](/tools/cost-to-close-calculator/) to see your annual manual tax in under 30 seconds — no signup required. Then [book an AI readiness assessment](/assessment/) with our engineering team to map your exact blueprint for a 3-day close.
@@ -146,7 +161,7 @@ Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-C
         role: "Finance Automation Specialists",
     },
     publishedAt: "2026-03-02T10:00:00Z",
-    dateModified: "2026-03-02T14:00:00Z",
+    dateModified: "2026-03-02T16:00:00Z",
     tags: ["Finance", "Automation", "ERP", "Strategy"],
     coverImage: "/images/month-end-close.png",
 };
