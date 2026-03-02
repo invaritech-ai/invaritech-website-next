@@ -1,4 +1,55 @@
+import { Metadata } from "next";
 import { AssessmentWizard } from "@/components/assessment/AssessmentWizard";
+
+export const metadata: Metadata = {
+    title: "Free AI Automation Readiness Assessment — Viability Score, Archetype & Roadmap | INVARITECH",
+    description:
+        "Take our free AI automation readiness assessment. Answer 11 questions about your workflow, data, and team. Get a Viability Score, Readiness Score, Risk Index, projected monthly hours saved, and your Automation Archetype in under 5 minutes.",
+    keywords: [
+        "AI automation readiness assessment",
+        "AI readiness assessment free",
+        "AI automation viability score",
+        "automation readiness test",
+        "business automation assessment",
+        "AI ROI assessment",
+        "workflow automation readiness",
+        "AI automation potential score",
+        "automation archetype",
+        "AI readiness calculator",
+        "finance automation readiness",
+        "operations automation assessment",
+        "AI implementation readiness",
+        "free AI assessment tool",
+        "AI readiness Singapore",
+        "AI readiness Hong Kong",
+        "automation ROI calculator free",
+    ],
+    alternates: {
+        canonical: "https://www.invaritech.ai/assessment/",
+    },
+    openGraph: {
+        title: "Free AI Automation Readiness Assessment | INVARITECH",
+        description:
+            "11 questions. Under 5 minutes. Get your Viability Score, Readiness Score, Risk Index, and a personalised automation roadmap. No signup required.",
+        url: "https://www.invaritech.ai/assessment/",
+        type: "website",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Free AI Automation Readiness Assessment — INVARITECH",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Free AI Readiness Assessment — Viability Score + Archetype",
+        description:
+            "11 questions. Get your AI automation viability score, risk index, and personalised roadmap. Free, no signup.",
+        images: ["/og-image.png"],
+    },
+};
 
 const jsonLd = {
     "@context": "https://schema.org",
