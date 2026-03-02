@@ -133,7 +133,7 @@ We execute this as a definitive 30-Day Sprint:
 
 ## Calculate Your "Manual Tax" Live
 
-Stop letting the 10-day close drain your team's agility. [Book an AI readiness assessment](/assessment/) call with our engineering team today. We will run your current process through our Cost-to-Close Calculator live on the call to reveal your hidden "manual tax" and map out your exact blueprint for a 3-day close.
+Stop letting the 10-day close drain your team's agility. Use our [free Cost-to-Close Calculator](/tools/cost-to-close-calculator/) to see your annual manual tax in under 30 seconds — no signup required. Then [book an AI readiness assessment](/assessment/) with our engineering team to map your exact blueprint for a 3-day close.
 
 **[See the 30-Day Sprint →](/services/ai-automation-sprint/)**
 
@@ -146,7 +146,7 @@ Stop letting the 10-day close drain your team's agility. [Book an AI readiness a
         role: "Finance Automation Specialists",
     },
     publishedAt: "2026-03-02T10:00:00Z",
-    dateModified: "2026-03-02T12:00:00Z",
+    dateModified: "2026-03-02T14:00:00Z",
     tags: ["Finance", "Automation", "ERP", "Strategy"],
     coverImage: "/images/month-end-close.png",
 };

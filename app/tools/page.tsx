@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, FileSpreadsheet, Clock, Lock } from "lucide-react";
+import { ArrowRight, FileSpreadsheet, Clock, Lock, Calculator } from "lucide-react";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 
@@ -46,6 +46,13 @@ const jsonLd = {
             "applicationCategory": "BusinessApplication",
             "offers": { "@type": "Offer", "price": "0" },
         },
+        {
+            "@type": "SoftwareApplication",
+            "name": "Cost-to-Close Calculator",
+            "url": "https://www.invaritech.ai/tools/cost-to-close-calculator/",
+            "applicationCategory": "BusinessApplication",
+            "offers": { "@type": "Offer", "price": "0" },
+        },
     ],
 };
 
@@ -60,6 +67,19 @@ const liveTools = [
         output: "items.csv + summary.csv",
         time: "< 30 seconds",
         href: "/tools/invoice-extractor/",
+        icon: "spreadsheet",
+    },
+    {
+        id: "cost-to-close",
+        tags: ["FINANCE", "CLOSE CYCLE", "ROI"],
+        name: "Cost-to-Close Calculator",
+        description:
+            "Enter team size, hours per close, and loaded rate. Get your annual manual tax and savings projection — benchmarked against 100 finance teams.",
+        accepts: "3 inputs",
+        output: "Annual cost + savings",
+        time: "Instant",
+        href: "/tools/cost-to-close-calculator/",
+        icon: "calculator",
     },
 ];
 
@@ -184,7 +204,11 @@ export default function ToolsPage() {
 
                                     {/* Icon */}
                                     <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-white/10 bg-black/50 text-primary group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
-                                        <FileSpreadsheet className="h-5 w-5 relative z-10" />
+                                        {tool.icon === "calculator" ? (
+                                            <Calculator className="h-5 w-5 relative z-10" />
+                                        ) : (
+                                            <FileSpreadsheet className="h-5 w-5 relative z-10" />
+                                        )}
                                         <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                     </div>
 
