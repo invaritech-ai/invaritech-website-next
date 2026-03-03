@@ -142,7 +142,7 @@ If that mapping feels uncomfortable, that discomfort is signal.
 
 Start with:
 
-- **[Assessment](/assessment/)** (map your workflow gaps)
+- **[Assessment](/tools/assessment/)** (map your workflow gaps)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 

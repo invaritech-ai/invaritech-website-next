@@ -101,7 +101,7 @@ Before hiring again, quantify your workflow. Map repeatable steps, rework freque
 
 Start with:
 
-- **[Assessment](/assessment/)** (map your workflow gaps)
+- **[Assessment](/tools/assessment/)** (map your workflow gaps)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 
