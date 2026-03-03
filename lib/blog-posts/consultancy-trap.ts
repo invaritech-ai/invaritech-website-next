@@ -4,7 +4,7 @@ export const post: BlogPost = {
     slug: "consultancy-trap",
     title: "The Consultancy Trap: Why \"Heroic\" Manual Compliance Caps Your Revenue",
     excerpt:
-        "Heroic manual compliance caps revenue. This explains the hidden operating cost, the signals you've crossed the line, and how RegOps replaces heroics with throughput.",
+        "Manual compliance delivery eventually limits revenue growth. This post explains the operating cost, the warning signals, and how RegOps supports scalable throughput.",
     content: `
 ## The Heroic Ceiling
 
@@ -41,7 +41,7 @@ Most firms plateau not because demand dries up, but because delivery capacity be
 
 The most common sentence in these firms is: "We'll systemize later."
 
-Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck—**[Why Consultancies Get Stuck](/blog/why-consultancies-get-stuck/)** explains why.
+Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck. **[Why Consultancies Get Stuck](/blog/why-consultancies-get-stuck/)** explains why.
 
 And sometimes: "We already have a system," which means copying data into Excel sheets with slightly better formatting.
 
@@ -124,9 +124,9 @@ It may not show up in your monthly P&L. It shows up in valuation confidence.
 
 ---
 
-## The Strategic Question
+## Strategic Trade-off
 
-Do you want to scale headcount, or scale throughput?
+The decision is whether to scale headcount or scale throughput.
 
 Headcount growth increases cost linearly. Throughput growth requires infrastructure.
 
@@ -138,7 +138,7 @@ If you cannot confidently double volume without doubling stress, your workflow i
 
 Before hiring again, quantify hours spent on repeatable workflow steps, rework frequency, filing cycle duration, and exception rate.
 
-If that mapping feels uncomfortable, that discomfort is signal.
+If that mapping is difficult, treat that as a diagnostic signal.
 
 Start with:
 
@@ -146,7 +146,7 @@ Start with:
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 
-This is not about replacing consultants. It is about protecting your ability to grow without fragility.
+This approach does not replace consultants. It protects growth capacity by reducing workflow fragility.
     `,
     author: {
         name: "Aditi Garg",

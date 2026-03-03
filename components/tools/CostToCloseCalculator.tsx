@@ -32,12 +32,14 @@ const BENCHMARK_TIERS = [
 
 function getTier(days: number) {
     return (
-        BENCHMARK_TIERS.find((t) => days <= t.end) ?? BENCHMARK_TIERS[BENCHMARK_TIERS.length - 1]
+        BENCHMARK_TIERS.find((t) => days <= t.end) ??
+        BENCHMARK_TIERS[BENCHMARK_TIERS.length - 1]
     );
 }
 
 function fmt(amount: number, symbol: string): string {
-    if (amount >= 1_000_000) return `${symbol}${(amount / 1_000_000).toFixed(1)}M`;
+    if (amount >= 1_000_000)
+        return `${symbol}${(amount / 1_000_000).toFixed(1)}M`;
     if (amount >= 100_000) return `${symbol}${Math.round(amount / 1_000)}K`;
     return `${symbol}${Math.round(amount).toLocaleString()}`;
 }
@@ -101,7 +103,9 @@ function SliderInput({
                 }}
             />
             {note && (
-                <p className="text-[10px] font-mono text-white/45 leading-relaxed">{note}</p>
+                <p className="text-[10px] font-mono text-white/45 leading-relaxed">
+                    {note}
+                </p>
             )}
         </div>
     );
@@ -144,12 +148,17 @@ function BenchmarkBar({
                 <span className="text-xs font-mono uppercase tracking-widest text-white/70">
                     Close Cycle Benchmark
                 </span>
-                <span className={`text-[10px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 border ${
-                    currentDays <= 3 ? "border-primary/50 text-primary bg-primary/10" :
-                    currentDays <= 5 ? "border-primary/30 text-primary/80 bg-primary/5" :
-                    currentDays <= 7 ? "border-yellow-500/40 text-yellow-400 bg-yellow-500/10" :
-                    "border-red-500/40 text-red-400 bg-red-500/10"
-                }`}>
+                <span
+                    className={`text-[10px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 border ${
+                        currentDays <= 3
+                            ? "border-primary/50 text-primary bg-primary/10"
+                            : currentDays <= 5
+                              ? "border-primary/30 text-primary/80 bg-primary/5"
+                              : currentDays <= 7
+                                ? "border-yellow-500/40 text-yellow-400 bg-yellow-500/10"
+                                : "border-red-500/40 text-red-400 bg-red-500/10"
+                    }`}
+                >
                     {currentTier.label}
                 </span>
             </div>
@@ -198,11 +207,13 @@ function BenchmarkBar({
             <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-[10px] font-mono text-white/55 pt-1">
                 <span className="flex items-center gap-2">
                     <span className="w-[8px] h-[8px] rotate-45 bg-white inline-block shrink-0" />
-                    NOW: ~{Math.round(currentDays)} DAYS — {getTier(currentDays).label}
+                    NOW: ~{Math.round(currentDays)} DAYS —{" "}
+                    {getTier(currentDays).label}
                 </span>
                 <span className="flex items-center gap-2">
                     <span className="w-[8px] h-[8px] rotate-45 bg-primary inline-block shrink-0 shadow-[0_0_6px_var(--primary)]" />
-                    AFTER: ~{Math.max(1, Math.round(targetDays))} DAYS — BEST-IN-CLASS
+                    AFTER: ~{Math.max(1, Math.round(targetDays))} DAYS —
+                    BEST-IN-CLASS
                 </span>
             </div>
         </div>
@@ -325,11 +336,17 @@ export function CostToCloseCalculator() {
                             <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 mb-1">
                                 Est. days to close
                             </div>
-                            <div className={`text-2xl font-bold tracking-tighter tabular-nums ${
-                                currentDays <= 3 ? "text-primary" :
-                                currentDays <= 5 ? "text-primary/90" :
-                                currentDays <= 7 ? "text-yellow-400" : "text-red-400"
-                            }`}>
+                            <div
+                                className={`text-2xl font-bold tracking-tighter tabular-nums ${
+                                    currentDays <= 3
+                                        ? "text-primary"
+                                        : currentDays <= 5
+                                          ? "text-primary/90"
+                                          : currentDays <= 7
+                                            ? "text-yellow-400"
+                                            : "text-red-400"
+                                }`}
+                            >
                                 ~{Math.round(currentDays)} days
                                 <span className="text-xs font-normal text-white/40 ml-1">
                                     {currentTier.pct}
@@ -383,10 +400,14 @@ export function CostToCloseCalculator() {
                             <div>
                                 <div className="text-2xl font-bold tracking-tighter text-white/70 tabular-nums">
                                     {fmt(annualAfter, cfg.symbol)}
-                                    <span className="text-xs font-normal text-white/40 ml-1">/yr</span>
+                                    <span className="text-xs font-normal text-white/40 ml-1">
+                                        /yr
+                                    </span>
                                 </div>
                                 <div className="text-[10px] font-mono text-white/50 mt-1">
-                                    ~{Math.max(1, Math.round(daysAfter))} days to close · {Math.round(residualTotalHours)}h/month
+                                    ~{Math.max(1, Math.round(daysAfter))} days
+                                    to close · {Math.round(residualTotalHours)}
+                                    h/month
                                 </div>
                             </div>
                             <div className="text-right shrink-0">
@@ -405,7 +426,10 @@ export function CostToCloseCalculator() {
 
                     {/* Benchmark bar */}
                     <div className="mt-auto pt-2">
-                        <BenchmarkBar currentDays={currentDays} targetDays={daysAfter} />
+                        <BenchmarkBar
+                            currentDays={currentDays}
+                            targetDays={daysAfter}
+                        />
                     </div>
                 </div>
             </div>
@@ -413,22 +437,26 @@ export function CostToCloseCalculator() {
             {/* Methodology */}
             <div className="pt-5 border-t border-white/10">
                 <p className="text-[10px] font-mono text-white/40 leading-relaxed">
-                    METHODOLOGY — Savings estimate based on 70% reduction in manual close hours,
-                    consistent with published ROI studies from Netgain, DOKKA, and FloQast.
-                    Days-to-close derived from {HOURS_PER_CLOSE_DAY}h of focused close work per
-                    person per day — the industry standard for active reconciliation periods.
-                    Benchmarks sourced from Ledge 2025 survey of 100 finance professionals
-                    (n=100, companies 51–200+ employees).
+                    METHODOLOGY — Savings estimate based on 70% reduction in
+                    manual close hours, consistent with published ROI studies
+                    from Netgain, DOKKA, and FloQast. Days-to-close derived from{" "}
+                    {HOURS_PER_CLOSE_DAY}h of focused close work per person per
+                    day: the industry standard for active reconciliation
+                    periods. Benchmarks sourced from Ledge 2025 survey of 100
+                    finance professionals (n=100, companies 51-200+ employees).
                 </p>
             </div>
 
             {/* CTA */}
             <div className="border border-white/15 bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
                 <p className="text-sm font-mono text-white/70 leading-relaxed">
-                    Ready to close in 3 days? We will map your exact blueprint on a free call.
+                    Ready to close in 3 days? We will map your exact blueprint
+                    on a free call.
                 </p>
                 <Link
-                    href="/tools/assessment/"
+                    href="https://calendly.com/hello-invaritech/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-primary text-black px-6 py-3 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white transition-colors shrink-0"
                 >
                     Book Assessment

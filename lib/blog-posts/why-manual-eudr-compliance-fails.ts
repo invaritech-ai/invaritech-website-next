@@ -4,7 +4,7 @@ export const post: BlogPost = {
     slug: "why-manual-eudr-compliance-fails",
     title: "Why Manual EUDR Compliance Fails at Scale: A Case Study",
     excerpt:
-        "Manual EUDR compliance breaks at scale: SOAP schemas, CF2-CF7 conformance, and DDS lifecycle state force a deterministic EUDR DDS submission system.",
+        "Manual EUDR compliance reaches operational limits at scale. SOAP schemas, CF2-CF7 conformance, and DDS lifecycle requirements typically require a deterministic EUDR DDS submission system.",
     content: `
 ## Why Manual EUDR Compliance Fails at Scale
 
@@ -91,7 +91,7 @@ The engineered backend included:
 
 The shift was operational, not cosmetic. Entry work reduced, failures became diagnosable in minutes, and lifecycle visibility became explicit. Executive reporting improved because system state was reliable.
 
-This is the difference between operating inside a portal and operating submission infrastructure.
+This is the difference between portal-based execution and submission infrastructure.
 
 ---
 
@@ -147,7 +147,7 @@ For broader system philosophy:
 
 Manual EUDR compliance works at small scale. As volume increases, structural limits emerge. Strict schemas, conformance requirements, and lifecycle complexity do not adapt to staffing levels. Deterministic engineering does.
 
-If EUDR is material to your operations, treat it as infrastructure early.
+If EUDR is material to your operations, treat it as infrastructure early in the roadmap.
     `,
     author: {
         name: "Avishek Majumder",

@@ -4,7 +4,7 @@ export const post: BlogPost = {
     slug: "why-consultancies-get-stuck",
     title: "Why Consultancies Get Stuck: The Hidden Cost of Manual Compliance Work",
     excerpt:
-        "Manual compliance work scales with fragility, not headcount. Learn why hiring fails, what RegOps changes, and how to start with a measurable automation wedge.",
+        "Manual compliance work often scales with fragility, not headcount. This post explains why hiring alone fails, what RegOps changes, and how to start with a measurable automation wedge.",
     content: `
 ## The Hidden Cost of Manual Compliance Work
 
@@ -40,13 +40,13 @@ They leave, and you recruit again.
 
 ---
 
-## The Question That Unlocks Scale
+## A Better Scale Question
 
-Stop asking: "How many more people do we need?"
+Replace headcount-first framing with workflow framing.
 
-Start asking: "Which parts of this workflow can run deterministically in the background?"
+Identify which workflow segments can run deterministically in the background.
 
-That is the shift from headcount to infrastructure.
+That is the shift from headcount-led scaling to infrastructure-led scaling.
 
 ---
 
@@ -91,7 +91,7 @@ Robust automation:
 
 ## An EUDR Example
 
-EUDR submission volume makes the failure mode obvious: manual work collapses, systems scale.
+EUDR submission volume shows the failure mode clearly: manual workflows hit capacity while systems can continue scaling.
 
 - **[EUDR Compliance Bridge case study](/work/eudr-compliance-bridge/)**
 

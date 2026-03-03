@@ -4,7 +4,7 @@ export const post: BlogPost = {
     slug: "building-vs-buying-custom-automation",
     title: "Build vs. Buy Automation: A Capital Allocation Decision",
     excerpt:
-        "Build vs buy is not a technology debate. It is a capital allocation decision. Use this math to decide when custom automation beats SaaS for integration-heavy workflows.",
+        "Build vs buy is a capital allocation decision. Use this framework to evaluate when custom automation is more effective than SaaS for integration-heavy workflows.",
     content: `
 ## Building vs Buying: A Capital Allocation Decision
 
@@ -12,7 +12,7 @@ Most automation decisions fail before any code is written, not because of engine
 
 Build vs buy is not a technology debate. It is a capital allocation decision. If a workflow does not materially affect revenue, margin, or regulatory exposure, it should not be automated yet. We decline projects that fail that test.
 
-## The Comfortable Default: Buy Something
+## The Comfortable Default Path: Buy Software
 
 Buying software feels safe:
 
@@ -22,9 +22,7 @@ Buying software feels safe:
 - "enterprise-grade" branding
 
 If the workflow is generic, buying is correct.
-
 Payroll. Basic accounting. Standard HR flows. Cookie consent. Commodity tooling.
-
 If you are comfortable adapting your process to the tool, and integration depth is minimal, buying is rational.
 
 ---
@@ -39,8 +37,7 @@ Buying becomes inefficient when the workflow is:
 - margin-sensitive
 - central to how you differentiate
 
-At that point, you are not buying convenience.
-You are outsourcing operational leverage.
+At that point, you are not buying convenience, you are outsourcing operational leverage.
 
 ---
 
@@ -94,11 +91,9 @@ Before building anything, quantify:
 - throughput ceiling under the current structure
 - revenue blocked by operational limits
 
-If you cannot calculate the delta, do not build.
+If you cannot calculate the delta, defer build decisions. Do not build!
 
----
-
-Automation without a measurable objective is theater.
+Automation without a measurable objective is difficult to justify. Don't just automate for the sake if it!
 
 ---
 
@@ -114,7 +109,7 @@ Custom automation makes sense when most of the following are true:
 
 In those cases, a focused automation layer often outperforms a broad SaaS platform.
 
-Not because SaaS is bad, but because your workflow is not average.
+This is not a statement that SaaS is weak or bad. It reflects that your workflow may not fit generic product assumptions.
 
 ---
 
@@ -148,7 +143,7 @@ You are likely in build territory if:
 
 If fewer than three apply, buying is usually correct.
 
-There is no virtue in building early.
+Building early without clear constraints usually adds avoidable complexity.
 
 ---
 
@@ -160,7 +155,7 @@ If you are evaluating whether your workflow justifies custom infrastructure:
 - **[AI Automation Consulting](/services/ai-automation-consulting/)** (quantified diagnostic)
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30-day measurable wedge)
 
-No demos. No slides. Just math, architecture, and execution.
+The [process](/services/ai-automation-sprint) starts with quantified workflow economics, then architecture, then execution.
     `,
     author: {
         name: "Avishek Majumder",
