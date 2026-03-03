@@ -6,26 +6,11 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ScrollReveal } from "@/components/services/ScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { integrationFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
-const faqs: FaqItem[] = [
-    {
-        question: "Do we own the gateway code?",
-        answer: "Yes. This is not a SaaS connector. You own the integration layer we build.",
-    },
-    {
-        question: "How do you prevent data leakage to proprietary models?",
-        answer: "We scope to your constraints. For sensitive workloads, we can avoid public APIs and deploy within your VPC or on-prem using approved models and controls.",
-    },
-    {
-        question: "Is this for chatbots?",
-        answer: "This is for objective-driven systems. Chat is an interface. The gateway is infrastructure that makes AI usable inside governed workflows.",
-    },
-    {
-        question: "How do we start?",
-        answer: "Start with an Infrastructure Audit to map your data surface, APIs, and policy constraints. If the wedge is clear, we scope the build (or recommend the Sprint first).",
-    },
-];
 
 export default function IntegrationClient() {
     return (
@@ -295,11 +280,13 @@ export default function IntegrationClient() {
             </section>
 
 
+            <FounderTrustSection />
+
             {/* FAQ */}
              <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">FAQ</h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={integrationFaqs} />
                 </div>
             </section>
 
@@ -316,6 +303,8 @@ export default function IntegrationClient() {
                     </Link>
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
              {/* Final CTA */}
              <section className="reveal-section py-32 px-6 relative z-10">

@@ -18,26 +18,11 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ScrollReveal } from "@/components/services/ScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { workflowFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
-const faqs: FaqItem[] = [
-    {
-        question: "Do you promise to replace employees?",
-        answer: "No. We promise to make them more effective. We build for scale, not headcount reduction.",
-    },
-    {
-        question: "What if the AI makes a mistake?",
-        answer: "Business-critical actions never run on guesses. If the AI is unsure, the system stops, falls back, or requests human approval.",
-    },
-    {
-        question: "Is this just 'intelligent process automation' or RPA?",
-        answer: "It can include those techniques, but the point is governance: audited pipelines with clear ownership and safe failure modes.",
-    },
-    {
-        question: "Is this just a bunch of Zaps?",
-        answer: "No. No-code is a tool. Operational liquidity is the goal. When reliability and auditability matter, we build custom pipelines.",
-    },
-];
 
 export default function WorkflowClient() {
     return (
@@ -529,15 +514,19 @@ export default function WorkflowClient() {
                 </div>
             </section>
 
+            <FounderTrustSection />
+
             {/* FAQ */}
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5 border-t border-white/10">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
                     </h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={workflowFaqs} />
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">

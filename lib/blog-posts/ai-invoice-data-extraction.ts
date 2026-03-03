@@ -6,8 +6,8 @@ export const post: BlogPost = {
     excerpt:
         "Finance teams in Hong Kong, Singapore, and Malaysia lose the first ten days of every month to manual invoice entry. The solution is not more headcount — it is cloud based AP automation built on sound data architecture. Here is what that actually looks like.",
     author: {
-        name: "Invaritech Editorial",
-        role: "AI Automation Intelligence",
+        name: "Avishek Majumder",
+        role: "Co-founder & CEO",
     },
     publishedAt: "2026-03-02T08:00:00.000Z",
     dateModified: "2026-03-03T12:00:00.000Z",

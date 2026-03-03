@@ -16,30 +16,11 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ScrollReveal } from "@/components/services/ScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { chatbotFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
-const faqs: FaqItem[] = [
-    {
-        question: "Do you build custom chatbot systems or configure tools?",
-        answer: "Both. Tool choice is secondary. Governance and adoption are primary.",
-    },
-    {
-        question: "Can it connect to our documents and systems?",
-        answer: "Yes, with permissioned access, logging, and controlled tool boundaries.",
-    },
-    {
-        question: "What about hallucinations?",
-        answer: "We reduce risk through architecture, not hope: deterministic tool calls, structured outputs, citations, limited context injection, and escalation paths.",
-    },
-    {
-        question: "What makes you different from SaaS chatbot vendors?",
-        answer: "We deploy inside your existing systems, enforce governance, tie the bot to defined objectives, and avoid open-ended experimentation.",
-    },
-    {
-        question: "How do we start?",
-        answer: "Start with a Sprint if you want a governed pilot in 30 days, or begin with a Fit Audit to define objective + access boundaries.",
-    },
-];
 
 export default function ChatbotClient() {
     return (
@@ -420,15 +401,19 @@ export default function ChatbotClient() {
                 </div>
             </section>
 
+            <FounderTrustSection />
+
             {/* FAQ */}
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
                     </h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={chatbotFaqs} />
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">

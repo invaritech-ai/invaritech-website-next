@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import IntegrationClient from "./integration-client";
+import { integrationFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
     title: "AI Integration Services | Generative AI System Integration (Model-Agnostic)",
@@ -22,6 +23,48 @@ export const metadata: Metadata = {
     },
 };
 
+const BASE = "https://www.invaritech.ai";
+const ORG = { "@type": "Organization", name: "Invaritech", url: BASE };
+
 export default function AIIntegrationServicesPage() {
-    return <IntegrationClient />;
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+                { "@type": "ListItem", position: 2, name: "Services", item: `${BASE}/services/` },
+                { "@type": "ListItem", position: 3, name: "AI Integration Services", item: `${BASE}/services/ai-integration-services/` },
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "AI Integration Services",
+            description: "Connect AI to ERP, CRM, and legacy systems via a governed integration gateway. Model-agnostic, idempotent, and audit-logged for enterprise compliance.",
+            url: `${BASE}/services/ai-integration-services/`,
+            provider: ORG,
+            areaServed: "Worldwide",
+            serviceType: "Enterprise AI System Integration",
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: integrationFaqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        },
+    ];
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <IntegrationClient />
+        </>
+    );
 }

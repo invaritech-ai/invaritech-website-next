@@ -22,34 +22,11 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ScrollReveal } from "@/components/services/ScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { backendFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
-const faqs: FaqItem[] = [
-    {
-        question: "How do you prevent spaghetti code?",
-        answer: "By refusing to use unrestricted AI for code execution. We plan the architecture first. AI is a bridge for unstructured data, not the architect of your system.",
-    },
-    {
-        question: "Is it really stack-agnostic?",
-        answer: "Yes. We build microservices that plug in. If we can speak to your systems via API or database, we can build the AI-native layer you need.",
-    },
-    {
-        question: "What is “chat recreation”?",
-        answer: "The ability to replay a specific interaction inside the evaluation harness to see exactly where a model failed, then version and fix the prompt/model behavior permanently.",
-    },
-    {
-        question: "Do you also do classic ML?",
-        answer: "Yes, when it’s the right tool. “AI/ML development services” should be chosen by problem fit, not hype.",
-    },
-    {
-        question: "Do you build agents?",
-        answer: "Only with approvals, bounded actions, and hard safety boundaries. No open-ended autonomy for writes.",
-    },
-    {
-        question: "What’s the best first step?",
-        answer: "Request a Technical Audit. If scope is unclear or risk is high, start with the Sprint to validate impact safely.",
-    },
-];
 
 export default function BackendClient() {
     return (
@@ -645,15 +622,19 @@ export default function BackendClient() {
                 </div>
             </section>
 
+            <FounderTrustSection />
+
             {/* FAQ */}
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
                     </h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={backendFaqs} />
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">

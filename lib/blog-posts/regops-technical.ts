@@ -133,8 +133,8 @@ If your workflow is integration-heavy and regulator-facing, treat it as infrastr
 Build one wedge correctly. Expand from there.
     `,
     author: {
-        name: "INVARITECH Team",
-        role: "Automation Specialists",
+        name: "Avishek Majumder",
+        role: "Co-founder & CEO",
     },
     publishedAt: "2025-11-10T10:00:00Z",
     tags: ["RegTech", "API", "Integration", "WorkflowAutomation", "EUDR"],

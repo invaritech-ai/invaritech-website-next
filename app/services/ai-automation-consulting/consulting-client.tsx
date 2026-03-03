@@ -6,30 +6,11 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ScrollReveal } from "@/components/services/ScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { consultingFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
-const faqs: FaqItem[] = [
-    {
-        question: "Do you provide AI automation consulting services only, or implementation too?",
-        answer: "Both. Consulting defines the path. The Sprint executes it.",
-    },
-    {
-        question: "How are you different from other AI automation consulting firms?",
-        answer: "Unlike other AI automation consulting firms, we do not stop at strategy. Every engagement produces a build-ready specification tied to measurable outcomes.",
-    },
-    {
-        question: "Will you recommend not using AI?",
-        answer: "Yes. If deterministic automation or process redesign wins, we’ll say so.",
-    },
-    {
-        question: "Do you work with enterprises or mid-sized businesses?",
-        answer: "We work with leadership teams serious about execution, regardless of size.",
-    },
-    {
-        question: "Are you an AI automation consulting company or a delivery team?",
-        answer: "We are not a generic AI automation consulting company. We’re not one of the AI automation consulting companies that stops at slideware. We’re a delivery-first team. Consulting exists to de-risk execution, not to extend advisory.",
-    },
-];
 
 export default function ConsultingClient() {
     return (
@@ -281,13 +262,17 @@ export default function ConsultingClient() {
                 </div>
             </section>
 
+            <FounderTrustSection />
+
             {/* FAQ */}
              <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center font-mono tracking-tighter">FAQ</h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={consultingFaqs} />
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
              {/* Final CTA */}
              <section className="reveal-section py-32 px-6 relative z-10">

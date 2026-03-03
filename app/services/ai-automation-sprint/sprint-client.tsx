@@ -6,7 +6,10 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ScrollReveal } from "@/components/services/ScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { sprintFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
 const bottlenecks = [
     {
@@ -26,32 +29,6 @@ const bottlenecks = [
     }
 ];
 
-const faqs: FaqItem[] = [
-    {
-        question: "Is this just an AI discovery workshop?",
-        answer: "It starts with an AI discovery workshop, but it ends in build and measurable validation."
-    },
-    {
-        question: "What fits into a 30-day POC?",
-        answer: "One Outcome. Production-Ready. We focus on a single mission-critical loop that can be fully automated in 30 days. Examples: 1. Instant Reputation Feedback — Google Business reviews routed to your mobile the second they are posted. 2. Automated Bookkeeping — Image/PDF invoices converted into instant, Xero/QuickBooks importable data. 3. Real-Time Lead Triage — Website signals turned into qualified sales alerts in seconds."
-    },
-    {
-        question: "What if we need more than 30 days?",
-        answer: "Then this becomes phase 1 of a delivery track. The goal is to prove value first."
-    },
-    {
-        question: "Do you build \"AI strategy\"?",
-        answer: "Yes, but only when strategy is the shortest path to safe execution."
-    },
-    {
-        question: "Will our team be involved?",
-        answer: "Yes. We define owners, approvals, and operating boundaries from day one."
-    },
-    {
-        question: "What do you need from us?",
-        answer: "A workflow owner, system access by Day 3, and enough data to baseline and validate outcomes."
-    }
-];
 
 export default function SprintClient() {
     return (
@@ -410,13 +387,17 @@ export default function SprintClient() {
                 </div>
             </section>
 
+            <FounderTrustSection />
+
             {/* FAQ */}
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">FAQ</h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={sprintFaqs} />
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10 border-t border-white/10">

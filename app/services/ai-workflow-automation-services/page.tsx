@@ -1,24 +1,6 @@
 import { Metadata } from "next";
 import WorkflowClient from "./workflow-client";
-
-// export const metadata: Metadata = {
-//     title: "Workflow Automation Consulting Services | AI Workflow Automation Services",
-//     description: "Move from manual sprawl to audited pipelines. We deliver AI workflow automation services built for scale: deterministic fallbacks, human-in-the-loop approvals, and measurable ROI.",
-//     keywords: [
-//         "workflow automation consulting",
-//         "workflow automation consulting services",
-//         "ai workflow automation services",
-//         "ai workflow automation consulting",
-//         "business process automation services",
-//         "intelligent process automation services",
-//         "process automation services",
-//         "intelligent process automation",
-//         "business process automation",
-//     ],
-//     alternates: {
-//         canonical: "https://www.invaritech.ai/services/ai-workflow-automation-services/",
-//     },
-// };
+import { workflowFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
     title: "Workflow Automation Consulting | Ship in 6 Weeks | Invaritech",
@@ -37,6 +19,48 @@ export const metadata: Metadata = {
     },
 };
 
+const BASE = "https://www.invaritech.ai";
+const ORG = { "@type": "Organization", name: "Invaritech", url: BASE };
+
 export default function AIWorkflowAutomationPage() {
-    return <WorkflowClient />;
+    const jsonLd = [
+        {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+                { "@type": "ListItem", position: 2, name: "Services", item: `${BASE}/services/` },
+                { "@type": "ListItem", position: 3, name: "Workflow Automation Consulting", item: `${BASE}/services/ai-workflow-automation-services/` },
+            ],
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: "AI Workflow Automation Services",
+            description: "Govern and automate mission-critical business workflows with AI. Audited pipelines, deterministic fallbacks, and human-in-the-loop approvals built into every flow.",
+            url: `${BASE}/services/ai-workflow-automation-services/`,
+            provider: ORG,
+            areaServed: "Worldwide",
+            serviceType: "AI Workflow Automation",
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: workflowFaqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+            })),
+        },
+    ];
+
+    return (
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <WorkflowClient />
+        </>
+    );
 }

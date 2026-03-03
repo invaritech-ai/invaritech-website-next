@@ -7,7 +7,10 @@ import { CoreThesisSection } from "@/app/components/services/core-thesis-section
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 import { ServicesScrollReveal } from "@/components/services/ServicesScrollReveal";
-import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
+import { FaqAccordion } from "@/components/services/FaqAccordion";
+import { servicesFaqs } from "@/lib/service-faqs";
+import { FounderTrustSection } from "@/components/services/FounderTrustSection";
+import { AssessmentTeaser } from "@/components/services/AssessmentTeaser";
 
 const services = [
     {
@@ -60,28 +63,6 @@ const services = [
     },
 ];
 
-const faqs: FaqItem[] = [
-    {
-        question: "Do you replace our systems?",
-        answer: "No. We layer intelligence and automation on top of what you already run.",
-    },
-    {
-        question: "Do you do AI strategy only?",
-        answer: "Only when it leads into Sprint execution or a delivery track.",
-    },
-    {
-        question: "Can you work with our internal engineers?",
-        answer: "Yes. We can integrate with your team or deliver end-to-end.",
-    },
-    {
-        question: "Do you support multilingual deployments?",
-        answer: "Yes, including governed chat and workflows.",
-    },
-    {
-        question: "Are you expensive?",
-        answer: "We're priced for accountability. If we can't identify an ROI that significantly outweighs our fee during discovery, we won't take your money.",
-    },
-];
 
 export default function ServicesPage() {
     return (
@@ -271,13 +252,17 @@ export default function ServicesPage() {
                 </div>
             </section>
 
+            <FounderTrustSection />
+
             {/* FAQ Section */}
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl font-bold mb-16 text-center">FAQ</h2>
-                    <FaqAccordion faqs={faqs} />
+                    <FaqAccordion faqs={servicesFaqs} />
                 </div>
             </section>
+
+            <AssessmentTeaser />
 
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
