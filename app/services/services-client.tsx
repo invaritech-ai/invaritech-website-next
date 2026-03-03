@@ -1,19 +1,13 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Check, Zap, Database, MessageSquare, Code, Cpu, Workflow } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { CoreThesisSection } from "@/app/components/services/core-thesis-section";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(ScrollTrigger);
+import { ServicesScrollReveal } from "@/components/services/ServicesScrollReveal";
+import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
 
 const services = [
     {
@@ -58,7 +52,7 @@ const services = [
     },
     {
         title: "AI Automation Consulting Services",
-        description: "Consulting that leads to execution. If it doesn’t feed into Sprint or delivery, it stops.",
+        description: "Consulting that leads to execution. If it doesn't feed into Sprint or delivery, it stops.",
         outcome: "Wedge selection + governance model + delivery-ready acceptance criteria.",
         link: "/services/ai-automation-consulting/",
         cta: "View AI Automation Consulting",
@@ -66,7 +60,7 @@ const services = [
     },
 ];
 
-const faqs = [
+const faqs: FaqItem[] = [
     {
         question: "Do you replace our systems?",
         answer: "No. We layer intelligence and automation on top of what you already run.",
@@ -85,131 +79,13 @@ const faqs = [
     },
     {
         question: "Are you expensive?",
-        answer: "We’re priced for accountability. If we can’t identify an ROI that significantly outweighs our fee during discovery, we won’t take your money.",
+        answer: "We're priced for accountability. If we can't identify an ROI that significantly outweighs our fee during discovery, we won't take your money.",
     },
 ];
 
 export default function ServicesPage() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const counterRef = useRef<HTMLSpanElement>(null);
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-    useGSAP(() => {
-        // Hero entrance
-        gsap.fromTo(".hero-content > *", 
-            { y: 40, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.2, // Faster
-                stagger: 0.05, // Faster stagger
-                ease: "power4.out",
-            }
-        );
-
-        // "Start Here" entrance
-        gsap.fromTo(".start-here-card", 
-            { y: 60, opacity: 0 },
-            {
-                scrollTrigger: {
-                    trigger: ".start-here-card",
-                    start: "top 85%",
-                },
-                y: 0,
-                opacity: 1,
-                duration: 0.2, // Max speed as requested
-                ease: "power2.out",
-            }
-        );
-
-        // Rolling Counter for "30"
-        if (counterRef.current) {
-            const counterObj = { value: 0 };
-            gsap.to(counterObj, {
-                value: 30,
-                duration: 0.5, // Kept slightly longer so it's visible, but fast
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".start-here-card",
-                    start: "top 85%",
-                },
-                onUpdate: () => {
-                    if (counterRef.current) {
-                        counterRef.current.innerText = Math.ceil(counterObj.value).toString();
-                    }
-                }
-            });
-        }
-
-        // Thesis items
-        gsap.fromTo(".thesis-item", 
-            { x: -20, opacity: 0 },
-            {
-                scrollTrigger: {
-                    trigger: ".thesis-item",
-                    start: "top 85%",
-                },
-                x: 0,
-                opacity: 1,
-                duration: 0.2,
-                stagger: 0.05,
-                ease: "power2.out",
-            }
-        );
-
-        // Method steps
-        gsap.fromTo(".method-step", 
-            { y: 40, opacity: 0 },
-            {
-                scrollTrigger: {
-                    trigger: ".method-step",
-                    start: "top 85%",
-                },
-                y: 0,
-                opacity: 1,
-                duration: 0.2,
-                stagger: 0.05,
-                ease: "power3.out",
-            }
-        );
-
-        // Service cards stagger
-        // Using fromTo ensures they don't get stuck at opacity: 0 if logic fails
-        gsap.fromTo(".service-card", 
-            { y: 50, opacity: 0 },
-            {
-                scrollTrigger: {
-                    trigger: ".service-cards-grid",
-                    start: "top 85%",
-                },
-                y: 0,
-                opacity: 1,
-                duration: 0.2,
-                stagger: 0.05,
-                ease: "power2.out",
-            }
-        );
-
-        // Generic section fades
-        gsap.utils.toArray<HTMLElement>(".reveal-section").forEach((section) => {
-            gsap.fromTo(section, 
-                { y: 30, opacity: 0 },
-                {
-                    scrollTrigger: {
-                        trigger: section,
-                        start: "top 85%",
-                    },
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.2,
-                    ease: "power2.out",
-                }
-            );
-        });
-    }, { scope: containerRef });
-
     return (
-        <main ref={containerRef} className="min-h-screen bg-background relative overflow-hidden">
+        <ServicesScrollReveal className="min-h-screen bg-background relative overflow-hidden">
             <ArtisticBackground />
 
             {/* Hero Section */}
@@ -247,11 +123,6 @@ export default function ServicesPage() {
                                 {BOOK_MEETING_CTA}
                             </MagneticButton>
                         </a>
-{/* <Link href="/results/">
-    <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10 transition-colors">
-        See Work / Results
-    </MagneticButton>
-</Link> */}
                     </div>
                 </div>
             </section>
@@ -286,7 +157,7 @@ export default function ServicesPage() {
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-50" />
                                 <div className="text-center p-6 relative z-10">
                                     <div className="text-6xl font-bold text-white/20 mb-2">
-                                        <span ref={counterRef}>0</span>
+                                        <span className="sprint-counter">0</span>
                                     </div>
                                     <div className="text-sm font-mono uppercase tracking-widest text-primary">Day Cycle</div>
                                 </div>
@@ -353,10 +224,10 @@ export default function ServicesPage() {
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl md:text-5xl font-bold mb-12">Fit Assessment</h2>
-                    
+
                     <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 mb-8 text-left">
                         <p className="text-xl md:text-2xl font-light mb-8 text-center text-white/90">
-                            We’re a fit if you can start within 1–2 weeks with:
+                            We're a fit if you can start within 1–2 weeks with:
                         </p>
                         <ul className="space-y-4 max-w-lg mx-auto mb-12">
                             {["A workflow owner", "Access to the systems involved", "A baseline we can measure against"].map((item) => (
@@ -369,7 +240,7 @@ export default function ServicesPage() {
                             ))}
                         </ul>
                         <p className="text-center text-white/60 text-sm font-mono uppercase tracking-widest border-t border-white/10 pt-8">
-                            If that’s not true yet, we’ll tell you what’s missing.
+                            If that's not true yet, we'll tell you what's missing.
                         </p>
                     </div>
                 </div>
@@ -404,28 +275,7 @@ export default function ServicesPage() {
             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl font-bold mb-16 text-center">FAQ</h2>
-                    <div className="space-y-4">
-                        {faqs.map((faq, i) => (
-                            <div key={i} className="border border-white/10 rounded-xl overflow-hidden bg-white/5">
-                                <button 
-                                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
-                                >
-                                    <span className="font-bold text-white">{faq.question}</span>
-                                    <span className={`text-primary transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}>
-                                        <ArrowRight className="w-5 h-5 rotate-90 sm:rotate-0" />
-                                    </span>
-                                </button>
-                                <div className={`grid transition-all duration-300 ease-in-out ${openFaq === i ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                                    <div className="overflow-hidden">
-                                        <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
-                                            {faq.answer}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <FaqAccordion faqs={faqs} />
                 </div>
             </section>
 
@@ -436,18 +286,18 @@ export default function ServicesPage() {
                         READY TO FIND YOUR <br />
                         <span className="text-primary">ROI WEDGE?</span>
                     </h2>
-                    
+
                     <div className="max-w-2xl mx-auto mb-12 space-y-6 text-muted-foreground text-lg md:text-xl font-light">
                         <p>
-                            We don’t do discovery calls that turn into sales pitches. This is a 30-minute diagnostic to identify one ROI wedge and confirm whether your stack is ready for intelligence layering.
+                            We don't do discovery calls that turn into sales pitches. This is a 30-minute diagnostic to identify one ROI wedge and confirm whether your stack is ready for intelligence layering.
                         </p>
                         <p className="text-sm font-mono text-primary/80 uppercase tracking-widest">
-                            If it isn’t, we’ll tell you what’s missing and why, for free.
+                            If it isn't, we'll tell you what's missing and why, for free.
                         </p>
                     </div>
 
                     <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                        <MagneticButton 
+                        <MagneticButton
                             strength={0.3}
                             className="bg-primary text-black px-12 py-6 text-xl font-bold hover:bg-white transition-colors"
                         >
@@ -456,6 +306,6 @@ export default function ServicesPage() {
                     </a>
                 </div>
             </section>
-        </main>
+        </ServicesScrollReveal>
     );
 }

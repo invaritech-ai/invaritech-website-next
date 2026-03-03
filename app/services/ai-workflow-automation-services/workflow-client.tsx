@@ -1,5 +1,3 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
 import {
     ArrowLeft,
@@ -7,26 +5,22 @@ import {
     ArrowRight,
     X,
     ShieldCheck,
-    Zap,
     Database,
-    Briefcase,
     FileText,
     GitBranch,
     Lock,
+    Calculator,
+    LineChart,
 } from "lucide-react";
 import Link from "next/link";
 import { BOOK_MEETING_URL } from "@/lib/marketing";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { ScrollReveal } from "@/components/services/ScrollReveal";
+import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const faqs = [
+const faqs: FaqItem[] = [
     {
         question: "Do you promise to replace employees?",
         answer: "No. We promise to make them more effective. We build for scale, not headcount reduction.",
@@ -36,7 +30,7 @@ const faqs = [
         answer: "Business-critical actions never run on guesses. If the AI is unsure, the system stops, falls back, or requests human approval.",
     },
     {
-        question: "Is this just ‘intelligent process automation’ or RPA?",
+        question: "Is this just 'intelligent process automation' or RPA?",
         answer: "It can include those techniques, but the point is governance: audited pipelines with clear ownership and safe failure modes.",
     },
     {
@@ -46,74 +40,8 @@ const faqs = [
 ];
 
 export default function WorkflowClient() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-    useGSAP(
-        () => {
-            // Hero entrance
-            gsap.fromTo(
-                ".hero-content > *",
-                { y: 40, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.2,
-                    stagger: 0.05,
-                    ease: "power4.out",
-                },
-            );
-
-            // Stagger list animations for various sections
-            gsap.utils.toArray<HTMLElement>(".stagger-list").forEach((list) => {
-                const items = list.querySelectorAll(".stagger-item");
-                if (items.length > 0) {
-                    gsap.fromTo(
-                        items,
-                        { y: 20, opacity: 0 },
-                        {
-                            scrollTrigger: {
-                                trigger: list,
-                                start: "top 85%",
-                            },
-                            y: 0,
-                            opacity: 1,
-                            duration: 0.2,
-                            stagger: 0.05,
-                            ease: "power2.out",
-                        },
-                    );
-                }
-            });
-
-            // Reveal sections
-            gsap.utils
-                .toArray<HTMLElement>(".reveal-section")
-                .forEach((section) => {
-                    gsap.fromTo(
-                        section,
-                        { y: 30, opacity: 0 },
-                        {
-                            scrollTrigger: {
-                                trigger: section,
-                                start: "top 85%",
-                            },
-                            y: 0,
-                            opacity: 1,
-                            duration: 0.2,
-                            ease: "power2.out",
-                        },
-                    );
-                });
-        },
-        { scope: containerRef },
-    );
-
     return (
-        <main
-            ref={containerRef}
-            className="min-h-screen bg-background relative overflow-hidden"
-        >
+        <ScrollReveal className="min-h-screen bg-background relative overflow-hidden">
             <ServiceBackground theme="blue" />
 
             {/* Nav Back */}
@@ -151,41 +79,52 @@ export default function WorkflowClient() {
                         </span>
                     </h1>
                     <div className="text-primary/80 text-sm md:text-base font-mono uppercase tracking-[0.2em] mb-12">
-                        (AI-Enabled)
+                        (Deterministic & AI-Enabled)
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
                             <p className="text-xl md:text-2xl text-white font-medium mb-6">
-                                Workflow automation consulting services that
-                                turn operational friction into operational
-                                liquidity.
+                                We turn operational friction into operational
+                                liquidity for mid-market finance teams.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                We map your highest-friction workflows, remove the handoffs and reconciliation drag, and deploy the right tool — deterministic automation, AI, or both — to get more output without more headcount.
+                                We map your highest-friction workflows, remove
+                                the handoffs and reconciliation drag, and deploy
+                                custom infrastructure — deterministic automation,
+                                AI, or both — to get more output without adding
+                                headcount.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                We work at the process layer, not the chatbot layer. Shorter cycle times, earlier exception surfacing, and measurable SLA improvement — with a governance model that doesn’t break at scale.
+                                We operate at the process layer, not the chatbot
+                                layer. Deterministic fallbacks and
+                                human-in-the-loop approvals that integrate
+                                directly with Xero, NetSuite, or SAP.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
-                                One audited pipeline. No agentic havoc.
-                                Scalability by design.
+                                We are practitioners, not advisors. We build the
+                                pipeline.
                             </p>
                         </div>
                         <div className="md:w-1/3 space-y-4">
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">
+                                    Best For
+                                </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    COOs and ops leaders with 100+ recurring workflow instances per month, or throughput ceilings that headcount alone won’t fix.
+                                    CFOs and Controllers dealing with 100+
+                                    recurring monthly exceptions, spreadsheet
+                                    drift, or a 10-day close cycle.
                                 </p>
                             </div>
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
-                                <p className="text-sm text-muted-foreground">2-week diagnostic → 30-day Sprint → optional 90-day stabilisation retainer.</p>
-                            </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
-                                <p className="text-sm text-muted-foreground">KPI dashboard, 90-day stabilisation, and an optional expansion track to the next workflow.</p>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">
+                                    Typical Timeline
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Workflow Assessment → 30-day Sprint → 90-day
+                                    stabilization.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -197,7 +136,7 @@ export default function WorkflowClient() {
                             rel="noopener noreferrer"
                         >
                             <MagneticButton className="bg-primary text-black px-8 py-4 text-lg font-bold hover:bg-white transition-colors">
-                                Request a Workflow Diagnostic
+                                Book a Workflow Assessment
                             </MagneticButton>
                         </a>
                     </div>
@@ -208,64 +147,181 @@ export default function WorkflowClient() {
             <section className="reveal-section py-6 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     <div className="border border-white/10 bg-white/[0.02] p-5 flex flex-col sm:flex-row gap-4 items-start">
-                        <span className="text-xs font-mono uppercase tracking-widest text-white/30 shrink-0 pt-1">Not this</span>
+                        <span className="text-xs font-mono uppercase tracking-widest text-white/30 shrink-0 pt-1">
+                            Not this
+                        </span>
                         <div className="flex flex-wrap gap-3">
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not RPA point-and-click — we map entire workflow contracts, not individual clicks</span>
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not a Zapier stack — no-code breaks at auditability and governance boundaries</span>
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not a chatbot — we automate processes end-to-end, not individual conversations</span>
+                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">
+                                Not RPA point-and-click — we map entire workflow
+                                contracts, not individual clicks
+                            </span>
+                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">
+                                Not a Zapier stack — no-code breaks at
+                                auditability and governance boundaries
+                            </span>
+                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">
+                                Not a chatbot — we automate processes
+                                end-to-end, not individual conversations
+                            </span>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Scalability Manifesto */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
-                <div className="max-w-5xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-16">
-                        <div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                                The Scalability Manifesto
-                            </h2>
-                            <p className="text-lg text-muted-foreground mb-8">
-                                We’re passionate about plugging scalability
-                                leaks. Human time is too valuable to waste on
-                                reconciliation, data entry, and chasing status
-                                updates.
+            {/* Finance Pipelines */}
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        Financial Pipelines We Build
+                    </h2>
+                    <p className="text-xl text-muted-foreground mb-12">
+                        We don&apos;t sell generic bots. We build specialized
+                        engines for the most expensive bottlenecks in your
+                        finance department.
+                    </p>
+                    <div className="grid md:grid-cols-3 gap-8 stagger-list">
+                        {/* AP */}
+                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
+                            <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+                                <FileText className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">
+                                Accounts Payable & Invoice Intake
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                                Eliminate manual data entry and 3-way matching
+                                errors. We build extraction pipelines that parse
+                                invoices on arrival and route them for immediate
+                                approval.
                             </p>
+                            <div className="pt-4 border-t border-white/10 mt-auto">
+                                <Link
+                                    href="/blog/ai-invoice-data-extraction/"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary hover:text-white transition-colors"
+                                >
+                                    <ArrowRight className="w-3 h-3" /> Read the
+                                    Architecture
+                                </Link>
+                            </div>
                         </div>
-                        <div>
-                            <ul className="space-y-6 stagger-list">
-                                {[
-                                    {
-                                        title: "Computers don’t feel fatigue",
-                                        desc: "Reliability is the natural byproduct of letting systems handle the repetitive 90%.",
-                                    },
-                                    {
-                                        title: "Scale should be non-linear",
-                                        desc: "You shouldn’t have to double headcount just to double throughput.",
-                                    },
-                                    {
-                                        title: "Top-line focus",
-                                        desc: "We automate the boring so experts spend their 40 hours on high-value work.",
-                                    },
-                                ].map((item, i) => (
-                                    <li
-                                        key={i}
-                                        className="stagger-item flex gap-4"
-                                    >
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
-                                        <div>
-                                            <strong className="text-white block mb-1">
-                                                {item.title}
-                                            </strong>
-                                            <span className="text-muted-foreground text-sm leading-relaxed">
-                                                {item.desc}
-                                            </span>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
+
+                        {/* Month-End Close */}
+                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
+                            <div className="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
+                                <Check className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">
+                                Month-End Close Reconciliation
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                                Stop burning 10 days on spreadsheet drift. We
+                                deploy deterministic matching engines to clear
+                                90% of your bank reconciliation automatically.
+                            </p>
+                            <div className="pt-4 border-t border-white/10 mt-auto">
+                                <Link
+                                    href="/blog/month-end-close-automation/"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-blue-400 hover:text-white transition-colors"
+                                >
+                                    <ArrowRight className="w-3 h-3" /> Cut Your
+                                    Close to 3 Days
+                                </Link>
+                            </div>
                         </div>
+
+                        {/* Cash Flow */}
+                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
+                            <div className="size-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
+                                <LineChart className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-xl font-bold mb-4">
+                                Cash Flow Visibility & Forecasting
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-6 flex-grow">
+                                Unified bank file ingestion across multiple
+                                regional entities. Stop downloading CSVs and
+                                start modeling runway with real-time aggregated
+                                data.
+                            </p>
+                            <div className="pt-4 border-t border-white/10 mt-auto">
+                                <span className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white/30">
+                                    <Lock className="w-3 h-3" /> Case Study
+                                    Coming Soon
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Architecture Table */}
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                            Our &ldquo;No-Guess&rdquo; Architecture
+                        </h2>
+                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                            Most AI agencies rely on probability and hope. We
+                            rely on strict data contracts. We separate work by
+                            risk using a clear architectural boundary.
+                        </p>
+                    </div>
+
+                    <div className="overflow-hidden border border-white/10 rounded-2xl">
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-white/5 font-mono text-sm uppercase tracking-wider text-white/50 border-b border-white/10">
+                            <div className="p-4 md:p-6">Layer</div>
+                            <div className="p-4 md:p-6">What it does</div>
+                            <div className="p-4 md:p-6">How it behaves</div>
+                            <div className="p-4 md:p-6">Safety rule</div>
+                        </div>
+
+                        {/* Row 1: Reading */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-primary font-bold flex items-center gap-2">
+                                <FileText className="w-4 h-4" /> Reading
+                                (Probabilistic)
+                            </div>
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                                Invoice parsing, CSV ingestion, bank file
+                                normalization
+                            </div>
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                                AI structures messy inputs into standard JSON
+                            </div>
+                            <div className="p-6 text-white/80 font-mono text-sm flex items-center">
+                                <span className="px-2 py-1 bg-yellow-500/10 text-yellow-500 rounded text-xs border border-yellow-500/20">
+                                    Low-confidence flags a human
+                                </span>
+                            </div>
+                        </div>
+
+                        {/* Row 2: Writing */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-black/40 group hover:bg-white/5 transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-blue-400 font-bold flex items-center gap-2">
+                                <Database className="w-4 h-4" /> Writing
+                                (Deterministic)
+                            </div>
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                                Ledger entries, ERP syncs, bank reconciliations
+                            </div>
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                                Hard-coded matching logic + explicit approval
+                                gates
+                            </div>
+                            <div className="p-6 text-white/80 font-mono text-sm flex items-center">
+                                <span className="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs border border-green-500/20">
+                                    Zero probabilistic writes
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mt-8 text-center">
+                        <p className="text-white/60 text-sm font-mono border border-white/10 inline-block px-4 py-2 rounded-full bg-black/40">
+                            Confidence scores can inform insights. They do not
+                            authorize operations.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -279,17 +335,18 @@ export default function WorkflowClient() {
                                 The Governance Gap
                             </h2>
                             <p className="text-xl text-muted-foreground">
-                                Why "no-code automation" often breaks at scale.
+                                Why &ldquo;no-code automation&rdquo; often
+                                breaks at scale.
                             </p>
                         </div>
 
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div className="space-y-6">
                                 <p className="text-muted-foreground leading-relaxed">
-                                    When people hear "workflow automation
-                                    services," they picture a messy tangle of
-                                    hidden logic: 400 disconnected automations,
-                                    no owner, and no audit trail.
+                                    When people hear &ldquo;workflow automation
+                                    services,&rdquo; they picture a messy tangle
+                                    of hidden logic: 400 disconnected
+                                    automations, no owner, and no audit trail.
                                 </p>
                                 <div className="p-6 bg-red-900/10 border border-red-500/20 rounded-xl">
                                     <h4 className="text-red-400 font-bold mb-2 flex items-center gap-2">
@@ -333,169 +390,79 @@ export default function WorkflowClient() {
                 </div>
             </section>
 
-            {/* Architecture Table */}
+            {/* Methodology */}
             <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20">
-                <div className="max-w-6xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                            Our "No-Guess" Architecture
-                        </h2>
-                        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                            Most AI agencies rely on probability and hope. We
-                            rely on governance. We separate work by risk using a
-                            clear architectural boundary.
-                        </p>
-                    </div>
-
-                    <div className="overflow-hidden border border-white/10 rounded-2xl">
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-white/5 font-mono text-sm uppercase tracking-wider text-white/50 border-b border-white/10">
-                            <div className="p-4 md:p-6">Layer</div>
-                            <div className="p-4 md:p-6">What it does</div>
-                            <div className="p-4 md:p-6">How it behaves</div>
-                            <div className="p-4 md:p-6">Safety rule</div>
-                        </div>
-
-                        {/* Row 1: Reading */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-primary font-bold flex items-center gap-2">
-                                <FileText className="w-4 h-4" /> Reading
-                                (Probabilistic)
+                <div className="max-w-4xl mx-auto">
+                    <Badge
+                        variant="outline"
+                        className="mb-6 border-primary/50 text-primary px-4 py-1 text-xs uppercase tracking-widest"
+                    >
+                        Our Methodology
+                    </Badge>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-12">
+                        How We Scope, Build, and Measure.
+                    </h2>
+                    <div className="space-y-12">
+                        {[
+                            {
+                                phase: "Phase 1 / Scope",
+                                title: "The 2-Week Diagnostic",
+                                desc: "We don't guess. We map your exact workflow and establish a rigid data contract. You receive a complete architecture map and a cost-baseline document quantifying your current manual leak. If the workflow doesn't materially affect your margins or cycle time, we will tell you not to build it.",
+                            },
+                            {
+                                phase: "Phase 2 / Build",
+                                title: "The 30-Day Sprint",
+                                desc: "We don't sell 6-month digital transformation retainers. We execute in fixed-price, 30-day sprints. We engineer the ingestion layer, write the deterministic matching logic, and build the exception dashboards. You receive a deployed pipeline with a full, immutable audit log.",
+                            },
+                            {
+                                phase: "Phase 3 / Deploy",
+                                title: "Parallel Run & Go-Live",
+                                desc: "We run the automated pipeline in parallel with your manual team for one full cycle. We measure the SLA delta, ensure edge cases are caught safely, and flip the switch for authoritative ERP syncs.",
+                            },
+                            {
+                                phase: "Phase 4 / Measure",
+                                title: "90-Day Stabilization",
+                                desc: "We stick around to ensure the engine doesn't break at scale. You receive a final ROI report comparing your new operational throughput directly against the Phase 1 baseline.",
+                            },
+                        ].map((step, i) => (
+                            <div key={i} className="flex gap-6">
+                                <div className="flex-shrink-0 w-12 h-12 rounded-full border border-primary/50 flex items-center justify-center text-primary font-mono text-xl">
+                                    {i + 1}
+                                </div>
+                                <div>
+                                    <p className="text-xs font-mono uppercase tracking-widest text-primary/60 mb-1">
+                                        {step.phase}
+                                    </p>
+                                    <h3 className="text-2xl font-bold mb-3">
+                                        {step.title}
+                                    </h3>
+                                    <p className="text-muted-foreground leading-relaxed">
+                                        {step.desc}
+                                    </p>
+                                </div>
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
-                                Extraction, classification, summarization,
-                                triage
-                            </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
-                                AI interprets messy inputs; confidence can
-                                inform review
-                            </div>
-                            <div className="p-6 text-white/80 font-mono text-sm flex items-center">
-                                <span className="px-2 py-1 bg-yellow-500/10 text-yellow-500 rounded text-xs border border-yellow-500/20">
-                                    Low-confidence flags a human
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Row 2: Writing */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-black/40 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-blue-400 font-bold flex items-center gap-2">
-                                <Database className="w-4 h-4" /> Writing
-                                (Deterministic)
-                            </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
-                                Database writes, financial syncs, external
-                                actions
-                            </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
-                                Hard-coded rules + API integrity + approvals
-                            </div>
-                            <div className="p-6 text-white/80 font-mono text-sm flex items-center">
-                                <span className="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs border border-green-500/20">
-                                    Human-in-the-loop or strict logic
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="mt-8 text-center">
-                        <p className="text-white/60 text-sm font-mono border border-white/10 inline-block px-4 py-2 rounded-full bg-black/40">
-                            Confidence scores can inform insights. They do not
-                            authorize operations.
-                        </p>
+                        ))}
                     </div>
                 </div>
             </section>
 
-            {/* Use Cases */}
-            <section className="reveal-section py-24 px-6 relative z-10">
-                <div className="max-w-6xl mx-auto">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12">
-                        Finance + Ops Workflows (Audited & Governed)
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-8 stagger-list">
-                        {/* Case 1 */}
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
-                            <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
-                                <Briefcase className="w-6 h-6" />
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4">
-                                High-Stakes Financial Intake
-                            </h3>
-
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-xs uppercase tracking-widest text-white/40 mb-2">
-                                        Before
-                                    </h4>
-                                    <p className="text-muted-foreground text-sm">
-                                        Email-driven chaos, manual extraction,
-                                        reconciliation drift.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h4 className="text-xs uppercase tracking-widest text-primary mb-2">
-                                        After
-                                    </h4>
-                                    <p className="text-white text-sm">
-                                        Extraction + validation → deterministic
-                                        matching → human approval gate.
-                                    </p>
-                                </div>
-                                <div className="pt-4 border-t border-white/10">
-                                    <p className="text-sm font-mono text-white/80">
-                                        Result: reduced reconciliation lag,
-                                        fewer expensive exceptions, full
-                                        auditability.
-                                    </p>
-                                    <Link
-                                        href="/blog/ai-invoice-data-extraction/"
-                                        className="mt-3 inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/60 hover:text-primary transition-colors"
-                                    >
-                                        <ArrowRight className="w-3 h-3" />
-                                        Automated invoice processing workflow design
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Case 2 */}
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
-                            <div className="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
-                                <Zap className="w-6 h-6" />
-                            </div>
-                            <h3 className="text-2xl font-bold mb-4">
-                                Scaling High-Ticket Operations
-                            </h3>
-
-                            <div className="space-y-6">
-                                <div>
-                                    <h4 className="text-xs uppercase tracking-widest text-white/40 mb-2">
-                                        Before
-                                    </h4>
-                                    <p className="text-muted-foreground text-sm">
-                                        Response times vary by staff fatigue;
-                                        manual CRM entry causes downstream
-                                        errors.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h4 className="text-xs uppercase tracking-widest text-blue-400 mb-2">
-                                        After
-                                    </h4>
-                                    <p className="text-white text-sm">
-                                        Automated triage + data enrichment →
-                                        human-led final comms and approvals.
-                                    </p>
-                                </div>
-                                <div className="pt-4 border-t border-white/10">
-                                    <p className="text-sm font-mono text-white/80">
-                                        Result: higher throughput capacity
-                                        without a hiring spree.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            {/* ROI Calculator */}
+            <section className="reveal-section py-16 px-6 relative z-10 border-t border-white/10">
+                <div className="max-w-4xl mx-auto bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
+                    <Calculator className="w-12 h-12 text-primary mx-auto mb-6" />
+                    <h3 className="text-2xl font-bold text-white mb-4">
+                        Calculate Your Manual Tax
+                    </h3>
+                    <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+                        Stop guessing how much inefficient workflows cost you.
+                        Use our interactive calculator to find your actual
+                        month-end burn rate in under 30 seconds.
+                    </p>
+                    <Link href="/tools/cost-to-close-calculator/">
+                        <MagneticButton className="bg-white text-black px-8 py-3 font-bold hover:bg-primary transition-colors">
+                            Open the Calculator
+                        </MagneticButton>
+                    </Link>
                 </div>
             </section>
 
@@ -511,12 +478,12 @@ export default function WorkflowClient() {
                                 Safety First
                             </Badge>
                             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                                The "Anti-Havoc" Guardrails
+                                The &ldquo;Anti-Havoc&rdquo; Guardrails
                             </h2>
                             <p className="text-xl text-muted-foreground leading-relaxed">
-                                We don’t gamble with company secrets or public
-                                reputation. Every automation includes strict
-                                safety protocols.
+                                We don&apos;t gamble with company secrets or
+                                public reputation. Every automation includes
+                                strict safety protocols.
                             </p>
                         </div>
                         <div className="md:w-1/2 w-full space-y-4 stagger-list">
@@ -562,90 +529,13 @@ export default function WorkflowClient() {
                 </div>
             </section>
 
-            {/* Process Steps */}
-            <section className="reveal-section py-24 px-6 relative z-10">
-                <div className="max-w-4xl mx-auto">
-                    <h2 className="text-3xl font-bold mb-12 text-center">
-                        How We Work
-                    </h2>
-                    <div className="space-y-8 relative before:absolute before:left-[19px] before:top-4 before:bottom-4 before:w-px before:bg-white/10">
-                        {[
-                            {
-                                title: "Isolate the Wedge",
-                                desc: "Identify the one bottleneck where fatigue and exceptions are highest.",
-                            },
-                            {
-                                title: "Baseline the Leak",
-                                desc: "Quantify cycle time, error rate, reconciliation lag, and cost-to-serve.",
-                            },
-                            {
-                                title: "Map the Architecture",
-                                desc: "Define Reading vs Writing boundaries (and approval gates).",
-                            },
-                            {
-                                title: "Deploy First Pipeline",
-                                desc: "Ship the wedge with logs, fallbacks, and rollback.",
-                            },
-                            {
-                                title: "Scale the Engine",
-                                desc: "Expand once ROI is proven and the operating model is stable.",
-                            },
-                        ].map((step, i) => (
-                            <div key={i} className="relative z-10 pl-16">
-                                <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-background border border-white/20 flex items-center justify-center text-sm font-bold text-white/50">
-                                    {i + 1}
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">
-                                    {step.title}
-                                </h3>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    {step.desc}
-                                </p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
             {/* FAQ */}
-            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
+            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5 border-t border-white/10">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
                     </h2>
-                    <div className="space-y-4">
-                        {faqs.map((faq, i) => (
-                            <div
-                                key={i}
-                                className="border border-white/10 rounded-xl overflow-hidden bg-white/5"
-                            >
-                                <button
-                                    onClick={() =>
-                                        setOpenFaq(openFaq === i ? null : i)
-                                    }
-                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
-                                >
-                                    <span className="font-bold text-white">
-                                        {faq.question}
-                                    </span>
-                                    <span
-                                        className={`text-primary transition-transform duration-300 ${openFaq === i ? "rotate-45" : ""}`}
-                                    >
-                                        <ArrowRight className="w-5 h-5 rotate-90 sm:rotate-0" />
-                                    </span>
-                                </button>
-                                <div
-                                    className={`grid transition-all duration-300 ease-in-out ${openFaq === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-                                >
-                                    <div className="overflow-hidden">
-                                        <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
-                                            {faq.answer}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <FaqAccordion faqs={faqs} />
                 </div>
             </section>
 
@@ -672,15 +562,23 @@ export default function WorkflowClient() {
                         </MagneticButton>
                     </a>
                     <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
-                            <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
+                        <Link
+                            href="/services/ai-automation-sprint/"
+                            className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-3 h-3" /> Start with the
+                            30-Day Sprint
                         </Link>
-                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
-                            <ArrowRight className="w-3 h-3" /> Need system integration?
+                        <Link
+                            href="/services/ai-integration-services/"
+                            className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-3 h-3" /> Need ERP
+                            integration?
                         </Link>
                     </div>
                 </div>
             </section>
-        </main>
+        </ScrollReveal>
     );
 }

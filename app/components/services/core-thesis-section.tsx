@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useInView } from "motion/react";
 import { ArrowRight } from "lucide-react";

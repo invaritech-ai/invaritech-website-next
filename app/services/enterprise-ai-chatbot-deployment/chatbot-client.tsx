@@ -1,5 +1,3 @@
-"use client";
-
 import { Badge } from "@/components/ui/badge";
 import {
     ArrowLeft,
@@ -17,14 +15,10 @@ import { BOOK_MEETING_URL } from "@/lib/marketing";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { ScrollReveal } from "@/components/services/ScrollReveal";
+import { FaqAccordion, FaqItem } from "@/components/services/FaqAccordion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const faqs = [
+const faqs: FaqItem[] = [
     {
         question: "Do you build custom chatbot systems or configure tools?",
         answer: "Both. Tool choice is secondary. Governance and adoption are primary.",
@@ -48,74 +42,8 @@ const faqs = [
 ];
 
 export default function ChatbotClient() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-    useGSAP(
-        () => {
-            // Hero entrance
-            gsap.fromTo(
-                ".hero-content > *",
-                { y: 40, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.2,
-                    stagger: 0.05,
-                    ease: "power4.out",
-                },
-            );
-
-            // Stagger list animations
-            gsap.utils.toArray<HTMLElement>(".stagger-list").forEach((list) => {
-                const items = list.querySelectorAll(".stagger-item");
-                if (items.length > 0) {
-                    gsap.fromTo(
-                        items,
-                        { y: 20, opacity: 0 },
-                        {
-                            scrollTrigger: {
-                                trigger: list,
-                                start: "top 85%",
-                            },
-                            y: 0,
-                            opacity: 1,
-                            duration: 0.2,
-                            stagger: 0.05,
-                            ease: "power2.out",
-                        },
-                    );
-                }
-            });
-
-            // Reveal sections
-            gsap.utils
-                .toArray<HTMLElement>(".reveal-section")
-                .forEach((section) => {
-                    gsap.fromTo(
-                        section,
-                        { y: 30, opacity: 0 },
-                        {
-                            scrollTrigger: {
-                                trigger: section,
-                                start: "top 85%",
-                            },
-                            y: 0,
-                            opacity: 1,
-                            duration: 0.2,
-                            ease: "power2.out",
-                        },
-                    );
-                });
-        },
-        { scope: containerRef },
-    );
-
     return (
-        <main
-            ref={containerRef}
-            className="min-h-screen bg-background relative overflow-hidden"
-        >
+        <ScrollReveal className="min-h-screen bg-background relative overflow-hidden">
             <ServiceBackground theme="purple" />
 
             {/* Nav Back */}
@@ -498,39 +426,7 @@ export default function ChatbotClient() {
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
                     </h2>
-                    <div className="space-y-4">
-                        {faqs.map((faq, i) => (
-                            <div
-                                key={i}
-                                className="border border-white/10 rounded-xl overflow-hidden bg-white/5"
-                            >
-                                <button
-                                    onClick={() =>
-                                        setOpenFaq(openFaq === i ? null : i)
-                                    }
-                                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
-                                >
-                                    <span className="font-bold text-white">
-                                        {faq.question}
-                                    </span>
-                                    <span
-                                        className={`text-primary transition-transform duration-300 ${openFaq === i ? "rotate-45" : ""}`}
-                                    >
-                                        <ArrowRight className="w-5 h-5 rotate-90 sm:rotate-0" />
-                                    </span>
-                                </button>
-                                <div
-                                    className={`grid transition-all duration-300 ease-in-out ${openFaq === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
-                                >
-                                    <div className="overflow-hidden">
-                                        <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
-                                            {faq.answer}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                    <FaqAccordion faqs={faqs} />
                 </div>
             </section>
 
@@ -566,6 +462,6 @@ export default function ChatbotClient() {
                     </div>
                 </div>
             </section>
-        </main>
+        </ScrollReveal>
     );
 }
