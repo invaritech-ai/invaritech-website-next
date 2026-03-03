@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, FileSpreadsheet, Clock, Lock, Calculator, Gauge, Download } from "lucide-react";
+import { ArrowRight, FileSpreadsheet, Clock, Lock, Calculator, Gauge, Download, LineChart } from "lucide-react";
 import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 
@@ -33,6 +33,10 @@ export const metadata: Metadata = {
         "free business automation tools no signup",
         "AI tools for finance teams",
         "workflow automation tools",
+        "burn rate calculator",
+        "cash runway calculator",
+        "cash flow visibility tool",
+        "net burn rate calculator free",
     ],
     alternates: {
         canonical: "https://www.invaritech.ai/tools/",
@@ -76,7 +80,7 @@ const jsonLd = [
         },
         "mainEntity": {
             "@type": "ItemList",
-            "numberOfItems": 3,
+            "numberOfItems": 4,
             "itemListElement": [
                 {
                     "@type": "ListItem",
@@ -125,6 +129,28 @@ const jsonLd = [
                 {
                     "@type": "ListItem",
                     "position": 3,
+                    "item": {
+                        "@type": "SoftwareApplication",
+                        "name": "Cash Runway & Burn Rate Calculator",
+                        "url": "https://www.invaritech.ai/tools/burn-rate-calculator/",
+                        "description":
+                            "Free calculator for net monthly burn rate, cash runway in months, projected cash position at 3, 6, and 12 months, and the dollar cost of your reporting lag. Supports SGD, HKD, MYR, and USD. No signup required.",
+                        "applicationCategory": "BusinessApplication",
+                        "operatingSystem": "Web",
+                        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                        "featureList": [
+                            "Net monthly burn rate calculation",
+                            "Cash runway in months",
+                            "Projected cash at 3, 6, and 12 months",
+                            "Reporting lag cost — dollar value of decisions on stale data",
+                            "Supports SGD, HKD, MYR, USD",
+                            "No signup required",
+                        ],
+                    },
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
                     "item": {
                         "@type": "SoftwareApplication",
                         "name": "AI Automation Readiness Assessment",
@@ -221,6 +247,18 @@ const liveTools = [
         icon: "calculator",
     },
     {
+        id: "burn-rate-calculator",
+        tags: ["FINANCE", "CASH FLOW", "RUNWAY"],
+        name: "Cash Runway & Burn Rate Calculator",
+        description:
+            "Enter cash balance, monthly costs, and revenue. Get net burn rate, runway in months, projected cash at 3/6/12 months, and the dollar cost of your current reporting lag.",
+        accepts: "4 inputs",
+        output: "Runway · Burn · Projections",
+        time: "Instant",
+        href: "/tools/burn-rate-calculator/",
+        icon: "linechart",
+    },
+    {
         id: "ai-readiness-assessment",
         tags: ["STRATEGY", "AI READINESS", "ROI"],
         name: "AI Readiness Assessment",
@@ -252,6 +290,7 @@ const upcomingTools = [
 function ToolIcon({ icon }: { icon: string }) {
     if (icon === "calculator") return <Calculator className="h-5 w-5 relative z-10" />;
     if (icon === "gauge") return <Gauge className="h-5 w-5 relative z-10" />;
+    if (icon === "linechart") return <LineChart className="h-5 w-5 relative z-10" />;
     return <FileSpreadsheet className="h-5 w-5 relative z-10" />;
 }
 
@@ -301,6 +340,21 @@ export default function ToolsPage() {
                     annual savings from finance process automation. Use it to build the business
                     case for month-end close automation, accounts payable automation, or ERP
                     integration projects. Instant results, no signup.
+                </p>
+
+                <h2>Cash Runway & Burn Rate Calculator — Free Finance Tool</h2>
+                <p>
+                    The Cash Runway and Burn Rate Calculator is a free tool for CFOs, controllers,
+                    and finance managers who need to know how much runway they have and how much
+                    cash movement their reporting lag is hiding. Enter your current cash balance,
+                    monthly operating costs, and average monthly revenue in SGD, HKD, MYR, or USD.
+                    The calculator instantly shows your net monthly burn rate, cash runway in months,
+                    projected cash position at 3, 6, and 12 months, and your reporting lag cost —
+                    the dollar value of cash movement that happens before your finance report arrives.
+                    The reporting lag metric is the core problem we solve for finance teams in
+                    Singapore and Hong Kong: decisions made on data that is 10–15 days old miss
+                    the entire window of cash inflows and outflows that occurred since the last close.
+                    Free, no signup, instant results.
                 </p>
 
                 <h2>AI Automation Readiness Assessment — Free Viability Score and Roadmap</h2>
@@ -403,7 +457,7 @@ export default function ToolsPage() {
 
                     <div className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between border-t border-white/10 pt-10">
                         <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl leading-relaxed">
-                            Three live tools. Every one is a working slice of what INVARITECH deploys
+                            Four live tools. Every one is a working slice of what INVARITECH deploys
                             for enterprise clients. Upload files. Run calculations. Score your readiness.
                             No account, no trial, no friction.
                         </p>

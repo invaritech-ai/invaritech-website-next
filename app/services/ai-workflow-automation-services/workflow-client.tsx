@@ -229,10 +229,13 @@ export default function WorkflowClient() {
                                 data.
                             </p>
                             <div className="pt-4 border-t border-white/10 mt-auto">
-                                <span className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-white/30">
-                                    <Lock className="w-3 h-3" /> Case Study
-                                    Coming Soon
-                                </span>
+                                <Link
+                                    href="/blog/cash-flow-visibility-automation/"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-purple-400 hover:text-white transition-colors"
+                                >
+                                    <ArrowRight className="w-3 h-3" /> Read the
+                                    Architecture
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -441,13 +444,21 @@ export default function WorkflowClient() {
                     <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
                         Stop guessing how much inefficient workflows cost you.
                         Use our interactive calculator to find your actual
-                        month-end burn rate in under 30 seconds.
+                        month-end close cost in under 30 seconds — or check
+                        your cash runway and reporting lag cost directly.
                     </p>
-                    <Link href="/tools/cost-to-close-calculator/">
-                        <MagneticButton className="bg-white text-black px-8 py-3 font-bold hover:bg-primary transition-colors">
-                            Open the Calculator
-                        </MagneticButton>
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        <Link href="/tools/cost-to-close-calculator/">
+                            <MagneticButton className="bg-white text-black px-8 py-3 font-bold hover:bg-primary transition-colors">
+                                Close Cost Calculator
+                            </MagneticButton>
+                        </Link>
+                        <Link href="/tools/burn-rate-calculator/">
+                            <MagneticButton className="bg-primary/10 border border-primary/30 text-primary px-8 py-3 font-bold hover:bg-primary hover:text-black transition-colors">
+                                Cash Runway Calculator
+                            </MagneticButton>
+                        </Link>
+                    </div>
                 </div>
             </section>
 
