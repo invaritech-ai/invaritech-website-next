@@ -77,6 +77,9 @@ export default function WorkPage() {
                     <p className="text-xl text-muted-foreground md:text-2xl font-light max-w-2xl border-l border-primary/30 pl-6 py-2">
                         Engineering leverage through production-grade automation. A curated record of delivered outcomes.
                     </p>
+                    <p className="text-base text-muted-foreground/70 max-w-2xl mt-8 leading-relaxed">
+                        We work across compliance, finance, and operations — building systems that eliminate manual work at volume. Each engagement is scoped around a specific bottleneck: regulatory submission pipelines, document extraction, enterprise AI integration, and workflow orchestration. Every project below shipped to production.
+                    </p>
                 </header>
 
                 <div className="space-y-32">

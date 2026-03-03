@@ -132,6 +132,14 @@ export default function AssessmentPage() {
                     <li>Estimated cost avoidance per month</li>
                     <li>Automation Archetype: one of 5 strategic profiles</li>
                 </ul>
+                <p>
+                    The assessment covers your primary business function — operations, finance,
+                    customer support, sales, marketing, legal, or HR — and calibrates outputs
+                    to your workflow volume and data quality. Results are calculated immediately
+                    in your browser with no email required. Ideal for department leads and
+                    operations managers at mid-market companies in Singapore, Hong Kong, and
+                    Southeast Asia evaluating AI automation investments.
+                </p>
             </div>
 
             <AssessmentWizard />

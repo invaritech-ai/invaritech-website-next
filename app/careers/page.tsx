@@ -79,6 +79,26 @@ export default function CareersPage() {
                 </div>
             </section>
 
+            {/* Culture / Environment */}
+            <section className="px-6 pb-16 relative z-10">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-sm font-mono uppercase tracking-[0.2em] text-primary mb-8">How We Work</h2>
+                    <div className="grid gap-6 md:grid-cols-2">
+                        {[
+                            { label: "Principals, not managers", body: "You work directly with founders. No account managers, no ticket queues. Every project has one owner who cares about the outcome." },
+                            { label: "Scoped, shipped, done", body: "We run fixed-scope sprints with defined deliverables. Vague retainers aren't how we operate — clarity of output is the standard." },
+                            { label: "Production is the bar", body: "Prototypes don't ship to clients. Everything we build is governed, tested, and documented enough to be handed off and maintained." },
+                            { label: "Remote, async-first", body: "The team is distributed across Southeast Asia. We communicate in writing, move fast on decisions, and avoid synchronous overhead." },
+                        ].map((item) => (
+                            <div key={item.label} className="border border-white/10 bg-white/[0.03] p-6">
+                                <h3 className="text-sm font-bold text-white mb-2">{item.label}</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
             {/* Hiring Status Termimal */}
             <section className="px-6 pb-24 relative z-10">
                 <div className="max-w-4xl mx-auto">

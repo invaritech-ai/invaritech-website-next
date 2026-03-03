@@ -77,11 +77,11 @@ export default function InvoiceExtractorPage() {
             breadcrumb="Invoice Extractor"
             eyebrow="LIVE TOOL // FINANCE"
             titleParts={["Invoice Data", "Extractor"]}
-            description="Upload a PDF or image invoice. Get structured line-item data back as JSON, items CSV, or summary CSV — ready for your ERP or spreadsheet."
+            description="Upload any PDF, JPG, or PNG invoice or receipt. The AI model extracts the supplier name, document number, date, currency, line items, subtotal, tax, and total — then returns the data as structured JSON, an items CSV, or a summary CSV ready for your ERP or spreadsheet."
             maxWidth="3xl"
             jsonLd={jsonLd}
             footerLabel="WHAT THIS DEMONSTRATES"
-            footerText="This is the same document parsing layer we integrate into ERP pipelines and finance workflows for clients in Hong Kong and Singapore. Accepts messy PDFs, scanned receipts, and vendor invoices with varying formats."
+            footerText="This is the same document parsing and structured-data extraction layer we integrate into accounts-payable pipelines, ERP ingestion flows, and finance automation systems for clients in Hong Kong and Singapore. Supports GST, SST, and VAT invoices. Accepts messy scanned PDFs, photographed receipts, and multi-line vendor invoices with inconsistent formatting — the model handles layout variation without template configuration. Rate limited to 5 extractions per day per IP address."
             footerLink={{
                 href: "/services/ai-integration-services/",
                 label: "See AI Integration Services",
