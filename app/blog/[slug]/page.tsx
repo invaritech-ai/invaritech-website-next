@@ -343,6 +343,7 @@ export default async function BlogPostPage({ params }: Props) {
                                             fill
                                             className="object-cover transition-transform duration-1000 group-hover:scale-105"
                                             priority
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/80 via-transparent to-transparent" />
                                         <div className="absolute bottom-4 right-4 font-mono text-[10px] text-white/50 tracking-widest">
