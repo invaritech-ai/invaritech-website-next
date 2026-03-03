@@ -152,6 +152,7 @@
 body {
     cursor: default; /* We will likely implement a custom cursor component */
     overflow-x: hidden; /* Prevent horizontal scroll from aggressive animations */
+    font-size: 1.0625rem; /* 17px base — lifted 1px for readability on dark backgrounds */
 }
 
 /* Utilities for "Artistic" Typography */

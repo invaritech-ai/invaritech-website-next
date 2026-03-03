@@ -239,9 +239,9 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
 
                             {/* Prose Feed */}
-                            <div className="prose prose-lg md:prose-xl prose-invert max-w-none flex-1
+                            <div className="prose prose-xl prose-invert max-w-none flex-1
                                 prose-headings:text-white prose-headings:tracking-tight
-                                prose-p:text-gray-300 prose-p:leading-relaxed
+                                prose-p:text-white/80 prose-p:leading-[1.85]
                                 prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:border-b prose-a:border-primary/30 hover:prose-a:border-primary prose-a:transition-all
                                 prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-white/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
                                 prose-strong:text-white prose-strong:font-bold prose-strong:text-shadow-sm
@@ -318,9 +318,9 @@ export default async function BlogPostPage({ params }: Props) {
                                             </ul>
                                         ),
                                         li: ({ children }) => (
-                                            <li className="flex items-start gap-4 text-muted-foreground group">
+                                            <li className="flex items-start gap-4 text-white/75 group">
                                                 <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
-                                                <span className="leading-relaxed group-hover:text-white/80 transition-colors">{children}</span>
+                                                <span className="leading-[1.85] group-hover:text-white transition-colors">{children}</span>
                                             </li>
                                         ),
                                         strong: ({ children }) => (
@@ -422,9 +422,9 @@ export default async function BlogPostPage({ params }: Props) {
                                             </ul>
                                         ),
                                         li: ({ children }) => (
-                                            <li className="flex items-start gap-4 text-muted-foreground group">
+                                            <li className="flex items-start gap-4 text-white/75 group">
                                                 <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
-                                                <span className="leading-relaxed group-hover:text-white/80 transition-colors">{children}</span>
+                                                <span className="leading-[1.85] group-hover:text-white transition-colors">{children}</span>
                                             </li>
                                         ),
                                         strong: ({ children }) => (
