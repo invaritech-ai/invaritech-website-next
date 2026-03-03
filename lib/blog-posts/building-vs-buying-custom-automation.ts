@@ -2,9 +2,9 @@ import { BlogPost } from "../blog-posts";
 
 export const post: BlogPost = {
     slug: "building-vs-buying-custom-automation",
-    title: "Building vs. Buying: When Custom Automation Makes Sense",
+    title: "Build vs. Buy Automation: A Capital Allocation Decision",
     excerpt:
-        "Build vs buy for automation is a capital allocation decision. Use this framework to decide when custom automation beats SaaS for integration-heavy workflows.",
+        "Build vs buy is not a technology debate. It is a capital allocation decision. Use this math to decide when custom automation beats SaaS for integration-heavy workflows.",
     content: `
 ## Building vs Buying: A Capital Allocation Decision
 
@@ -156,18 +156,18 @@ There is no virtue in building early.
 
 If you are evaluating whether your workflow justifies custom infrastructure:
 
-- **[Assessment](/assessment/)** (map your workflow before building)
+- **[Assessment](/tools/assessment/)** (map your workflow before building)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)** (quantified diagnostic)
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30-day measurable wedge)
 
 No demos. No slides. Just math, architecture, and execution.
     `,
     author: {
-        name: "INVARITECH Team",
-        role: "Automation Specialists",
+        name: "Avishek Majumder",
+        role: "Co-founder",
     },
     publishedAt: "2025-10-20T10:00:00Z",
-    dateModified: "2026-03-01T10:00:00Z",
-    tags: ["Strategy", "Automation", "Decision Making"],
+    dateModified: "2026-03-03T12:00:00.000Z",
+    tags: ["Strategy", "Automation", "Decision Making", "ROI"],
     coverImage: "/blog/buy-vs-build.webp",
 };
