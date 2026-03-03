@@ -57,13 +57,11 @@ export default function EudrCaseStudyPage() {
                          <span className="font-mono text-primary text-sm tracking-widest uppercase">
                             Automation & Compliance
                         </span>
-                        <TextEffect
-                            per="char"
-                            preset="fade"
-                            className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mix-blend-difference mb-6"
-                        >
-                            EUDR BRIDGE
-                        </TextEffect>
+                        <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mix-blend-difference mb-6">
+                            <TextEffect per="char" preset="fade">
+                                EUDR BRIDGE
+                            </TextEffect>
+                        </h1>
                         <h2 className="text-2xl md:text-4xl font-light text-muted-foreground max-w-3xl">
                              100,000+ Submissions <span className="text-foreground">Per Month</span>.
                              <br/>

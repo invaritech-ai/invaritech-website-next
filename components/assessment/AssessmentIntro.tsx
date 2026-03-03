@@ -14,7 +14,7 @@ export function AssessmentIntro({ onStart }: AssessmentIntroProps) {
             <div className="mb-12 overflow-hidden">
                 <TextEffect
                     per="word"
-                    as="h1"
+                    as="h2"
                     preset="fade"
                     className="text-6xl md:text-9xl font-bold tracking-tighter mb-8 leading-[0.85] text-foreground mix-blend-difference uppercase"
                 >
