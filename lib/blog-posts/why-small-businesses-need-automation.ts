@@ -8,7 +8,7 @@ export const post: BlogPost = {
     content: `
 ## The Founder's Dilemma
 
-As a solo founder, the most annoying tasks are often the most crucial. Posting on social media to build an audience is extremely important; however, in the process of actual delivery, we often forget it. Then there are the mundane operational tasks: processing payroll for contractors, running reconciliations, balancing the accounting, generating invoices, and formatting receipts.
+As the founder of a small start-up, the most annoying tasks are often the most crucial. Posting on social media to build an audience is extremely important; however, in the process of actual delivery, we often forget it. Then there are the mundane operational tasks: processing payroll for contractors, running reconciliations, balancing the accounting, generating invoices, and formatting receipts.
 
 Right now, I only take on three to four projects at a time. At this scale, manual work is manageable. But what happens when you scale? The operational load multiplies; the manual processes that take a few hours a week suddenly consume your entire day. This is exactly where the conversation around small business automation has to start.
 
