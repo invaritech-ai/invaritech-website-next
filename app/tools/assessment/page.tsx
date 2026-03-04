@@ -90,10 +90,10 @@ export default function AssessmentPage() {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
-            {/* Breadcrumb — fixed overlay, same style as ToolPageShell breadcrumb */}
-            <div className="fixed top-[88px] left-0 right-0 z-50 px-6 pointer-events-none">
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex items-center gap-2 pointer-events-auto">
+            {/* Breadcrumb — in-flow, matches ToolPageShell pattern */}
+            <div className="relative z-50 pt-32 px-6">
+                <div className="max-w-4xl mx-auto">
+                    <div className="flex items-center gap-2 mb-10">
                         <Link
                             href="/tools/"
                             className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/30 hover:text-primary transition-colors"

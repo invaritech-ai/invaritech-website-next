@@ -463,7 +463,7 @@ export function AssessmentWizard() {
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 1.02 }}
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                        className="w-full pt-32 pb-32"
+                        className="w-full pt-8 pb-32"
                     >
                         {step === 0 && <AssessmentIntro onStart={nextStep} />}
                         {step === 1 && renderStep1()}
