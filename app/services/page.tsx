@@ -20,6 +20,13 @@ export const metadata: Metadata = {
             },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "AI Automation & Integration Services | INVARITECH",
+        description:
+            "Production-grade AI on your existing infrastructure. 30-day sprint to workflow automation, ERP integrations, chatbots, and GenAI backends.",
+        images: ["/og-image.png"],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/services/",
     },

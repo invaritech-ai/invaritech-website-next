@@ -11,8 +11,18 @@ export const metadata: Metadata = {
     description:
         "See how INVARITECH builds compliance bridges, data pipelines, and custom automation for enterprise and mid-market organizations.",
     openGraph: {
-        title: "Our Work - Automation Projects & Case Studies",
+        title: "Our Work — Automation Projects & Case Studies | INVARITECH",
+        description:
+            "See how INVARITECH builds compliance bridges, data pipelines, and custom automation for enterprise and mid-market organizations in Singapore and Hong Kong.",
         url: "https://www.invaritech.ai/work/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work — Automation Projects" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Our Work — Automation Projects & Case Studies | INVARITECH",
+        description:
+            "Compliance bridges, data pipelines, and custom automation for enterprise and mid-market organizations.",
         images: ["/og-image.png"],
     },
     alternates: {

@@ -12,8 +12,16 @@ export const metadata: Metadata = {
     description:
         "Book a meeting with INVARITECH to discuss a 30-day drop-in AI automation sprint for your existing infrastructure.",
     openGraph: {
-        title: "Contact INVARITECH - Book a Meeting",
+        title: "Contact INVARITECH — Book a Meeting",
+        description: "Book a meeting to discuss a 30-day drop-in AI automation sprint for your existing infrastructure.",
         url: "https://www.invaritech.ai/contact/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH — Book a Meeting" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Contact INVARITECH — Book a Meeting",
+        description: "30 minutes. One workflow map. Book a meeting to scope your automation sprint.",
         images: ["/og-image.png"],
     },
     alternates: {

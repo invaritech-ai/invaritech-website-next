@@ -12,7 +12,17 @@ export const metadata: Metadata = {
     description: "INVARITECH is a tactical AI delivery unit. We embed governed automation into enterprise infrastructure in 30-day cycles, with built-in compliance and measurable impact.",
     openGraph: {
         title: "About INVARITECH — Tactical AI Delivery Unit",
+        description:
+            "INVARITECH is a tactical AI delivery unit. We embed governed automation into enterprise infrastructure in 30-day cycles, with built-in compliance and measurable impact.",
         url: "https://www.invaritech.ai/about/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH — Tactical AI Delivery Unit" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About INVARITECH — Tactical AI Delivery Unit",
+        description:
+            "We embed governed AI automation into enterprise infrastructure in 30-day cycles. Practitioners, not advisors.",
         images: ["/og-image.png"],
     },
     alternates: {

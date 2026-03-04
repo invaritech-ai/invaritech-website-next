@@ -21,6 +21,21 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.invaritech.ai/services/enterprise-ai-chatbot-deployment/",
     },
+    openGraph: {
+        title: "Enterprise AI Chatbot Development | Governed & Multilingual | INVARITECH",
+        description:
+            "Governed enterprise AI chatbots with RBAC/ABAC, audit trails, Cantonese/Mandarin/Bahasa support, and bounded tool access. Deployed inside your existing systems.",
+        url: "https://www.invaritech.ai/services/enterprise-ai-chatbot-deployment/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Enterprise AI Chatbot Development — INVARITECH" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Enterprise AI Chatbot Development | INVARITECH",
+        description:
+            "Governed enterprise chatbots: RBAC/ABAC, audit trails, Cantonese/Mandarin/Bahasa support. Deployed inside your existing infrastructure.",
+        images: ["/og-image.png"],
+    },
 };
 
 const BASE = "https://www.invaritech.ai";

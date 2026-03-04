@@ -18,6 +18,21 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.invaritech.ai/services/ai-automation-consulting/",
     },
+    openGraph: {
+        title: "AI Automation Consulting | Build-Ready Execution Plans | INVARITECH",
+        description:
+            "We rank ROI wedges, define governance boundaries, and hand off a build-ready execution plan — not a strategy deck. For leadership teams ready to commit capital.",
+        url: "https://www.invaritech.ai/services/ai-automation-consulting/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Automation Consulting — INVARITECH" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AI Automation Consulting | INVARITECH",
+        description:
+            "ROI-ranked automation wedges, governance boundaries, and a build-ready spec. Not a strategy deck — an execution plan.",
+        images: ["/og-image.png"],
+    },
 };
 
 const BASE = "https://www.invaritech.ai";

@@ -25,6 +25,13 @@ export const metadata: Metadata = {
             },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "INVARITECH Blog — AI Automation Insights",
+        description:
+            "Case studies, engineering notes, and BOFU guidance for teams implementing AI automation on existing infrastructure.",
+        images: ["/og-image.png"],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/blog/",
     },

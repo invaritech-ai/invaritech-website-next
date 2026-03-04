@@ -21,6 +21,21 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.invaritech.ai/services/ai-integration-services/",
     },
+    openGraph: {
+        title: "AI Integration Services | Model-Agnostic Enterprise Gateway | INVARITECH",
+        description:
+            "Connect AI to ERP, CRM, and legacy systems via a governed integration gateway. Model-agnostic, idempotent, RBAC-controlled, and audit-logged for enterprise compliance.",
+        url: "https://www.invaritech.ai/services/ai-integration-services/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Integration Services — INVARITECH" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AI Integration Services | Model-Agnostic | INVARITECH",
+        description:
+            "Governed integration gateway connecting AI to ERP, CRM, and legacy systems. Idempotent, RBAC-controlled, and audit-logged.",
+        images: ["/og-image.png"],
+    },
 };
 
 const BASE = "https://www.invaritech.ai";

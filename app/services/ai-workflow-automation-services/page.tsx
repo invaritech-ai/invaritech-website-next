@@ -17,6 +17,20 @@ export const metadata: Metadata = {
         canonical:
             "https://www.invaritech.ai/services/ai-workflow-automation-services/",
     },
+    openGraph: {
+        title: "Workflow Automation Consulting | INVARITECH",
+        description:
+            "Custom workflow automation pipelines for finance teams — deterministic fallbacks, human-in-the-loop approvals, and full audit trails. Delivered in 6 weeks.",
+        url: "https://www.invaritech.ai/services/ai-workflow-automation-services/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Workflow Automation Consulting — INVARITECH" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Workflow Automation Consulting | INVARITECH",
+        description: "Custom finance automation pipelines with deterministic fallbacks and audit trails. Built in 6 weeks, not 6 months.",
+        images: ["/og-image.png"],
+    },
 };
 
 const BASE = "https://www.invaritech.ai";

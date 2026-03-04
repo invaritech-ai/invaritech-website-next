@@ -25,6 +25,13 @@ export const metadata: Metadata = {
             },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "EUDR Compliance Bridge — Case Study | INVARITECH",
+        description:
+            "EUDR DDS submission backend at 100,000+ operations/month. Validation, audit logs, and controlled retries. Built for a high-volume French operator.",
+        images: ["/og-image.png"],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
     },

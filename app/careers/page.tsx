@@ -31,6 +31,13 @@ export const metadata: Metadata = {
             },
         ],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Careers at INVARITECH — Build Automation Solutions",
+        description:
+            "Join our boutique automation studio. Work on compliance bridges, data pipelines, and admin tools for high-growth organizations.",
+        images: ["/og-image.png"],
+    },
     alternates: {
         canonical: "https://www.invaritech.ai/careers/",
     },

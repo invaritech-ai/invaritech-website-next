@@ -17,6 +17,21 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.invaritech.ai/services/generative-ai-backend-development/",
     },
+    openGraph: {
+        title: "Generative AI Backend Development | Production-Grade | INVARITECH",
+        description:
+            "Turn GenAI prototypes into governed, cost-controlled production backends. Evaluation harnesses, observability, prompt versioning, and safe deployment patterns.",
+        url: "https://www.invaritech.ai/services/generative-ai-backend-development/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Generative AI Backend Development — INVARITECH" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Generative AI Backend Development | INVARITECH",
+        description:
+            "Production GenAI backends: evaluation harnesses, observability, prompt versioning, and cost controls. Prototype to production.",
+        images: ["/og-image.png"],
+    },
 };
 
 const BASE = "https://www.invaritech.ai";

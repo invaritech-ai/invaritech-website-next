@@ -99,6 +99,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.75,
         },
         {
+            url: `${baseUrl}/tools/burn-rate-calculator/`,
+            changeFrequency: "monthly",
+            priority: 0.75,
+        },
+        {
             url: `${baseUrl}/blog/`,
             changeFrequency: "weekly",
             priority: 0.7,

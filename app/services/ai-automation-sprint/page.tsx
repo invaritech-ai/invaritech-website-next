@@ -17,6 +17,21 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://www.invaritech.ai/services/ai-automation-sprint/",
     },
+    openGraph: {
+        title: "AI Automation Sprint — 30-Day PoC to Production | INVARITECH",
+        description:
+            "One governed AI proof of concept in 30 days. Fixed price, measurable impact, audit logs from day one. Discovery → build → parallel run → go-live.",
+        url: "https://www.invaritech.ai/services/ai-automation-sprint/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Automation Sprint — INVARITECH" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AI Automation Sprint — 30-Day PoC to Production",
+        description:
+            "Fixed-price 30-day sprint to a production-grade AI pipeline. One workflow, measurable baseline delta, no 6-month retainers.",
+        images: ["/og-image.png"],
+    },
 };
 
 const BASE = "https://www.invaritech.ai";
