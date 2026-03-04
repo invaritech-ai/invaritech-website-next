@@ -127,4 +127,5 @@ Either way, the right starting point is a scoped diagnostic — a one-week exerc
     publishedAt: "2026-03-04T08:00:00Z",
     dateModified: "2026-03-04T08:00:00Z",
     tags: ["Finance", "CashFlow", "Automation", "ERP", "WorkflowAutomation"],
+    coverImage: "/blog/cash-flow-visibility.webp",
 };
