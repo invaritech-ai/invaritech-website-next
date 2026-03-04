@@ -118,7 +118,7 @@ export default function ServicesPage() {
                         <div className="h-px bg-white/10 flex-grow" />
                     </div>
 
-                    <div className="start-here-card group relative overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] transition-all duration-500 hover:border-primary/30">
+                    <div className="start-here-card group/sprint relative overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] transition-all duration-500 hover:border-primary/30">
                         <div className="grid md:grid-cols-2 items-stretch">
                             {/* Left: headline + CTA */}
                             <div className="p-8 md:p-12 flex flex-col justify-center">
@@ -145,19 +145,29 @@ export default function ServicesPage() {
                                         { week: "W2", phase: "Build", desc: "First working prototype running against your actual systems." },
                                         { week: "W3", phase: "Parallel Run", desc: "Live data validation alongside existing process. No cutover risk." },
                                         { week: "W4", phase: "Go-Live + Handoff", desc: "Production deploy. Operating runbook. Ownership fully transferred." },
-                                    ].map((item) => (
-                                        <div key={item.week} className="flex gap-5 items-start">
+                                    ].map((item, i) => (
+                                        <div
+                                            key={item.week}
+                                            className="flex gap-5 items-start transition-transform duration-500 group-hover/sprint:translate-x-1.5"
+                                            style={{ transitionDelay: `${i * 65}ms` }}
+                                        >
                                             <div className="text-xs font-mono text-primary shrink-0 mt-0.5 tracking-widest pt-px">{item.week}</div>
-                                            <div className="h-px bg-primary/30 w-5 mt-[9px] shrink-0" />
+                                            <div
+                                                className="h-px bg-primary/30 mt-[9px] shrink-0 w-5 group-hover/sprint:bg-primary/70 transition-colors duration-500"
+                                                style={{ transitionDelay: `${i * 65}ms` }}
+                                            />
                                             <div>
                                                 <p className="text-sm font-bold text-white uppercase tracking-wider mb-1">{item.phase}</p>
-                                                <p className="text-xs text-white/45 font-mono leading-relaxed">{item.desc}</p>
+                                                <p
+                                                    className="text-xs text-white/45 font-mono leading-relaxed group-hover/sprint:text-white/70 transition-colors duration-500"
+                                                    style={{ transitionDelay: `${i * 65}ms` }}
+                                                >{item.desc}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                                 <div className="mt-8 pt-6 border-t border-white/10">
-                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.2em]">Fixed scope · Measurable output · 30 days</p>
+                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.2em] group-hover/sprint:text-white/40 transition-colors duration-700">Fixed scope · Measurable output · 30 days</p>
                                 </div>
                             </div>
                         </div>
