@@ -9,6 +9,7 @@ import { post as consultancyTrap } from "./blog-posts/consultancy-trap";
 import { post as monthEndCloseAutomation } from "./blog-posts/month-end-close-automation";
 import { post as aiInvoiceDataExtraction } from "./blog-posts/ai-invoice-data-extraction";
 import { post as cashFlowVisibilityAutomation } from "./blog-posts/cash-flow-visibility-automation";
+import { post as whySmallBusinessesNeedAutomation } from "./blog-posts/why-small-businesses-need-automation";
 
 export interface BlogPost {
     slug: string;
@@ -52,6 +53,7 @@ export const blogPosts: BlogPost[] = [
     monthEndCloseAutomation,
     aiInvoiceDataExtraction,
     cashFlowVisibilityAutomation,
+    whySmallBusinessesNeedAutomation,
 ];
 
 // Helper functions
