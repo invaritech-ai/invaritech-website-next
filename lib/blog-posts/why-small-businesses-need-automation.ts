@@ -16,7 +16,7 @@ Right now, I only take on three to four projects at a time. At this scale, manua
 
 ## The Bottlenecks in the Real World
 
-When you look at non fintech sectors like logistics or local agencies, the daily operational bottlenecks are incredibly clear. Moving data from an invoice into accounting software is a massive challenge. Most invoices and receipts are structured, but they often contain a mix of printed text and handwritten line items. Extracting those cleanly into an Excel or CSV file takes an enormous amount of time when done manually at scale.
+When you look at non fintech sectors like logistics or local agencies, the daily operational bottlenecks are incredibly clear. Moving data from an invoice into accounting software is a massive challenge. Most invoices and receipts are structured, but they often contain a mix of printed text and handwritten line items. Extracting those cleanly into an Excel or CSV file takes an enormous amount of time when done manually at scale. Solving this upstream step is precisely what [automated invoice data extraction](/blog/ai-invoice-data-extraction/) pipelines are built to address.
 
 Then comes the reconciliation phase. You have to match purchase orders against the final invoices and receipts; this is the only way to figure out if a vendor delivered all the items in the order, or if they over delivered.
 
@@ -28,9 +28,9 @@ Furthermore, bulk invoice and receipt generation requires highly custom plugins 
 
 Most small businesses will start with a few accessible SaaS subscriptions: an email service, a bank account, standard accounting software. That is necessary. But beyond that foundation, the pain comes from the mundane day to day tasks. These tasks are done on repeat, they are unique to that specific business, and they are often too small or niche for a large software company to solve with a generic SaaS model.
 
-Big software vendors will try to sell you a massive ERP system; you do not need that. The typical instinct for a growing business is just to hire more headcount; you do not need that either.
+Big software vendors will try to sell you a massive ERP system; you do not need that. The [build vs. buy framework](/blog/building-vs-buying-custom-automation/) is useful here: if the workflow is high-volume, repeatable, and deeply tied to how your business runs, generic software will always force you to bend around its assumptions. The typical instinct for a growing business is just to hire more headcount; you do not need that either.
 
-The solution is the middle path: you need a custom glove solution fitted exactly to your needs. This means paying a one time build cost, followed by a minimal monthly maintenance fee. This approach can save hundreds of hours for a small team.
+The solution is the middle path: you need a custom glove solution fitted exactly to your needs. This means paying a one time build cost, followed by a minimal monthly maintenance fee. [AI workflow automation services](/services/ai-workflow-automation-services/) built around your existing stack — not a rip-and-replace — are what make this viable for small teams. This approach can save hundreds of hours for a small team.
 
 ---
 
@@ -49,6 +49,8 @@ Small teams are incredibly sensitive to cost, but they are willing to spend mone
 Many owners think they can just hire a cheap intern to do the manual data entry instead. Cheap interns sound good in theory; however, the reality is very different. You have to onboard them, you have to train them, you have to fix their inevitable human errors, and then they leave after three to four months.
 
 A custom software pipeline does not need retraining; it does not make typos; it does not quit. Business automation is about building infrastructure that scales with you, rather than hiring temporary hands to patch a leaking ship.
+
+If you are unsure which process to automate first, the [free AI readiness assessment](/tools/assessment/) identifies your highest-ROI wedge in under five minutes.
     `,
     author: {
         name: "Avishek Majumder",

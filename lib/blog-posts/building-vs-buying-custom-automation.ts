@@ -107,7 +107,7 @@ Custom automation makes sense when most of the following are true:
 - manual handling introduces material risk
 - the process affects retention or revenue capacity
 
-In those cases, a focused automation layer often outperforms a broad SaaS platform.
+In those cases, a focused automation layer often outperforms a broad SaaS platform. For founders and small teams, the same logic applies earlier than most expect — [why small businesses hit the automation breaking point](/blog/why-small-businesses-need-automation/) explains where the pressure concentrates first.
 
 This is not a statement that SaaS is weak or bad. It reflects that your workflow may not fit generic product assumptions.
 

@@ -41,7 +41,7 @@ Most firms plateau not because demand dries up, but because delivery capacity be
 
 The most common sentence in these firms is: "We'll systemize later."
 
-Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck. **[Why Consultancies Get Stuck](/blog/why-consultancies-get-stuck/)** explains why.
+Closely followed by: "We can always add more personnel." Hiring rarely fixes the bottleneck. **[Why Consultancies Get Stuck](/blog/why-consultancies-get-stuck/)** explains why. The same trap hits earlier for smaller teams: **[why small businesses reach the automation breaking point](/blog/why-small-businesses-need-automation/)** maps exactly where the pressure concentrates.
 
 And sometimes: "We already have a system," which means copying data into Excel sheets with slightly better formatting.
 
