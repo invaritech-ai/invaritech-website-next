@@ -336,16 +336,15 @@ export default async function BlogPostPage({ params }: Props) {
 
                                 {/* Cover image — after intro when split, hidden otherwise */}
                                 {post.coverImage && (
-                                    <div className="aspect-[21/9] relative overflow-hidden rounded-sm my-12 border-y border-white/10 group not-prose">
+                                    <div className="relative my-12 border-y border-white/10 group not-prose overflow-hidden">
                                         <Image
                                             src={post.coverImage}
                                             alt={post.title}
-                                            fill
-                                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                                            width={1200}
+                                            height={630}
+                                            className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
                                             priority
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-[#030305]/80 via-transparent to-transparent" />
                                         <div className="absolute bottom-4 right-4 font-mono text-[10px] text-white/50 tracking-widest">
                                             IMG_REF: {slug.toUpperCase()}
                                         </div>

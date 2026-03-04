@@ -118,29 +118,46 @@ export default function ServicesPage() {
                         <div className="h-px bg-white/10 flex-grow" />
                     </div>
 
-                    <div className="start-here-card group relative rounded-3xl overflow-hidden border border-white/10 bg-white/5 hover:bg-white/10 transition-all duration-500 hover:border-primary/30">
-                        <div className="grid md:grid-cols-2 gap-12 p-8 md:p-12 items-center">
-                            <div>
+                    <div className="start-here-card group relative overflow-hidden border border-white/10 bg-white/5 hover:bg-white/[0.07] transition-all duration-500 hover:border-primary/30">
+                        <div className="grid md:grid-cols-2 items-stretch">
+                            {/* Left: headline + CTA */}
+                            <div className="p-8 md:p-12 flex flex-col justify-center">
+                                <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary mb-6">30-Day Fixed Engagement</p>
                                 <h2 className="text-3xl md:text-5xl font-bold mb-6">
-                                    The 30-Day <br />
-                                    <span className="text-primary">AI Automation Sprint</span>
+                                    The AI Automation<br />
+                                    <span className="text-primary">Sprint</span>
                                 </h2>
-                                <p className="text-xl text-muted-foreground mb-8">
+                                <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
                                     One wedge. One build. One measurable delta.
                                 </p>
                                 <Link href="/services/ai-automation-sprint/">
-                                    <MagneticButton className="bg-white/10 hover:bg-white/20 border-white/10 text-white px-8 py-4">
+                                    <MagneticButton className="bg-primary text-black px-8 py-4 font-bold hover:bg-white transition-colors w-fit">
                                         View the Sprint <ArrowRight className="ml-2 w-5 h-5" />
                                     </MagneticButton>
                                 </Link>
                             </div>
-                            <div className="relative h-64 md:h-full min-h-[300px] rounded-2xl overflow-hidden bg-black/40 border border-white/5 flex items-center justify-center">
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-50" />
-                                <div className="text-center p-6 relative z-10">
-                                    <div className="text-6xl font-bold text-white/20 mb-2">
-                                        <span className="sprint-counter">0</span>
-                                    </div>
-                                    <div className="text-sm font-mono uppercase tracking-widest text-primary">Day Cycle</div>
+
+                            {/* Right: sprint phase breakdown */}
+                            <div className="border-t md:border-t-0 md:border-l border-white/10 bg-black/30 p-8 md:p-12 flex flex-col justify-center">
+                                <div className="space-y-7">
+                                    {[
+                                        { week: "W1", phase: "Scope & Baseline", desc: "Identify one wedge. Define the measurable delta against a live baseline." },
+                                        { week: "W2", phase: "Build", desc: "First working prototype running against your actual systems." },
+                                        { week: "W3", phase: "Parallel Run", desc: "Live data validation alongside existing process. No cutover risk." },
+                                        { week: "W4", phase: "Go-Live + Handoff", desc: "Production deploy. Operating runbook. Ownership fully transferred." },
+                                    ].map((item) => (
+                                        <div key={item.week} className="flex gap-5 items-start">
+                                            <div className="text-xs font-mono text-primary shrink-0 mt-0.5 tracking-widest pt-px">{item.week}</div>
+                                            <div className="h-px bg-primary/30 w-5 mt-[9px] shrink-0" />
+                                            <div>
+                                                <p className="text-sm font-bold text-white uppercase tracking-wider mb-1">{item.phase}</p>
+                                                <p className="text-xs text-white/45 font-mono leading-relaxed">{item.desc}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="mt-8 pt-6 border-t border-white/10">
+                                    <p className="text-[10px] font-mono text-white/25 uppercase tracking-[0.2em]">Fixed scope · Measurable output · 30 days</p>
                                 </div>
                             </div>
                         </div>
