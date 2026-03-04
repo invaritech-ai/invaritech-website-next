@@ -424,6 +424,9 @@ export default function SprintClient() {
                         <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Need system integration?
                         </Link>
+                        <Link href="/blog/cash-flow-visibility-automation/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> See cash visibility use case
+                        </Link>
                     </div>
                 </div>
             </section>

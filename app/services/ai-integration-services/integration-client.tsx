@@ -292,15 +292,24 @@ export default function IntegrationClient() {
 
             {/* Further Reading */}
             <section className="reveal-section py-12 px-6 relative z-10 border-t border-white/10">
-                <div className="max-w-3xl mx-auto flex items-center justify-between gap-4">
+                <div className="max-w-3xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     <p className="text-xs font-mono uppercase tracking-widest text-white/30">Further Reading</p>
-                    <Link
-                        href="/blog/ai-invoice-data-extraction/"
-                        className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2"
-                    >
-                        <ArrowRight className="w-3 h-3" />
-                        Invoice data extraction architecture for AP automation
-                    </Link>
+                    <div className="flex flex-col items-start gap-3">
+                        <Link
+                            href="/blog/ai-invoice-data-extraction/"
+                            className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-3 h-3" />
+                            Invoice data extraction architecture for AP automation
+                        </Link>
+                        <Link
+                            href="/blog/cash-flow-visibility-automation/"
+                            className="text-sm font-mono tracking-widest uppercase text-white/50 hover:text-white transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-3 h-3" />
+                            Cash flow visibility automation for 13-week forecasts
+                        </Link>
+                    </div>
                 </div>
             </section>
 

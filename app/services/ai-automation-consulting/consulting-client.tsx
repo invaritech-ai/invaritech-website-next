@@ -298,6 +298,9 @@ export default function ConsultingClient() {
                         <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Workflow optimisation
                         </Link>
+                        <Link href="/blog/cash-flow-visibility-automation/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Finance workflow case study
+                        </Link>
                     </div>
                 </div>
             </section>
