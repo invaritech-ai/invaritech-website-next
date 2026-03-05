@@ -94,8 +94,17 @@ export function InvoiceExtractor() {
         try {
             const res = await fetch(`/api/tools/invoice-extractor/result/${id}?type=raw_json`);
             if (!res.ok) {
-                const data = await res.json().catch(() => ({ message: "Failed to fetch result." }));
-                setError({ code: "result_fetch_failed", message: data?.message ?? "Failed to fetch result." });
+                if (res.status === 429) {
+                    setError({ code: "rate_limited", message: "Daily limit reached. Resets at midnight UTC." });
+                    setPhase("failed");
+                    return;
+                }
+                let msg = "Failed to fetch result.";
+                try {
+                    const body = await res.json();
+                    msg = body?.detail ?? body?.message ?? body?.error ?? msg;
+                } catch { /* ignore parse error */ }
+                setError({ code: "result_fetch_failed", message: `${msg} (HTTP ${res.status})` });
                 setPhase("failed");
                 return;
             }
@@ -115,6 +124,17 @@ export function InvoiceExtractor() {
         const poll = async () => {
             try {
                 const res = await fetch(`/api/tools/invoice-extractor/status/${jobId}`);
+                if (res.status === 429) {
+                    clearInterval(intervalRef.current!);
+                    clearTimeout(timeoutRef.current!);
+                    setError({ code: "rate_limited", message: "Daily limit reached. Resets at midnight UTC." });
+                    setPhase("failed");
+                    return;
+                }
+                if (!res.ok) {
+                    // transient error during polling — keep going
+                    return;
+                }
                 const job: Job = await res.json();
 
                 if (job.status === "completed") {
