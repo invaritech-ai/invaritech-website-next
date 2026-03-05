@@ -52,11 +52,11 @@ function NumberInput({
 
     return (
         <div className="space-y-2">
-            <div className="flex items-baseline justify-between gap-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70 shrink-0">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <span className="text-xs font-mono uppercase tracking-widest text-white/70">
                     {label}
                 </span>
-                <div className="flex items-center border border-white/20 bg-black/40 focus-within:border-primary/60 transition-colors">
+                <div className="flex items-center border border-white/20 bg-black/40 focus-within:border-primary/60 transition-colors w-full sm:w-auto">
                     <span className="text-xs font-mono text-white/40 pl-3 pr-1 select-none">{symbol}</span>
                     <input
                         type="text"
@@ -70,7 +70,7 @@ function NumberInput({
                             setRaw(String(v));
                             onChange(v);
                         }}
-                        className="bg-transparent text-right text-xl font-bold tracking-tighter text-white w-28 pr-3 py-2 outline-none tabular-nums"
+                        className="bg-transparent text-right text-xl font-bold tracking-tighter text-white flex-1 sm:w-28 pr-3 py-2 outline-none tabular-nums"
                     />
                 </div>
             </div>
@@ -91,8 +91,8 @@ function DaysSlider({
     const pct = ((value - 1) / 29) * 100;
     return (
         <div className="space-y-3">
-            <div className="flex items-baseline justify-between gap-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70 shrink-0">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                <span className="text-xs font-mono uppercase tracking-widest text-white/70">
                     Days to receive cash report
                 </span>
                 <span className="text-xl font-bold tracking-tighter text-white tabular-nums">
@@ -211,7 +211,7 @@ export function BurnRateCalculator() {
             {/* Main grid */}
             <div className="grid lg:grid-cols-2 gap-px bg-white/10">
                 {/* Inputs */}
-                <div className="bg-[#0a0a0c] p-8 space-y-8">
+                <div className="bg-[#0a0a0c] p-5 sm:p-8 space-y-8">
                     <div className="flex items-center gap-3 pb-6 border-b border-white/15">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
@@ -247,7 +247,7 @@ export function BurnRateCalculator() {
                 </div>
 
                 {/* Results */}
-                <div className="bg-[#080808] p-8 space-y-6 flex flex-col">
+                <div className="bg-[#080808] p-5 sm:p-8 space-y-6 flex flex-col">
                     <div className="flex items-center gap-3 pb-6 border-b border-white/15">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
@@ -296,7 +296,7 @@ export function BurnRateCalculator() {
                         <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-4">
                             Projected Cash Balance
                         </div>
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-3 gap-2 sm:gap-4">
                             {[
                                 { label: "3 Months", value: proj3 },
                                 { label: "6 Months", value: proj6 },
@@ -332,7 +332,7 @@ export function BurnRateCalculator() {
                             </div>
                         </div>
                         <p className="text-[10px] font-mono text-white/35 mt-3 leading-relaxed">
-                            Based on {reportDays} days × ({fmt(costs, cfg.symbol)} costs + {fmt(revenue, cfg.symbol)} revenue) / 30. Decisions made on data that is {reportDays} days old miss this window entirely.
+                            {reportDays} days of cash movement before your report arrives. Decisions made on data that is {reportDays} days old miss this window entirely.
                         </p>
                     </div>
                 </div>
