@@ -48,6 +48,7 @@ export function InvoiceExtractor() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const pollRunning = useRef(false);
 
     const reset = () => {
         setPhase("idle");
@@ -59,6 +60,7 @@ export function InvoiceExtractor() {
         setPollingLabel("INITIALIZING");
         setPollingProgress(0);
         setClientError(null);
+        pollRunning.current = false;
         if (fileInputRef.current) fileInputRef.current.value = "";
     };
 
@@ -122,17 +124,19 @@ export function InvoiceExtractor() {
         if (phase !== "polling" || !jobId) return;
 
         const poll = async () => {
+            // Guard: skip if a previous poll is still in-flight (keeps interval at ≤2s cadence)
+            if (pollRunning.current) return;
+            pollRunning.current = true;
             try {
                 const res = await fetch(`/api/tools/invoice-extractor/status/${jobId}`);
                 if (res.status === 429) {
-                    clearInterval(intervalRef.current!);
-                    clearTimeout(timeoutRef.current!);
-                    setError({ code: "rate_limited", message: "Daily limit reached. Resets at midnight UTC." });
-                    setPhase("failed");
+                    // Backend rate-limiting status checks — back off and retry next tick
+                    console.warn("[invoice-status] 429 on status poll, backing off");
                     return;
                 }
                 if (!res.ok) {
-                    // transient error during polling — keep going
+                    // Transient error — log and keep polling
+                    console.warn(`[invoice-status] poll non-OK status=${res.status}`);
                     return;
                 }
                 const job: Job = await res.json();
@@ -164,6 +168,8 @@ export function InvoiceExtractor() {
                 }
             } catch {
                 // network hiccup during polling — don't fail, just keep going
+            } finally {
+                pollRunning.current = false;
             }
         };
 
