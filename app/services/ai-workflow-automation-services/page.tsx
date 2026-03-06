@@ -5,7 +5,7 @@ import { workflowFaqs } from "@/lib/service-faqs";
 export const metadata: Metadata = {
     title: "Workflow Automation Consulting | Ship in 6 Weeks | Invaritech",
     description:
-        "Stop building from scratch. We deliver AI workflow automation pipelines built for scale, featuring deterministic fallbacks and human-in-the-loop approvals.",
+        "Workflow automation consulting for finance and ops teams. One workflow, 30 days, fixed price. Deployed to production, not delivered as a deck.",
     keywords: [
         "workflow automation consulting",
         "ai workflow automation services",
