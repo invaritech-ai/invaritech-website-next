@@ -33,16 +33,14 @@ export default function ConsultingClient() {
                     
                     <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
                         <TextEffect per="word" preset="slide" className="inline-block">
-                            AI AUTOMATION
+                            AI AUTOMATION CONSULTING
                         </TextEffect>
-                        <br />
-                        <span className="text-white/50">CONSULTING</span>
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
                             <p className="text-xl md:text-2xl text-white font-medium mb-6">
-                                Consulting for leadership teams who need clarity before committing capital.
+                                AI automation consulting for leadership teams who need clarity before committing capital.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 We identify the highest-ROI workflow wedge, define governance boundaries, and produce a build-ready execution plan. Every engagement ends with something your CTO can build, your COO can own, and your CEO can approve.

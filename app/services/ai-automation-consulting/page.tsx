@@ -4,7 +4,7 @@ import { consultingFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
     title: "AI Automation Consulting | Production-Ready Execution",
-    description: "AI automation consulting for leadership teams who need clarity before committing capital. We rank ROI wedges, define governance boundaries, and deliver a build-ready execution plan your team can run.",
+    description: "AI automation consulting for leadership teams who need clarity before committing capital. We deliver build-ready execution plans — not strategy decks.",
     keywords: [
         "ai automation consulting",
         "ai automation consulting services",
