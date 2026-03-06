@@ -94,6 +94,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/tools/invoice-processing-automation-singapore/`,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/tools/invoice-processing-automation-hong-kong/`,
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
             url: `${baseUrl}/tools/cost-to-close-calculator/`,
             changeFrequency: "monthly",
             priority: 0.75,
