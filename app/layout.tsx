@@ -161,6 +161,17 @@ export default function RootLayout({
                         __html: JSON.stringify(structuredData),
                     }}
                 />
+                <Script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
+                    strategy="lazyOnload"
+                />
+                <Script
+                    src="https://r2.leadsy.ai/tag.js"
+                    data-pid="1rQPfvIzStzrxlsWj"
+                    data-version="062024"
+                    strategy="lazyOnload"
+                />
             </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
@@ -196,11 +207,6 @@ export default function RootLayout({
                     `}
                 </Script>
 
-                <Script
-                    src="https://analytics.ahrefs.com/analytics.js"
-                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
-                    strategy="lazyOnload"
-                />
                 <Analytics />
                 <SpeedInsights />
             </body>
