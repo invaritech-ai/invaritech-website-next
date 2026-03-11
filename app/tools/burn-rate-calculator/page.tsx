@@ -5,7 +5,7 @@ import { BurnRateCalculator } from "@/components/tools/BurnRateCalculator";
 export const metadata: Metadata = {
     title: "Free Cash Runway & Burn Rate Calculator | INVARITECH Tools",
     description:
-        "Enter your cash balance, monthly costs, and revenue. Get your net burn rate, cash runway in months, projected cash at 3/6/12 months, and the dollar value of your current reporting lag. Free, instant, no signup.",
+        "Enter your cash balance, monthly costs, and revenue. Get your net burn rate, cash runway in months, projected cash at 3/6/12 months, and the dollar value of your current reporting lag. Free, instant, no signup. For finance teams across APAC.",
     keywords: [
         "burn rate calculator",
         "cash runway calculator",

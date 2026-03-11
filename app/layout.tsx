@@ -53,11 +53,11 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default: "INVARITECH - Drop-In AI Automations for Enterprises",
+        default: "AI Automation Services for Enterprises | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "Drop-In AI automations for enterprises that cannot afford disruption. In 30 days, INVARITECH delivers one production-grade automation on top of your existing systems with measurable impact.",
+        "Drop-in AI automations for enterprises that cannot afford disruption. One production-grade automation deployed on your existing systems in 30 days. Serving Singapore, Hong Kong, Malaysia, and the Philippines.",
     keywords: [
         "INVARITECH",
         "enterprise AI automation",
@@ -102,24 +102,24 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         url: "https://www.invaritech.ai",
-        title: "INVARITECH - Drop-In AI Automations for Enterprises",
+        title: "AI Automation Services for Enterprises | INVARITECH",
         description:
-            "We add intelligence to your existing systems safely, incrementally, and measurably. One production-grade automation in 30 days.",
+            "Drop-in AI automations for enterprises across APAC. One production-grade automation deployed on your existing systems in 30 days.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH - Drop-In AI Automations for Enterprises",
+                alt: "AI Automation Services for Enterprises | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH - Drop-In AI Automations for Enterprises",
+        title: "AI Automation Services for Enterprises | INVARITECH",
         description:
-            "In 30 days, get one production-grade AI automation on top of your existing systems, with measurable before/after impact.",
+            "One production-grade AI automation deployed on your existing systems in 30 days. Serving teams in Singapore, Hong Kong, Malaysia, and the Philippines.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },

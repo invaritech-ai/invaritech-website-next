@@ -3,8 +3,8 @@ import IntegrationClient from "./integration-client";
 import { integrationFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "AI Integration Services | Generative AI System Integration (Model-Agnostic)",
-    description: "Generative AI integration services for enterprises. We build a governed integration layer (custom gateway) to connect AI to ERP/CRM/legacy systems with idempotency, audit logs, RBAC, fallbacks, and deployment flexibility.",
+    title: "AI Integration Services for Enterprise Systems",
+    description: "Connect generative AI to your ERP, CRM, and legacy systems through a governed integration layer. Model-agnostic, with audit logs, RBAC, and fallback routing. For enterprise teams across APAC.",
     keywords: [
         "ai integration services",
         "ai integration consulting services",
@@ -22,18 +22,18 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/services/ai-integration-services/",
     },
     openGraph: {
-        title: "AI Integration Services | Model-Agnostic Enterprise Gateway | INVARITECH",
+        title: "AI Integration Services for Enterprise Systems | INVARITECH",
         description:
-            "Connect AI to ERP, CRM, and legacy systems via a governed integration gateway. Model-agnostic, idempotent, RBAC-controlled, and audit-logged for enterprise compliance.",
+            "Connect generative AI to your ERP, CRM, and legacy systems through a governed integration layer. Model-agnostic, with audit logs, RBAC, and fallback routing.",
         url: "https://www.invaritech.ai/services/ai-integration-services/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Integration Services — INVARITECH" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Integration Services | Model-Agnostic | INVARITECH",
+        title: "AI Integration Services for Enterprise Systems | INVARITECH",
         description:
-            "Governed integration gateway connecting AI to ERP, CRM, and legacy systems. Idempotent, RBAC-controlled, and audit-logged.",
+            "Governed integration gateway connecting AI to ERP, CRM, and legacy systems. Model-agnostic, RBAC-controlled, and audit-logged.",
         images: ["/og-image.png"],
     },
 };

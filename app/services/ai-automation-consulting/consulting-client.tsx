@@ -1,5 +1,5 @@
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Check, ArrowRight, ShieldCheck, Zap, BarChart3, Target, ClipboardCheck, Layers, FileText, Lock, AlertCircle } from "lucide-react";
+import { ArrowLeft, Check, ArrowRight, X, ShieldCheck, Zap, BarChart3, Target, ClipboardCheck, Layers, FileText, Lock, AlertCircle } from "lucide-react";
 import Link from "next/link";
 import { BOOK_MEETING_URL } from "@/lib/marketing";
 import { ServiceBackground } from "@/components/ui/ServiceBackground";
@@ -67,6 +67,10 @@ export default function ConsultingClient() {
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">Most clients proceed directly to the 30-Day Sprint. The spec is ready to build.</p>
                             </div>
+                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $5,000</span>.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -81,6 +85,22 @@ export default function ConsultingClient() {
 	                                View the 30-Day Sprint
 	                            </MagneticButton>
 	                        </Link>
+                    </div>
+
+                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                        <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            {[
+                                "You want a strategy deck to socialise internally — we produce build-ready specs, not slide decks",
+                                "Your team has already aligned on scope and just needs execution — go straight to the Sprint",
+                                "You need a vendor selection shortlist — we are vendor-neutral but we don't run RFPs",
+                                "You want open-ended AI exploration with no defined business objective",
+                            ].map((item) => (
+                                <li key={item} className="flex gap-2">
+                                    <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" /> {item}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

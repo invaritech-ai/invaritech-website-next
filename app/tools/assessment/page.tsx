@@ -6,7 +6,7 @@ import { AssessmentWizard } from "@/components/assessment/AssessmentWizard";
 export const metadata: Metadata = {
     title: "Free AI Automation Readiness Assessment — Viability Score, Archetype & Roadmap | INVARITECH",
     description:
-        "Take our free AI automation readiness assessment. Answer 11 questions about your workflow, data, and team. Get a Viability Score, Readiness Score, Risk Index, projected monthly hours saved, and your Automation Archetype in under 5 minutes.",
+        "Take our free AI automation readiness assessment. Answer 11 questions about your workflow, data, and team. Get a Viability Score, Readiness Score, Risk Index, and projected monthly hours saved in under 5 minutes. For teams in Singapore, Hong Kong, Malaysia, and the Philippines.",
     keywords: [
         "AI automation readiness assessment",
         "AI readiness assessment free",

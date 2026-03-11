@@ -7,7 +7,7 @@ import { TextEffect } from "@/components/ui/text-effect";
 export const metadata: Metadata = {
     title: "Free AI Tools for Finance & Operations — Invoice Extractor, Close Calculator, AI Readiness Assessment | INVARITECH",
     description:
-        "Free AI-powered tools for finance and operations teams in Singapore, Hong Kong, Malaysia, and Thailand. Extract invoices to CSV, calculate your month-end close cost, and score your AI automation readiness. No signup required.",
+        "Free AI-powered tools for finance and operations teams in Singapore, Hong Kong, Malaysia, and the Philippines. Extract invoices to CSV, calculate your month-end close cost, and score your AI automation readiness. No signup required.",
     keywords: [
         "free AI tools for finance",
         "free AI automation tools",
@@ -206,7 +206,7 @@ const jsonLd = [
                 "name": "Do these tools work for finance teams in Singapore and Hong Kong?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. The invoice extractor handles SGD, HKD, and MYR invoices including GST and SST formats. The cost-to-close calculator includes currency options for SGD, HKD, MYR, and USD with region-specific loaded rate defaults. The readiness assessment is used by teams across Singapore, Hong Kong, Malaysia, and Thailand.",
+                    "text": "Yes. The invoice extractor handles SGD, HKD, and MYR invoices including GST and SST formats. The cost-to-close calculator includes currency options for SGD, HKD, MYR, and USD with region-specific loaded rate defaults. The readiness assessment is used by teams across Singapore, Hong Kong, Malaysia, and the Philippines.",
                 },
             },
             {
@@ -310,7 +310,7 @@ export default function ToolsPage() {
                 <h1>Free AI Automation Tools for Finance and Operations — No Signup Required</h1>
                 <p>
                     INVARITECH provides free AI-powered tools for finance and operations teams in
-                    Singapore, Hong Kong, Malaysia, and Thailand. Every tool on this page is a live
+                    Singapore, Hong Kong, Malaysia, and the Philippines. Every tool on this page is a live
                     working example of the automation we deploy for enterprise and mid-market clients.
                     No account required, no credit card, no trial period. Use them now.
                 </p>
@@ -712,7 +712,7 @@ export default function ToolsPage() {
                             </h2>
                             <p className="text-lg text-white/60 leading-relaxed max-w-lg">
                                 Each tool here runs the same AI stack we deploy for enterprise clients
-                                across Singapore, Hong Kong, Malaysia, and Thailand — connected to their
+                                across Singapore, Hong Kong, Malaysia, and the Philippines — connected to their
                                 ERP, running at volume, with full governance and audit trails.
                             </p>
                         </div>

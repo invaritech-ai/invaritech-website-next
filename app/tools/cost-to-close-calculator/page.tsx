@@ -5,7 +5,7 @@ import { CostToCloseCalculator } from "@/components/tools/CostToCloseCalculator"
 export const metadata: Metadata = {
     title: "Free Month-End Close Cost Calculator | INVARITECH Tools",
     description:
-        "Calculate your annual month-end close cost in 30 seconds. Enter team size, hours per close, and loaded hourly rate. See your hidden manual tax and projected savings from automation.",
+        "Calculate your annual month-end close cost in 30 seconds. Enter team size, hours per close, and loaded hourly rate. See your hidden manual tax and projected savings from automation. Benchmarked for finance teams in Singapore, Hong Kong, Malaysia, and the Philippines.",
     keywords: [
         "month end close cost calculator",
         "finance automation ROI calculator",

@@ -8,13 +8,13 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
-    title: "EUDR Compliance Bridge - Case Study",
+    title: "EUDR Compliance Automation | 100K+ Monthly Submissions",
     description:
-        "EUDR compliance automation and API integration for a high-volume French operator. Built an EUDR DDS submission backend with validation, audit logs, and controlled retries at 100,000+ per month.",
+        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — processing 100,000+ DDS submissions per month.",
     openGraph: {
-        title: "EUDR Compliance Bridge - Case Study",
+        title: "EUDR Compliance Automation | 100K+ Monthly Submissions | INVARITECH",
         description:
-            "EUDR compliance automation and API integration for a high-volume French operator. Built an EUDR DDS submission backend with validation, audit logs, and controlled retries at 100,000+ per month.",
+            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — processing 100,000+ DDS submissions per month.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "EUDR Compliance Bridge — Case Study | INVARITECH",
+        title: "EUDR Compliance Automation | 100K+ Monthly Submissions | INVARITECH",
         description:
-            "EUDR DDS submission backend at 100,000+ operations/month. Validation, audit logs, and controlled retries. Built for a high-volume French operator.",
+            "EUDR compliance automation for high-volume commodity operators. 100,000+ DDS submissions per month with validation, audit logs, and controlled retries.",
         images: ["/og-image.png"],
     },
     alternates: {

@@ -102,6 +102,10 @@ export default function ChatbotClient() {
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">You own the deployment. Runbook and operating model included. Retainer available for updates and model drift.</p>
                             </div>
+                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $10,000</span>.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -166,6 +170,21 @@ export default function ChatbotClient() {
                                 ))}
                             </ul>
                         </div>
+                    </div>
+                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                        <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            {[
+                                "You want an open-ended ChatGPT wrapper with no guardrails or ownership",
+                                "Your use case is external-facing marketing chat — we build internal knowledge tools",
+                                "You need a chatbot builder platform — we deploy governed systems, not drag-and-drop widgets",
+                                "There is no defined workflow owner or success metric for the chatbot",
+                            ].map((item) => (
+                                <li key={item} className="flex gap-2">
+                                    <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" /> {item}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

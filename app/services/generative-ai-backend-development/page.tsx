@@ -3,8 +3,8 @@ import BackendClient from "./backend-client";
 import { backendFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "Generative AI Backend Development | Generative AI Development Services",
-    description: "Generative AI backend development for production systems. Turn GenAI prototypes into governed, cost-controlled backends with evaluation harnesses, observability, prompt versioning, and safe deployment patterns.",
+    title: "Generative AI Backend Development Services",
+    description: "Turn GenAI prototypes into production backends with evaluation harnesses, prompt versioning, cost controls, and observability. For engineering teams building AI-native products across APAC.",
     keywords: [
         "generative ai development services",
         "ai software development services",
@@ -18,18 +18,18 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/services/generative-ai-backend-development/",
     },
     openGraph: {
-        title: "Generative AI Backend Development | Production-Grade | INVARITECH",
+        title: "Generative AI Backend Development Services | INVARITECH",
         description:
-            "Turn GenAI prototypes into governed, cost-controlled production backends. Evaluation harnesses, observability, prompt versioning, and safe deployment patterns.",
+            "Turn GenAI prototypes into production backends with evaluation harnesses, prompt versioning, cost controls, and observability.",
         url: "https://www.invaritech.ai/services/generative-ai-backend-development/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Generative AI Backend Development — INVARITECH" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Generative AI Backend Development | INVARITECH",
+        title: "Generative AI Backend Development Services | INVARITECH",
         description:
-            "Production GenAI backends: evaluation harnesses, observability, prompt versioning, and cost controls. Prototype to production.",
+            "GenAI backends with evaluation harnesses, observability, prompt versioning, and cost controls. Prototype to production.",
         images: ["/og-image.png"],
     },
 };

@@ -3,8 +3,8 @@ import ChatbotClient from "./chatbot-client";
 import { chatbotFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "AI Chatbot Development Services | Enterprise Deployment (Governed & Multilingual)",
-    description: "AI chatbot development services for enterprises that need governance. Deploy a controlled enterprise AI chatbot solution with RBAC/ABAC, audit logs, citations, tool boundaries, and multilingual support.",
+    title: "Enterprise AI Chatbot Development Services",
+    description: "AI chatbot development for enterprises that need governance, not just a widget. Deployed with RBAC, audit logs, citations, tool boundaries, and multilingual support. Book a scoping call.",
     keywords: [
         "ai chatbot development services",
         "enterprise ai chatbot development",
@@ -22,18 +22,18 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/services/enterprise-ai-chatbot-deployment/",
     },
     openGraph: {
-        title: "Enterprise AI Chatbot Development | Governed & Multilingual | INVARITECH",
+        title: "Enterprise AI Chatbot Development Services | INVARITECH",
         description:
-            "Governed enterprise AI chatbots with RBAC/ABAC, audit trails, Cantonese/Mandarin/Bahasa support, and bounded tool access. Deployed inside your existing systems.",
+            "AI chatbot development for enterprises that need governance. RBAC, audit logs, Cantonese/Mandarin/Bahasa support, and bounded tool access. Deployed inside your existing systems.",
         url: "https://www.invaritech.ai/services/enterprise-ai-chatbot-deployment/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Enterprise AI Chatbot Development — INVARITECH" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Enterprise AI Chatbot Development | INVARITECH",
+        title: "Enterprise AI Chatbot Development Services | INVARITECH",
         description:
-            "Governed enterprise chatbots: RBAC/ABAC, audit trails, Cantonese/Mandarin/Bahasa support. Deployed inside your existing infrastructure.",
+            "AI chatbot development for enterprises. RBAC, audit logs, Cantonese/Mandarin/Bahasa support, citations, and tool boundaries.",
         images: ["/og-image.png"],
     },
 };

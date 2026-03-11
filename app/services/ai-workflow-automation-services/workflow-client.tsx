@@ -111,6 +111,14 @@ export default function WorkflowClient() {
                                     stabilization.
                                 </p>
                             </div>
+                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">
+                                    Engagement
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Fixed-scope. Starts at <span className="text-white font-semibold">USD $10,000</span>.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -124,6 +132,22 @@ export default function WorkflowClient() {
                                 Book a Workflow Assessment
                             </MagneticButton>
                         </a>
+                    </div>
+
+                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                        <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            {[
+                                "You want a Zapier-style no-code integration — we build production infrastructure, not glue",
+                                "Your workflow has no clear owner or defined outcome metric",
+                                "You need RPA bots to click through legacy UIs — we work at the data layer, not the screen layer",
+                                "You expect full AP automation in a single sprint — we scope one workflow at a time",
+                            ].map((item) => (
+                                <li key={item} className="flex gap-2">
+                                    <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" /> {item}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

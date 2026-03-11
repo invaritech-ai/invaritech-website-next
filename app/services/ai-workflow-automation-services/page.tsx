@@ -3,9 +3,9 @@ import WorkflowClient from "./workflow-client";
 import { workflowFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "Workflow Automation Consulting | Ship in 6 Weeks | Invaritech",
+    title: "Workflow Automation Services for Enterprise Ops",
     description:
-        "Workflow automation consulting for finance and ops teams. One workflow, 30 days, fixed price. Deployed to production, not delivered as a deck.",
+        "Workflow automation for finance and operations teams. One workflow scoped, built, and deployed to production — fixed price. Serving teams in Singapore, Hong Kong, Malaysia, and the Philippines.",
     keywords: [
         "workflow automation consulting",
         "ai workflow automation services",
@@ -18,17 +18,17 @@ export const metadata: Metadata = {
             "https://www.invaritech.ai/services/ai-workflow-automation-services/",
     },
     openGraph: {
-        title: "Workflow Automation Consulting | INVARITECH",
+        title: "Workflow Automation Services for Enterprise Ops | INVARITECH",
         description:
-            "Custom workflow automation pipelines for finance teams — deterministic fallbacks, human-in-the-loop approvals, and full audit trails. Delivered in 6 weeks.",
+            "Custom workflow automation pipelines for finance and ops teams — deterministic fallbacks, human-in-the-loop approvals, and full audit trails. Deployed to production, fixed price.",
         url: "https://www.invaritech.ai/services/ai-workflow-automation-services/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Workflow Automation Consulting — INVARITECH" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Workflow Automation Consulting | INVARITECH",
-        description: "Custom finance automation pipelines with deterministic fallbacks and audit trails. Built in 6 weeks, not 6 months.",
+        title: "Workflow Automation Services for Enterprise Ops | INVARITECH",
+        description: "Custom workflow automation pipelines for finance and ops teams. Deterministic fallbacks, audit trails, deployed to production.",
         images: ["/og-image.png"],
     },
 };

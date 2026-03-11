@@ -69,6 +69,10 @@ export default function IntegrationClient() {
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">You own the integration layer. Optional managed service retainer or clean handoff to your team.</p>
                             </div>
+                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $15,000</span>.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -83,6 +87,22 @@ export default function IntegrationClient() {
                                 Book a Meeting
                             </MagneticButton>
                         </a>
+                    </div>
+
+                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                        <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            {[
+                                "You want a no-code connector between two SaaS tools — use Zapier or Make",
+                                "Your integration needs are limited to a single API with no governance requirements",
+                                "You need a chatbot — see our Enterprise AI Chatbot service instead",
+                                "You want to replace your ERP or CRM — we integrate with existing systems, not replace them",
+                            ].map((item) => (
+                                <li key={item} className="flex gap-2">
+                                    <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" /> {item}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

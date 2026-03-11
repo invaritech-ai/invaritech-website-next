@@ -8,20 +8,20 @@ const ContactSection = dynamic(() => import("@/components/contact"), {
 });
 
 export const metadata: Metadata = {
-    title: "Contact - Book a Meeting",
+    title: "Book an AI Automation Scoping Call",
     description:
-        "Book a meeting with INVARITECH to discuss a 30-day drop-in AI automation sprint for your existing infrastructure.",
+        "Book a 30-minute scoping call with INVARITECH. Tell us the workflow, we'll scope the automation. No pitch deck — just architecture and next steps.",
     openGraph: {
-        title: "Contact INVARITECH — Book a Meeting",
-        description: "Book a meeting to discuss a 30-day drop-in AI automation sprint for your existing infrastructure.",
+        title: "Book an AI Automation Scoping Call | INVARITECH",
+        description: "Book a 30-minute scoping call with INVARITECH. Tell us the workflow, we'll scope the automation. No pitch deck — just architecture and next steps.",
         url: "https://www.invaritech.ai/contact/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH — Book a Meeting" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Contact INVARITECH — Book a Meeting",
-        description: "30 minutes. One workflow map. Book a meeting to scope your automation sprint.",
+        title: "Book an AI Automation Scoping Call | INVARITECH",
+        description: "Tell us the workflow, we'll scope the automation. No pitch deck — just architecture and next steps.",
         images: ["/og-image.png"],
     },
     alternates: {

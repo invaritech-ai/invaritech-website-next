@@ -8,21 +8,21 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
-    title: "About Us — The Operating System Behind Your AI",
-    description: "INVARITECH is a tactical AI delivery unit. We embed governed automation into enterprise infrastructure in 30-day cycles, with built-in compliance and measurable impact.",
+    title: "About INVARITECH | AI Automation Delivery for APAC",
+    description: "INVARITECH is a tactical AI delivery unit. We embed governed automation into enterprise infrastructure in fixed-scope cycles. Senior-led. Measured before and after.",
     openGraph: {
-        title: "About INVARITECH — Tactical AI Delivery Unit",
+        title: "About INVARITECH | AI Automation Delivery for APAC",
         description:
-            "INVARITECH is a tactical AI delivery unit. We embed governed automation into enterprise infrastructure in 30-day cycles, with built-in compliance and measurable impact.",
+            "INVARITECH is a tactical AI delivery unit. We embed governed automation into enterprise infrastructure in fixed-scope cycles. Senior-led. Measured before and after.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH — Tactical AI Delivery Unit" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "About INVARITECH — Tactical AI Delivery Unit",
+        title: "About INVARITECH | AI Automation Delivery for APAC",
         description:
-            "We embed governed AI automation into enterprise infrastructure in 30-day cycles. Practitioners, not advisors.",
+            "Tactical AI delivery unit. Governed automation embedded into enterprise infrastructure. Senior-led, measured before and after.",
         images: ["/og-image.png"],
     },
     alternates: {

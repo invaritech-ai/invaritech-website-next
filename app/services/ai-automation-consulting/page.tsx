@@ -3,8 +3,8 @@ import ConsultingClient from "./consulting-client";
 import { consultingFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "AI Automation Consulting | Production-Ready Execution",
-    description: "AI automation consulting for leadership teams who need clarity before committing capital. We deliver build-ready execution plans — not strategy decks.",
+    title: "AI Automation Consulting | Execution-Ready Plans",
+    description: "AI automation consulting for leadership teams evaluating build vs. buy. We deliver execution-ready plans with architecture, cost models, and vendor-neutral recommendations — not strategy decks. Book a scoping call.",
     keywords: [
         "ai automation consulting",
         "ai automation consulting services",
@@ -19,18 +19,18 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/services/ai-automation-consulting/",
     },
     openGraph: {
-        title: "AI Automation Consulting | Build-Ready Execution Plans | INVARITECH",
+        title: "AI Automation Consulting | Execution-Ready Plans | INVARITECH",
         description:
-            "We rank ROI wedges, define governance boundaries, and hand off a build-ready execution plan — not a strategy deck. For leadership teams ready to commit capital.",
+            "AI automation consulting for leadership teams evaluating build vs. buy. Execution-ready plans with architecture, cost models, and vendor-neutral recommendations.",
         url: "https://www.invaritech.ai/services/ai-automation-consulting/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Automation Consulting — INVARITECH" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Automation Consulting | INVARITECH",
+        title: "AI Automation Consulting | Execution-Ready Plans | INVARITECH",
         description:
-            "ROI-ranked automation wedges, governance boundaries, and a build-ready spec. Not a strategy deck — an execution plan.",
+            "Execution-ready automation plans with architecture, cost models, and vendor-neutral recommendations. Not a strategy deck.",
         images: ["/og-image.png"],
     },
 };

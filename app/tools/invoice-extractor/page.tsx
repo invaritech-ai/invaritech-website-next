@@ -5,7 +5,7 @@ import { InvoiceExtractor } from "@/components/tools/InvoiceExtractor";
 export const metadata: Metadata = {
     title: "Free AI Invoice Data Extractor — PDF to CSV | INVARITECH Tools",
     description:
-        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Free. No signup. Works with GST, SST, and VAT invoices.",
+        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Free. No signup. Works with GST, SST, and VAT invoices across Singapore, Hong Kong, Malaysia, and the Philippines.",
     keywords: [
         "invoice data extractor",
         "PDF invoice parser",

@@ -15,6 +15,7 @@ import {
     StopCircle,
     LineChart,
     Users,
+    X,
 } from "lucide-react";
 import Link from "next/link";
 import { BOOK_MEETING_URL } from "@/lib/marketing";
@@ -105,6 +106,10 @@ export default function BackendClient() {
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">Production-grade microservice with eval harness, observability stack, and guardrails. Handoff or retainer.</p>
                             </div>
+                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $15,000</span>.</p>
+                            </div>
                         </div>
                     </div>
 
@@ -178,6 +183,21 @@ export default function BackendClient() {
                                 ))}
                             </ul>
                         </div>
+                    </div>
+                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                        <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
+                        <ul className="space-y-3 text-sm text-muted-foreground">
+                            {[
+                                "You haven't shipped a GenAI feature yet — start with the AI Automation Sprint",
+                                "You need a chatbot or RAG pipeline — see our Chatbot or Integration services",
+                                "Your AI is a side feature, not a core revenue driver — the ROI won't justify the investment",
+                                "You want prompt engineering consulting — we build production infrastructure, not prompts",
+                            ].map((item) => (
+                                <li key={item} className="flex gap-2">
+                                    <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" /> {item}
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </section>

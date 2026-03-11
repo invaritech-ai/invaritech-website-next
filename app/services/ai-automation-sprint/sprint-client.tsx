@@ -103,6 +103,10 @@ export default function SprintClient() {
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">Runbook, operating model, and measurable delta. Most clients expand to the next wedge or move to workflow automation.</p>
                             </div>
+                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $10,000</span>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

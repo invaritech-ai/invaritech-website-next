@@ -3,8 +3,8 @@ import SprintClient from "./sprint-client";
 import { sprintFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "AI Automation Sprint | AI PoC Development Services in 30 Days",
-    description: "AI PoC development services to move from prototype to production in 30 days. Includes AI discovery workshop, readiness assessment, guardrails, audit logs, and measurable impact.",
+    title: "AI Automation Sprint — Production in 30 Days",
+    description: "Go from AI prototype to production in 30 days. Fixed-scope sprint with discovery workshop, guardrails, audit logs, and measurable before/after impact. For ops and finance teams across APAC.",
     keywords: [
         "ai poc development services",
         "ai proof of concept development services",
@@ -18,18 +18,18 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/services/ai-automation-sprint/",
     },
     openGraph: {
-        title: "AI Automation Sprint — 30-Day PoC to Production | INVARITECH",
+        title: "AI Automation Sprint — Production in 30 Days | INVARITECH",
         description:
-            "One governed AI proof of concept in 30 days. Fixed price, measurable impact, audit logs from day one. Discovery → build → parallel run → go-live.",
+            "Go from AI prototype to production in 30 days. Fixed-scope sprint with discovery workshop, guardrails, audit logs, and measurable before/after impact.",
         url: "https://www.invaritech.ai/services/ai-automation-sprint/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AI Automation Sprint — INVARITECH" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Automation Sprint — 30-Day PoC to Production",
+        title: "AI Automation Sprint — Production in 30 Days | INVARITECH",
         description:
-            "Fixed-price 30-day sprint to a production-grade AI pipeline. One workflow, measurable baseline delta, no 6-month retainers.",
+            "Fixed-scope 30-day sprint. One workflow, measurable baseline delta, no 6-month retainers. For ops and finance teams across APAC.",
         images: ["/og-image.png"],
     },
 };

@@ -3,13 +3,13 @@ import ServicesClient from "./services-client";
 import { servicesFaqs } from "@/lib/service-faqs";
 
 export const metadata: Metadata = {
-    title: "AI Automation & Integration Services | 30-Day Sprint",
+    title: "AI Automation & Integration Services | 30-Day Delivery",
     description:
-        "Build production-grade AI on the infrastructure you already own. Start with a 30-day Sprint, then scale via workflow automation, integrations, enterprise chatbots, and GenAI backend engineering.",
+        "Enterprise AI automation services for teams in Singapore, Hong Kong, Malaysia, and the Philippines. One production-grade automation, deployed in 30 days. Book a scoping call.",
     openGraph: {
-        title: "AI Automation & Integration Services | 30-Day Sprint | INVARITECH",
+        title: "AI Automation & Integration Services | 30-Day Delivery | INVARITECH",
         description:
-            "Build production-grade AI on the infrastructure you already own. Start with a 30-day Sprint, then scale via workflow automation, integrations, enterprise chatbots, and GenAI backend engineering.",
+            "Enterprise AI automation services for teams in Singapore, Hong Kong, Malaysia, and the Philippines. One production-grade automation, deployed in 30 days.",
         url: "https://www.invaritech.ai/services/",
         images: [
             {
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Automation & Integration Services | INVARITECH",
+        title: "AI Automation & Integration Services | 30-Day Delivery | INVARITECH",
         description:
-            "Production-grade AI on your existing infrastructure. 30-day sprint to workflow automation, ERP integrations, chatbots, and GenAI backends.",
+            "Enterprise AI automation for teams across APAC. One production-grade automation deployed on your existing systems in 30 days.",
         images: ["/og-image.png"],
     },
     alternates: {
