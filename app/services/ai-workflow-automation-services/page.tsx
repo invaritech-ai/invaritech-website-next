@@ -11,7 +11,9 @@ export const metadata: Metadata = {
         "ai workflow automation services",
         "business process automation",
         "intelligent process automation",
-        "drop-in ai backend",
+        "workflow automation consulting services",
+        "manufacturing workflow automation consulting",
+        "process automation services",
     ],
     alternates: {
         canonical:
@@ -54,7 +56,12 @@ export default function AIWorkflowAutomationPage() {
             description: "Govern and automate mission-critical business workflows with AI. Audited pipelines, deterministic fallbacks, and human-in-the-loop approvals built into every flow.",
             url: `${BASE}/services/ai-workflow-automation-services/`,
             provider: ORG,
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
             serviceType: "AI Workflow Automation",
         },
         {

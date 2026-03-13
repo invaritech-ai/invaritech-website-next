@@ -59,7 +59,12 @@ export default function AIChatbotDeploymentPage() {
             description: "Governed enterprise AI chatbots with RBAC/ABAC, audit trails, multilingual support, and bounded tool access. Deployed inside your existing systems.",
             url: `${BASE}/services/enterprise-ai-chatbot-deployment/`,
             provider: ORG,
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
             serviceType: "Enterprise AI Chatbot Development",
         },
         {

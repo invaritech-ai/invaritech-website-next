@@ -65,7 +65,12 @@ export default function ServicesPage() {
                 { "@type": "Person", name: "Avishek Majumder", jobTitle: "Co-founder & CEO" },
                 { "@type": "Person", name: "Aditi Garg", jobTitle: "Director & Founder" },
             ],
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
         },
     ];
 

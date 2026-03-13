@@ -55,7 +55,12 @@ export default function AIAutomationSprintPage() {
             description: "Ship one governed AI proof of concept in 30 days. Includes discovery workshop, readiness assessment, guardrails, audit logs, and a measurable baseline delta.",
             url: `${BASE}/services/ai-automation-sprint/`,
             provider: ORG,
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
             serviceType: "AI Proof of Concept Development",
         },
         {

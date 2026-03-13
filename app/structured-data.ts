@@ -26,7 +26,12 @@ export const structuredData = {
                 contactType: "sales",
                 email: "hello@invaritech.ai",
                 availableLanguage: ["English"],
-                areaServed: "Worldwide",
+                areaServed: [
+                    { "@type": "Country", name: "Singapore" },
+                    { "@type": "Country", name: "Hong Kong" },
+                    { "@type": "Country", name: "Malaysia" },
+                    { "@type": "Country", name: "Philippines" },
+                ],
             },
             sameAs: [
                 "https://x.com/invaritechai",
@@ -92,7 +97,12 @@ export const structuredData = {
                 "@id": "https://www.invaritech.ai/#organization",
             },
             serviceType: "Enterprise AI Automation Sprint",
-            areaServed: "Worldwide",
+            areaServed: [
+                    { "@type": "Country", name: "Singapore" },
+                    { "@type": "Country", name: "Hong Kong" },
+                    { "@type": "Country", name: "Malaysia" },
+                    { "@type": "Country", name: "Philippines" },
+                ],
             audience: {
                 "@type": "BusinessAudience",
                 audienceType: "COO, Head of Operations, CTO, Tech Lead",
@@ -114,7 +124,12 @@ export const structuredData = {
                 "@id": "https://www.invaritech.ai/#organization",
             },
             serviceType: "Custom Software Development",
-            areaServed: "Worldwide",
+            areaServed: [
+                    { "@type": "Country", name: "Singapore" },
+                    { "@type": "Country", name: "Hong Kong" },
+                    { "@type": "Country", name: "Malaysia" },
+                    { "@type": "Country", name: "Philippines" },
+                ],
         },
     ],
 };

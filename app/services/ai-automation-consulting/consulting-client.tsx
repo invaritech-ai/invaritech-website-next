@@ -46,7 +46,7 @@ export default function ConsultingClient() {
                                 We identify the highest-ROI workflow wedge, define governance boundaries, and produce a build-ready execution plan. Every engagement ends with something your CTO can build, your COO can own, and your CEO can approve.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                                If scope is already clear, go straight to the Sprint. Choose consulting when you have multiple automation ideas with no clear prioritisation, a compliance blocker, or stakeholders who disagree on what success looks like.
+                                If scope is already clear, go straight to the Sprint. Choose consulting when you have multiple automation ideas with no clear prioritisation, a compliance blocker, or stakeholders who disagree on what success looks like. Serving leadership teams across Singapore, Hong Kong, Malaysia, and the Philippines.
                             </p>
                             <p className="text-lg text-white/80 font-mono italic border-t border-white/10 pt-6">
                                 &ldquo;If AI cannot be tied to a measurable operational objective, it should not be funded.&rdquo;

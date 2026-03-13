@@ -71,7 +71,8 @@ export default function WorkflowClient() {
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
                             <p className="text-xl md:text-2xl text-white font-medium mb-6">
                                 We turn operational friction into operational
-                                liquidity for mid-market finance teams.
+                                liquidity for finance, manufacturing, and
+                                operations teams across APAC.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 We map your highest-friction workflows, remove
@@ -84,7 +85,9 @@ export default function WorkflowClient() {
                                 We operate at the process layer, not the chatbot
                                 layer. Deterministic fallbacks and
                                 human-in-the-loop approvals that integrate
-                                directly with Xero, NetSuite, or SAP.
+                                directly with Xero, NetSuite, SAP, or your
+                                existing ERP. Serving teams in Singapore, Hong
+                                Kong, Malaysia, and the Philippines.
                             </p>
                             <p className="text-lg text-white/80 font-mono">
                                 We are practitioners, not advisors. We build the
@@ -97,9 +100,10 @@ export default function WorkflowClient() {
                                     Best For
                                 </h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
-                                    CFOs and Controllers dealing with 100+
-                                    recurring monthly exceptions, spreadsheet
-                                    drift, or a 10-day close cycle.
+                                    CFOs, Controllers, and Ops leads in finance,
+                                    manufacturing, and logistics dealing with
+                                    100+ recurring monthly exceptions,
+                                    spreadsheet drift, or a 10-day close cycle.
                                 </p>
                             </div>
                             <div className="bg-white/5 border border-white/10 rounded-xl p-6">
@@ -172,6 +176,64 @@ export default function WorkflowClient() {
                                 Not a chatbot — we automate processes
                                 end-to-end, not individual conversations
                             </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Industries We Serve */}
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10">
+                <div className="max-w-6xl mx-auto">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                        Who We Work With
+                    </h2>
+                    <p className="text-xl text-muted-foreground mb-12">
+                        Operations and finance teams in manufacturing,
+                        logistics, and professional services across Singapore,
+                        Hong Kong, Malaysia, and the Philippines.
+                    </p>
+                    <div className="grid md:grid-cols-3 gap-8 stagger-list">
+                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
+                            <h3 className="text-xl font-bold mb-4">
+                                Finance & Accounting
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-4">
+                                Month-end close acceleration, AP intake
+                                automation, bank reconciliation, and exception
+                                resolution for controllers managing multi-entity
+                                books.
+                            </p>
+                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                                CFOs · Controllers · Finance Ops
+                            </p>
+                        </div>
+                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
+                            <h3 className="text-xl font-bold mb-4">
+                                Manufacturing & Supply Chain
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-4">
+                                Production order tracking, quality inspection
+                                workflows, supplier document intake, and
+                                compliance reporting — replacing manual
+                                spreadsheet handoffs with audited pipelines.
+                            </p>
+                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                                Ops Managers · Plant Controllers · Supply Chain Leads
+                            </p>
+                        </div>
+                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
+                            <h3 className="text-xl font-bold mb-4">
+                                Logistics & Professional Services
+                            </h3>
+                            <p className="text-muted-foreground text-sm mb-4">
+                                Freight documentation processing, customs
+                                compliance workflows, timesheet-to-invoice
+                                pipelines, and client reporting automation for
+                                firms scaling without adding ops headcount.
+                            </p>
+                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                                COOs · Managing Partners · Ops Directors
+                            </p>
                         </div>
                     </div>
                 </div>

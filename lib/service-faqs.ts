@@ -67,6 +67,14 @@ export const workflowFaqs: FaqItem[] = [
         question: "Is this just a bunch of Zaps?",
         answer: "No. No-code is a tool. Operational liquidity is the goal. When reliability and auditability matter, we build custom pipelines.",
     },
+    {
+        question: "Do you provide workflow automation consulting for manufacturing teams?",
+        answer: "Yes. We work with manufacturing operations teams on production order tracking, supplier document intake, quality inspection workflows, and compliance reporting. The same governance principles apply — audited pipelines, deterministic fallbacks, and clear ownership per step.",
+    },
+    {
+        question: "Which industries do you serve?",
+        answer: "Finance and accounting, manufacturing, logistics, and professional services. We serve teams across Singapore, Hong Kong, Malaysia, and the Philippines.",
+    },
 ];
 
 export const integrationFaqs: FaqItem[] = [

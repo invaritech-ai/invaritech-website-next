@@ -55,7 +55,12 @@ export default function GenAIBackendPage() {
             description: "Production GenAI backends with orchestration, evaluation harnesses, observability, prompt versioning, latency control, and safe deployment patterns.",
             url: `${BASE}/services/generative-ai-backend-development/`,
             provider: ORG,
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
             serviceType: "Generative AI Backend Development",
         },
         {

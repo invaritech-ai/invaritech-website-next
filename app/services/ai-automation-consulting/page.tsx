@@ -56,7 +56,12 @@ export default function AIConsultingPage() {
             description: "Delivery-first AI automation consulting. We rank ROI wedges, define governance requirements, and hand off a build-ready specification — not a strategy deck.",
             url: `${BASE}/services/ai-automation-consulting/`,
             provider: ORG,
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
             serviceType: "AI Automation Consulting",
         },
         {

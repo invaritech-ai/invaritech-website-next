@@ -59,7 +59,12 @@ export default function AIIntegrationServicesPage() {
             description: "Connect AI to ERP, CRM, and legacy systems via a governed integration gateway. Model-agnostic, idempotent, and audit-logged for enterprise compliance.",
             url: `${BASE}/services/ai-integration-services/`,
             provider: ORG,
-            areaServed: "Worldwide",
+            areaServed: [
+                { "@type": "Country", name: "Singapore" },
+                { "@type": "Country", name: "Hong Kong" },
+                { "@type": "Country", name: "Malaysia" },
+                { "@type": "Country", name: "Philippines" },
+            ],
             serviceType: "Enterprise AI System Integration",
         },
         {
