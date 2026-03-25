@@ -26,11 +26,14 @@ export async function GET(
         return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
     }
 
+    const email = request.nextUrl.searchParams.get("email");
+    const artifactUrl = new URL(`${backendUrl}/api/v1/jobs/${jobId}/artifacts/${type}`);
+    if (email) artifactUrl.searchParams.set("email", email);
+
     try {
-        const response = await fetch(
-            `${backendUrl}/api/v1/jobs/${jobId}/artifacts/${type}`,
-            { headers: { "X-API-Key": apiKey } }
-        );
+        const response = await fetch(artifactUrl.toString(), {
+            headers: { "X-API-Key": apiKey },
+        });
 
         if (!response.ok) {
             const text = await response.text();

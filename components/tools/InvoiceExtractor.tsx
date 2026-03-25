@@ -44,6 +44,9 @@ export function InvoiceExtractor() {
     const [pollingProgress, setPollingProgress] = useState(0);
     const [isDragging, setIsDragging] = useState(false);
     const [clientError, setClientError] = useState<string | null>(null);
+    const [emailValue, setEmailValue] = useState("");
+    const [emailSubmitted, setEmailSubmitted] = useState(false);
+    const [emailSubmitting, setEmailSubmitting] = useState(false);
 
     const fileInputRef = useRef<HTMLInputElement>(null);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -60,6 +63,9 @@ export function InvoiceExtractor() {
         setPollingLabel("INITIALIZING");
         setPollingProgress(0);
         setClientError(null);
+        setEmailValue("");
+        setEmailSubmitted(false);
+        setEmailSubmitting(false);
         pollRunning.current = false;
         if (fileInputRef.current) fileInputRef.current.value = "";
     };
@@ -196,6 +202,15 @@ export function InvoiceExtractor() {
         const formData = new FormData();
         formData.append("file", file);
 
+        // Pass UTM params from the page URL to the backend for attribution tracking.
+        const urlParams = new URLSearchParams(window.location.search);
+        const utmSource = urlParams.get("utm_source");
+        const utmMedium = urlParams.get("utm_medium");
+        const utmCampaign = urlParams.get("utm_campaign");
+        if (utmSource) formData.append("utm_source", utmSource);
+        if (utmMedium) formData.append("utm_medium", utmMedium);
+        if (utmCampaign) formData.append("utm_campaign", utmCampaign);
+
         const xhr = new XMLHttpRequest();
 
         xhr.upload.onprogress = (e) => {
@@ -236,6 +251,21 @@ export function InvoiceExtractor() {
         xhr.timeout = 90_000;
         xhr.open("POST", "/api/tools/invoice-extractor/upload");
         xhr.send(formData);
+    };
+
+    const handleEmailCapture = async () => {
+        if (!jobId || !emailValue.trim()) return;
+        setEmailSubmitting(true);
+        try {
+            // Hitting the result endpoint with an email param triggers backend email capture + Resend welcome email.
+            await fetch(`/api/tools/invoice-extractor/result/${jobId}?type=items_csv&email=${encodeURIComponent(emailValue.trim())}`);
+            setEmailSubmitted(true);
+        } catch {
+            // silently fail — email capture is best-effort
+            setEmailSubmitted(true);
+        } finally {
+            setEmailSubmitting(false);
+        }
     };
 
     const downloadCSV = async (type: "items_csv" | "summary_csv") => {
@@ -489,6 +519,43 @@ export function InvoiceExtractor() {
                                 </div>
                             </div>
                         )}
+
+                        {/* Email capture */}
+                        <div className="border border-white/10 p-4 space-y-3">
+                            {emailSubmitted ? (
+                                <p className="text-primary font-mono text-xs tracking-widest">
+                                    ✓ SENT — CHECK YOUR INBOX
+                                </p>
+                            ) : (
+                                <>
+                                    <p className="text-white/50 font-mono text-xs uppercase tracking-widest">
+                                        EMAIL ME A COPY OF THESE RESULTS
+                                    </p>
+                                    <div className="flex gap-2">
+                                        <input
+                                            type="email"
+                                            value={emailValue}
+                                            onChange={(e) => setEmailValue(e.target.value)}
+                                            onKeyDown={(e) => e.key === "Enter" && handleEmailCapture()}
+                                            placeholder="you@company.com"
+                                            className="flex-1 bg-black/60 border border-white/20 text-white font-mono text-xs px-3 py-2 placeholder-white/20 focus:outline-none focus:border-primary/60"
+                                        />
+                                        <button
+                                            onClick={handleEmailCapture}
+                                            disabled={emailSubmitting || !emailValue.trim()}
+                                            className="border border-primary/40 text-primary font-mono text-xs uppercase tracking-widest px-4 py-2 hover:bg-primary/10 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                                        >
+                                            {emailSubmitting ? "..." : "SEND"}
+                                        </button>
+                                    </div>
+                                    <p className="text-white/20 font-mono text-[10px]">
+                                        By submitting you agree to our{" "}
+                                        <a href="/privacy" className="underline hover:text-white/40">Privacy Policy</a>.
+                                        No spam.
+                                    </p>
+                                </>
+                            )}
+                        </div>
 
                         {/* Download + reset */}
                         <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/10">
