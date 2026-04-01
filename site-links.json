@@ -4,26 +4,15 @@
     "components",
     "lib"
   ],
-  "totalLinks": 85,
+  "totalLinks": 98,
   "totalsByType": {
-    "external": 53,
+    "external": 54,
     "hash": 1,
-    "internal": 27,
-    "mailto": 3,
+    "internal": 40,
+    "mailto": 2,
     "tel": 1
   },
   "items": [
-    {
-      "url": "http://localhost:3001",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/weekend-suite/page.tsx"
-      ]
-    },
     {
       "url": "http://www.w3.org/1999/xlink",
       "type": "external",
@@ -77,6 +66,29 @@
       ]
     },
     {
+      "url": "https://assets.apollo.io",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
+      "url": "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/layout.tsx"
+      ]
+    },
+    {
       "url": "https://calendly.com/hello-invaritech/30min",
       "type": "external",
       "kinds": [
@@ -84,10 +96,11 @@
         "http",
         "resolved"
       ],
-      "occurrences": 3,
+      "occurrences": 4,
       "sources": [
-        "app/blogs/[slug]/page.tsx",
+        "app/blog/[slug]/page.tsx",
         "app/work/page.tsx",
+        "components/tools/CostToCloseCalculator.tsx",
         "lib/marketing.ts"
       ]
     },
@@ -127,7 +140,7 @@
       ]
     },
     {
-      "url": "https://r2.leadsy.ai",
+      "url": "https://policies.google.com/privacy",
       "type": "external",
       "kinds": [
         "href",
@@ -135,7 +148,19 @@
       ],
       "occurrences": 1,
       "sources": [
-        "app/layout.tsx"
+        "components/assessment/LeadCaptureForm.tsx"
+      ]
+    },
+    {
+      "url": "https://policies.google.com/terms",
+      "type": "external",
+      "kinds": [
+        "href",
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/assessment/LeadCaptureForm.tsx"
       ]
     },
     {
@@ -150,27 +175,29 @@
       ]
     },
     {
-      "url": "https://reclaim-emergent-code.vercel.app",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 2,
-      "sources": [
-        "app/work/page.tsx",
-        "components/selected-work.tsx"
-      ]
-    },
-    {
       "url": "https://schema.org",
       "type": "external",
       "kinds": [
         "http"
       ],
-      "occurrences": 2,
+      "occurrences": 16,
       "sources": [
-        "app/blogs/[slug]/page.tsx",
-        "app/structured-data.ts"
+        "app/blog/[slug]/page.tsx",
+        "app/services/ai-automation-consulting/page.tsx",
+        "app/services/ai-automation-sprint/page.tsx",
+        "app/services/ai-integration-services/page.tsx",
+        "app/services/ai-workflow-automation-services/page.tsx",
+        "app/services/enterprise-ai-chatbot-deployment/page.tsx",
+        "app/services/generative-ai-backend-development/page.tsx",
+        "app/services/page.tsx",
+        "app/structured-data.ts",
+        "app/tools/assessment/page.tsx",
+        "app/tools/burn-rate-calculator/page.tsx",
+        "app/tools/cost-to-close-calculator/page.tsx",
+        "app/tools/invoice-extractor/page.tsx",
+        "app/tools/invoice-processing-automation-hong-kong/page.tsx",
+        "app/tools/invoice-processing-automation-singapore/page.tsx",
+        "app/tools/page.tsx"
       ]
     },
     {
@@ -218,6 +245,18 @@
       ]
     },
     {
+      "url": "https://www.chinacoastcommunity.org.hk",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/work/page.tsx",
+        "components/selected-work.tsx"
+      ]
+    },
+    {
       "url": "https://www.google.com",
       "type": "external",
       "kinds": [
@@ -258,13 +297,27 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 6,
+      "occurrences": 20,
       "sources": [
-        "app/blogs/[slug]/page.tsx",
+        "app/blog/[slug]/page.tsx",
         "app/layout.tsx",
         "app/robots.ts",
+        "app/services/ai-automation-consulting/page.tsx",
+        "app/services/ai-automation-sprint/page.tsx",
+        "app/services/ai-integration-services/page.tsx",
+        "app/services/ai-workflow-automation-services/page.tsx",
+        "app/services/enterprise-ai-chatbot-deployment/page.tsx",
+        "app/services/generative-ai-backend-development/page.tsx",
+        "app/services/page.tsx",
         "app/sitemap.ts",
         "app/structured-data.ts",
+        "app/tools/assessment/page.tsx",
+        "app/tools/burn-rate-calculator/page.tsx",
+        "app/tools/cost-to-close-calculator/page.tsx",
+        "app/tools/invoice-extractor/page.tsx",
+        "app/tools/invoice-processing-automation-hong-kong/page.tsx",
+        "app/tools/invoice-processing-automation-singapore/page.tsx",
+        "app/tools/page.tsx",
         "components/chatbot.tsx"
       ]
     },
@@ -324,47 +377,25 @@
       ]
     },
     {
-      "url": "https://www.invaritech.ai/ai-automation-sprint/",
+      "url": "https://www.invaritech.ai/blog/",
       "type": "external",
       "kinds": [
         "http"
       ],
       "occurrences": 1,
       "sources": [
-        "app/ops-efficiency-sprint/page.tsx"
+        "app/blog/page.tsx"
       ]
     },
     {
-      "url": "https://www.invaritech.ai/assessment/",
+      "url": "https://www.invaritech.ai/blog/${post.slug}/",
       "type": "external",
       "kinds": [
         "http"
       ],
       "occurrences": 1,
       "sources": [
-        "app/assessment/layout.tsx"
-      ]
-    },
-    {
-      "url": "https://www.invaritech.ai/blogs/",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/blogs/page.tsx"
-      ]
-    },
-    {
-      "url": "https://www.invaritech.ai/blogs/${post.slug}/",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/blogs/[slug]/page.tsx"
+        "app/blog/[slug]/page.tsx"
       ]
     },
     {
@@ -376,17 +407,6 @@
       "occurrences": 1,
       "sources": [
         "app/careers/page.tsx"
-      ]
-    },
-    {
-      "url": "https://www.invaritech.ai/careers/full-stack-developer/",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/careers/full-stack-developer/page.tsx"
       ]
     },
     {
@@ -434,17 +454,6 @@
       ]
     },
     {
-      "url": "https://www.invaritech.ai/security/",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/security/page.tsx"
-      ]
-    },
-    {
       "url": "https://www.invaritech.ai/services/",
       "type": "external",
       "kinds": [
@@ -472,9 +481,10 @@
       "kinds": [
         "http"
       ],
-      "occurrences": 3,
+      "occurrences": 4,
       "sources": [
         "app/ai-automation-sprint/page.tsx",
+        "app/ops-efficiency-sprint/page.tsx",
         "app/services/ai-automation-sprint/page.tsx",
         "app/structured-data.ts"
       ]
@@ -499,17 +509,6 @@
       "occurrences": 1,
       "sources": [
         "app/services/ai-workflow-automation-services/page.tsx"
-      ]
-    },
-    {
-      "url": "https://www.invaritech.ai/services/compliance-bridge/",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/services/compliance-bridge/page.tsx"
       ]
     },
     {
@@ -546,17 +545,6 @@
       ]
     },
     {
-      "url": "https://www.invaritech.ai/solutions/",
-      "type": "external",
-      "kinds": [
-        "http"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/solutions/page.tsx"
-      ]
-    },
-    {
       "url": "https://www.invaritech.ai/terms/",
       "type": "external",
       "kinds": [
@@ -570,25 +558,86 @@
       ]
     },
     {
-      "url": "https://www.invaritech.ai/use-cases/",
+      "url": "https://www.invaritech.ai/tools/",
       "type": "external",
       "kinds": [
         "http"
       ],
-      "occurrences": 1,
+      "occurrences": 3,
       "sources": [
-        "app/use-cases/page.tsx"
+        "app/tools/invoice-processing-automation-hong-kong/page.tsx",
+        "app/tools/invoice-processing-automation-singapore/page.tsx",
+        "app/tools/page.tsx"
       ]
     },
     {
-      "url": "https://www.invaritech.ai/weekend-suite/",
+      "url": "https://www.invaritech.ai/tools/assessment/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/tools/assessment/page.tsx",
+        "app/tools/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/tools/burn-rate-calculator/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/tools/burn-rate-calculator/page.tsx",
+        "app/tools/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/tools/cost-to-close-calculator/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/tools/cost-to-close-calculator/page.tsx",
+        "app/tools/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/tools/invoice-extractor/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/tools/invoice-extractor/page.tsx",
+        "app/tools/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/tools/invoice-processing-automation-hong-kong/",
       "type": "external",
       "kinds": [
         "http"
       ],
       "occurrences": 1,
       "sources": [
-        "app/weekend-suite/layout.tsx"
+        "app/tools/invoice-processing-automation-hong-kong/page.tsx"
+      ]
+    },
+    {
+      "url": "https://www.invaritech.ai/tools/invoice-processing-automation-singapore/",
+      "type": "external",
+      "kinds": [
+        "http"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/tools/invoice-processing-automation-singapore/page.tsx"
       ]
     },
     {
@@ -651,6 +700,17 @@
       ]
     },
     {
+      "url": "/3-day-close-checklist.pdf",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "lib/blog-posts/month-end-close-automation.ts"
+      ]
+    },
+    {
       "url": "/about/",
       "type": "internal",
       "kinds": [
@@ -658,71 +718,99 @@
       ],
       "occurrences": 1,
       "sources": [
-        "app/assessment/page.tsx"
+        "components/services/FounderTrustSection.tsx"
       ]
     },
     {
-      "url": "/assessment/",
+      "url": "/bank-file-health-check.pdf",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "lib/blog-posts/month-end-close-automation.ts"
+      ]
+    },
+    {
+      "url": "/blog/",
       "type": "internal",
       "kinds": [
         "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/blog/[slug]/page.tsx"
+      ]
+    },
+    {
+      "url": "/blog/${post.slug}/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/blog/page.tsx"
+      ]
+    },
+    {
+      "url": "/blog/ai-invoice-data-extraction/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 5,
+      "sources": [
+        "app/services/ai-integration-services/integration-client.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "lib/blog-posts/cash-flow-visibility-automation.ts",
+        "lib/blog-posts/month-end-close-automation.ts",
+        "lib/blog-posts/why-small-businesses-need-automation.ts"
+      ]
+    },
+    {
+      "url": "/blog/building-vs-buying-custom-automation/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
       ],
       "occurrences": 4,
       "sources": [
-        "app/solutions/page.tsx",
-        "app/use-cases/page.tsx",
-        "components/asterisk-math.tsx",
-        "components/qualification-guardrails.tsx"
-      ]
-    },
-    {
-      "url": "/blogs/",
-      "type": "internal",
-      "kinds": [
-        "href"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/blogs/[slug]/page.tsx"
-      ]
-    },
-    {
-      "url": "/blogs/${post.slug}/",
-      "type": "internal",
-      "kinds": [
-        "href"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/blogs/page.tsx"
-      ]
-    },
-    {
-      "url": "/blogs/building-vs-buying-custom-automation/",
-      "type": "internal",
-      "kinds": [
-        "href",
-        "md"
-      ],
-      "occurrences": 5,
-      "sources": [
-        "app/services/compliance-bridge/page.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
         "lib/blog-posts/compliance-automation-done-right.ts",
-        "lib/blog-posts/regops-strategy.ts",
-        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts",
+        "lib/blog-posts/why-small-businesses-need-automation.ts"
       ]
     },
     {
-      "url": "/blogs/compliance-automation-done-right/",
+      "url": "/blog/cash-flow-visibility-automation/",
       "type": "internal",
       "kinds": [
         "href",
         "md"
       ],
-      "occurrences": 5,
+      "occurrences": 6,
       "sources": [
-        "app/services/compliance-bridge/page.tsx",
+        "app/services/ai-automation-consulting/consulting-client.tsx",
+        "app/services/ai-automation-sprint/sprint-client.tsx",
+        "app/services/ai-integration-services/integration-client.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "lib/blog-posts/ai-invoice-data-extraction.ts",
+        "lib/blog-posts/month-end-close-automation.ts"
+      ]
+    },
+    {
+      "url": "/blog/compliance-automation-done-right/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 4,
+      "sources": [
         "app/work/eudr-compliance-bridge/page.tsx",
         "lib/blog-posts/regops-strategy.ts",
         "lib/blog-posts/regops-technical.ts",
@@ -730,7 +818,7 @@
       ]
     },
     {
-      "url": "/blogs/consultancy-trap/",
+      "url": "/blog/consultancy-trap/",
       "type": "internal",
       "kinds": [
         "md"
@@ -741,20 +829,57 @@
       ]
     },
     {
-      "url": "/blogs/regops-strategy/",
+      "url": "/blog/month-end-close-automation/",
       "type": "internal",
       "kinds": [
         "href",
         "md"
       ],
-      "occurrences": 2,
+      "occurrences": 3,
       "sources": [
-        "app/services/compliance-bridge/page.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "lib/blog-posts/ai-invoice-data-extraction.ts",
+        "lib/blog-posts/cash-flow-visibility-automation.ts"
+      ]
+    },
+    {
+      "url": "/blog/regops-strategy/",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 1,
+      "sources": [
         "lib/blog-posts/why-consultancies-get-stuck.ts"
       ]
     },
     {
-      "url": "/blogs/regops-technical/",
+      "url": "/blog/regops-technical/",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 3,
+      "sources": [
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts"
+      ]
+    },
+    {
+      "url": "/blog/why-consultancies-get-stuck/",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/regops-strategy.ts"
+      ]
+    },
+    {
+      "url": "/blog/why-manual-eudr-compliance-fails/",
       "type": "internal",
       "kinds": [
         "href",
@@ -762,38 +887,23 @@
       ],
       "occurrences": 4,
       "sources": [
-        "app/services/compliance-bridge/page.tsx",
-        "lib/blog-posts/consultancy-trap.ts",
-        "lib/blog-posts/regops-strategy.ts",
-        "lib/blog-posts/why-consultancies-get-stuck.ts"
-      ]
-    },
-    {
-      "url": "/blogs/why-manual-eudr-compliance-fails/",
-      "type": "internal",
-      "kinds": [
-        "href",
-        "md"
-      ],
-      "occurrences": 6,
-      "sources": [
-        "app/services/compliance-bridge/page.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
         "lib/blog-posts/building-vs-buying-custom-automation.ts",
         "lib/blog-posts/consultancy-trap.ts",
-        "lib/blog-posts/regops-technical.ts",
-        "lib/blog-posts/why-consultancies-get-stuck.ts"
+        "lib/blog-posts/regops-technical.ts"
       ]
     },
     {
-      "url": "/careers/",
+      "url": "/blog/why-small-businesses-need-automation/",
       "type": "internal",
       "kinds": [
-        "href"
+        "md"
       ],
-      "occurrences": 1,
+      "occurrences": 3,
       "sources": [
-        "app/careers/full-stack-developer/page.tsx"
+        "lib/blog-posts/ai-invoice-data-extraction.ts",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/consultancy-trap.ts"
       ]
     },
     {
@@ -808,29 +918,38 @@
       ]
     },
     {
+      "url": "/contact",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "components/assessment/AssessmentResults.tsx"
+      ]
+    },
+    {
       "url": "/contact/",
       "type": "internal",
       "kinds": [
         "href"
       ],
-      "occurrences": 4,
+      "occurrences": 3,
       "sources": [
-        "app/assessment/page.tsx",
-        "app/security/page.tsx",
+        "app/tools/page.tsx",
         "components/home-fit-faq-cta.tsx",
         "components/qualification-guardrails.tsx"
       ]
     },
     {
-      "url": "/results/",
+      "url": "/privacy",
       "type": "internal",
       "kinds": [
         "href"
       ],
-      "occurrences": 2,
+      "occurrences": 1,
       "sources": [
-        "app/services/ai-automation-sprint/sprint-client.tsx",
-        "app/services/services-client.tsx"
+        "components/tools/InvoiceExtractor.tsx"
       ]
     },
     {
@@ -845,6 +964,17 @@
       ]
     },
     {
+      "url": "/roi-summary.pdf",
+      "type": "internal",
+      "kinds": [
+        "md"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "lib/blog-posts/month-end-close-automation.ts"
+      ]
+    },
+    {
       "url": "/services/",
       "type": "internal",
       "kinds": [
@@ -852,7 +982,7 @@
       ],
       "occurrences": 7,
       "sources": [
-        "app/blogs/[slug]/page.tsx",
+        "app/blog/[slug]/page.tsx",
         "app/services/ai-automation-consulting/consulting-client.tsx",
         "app/services/ai-automation-sprint/sprint-client.tsx",
         "app/services/ai-integration-services/integration-client.tsx",
@@ -868,15 +998,30 @@
         "href",
         "md"
       ],
-      "occurrences": 7,
+      "occurrences": 9,
       "sources": [
         "app/components/services/core-thesis-section.tsx",
+        "app/services/ai-integration-services/integration-client.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
         "lib/blog-posts/building-vs-buying-custom-automation.ts",
         "lib/blog-posts/compliance-automation-done-right.ts",
         "lib/blog-posts/consultancy-trap.ts",
         "lib/blog-posts/regops-strategy.ts",
         "lib/blog-posts/why-consultancies-get-stuck.ts",
-        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+        "lib/blog-posts/why-small-businesses-need-automation.ts"
+      ]
+    },
+    {
+      "url": "/services/ai-automation-sprint",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "components/assessment/AssessmentResults.tsx",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts"
       ]
     },
     {
@@ -886,16 +1031,17 @@
         "href",
         "md"
       ],
-      "occurrences": 22,
+      "occurrences": 26,
       "sources": [
-        "app/assessment/page.tsx",
         "app/components/services/core-thesis-section.tsx",
         "app/results/page.tsx",
-        "app/security/page.tsx",
         "app/services/ai-automation-consulting/consulting-client.tsx",
+        "app/services/ai-integration-services/integration-client.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "app/services/enterprise-ai-chatbot-deployment/chatbot-client.tsx",
+        "app/services/generative-ai-backend-development/backend-client.tsx",
         "app/services/services-client.tsx",
-        "app/solutions/page.tsx",
-        "app/use-cases/page.tsx",
+        "app/tools/page.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
         "components/Hero.tsx",
         "components/artistic-home-hero.tsx",
@@ -905,10 +1051,13 @@
         "components/risk-control.tsx",
         "components/what-we-do-section.tsx",
         "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/cash-flow-visibility-automation.ts",
         "lib/blog-posts/compliance-automation-done-right.ts",
         "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/month-end-close-automation.ts",
         "lib/blog-posts/regops-strategy.ts",
         "lib/blog-posts/regops-technical.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
         "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
       ]
     },
@@ -919,18 +1068,52 @@
         "href",
         "md"
       ],
-      "occurrences": 6,
+      "occurrences": 16,
       "sources": [
         "app/components/services/core-thesis-section.tsx",
+        "app/services/ai-automation-consulting/consulting-client.tsx",
+        "app/services/ai-automation-sprint/sprint-client.tsx",
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "app/services/generative-ai-backend-development/backend-client.tsx",
         "app/work/eudr-compliance-bridge/page.tsx",
+        "lib/blog-posts/ai-invoice-data-extraction.ts",
         "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/cash-flow-visibility-automation.ts",
         "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/month-end-close-automation.ts",
         "lib/blog-posts/regops-technical.ts",
-        "lib/blog-posts/why-manual-eudr-compliance-fails.ts"
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-manual-eudr-compliance-fails.ts",
+        "lib/blog-posts/why-small-businesses-need-automation.ts"
       ]
     },
     {
       "url": "/services/ai-workflow-automation-services/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 13,
+      "sources": [
+        "app/components/services/core-thesis-section.tsx",
+        "app/services/ai-automation-consulting/consulting-client.tsx",
+        "app/services/ai-automation-sprint/sprint-client.tsx",
+        "app/services/ai-integration-services/integration-client.tsx",
+        "app/services/enterprise-ai-chatbot-deployment/chatbot-client.tsx",
+        "components/tools/BurnRateCalculator.tsx",
+        "lib/blog-posts/ai-invoice-data-extraction.ts",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/cash-flow-visibility-automation.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/month-end-close-automation.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-small-businesses-need-automation.ts"
+      ]
+    },
+    {
+      "url": "/services/enterprise-ai-chatbot-deployment/",
       "type": "internal",
       "kinds": [
         "href"
@@ -938,19 +1121,6 @@
       "occurrences": 1,
       "sources": [
         "app/components/services/core-thesis-section.tsx"
-      ]
-    },
-    {
-      "url": "/services/enterprise-ai-chatbot-deployment/",
-      "type": "internal",
-      "kinds": [
-        "href",
-        "md"
-      ],
-      "occurrences": 2,
-      "sources": [
-        "app/components/services/core-thesis-section.tsx",
-        "lib/blog-posts/building-vs-buying-custom-automation.ts"
       ]
     },
     {
@@ -965,25 +1135,101 @@
       ]
     },
     {
-      "url": "/solutions/",
+      "url": "/tools/",
       "type": "internal",
       "kinds": [
         "href"
       ],
-      "occurrences": 1,
+      "occurrences": 2,
       "sources": [
-        "components/what-we-build.tsx"
+        "app/tools/assessment/page.tsx",
+        "components/tools/ToolPageShell.tsx"
       ]
     },
     {
-      "url": "/solutions/#${solution.anchor}",
+      "url": "/tools/assessment/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 12,
+      "sources": [
+        "components/assessment-banner.tsx",
+        "components/asterisk-math.tsx",
+        "components/qualification-guardrails.tsx",
+        "components/services/AssessmentTeaser.tsx",
+        "lib/blog-posts/ai-invoice-data-extraction.ts",
+        "lib/blog-posts/building-vs-buying-custom-automation.ts",
+        "lib/blog-posts/compliance-automation-done-right.ts",
+        "lib/blog-posts/consultancy-trap.ts",
+        "lib/blog-posts/month-end-close-automation.ts",
+        "lib/blog-posts/regops-strategy.ts",
+        "lib/blog-posts/why-consultancies-get-stuck.ts",
+        "lib/blog-posts/why-small-businesses-need-automation.ts"
+      ]
+    },
+    {
+      "url": "/tools/burn-rate-calculator/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 3,
+      "sources": [
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "lib/blog-posts/cash-flow-visibility-automation.ts",
+        "lib/blog-posts/month-end-close-automation.ts"
+      ]
+    },
+    {
+      "url": "/tools/cost-to-close-calculator/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 2,
+      "sources": [
+        "app/services/ai-workflow-automation-services/workflow-client.tsx",
+        "lib/blog-posts/month-end-close-automation.ts"
+      ]
+    },
+    {
+      "url": "/tools/invoice-extractor/",
+      "type": "internal",
+      "kinds": [
+        "href",
+        "md"
+      ],
+      "occurrences": 3,
+      "sources": [
+        "app/tools/invoice-processing-automation-hong-kong/page.tsx",
+        "app/tools/invoice-processing-automation-singapore/page.tsx",
+        "lib/blog-posts/ai-invoice-data-extraction.ts"
+      ]
+    },
+    {
+      "url": "/tools/invoice-processing-automation-hong-kong/",
       "type": "internal",
       "kinds": [
         "href"
       ],
       "occurrences": 1,
       "sources": [
-        "app/solutions/page.tsx"
+        "app/tools/invoice-processing-automation-singapore/page.tsx"
+      ]
+    },
+    {
+      "url": "/tools/invoice-processing-automation-singapore/",
+      "type": "internal",
+      "kinds": [
+        "href"
+      ],
+      "occurrences": 1,
+      "sources": [
+        "app/tools/invoice-processing-automation-hong-kong/page.tsx"
       ]
     },
     {
@@ -992,7 +1238,7 @@
       "kinds": [
         "href"
       ],
-      "occurrences": 7,
+      "occurrences": 8,
       "sources": [
         "app/services/enterprise-ai-chatbot-deployment/chatbot-client.tsx",
         "app/services/generative-ai-backend-development/backend-client.tsx",
@@ -1000,7 +1246,8 @@
         "app/work/eudr-compliance-bridge/page.tsx",
         "components/Hero.tsx",
         "components/home-hero.tsx",
-        "components/selected-work.tsx"
+        "components/selected-work.tsx",
+        "components/what-we-build.tsx"
       ]
     },
     {
@@ -1010,9 +1257,8 @@
         "href",
         "md"
       ],
-      "occurrences": 7,
+      "occurrences": 6,
       "sources": [
-        "app/services/compliance-bridge/page.tsx",
         "app/services/services-client.tsx",
         "lib/blog-posts/building-vs-buying-custom-automation.ts",
         "lib/blog-posts/consultancy-trap.ts",
@@ -1038,24 +1284,12 @@
       "kinds": [
         "href"
       ],
-      "occurrences": 5,
+      "occurrences": 4,
       "sources": [
-        "app/careers/full-stack-developer/page.tsx",
         "app/privacy/page.tsx",
         "app/terms/page.tsx",
         "components/contact.tsx",
         "components/header.tsx"
-      ]
-    },
-    {
-      "url": "mailto:hello@invaritech.ai?subject=Application: Full-Stack Software Engineer",
-      "type": "mailto",
-      "kinds": [
-        "href"
-      ],
-      "occurrences": 1,
-      "sources": [
-        "app/careers/full-stack-developer/page.tsx"
       ]
     },
     {

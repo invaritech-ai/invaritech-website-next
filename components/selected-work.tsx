@@ -30,7 +30,7 @@ const proofSignals = [
             "Modernizing operational flow and donor engagement for a premier elderly care charity in Hong Kong.",
         metric: "Review Phase",
         image: "/ccc-isometric.webp",
-        href: "https://reclaim-emergent-code.vercel.app",
+        href: "https://www.chinacoastcommunity.org.hk",
         category: "Web & Automation",
     },
 ];

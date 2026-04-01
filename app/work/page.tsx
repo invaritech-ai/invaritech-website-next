@@ -47,7 +47,7 @@ const projects = [
         description: "Modernizing the digital presence and operational flow for a premier elderly care charity in HK. Connecting front-end engagement to CRM-led donor management.",
         tags: ["Next.js", "Stripe", "CRM Integration"],
         image: "/ccc-isometric.webp",
-        link: "https://reclaim-emergent-code.vercel.app", 
+        link: "https://www.chinacoastcommunity.org.hk", 
         statusLabel: "Review Phase",
     },
     {

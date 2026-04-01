@@ -38,7 +38,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -110,7 +110,7 @@
           "exists": "yes"
         },
         {
-          "href": "https://reclaim-emergent-code.vercel.app",
+          "href": "https://www.chinacoastcommunity.org.hk",
           "label": "China Coast Community",
           "target": "",
           "rel": "",
@@ -206,8 +206,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -302,8 +302,8 @@
       "inputs": []
     },
     {
-      "route": "/404.html",
-      "file": "dist/404.html",
+      "route": "/_not-found/",
+      "file": "dist/_not-found/index.html",
       "anchors": [
         {
           "href": "/",
@@ -338,7 +338,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -410,8 +410,182 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/careers/",
+          "label": "Careers",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "Contact",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "https://x.com/invaritechai",
+          "label": "X",
+          "target": "_blank",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        },
+        {
+          "href": "https://linkedin.com/company/invaritechai",
+          "label": "LinkedIn",
+          "target": "_blank",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Toggle Menu",
+          "type": "",
+          "ariaLabel": "Toggle Menu"
+        }
+      ],
+      "inputs": []
+    },
+    {
+      "route": "/404.html",
+      "file": "dist/404.html",
+      "anchors": [
+        {
+          "href": "/",
+          "label": "INVARITECH",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "01 Home",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "02 The Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/",
+          "label": "03 Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/",
+          "label": "04 Intel",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "05 Contact",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "mailto:hello@invaritech.ai",
+          "label": "hello@invaritech.ai",
+          "target": "",
+          "rel": "",
+          "kind": "mailto",
+          "exists": ""
+        },
+        {
+          "href": "/",
+          "label": "Initiate Warp Jump",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "Visionary Intelligence",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "Home",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/about/",
+          "label": "About",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/",
+          "label": "Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/work/",
+          "label": "Work",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -512,7 +686,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -584,8 +758,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -686,7 +860,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -758,8 +932,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -865,7 +1039,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -937,8 +1111,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1039,7 +1213,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -1103,8 +1277,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1166,47 +1340,7 @@
           "ariaLabel": "Toggle Menu"
         },
         {
-          "label": "Select company size",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select primary function",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select workflow goal",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select monthly volume",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select current AHT",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select data access approach",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select sponsor status",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Select budget range",
-          "type": "button",
-          "ariaLabel": ""
-        },
-        {
-          "label": "Get my Ops Efficiency Score",
+          "label": "START THE AUDIT",
           "type": "",
           "ariaLabel": ""
         }
@@ -1214,8 +1348,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/",
-      "file": "dist/blogs/index.html",
+      "route": "/blog/",
+      "file": "dist/blog/index.html",
       "anchors": [
         {
           "href": "/",
@@ -1250,7 +1384,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -1274,7 +1408,7 @@
           "exists": ""
         },
         {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "href": "/blog/why-manual-eudr-compliance-fails/",
           "label": "Why Manual EUDR Compliance Fails at Scale: A Case Study",
           "target": "",
           "rel": "",
@@ -1282,7 +1416,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/consultancy-trap/",
+          "href": "/blog/consultancy-trap/",
           "label": "The Consultancy Trap: Why \"Heroic\" Manual Compliance Caps Your Revenue",
           "target": "",
           "rel": "",
@@ -1290,7 +1424,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
+          "href": "/blog/regops-technical/",
           "label": "Anatomy of a RegOps Bridge: Integrating the Tools You Already Use",
           "target": "",
           "rel": "",
@@ -1298,7 +1432,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/compliance-automation-done-right/",
+          "href": "/blog/compliance-automation-done-right/",
           "label": "Compliance Automation Done Right: Deterministic Systems vs. Black-Box AI",
           "target": "",
           "rel": "",
@@ -1306,7 +1440,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/building-vs-buying-custom-automation/",
+          "href": "/blog/building-vs-buying-custom-automation/",
           "label": "Building vs. Buying: When Custom Automation Makes Sense",
           "target": "",
           "rel": "",
@@ -1314,7 +1448,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
+          "href": "/blog/regops-strategy/",
           "label": "RegOps: The Missing Link for Scaling Your ESG Consultancy",
           "target": "",
           "rel": "",
@@ -1322,7 +1456,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-consultancies-get-stuck/",
+          "href": "/blog/why-consultancies-get-stuck/",
           "label": "Why Consultancies Get Stuck: The Hidden Cost of Manual Compliance Work",
           "target": "",
           "rel": "",
@@ -1370,8 +1504,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1436,8 +1570,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/building-vs-buying-custom-automation/",
-      "file": "dist/blogs/building-vs-buying-custom-automation/index.html",
+      "route": "/blog/building-vs-buying-custom-automation/",
+      "file": "dist/blog/building-vs-buying-custom-automation/index.html",
       "anchors": [
         {
           "href": "/",
@@ -1472,7 +1606,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -1496,7 +1630,7 @@
           "exists": ""
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "Return to Archive",
           "target": "",
           "rel": "",
@@ -1504,7 +1638,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "href": "/blog/why-manual-eudr-compliance-fails/",
           "label": "Why Manual EUDR Compliance Fails at Scale",
           "target": "",
           "rel": "",
@@ -1528,6 +1662,22 @@
           "exists": "yes"
         },
         {
+          "href": "/assessment/",
+          "label": "Assessment",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/services/ai-automation-sprint/",
           "label": "AI Automation Sprint",
           "target": "",
@@ -1536,22 +1686,6 @@
           "exists": "yes"
         },
         {
-          "href": "/services/enterprise-ai-chatbot-deployment/",
-          "label": "Enterprise AI Chatbot Deployment (Governed)",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/services/ai-automation-consulting/",
-          "label": "AI Automation Consulting",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "https://calendly.com/hello-invaritech/30min",
           "label": "Start Transmission",
           "target": "_blank",
@@ -1608,8 +1742,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1679,8 +1813,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/compliance-automation-done-right/",
-      "file": "dist/blogs/compliance-automation-done-right/index.html",
+      "route": "/blog/compliance-automation-done-right/",
+      "file": "dist/blog/compliance-automation-done-right/index.html",
       "anchors": [
         {
           "href": "/",
@@ -1715,7 +1849,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -1739,7 +1873,7 @@
           "exists": ""
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "Return to Archive",
           "target": "",
           "rel": "",
@@ -1747,7 +1881,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/building-vs-buying-custom-automation/",
+          "href": "/blog/building-vs-buying-custom-automation/",
           "label": "Building vs. Buying: When Custom Automation Makes Sense",
           "target": "",
           "rel": "",
@@ -1755,8 +1889,8 @@
           "exists": "yes"
         },
         {
-          "href": "/services/ai-automation-sprint/",
-          "label": "30-Day AI Automation Sprint",
+          "href": "/assessment/",
+          "label": "Assessment",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1764,7 +1898,15 @@
         },
         {
           "href": "/services/ai-automation-consulting/",
-          "label": "AI Automation Consulting (Quantified Diagnostic)",
+          "label": "AI Automation Consulting",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1835,8 +1977,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -1906,8 +2048,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/consultancy-trap/",
-      "file": "dist/blogs/consultancy-trap/index.html",
+      "route": "/blog/consultancy-trap/",
+      "file": "dist/blog/consultancy-trap/index.html",
       "anchors": [
         {
           "href": "/",
@@ -1942,7 +2084,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -1966,7 +2108,7 @@
           "exists": ""
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "Return to Archive",
           "target": "",
           "rel": "",
@@ -1974,250 +2116,15 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "RegOps Bridge anatomy",
+          "href": "/blog/why-consultancies-get-stuck/",
+          "label": "Why Consultancies Get Stuck",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
-          "label": "Why Manual EUDR Compliance Fails at Scale",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/work/eudr-compliance-bridge/",
-          "label": "EUDR Compliance Bridge Case Study",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/services/ai-automation-consulting/",
-          "label": "AI Automation Consulting",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/services/ai-automation-sprint/",
-          "label": "30-Day AI Automation Sprint",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "https://calendly.com/hello-invaritech/30min",
-          "label": "Start Transmission",
-          "target": "_blank",
-          "rel": "noopener noreferrer",
-          "kind": "external",
-          "exists": ""
-        },
-        {
-          "href": "/services/",
-          "label": "Services Hub",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/",
-          "label": "Visionary Intelligence",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/",
-          "label": "Home",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/about/",
-          "label": "About",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/services/",
-          "label": "Services",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/work/",
-          "label": "Work",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/",
-          "label": "Blogs",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/careers/",
-          "label": "Careers",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/contact/",
-          "label": "Contact",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/privacy/",
-          "label": "Privacy Policy",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/terms/",
-          "label": "Terms of Service",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "https://x.com/invaritechai",
-          "label": "X",
-          "target": "_blank",
-          "rel": "",
-          "kind": "external",
-          "exists": ""
-        },
-        {
-          "href": "https://linkedin.com/company/invaritechai",
-          "label": "LinkedIn",
-          "target": "_blank",
-          "rel": "",
-          "kind": "external",
-          "exists": ""
-        }
-      ],
-      "buttons": [
-        {
-          "label": "Toggle Menu",
-          "type": "",
-          "ariaLabel": "Toggle Menu"
-        },
-        {
-          "label": "Start Transmission",
-          "type": "",
-          "ariaLabel": ""
-        }
-      ],
-      "inputs": []
-    },
-    {
-      "route": "/blogs/regops-strategy/",
-      "file": "dist/blogs/regops-strategy/index.html",
-      "anchors": [
-        {
-          "href": "/",
-          "label": "INVARITECH",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/",
-          "label": "01 Home",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/services/ai-automation-sprint/",
-          "label": "02 The Sprint",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/services/",
-          "label": "03 Services",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/",
-          "label": "04 Intel",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/contact/",
-          "label": "05 Contact",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "mailto:hello@invaritech.ai",
-          "label": "hello@invaritech.ai",
-          "target": "",
-          "rel": "",
-          "kind": "mailto",
-          "exists": ""
-        },
-        {
-          "href": "/blogs/",
-          "label": "Return to Archive",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/consultancy-trap/",
-          "label": "The Consultancy Trap",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/regops-technical/",
+          "href": "/blog/regops-technical/",
           "label": "Anatomy of a RegOps Bridge",
           "target": "",
           "rel": "",
@@ -2225,16 +2132,24 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/compliance-automation-done-right/",
-          "label": "Compliance Automation Done Right",
+          "href": "/blog/why-manual-eudr-compliance-fails/",
+          "label": "Why Manual EUDR Compliance Fails at Scale",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/building-vs-buying-custom-automation/",
-          "label": "Building vs Buying: When Custom Automation Makes Sense",
+          "href": "/work/eudr-compliance-bridge/",
+          "label": "EUDR Compliance Bridge Case Study",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/assessment/",
+          "label": "Assessment",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2250,7 +2165,7 @@
         },
         {
           "href": "/services/ai-automation-sprint/",
-          "label": "30-Day AI Automation Sprint",
+          "label": "AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2313,8 +2228,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2384,8 +2299,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/regops-technical/",
-      "file": "dist/blogs/regops-technical/index.html",
+      "route": "/blog/regops-strategy/",
+      "file": "dist/blog/regops-strategy/index.html",
       "anchors": [
         {
           "href": "/",
@@ -2420,7 +2335,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -2444,7 +2359,258 @@
           "exists": ""
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
+          "label": "Return to Archive",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/consultancy-trap/",
+          "label": "The Consultancy Trap",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/regops-technical/",
+          "label": "Anatomy of a RegOps Bridge",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/compliance-automation-done-right/",
+          "label": "Compliance Automation Done Right",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/why-consultancies-get-stuck/",
+          "label": "Why Consultancies Get Stuck",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/assessment/",
+          "label": "Assessment",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-consulting/",
+          "label": "AI Automation Consulting",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "AI Automation Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "https://calendly.com/hello-invaritech/30min",
+          "label": "Start Transmission",
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "kind": "external",
+          "exists": ""
+        },
+        {
+          "href": "/services/",
+          "label": "Services Hub",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "Visionary Intelligence",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "Home",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/about/",
+          "label": "About",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/",
+          "label": "Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/work/",
+          "label": "Work",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/",
+          "label": "Blog",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/careers/",
+          "label": "Careers",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "Contact",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/privacy/",
+          "label": "Privacy Policy",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/terms/",
+          "label": "Terms of Service",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "https://x.com/invaritechai",
+          "label": "X",
+          "target": "_blank",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        },
+        {
+          "href": "https://linkedin.com/company/invaritechai",
+          "label": "LinkedIn",
+          "target": "_blank",
+          "rel": "",
+          "kind": "external",
+          "exists": ""
+        }
+      ],
+      "buttons": [
+        {
+          "label": "Toggle Menu",
+          "type": "",
+          "ariaLabel": "Toggle Menu"
+        },
+        {
+          "label": "Start Transmission",
+          "type": "",
+          "ariaLabel": ""
+        }
+      ],
+      "inputs": []
+    },
+    {
+      "route": "/blog/regops-technical/",
+      "file": "dist/blog/regops-technical/index.html",
+      "anchors": [
+        {
+          "href": "/",
+          "label": "INVARITECH",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/",
+          "label": "01 Home",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "02 The Sprint",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/",
+          "label": "03 Services",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/blog/",
+          "label": "04 Intel",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/contact/",
+          "label": "05 Contact",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "mailto:hello@invaritech.ai",
+          "label": "hello@invaritech.ai",
+          "target": "",
+          "rel": "",
+          "kind": "mailto",
+          "exists": ""
+        },
+        {
+          "href": "/blog/",
           "label": "Return to Archive",
           "target": "",
           "rel": "",
@@ -2460,7 +2626,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "href": "/blog/why-manual-eudr-compliance-fails/",
           "label": "Why Manual EUDR Compliance Fails at Scale",
           "target": "",
           "rel": "",
@@ -2468,7 +2634,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/compliance-automation-done-right/",
+          "href": "/blog/compliance-automation-done-right/",
           "label": "Compliance Automation Done Right",
           "target": "",
           "rel": "",
@@ -2485,7 +2651,7 @@
         },
         {
           "href": "/services/ai-automation-sprint/",
-          "label": "30-Day AI Automation Sprint",
+          "label": "AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2548,8 +2714,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2619,8 +2785,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/why-consultancies-get-stuck/",
-      "file": "dist/blogs/why-consultancies-get-stuck/index.html",
+      "route": "/blog/why-consultancies-get-stuck/",
+      "file": "dist/blog/why-consultancies-get-stuck/index.html",
       "anchors": [
         {
           "href": "/",
@@ -2655,7 +2821,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -2679,7 +2845,7 @@
           "exists": ""
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "Return to Archive",
           "target": "",
           "rel": "",
@@ -2687,24 +2853,16 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
-          "label": "RegOps Bridge anatomy",
+          "href": "/blog/regops-technical/",
+          "label": "Anatomy of a RegOps Bridge",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
+          "href": "/blog/regops-strategy/",
           "label": "RegOps strategy",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
-          "label": "Why manual EUDR compliance fails at scale",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2719,8 +2877,24 @@
           "exists": "yes"
         },
         {
+          "href": "/assessment/",
+          "label": "Assessment",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
           "href": "/services/ai-automation-consulting/",
           "label": "AI Automation Consulting",
+          "target": "",
+          "rel": "",
+          "kind": "internal",
+          "exists": "yes"
+        },
+        {
+          "href": "/services/ai-automation-sprint/",
+          "label": "AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2783,8 +2957,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -2854,8 +3028,8 @@
       "inputs": []
     },
     {
-      "route": "/blogs/why-manual-eudr-compliance-fails/",
-      "file": "dist/blogs/why-manual-eudr-compliance-fails/index.html",
+      "route": "/blog/why-manual-eudr-compliance-fails/",
+      "file": "dist/blog/why-manual-eudr-compliance-fails/index.html",
       "anchors": [
         {
           "href": "/",
@@ -2890,7 +3064,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -2914,7 +3088,7 @@
           "exists": ""
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "Return to Archive",
           "target": "",
           "rel": "",
@@ -2938,23 +3112,15 @@
           "exists": "yes"
         },
         {
-          "href": "/services/ai-automation-consulting/",
-          "label": "AI Automation Consulting",
-          "target": "",
-          "rel": "",
-          "kind": "internal",
-          "exists": "yes"
-        },
-        {
           "href": "/services/ai-automation-sprint/",
-          "label": "30-Day AI Automation Sprint",
+          "label": "AI Automation Sprint",
           "target": "",
           "rel": "",
           "kind": "internal",
           "exists": "yes"
         },
         {
-          "href": "/blogs/compliance-automation-done-right/",
+          "href": "/blog/compliance-automation-done-right/",
           "label": "Compliance Automation Done Right: Deterministic Systems vs Black-Box AI",
           "target": "",
           "rel": "",
@@ -2962,7 +3128,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/building-vs-buying-custom-automation/",
+          "href": "/blog/building-vs-buying-custom-automation/",
           "label": "Building vs Buying: When Custom Automation Makes Sense",
           "target": "",
           "rel": "",
@@ -3026,8 +3192,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3133,7 +3299,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -3197,8 +3363,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3299,7 +3465,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -3371,8 +3537,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3478,7 +3644,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -3542,8 +3708,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3705,7 +3871,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -3777,8 +3943,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -3879,7 +4045,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -3943,8 +4109,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4045,7 +4211,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -4133,8 +4299,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4235,7 +4401,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -4315,8 +4481,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4417,7 +4583,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -4617,8 +4783,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4744,7 +4910,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -4840,8 +5006,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -4967,7 +5133,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -5055,8 +5221,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5123,12 +5289,17 @@
           "ariaLabel": ""
         },
         {
-          "label": "Do you build “AI strategy”?",
+          "label": "What fits into a 30-day POC?",
           "type": "",
           "ariaLabel": ""
         },
         {
           "label": "What if we need more than 30 days?",
+          "type": "",
+          "ariaLabel": ""
+        },
+        {
+          "label": "Do you build “AI strategy”?",
           "type": "",
           "ariaLabel": ""
         },
@@ -5182,7 +5353,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -5270,8 +5441,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5392,7 +5563,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -5472,8 +5643,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5594,7 +5765,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -5634,7 +5805,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-strategy/",
+          "href": "/blog/regops-strategy/",
           "label": "The RegOps Strategy Why \"hiring more people\" stops working, and what to do instead.",
           "target": "",
           "rel": "",
@@ -5642,7 +5813,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/regops-technical/",
+          "href": "/blog/regops-technical/",
           "label": "Technical Deep Dive See the architecture of a compliance bridge (Python, FastAPI, SOAP).",
           "target": "",
           "rel": "",
@@ -5650,7 +5821,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "href": "/blog/why-manual-eudr-compliance-fails/",
           "label": "Why Manual Compliance Fails Learn why manual EUDR compliance breaks at scale and how automation solves it.",
           "target": "",
           "rel": "",
@@ -5658,7 +5829,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/compliance-automation-done-right/",
+          "href": "/blog/compliance-automation-done-right/",
           "label": "Compliance Automation Done Right Why deterministic systems beat black-box AI for regulatory submissions.",
           "target": "",
           "rel": "",
@@ -5666,7 +5837,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/building-vs-buying-custom-automation/",
+          "href": "/blog/building-vs-buying-custom-automation/",
           "label": "Building vs. Buying A framework to decide when custom automation makes sense for your firm.",
           "target": "",
           "rel": "",
@@ -5714,8 +5885,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -5816,7 +5987,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -5904,8 +6075,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6031,7 +6202,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -6119,8 +6290,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6251,7 +6422,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -6371,8 +6542,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6473,7 +6644,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -6537,8 +6708,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6639,7 +6810,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -6719,8 +6890,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6821,7 +6992,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -6885,8 +7056,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -6992,7 +7163,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -7024,7 +7195,7 @@
           "exists": "yes"
         },
         {
-          "href": "https://reclaim-emergent-code.vercel.app",
+          "href": "https://www.chinacoastcommunity.org.hk",
           "label": "Review Phase",
           "target": "",
           "rel": "",
@@ -7080,8 +7251,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -7197,7 +7368,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
+          "href": "/blog/",
           "label": "04 Intel",
           "target": "",
           "rel": "",
@@ -7229,7 +7400,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/why-manual-eudr-compliance-fails/",
+          "href": "/blog/why-manual-eudr-compliance-fails/",
           "label": "why manual compliance fails here",
           "target": "",
           "rel": "",
@@ -7245,7 +7416,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/compliance-automation-done-right/",
+          "href": "/blog/compliance-automation-done-right/",
           "label": "deterministic compliance systems",
           "target": "",
           "rel": "",
@@ -7253,7 +7424,7 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/building-vs-buying-custom-automation/",
+          "href": "/blog/building-vs-buying-custom-automation/",
           "label": "building vs buying custom automation",
           "target": "",
           "rel": "",
@@ -7317,8 +7488,8 @@
           "exists": "yes"
         },
         {
-          "href": "/blogs/",
-          "label": "Blogs",
+          "href": "/blog/",
+          "label": "Blog",
           "target": "",
           "rel": "",
           "kind": "internal",
@@ -7388,5 +7559,5 @@
       "inputs": []
     }
   ],
-  "globalThreshold": 21
+  "globalThreshold": 22
 }
