@@ -353,8 +353,11 @@ export default function IntegrationClient() {
                         </MagneticButton>
                     </a>
                     <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/generative-ai-backend-development/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
-                            <ArrowRight className="w-3 h-3" /> Need production GenAI backends?
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Automate the workflow layer too
+                        </Link>
+                        <Link href="/services/ai-automation-consulting/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                            <ArrowRight className="w-3 h-3" /> Not sure where the wedge is?
                         </Link>
                         <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint

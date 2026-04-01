@@ -129,6 +129,10 @@ For integration-heavy environments, implement the bridge layer without replatfor
 
 - **[AI Integration Services](/services/ai-integration-services/)**
 
+For repeatable, high-volume workflows where volume is growing and manual handling is the constraint:
+
+- **[AI Workflow Automation Services](/services/ai-workflow-automation-services/)**
+
 ---
 
 ## A Practical Test

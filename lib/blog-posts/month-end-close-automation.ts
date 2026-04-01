@@ -118,6 +118,8 @@ In finance, a hallucination is a liability. Our architecture follows a strict go
 
 AI assists at the reading layer (OCR, parsing, extraction). It *never* owns the financial write. Finance remains the pilot.
 
+For teams running Xero, NetSuite, or SAP, the connection between the automation pipeline and the ledger is its own architecture problem. That is what our [AI integration services](/services/ai-integration-services/) handle alongside the workflow build — the governed bridge layer that routes approved entries to your ERP without manual re-entry.
+
 ---
 
 ## Launch Your 30-Day Automation Sprint

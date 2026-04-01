@@ -46,7 +46,7 @@ Replace headcount-first framing with workflow framing.
 
 Identify which workflow segments can run deterministically in the background.
 
-That is the shift from headcount-led scaling to infrastructure-led scaling.
+That is the shift from headcount-led scaling to infrastructure-led scaling. [Workflow automation services](/services/ai-workflow-automation-services/) make it concrete: identify the segments that run deterministically, automate them, and free your team for the decisions that actually need them.
 
 ---
 
@@ -81,7 +81,7 @@ Weak automation:
 
 Robust automation:
 
-- API-first integrations where possible
+- [API-first integrations](/services/ai-integration-services/) where possible
 - deterministic logic
 - explicit failure modes
 - complete logs

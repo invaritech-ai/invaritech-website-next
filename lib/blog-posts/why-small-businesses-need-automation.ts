@@ -20,7 +20,7 @@ When you look at financial tasks at small agencies, the daily operational bottle
 
 Then comes the reconciliation phase. You have to match purchase orders against the final invoices and receipts; this is the only way to figure out if a vendor delivered all the items in the order, or if they over delivered.
 
-Furthermore, bulk invoice and receipt generation requires highly custom plugins for most companies. They usually have a very specific invoice format, or a unique logic for receipt generation. Finally, if a business operates across many different banks, which is almost always the case, the aggregation of those statements into a universal account becomes absolutely non negotiable.
+Furthermore, bulk invoice and receipt generation requires highly custom plugins for most companies. They usually have a very specific invoice format, or a unique logic for receipt generation. Finally, if a business operates across many different banks, which is almost always the case, the aggregation of those statements into a universal account becomes absolutely non negotiable. Connecting those disparate sources cleanly — pulling and normalizing feeds across multiple banking formats — is precisely what [AI integration services](/services/ai-integration-services/) handle, without requiring a bank switch or a new accounting platform.
 
 ---
 
@@ -50,7 +50,7 @@ Many owners think they can just hire a cheap intern to do the manual data entry 
 
 A custom software pipeline does not need retraining; it does not make typos; it does not quit. Business automation is about building infrastructure that scales with you, rather than hiring temporary hands to patch a leaking ship.
 
-If you are unsure which process to automate first, the [free AI readiness assessment](/tools/assessment/) identifies your highest-ROI wedge in under five minutes.
+If you are unsure which process to automate first, the [free AI readiness assessment](/tools/assessment/) identifies your highest-ROI wedge in under five minutes. For teams that want a structured conversation before committing to a build, [AI automation consulting](/services/ai-automation-consulting/) starts with exactly that question.
     `,
     author: {
         name: "Avishek Majumder",

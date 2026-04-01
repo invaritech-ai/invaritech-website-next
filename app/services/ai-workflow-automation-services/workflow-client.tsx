@@ -662,6 +662,12 @@ export default function WorkflowClient() {
                             <ArrowRight className="w-3 h-3" /> Need ERP
                             integration?
                         </Link>
+                        <Link
+                            href="/services/ai-automation-consulting/"
+                            className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2"
+                        >
+                            <ArrowRight className="w-3 h-3" /> Not sure which workflow to start with?
+                        </Link>
                     </div>
                 </div>
             </section>

@@ -101,6 +101,8 @@ You shift humans toward exception handling and advisory work.
 
 This is RegOps: operational infrastructure that supports revenue expansion without increasing fragility.
 
+In practice, the delivery side breaks into two tracks. The [workflow automation layer](/services/ai-workflow-automation-services/) handles repeatable pipeline logic — intake, routing, status transitions, scheduled jobs. The [integration layer](/services/ai-integration-services/) handles the connections between your intake channels, approval workflows, and submission targets. Both sit over your existing systems without displacing them.
+
 If you want the architecture pattern behind this shift, see **[Anatomy of a RegOps Bridge](/blog/regops-technical/)**.
 
 ---
