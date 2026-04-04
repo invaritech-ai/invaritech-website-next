@@ -70,7 +70,7 @@ export default function BlogsPage() {
                         INTELLIGENCE ARCHIVE
                     </TextEffect>
                     
-                    <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-white">
+                    <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             INSIGHTS &
                         </TextEffect>
@@ -164,7 +164,7 @@ export default function BlogsPage() {
                                                  <span className="text-sm font-mono text-muted-foreground">
                                                     {formatDate(post.publishedAt)}
                                                 </span>
-                                                <div className="flex items-center gap-2 text-sm font-bold text-white group-hover:text-primary transition-colors">
+                                                <div className="flex items-center gap-2 text-sm font-bold text-foreground group-hover:text-primary transition-colors">
                                                     READ ENTRY <MoveUpRight className="size-4" />
                                                 </div>
                                             </div>

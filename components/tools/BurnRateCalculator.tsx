@@ -70,7 +70,7 @@ function NumberInput({
                             setRaw(String(v));
                             onChange(v);
                         }}
-                        className="bg-transparent text-right text-xl font-bold tracking-tighter text-white flex-1 sm:w-28 pr-3 py-2 outline-none tabular-nums"
+                        className="bg-transparent text-right text-xl font-bold tracking-tighter text-foreground flex-1 sm:w-28 pr-3 py-2 outline-none tabular-nums"
                     />
                 </div>
             </div>
@@ -95,7 +95,7 @@ function DaysSlider({
                 <span className="text-xs font-mono uppercase tracking-widest text-white/70">
                     Days to receive cash report
                 </span>
-                <span className="text-xl font-bold tracking-tighter text-white tabular-nums">
+                <span className="text-xl font-bold tracking-tighter text-foreground tabular-nums">
                     {value} {value === 1 ? "day" : "days"}
                 </span>
             </div>
@@ -260,7 +260,7 @@ export function BurnRateCalculator() {
                         <span className="text-xs font-mono uppercase tracking-widest text-white/60">
                             {isCashPositive ? "Net monthly profit" : "Net monthly burn"}
                         </span>
-                        <span className={`text-2xl font-bold tracking-tighter tabular-nums ${isCashPositive ? "text-primary" : "text-white"}`}>
+                        <span className={`text-2xl font-bold tracking-tighter tabular-nums ${isCashPositive ? "text-primary" : "text-foreground"}`}>
                             {fmt(isCashPositive ? netProfit : netBurn, cfg.symbol)}
                         </span>
                     </div>
@@ -308,7 +308,7 @@ export function BurnRateCalculator() {
                                     </div>
                                     <div
                                         className={`text-lg font-bold tracking-tighter tabular-nums ${
-                                            value < 0 ? "text-red-400" : value < balance * 0.3 ? "text-yellow-400" : "text-white"
+                                            value < 0 ? "text-red-400" : value < balance * 0.3 ? "text-yellow-400" : "text-foreground"
                                         }`}
                                     >
                                         {value < 0 ? `-${fmt(Math.abs(value), cfg.symbol)}` : fmt(value, cfg.symbol)}

@@ -55,7 +55,7 @@ export default function BackendClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -74,7 +74,7 @@ export default function BackendClient() {
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <h2 className="text-xl md:text-3xl text-white font-bold mb-6">
+                            <h2 className="text-xl md:text-3xl text-foreground font-bold mb-6">
                                 Turn brittle GenAI prototypes into
                                 production-grade AI backends.
                             </h2>
@@ -124,7 +124,7 @@ export default function BackendClient() {
                             </MagneticButton>
                         </a>
                         <Link href="/work/">
-                            <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10">
+                            <MagneticButton className="bg-transparent border border-white/20 text-foreground px-8 py-4 text-lg hover:bg-white/10">
                                 See Work / Results
                             </MagneticButton>
                         </Link>
@@ -215,7 +215,7 @@ export default function BackendClient() {
                     </p>
                     <div className="grid md:grid-cols-3 gap-6 stagger-list text-left">
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h3 className="font-bold text-white mb-2">
+                            <h3 className="font-bold text-foreground mb-2">
                                 Beyond Works &quot;Sometimes&quot;
                             </h3>
                             <p className="text-sm text-muted-foreground">
@@ -224,7 +224,7 @@ export default function BackendClient() {
                             </p>
                         </div>
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h3 className="font-bold text-white mb-2">
+                            <h3 className="font-bold text-foreground mb-2">
                                 Cost Control
                             </h3>
                             <p className="text-sm text-muted-foreground">
@@ -233,7 +233,7 @@ export default function BackendClient() {
                             </p>
                         </div>
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h3 className="font-bold text-white mb-2">
+                            <h3 className="font-bold text-foreground mb-2">
                                 Change Management
                             </h3>
                             <p className="text-sm text-muted-foreground">
@@ -268,7 +268,7 @@ export default function BackendClient() {
                                 <li className="flex gap-3">
                                     <GitBranch className="w-6 h-6 text-primary shrink-0" />
                                     <div>
-                                        <strong className="text-white block">
+                                        <strong className="text-foreground block">
                                             Version Control
                                         </strong>
                                         <span className="text-muted-foreground text-sm">
@@ -280,7 +280,7 @@ export default function BackendClient() {
                                 <li className="flex gap-3">
                                     <Check className="w-6 h-6 text-primary shrink-0" />
                                     <div>
-                                        <strong className="text-white block">
+                                        <strong className="text-foreground block">
                                             Deterministic Evaluation
                                         </strong>
                                         <span className="text-muted-foreground text-sm">
@@ -293,7 +293,7 @@ export default function BackendClient() {
                                 <li className="flex gap-3">
                                     <Server className="w-6 h-6 text-primary shrink-0" />
                                     <div>
-                                        <strong className="text-white block">
+                                        <strong className="text-foreground block">
                                             Release Discipline
                                         </strong>
                                         <span className="text-muted-foreground text-sm">
@@ -368,7 +368,7 @@ export default function BackendClient() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-white font-bold">
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-foreground font-bold">
                                 Predictive Intelligence
                             </div>
                             <div className="p-6 border-b md:border-b-0 border-white/5 text-primary font-mono flex items-center gap-2">
@@ -382,7 +382,7 @@ export default function BackendClient() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-white font-bold">
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-foreground font-bold">
                                 Bridge Logic
                             </div>
                             <div className="p-6 border-b md:border-b-0 border-white/5 text-blue-400 font-mono flex items-center gap-2">
@@ -395,7 +395,7 @@ export default function BackendClient() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 bg-black/20 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-white font-bold">
+                            <div className="p-6 border-b md:border-b-0 border-white/5 text-foreground font-bold">
                                 Business Logic
                             </div>
                             <div className="p-6 border-b md:border-b-0 border-white/5 text-green-400 font-mono flex items-center gap-2">
@@ -434,7 +434,7 @@ export default function BackendClient() {
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                 <StopCircle className="w-6 h-6 text-red-400 shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         No Silent Writes
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -446,7 +446,7 @@ export default function BackendClient() {
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                 <ShieldCheck className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Least Privilege
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -458,7 +458,7 @@ export default function BackendClient() {
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                 <Activity className="w-6 h-6 text-blue-400 shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Auditability
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -510,7 +510,7 @@ export default function BackendClient() {
                                     className="p-4 border border-white/10 rounded-lg bg-black/20 text-center"
                                 >
                                     <div className="w-2 h-2 rounded-full bg-primary mx-auto mb-3" />
-                                    <h4 className="font-bold text-white mb-2">
+                                    <h4 className="font-bold text-foreground mb-2">
                                         {item.title}
                                     </h4>
                                     <p className="text-xs text-muted-foreground">
@@ -531,7 +531,7 @@ export default function BackendClient() {
                     </h2>
                     <div className="grid md:grid-cols-2 gap-8 stagger-list">
                         <div className="stagger-item">
-                            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                                 <Server className="w-5 h-5 text-primary" />{" "}
                                 Microservices & APIs
                             </h3>
@@ -541,7 +541,7 @@ export default function BackendClient() {
                             </p>
                         </div>
                         <div className="stagger-item">
-                            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                                 <Check className="w-5 h-5 text-primary" /> Eval
                                 Harnesses
                             </h3>
@@ -551,7 +551,7 @@ export default function BackendClient() {
                             </p>
                         </div>
                         <div className="stagger-item">
-                            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                                 <LineChart className="w-5 h-5 text-primary" />{" "}
                                 Observability Stack
                             </h3>
@@ -560,7 +560,7 @@ export default function BackendClient() {
                             </p>
                         </div>
                         <div className="stagger-item">
-                            <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-3">
+                            <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                                 <ShieldCheck className="w-5 h-5 text-primary" />{" "}
                                 Guardrails
                             </h3>
@@ -630,7 +630,7 @@ export default function BackendClient() {
                                 key={i}
                                 className="p-6 border border-white/10 rounded-xl bg-white/5 text-center hover:border-primary/50 transition-colors"
                             >
-                                <div className="text-2xl font-bold text-white mb-2">
+                                <div className="text-2xl font-bold text-foreground mb-2">
                                     {m.val}
                                 </div>
                                 <div className="text-xs text-muted-foreground uppercase tracking-wider">
@@ -659,7 +659,7 @@ export default function BackendClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
                         Ready for{" "}
                         <span className="text-primary">Production</span>?
                     </h2>

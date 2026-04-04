@@ -226,7 +226,7 @@ export default function ContactSection() {
                                 <CheckCircle2 className="h-12 w-12 text-primary" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 text-white">
+                        <h3 className="text-2xl font-bold mb-4 text-foreground">
                             Message Sent.
                         </h3>
                         <p className="text-white/60 mb-8 text-lg">
@@ -259,7 +259,7 @@ export default function ContactSection() {
                     <div className="flex flex-col justify-between space-y-12">
                         <div className="space-y-8">
                             <div>
-                                <h2 className="text-2xl font-semibold mb-4 text-white">
+                                <h2 className="text-2xl font-semibold mb-4 text-foreground">
                                     Why partner with Invaritech?
                                 </h2>
                                 <p className="text-white/60 text-lg leading-relaxed">
@@ -277,7 +277,7 @@ export default function ContactSection() {
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1 text-white">Book a Meeting</h3>
+                                        <h3 className="font-medium mb-1 text-foreground">Book a Meeting</h3>
                                         <p className="text-sm text-white/50 mb-3">
                                             Skip the email loop and book a
                                             focused session directly with our
@@ -305,7 +305,7 @@ export default function ContactSection() {
                                         <Mail className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1 text-white">Email Us</h3>
+                                        <h3 className="font-medium mb-1 text-foreground">Email Us</h3>
                                         <p className="text-sm text-white/50 mb-3">
                                             Prefer to write it down? Send us an email and we&apos;ll respond within 24 hours.
                                         </p>
@@ -325,7 +325,7 @@ export default function ContactSection() {
                     <div className="relative">
                         <Card className="rounded-none border border-white/10 bg-black/40 backdrop-blur-md shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
-                                <h3 className="text-xl font-semibold mb-2 text-white">
+                                <h3 className="text-xl font-semibold mb-2 text-foreground">
                                     Send us a message
                                 </h3>
                                 <p className="text-sm text-white/50">
@@ -345,7 +345,7 @@ export default function ContactSection() {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             required
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -358,7 +358,7 @@ export default function ContactSection() {
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             required
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
                                         />
                                     </div>
                                 </div>
@@ -373,7 +373,7 @@ export default function ContactSection() {
                                             placeholder="+1 (555) 000-0000"
                                             value={formData.phone}
                                             onChange={handleInputChange}
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -386,7 +386,7 @@ export default function ContactSection() {
                                             value={formData.country}
                                             onChange={handleInputChange}
                                             required
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
+                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
                                         />
                                     </div>
                                 </div>
@@ -400,7 +400,7 @@ export default function ContactSection() {
                                         placeholder="acme.com"
                                         value={formData.company}
                                         onChange={handleInputChange}
-                                        className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20"
+                                        className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
                                     />
                                 </div>
 
@@ -416,7 +416,7 @@ export default function ContactSection() {
                                         onChange={handleInputChange}
                                         rows={4}
                                         required
-                                        className="rounded-none bg-white/5 border-white/10 font-mono text-white placeholder:text-white/20 resize-none"
+                                        className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20 resize-none"
                                     />
                                 </div>
 

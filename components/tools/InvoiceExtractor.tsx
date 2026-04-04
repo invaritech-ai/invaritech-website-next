@@ -470,7 +470,7 @@ export function InvoiceExtractor() {
                                 ].map(({ label, value }) => (
                                     <div key={label} className="space-y-1">
                                         <p className="text-white/30 font-mono text-[10px] uppercase tracking-widest">{label}</p>
-                                        <p className={`font-mono text-sm ${label === "TOTAL" ? "text-primary font-bold" : "text-white"}`}>
+                                        <p className={`font-mono text-sm ${label === "TOTAL" ? "text-primary font-bold" : "text-foreground"}`}>
                                             {formatCurrency(value, result.currency)}
                                         </p>
                                     </div>
@@ -509,7 +509,7 @@ export function InvoiceExtractor() {
                                                     <td className="px-3 py-2 text-white/60 text-xs text-right whitespace-nowrap">
                                                         {formatCurrency(item.unit_price, result.currency)}
                                                     </td>
-                                                    <td className="px-3 py-2 text-white text-xs text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-foreground text-xs text-right whitespace-nowrap">
                                                         {formatCurrency(item.line_total, result.currency)}
                                                     </td>
                                                 </tr>
@@ -538,7 +538,7 @@ export function InvoiceExtractor() {
                                             onChange={(e) => setEmailValue(e.target.value)}
                                             onKeyDown={(e) => e.key === "Enter" && handleEmailCapture()}
                                             placeholder="you@company.com"
-                                            className="flex-1 bg-black/60 border border-white/20 text-white font-mono text-xs px-3 py-2 placeholder-white/20 focus:outline-none focus:border-primary/60"
+                                            className="flex-1 bg-black/60 border border-white/20 text-foreground font-mono text-xs px-3 py-2 placeholder-white/20 focus:outline-none focus:border-primary/60"
                                         />
                                         <button
                                             onClick={handleEmailCapture}

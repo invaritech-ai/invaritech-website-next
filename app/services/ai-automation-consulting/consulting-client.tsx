@@ -31,7 +31,7 @@ export default function ConsultingClient() {
                         Service Offering
                     </Badge>
                     
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             AI AUTOMATION CONSULTING
                         </TextEffect>
@@ -39,7 +39,7 @@ export default function ConsultingClient() {
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                            <p className="text-xl md:text-2xl text-foreground font-medium mb-6">
                                 AI automation consulting for leadership teams who need clarity before committing capital.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -81,7 +81,7 @@ export default function ConsultingClient() {
                             </MagneticButton>
                         </a>
 	                            <Link href="/services/ai-automation-sprint/">
-	                            <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10">
+	                            <MagneticButton className="bg-transparent border border-white/20 text-foreground px-8 py-4 text-lg hover:bg-white/10">
 	                                View the 30-Day Sprint
 	                            </MagneticButton>
 	                        </Link>
@@ -179,13 +179,13 @@ export default function ConsultingClient() {
                                 <div>
                                     <h4 className="text-xs uppercase tracking-widest text-primary mb-4 font-mono">Our Production Path</h4>
                                     <ul className="space-y-3">
-                                        <li className="flex items-center gap-2 text-sm text-white"><Check className="size-3 text-primary" /> Delivery-first spec</li>
-                                        <li className="flex items-center gap-2 text-sm text-white"><Check className="size-3 text-primary" /> Accountable ROI</li>
-                                        <li className="flex items-center gap-2 text-sm text-white"><Check className="size-3 text-primary" /> Bounded execution</li>
+                                        <li className="flex items-center gap-2 text-sm text-foreground"><Check className="size-3 text-primary" /> Delivery-first spec</li>
+                                        <li className="flex items-center gap-2 text-sm text-foreground"><Check className="size-3 text-primary" /> Accountable ROI</li>
+                                        <li className="flex items-center gap-2 text-sm text-foreground"><Check className="size-3 text-primary" /> Bounded execution</li>
                                     </ul>
                                 </div>
                             </div>
-                            <p className="text-lg font-bold text-white">We design consulting to end where execution begins.</p>
+                            <p className="text-lg font-bold text-foreground">We design consulting to end where execution begins.</p>
                         </div>
                     </div>
                 </div>
@@ -201,7 +201,7 @@ export default function ConsultingClient() {
                                 If scope is already clear, go straight to the Sprint. Choose consulting when you need clarity first.
                             </p>
 	                            <Link href="/services/ai-automation-sprint/">
-	                                <MagneticButton className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 text-sm flex items-center gap-2">
+	                                <MagneticButton className="bg-white/10 hover:bg-white/20 text-foreground px-6 py-3 text-sm flex items-center gap-2">
 	                                    Compare with the Sprint <ArrowRight className="w-4 h-4" />
 	                                </MagneticButton>
 	                            </Link>
@@ -247,7 +247,7 @@ export default function ConsultingClient() {
                             <div key={i} className="stagger-item p-6 border border-white/5 rounded-2xl bg-black/40">
                                 <div className="flex items-center gap-4 mb-4">
                                     <item.icon className="size-5 text-primary" />
-                                    <h4 className="font-bold text-white">{item.title}</h4>
+                                    <h4 className="font-bold text-foreground">{item.title}</h4>
                                 </div>
                                 <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
                             </div>
@@ -272,7 +272,7 @@ export default function ConsultingClient() {
                                 <div className="absolute left-0 top-0 size-10 rounded-full bg-background border border-white/20 flex items-center justify-center text-sm font-bold text-white/50 group-hover:border-primary group-hover:text-primary transition-colors">
                                     {i + 1}
                                 </div>
-                                <h3 className="text-2xl font-bold text-white mb-2">{step.title}</h3>
+                                <h3 className="text-2xl font-bold text-foreground mb-2">{step.title}</h3>
                                 <p className="text-muted-foreground text-lg leading-relaxed">{step.desc}</p>
                             </div>
                         ))}
@@ -295,7 +295,7 @@ export default function ConsultingClient() {
              {/* Final CTA */}
              <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-	                    <h2 className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+	                    <h2 className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
 	                        Let&apos;s Find Your <span className="text-primary">Wedge</span>.
 	                    </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">

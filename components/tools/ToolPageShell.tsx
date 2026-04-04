@@ -71,7 +71,7 @@ export function ToolPageShell({
                             </p>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-white mb-6">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-foreground mb-6">
                             {titleParts[0]}{" "}
                             <span className="text-primary">{titleParts[1]}</span>
                         </h1>

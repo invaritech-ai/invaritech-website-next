@@ -70,7 +70,7 @@ function SliderInput({
                 <span className="text-xs font-mono uppercase tracking-widest text-white/70 shrink-0">
                     {label}
                 </span>
-                <span className="text-xl font-bold tracking-tighter text-white tabular-nums text-right">
+                <span className="text-xl font-bold tracking-tighter text-foreground tabular-nums text-right">
                     {displayValue}
                 </span>
             </div>
@@ -328,7 +328,7 @@ export function CostToCloseCalculator() {
                             <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 mb-1">
                                 Total hours/mo
                             </div>
-                            <div className="text-2xl font-bold tracking-tighter text-white tabular-nums">
+                            <div className="text-2xl font-bold tracking-tighter text-foreground tabular-nums">
                                 {Math.round(totalHoursPerMonth)}h
                             </div>
                         </div>
@@ -371,7 +371,7 @@ export function CostToCloseCalculator() {
                         <span className="text-xs font-mono uppercase tracking-widest text-white/60">
                             Monthly close cost
                         </span>
-                        <span className="text-2xl font-bold tracking-tighter text-white tabular-nums">
+                        <span className="text-2xl font-bold tracking-tighter text-foreground tabular-nums">
                             {fmt(monthlyCloseCost, cfg.symbol)}
                         </span>
                     </div>
@@ -383,7 +383,7 @@ export function CostToCloseCalculator() {
                         <div className="text-xs font-mono uppercase tracking-[0.22em] text-primary mb-3">
                             Annual &ldquo;Manual Tax&rdquo;
                         </div>
-                        <div className="text-5xl md:text-6xl font-bold tracking-tighter text-white tabular-nums leading-none">
+                        <div className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground tabular-nums leading-none">
                             {fmt(annualManualTax, cfg.symbol)}
                         </div>
                         <div className="text-xs font-mono text-white/55 mt-2">

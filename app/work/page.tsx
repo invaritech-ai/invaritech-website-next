@@ -69,7 +69,7 @@ export default function WorkPage() {
             
              {/* Ghost Typography Background Layer */}
             <div className="absolute top-40 -right-20 select-none pointer-events-none opacity-[0.03] whitespace-nowrap z-0">
-                <span className="text-[25rem] font-black tracking-tighter uppercase text-white">
+                <span className="text-[25rem] font-black tracking-tighter uppercase text-foreground">
                     PROOF
                 </span>
             </div>
@@ -80,7 +80,7 @@ export default function WorkPage() {
                         per="char"
                         preset="fade"
                         as="h1"
-                        className="text-6xl md:text-9xl font-bold tracking-tighter mb-8 leading-none mix-blend-difference text-white"
+                        className="text-6xl md:text-9xl font-bold tracking-tighter mb-8 leading-none mix-blend-difference text-foreground"
                     >
                         SELECTED WORK
                     </TextEffect>

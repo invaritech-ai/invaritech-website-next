@@ -14,12 +14,12 @@ export function ServiceBackground({ theme }: ServiceBackgroundProps) {
     // Using radial gradients to create a "glow" effect behind the content.
     
     const colors: Record<ServiceTheme, string> = {
-        orange: "rgba(255, 100, 0, 0.15)",   // Sprint
-        blue: "rgba(50, 150, 255, 0.15)",    // Workflow
-        green: "rgba(50, 255, 100, 0.12)",   // Integration
-        purple: "rgba(140, 60, 255, 0.15)",  // Chatbot
-        crimson: "rgba(255, 50, 50, 0.12)",  // Backend
-        teal: "rgba(0, 255, 200, 0.12)"      // Consulting
+        orange: "rgba(200, 150, 45, 0.08)",
+        blue: "rgba(43, 74, 138, 0.06)",
+        green: "rgba(58, 125, 92, 0.06)",
+        purple: "rgba(90, 62, 124, 0.06)",
+        crimson: "rgba(160, 50, 50, 0.06)",
+        teal: "rgba(0, 160, 130, 0.06)",
     };
 
     const color = colors[theme] || colors.orange;
@@ -28,7 +28,7 @@ export function ServiceBackground({ theme }: ServiceBackgroundProps) {
         <div 
             className="fixed inset-0 z-[1] pointer-events-none"
             style={{
-                background: `radial-gradient(circle at 50% 30%, ${color}, transparent 70%)`
+                background: `radial-gradient(circle at 50% 3%, ${color}, transparent 70%)`
             }}
         />
     );

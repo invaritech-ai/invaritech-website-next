@@ -58,7 +58,7 @@ export default function HomeCoreThesis() {
 
             <div className="mx-auto max-w-7xl px-6">
                 <div className="mb-12 grid gap-6 md:mb-16 lg:grid-cols-[1fr_auto] lg:items-end">
-                    <div className="max-w-3xl text-white">
+                    <div className="max-w-3xl text-foreground">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-8 bg-primary/60"></div>
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">Core Thesis</p>
@@ -107,7 +107,7 @@ export default function HomeCoreThesis() {
                     </div>
                 </div>
 
-                <div className="mt-20 rounded-none border border-primary/20 bg-primary/5 p-8 text-center text-white backdrop-blur md:mt-32">
+                <div className="mt-20 rounded-none border border-primary/20 bg-primary/5 p-8 text-center text-foreground backdrop-blur md:mt-32">
                     <p className="text-balance text-3xl font-bold md:text-5xl tracking-tight">
                         We don’t burn money on AI where simpler systems work
                         better.
@@ -154,7 +154,7 @@ function SpineCard({ point, index }: { point: ThesisPoint; index: number }) {
                     filter: isInView ? "blur(0px)" : "blur(12px)",
                 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="ml-12 max-w-xl border border-white/10 bg-white/5 p-8 text-white backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)] md:ml-0 md:w-[46%] hover:border-primary/30 transition-colors duration-500"
+                className="ml-12 max-w-xl border border-white/10 bg-white/5 p-8 text-foreground backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)] md:ml-0 md:w-[46%] hover:border-primary/30 transition-colors duration-500"
             >
                 <h3 className="text-2xl font-bold leading-tight md:text-4xl tracking-tight mb-4">
                     {point.title}

@@ -177,7 +177,7 @@ export default function Artistic404() {
   }, [dimensions]);
 
   return (
-    <div className="relative h-screen w-full bg-[#050505] overflow-hidden text-white font-sans selection:bg-primary/30">
+    <div className="relative h-screen w-full bg-[#050505] overflow-hidden text-foreground font-sans selection:bg-primary/30">
         {/* Canvas Layer */}
         <canvas 
             ref={canvasRef} 
@@ -193,11 +193,11 @@ export default function Artistic404() {
                 className="text-center"
             >
                 <div className="relative perspective-1000">
-                    <h1 className="text-[12rem] md:text-[24rem] font-bold leading-none tracking-tighter opacity-5 select-none text-white blur-sm transform-gpu animate-pulse-slow">
+                    <h1 className="text-[12rem] md:text-[24rem] font-bold leading-none tracking-tighter opacity-5 select-none text-foreground blur-sm transform-gpu animate-pulse-slow">
                         404
                     </h1>
                     <div className="absolute inset-0 flex items-center justify-center">
-                         <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-white mix-blend-screen z-20 drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                         <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-foreground mix-blend-screen z-20 drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
                             VOID
                         </h1>
                     </div>
@@ -218,7 +218,7 @@ export default function Artistic404() {
                         asChild 
                         variant="ghost" 
                         size="lg" 
-                        className="rounded-full border border-white/10 bg-white/5 hover:bg-white/20 hover:scale-105 hover:tracking-widest text-white backdrop-blur-md transition-all duration-500 ease-out group"
+                        className="rounded-full border border-white/10 bg-white/5 hover:bg-white/20 hover:scale-105 hover:tracking-widest text-foreground backdrop-blur-md transition-all duration-500 ease-out group"
                     >
                         <Link href="/">
                             <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-2 transition-transform" />

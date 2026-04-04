@@ -72,7 +72,7 @@ export default function CareersPage() {
                         CAREER OPPORTUNITIES
                     </TextEffect>
                     
-                    <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-white">
+                    <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             BUILD THE
                         </TextEffect>
@@ -98,7 +98,7 @@ export default function CareersPage() {
                             { label: "Remote, async-first", body: "The team is distributed across Southeast Asia. We communicate in writing, move fast on decisions, and avoid synchronous overhead." },
                         ].map((item) => (
                             <div key={item.label} className="border border-white/10 bg-white/[0.03] p-6">
-                                <h3 className="text-sm font-bold text-white mb-2">{item.label}</h3>
+                                <h3 className="text-sm font-bold text-foreground mb-2">{item.label}</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">{item.body}</p>
                             </div>
                         ))}
@@ -120,7 +120,7 @@ export default function CareersPage() {
                                         <div className="size-2 rounded-full bg-red-500 animate-pulse" />
                                         Hiring Paused
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-4">Protocol: Standby</h3>
+                                    <h3 className="text-2xl font-bold text-foreground mb-4">Protocol: Standby</h3>
                                     <p className="text-lg text-muted-foreground/80 leading-relaxed font-mono">
                                         {HIRING_STATUS_MESSAGE}
                                     </p>
@@ -138,7 +138,7 @@ export default function CareersPage() {
                                         <div className="size-2 rounded-full bg-emerald-500 animate-pulse" />
                                         Positions Open
                                     </div>
-                                    <h3 className="text-2xl font-bold text-white mb-4">Protocol: Recruitment Active</h3>
+                                    <h3 className="text-2xl font-bold text-foreground mb-4">Protocol: Recruitment Active</h3>
                                     <p className="text-lg text-muted-foreground/80 leading-relaxed font-mono">
                                         We are actively seeking exceptional talent to join our core engineering unit.
                                     </p>
@@ -177,7 +177,7 @@ export default function CareersPage() {
                                             </span>
                                         </div>
                                         
-                                        <h3 className="text-3xl md:text-4xl font-bold text-white group-hover:text-primary transition-colors">
+                                        <h3 className="text-3xl md:text-4xl font-bold text-foreground group-hover:text-primary transition-colors">
                                             {job.title}
                                         </h3>
                                         

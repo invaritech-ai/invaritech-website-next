@@ -423,7 +423,7 @@ export default function ToolsPage() {
 
             {/* Ghost typography */}
             <div className="absolute top-20 -right-20 select-none pointer-events-none opacity-[0.025] whitespace-nowrap z-0 overflow-hidden">
-                <span className="text-[20rem] font-black tracking-tighter uppercase text-white">
+                <span className="text-[20rem] font-black tracking-tighter uppercase text-foreground">
                     TOOLS
                 </span>
             </div>
@@ -442,7 +442,7 @@ export default function ToolsPage() {
                         per="word"
                         as="h2"
                         preset="fade"
-                        className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-white mix-blend-difference mb-8"
+                        className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-foreground mix-blend-difference mb-8"
                     >
                         AI THAT WORKS.
                     </TextEffect>
@@ -512,7 +512,7 @@ export default function ToolsPage() {
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-2xl font-bold tracking-tight text-white group-hover:text-primary transition-colors mb-4">
+                                    <h3 className="text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors mb-4">
                                         {tool.name}
                                     </h3>
                                     <p className="text-sm text-white/50 leading-relaxed flex-1 mb-8">
@@ -705,7 +705,7 @@ export default function ToolsPage() {
                                     Beyond the Demo
                                 </p>
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-white mb-8">
+                            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-foreground mb-8">
                                 THESE ARE DEMOS.
                                 <br />
                                 <span className="text-white/30">WE DEPLOY THE REAL THING.</span>

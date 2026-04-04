@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
 
                             {/* Title */}
-                            <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-8 leading-[0.9] text-white mix-blend-difference">
+                            <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-8 leading-[0.9] text-foreground mix-blend-difference">
                                 <TextEffect per="word" preset="slide">
                                     {post.title}
                                 </TextEffect>
@@ -216,11 +216,11 @@ export default async function BlogPostPage({ params }: Props) {
                                 </div>
 
                                 <div className="flex items-center gap-4 text-sm">
-                                    <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-white border border-white/20">
+                                    <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-foreground border border-white/20">
                                         {post.author.name.charAt(0)}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="font-bold text-white">{post.author.name}</span>
+                                        <span className="font-bold text-foreground">{post.author.name}</span>
                                         <span className="text-muted-foreground text-xs font-mono uppercase">{post.author.role}</span>
                                     </div>
                                 </div>
@@ -263,18 +263,18 @@ export default async function BlogPostPage({ params }: Props) {
                                         th: ({ children }) => <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>,
                                         td: ({ children }) => <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>,
                                         h1: ({ children }) => (
-                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
+                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-foreground border-l-4 border-primary pl-6 flex items-center gap-4">
                                                 {children}
                                             </h2>
                                         ),
                                         h2: ({ children }) => (
-                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-white group flex items-center">
+                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-foreground group flex items-center">
                                                 <span className="text-primary/40 mr-4 font-mono text-lg group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 -ml-10 w-6 text-right">#</span>
                                                 {children}
                                             </h3>
                                         ),
                                         h3: ({ children }) => (
-                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-white flex items-center gap-3">
+                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-foreground flex items-center gap-3">
                                                 <span className="w-2 h-2 bg-primary/50 rounded-sm rotate-45" />
                                                 {children}
                                             </h4>
@@ -324,7 +324,7 @@ export default async function BlogPostPage({ params }: Props) {
                                             </li>
                                         ),
                                         strong: ({ children }) => (
-                                            <strong className="font-bold text-white bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+                                            <strong className="font-bold text-foreground bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
                                                 {children}
                                             </strong>
                                         )
@@ -366,18 +366,18 @@ export default async function BlogPostPage({ params }: Props) {
                                         th: ({ children }) => <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>,
                                         td: ({ children }) => <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>,
                                         h1: ({ children }) => (
-                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
+                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-foreground border-l-4 border-primary pl-6 flex items-center gap-4">
                                                 {children}
                                             </h2>
                                         ),
                                         h2: ({ children }) => (
-                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-white group flex items-center">
+                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-foreground group flex items-center">
                                                 <span className="text-primary/40 mr-4 font-mono text-lg group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 -ml-10 w-6 text-right">#</span>
                                                 {children}
                                             </h3>
                                         ),
                                         h3: ({ children }) => (
-                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-white flex items-center gap-3">
+                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-foreground flex items-center gap-3">
                                                 <span className="w-2 h-2 bg-primary/50 rounded-sm rotate-45" />
                                                 {children}
                                             </h4>
@@ -427,7 +427,7 @@ export default async function BlogPostPage({ params }: Props) {
                                             </li>
                                         ),
                                         strong: ({ children }) => (
-                                            <strong className="font-bold text-white bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
+                                            <strong className="font-bold text-foreground bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
                                                 {children}
                                             </strong>
                                         )
@@ -440,7 +440,7 @@ export default async function BlogPostPage({ params }: Props) {
 
                         {/* Footer CTA */}
                         <section className="mt-32 pt-16 border-t border-white/10 text-center">
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6 max-w-3xl mx-auto text-white">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6 max-w-3xl mx-auto text-foreground">
                                 READY TO <span className="text-primary">AUTOMATE</span>?
                             </h2>
                             <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">

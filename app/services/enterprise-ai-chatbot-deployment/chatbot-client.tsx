@@ -48,7 +48,7 @@ export default function ChatbotClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -67,7 +67,7 @@ export default function ChatbotClient() {
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                            <p className="text-xl md:text-2xl text-foreground font-medium mb-6">
                                 Control, not Curiosity.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -120,7 +120,7 @@ export default function ChatbotClient() {
                             </MagneticButton>
                         </a>
                         <Link href="/work/">
-                            <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10">
+                            <MagneticButton className="bg-transparent border border-white/20 text-foreground px-8 py-4 text-lg hover:bg-white/10">
                                 See Work / Results
                             </MagneticButton>
                         </Link>
@@ -224,7 +224,7 @@ export default function ChatbotClient() {
                                     className="stagger-item p-6 border border-red-500/10 rounded-xl bg-black/40 hover:bg-red-900/20 transition-colors"
                                 >
                                     <X className="w-6 h-6 text-red-500 mb-4" />
-                                    <h3 className="font-bold text-white mb-2">
+                                    <h3 className="font-bold text-foreground mb-2">
                                         {item.title}
                                     </h3>
                                     <p className="text-sm text-red-200/60">
@@ -297,7 +297,7 @@ export default function ChatbotClient() {
                                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                                     <item.icon className="w-6 h-6" />
                                 </div>
-                                <h3 className="font-bold text-white mb-2">
+                                <h3 className="font-bold text-foreground mb-2">
                                     {item.title}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
@@ -353,7 +353,7 @@ export default function ChatbotClient() {
                                 inside workflow.
                             </p>
                             <div className="bg-black/40 rounded-xl p-6 border border-white/5">
-                                <h4 className="font-bold text-white mb-3 text-sm uppercase tracking-widest">
+                                <h4 className="font-bold text-foreground mb-3 text-sm uppercase tracking-widest">
                                     Multilingual Deployment
                                 </h4>
                                 <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
@@ -393,7 +393,7 @@ export default function ChatbotClient() {
                     </p>
                     <div className="grid md:grid-cols-3 gap-6 stagger-list">
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h4 className="font-bold text-white mb-2">
+                            <h4 className="font-bold text-foreground mb-2">
                                 Host Yourself
                             </h4>
                             <p className="text-sm text-muted-foreground">
@@ -401,7 +401,7 @@ export default function ChatbotClient() {
                             </p>
                         </div>
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h4 className="font-bold text-white mb-2">
+                            <h4 className="font-bold text-foreground mb-2">
                                 Approved Models
                             </h4>
                             <p className="text-sm text-muted-foreground">
@@ -409,7 +409,7 @@ export default function ChatbotClient() {
                             </p>
                         </div>
                         <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h4 className="font-bold text-white mb-2">
+                            <h4 className="font-bold text-foreground mb-2">
                                 Cost Visibility
                             </h4>
                             <p className="text-sm text-muted-foreground">
@@ -437,7 +437,7 @@ export default function ChatbotClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
                         One Objective. Clear Boundaries. <br />{" "}
                         <span className="text-primary">Go / No-Go.</span>
                     </h2>

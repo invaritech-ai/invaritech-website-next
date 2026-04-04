@@ -31,7 +31,7 @@ export default function IntegrationClient() {
                         Service Offering
                     </Badge>
                     
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             AI INTEGRATION
                         </TextEffect>
@@ -41,7 +41,7 @@ export default function IntegrationClient() {
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                            <p className="text-xl md:text-2xl text-foreground font-medium mb-6">
                                 Custom Gateways for Sovereign Data.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -83,7 +83,7 @@ export default function IntegrationClient() {
                             </MagneticButton>
                         </a>
                         <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                             <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10">
+                             <MagneticButton className="bg-transparent border border-white/20 text-foreground px-8 py-4 text-lg hover:bg-white/10">
                                 Book a Meeting
                             </MagneticButton>
                         </a>
@@ -165,19 +165,19 @@ export default function IntegrationClient() {
 
                         <div className="grid md:grid-cols-3 gap-8 stagger-list">
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                                <h3 className="font-bold text-white mb-2 flex items-center gap-2">
+                                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                                     <Server className="w-5 h-5 text-primary" /> VPC-First
                                 </h3>
                                 <p className="text-sm text-muted-foreground">Deployed inside your private cloud environment where possible.</p>
                             </div>
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                                <h3 className="font-bold text-white mb-2 flex items-center gap-2">
+                                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                                     <Database className="w-5 h-5 text-primary" /> On-Prem Ready
                                 </h3>
                                 <p className="text-sm text-muted-foreground">Air-gapped or local deployment support where required.</p>
                             </div>
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                                <h3 className="font-bold text-white mb-2 flex items-center gap-2">
+                                <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                                     <Lock className="w-5 h-5 text-primary" /> Vendor Controls
                                 </h3>
                                 <p className="text-sm text-muted-foreground">Strict allowlists and data residency constraints respected.</p>
@@ -203,7 +203,7 @@ export default function IntegrationClient() {
                                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                                     <ShieldCheck className="w-5 h-5" />
                                 </div>
-                                <h3 className="font-bold text-white mb-2">{item.title}</h3>
+                                <h3 className="font-bold text-foreground mb-2">{item.title}</h3>
                                 <p className="text-sm text-muted-foreground">{item.desc}</p>
                             </div>
                         ))}
@@ -269,7 +269,7 @@ export default function IntegrationClient() {
                                  <div key={i} className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                     <Eye className="w-6 h-6 text-primary shrink-0" />
                                     <div>
-                                        <h4 className="font-bold text-white mb-1">{item.title}</h4>
+                                        <h4 className="font-bold text-foreground mb-1">{item.title}</h4>
                                         <p className="text-sm text-muted-foreground">{item.desc}</p>
                                     </div>
                                  </div>
@@ -338,7 +338,7 @@ export default function IntegrationClient() {
              {/* Final CTA */}
              <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
                         Connect <span className="text-primary">Without</span> Surrendering <br/> Your Stack.
                     </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">

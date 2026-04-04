@@ -14,7 +14,7 @@ export const Logo = ({
             width={480}
             height={64}
             className={cn(
-                "h-8 w-auto brightness-75 dark:brightness-100",
+                "h-8 w-auto",
                 className
             )}
             priority
@@ -35,7 +35,7 @@ export const LogoIcon = ({
             width={32}
             height={32}
             className={cn(
-                "size-8 brightness-75 dark:brightness-100",
+                "size-8",
                 className
             )}
         />

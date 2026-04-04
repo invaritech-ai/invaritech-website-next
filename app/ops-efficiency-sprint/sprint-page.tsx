@@ -105,7 +105,7 @@ export default function SprintMarketingPage() {
                             {BRAND_EYEBROW}
                         </TextEffect>
 
-                        <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-white">
+                        <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-foreground">
                             <TextEffect
                                 per="word"
                                 preset="slide"

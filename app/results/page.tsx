@@ -101,7 +101,7 @@ export default function Results() {
                         EVIDENCE OF IMPACT
                     </TextEffect>
 
-                    <h1 className="text-[10vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-white">
+                    <h1 className="text-[10vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             RESULTS YOU
                         </TextEffect>
@@ -172,7 +172,7 @@ export default function Results() {
                 <div className="max-w-7xl mx-auto relative">
                      {/* Ghost Typography Background Layer */}
                     <div className="absolute -top-20 -left-10 select-none pointer-events-none opacity-[0.03] whitespace-nowrap z-0">
-                        <span className="text-[20rem] font-black tracking-tighter uppercase text-white">
+                        <span className="text-[20rem] font-black tracking-tighter uppercase text-foreground">
                             IMPACT
                         </span>
                     </div>
@@ -198,7 +198,7 @@ export default function Results() {
                                 </div>
                                 <div className="md:col-span-4 px-4 md:px-0 text-left md:text-right">
                                     <div className="flex items-baseline justify-end gap-2">
-                                        <span className="block text-5xl md:text-6xl font-bold text-white group-hover:text-primary transition-colors">
+                                        <span className="block text-5xl md:text-6xl font-bold text-foreground group-hover:text-primary transition-colors">
                                             {result.impact}
                                         </span>
                                         <span className="text-[10px] font-mono text-primary/40 uppercase tracking-tighter">(Modeled)</span>

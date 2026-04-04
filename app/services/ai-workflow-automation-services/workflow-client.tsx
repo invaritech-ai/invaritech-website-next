@@ -50,7 +50,7 @@ export default function WorkflowClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -69,7 +69,7 @@ export default function WorkflowClient() {
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                            <p className="text-xl md:text-2xl text-foreground font-medium mb-6">
                                 We turn operational friction into operational
                                 liquidity for finance, manufacturing, and
                                 operations teams across APAC.
@@ -435,7 +435,7 @@ export default function WorkflowClient() {
                                 </div>
                             </div>
                             <div className="space-y-4 stagger-list">
-                                <h3 className="text-lg font-bold text-white mb-4">
+                                <h3 className="text-lg font-bold text-foreground mb-4">
                                     We Build Visibility-First:
                                 </h3>
                                 {[
@@ -524,7 +524,7 @@ export default function WorkflowClient() {
             <section className="reveal-section py-16 px-6 relative z-10 border-t border-white/10">
                 <div className="max-w-4xl mx-auto bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
                     <Calculator className="w-12 h-12 text-primary mx-auto mb-6" />
-                    <h3 className="text-2xl font-bold text-white mb-4">
+                    <h3 className="text-2xl font-bold text-foreground mb-4">
                         Calculate Your Manual Tax
                     </h3>
                     <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -572,7 +572,7 @@ export default function WorkflowClient() {
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                 <GitBranch className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Deterministic Fallbacks
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -585,7 +585,7 @@ export default function WorkflowClient() {
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                 <Lock className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Token Discipline
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -597,7 +597,7 @@ export default function WorkflowClient() {
                             <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
                                 <ShieldCheck className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Auditability
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -628,7 +628,7 @@ export default function WorkflowClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
                         Build for <span className="text-primary">Scale</span>{" "}
                         not Just <br /> Efficiency.
                     </h2>
