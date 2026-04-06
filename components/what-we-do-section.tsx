@@ -61,18 +61,6 @@ export default function WhatWeDoSection() {
                 ease: "power2.out",
             });
 
-            gsap.from(".wwd-card", {
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 70%",
-                    once: true,
-                },
-                opacity: 0,
-                y: 24,
-                duration: 0.5,
-                stagger: 0.08,
-                ease: "power2.out",
-            });
 
             gsap.from(".wwd-nope", {
                 scrollTrigger: {

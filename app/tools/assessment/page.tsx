@@ -84,7 +84,7 @@ const jsonLd = {
 
 export default function AssessmentPage() {
     return (
-        <main className="min-h-screen relative overflow-hidden bg-black selection:bg-primary selection:text-black">
+        <main className="min-h-screen relative overflow-hidden bg-background selection:bg-primary selection:text-primary-foreground">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -96,13 +96,13 @@ export default function AssessmentPage() {
                     <div className="flex items-center gap-2 mb-10">
                         <Link
                             href="/tools/"
-                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/30 hover:text-primary transition-colors"
+                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors"
                         >
                             <ArrowLeft className="w-3 h-3" />
                             All Tools
                         </Link>
-                        <span className="text-white/15 font-mono text-[10px]">/</span>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/20">
+                        <span className="text-border font-mono text-[10px]">/</span>
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">
                             AI Readiness Assessment
                         </span>
                     </div>

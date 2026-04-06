@@ -64,7 +64,7 @@ export default function BackendClient() {
                             GENERATIVE AI
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">
+                        <span className="text-muted-foreground/70">
                             DEVELOPMENT SERVICES
                         </span>
                     </h1>
@@ -87,28 +87,28 @@ export default function BackendClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                                 We engineer the production layer that keeps costs controlled, outputs testable, and AI decisions auditable — so your margins don&apos;t erode as you scale.
                             </p>
-                            <p className="text-lg text-white/80 font-mono">
+                            <p className="text-lg text-foreground/80 font-mono">
                                 Usage scales. Margins stay protected.
                             </p>
                         </div>
                         <div className="md:w-1/3 space-y-4">
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     CTOs and technical founders who have shipped a GenAI feature and are watching token bills climb or reliability erode at scale.
                                 </p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
                                 <p className="text-sm text-muted-foreground">Technical audit (1 week) → architecture → sprint build → eval harness + monitoring.</p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">Production-grade microservice with eval harness, observability stack, and guardrails. Handoff or retainer.</p>
                             </div>
-                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                            <div className="bg-primary/10 border border-primary/30 rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
-                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $15,000</span>.</p>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-foreground font-semibold">USD $15,000</span>.</p>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@ export default function BackendClient() {
                             </MagneticButton>
                         </a>
                         <Link href="/work/">
-                            <MagneticButton className="bg-transparent border border-white/20 text-foreground px-8 py-4 text-lg hover:bg-white/10">
+                            <MagneticButton className="bg-transparent border border-border text-foreground px-8 py-4 text-lg hover:bg-muted/30">
                                 See Work / Results
                             </MagneticButton>
                         </Link>
@@ -133,7 +133,7 @@ export default function BackendClient() {
             </section>
 
             {/* Who this is for */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card ">
                 <div className="max-w-5xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
@@ -169,13 +169,13 @@ export default function BackendClient() {
                                 ].map((item, i) => (
                                     <li
                                         key={i}
-                                        className="stagger-item flex gap-4 p-4 border border-white/5 rounded-lg bg-white/5"
+                                        className="stagger-item flex gap-4 p-4 border border-border rounded-lg bg-card"
                                     >
                                         <div className="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
                                             <item.icon className="w-5 h-5" />
                                         </div>
                                         <div className="flex items-center">
-                                            <span className="text-white font-medium">
+                                            <span className="text-foreground font-medium">
                                                 {item.text}
                                             </span>
                                         </div>
@@ -184,7 +184,7 @@ export default function BackendClient() {
                             </ul>
                         </div>
                     </div>
-                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                    <div className="mt-12 p-6 border border-border rounded-none bg-card max-w-2xl">
                         <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             {[
@@ -214,7 +214,7 @@ export default function BackendClient() {
                         makes AI safe, profitable, and maintainable.
                     </p>
                     <div className="grid md:grid-cols-3 gap-6 stagger-list text-left">
-                        <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
+                        <div className="stagger-item p-6 border border-border rounded-none bg-card">
                             <h3 className="font-bold text-foreground mb-2">
                                 Beyond Works &quot;Sometimes&quot;
                             </h3>
@@ -223,7 +223,7 @@ export default function BackendClient() {
                                 just a cool demo.
                             </p>
                         </div>
-                        <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
+                        <div className="stagger-item p-6 border border-border rounded-none bg-card">
                             <h3 className="font-bold text-foreground mb-2">
                                 Cost Control
                             </h3>
@@ -232,7 +232,7 @@ export default function BackendClient() {
                                 user count.
                             </p>
                         </div>
-                        <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
+                        <div className="stagger-item p-6 border border-border rounded-none bg-card">
                             <h3 className="font-bold text-foreground mb-2">
                                 Change Management
                             </h3>
@@ -246,7 +246,7 @@ export default function BackendClient() {
             </section>
 
             {/* Engineering Standard: Prompts as Code */}
-            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
+            <section className="reveal-section py-24 px-6 relative z-10 bg-card">
                 <div className="max-w-5xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div>
@@ -304,7 +304,7 @@ export default function BackendClient() {
                                 </li>
                             </ul>
                         </div>
-                        <div className="bg-black/50 border border-white/10 rounded-xl p-6 font-mono text-sm text-muted-foreground overflow-hidden">
+                        <div className="bg-card border border-border rounded-none p-6 font-mono text-sm text-muted-foreground overflow-hidden">
                             <div className="flex gap-2 mb-4">
                                 <span className="w-3 h-3 rounded-full bg-red-500/50" />
                                 <span className="w-3 h-3 rounded-full bg-yellow-500/50" />
@@ -312,12 +312,12 @@ export default function BackendClient() {
                             </div>
                             <div className="space-y-2">
                                 <p>
-                                    <span className="text-purple-400">git</span>{" "}
+                                    <span className="text-primary/70">git</span>{" "}
                                     commit -m &quot;feat: optimize
                                     categorization prompt&quot;
                                 </p>
                                 <p>
-                                    <span className="text-blue-400">
+                                    <span className="text-primary/70">
                                         Running evaluators...
                                     </span>
                                 </p>
@@ -360,18 +360,18 @@ export default function BackendClient() {
                         </p>
                     </div>
 
-                    <div className="overflow-hidden border border-white/10 rounded-2xl">
-                        <div className="grid grid-cols-1 md:grid-cols-3 bg-white/5 font-mono text-sm uppercase tracking-wider text-white/50 border-b border-white/10">
+                    <div className="overflow-hidden border border-border rounded-none">
+                        <div className="grid grid-cols-1 md:grid-cols-3 bg-card font-mono text-sm uppercase tracking-wider text-muted-foreground/70 border-b border-border">
                             <div className="p-4 md:p-6">Task Type</div>
                             <div className="p-4 md:p-6">Best Tool</div>
                             <div className="p-4 md:p-6">Why It Wins</div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-foreground font-bold">
+                        <div className="grid grid-cols-1 md:grid-cols-3 bg-card border-b border-border group hover:bg-card transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-border text-foreground font-bold">
                                 Predictive Intelligence
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-primary font-mono flex items-center gap-2">
+                            <div className="p-6 border-b md:border-b-0 border-border text-primary font-mono flex items-center gap-2">
                                 <BrainCircuit className="w-4 h-4" /> Traditional
                                 ML
                             </div>
@@ -381,11 +381,11 @@ export default function BackendClient() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-foreground font-bold">
+                        <div className="grid grid-cols-1 md:grid-cols-3 bg-card border-b border-border group hover:bg-card transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-border text-foreground font-bold">
                                 Bridge Logic
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-blue-400 font-mono flex items-center gap-2">
+                            <div className="p-6 border-b md:border-b-0 border-border text-primary/70 font-mono flex items-center gap-2">
                                 <Cpu className="w-4 h-4" /> Generative AI
                             </div>
                             <div className="p-6 text-muted-foreground text-sm">
@@ -394,11 +394,11 @@ export default function BackendClient() {
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-3 bg-black/20 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-foreground font-bold">
+                        <div className="grid grid-cols-1 md:grid-cols-3 bg-card group hover:bg-card transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-border text-foreground font-bold">
                                 Business Logic
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-green-400 font-mono flex items-center gap-2">
+                            <div className="p-6 border-b md:border-b-0 border-border text-green-400 font-mono flex items-center gap-2">
                                 <Code className="w-4 h-4" /> Deterministic Code
                             </div>
                             <div className="p-6 text-muted-foreground text-sm">
@@ -411,7 +411,7 @@ export default function BackendClient() {
             </section>
 
             {/* Anti-Havoc Backend */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-y border-white/10 bg-black/20 backdrop-blur-sm">
+            <section className="reveal-section py-24 px-6 relative z-10 border-y border-border bg-card ">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-16 items-center">
                         <div className="md:w-1/2">
@@ -431,7 +431,7 @@ export default function BackendClient() {
                             </p>
                         </div>
                         <div className="md:w-1/2 w-full space-y-4 stagger-list">
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
                                 <StopCircle className="w-6 h-6 text-red-400 shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-foreground mb-1">
@@ -443,7 +443,7 @@ export default function BackendClient() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
                                 <ShieldCheck className="w-6 h-6 text-primary shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-foreground mb-1">
@@ -455,8 +455,8 @@ export default function BackendClient() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
-                                <Activity className="w-6 h-6 text-blue-400 shrink-0" />
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
+                                <Activity className="w-6 h-6 text-primary/70 shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-foreground mb-1">
                                         Auditability
@@ -475,7 +475,7 @@ export default function BackendClient() {
             {/* Telemetry */}
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
-                    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
+                    <div className="bg-card border border-border rounded-none p-8 md:p-12">
                         <div className="text-center mb-12">
                             <h2 className="text-3xl md:text-4xl font-bold mb-4">
                                 Telemetry That Protects Margins
@@ -507,7 +507,7 @@ export default function BackendClient() {
                             ].map((item, i) => (
                                 <div
                                     key={i}
-                                    className="p-4 border border-white/10 rounded-lg bg-black/20 text-center"
+                                    className="p-4 border border-border rounded-lg bg-card text-center"
                                 >
                                     <div className="w-2 h-2 rounded-full bg-primary mx-auto mb-3" />
                                     <h4 className="font-bold text-foreground mb-2">
@@ -524,7 +524,7 @@ export default function BackendClient() {
             </section>
 
             {/* Deliverables */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-3xl font-bold mb-12 text-center">
                         What We Build
@@ -574,7 +574,7 @@ export default function BackendClient() {
             </section>
 
             {/* Why This vs Full Stack */}
-            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
+            <section className="reveal-section py-24 px-6 relative z-10 bg-card">
                 <div className="max-w-4xl mx-auto text-center">
                     <h2 className="text-3xl font-bold mb-6">
                         Why This vs. A &quot;Full Stack&quot; Shop
@@ -584,21 +584,21 @@ export default function BackendClient() {
                         engineer the layer that makes AI safe, profitable, and
                         maintainable.
                     </p>
-                    <div className="inline-block border border-white/20 rounded-xl p-8 bg-black/40">
+                    <div className="inline-block border border-border rounded-none p-8 bg-card">
                         <p className="font-mono text-primary text-lg mb-4">
                             The Difference is the Plumbing
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4 text-sm text-white/70">
-                            <span className="px-3 py-1 border border-white/10 rounded-full">
+                        <div className="flex flex-wrap justify-center gap-4 text-sm text-foreground/70">
+                            <span className="px-3 py-1 border border-border rounded-full">
                                 Idempotency
                             </span>
-                            <span className="px-3 py-1 border border-white/10 rounded-full">
+                            <span className="px-3 py-1 border border-border rounded-full">
                                 Regression Control
                             </span>
-                            <span className="px-3 py-1 border border-white/10 rounded-full">
+                            <span className="px-3 py-1 border border-border rounded-full">
                                 Token Discipline
                             </span>
-                            <span className="px-3 py-1 border border-white/10 rounded-full">
+                            <span className="px-3 py-1 border border-border rounded-full">
                                 Safe Change Management
                             </span>
                         </div>
@@ -628,7 +628,7 @@ export default function BackendClient() {
                         ].map((m, i) => (
                             <div
                                 key={i}
-                                className="p-6 border border-white/10 rounded-xl bg-white/5 text-center hover:border-primary/50 transition-colors"
+                                className="p-6 border border-border rounded-none bg-card text-center hover:border-primary/50 transition-colors"
                             >
                                 <div className="text-2xl font-bold text-foreground mb-2">
                                     {m.val}
@@ -645,7 +645,7 @@ export default function BackendClient() {
             <FounderTrustSection />
 
             {/* FAQ */}
-            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
+            <section className="reveal-section py-24 px-6 relative z-10 bg-card">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
@@ -679,11 +679,11 @@ export default function BackendClient() {
                             Request a Technical Audit
                         </MagneticButton>
                     </a>
-                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                    <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
                         <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Validate first with the 30-Day Sprint
                         </Link>
-                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Need system integration?
                         </Link>
                     </div>

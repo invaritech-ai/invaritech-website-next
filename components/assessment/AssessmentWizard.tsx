@@ -109,7 +109,7 @@ const budgetOptions = [
 // --- Sub-components ---
 
 const VisionaryContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <div className={cn("border border-white/10 bg-black/40 backdrop-blur-md p-8 md:p-12 rounded-none relative overflow-hidden", className)}>
+    <div className={cn("border border-border bg-card  p-8 md:p-12 rounded-none relative overflow-hidden", className)}>
         <div className="absolute top-0 left-0 w-24 h-[1px] bg-primary/50" />
         <div className="absolute top-0 left-0 w-[1px] h-24 bg-primary/50" />
         {children}
@@ -128,7 +128,7 @@ const VisionaryProgress = ({ current, total }: { current: number; total: number 
             <span className="text-[10px] font-mono tracking-[0.2em] text-primary uppercase">System Scan: {Math.round((current / total) * 100)}%</span>
             <span className="text-[10px] font-mono tracking-[0.2em] text-muted-foreground uppercase">Phase 0{current} / 0{total}</span>
         </div>
-        <div className="h-[2px] w-full bg-white/5 relative">
+        <div className="h-[2px] w-full bg-background relative">
             <motion.div
                 className="absolute top-0 left-0 h-full bg-primary"
                 initial={{ width: 0 }}
@@ -277,8 +277,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Company Size</VisionaryLabel>
                         <Select value={inputs.companySize} onValueChange={(v) => handleInputChange("companySize", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT SIZE" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT SIZE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {companySizeOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -286,8 +286,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Focus Vertical</VisionaryLabel>
                         <Select value={inputs.functionFocus} onValueChange={(v) => handleInputChange("functionFocus", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT VERTICAL" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT VERTICAL" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {functionFocusOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -295,8 +295,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Core Workflow Goal</VisionaryLabel>
                         <Select value={inputs.primaryWorkflowGoal} onValueChange={(v) => handleInputChange("primaryWorkflowGoal", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT GOAL" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT GOAL" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {workflowGoalOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -324,8 +324,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Monthly Volume</VisionaryLabel>
                         <Select value={inputs.monthlyVolumeBand} onValueChange={(v) => handleInputChange("monthlyVolumeBand", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT BAND" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT BAND" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {volumeBandOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -333,8 +333,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Average Handle Time</VisionaryLabel>
                         <Select value={inputs.currentAHTBand} onValueChange={(v) => handleInputChange("currentAHTBand", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT TIME" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT TIME" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {ahtBandOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -342,8 +342,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Error Sensitivity</VisionaryLabel>
                         <Select value={inputs.errorTolerance} onValueChange={(v) => handleInputChange("errorTolerance", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT RISK PROFILE" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT RISK PROFILE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {errorToleranceOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -372,8 +372,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>SOP Maturity</VisionaryLabel>
                         <Select value={inputs.processMaturity} onValueChange={(v) => handleInputChange("processMaturity", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT MATURITY" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT MATURITY" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {processMaturityOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -381,8 +381,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Data Architecture</VisionaryLabel>
                         <Select value={inputs.dataStructure} onValueChange={(v) => handleInputChange("dataStructure", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT STRUCTURE" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT STRUCTURE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {dataStructureOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -390,8 +390,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Access Controls</VisionaryLabel>
                         <Select value={inputs.dataAccessReadiness} onValueChange={(v) => handleInputChange("dataAccessReadiness", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT ACCESS LEVEL" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT ACCESS LEVEL" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {dataAccessOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>
@@ -420,8 +420,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Executive Buy-in</VisionaryLabel>
                         <Select value={inputs.sponsorReady} onValueChange={(v) => handleInputChange("sponsorReady", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SPONSORSHIP STATUS" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SPONSORSHIP STATUS" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 <SelectItem value="yes" className="font-mono text-xs uppercase tracking-widest">YES, LEADERSHIP ALIGNED</SelectItem>
                                 <SelectItem value="no" className="font-mono text-xs uppercase tracking-widest">NO, EXPLORING ROI CASE</SelectItem>
                             </SelectContent>
@@ -430,8 +430,8 @@ export function AssessmentWizard() {
                     <div>
                         <VisionaryLabel>Investment Capacity</VisionaryLabel>
                         <Select value={inputs.budgetFit} onValueChange={(v) => handleInputChange("budgetFit", v)}>
-                            <SelectTrigger className="h-14 rounded-none border-white/10 bg-white/5 uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT RANGE" /></SelectTrigger>
-                            <SelectContent className="rounded-none border-white/10 bg-black/90 backdrop-blur-xl">
+                            <SelectTrigger className="h-14 rounded-none border-border bg-background uppercase font-mono text-xs tracking-widest"><SelectValue placeholder="SELECT RANGE" /></SelectTrigger>
+                            <SelectContent className="rounded-none border-border bg-popover ">
                                 {budgetOptions.map(o => <SelectItem key={o.value} value={o.value} className="font-mono text-xs uppercase tracking-widest">{o.label}</SelectItem>)}
                             </SelectContent>
                         </Select>

@@ -36,7 +36,7 @@ export default function IntegrationClient() {
                             AI INTEGRATION
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">SERVICES</span>
+                        <span className="text-muted-foreground/70">SERVICES</span>
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
@@ -50,28 +50,28 @@ export default function IntegrationClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 For organisations with strict data residency, security policies, or regulatory constraints, we design the gateway first: VPC-deployable, auditable, model-agnostic, and owned by you. Switch providers without rewriting the workflow.
                             </p>
-                            <p className="text-lg text-white/80 font-mono">
+                            <p className="text-lg text-foreground/80 font-mono">
                                 No replatforming. No shadow AI. No brittle "glue code."
                             </p>
                         </div>
                         <div className="md:w-1/3 space-y-4">
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     CTOs and engineering leads connecting AI to ERP, CRM, or internal systems where data residency or governance is non-negotiable.
                                 </p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
                                 <p className="text-sm text-muted-foreground">1-week infrastructure audit → architecture spec → Sprint build.</p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">You own the integration layer. Optional managed service retainer or clean handoff to your team.</p>
                             </div>
-                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                            <div className="bg-primary/10 border border-primary/30 rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
-                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $15,000</span>.</p>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-foreground font-semibold">USD $15,000</span>.</p>
                             </div>
                         </div>
                     </div>
@@ -83,13 +83,13 @@ export default function IntegrationClient() {
                             </MagneticButton>
                         </a>
                         <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                             <MagneticButton className="bg-transparent border border-white/20 text-foreground px-8 py-4 text-lg hover:bg-white/10">
+                             <MagneticButton className="bg-transparent border border-border text-foreground px-8 py-4 text-lg hover:bg-muted/30">
                                 Book a Meeting
                             </MagneticButton>
                         </a>
                     </div>
 
-                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                    <div className="mt-12 p-6 border border-border rounded-none bg-card max-w-2xl">
                         <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             {[
@@ -110,19 +110,19 @@ export default function IntegrationClient() {
             {/* What It Is NOT */}
             <section className="reveal-section py-6 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
-                    <div className="border border-white/10 bg-white/[0.02] p-5 flex flex-col sm:flex-row gap-4 items-start">
-                        <span className="text-xs font-mono uppercase tracking-widest text-white/30 shrink-0 pt-1">Not this</span>
+                    <div className="border border-border bg-card p-5 flex flex-col sm:flex-row gap-4 items-start">
+                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground/50 shrink-0 pt-1">Not this</span>
                         <div className="flex flex-wrap gap-3">
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not a chatbot layer — chat is an interface, this is infrastructure</span>
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not a no-code connector — Zapier/Make break at governance scale</span>
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">Not vendor middleware — you own every line of the integration we build</span>
+                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not a chatbot layer — chat is an interface, this is infrastructure</span>
+                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not a no-code connector — Zapier/Make break at governance scale</span>
+                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not vendor middleware — you own every line of the integration we build</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             {/* Gateway Philosophy */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card ">
                 <div className="max-w-5xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
@@ -141,7 +141,7 @@ export default function IntegrationClient() {
                                     <li key={i} className="stagger-item flex gap-4">
                                         <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
                                         <div>
-                                            <strong className="text-white block mb-1">{item.title}</strong>
+                                            <strong className="text-foreground block mb-1">{item.title}</strong>
                                             <span className="text-muted-foreground text-sm leading-relaxed">{item.desc}</span>
                                         </div>
                                     </li>
@@ -155,7 +155,7 @@ export default function IntegrationClient() {
              {/* Bring AI to Data */}
              <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
-                    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
+                    <div className="bg-card border border-border rounded-none p-8 md:p-12">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">Bring the AI to the Data</h2>
                             <p className="text-xl text-muted-foreground">
@@ -164,19 +164,19 @@ export default function IntegrationClient() {
                         </div>
 
                         <div className="grid md:grid-cols-3 gap-8 stagger-list">
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card">
                                 <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                                     <Server className="w-5 h-5 text-primary" /> VPC-First
                                 </h3>
                                 <p className="text-sm text-muted-foreground">Deployed inside your private cloud environment where possible.</p>
                             </div>
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card">
                                 <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                                     <Database className="w-5 h-5 text-primary" /> On-Prem Ready
                                 </h3>
                                 <p className="text-sm text-muted-foreground">Air-gapped or local deployment support where required.</p>
                             </div>
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card">
                                 <h3 className="font-bold text-foreground mb-2 flex items-center gap-2">
                                     <Lock className="w-5 h-5 text-primary" /> Vendor Controls
                                 </h3>
@@ -188,7 +188,7 @@ export default function IntegrationClient() {
             </section>
 
             {/* Enterprise Rigor */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card">
                 <div className="max-w-5xl mx-auto">
                      <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Enterprise-Grade Rigor</h2>
                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-list">
@@ -199,7 +199,7 @@ export default function IntegrationClient() {
                             { title: "Deterministic Fallbacks", desc: "If a model fails, the system enters a safe path and alerts a human." },
                             { title: "Rollback Paths", desc: "Controlled releases and reversible changes for every deployment." }
                         ].map((item, i) => (
-                            <div key={i} className="stagger-item p-6 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+                            <div key={i} className="stagger-item p-6 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors">
                                 <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                                     <ShieldCheck className="w-5 h-5" />
                                 </div>
@@ -221,8 +221,8 @@ export default function IntegrationClient() {
                         </p>
                     </div>
 
-                    <div className="overflow-hidden border border-white/10 rounded-2xl">
-                        <div className="grid grid-cols-1 md:grid-cols-2 bg-white/5 font-mono text-sm uppercase tracking-wider text-white/50 border-b border-white/10">
+                    <div className="overflow-hidden border border-border rounded-none">
+                        <div className="grid grid-cols-1 md:grid-cols-2 bg-card font-mono text-sm uppercase tracking-wider text-muted-foreground/70 border-b border-border">
                             <div className="p-4 md:p-6">Capability</div>
                             <div className="p-4 md:p-6">What it enables</div>
                         </div>
@@ -233,8 +233,8 @@ export default function IntegrationClient() {
                             { cap: "Logic continuity", enable: "Keep business process identical even if you switch models to control OpEx", highlight: true },
                             { cap: "Observability by default", enable: "Know what ran, what failed, and why, without guesswork" }
                         ].map((row, i) => (
-                            <div key={i} className={`grid grid-cols-1 md:grid-cols-2 border-b border-white/10 group hover:bg-white/5 transition-colors ${row.highlight ? 'bg-primary/5' : 'bg-black/20'}`}>
-                                <div className={`p-6 border-b md:border-b-0 border-white/5 font-bold flex items-center gap-2 ${row.highlight ? 'text-primary' : 'text-white'}`}>
+                            <div key={i} className={`grid grid-cols-1 md:grid-cols-2 border-b border-border group hover:bg-card transition-colors ${row.highlight ? 'bg-primary/5' : 'bg-card'}`}>
+                                <div className={`p-6 border-b md:border-b-0 border-border font-bold flex items-center gap-2 ${row.highlight ? 'text-primary' : 'text-foreground'}`}>
                                     {row.highlight && <Zap className="w-4 h-4" />} {row.cap}
                                 </div>
                                 <div className="p-6 text-muted-foreground">
@@ -247,7 +247,7 @@ export default function IntegrationClient() {
             </section>
 
              {/* Visibility */}
-             <section className="reveal-section py-24 px-6 relative z-10 border-y border-white/10 bg-black/20 backdrop-blur-sm">
+             <section className="reveal-section py-24 px-6 relative z-10 border-y border-border bg-card ">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-16 items-center">
                         <div className="md:w-1/2">
@@ -266,7 +266,7 @@ export default function IntegrationClient() {
                                 { title: "Token & Cost Monitoring", desc: "Cost-per-task visibility so finance doesn’t get surprised." },
                                 { title: "Audit Logs", desc: "Every decision, model call, tool call, and write is traceable." }
                              ].map((item, i) => (
-                                 <div key={i} className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
+                                 <div key={i} className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
                                     <Eye className="w-6 h-6 text-primary shrink-0" />
                                     <div>
                                         <h4 className="font-bold text-foreground mb-1">{item.title}</h4>
@@ -289,7 +289,7 @@ export default function IntegrationClient() {
                     <p className="text-xl text-muted-foreground mb-8">
                         No interface, no integration. If your system has no workable API, database connection, webhook, or export path, we can’t build a governed bridge.
                     </p>
-                    <div className="bg-red-900/10 border border-red-500/20 p-8 rounded-2xl text-left max-w-2xl mx-auto">
+                    <div className="bg-red-900/10 border border-red-500/20 p-8 rounded-none text-left max-w-2xl mx-auto">
                         <h4 className="font-bold text-red-400 mb-4">We also won’t build:</h4>
                         <ul className="space-y-3 text-red-100/80">
                             <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> "Black box" automations where we can’t baseline outcomes</li>
@@ -303,7 +303,7 @@ export default function IntegrationClient() {
             <FounderTrustSection />
 
             {/* FAQ */}
-             <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
+             <section className="reveal-section py-24 px-6 relative z-10 bg-card">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">FAQ</h2>
                     <FaqAccordion faqs={integrationFaqs} />
@@ -311,9 +311,9 @@ export default function IntegrationClient() {
             </section>
 
             {/* Further Reading */}
-            <section className="reveal-section py-12 px-6 relative z-10 border-t border-white/10">
+            <section className="reveal-section py-12 px-6 relative z-10 border-t border-border">
                 <div className="max-w-3xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-white/30">Further Reading</p>
+                    <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground/50">Further Reading</p>
                     <div className="flex flex-col items-start gap-3">
                         <Link
                             href="/blog/ai-invoice-data-extraction/"
@@ -324,7 +324,7 @@ export default function IntegrationClient() {
                         </Link>
                         <Link
                             href="/blog/cash-flow-visibility-automation/"
-                            className="text-sm font-mono tracking-widest uppercase text-white/50 hover:text-white transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-muted-foreground/70 hover:text-foreground transition-colors flex items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" />
                             Cash flow visibility automation for 13-week forecasts
@@ -352,14 +352,14 @@ export default function IntegrationClient() {
                             Request an Infrastructure Audit
                         </MagneticButton>
                     </a>
-                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                    <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
                         <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Automate the workflow layer too
                         </Link>
-                        <Link href="/services/ai-automation-consulting/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-consulting/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Not sure where the wedge is?
                         </Link>
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
                         </Link>
                     </div>

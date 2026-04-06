@@ -57,19 +57,6 @@ export default function SelectedWorkSection() {
                 stagger: 0.1,
                 ease: "power2.out",
             });
-
-            gsap.from(".sw-card", {
-                scrollTrigger: {
-                    trigger: ".sw-grid",
-                    start: "top 85%",
-                    once: true,
-                },
-                opacity: 0,
-                y: 24,
-                duration: 0.55,
-                stagger: 0.1,
-                ease: "power2.out",
-            });
         }, sectionRef);
 
         return () => ctx.revert();
@@ -121,11 +108,11 @@ export default function SelectedWorkSection() {
                                 src={signal.image}
                                 alt={signal.title}
                                 fill
-                                className="object-cover transition duration-700 group-hover:scale-105 opacity-50 group-hover:opacity-35"
+                                className="object-cover transition duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
                                 sizes="(max-width: 1024px) 100vw, 50vw"
                             />
 
-                            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent" />
 
                             <div className="absolute bottom-0 left-0 p-8 w-full z-20">
                                 <div className="flex flex-col gap-2 mb-3">

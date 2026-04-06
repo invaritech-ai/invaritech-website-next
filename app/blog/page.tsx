@@ -1,11 +1,9 @@
 import { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog-posts";
-import { Badge } from "@/components/ui/badge";
 import { TextEffect } from "@/components/ui/text-effect";
 import Link from "next/link";
 import { MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 
 export const metadata: Metadata = {
     title: "Blogs - Case Studies, Build Notes, and BOFU Answers",
@@ -52,45 +50,51 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
+const categories = ["Case Studies", "Developer Journey", "CEO Corner", "BOFU Q&A"];
+
 export default function BlogsPage() {
     const posts = getAllPosts();
 
     return (
-        <main className="min-h-screen bg-black relative overflow-hidden">
-            <ArtisticBackground />
+        <main className="min-h-screen bg-background relative overflow-hidden">
+            {/* Ambient background */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
+                <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
+            </div>
 
             {/* Header */}
-             <section className="pt-32 pb-20 px-6 relative z-10">
-                <div className="max-w-[90vw] mx-auto">
-                    <TextEffect 
-                        per="char" 
-                        preset="fade" 
-                        className="text-xs md:text-sm font-mono tracking-[0.2em] text-primary mb-8 block"
+            <section className="pt-32 pb-16 px-6 relative z-10">
+                <div className="max-w-7xl mx-auto">
+                    <TextEffect
+                        per="char"
+                        preset="fade"
+                        className="text-[11px] font-mono tracking-[0.22em] text-primary mb-8 block uppercase"
                     >
-                        INTELLIGENCE ARCHIVE
+                        Intelligence Archive
                     </TextEffect>
-                    
-                    <h1 className="text-[12vw] leading-[0.8] font-bold tracking-tighter mb-12 mix-blend-difference text-foreground">
-                        <TextEffect per="word" preset="slide" className="inline-block">
-                            INSIGHTS &
+
+                    <h1 className="font-editorial text-6xl md:text-[9rem] leading-[0.88] font-semibold tracking-tight mb-12 text-foreground">
+                        <TextEffect per="word" preset="fade" className="inline">
+                            INSIGHTS &amp;
                         </TextEffect>
                         <br />
-                        <span className="text-white/20">ANALYSIS</span>
+                        <span className="text-muted-foreground">ANALYSIS</span>
                     </h1>
-                     <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between border-t border-white/10 pt-8">
+
+                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between border-t border-border pt-8">
                         <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light">
                             Case Studies, Engineering Notes, and Strategic Implementation Guides.
                         </p>
                         <div className="flex flex-wrap gap-2">
-                            {[
-                                "Case Studies",
-                                "Developer Journey",
-                                "CEO Corner",
-                                "BOFU Q&A",
-                            ].map((category) => (
-                                <Badge key={category} variant="outline" className="border-white/10 text-white/60 hover:text-primary hover:border-primary/50 transition-colors">
+                            {categories.map((category) => (
+                                <span
+                                    key={category}
+                                    className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
+                                >
                                     {category}
-                                </Badge>
+                                </span>
                             ))}
                         </div>
                     </div>
@@ -99,16 +103,16 @@ export default function BlogsPage() {
 
             {/* Blog Posts Grid */}
             <section className="px-6 pb-32 relative z-10">
-                <div className="max-w-[95vw] mx-auto">
-	                    {posts.length === 0 ? (
-	                        <div className="text-center py-24 border border-dashed border-white/10 rounded-3xl">
-	                            <p className="text-muted-foreground text-xl font-mono">
-	                                {"// ARCHIVE EMPTY //"} <br />
-	                                <span className="text-sm opacity-50">Transmissions pending...</span>
-	                            </p>
-	                        </div>
-	                    ) : (
-                        <div className="grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+                <div className="max-w-7xl mx-auto">
+                    {posts.length === 0 ? (
+                        <div className="text-center py-24 border border-dashed border-border">
+                            <p className="text-muted-foreground text-xl font-mono">
+                                {"// ARCHIVE EMPTY //"} <br />
+                                <span className="text-sm opacity-50">Transmissions pending...</span>
+                            </p>
+                        </div>
+                    ) : (
+                        <div className="grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
                             {posts.map((post, index) => (
                                 <Link
                                     key={post.slug}
@@ -116,25 +120,25 @@ export default function BlogsPage() {
                                     className="group block"
                                 >
                                     <article className="h-full flex flex-col">
-                                        {/* Image Container */}
-                                        <div className="aspect-[4/3] relative overflow-hidden rounded-md mb-6 bg-white/5">
+                                        {/* Image */}
+                                        <div className="aspect-[4/3] relative overflow-hidden mb-6 bg-card border border-border">
                                             {post.coverImage ? (
                                                 <Image
                                                     src={post.coverImage}
                                                     alt={post.title}
                                                     fill
-                                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                                                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 grayscale group-hover:grayscale-0"
                                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                                 />
                                             ) : (
-                                                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-white/5 to-transparent">
-                                                    <span className="font-mono text-4xl text-white/10 font-bold">
+                                                <div className="absolute inset-0 flex items-center justify-center bg-card">
+                                                    <span className="font-editorial text-4xl text-muted-foreground/20 font-semibold">
                                                         {index + 1 < 10 ? `0${index + 1}` : index + 1}
                                                     </span>
                                                 </div>
                                             )}
-                                            
-                                            <div className="absolute top-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-xs font-mono text-white/80">
+
+                                            <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 border border-border text-[10px] font-mono text-muted-foreground">
                                                 {estimateReadingTime(post.content)} MIN READ
                                             </div>
                                         </div>
@@ -145,14 +149,14 @@ export default function BlogsPage() {
                                                 {post.tags.slice(0, 2).map((tag) => (
                                                     <span
                                                         key={tag}
-                                                        className="text-xs font-mono uppercase tracking-wider text-primary"
+                                                        className="text-[10px] font-mono uppercase tracking-wider text-primary"
                                                     >
                                                         #{tag}
                                                     </span>
                                                 ))}
                                             </div>
 
-                                            <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4 group-hover:text-primary transition-colors line-clamp-2">
+                                            <h2 className="font-editorial text-2xl md:text-3xl font-semibold leading-tight mb-4 group-hover:text-primary transition-colors line-clamp-2">
                                                 {post.title}
                                             </h2>
 
@@ -160,12 +164,12 @@ export default function BlogsPage() {
                                                 {post.excerpt}
                                             </p>
 
-                                            <div className="flex items-center justify-between border-t border-white/10 pt-4 mt-auto">
-                                                 <span className="text-sm font-mono text-muted-foreground">
+                                            <div className="flex items-center justify-between border-t border-border pt-4 mt-auto">
+                                                <span className="text-sm font-mono text-muted-foreground">
                                                     {formatDate(post.publishedAt)}
                                                 </span>
-                                                <div className="flex items-center gap-2 text-sm font-bold text-foreground group-hover:text-primary transition-colors">
-                                                    READ ENTRY <MoveUpRight className="size-4" />
+                                                <div className="flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                                                    READ <MoveUpRight className="size-4" />
                                                 </div>
                                             </div>
                                         </div>

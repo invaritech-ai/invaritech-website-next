@@ -20,19 +20,17 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
             {faqs.map((faq, i) => (
                 <div
                     key={i}
-                    className="border border-white/10 rounded-xl overflow-hidden bg-white/5"
+                    className="border border-border overflow-hidden bg-card"
                 >
                     <button
-                        onClick={() =>
-                            setOpenFaq(openFaq === i ? null : i)
-                        }
-                        className="w-full flex items-center justify-between p-6 text-left hover:bg-white/5 transition-colors"
+                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary/40 transition-colors"
                     >
-                        <span className="font-bold text-white">
+                        <span className="font-semibold text-foreground">
                             {faq.question}
                         </span>
                         <span
-                            className={`text-primary transition-transform duration-300 ${openFaq === i ? "rotate-45" : ""}`}
+                            className={`text-primary transition-transform duration-300 shrink-0 ml-4 ${openFaq === i ? "rotate-45" : ""}`}
                         >
                             <ArrowRight className="w-5 h-5 rotate-90 sm:rotate-0" />
                         </span>
@@ -41,7 +39,7 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
                         className={`grid transition-all duration-300 ease-in-out ${openFaq === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                     >
                         <div className="overflow-hidden">
-                            <div className="p-6 pt-0 text-muted-foreground leading-relaxed">
+                            <div className="p-6 pt-0 text-muted-foreground leading-relaxed border-t border-border">
                                 {faq.answer}
                             </div>
                         </div>

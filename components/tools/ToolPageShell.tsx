@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { ReactNode } from "react";
 
 interface ToolPageShellProps {
@@ -36,14 +35,20 @@ export function ToolPageShell({
     children,
 }: ToolPageShellProps) {
     return (
-        <main className="min-h-screen bg-[#030305] relative overflow-hidden">
+        <main className="min-h-screen bg-background relative overflow-hidden">
             {jsonLd && (
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
                 />
             )}
-            <ArtisticBackground />
+
+            {/* Ambient background */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
+                <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
+            </div>
 
             <div className="relative z-10 pt-32 pb-24 px-6">
                 <div className={`${maxWidthClasses[maxWidth]} mx-auto`}>
@@ -51,13 +56,13 @@ export function ToolPageShell({
                     <div className="flex items-center gap-2 mb-10">
                         <Link
                             href="/tools/"
-                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/30 hover:text-primary transition-colors"
+                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors group"
                         >
-                            <ArrowLeft className="w-3 h-3" />
+                            <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
                             All Tools
                         </Link>
-                        <span className="text-white/15 font-mono text-[10px]">/</span>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-white/20">
+                        <span className="text-border font-mono text-[10px]">/</span>
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">
                             {breadcrumb}
                         </span>
                     </div>
@@ -66,12 +71,12 @@ export function ToolPageShell({
                     <header className="mb-16">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-8 bg-primary/60" />
-                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                            <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                                 {eyebrow}
                             </p>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-foreground mb-6">
+                        <h1 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight leading-[0.9] text-foreground mb-6">
                             {titleParts[0]}{" "}
                             <span className="text-primary">{titleParts[1]}</span>
                         </h1>
@@ -86,14 +91,14 @@ export function ToolPageShell({
 
                     {/* Footer context */}
                     {(footerLabel || footerText || footerLink) && (
-                        <div className="mt-20 pt-12 border-t border-white/10">
+                        <div className="mt-20 pt-12 border-t border-border">
                             {footerLabel && (
-                                <p className="text-white/30 font-mono text-xs uppercase tracking-widest mb-4">
+                                <p className="text-muted-foreground/60 font-mono text-xs uppercase tracking-widest mb-4">
                                     {footerLabel}
                                 </p>
                             )}
                             {footerText && (
-                                <p className="text-white/50 text-sm leading-relaxed max-w-xl mb-8">
+                                <p className="text-muted-foreground text-sm leading-relaxed max-w-xl mb-8">
                                     {footerText}
                                 </p>
                             )}

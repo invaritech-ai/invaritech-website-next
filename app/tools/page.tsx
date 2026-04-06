@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, FileSpreadsheet, Clock, Lock, Calculator, Gauge, Download, LineChart } from "lucide-react";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { TextEffect } from "@/components/ui/text-effect";
 
 export const metadata: Metadata = {
@@ -296,7 +295,7 @@ function ToolIcon({ icon }: { icon: string }) {
 
 export default function ToolsPage() {
     return (
-        <main className="min-h-screen bg-black relative overflow-hidden selection:bg-primary selection:text-black">
+        <main className="min-h-screen bg-background relative overflow-hidden selection:bg-primary/20 selection:text-primary">
             {jsonLd.map((schema, i) => (
                 <script
                     key={i}
@@ -419,11 +418,16 @@ export default function ToolsPage() {
                 </ul>
             </div>
 
-            <ArtisticBackground />
+            {/* Ambient background */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
+                <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
+            </div>
 
             {/* Ghost typography */}
-            <div className="absolute top-20 -right-20 select-none pointer-events-none opacity-[0.025] whitespace-nowrap z-0 overflow-hidden">
-                <span className="text-[20rem] font-black tracking-tighter uppercase text-foreground">
+            <div className="absolute top-20 -right-20 select-none pointer-events-none opacity-[0.02] whitespace-nowrap z-0 overflow-hidden">
+                <span className="font-editorial text-[20rem] font-bold tracking-tighter uppercase text-foreground">
                     TOOLS
                 </span>
             </div>
@@ -433,29 +437,29 @@ export default function ToolsPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
                         <div className="h-px w-8 bg-primary/60" />
-                        <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                        <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                             AI Tools — Free, No Signup
                         </p>
                     </div>
 
                     <TextEffect
                         per="word"
-                        as="h2"
+                        as="h1"
                         preset="fade"
-                        className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-foreground mix-blend-difference mb-8"
+                        className="font-editorial text-6xl md:text-9xl font-semibold tracking-tight leading-[0.88] text-foreground mb-4"
                     >
                         AI THAT WORKS.
                     </TextEffect>
                     <TextEffect
                         per="word"
-                        as="h2"
+                        as="p"
                         preset="fade"
-                        className="text-6xl md:text-9xl font-bold tracking-tighter leading-[0.85] text-white/20 mix-blend-difference mb-16"
+                        className="font-editorial text-6xl md:text-9xl font-semibold tracking-tight leading-[0.88] text-muted-foreground mb-16"
                     >
                         BUILT TO PROVE IT.
                     </TextEffect>
 
-                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between border-t border-white/10 pt-10">
+                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-end justify-between border-t border-border pt-10">
                         <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl leading-relaxed">
                             Four live tools. Every one is a working slice of what INVARITECH deploys
                             for enterprise clients. Upload files. Run calculations. Score your readiness.
@@ -483,7 +487,7 @@ export default function ToolsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
                         {liveTools.map((tool) => (
                             <Link key={tool.id} href={tool.href} className="group block">
-                                <div className="border border-white/10 bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all duration-300 p-8 h-full relative overflow-hidden flex flex-col">
+                                <div className="border border-border bg-card hover:bg-secondary/50 hover:border-primary/30 transition-all duration-300 p-8 h-full relative overflow-hidden flex flex-col">
                                     {/* Top accent */}
                                     <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/60 transition-all duration-500" />
 
@@ -506,42 +510,42 @@ export default function ToolsPage() {
                                     </div>
 
                                     {/* Icon */}
-                                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-white/10 bg-black/50 text-primary group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
+                                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-border bg-background text-primary group-hover:scale-110 transition-transform duration-300 relative overflow-hidden">
                                         <ToolIcon icon={tool.icon} />
-                                        <div className="absolute inset-0 bg-primary/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                                        <div className="absolute inset-0 bg-primary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                                     </div>
 
                                     {/* Content */}
-                                    <h3 className="text-2xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors mb-4">
+                                    <h3 className="font-editorial text-2xl font-semibold tracking-tight text-foreground group-hover:text-primary transition-colors mb-4">
                                         {tool.name}
                                     </h3>
-                                    <p className="text-sm text-white/50 leading-relaxed flex-1 mb-8">
+                                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 mb-8">
                                         {tool.description}
                                     </p>
 
                                     {/* Metadata */}
-                                    <div className="border-t border-white/10 pt-6 grid grid-cols-3 gap-4 mb-6">
+                                    <div className="border-t border-border pt-6 grid grid-cols-3 gap-4 mb-6">
                                         <div>
-                                            <div className="text-[9px] font-mono tracking-widest uppercase text-white/30 mb-1">
+                                            <div className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/60 mb-1">
                                                 Accepts
                                             </div>
-                                            <div className="text-[10px] font-mono text-white/60">
+                                            <div className="text-[10px] font-mono text-muted-foreground">
                                                 {tool.accepts}
                                             </div>
                                         </div>
                                         <div>
-                                            <div className="text-[9px] font-mono tracking-widest uppercase text-white/30 mb-1 flex items-center gap-1">
+                                            <div className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/60 mb-1 flex items-center gap-1">
                                                 <Clock className="w-2.5 h-2.5" /> Speed
                                             </div>
-                                            <div className="text-[10px] font-mono text-white/60">
+                                            <div className="text-[10px] font-mono text-muted-foreground">
                                                 {tool.time}
                                             </div>
                                         </div>
                                         <div>
-                                            <div className="text-[9px] font-mono tracking-widest uppercase text-white/30 mb-1">
+                                            <div className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/60 mb-1">
                                                 Output
                                             </div>
-                                            <div className="text-[10px] font-mono text-white/60">
+                                            <div className="text-[10px] font-mono text-muted-foreground">
                                                 {tool.output}
                                             </div>
                                         </div>
@@ -549,7 +553,7 @@ export default function ToolsPage() {
 
                                     {/* CTA */}
                                     <div className="flex items-center justify-between">
-                                        <span className="text-xs font-mono tracking-widest uppercase text-primary group-hover:gap-3 transition-all flex items-center gap-2">
+                                        <span className="text-xs font-mono tracking-widest uppercase text-primary flex items-center gap-2">
                                             TRY IT{" "}
                                             <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                                         </span>
@@ -564,8 +568,8 @@ export default function ToolsPage() {
             {/* Upcoming Tools */}
             <section className="relative z-10 px-6 pb-32">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-[10px] font-mono tracking-[0.3em] text-white/30 uppercase mb-8 flex items-center gap-3">
-                        <span className="w-12 h-[1px] bg-white/10" />
+                    <div className="text-[10px] font-mono tracking-[0.3em] text-muted-foreground/50 uppercase mb-8 flex items-center gap-3">
+                        <span className="w-12 h-[1px] bg-border" />
                         Coming Online
                     </div>
 
@@ -573,38 +577,38 @@ export default function ToolsPage() {
                         {upcomingTools.map((tool) => (
                             <div
                                 key={tool.name}
-                                className="border border-white/5 bg-white/[0.02] p-8 relative overflow-hidden"
+                                className="border border-border/50 bg-muted/30 p-8 relative overflow-hidden"
                             >
                                 {/* Blur overlay */}
-                                <div className="absolute inset-0 backdrop-blur-[2px] bg-black/20 z-10" />
+                                <div className="absolute inset-0 backdrop-blur-[1px] bg-background/40 z-10" />
 
                                 <div className="relative z-0">
                                     <div className="flex gap-2 flex-wrap mb-8">
                                         {tool.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="text-[9px] font-mono tracking-widest uppercase text-white/20 border border-white/10 px-2 py-0.5"
+                                                className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/40 border border-border/50 px-2 py-0.5"
                                             >
                                                 {tag}
                                             </span>
                                         ))}
                                     </div>
 
-                                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-white/5 bg-black/50 text-white/20">
+                                    <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-border/50 bg-muted text-muted-foreground/30">
                                         <Lock className="h-5 w-5" />
                                     </div>
 
-                                    <h3 className="text-2xl font-bold tracking-tight text-white/30 mb-4">
+                                    <h3 className="font-editorial text-2xl font-semibold tracking-tight text-muted-foreground/40 mb-4">
                                         {tool.name}
                                     </h3>
-                                    <p className="text-sm text-white/20 leading-relaxed">
+                                    <p className="text-sm text-muted-foreground/30 leading-relaxed">
                                         {tool.description}
                                     </p>
                                 </div>
 
                                 {/* Coming soon label */}
                                 <div className="absolute bottom-4 right-4 z-20">
-                                    <span className="text-[9px] font-mono tracking-widest uppercase text-white/20">
+                                    <span className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/40">
                                         COMING SOON
                                     </span>
                                 </div>
@@ -617,8 +621,8 @@ export default function ToolsPage() {
             {/* Free Downloads */}
             <section className="relative z-10 px-6 pb-32">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-[10px] font-mono tracking-[0.3em] text-white/30 uppercase mb-8 flex items-center gap-3">
-                        <span className="w-12 h-[1px] bg-white/10" />
+                    <div className="text-[10px] font-mono tracking-[0.3em] text-muted-foreground/50 uppercase mb-8 flex items-center gap-3">
+                        <span className="w-12 h-[1px] bg-border" />
                         Free Downloads — No Email Required
                     </div>
 
@@ -655,36 +659,36 @@ export default function ToolsPage() {
                                 download={doc.filename}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group block border border-white/8 bg-white/[0.02] hover:bg-white/[0.05] hover:border-white/15 transition-all duration-300 p-8 relative overflow-hidden"
+                                className="group block border border-border bg-card hover:bg-secondary/50 hover:border-primary/20 transition-all duration-300 p-8 relative overflow-hidden"
                             >
-                                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/0 to-transparent group-hover:via-white/15 transition-all duration-500" />
+                                <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-500" />
 
                                 <div className="flex gap-2 flex-wrap mb-8">
                                     {doc.tags.map((tag) => (
                                         <span
                                             key={tag}
-                                            className="text-[9px] font-mono tracking-widest uppercase text-white/25 border border-white/10 px-2 py-0.5"
+                                            className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/60 border border-border px-2 py-0.5"
                                         >
                                             {tag}
                                         </span>
                                     ))}
-                                    <span className="text-[9px] font-mono tracking-widest uppercase text-white/25 border border-white/10 px-2 py-0.5 ml-auto">
+                                    <span className="text-[9px] font-mono tracking-widest uppercase text-muted-foreground/60 border border-border px-2 py-0.5 ml-auto">
                                         PDF
                                     </span>
                                 </div>
 
-                                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-white/8 bg-black/50 text-white/40 group-hover:text-white/70 transition-colors">
+                                <div className="mb-6 inline-flex h-12 w-12 items-center justify-center border border-border bg-background text-muted-foreground group-hover:text-primary transition-colors">
                                     <Download className="h-5 w-5" />
                                 </div>
 
-                                <h3 className="text-xl font-bold tracking-tight text-white/60 group-hover:text-white/90 transition-colors mb-3">
+                                <h3 className="font-editorial text-xl font-semibold tracking-tight text-foreground/70 group-hover:text-foreground transition-colors mb-3">
                                     {doc.title}
                                 </h3>
-                                <p className="text-sm text-white/25 group-hover:text-white/40 leading-relaxed transition-colors">
+                                <p className="text-sm text-muted-foreground leading-relaxed">
                                     {doc.description}
                                 </p>
 
-                                <div className="mt-6 flex items-center gap-2 text-[9px] font-mono tracking-widest uppercase text-white/25 group-hover:text-white/50 transition-colors">
+                                <div className="mt-6 flex items-center gap-2 text-[9px] font-mono tracking-widest uppercase text-muted-foreground/50 group-hover:text-primary transition-colors">
                                     <Download className="w-2.5 h-2.5" />
                                     DOWNLOAD PDF
                                 </div>
@@ -695,22 +699,21 @@ export default function ToolsPage() {
             </section>
 
             {/* Bottom CTA */}
-            <section className="relative z-10 border-t border-white/10 bg-white/[0.02]">
+            <section className="relative z-10 border-t border-border bg-card">
                 <div className="max-w-7xl mx-auto px-6 py-24">
                     <div className="grid md:grid-cols-2 gap-16 items-center">
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="h-px w-8 bg-primary/60" />
-                                <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                                <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                                     Beyond the Demo
                                 </p>
                             </div>
-                            <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-[0.9] text-foreground mb-8">
-                                THESE ARE DEMOS.
-                                <br />
-                                <span className="text-white/30">WE DEPLOY THE REAL THING.</span>
+                            <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight leading-[0.9] text-foreground mb-8">
+                                THESE ARE DEMOS.<br />
+                                <span className="text-muted-foreground">WE DEPLOY THE REAL THING.</span>
                             </h2>
-                            <p className="text-lg text-white/60 leading-relaxed max-w-lg">
+                            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                                 Each tool here runs the same AI stack we deploy for enterprise clients
                                 across Singapore, Hong Kong, Malaysia, and the Philippines — connected to their
                                 ERP, running at volume, with full governance and audit trails.
@@ -719,14 +722,14 @@ export default function ToolsPage() {
                         <div className="space-y-4">
                             <Link
                                 href="/services/ai-automation-sprint/"
-                                className="flex items-center justify-between w-full h-16 bg-primary text-black font-bold tracking-tighter text-xl hover:bg-white transition-all px-8 shadow-[0_0_35px_rgba(255,198,46,0.2)]"
+                                className="flex items-center justify-between w-full h-16 bg-primary text-white font-semibold tracking-tighter text-xl hover:bg-foreground transition-all px-8"
                             >
                                 SEE THE 30-DAY SPRINT
                                 <ArrowRight className="w-5 h-5" />
                             </Link>
                             <Link
                                 href="/contact/"
-                                className="flex items-center justify-between w-full h-16 border border-white/10 px-8 text-white/60 hover:text-white hover:border-white/20 transition-all font-mono text-xs tracking-widest uppercase"
+                                className="flex items-center justify-between w-full h-16 border border-border px-8 text-muted-foreground hover:text-foreground hover:border-foreground/30 transition-all font-mono text-xs tracking-widest uppercase"
                             >
                                 BOOK DISCOVERY CALL
                                 <ArrowRight className="w-4 h-4" />

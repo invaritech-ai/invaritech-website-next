@@ -32,17 +32,7 @@ export default function AssessmentBannerSection() {
                 ease: "power2.out",
             });
 
-            gsap.from(".ab-card", {
-                scrollTrigger: {
-                    trigger: ".ab-card",
-                    start: "top 88%",
-                    once: true,
-                },
-                opacity: 0,
-                x: 30,
-                duration: 0.5,
-                ease: "power2.out",
-            });
+
         }, sectionRef);
 
         return () => ctx.revert();

@@ -220,7 +220,7 @@ export default function ContactSection() {
         return (
             <section className="py-12 md:py-24">
                 <div className="mx-auto max-w-7xl px-4 lg:px-8">
-                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center rounded-none border border-white/10 bg-black/40 backdrop-blur-md shadow-none">
+                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center rounded-none border border-border bg-card  shadow-none">
                         <div className="flex justify-center mb-6">
                             <div className="bg-primary/10 p-3 border border-primary/20">
                                 <CheckCircle2 className="h-12 w-12 text-primary" />
@@ -229,7 +229,7 @@ export default function ContactSection() {
                         <h3 className="text-2xl font-bold mb-4 text-foreground">
                             Message Sent.
                         </h3>
-                        <p className="text-white/60 mb-8 text-lg">
+                        <p className="text-muted-foreground mb-8 text-lg">
                             We&apos;ve received your message and will get back to you shortly.
                         </p>
                         <Button
@@ -241,7 +241,7 @@ export default function ContactSection() {
                                 })
                             }
                             variant="outline"
-                            className="w-full sm:w-auto rounded-none border-white/10"
+                            className="w-full sm:w-auto rounded-none border-border"
                         >
                             Send Another Message
                         </Button>
@@ -262,7 +262,7 @@ export default function ContactSection() {
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
                                     Why partner with Invaritech?
                                 </h2>
-                                <p className="text-white/60 text-lg leading-relaxed">
+                                <p className="text-muted-foreground text-lg leading-relaxed">
                                     Invaritech leads architecture, delivery, and
                                     accountability. Our partner engineering
                                     network extends execution capacity, but you
@@ -273,12 +273,12 @@ export default function ContactSection() {
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="mt-1 bg-primary/10 border border-white/10 p-2">
+                                    <div className="mt-1 bg-primary/10 border border-border p-2">
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
                                         <h3 className="font-medium mb-1 text-foreground">Book a Meeting</h3>
-                                        <p className="text-sm text-white/50 mb-3">
+                                        <p className="text-sm text-muted-foreground mb-3">
                                             Skip the email loop and book a
                                             focused session directly with our
                                             team.
@@ -301,12 +301,12 @@ export default function ContactSection() {
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="mt-1 bg-primary/10 border border-white/10 p-2">
+                                    <div className="mt-1 bg-primary/10 border border-border p-2">
                                         <Mail className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
                                         <h3 className="font-medium mb-1 text-foreground">Email Us</h3>
-                                        <p className="text-sm text-white/50 mb-3">
+                                        <p className="text-sm text-muted-foreground mb-3">
                                             Prefer to write it down? Send us an email and we&apos;ll respond within 24 hours.
                                         </p>
                                         <Link
@@ -323,12 +323,12 @@ export default function ContactSection() {
 
                     {/* Right Column - Form */}
                     <div className="relative">
-                        <Card className="rounded-none border border-white/10 bg-black/40 backdrop-blur-md shadow-none p-6 sm:p-8 md:p-10">
+                        <Card className="rounded-none border border-border bg-card  shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
                                 <h3 className="text-xl font-semibold mb-2 text-foreground">
                                     Send us a message
                                 </h3>
-                                <p className="text-sm text-white/50">
+                                <p className="text-sm text-muted-foreground">
                                     Tell us a bit about your project and we&apos;ll be in touch.
                                 </p>
                             </div>
@@ -336,7 +336,7 @@ export default function ContactSection() {
                             <form onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-white/50">Full name *</Label>
+                                        <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Full name *</Label>
                                         <Input
                                             type="text"
                                             id="name"
@@ -345,11 +345,11 @@ export default function ContactSection() {
                                             value={formData.name}
                                             onChange={handleInputChange}
                                             required
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-white/50">Email *</Label>
+                                        <Label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email *</Label>
                                         <Input
                                             type="email"
                                             id="email"
@@ -358,14 +358,14 @@ export default function ContactSection() {
                                             value={formData.email}
                                             onChange={handleInputChange}
                                             required
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="phone" className="text-xs font-mono uppercase tracking-widest text-white/50">Phone</Label>
+                                        <Label htmlFor="phone" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Phone</Label>
                                         <Input
                                             type="tel"
                                             id="phone"
@@ -373,11 +373,11 @@ export default function ContactSection() {
                                             placeholder="+1 (555) 000-0000"
                                             value={formData.phone}
                                             onChange={handleInputChange}
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="country" className="text-xs font-mono uppercase tracking-widest text-white/50">Country *</Label>
+                                        <Label htmlFor="country" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Country *</Label>
                                         <Input
                                             type="text"
                                             id="country"
@@ -386,13 +386,13 @@ export default function ContactSection() {
                                             value={formData.country}
                                             onChange={handleInputChange}
                                             required
-                                            className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="company" className="text-xs font-mono uppercase tracking-widest text-white/50">Company / Website</Label>
+                                    <Label htmlFor="company" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Company / Website</Label>
                                     <Input
                                         type="text"
                                         id="company"
@@ -400,12 +400,12 @@ export default function ContactSection() {
                                         placeholder="acme.com"
                                         value={formData.company}
                                         onChange={handleInputChange}
-                                        className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20"
+                                        className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-white/50">
+                                    <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                                         What would you like to automate or build? *
                                     </Label>
                                     <Textarea
@@ -416,7 +416,7 @@ export default function ContactSection() {
                                         onChange={handleInputChange}
                                         rows={4}
                                         required
-                                        className="rounded-none bg-white/5 border-white/10 font-mono text-foreground placeholder:text-white/20 resize-none"
+                                        className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground resize-none"
                                     />
                                 </div>
 
@@ -442,18 +442,18 @@ export default function ContactSection() {
                 </div>
 
                 <div className="mt-16 lg:mt-20">
-                    <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-card via-card/90 to-primary/5 p-6 sm:p-8 md:p-10">
+                    <div className="relative overflow-hidden rounded-none border border-border/70 bg-gradient-to-br from-card via-card/90 to-primary/5 p-6 sm:p-8 md:p-10">
                         <div
                             aria-hidden
-                            className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-full bg-primary/20 blur-3xl"
+                            className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-none bg-primary/20 blur-3xl"
                         />
                         <div
                             aria-hidden
-                            className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-secondary/20 blur-3xl"
+                            className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-none bg-secondary/20 blur-3xl"
                         />
 
                         <div className="relative mb-8 sm:mb-10">
-                            <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
+                            <div className="mb-3 inline-flex items-center gap-2 rounded-none border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
                                 <Globe2 className="h-3.5 w-3.5" />
                                 Invaritech-Led Delivery Network
                             </div>
@@ -472,7 +472,7 @@ export default function ContactSection() {
                             {OFFICE_LOCATIONS.map((office) => (
                                 <article
                                     key={office.region}
-                                    className="group relative overflow-hidden rounded-2xl border border-border/70 bg-background/75 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                                    className="group relative overflow-hidden rounded-none border border-border/70 bg-background/75 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
                                 >
                                     <div
                                         aria-hidden
@@ -480,7 +480,7 @@ export default function ContactSection() {
                                     />
                                     <div className="relative">
                                         <div className="mb-4 flex items-center gap-2">
-                                            <div className="rounded-lg bg-primary/10 p-2">
+                                            <div className="rounded-none bg-primary/10 p-2">
                                                 <Building2 className="h-4 w-4 text-primary" />
                                             </div>
                                             <h4 className="text-lg font-semibold">

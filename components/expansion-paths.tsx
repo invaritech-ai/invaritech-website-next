@@ -61,19 +61,6 @@ export default function ExpansionPathsSection() {
                 stagger: 0.1,
                 ease: "power2.out",
             });
-
-            gsap.from(".ep-card", {
-                scrollTrigger: {
-                    trigger: ".ep-grid",
-                    start: "top 85%",
-                    once: true,
-                },
-                opacity: 0,
-                y: 20,
-                duration: 0.45,
-                stagger: 0.07,
-                ease: "power2.out",
-            });
         }, sectionRef);
 
         return () => ctx.revert();
