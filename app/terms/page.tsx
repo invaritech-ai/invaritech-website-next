@@ -246,7 +246,7 @@ export default function TermsPage() {
                                 Conditions, please contact us at{" "}
                                 <a
                                     href="mailto:hello@invaritech.ai"
-                                    className="text-primary hover:text-white transition-colors border-b border-primary/50 hover:border-white"
+                                    className="text-primary hover:text-foreground transition-colors border-b border-primary/50 hover:border-foreground"
                                 >
                                     hello@invaritech.ai
                                 </a>

@@ -67,7 +67,7 @@ function SliderInput({
     return (
         <div className="space-y-3">
             <div className="flex items-baseline justify-between gap-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70 shrink-0">
+                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground shrink-0">
                     {label}
                 </span>
                 <span className="text-xl font-bold tracking-tighter text-foreground tabular-nums text-right">
@@ -103,7 +103,7 @@ function SliderInput({
                 }}
             />
             {note && (
-                <p className="text-[10px] font-mono text-white/45 leading-relaxed">
+                <p className="text-[10px] font-mono text-muted-foreground leading-relaxed">
                     {note}
                 </p>
             )}
@@ -145,7 +145,7 @@ function BenchmarkBar({
     return (
         <div className="space-y-3">
             <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70">
+                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                     Close Cycle Benchmark
                 </span>
                 <span
@@ -164,11 +164,11 @@ function BenchmarkBar({
             </div>
 
             {/* Bar */}
-            <div className="relative h-8 flex border border-white/20">
+            <div className="relative h-8 flex border border-border">
                 {segmentsWithWidths.map((seg, i) => (
                     <div
                         key={i}
-                        className={`${seg.bg} ${i < segments.length - 1 ? "border-r border-white/15" : ""}`}
+                        className={`${seg.bg} ${i < segments.length - 1 ? "border-r border-border" : ""}`}
                         style={{ width: `${seg.width}%` }}
                     />
                 ))}
@@ -195,7 +195,7 @@ function BenchmarkBar({
                 {segmentsWithWidths.map((seg, i) => (
                     <div
                         key={i}
-                        className="text-center text-white/45 overflow-hidden px-0.5"
+                        className="text-center text-muted-foreground overflow-hidden px-0.5"
                         style={{ width: `${seg.width}%` }}
                     >
                         {BENCHMARK_TIERS[i].label}
@@ -204,7 +204,7 @@ function BenchmarkBar({
             </div>
 
             {/* Legend */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-[10px] font-mono text-white/55 pt-1">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-[10px] font-mono text-muted-foreground pt-1">
                 <span className="flex items-center gap-2">
                     <span className="w-[8px] h-[8px] rotate-45 bg-white inline-block shrink-0" />
                     NOW: ~{Math.round(currentDays)} DAYS —{" "}
@@ -257,7 +257,7 @@ export function CostToCloseCalculator() {
         <div className="space-y-2">
             {/* Currency selector */}
             <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/60 shrink-0">
+                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground shrink-0">
                     Currency
                 </span>
                 <div className="flex gap-1">
@@ -268,7 +268,7 @@ export function CostToCloseCalculator() {
                             className={`px-4 py-2 text-xs font-mono uppercase tracking-widest border transition-all duration-150 ${
                                 currency === c
                                     ? "border-primary bg-primary text-black font-bold"
-                                    : "border-white/20 text-white/50 hover:border-white/40 hover:text-white/80"
+                                    : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
                             }`}
                         >
                             {c}
@@ -278,11 +278,11 @@ export function CostToCloseCalculator() {
             </div>
 
             {/* Main grid: inputs + results */}
-            <div className="grid lg:grid-cols-2 gap-px bg-white/10">
+            <div className="grid lg:grid-cols-2 gap-4">
                 {/* Inputs panel */}
-                <div className="bg-[#0a0a0c] p-8 space-y-8">
+                <div className="bg-card p-8 space-y-8">
                     {/* Panel header */}
-                    <div className="flex items-center gap-3 pb-6 border-b border-white/15">
+                    <div className="flex items-center gap-3 pb-6 border-b border-border">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
                             Your Current State
@@ -323,9 +323,9 @@ export function CostToCloseCalculator() {
                     />
 
                     {/* Quick summary inside input panel */}
-                    <div className="pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
+                    <div className="pt-6 border-t border-border grid grid-cols-2 gap-4">
                         <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 mb-1">
+                            <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-1">
                                 Total hours/mo
                             </div>
                             <div className="text-2xl font-bold tracking-tighter text-foreground tabular-nums">
@@ -333,7 +333,7 @@ export function CostToCloseCalculator() {
                             </div>
                         </div>
                         <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-white/50 mb-1">
+                            <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-1">
                                 Est. days to close
                             </div>
                             <div
@@ -348,7 +348,7 @@ export function CostToCloseCalculator() {
                                 }`}
                             >
                                 ~{Math.round(currentDays)} days
-                                <span className="text-xs font-normal text-white/40 ml-1">
+                                <span className="text-xs font-normal text-muted-foreground/60 ml-1">
                                     {currentTier.pct}
                                 </span>
                             </div>
@@ -357,9 +357,9 @@ export function CostToCloseCalculator() {
                 </div>
 
                 {/* Results panel */}
-                <div className="bg-[#080808] p-8 space-y-6 flex flex-col">
+                <div className="bg-background p-8 space-y-6 flex flex-col">
                     {/* Panel header */}
-                    <div className="flex items-center gap-3 pb-6 border-b border-white/15">
+                    <div className="flex items-center gap-3 pb-6 border-b border-border">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
                             Your Manual Tax
@@ -368,7 +368,7 @@ export function CostToCloseCalculator() {
 
                     {/* Monthly cost — secondary metric */}
                     <div className="flex items-baseline justify-between">
-                        <span className="text-xs font-mono uppercase tracking-widest text-white/60">
+                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                             Monthly close cost
                         </span>
                         <span className="text-2xl font-bold tracking-tighter text-foreground tabular-nums">
@@ -386,25 +386,25 @@ export function CostToCloseCalculator() {
                         <div className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground tabular-nums leading-none">
                             {fmt(annualManualTax, cfg.symbol)}
                         </div>
-                        <div className="text-xs font-mono text-white/55 mt-2">
+                        <div className="text-xs font-mono text-muted-foreground mt-2">
                             per year in close labor — money you could redeploy
                         </div>
                     </div>
 
                     {/* After automation + Savings row */}
-                    <div className="border border-white/15 p-5 space-y-4">
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/60">
+                    <div className="border border-border p-5 space-y-4">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
                             After Automation — 70% reduction
                         </div>
                         <div className="flex items-start justify-between gap-4">
                             <div>
-                                <div className="text-2xl font-bold tracking-tighter text-white/70 tabular-nums">
+                                <div className="text-2xl font-bold tracking-tighter text-muted-foreground tabular-nums">
                                     {fmt(annualAfter, cfg.symbol)}
-                                    <span className="text-xs font-normal text-white/40 ml-1">
+                                    <span className="text-xs font-normal text-muted-foreground/60 ml-1">
                                         /yr
                                     </span>
                                 </div>
-                                <div className="text-[10px] font-mono text-white/50 mt-1">
+                                <div className="text-[10px] font-mono text-muted-foreground mt-1">
                                     ~{Math.max(1, Math.round(daysAfter))} days
                                     to close · {Math.round(residualTotalHours)}
                                     h/month
@@ -417,7 +417,7 @@ export function CostToCloseCalculator() {
                                 <div className="text-3xl font-bold tracking-tighter text-primary tabular-nums">
                                     {fmt(annualSavings, cfg.symbol)}
                                 </div>
-                                <div className="text-[10px] font-mono text-white/50 mt-1">
+                                <div className="text-[10px] font-mono text-muted-foreground mt-1">
                                     {Math.round(hoursReclaimed)}h reclaimed/yr
                                 </div>
                             </div>
@@ -435,8 +435,8 @@ export function CostToCloseCalculator() {
             </div>
 
             {/* Methodology */}
-            <div className="pt-5 border-t border-white/10">
-                <p className="text-[10px] font-mono text-white/40 leading-relaxed">
+            <div className="pt-5 border-t border-border">
+                <p className="text-[10px] font-mono text-muted-foreground/60 leading-relaxed">
                     METHODOLOGY — Savings estimate based on 70% reduction in
                     manual close hours, consistent with published ROI studies
                     from Netgain, DOKKA, and FloQast. Days-to-close derived from{" "}
@@ -448,8 +448,8 @@ export function CostToCloseCalculator() {
             </div>
 
             {/* CTA */}
-            <div className="border border-white/15 bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-                <p className="text-sm font-mono text-white/70 leading-relaxed">
+            <div className="border border-border bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                <p className="text-sm font-mono text-muted-foreground leading-relaxed">
                     Ready to close in 3 days? We will map your exact blueprint
                     on a free call.
                 </p>

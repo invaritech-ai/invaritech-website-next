@@ -106,10 +106,10 @@ export default function Results() {
                             RESULTS YOU
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">CAN MEASURE</span>
+                        <span className="text-muted-foreground">CAN MEASURE</span>
                     </h1>
 
-	                    <div className="flex flex-col md:flex-row gap-8 items-start border-t border-white/10 pt-12">
+	                    <div className="flex flex-col md:flex-row gap-8 items-start border-t border-border pt-12">
 	                        <p className="max-w-xl text-xl md:text-2xl font-light text-muted-foreground leading-relaxed">
 	                            We don&apos;t sell theory. We sell hours saved, costs avoided, and errors eliminated.
 	                        </p>
@@ -118,7 +118,7 @@ export default function Results() {
 	            </section>
 
             {/* Featured Impact - Massive Number */}
-            <section className="py-24 px-6 border-y border-white/5 bg-black/20 backdrop-blur-sm">
+            <section className="py-24 px-6 border-y border-border bg-card backdrop-blur-sm">
                 <div className="max-w-[1800px] mx-auto grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <div className="mb-4 flex items-center gap-3">
@@ -133,7 +133,7 @@ export default function Results() {
                         </p>
                         <div className="mt-8">
                              <Link href="/services/ai-automation-sprint/">
-                                <MagneticButton className="bg-white/5 border border-white/10 hover:bg-white/10 hover:border-primary/50">
+                                <MagneticButton className="bg-card border border-border hover:bg-white/10 hover:border-primary/50">
                                     Read the Full Case
                                 </MagneticButton>
                             </Link>
@@ -150,7 +150,7 @@ export default function Results() {
                             </TextEffect>
                             <span className="text-xs font-mono text-primary/50 uppercase tracking-widest">(Modeled)</span>
                          </div>
-                        <p className="text-xl md:text-3xl text-white/80 font-mono mt-2 tracking-widest uppercase">
+                        <p className="text-xl md:text-3xl text-foreground/80 font-mono mt-2 tracking-widest uppercase">
                             {exampleCase.impact.unit}
                         </p>
                         <p className="text-lg text-muted-foreground mt-4">
@@ -159,7 +159,7 @@ export default function Results() {
                         
                         {exampleCase.testimonial && (
                             <div className="mt-12 text-right border-r border-primary/30 pr-6 py-2 max-w-sm ml-auto">
-                                <p className="text-sm italic text-white/60 mb-2">&quot;{exampleCase.testimonial.quote}&quot;</p>
+                                <p className="text-sm italic text-muted-foreground mb-2">&quot;{exampleCase.testimonial.quote}&quot;</p>
                                 <p className="text-xs font-mono text-primary">{exampleCase.testimonial.author}, {exampleCase.testimonial.company}</p>
                             </div>
                         )}
@@ -185,7 +185,7 @@ export default function Results() {
                         {additionalResults.map((result, index) => (
                             <div 
                                 key={index} 
-                                className="group relative border-t border-white/10 py-16 grid md:grid-cols-12 gap-8 items-center transition-colors hover:bg-white/5"
+                                className="group relative border-t border-border py-16 grid md:grid-cols-12 gap-8 items-center transition-colors hover:bg-secondary/40"
                             >
                                 <div className="md:col-span-4 px-4 md:px-0">
                                     <p className="text-xs font-mono text-primary mb-2 tracking-widest">{result.industry}</p>
@@ -209,7 +209,7 @@ export default function Results() {
                                 </div>
 
                                 {result.testimonial && (
-                                    <div className="md:col-span-12 mt-6 px-4 md:px-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-3xl ml-auto text-right border-r border-white/5 pr-6">
+                                    <div className="md:col-span-12 mt-6 px-4 md:px-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 max-w-3xl ml-auto text-right border-r border-border pr-6">
                                         <p className="text-sm italic text-muted-foreground font-light">&quot;{result.testimonial.quote}&quot;</p>
                                         <p className="text-[10px] font-mono text-primary/60 mt-2 uppercase tracking-widest">{result.testimonial.author} {"//"} {result.testimonial.company}</p>
                                     </div>
@@ -221,7 +221,7 @@ export default function Results() {
             </section>
 
             {/* EUDR & CTA */}
-            <section className="py-24 px-6 bg-gradient-to-t from-black to-transparent">
+            <section className="py-24 px-6 bg-gradient-to-t from-card to-transparent">
                 <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-4xl md:text-6xl font-bold mb-8">
                         EUDR COMPLIANCE <span className="text-primary block md:inline">SOLVED</span>
@@ -244,7 +244,7 @@ export default function Results() {
                         <Link href="#contact">
                              <MagneticButton 
                                 strength={0.2}
-                                className="bg-transparent border border-white/20 hover:bg-white/5 px-12 py-6 text-lg"
+                                className="bg-transparent border border-border hover:bg-secondary/40 px-12 py-6 text-lg"
                             >
                                 Book Consultation
                             </MagneticButton>
@@ -254,7 +254,7 @@ export default function Results() {
             </section>
 
             {/* Disclaimer */}
-            <section className="py-12 px-6 border-t border-white/10">
+            <section className="py-12 px-6 border-t border-border">
                 <div className="max-w-5xl mx-auto text-center">
                     <p className="text-sm text-muted-foreground/60 italic">
                         *Modeled Estimate: Projections based on client-provided data, industry benchmarks for task duration, and standard hourly rates. Actual results may vary based on implementation scope and adoption.

@@ -114,7 +114,7 @@ export default function SprintMarketingPage() {
                                 THE 30-DAY
                             </TextEffect>
                             <br />
-                            <span className="text-white/50">SPRINT</span>
+                            <span className="text-muted-foreground">SPRINT</span>
                         </h1>
 
                         <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed border-l-2 border-primary/50 pl-6">
@@ -146,7 +146,7 @@ export default function SprintMarketingPage() {
             </section>
 
             {/* The Promise - Grid Layout */}
-            <section className="py-24 border-y border-white/5 bg-black/20 backdrop-blur-sm">
+            <section className="py-24 border-y border-border bg-card backdrop-blur-sm">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid md:grid-cols-3 gap-12">
                         <div className="space-y-4">
@@ -195,10 +195,10 @@ export default function SprintMarketingPage() {
                         {timeline.map((phase) => (
                             <div
                                 key={phase.week}
-                                className="group grid md:grid-cols-12 gap-8 md:gap-12 border-t border-white/10 pt-12 items-start"
+                                className="group grid md:grid-cols-12 gap-8 md:gap-12 border-t border-border pt-12 items-start"
                             >
                                 <div className="md:col-span-2">
-                                    <span className="text-6xl md:text-8xl font-bold text-white/10 group-hover:text-primary/50 transition-colors duration-500">
+                                    <span className="text-6xl md:text-8xl font-bold text-muted-foreground group-hover:text-primary/50 transition-colors duration-500">
                                         {phase.week}
                                     </span>
                                 </div>
@@ -209,7 +209,7 @@ export default function SprintMarketingPage() {
                                             {phase.title}
                                         </h3>
                                     </div>
-                                    <div className="inline-block px-3 py-1 bg-white/5 rounded-full text-xs font-mono text-primary/80 border border-white/10">
+                                    <div className="inline-block px-3 py-1 bg-card rounded-full text-xs font-mono text-primary/80 border border-border">
                                         OUTPUT: {phase.output.toUpperCase()}
                                     </div>
                                 </div>
@@ -233,7 +233,7 @@ export default function SprintMarketingPage() {
             </section>
 
             {/* Target Audience & Pricing - Split Layout */}
-            <section className="py-24 bg-gradient-to-b from-transparent to-black/80">
+            <section className="py-24 bg-gradient-to-b from-transparent to-background/80">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24">
                     {/* Left: Who it's for */}
                     <div className="space-y-12">
@@ -245,7 +245,7 @@ export default function SprintMarketingPage() {
                                 {icp.map((item) => (
                                     <div
                                         key={item}
-                                        className="flex items-start gap-4 p-4 border border-white/5 rounded-lg hover:border-primary/20 transition-colors"
+                                        className="flex items-start gap-4 p-4 border border-border rounded-lg hover:border-primary/20 transition-colors"
                                     >
                                         <Check className="w-5 h-5 text-primary mt-1 shrink-0" />
                                         <p className="text-muted-foreground">
@@ -265,7 +265,7 @@ export default function SprintMarketingPage() {
                                 {buyers.map((b) => (
                                     <span
                                         key={b}
-                                        className="px-4 py-2 text-sm font-mono border border-white/10 rounded-full text-white/70 bg-white/5"
+                                        className="px-4 py-2 text-sm font-mono border border-border rounded-full text-foreground/70 bg-card"
                                     >
                                         {b}
                                     </span>
@@ -276,7 +276,7 @@ export default function SprintMarketingPage() {
 
                     {/* Right: Pricing + exclusions */}
                     <div className="space-y-12">
-                        <div className="border border-white/10 bg-white/5 rounded-2xl p-8">
+                        <div className="border border-border bg-card rounded-2xl p-8">
                             <div className="text-sm font-mono tracking-widest uppercase text-primary mb-3">
                                 Investment
                             </div>
@@ -321,7 +321,7 @@ export default function SprintMarketingPage() {
                                 {dontDo.map((item) => (
                                     <div
                                         key={item}
-                                        className="text-sm text-muted-foreground/60 border-l border-white/10 pl-4"
+                                        className="text-sm text-muted-foreground/60 border-l border-border pl-4"
                                     >
                                         {item}
                                     </div>

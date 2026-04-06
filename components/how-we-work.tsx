@@ -114,15 +114,15 @@ export default function HowWeWorkSection() {
                     </div>
                 </div>
 
-                <div className="hww-timeline relative grid gap-8 md:grid-cols-4">
+                <div className="hww-timeline relative grid gap-8 md:grid-cols-4 md:items-stretch">
                     <div className="absolute top-[18px] left-0 w-full h-[1px] bg-border hidden md:block" />
 
                     {sprintPhases.map((phase, i) => (
-                        <div key={phase.week} className="hww-phase relative group">
+                        <div key={phase.week} className="hww-phase relative group flex flex-col">
                             <div className="w-[9px] h-[9px] bg-background border-2 border-primary relative z-10 mb-8 mx-auto md:mx-0 transition-transform group-hover:scale-150 duration-300">
                             </div>
 
-                            <div className="pt-6 md:pt-4 border-l md:border-l-0 border-border pl-8 md:pl-0 ml-[3px] md:ml-0 relative">
+                            <div className="pt-6 md:pt-4 border-l md:border-l-0 border-border pl-8 md:pl-0 ml-[3px] md:ml-0 relative flex flex-col h-full">
                                 <p className="text-[11px] font-mono uppercase tracking-[0.2em] text-primary/70 mb-3">
                                     {phase.week}
                                 </p>
@@ -133,7 +133,7 @@ export default function HowWeWorkSection() {
                                     {phase.description}
                                 </p>
 
-                                <div className="p-3 bg-background border border-border text-xs text-foreground font-mono">
+                                <div className="mt-auto p-3 bg-background border border-border text-xs text-foreground font-mono">
                                     <span className="text-primary mr-2">&rarr;</span> {phase.output}
                                 </div>
                             </div>

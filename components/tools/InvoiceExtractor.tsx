@@ -290,7 +290,7 @@ export function InvoiceExtractor() {
     return (
         <div className="w-full max-w-3xl mx-auto space-y-2">
             {/* Main card */}
-            <div className="border border-white/10 bg-black/40 backdrop-blur-md rounded-none p-8 md:p-10">
+            <div className="border border-border bg-card backdrop-blur-md rounded-none p-8 md:p-10">
 
                 {/* ── IDLE ── */}
                 {phase === "idle" && (
@@ -306,7 +306,7 @@ export function InvoiceExtractor() {
                                     ? "border-primary bg-primary/5"
                                     : file
                                     ? "border-primary/50 bg-primary/5"
-                                    : "border-white/20 hover:border-primary/40 hover:bg-white/[0.02]"
+                                    : "border-border hover:border-primary/40 hover:bg-white/[0.02]"
                             }`}
                         >
                             <input
@@ -324,17 +324,17 @@ export function InvoiceExtractor() {
                                 <div className="space-y-2">
                                     <FileText className="w-8 h-8 text-primary mx-auto" />
                                     <p className="text-white font-mono text-sm">{file.name}</p>
-                                    <p className="text-white/40 font-mono text-xs">
+                                    <p className="text-muted-foreground/70 font-mono text-xs">
                                         {(file.size / 1024).toFixed(0)} KB — click to change
                                     </p>
                                 </div>
                             ) : (
                                 <div className="space-y-3">
-                                    <Upload className="w-8 h-8 text-white/30 mx-auto" />
-                                    <p className="text-white/60 font-mono text-sm">
+                                    <Upload className="w-8 h-8 text-muted-foreground/60 mx-auto" />
+                                    <p className="text-muted-foreground font-mono text-sm">
                                         DROP FILE HERE OR CLICK TO BROWSE
                                     </p>
-                                    <p className="text-white/30 font-mono text-xs tracking-widest">
+                                    <p className="text-muted-foreground/60 font-mono text-xs tracking-widest">
                                         ACCEPTED: PDF / JPG / PNG — MAX 10 MB
                                     </p>
                                 </div>
@@ -372,7 +372,7 @@ export function InvoiceExtractor() {
                             </p>
                         </div>
 
-                        <div className="relative h-px w-full bg-white/10">
+                        <div className="relative h-px w-full bg-secondary/40">
                             <div
                                 className="absolute inset-y-0 left-0 bg-primary transition-all duration-300 ease-out"
                                 style={{ width: `${uploadProgress}%` }}
@@ -385,7 +385,7 @@ export function InvoiceExtractor() {
                             )}
                         </div>
 
-                        <p className="text-white/20 font-mono text-[10px] tracking-widest truncate">
+                        <p className="text-muted-foreground font-mono text-[10px] tracking-widest truncate">
                             {file?.name}
                         </p>
                     </div>
@@ -405,7 +405,7 @@ export function InvoiceExtractor() {
                         </div>
 
                         {/* Progress bar */}
-                        <div className="relative h-px w-full bg-white/10">
+                        <div className="relative h-px w-full bg-secondary/40">
                             <div
                                 className="absolute inset-y-0 left-0 bg-primary transition-all duration-700 ease-out"
                                 style={{ width: `${pollingProgress}%` }}
@@ -419,7 +419,7 @@ export function InvoiceExtractor() {
                             )}
                         </div>
 
-                        <p className="text-white/20 font-mono text-[10px] tracking-widest">
+                        <p className="text-muted-foreground font-mono text-[10px] tracking-widest">
                             JOB {jobId}
                         </p>
                     </div>
@@ -429,14 +429,14 @@ export function InvoiceExtractor() {
                 {phase === "completed" && result && (
                     <div className="space-y-8">
                         {/* Status bar */}
-                        <div className="flex items-center justify-between border-b border-white/10 pb-6">
+                        <div className="flex items-center justify-between border-b border-border pb-6">
                             <div className="flex items-center gap-3">
                                 <CheckCircle2 className="w-4 h-4 text-primary" />
                                 <span className="text-xs font-mono uppercase tracking-widest text-primary">
                                     EXTRACTION COMPLETE
                                 </span>
                             </div>
-                            <span className="text-xs font-mono text-white/30 uppercase px-2 py-1 border border-white/10">
+                            <span className="text-xs font-mono text-muted-foreground/60 uppercase px-2 py-1 border border-border">
                                 {result.document_kind}
                             </span>
                         </div>
@@ -453,7 +453,7 @@ export function InvoiceExtractor() {
                                 .filter((f) => f.value)
                                 .map(({ label, value }) => (
                                     <div key={label} className="space-y-1">
-                                        <p className="text-white/30 font-mono text-[10px] uppercase tracking-widest">{label}</p>
+                                        <p className="text-muted-foreground/60 font-mono text-[10px] uppercase tracking-widest">{label}</p>
                                         <p className="text-white text-sm font-mono">{value}</p>
                                     </div>
                                 ))}
@@ -461,7 +461,7 @@ export function InvoiceExtractor() {
 
                         {/* Totals */}
                         {(result.subtotal !== null || result.tax !== null || result.total !== null) && (
-                            <div className="border border-white/10 p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <div className="border border-border p-4 grid grid-cols-2 md:grid-cols-4 gap-4">
                                 {[
                                     { label: "SUBTOTAL", value: result.subtotal },
                                     { label: "TAX", value: result.tax },
@@ -469,7 +469,7 @@ export function InvoiceExtractor() {
                                     { label: "TOTAL", value: result.total },
                                 ].map(({ label, value }) => (
                                     <div key={label} className="space-y-1">
-                                        <p className="text-white/30 font-mono text-[10px] uppercase tracking-widest">{label}</p>
+                                        <p className="text-muted-foreground/60 font-mono text-[10px] uppercase tracking-widest">{label}</p>
                                         <p className={`font-mono text-sm ${label === "TOTAL" ? "text-primary font-bold" : "text-foreground"}`}>
                                             {formatCurrency(value, result.currency)}
                                         </p>
@@ -481,7 +481,7 @@ export function InvoiceExtractor() {
                         {/* Line items table */}
                         {result.line_items.length > 0 && (
                             <div className="space-y-3">
-                                <p className="text-white/30 font-mono text-[10px] uppercase tracking-widest">
+                                <p className="text-muted-foreground/60 font-mono text-[10px] uppercase tracking-widest">
                                     LINE ITEMS ({result.line_items.length})
                                 </p>
                                 <div className="overflow-x-auto">
@@ -496,17 +496,17 @@ export function InvoiceExtractor() {
                                         </thead>
                                         <tbody>
                                             {result.line_items.map((item, i) => (
-                                                <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                                                    <td className="px-3 py-2 text-white/80 text-xs">
+                                                <tr key={i} className="border-b border-border hover:bg-white/[0.02] transition-colors">
+                                                    <td className="px-3 py-2 text-foreground/80 text-xs">
                                                         <div>{item.name}</div>
                                                         {item.description && (
-                                                            <div className="text-white/30 text-[10px] mt-0.5">{item.description}</div>
+                                                            <div className="text-muted-foreground/60 text-[10px] mt-0.5">{item.description}</div>
                                                         )}
                                                     </td>
-                                                    <td className="px-3 py-2 text-white/60 text-xs text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-muted-foreground text-xs text-right whitespace-nowrap">
                                                         {item.qty !== null ? `${item.qty}${item.unit ? ` ${item.unit}` : ""}` : "—"}
                                                     </td>
-                                                    <td className="px-3 py-2 text-white/60 text-xs text-right whitespace-nowrap">
+                                                    <td className="px-3 py-2 text-muted-foreground text-xs text-right whitespace-nowrap">
                                                         {formatCurrency(item.unit_price, result.currency)}
                                                     </td>
                                                     <td className="px-3 py-2 text-foreground text-xs text-right whitespace-nowrap">
@@ -521,14 +521,14 @@ export function InvoiceExtractor() {
                         )}
 
                         {/* Email capture */}
-                        <div className="border border-white/10 p-4 space-y-3">
+                        <div className="border border-border p-4 space-y-3">
                             {emailSubmitted ? (
                                 <p className="text-primary font-mono text-xs tracking-widest">
                                     ✓ SENT — CHECK YOUR INBOX
                                 </p>
                             ) : (
                                 <>
-                                    <p className="text-white/50 font-mono text-xs uppercase tracking-widest">
+                                    <p className="text-muted-foreground font-mono text-xs uppercase tracking-widest">
                                         EMAIL ME A COPY OF THESE RESULTS
                                     </p>
                                     <div className="flex gap-2">
@@ -538,7 +538,7 @@ export function InvoiceExtractor() {
                                             onChange={(e) => setEmailValue(e.target.value)}
                                             onKeyDown={(e) => e.key === "Enter" && handleEmailCapture()}
                                             placeholder="you@company.com"
-                                            className="flex-1 bg-black/60 border border-white/20 text-foreground font-mono text-xs px-3 py-2 placeholder-white/20 focus:outline-none focus:border-primary/60"
+                                            className="flex-1 bg-card border border-border text-foreground font-mono text-xs px-3 py-2 placeholder-white/20 focus:outline-none focus:border-primary/60"
                                         />
                                         <button
                                             onClick={handleEmailCapture}
@@ -548,9 +548,9 @@ export function InvoiceExtractor() {
                                             {emailSubmitting ? "..." : "SEND"}
                                         </button>
                                     </div>
-                                    <p className="text-white/20 font-mono text-[10px]">
+                                    <p className="text-muted-foreground font-mono text-[10px]">
                                         By submitting you agree to our{" "}
-                                        <a href="/privacy" className="underline hover:text-white/40">Privacy Policy</a>.
+                                        <a href="/privacy" className="underline hover:text-muted-foreground/70">Privacy Policy</a>.
                                         No spam.
                                     </p>
                                 </>
@@ -558,7 +558,7 @@ export function InvoiceExtractor() {
                         </div>
 
                         {/* Download + reset */}
-                        <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-white/10">
+                        <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-border">
                             <button
                                 onClick={() => downloadCSV("items_csv")}
                                 className="flex items-center justify-center gap-2 border border-primary/40 text-primary hover:bg-primary/10 px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
@@ -568,14 +568,14 @@ export function InvoiceExtractor() {
                             </button>
                             <button
                                 onClick={() => downloadCSV("summary_csv")}
-                                className="flex items-center justify-center gap-2 border border-white/20 text-white/60 hover:bg-white/5 hover:text-white px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
+                                className="flex items-center justify-center gap-2 border border-border text-muted-foreground hover:bg-card hover:text-white px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
                             >
                                 <Download className="w-3.5 h-3.5" />
                                 SUMMARY CSV
                             </button>
                             <button
                                 onClick={reset}
-                                className="sm:ml-auto flex items-center justify-center gap-2 text-white/30 hover:text-white/60 px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
+                                className="sm:ml-auto flex items-center justify-center gap-2 text-muted-foreground/60 hover:text-muted-foreground px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
                             >
                                 <RotateCcw className="w-3.5 h-3.5" />
                                 EXTRACT ANOTHER
@@ -595,14 +595,14 @@ export function InvoiceExtractor() {
                                         {error.code}
                                     </p>
                                 )}
-                                <p className="text-white/70 font-mono text-sm">
+                                <p className="text-foreground/70 font-mono text-sm">
                                     {error?.message ?? "An unexpected error occurred."}
                                 </p>
                             </div>
                         </div>
                         <button
                             onClick={reset}
-                            className="flex items-center gap-2 text-primary font-mono text-xs uppercase tracking-widest hover:text-white transition-colors"
+                            className="flex items-center gap-2 text-primary font-mono text-xs uppercase tracking-widest hover:text-foreground transition-colors"
                         >
                             <RotateCcw className="w-3.5 h-3.5" />
                             TRY AGAIN
@@ -612,7 +612,7 @@ export function InvoiceExtractor() {
             </div>
 
             {/* Rate limit note */}
-            <p className="text-white/20 font-mono text-[10px] tracking-widest text-center py-2">
+            <p className="text-muted-foreground font-mono text-[10px] tracking-widest text-center py-2">
                 // 5 EXTRACTIONS PER DAY — IP-BASED LIMIT
             </p>
         </div>

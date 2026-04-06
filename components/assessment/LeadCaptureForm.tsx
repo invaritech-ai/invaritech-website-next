@@ -19,7 +19,7 @@ interface LeadCaptureFormProps {
 }
 
 const VisionaryContainer = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <div className={cn("border border-white/10 bg-black/40 backdrop-blur-md p-8 md:p-12 rounded-none relative overflow-hidden", className)}>
+    <div className={cn("border border-border bg-card backdrop-blur-md p-8 md:p-12 rounded-none relative overflow-hidden", className)}>
         <div className="absolute top-0 left-0 w-24 h-[1px] bg-primary/50" />
         <div className="absolute top-0 left-0 w-[1px] h-24 bg-primary/50" />
         {children}
@@ -50,7 +50,7 @@ export function LeadCaptureForm({ onSubmit, leadData, onChange, isSubmitting }: 
                             <Input
                                 required
                                 placeholder="JANE DOE"
-                                className="h-14 rounded-none border-white/10 bg-white/5 font-mono text-xs uppercase tracking-widest placeholder:text-white/20"
+                                className="h-14 rounded-none border-border bg-card font-mono text-xs uppercase tracking-widest placeholder:text-muted-foreground"
                                 value={leadData.name}
                                 onChange={(e) => onChange({...leadData, name: e.target.value})}
                             />
@@ -61,7 +61,7 @@ export function LeadCaptureForm({ onSubmit, leadData, onChange, isSubmitting }: 
                                 required
                                 type="email"
                                 placeholder="JANE@CORP.COM"
-                                className="h-14 rounded-none border-white/10 bg-white/5 font-mono text-xs uppercase tracking-widest placeholder:text-white/20"
+                                className="h-14 rounded-none border-border bg-card font-mono text-xs uppercase tracking-widest placeholder:text-muted-foreground"
                                 value={leadData.email}
                                 onChange={(e) => onChange({...leadData, email: e.target.value})}
                             />
@@ -72,7 +72,7 @@ export function LeadCaptureForm({ onSubmit, leadData, onChange, isSubmitting }: 
                         <Input
                             required
                             placeholder="ACME SYSTEMS"
-                            className="h-14 rounded-none border-white/10 bg-white/5 font-mono text-xs uppercase tracking-widest placeholder:text-white/20"
+                            className="h-14 rounded-none border-border bg-card font-mono text-xs uppercase tracking-widest placeholder:text-muted-foreground"
                             value={leadData.company}
                             onChange={(e) => onChange({...leadData, company: e.target.value})}
                         />

@@ -6,7 +6,7 @@ import { ServiceBackground } from "@/components/ui/ServiceBackground";
 
 export function CalculatingState() {
     return (
-        <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center text-center px-6">
+        <div className="fixed inset-0 z-50 bg-background flex flex-col items-center justify-center text-center px-6">
             <ServiceBackground theme="blue" />
             
             <div className="relative z-10 max-w-xl">

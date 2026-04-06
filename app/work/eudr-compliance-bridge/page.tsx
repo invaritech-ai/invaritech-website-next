@@ -55,7 +55,7 @@ export default function EudrCaseStudyPage() {
                 {/* Hero Section */}
                 <div className="relative mb-32">
                     <div className="absolute top-0 left-0 -z-10 opacity-20 select-none pointer-events-none">
-                        <span className="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-white/5 whitespace-nowrap blur-3xl">
+                        <span className="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-muted-foreground whitespace-nowrap blur-3xl">
                             COMPLIANCE
                         </span>
                     </div>
@@ -86,27 +86,27 @@ export default function EudrCaseStudyPage() {
 
                 {/* Business Constraints */}
                 <section className="mb-32">
-                    <div className="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
+                    <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Business Constraints</h2>
                         <span className="font-mono text-xs text-muted-foreground hidden md:block">01 — CHALLENGE</span>
                     </div>
                     
                     <div className="grid gap-6 md:grid-cols-3">
-                        <div className="group border border-white/10 bg-white/5 p-8 hover:bg-white/10 transition-colors duration-500">
+                        <div className="group border border-border bg-card p-8 hover:bg-secondary/40 transition-colors duration-500">
                             <ShieldCheck className="w-8 h-8 mb-6 text-primary opacity-80" />
                             <h3 className="font-bold text-lg mb-3">Legal Exposure</h3>
                             <p className="text-muted-foreground text-sm leading-relaxed">
                                 Each DDS submission is an official declaration of sourcing origin. Errors trigger regulatory penalties. Data integrity and traceability were non-negotiable.
                             </p>
                         </div>
-                        <div className="group border border-white/10 bg-white/5 p-8 hover:bg-white/10 transition-colors duration-500">
+                        <div className="group border border-border bg-card p-8 hover:bg-secondary/40 transition-colors duration-500">
                             <Zap className="w-8 h-8 mb-6 text-primary opacity-80" />
                             <h3 className="font-bold text-lg mb-3">Bursty Volume</h3>
                             <p className="text-muted-foreground text-sm leading-relaxed">
                                 Submissions weren&apos;t evenly distributed. Days with <span className="text-foreground">10,000+ entries</span> required throughput that scaled with infrastructure, not headcount.
                             </p>
                         </div>
-                        <div className="group border border-white/10 bg-white/5 p-8 hover:bg-white/10 transition-colors duration-500">
+                        <div className="group border border-border bg-card p-8 hover:bg-secondary/40 transition-colors duration-500">
                             <Globe className="w-8 h-8 mb-6 text-primary opacity-80" />
                             <h3 className="font-bold text-lg mb-3">Legacy EU Interface</h3>
                             <p className="text-muted-foreground text-sm leading-relaxed">
@@ -118,7 +118,7 @@ export default function EudrCaseStudyPage() {
 
                 {/* Solution Overview */}
                 <section className="mb-32">
-                     <div className="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
+                     <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Solution Overview</h2>
                         <span className="font-mono text-xs text-muted-foreground hidden md:block">02 — ARCHITECTURE</span>
                     </div>
@@ -154,7 +154,7 @@ export default function EudrCaseStudyPage() {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="relative group rounded-none border border-white/10 overflow-hidden bg-black/40">
+                            <div className="relative group rounded-none border border-border overflow-hidden bg-card">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <Image
                                     src="/eudr-flow.webp"
@@ -168,7 +168,7 @@ export default function EudrCaseStudyPage() {
 
                         {/* Part 2 */}
                         <div className="grid gap-12 md:grid-cols-2 items-center md:flex-row-reverse">
-                            <div className="order-last md:order-first relative group rounded-none border border-white/10 overflow-hidden bg-black/40">
+                            <div className="order-last md:order-first relative group rounded-none border border-border overflow-hidden bg-card">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <Image
                                     src="/eudr-portal.webp"
@@ -186,17 +186,17 @@ export default function EudrCaseStudyPage() {
                                     <p>
                                         We eliminated portal navigation time by maintaining an internal dashboard. Operators search and segment DDS by status, date, and commodity instantly.
                                     </p>
-                                    <div className="p-6 border border-white/5 bg-white/5">
+                                    <div className="p-6 border border-border bg-card">
                                         <p className="font-mono text-xs uppercase tracking-widest text-primary mb-2">Lifecycle Tracking</p>
                                         <div className="flex flex-wrap gap-2 font-mono text-xs text-foreground/80">
                                             <span>PENDING</span>
-                                            <span className="text-white/20">→</span>
+                                            <span className="text-muted-foreground">→</span>
                                             <span>SUBMITTED</span>
-                                            <span className="text-white/20">→</span>
+                                            <span className="text-muted-foreground">→</span>
                                             <span className="text-green-500">CONFIRMED</span>
-                                            <span className="text-white/20">/</span>
+                                            <span className="text-muted-foreground">/</span>
                                             <span className="text-red-500">FAILED</span>
-                                            <span className="text-white/20">→</span>
+                                            <span className="text-muted-foreground">→</span>
                                             <span>AMENDED</span>
                                         </div>
                                     </div>
@@ -222,7 +222,7 @@ export default function EudrCaseStudyPage() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative group rounded-none border border-white/10 overflow-hidden bg-black/40">
+                            <div className="relative group rounded-none border border-border overflow-hidden bg-card">
                                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <Image
                                     src="/eudr-retry.webp"
@@ -238,13 +238,13 @@ export default function EudrCaseStudyPage() {
 
                 {/* Tech Stack */}
                  <section className="mb-32">
-                    <div className="border-t border-white/10 pt-12">
+                    <div className="border-t border-border pt-12">
                         <h3 className="font-mono text-sm text-muted-foreground mb-6 uppercase tracking-widest">Built With</h3>
                         <div className="flex flex-wrap gap-3">
                             {["Python", "FastAPI", "PostgreSQL", "React", "Docker", "Celery", "SOAP"].map((tech) => (
                                 <span
                                     key={tech}
-                                    className="border border-white/10 bg-white/5 px-4 py-2 text-sm font-mono text-foreground/80 hover:bg-white/10 hover:border-primary/30 transition-colors cursor-default"
+                                    className="border border-border bg-card px-4 py-2 text-sm font-mono text-foreground/80 hover:bg-secondary/40 hover:border-primary/30 transition-colors cursor-default"
                                 >
                                     {tech}
                                 </span>
@@ -252,7 +252,7 @@ export default function EudrCaseStudyPage() {
                         </div>
                     </div>
                     
-                    <div className="mt-12 pt-8 border-t border-white/5 text-center">
+                    <div className="mt-12 pt-8 border-t border-border text-center">
                         <p className="text-sm text-muted-foreground">
                             Related reading: <Link href="/blog/compliance-automation-done-right/" className="text-primary hover:underline">deterministic compliance systems</Link> and <Link href="/blog/building-vs-buying-custom-automation/" className="text-primary hover:underline">building vs buying custom automation</Link>.
                         </p>
@@ -262,18 +262,18 @@ export default function EudrCaseStudyPage() {
 
                 {/* Impact */}
                 <section className="mb-32">
-                    <div className="flex items-end justify-between mb-12 border-b border-white/10 pb-4">
+                    <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">The Impact</h2>
                          <span className="font-mono text-xs text-muted-foreground hidden md:block">03 — RESULTS</span>
                     </div>
-                    <div className="grid gap-px bg-white/10 border border-white/10 sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
+                    <div className="grid gap-px bg-border border border-border sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
                         {[
                             { label: "Capacity", value: "100k+", desc: "Submissions/mo supported without new staff." },
                             { label: "Risk", value: "-99%", desc: "Reduction in manual entry error exposure." },
                             { label: "Visibility", value: "100%", desc: "Instant search & audit for every submission." },
                             { label: "Control", value: "Full", desc: "Traceable state transitions & logs." }
                         ].map((stat, i) => (
-                            <div key={i} className="bg-[#050505] p-8 hover:bg-[#0a0a0a] transition-colors">
+                            <div key={i} className="bg-card p-8 hover:bg-secondary/40 transition-colors">
                                 <div className="text-sm text-muted-foreground mb-4 font-mono uppercase tracking-wider">{stat.label}</div>
                                 <div className="text-4xl md:text-5xl font-bold text-primary mb-3">{stat.value}</div>
                                 <p className="text-sm text-muted-foreground leading-relaxed">{stat.desc}</p>
@@ -284,7 +284,7 @@ export default function EudrCaseStudyPage() {
 
                 {/* Delivery */}
                 <section className="mb-32 max-w-4xl mx-auto">
-                     <div className="bg-white/5 border border-white/10 p-8 md:p-12 relative overflow-hidden group">
+                     <div className="bg-card border border-border p-8 md:p-12 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                             <Database className="w-24 h-24" />
                         </div>
@@ -307,7 +307,7 @@ export default function EudrCaseStudyPage() {
                 </section>
 
                 {/* CTA */}
-                <section className="text-center pt-24 border-t border-white/10">
+                <section className="text-center pt-24 border-t border-border">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6 max-w-3xl mx-auto">
                         EXPECTING <span className="text-primary">EUDR VOLUME</span>?
                     </h2>

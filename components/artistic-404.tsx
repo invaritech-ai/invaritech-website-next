@@ -197,17 +197,17 @@ export default function Artistic404() {
                         404
                     </h1>
                     <div className="absolute inset-0 flex items-center justify-center">
-                         <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-foreground mix-blend-screen z-20 drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
+                         <h1 className="text-7xl md:text-9xl font-black tracking-tighter text-white z-20 drop-shadow-[0_0_30px_rgba(255,255,255,0.5)]">
                             VOID
                         </h1>
                     </div>
                 </div>
                 
-                <h2 className="mt-4 text-xl md:text-2xl font-light tracking-[0.5em] uppercase text-white/50 backdrop-blur-sm">
+                <h2 className="mt-4 text-xl md:text-2xl font-light tracking-[0.5em] uppercase text-white/70">
                     Event Horizon Reached
                 </h2>
-                
-                <p className="mt-6 max-w-md mx-auto text-sm md:text-base text-gray-400 font-mono leading-relaxed">
+
+                <p className="mt-6 max-w-md mx-auto text-sm md:text-base text-white/50 font-mono leading-relaxed">
                     The coordinates you seek have drifted into deep space.
                     <br />
                     Return to the known universe.
@@ -218,7 +218,7 @@ export default function Artistic404() {
                         asChild 
                         variant="ghost" 
                         size="lg" 
-                        className="rounded-full border border-white/10 bg-white/5 hover:bg-white/20 hover:scale-105 hover:tracking-widest text-foreground backdrop-blur-md transition-all duration-500 ease-out group"
+                        className="rounded-none border border-white/20 bg-white/10 hover:bg-primary hover:border-primary hover:scale-105 hover:tracking-widest text-white transition-all duration-500 ease-out group"
                     >
                         <Link href="/">
                             <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-2 transition-transform" />
@@ -230,7 +230,7 @@ export default function Artistic404() {
         </div>
         
         {/* Vignette & Noise */}
-        <div className="absolute inset-0 z-[5] pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,#000000_100%)] opacity-80"></div>
+        <div className="absolute inset-0 z-[5] pointer-events-none bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.6)_100%)] opacity-80"></div>
         <div className="absolute inset-0 z-[5] pointer-events-none opacity-[0.07] mix-blend-overlay"
              style={{
                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
