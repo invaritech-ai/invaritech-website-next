@@ -13,3 +13,8 @@
 [13030846ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://aplo-evnt.com/api/v1/intent_pixel/track_request?app_id=69ae995320f12f0015033d60:0
 [13031414ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://a.remarketstats.com/px/smart/?c=24d1add2443e239&type=img&partner_id=1rQPfvIzStzrxlsWj&partner_rid=a621cbd5-9d20-4ad5-89ca-79dc3503feb4:0
 [13032164ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://match.prod.bidr.io/cookie-sync/fivebyfive:0
+[13932006ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14173017ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14414025ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14655029ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14896038ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
