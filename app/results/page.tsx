@@ -22,9 +22,6 @@ export const metadata: Metadata = {
         index: false,
         follow: false,
     },
-    alternates: {
-        canonical: "https://www.invaritech.ai/results/",
-    },
 };
 
 const exampleCase = {

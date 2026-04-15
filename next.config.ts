@@ -133,6 +133,27 @@ const nextConfig: NextConfig = {
                 destination: "/services/ai-automation-sprint/",
                 permanent: true,
             },
+            // Legacy sprint aliases → canonical sprint service page
+            {
+                source: "/ai-automation-sprint",
+                destination: "/services/ai-automation-sprint/",
+                permanent: true,
+            },
+            {
+                source: "/ai-automation-sprint/",
+                destination: "/services/ai-automation-sprint/",
+                permanent: true,
+            },
+            {
+                source: "/ops-efficiency-sprint",
+                destination: "/services/ai-automation-sprint/",
+                permanent: true,
+            },
+            {
+                source: "/ops-efficiency-sprint/",
+                destination: "/services/ai-automation-sprint/",
+                permanent: true,
+            },
             // Old legal page slugs
             {
                 source: "/terms-of-service",

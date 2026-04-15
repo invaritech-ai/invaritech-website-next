@@ -1,3 +1,5 @@
+const HOMEPAGE_LAST_MODIFIED = "2026-04-15T00:00:00.000Z";
+
 export const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -85,7 +87,7 @@ export const structuredData = {
                 height: 630,
             },
             datePublished: "2024-01-01",
-            dateModified: new Date().toISOString(),
+            dateModified: HOMEPAGE_LAST_MODIFIED,
         },
         {
             "@type": "Service",
