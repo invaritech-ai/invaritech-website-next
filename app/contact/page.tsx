@@ -44,7 +44,7 @@ export default function ContactPage() {
                         <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Get In Touch</span>
                     </div>
                     <h1 className="font-editorial text-6xl md:text-8xl font-semibold tracking-tight mb-8 leading-[0.9] text-foreground">
-                        START THE SPRINT
+                        Book an AI automation scoping call
                     </h1>
                     <p className="text-xl text-muted-foreground md:text-2xl leading-relaxed max-w-2xl font-light">
                         Whether you need to automate complex workflows or configure a custom solution, we are ready to engineer your solution.
