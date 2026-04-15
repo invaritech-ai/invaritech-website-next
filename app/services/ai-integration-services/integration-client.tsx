@@ -51,7 +51,7 @@ export default function IntegrationClient() {
                                 For organisations with strict data residency, security policies, or regulatory constraints, we design the gateway first: VPC-deployable, auditable, model-agnostic, and owned by you. Switch providers without rewriting the workflow.
                             </p>
                             <p className="text-lg text-foreground-muted font-mono">
-                                No replatforming. No shadow AI. No brittle "glue code."
+                                No replatforming. No shadow AI. No brittle &quot;glue code.&quot;
                             </p>
                         </div>
                         <div className="md:w-1/3 space-y-4">

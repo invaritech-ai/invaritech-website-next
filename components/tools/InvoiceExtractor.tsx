@@ -613,7 +613,7 @@ export function InvoiceExtractor() {
 
             {/* Rate limit note */}
             <p className="text-muted-foreground font-mono text-[10px] tracking-widest text-center py-2">
-                // 5 EXTRACTIONS PER DAY — IP-BASED LIMIT
+                5 EXTRACTIONS PER DAY — IP-BASED LIMIT
             </p>
         </div>
     );
