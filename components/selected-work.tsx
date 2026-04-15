@@ -33,7 +33,7 @@ const proofSignals = [
         title: "China Coast Community",
         detail:
             "Modernizing operational flow and donor engagement for a premier elderly care charity in Hong Kong.",
-        metric: "Review Phase",
+        metric: "Live Site",
         image: "/ccc-isometric.webp",
         href: "https://www.chinacoastcommunity.org.hk",
         category: "Web & Automation",

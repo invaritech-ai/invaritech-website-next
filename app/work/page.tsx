@@ -48,7 +48,7 @@ const projects = [
         tags: ["Next.js", "Stripe", "CRM Integration"],
         image: "/ccc-isometric.webp",
         link: "https://www.chinacoastcommunity.org.hk",
-        metric: "Review Phase",
+        metric: "Live Site",
     },
     {
         id: "custom",
@@ -162,7 +162,7 @@ export default function WorkPage() {
                                         <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
                                             <Link href={project.link} className="flex items-center gap-3">
                                                 <span className="text-sm font-semibold uppercase tracking-widest">
-                                                    {project.buttonText || (project.metric === "Review Phase" ? "View Site" : "View Case")}
+                                                    {project.buttonText || (project.metric === "Live Site" ? "View Site" : "View Case")}
                                                 </span>
                                                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                             </Link>
