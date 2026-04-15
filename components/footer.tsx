@@ -19,7 +19,7 @@ const companyLinks = [
 
 export default function FooterSection() {
     return (
-        <footer className="relative mt-20 overflow-hidden bg-card py-16 md:py-24">
+        <footer className="relative overflow-hidden bg-card py-16 md:py-24">
             <div className="absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
 
             <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.02] whitespace-nowrap">
