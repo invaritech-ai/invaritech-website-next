@@ -117,7 +117,7 @@ export default function HowWeWorkSection() {
                 <div className="hww-timeline relative grid gap-8 md:grid-cols-4 md:items-stretch">
                     <div className="absolute top-[18px] left-0 w-full h-[1px] bg-border hidden md:block" />
 
-                    {sprintPhases.map((phase, i) => (
+                    {sprintPhases.map((phase) => (
                         <div key={phase.week} className="hww-phase relative group flex flex-col">
                             <div className="w-[9px] h-[9px] bg-background border-2 border-primary relative z-10 mb-8 mx-auto md:mx-0 transition-transform group-hover:scale-150 duration-300">
                             </div>

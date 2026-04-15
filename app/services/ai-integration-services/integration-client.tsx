@@ -159,7 +159,7 @@ export default function IntegrationClient() {
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">Bring the AI to the Data</h2>
                             <p className="text-xl text-muted-foreground">
-                                For sensitive workloads, we don’t force "data export as a strategy."
+                                For sensitive workloads, we don’t force &quot;data export as a strategy.&quot;
                             </p>
                         </div>
 
@@ -256,7 +256,7 @@ export default function IntegrationClient() {
                             </Badge>
                             <h2 className="text-3xl md:text-5xl font-bold mb-6">Integrations Shouldn’t Be a Black Box</h2>
                             <p className="text-xl text-muted-foreground leading-relaxed">
-                                We turn "shadow AI" into boring infrastructure. We replace silent corruption and API anxiety with visible tickets and safe, human-led overrides.
+                                We turn &quot;shadow AI&quot; into boring infrastructure. We replace silent corruption and API anxiety with visible tickets and safe, human-led overrides.
                             </p>
                         </div>
                         <div className="md:w-1/2 w-full space-y-4 stagger-list">
@@ -292,7 +292,7 @@ export default function IntegrationClient() {
                     <div className="bg-red-900/10 border border-red-500/20 p-8 rounded-none text-left max-w-2xl mx-auto">
                         <h4 className="font-bold text-red-400 mb-4">We also won’t build:</h4>
                         <ul className="space-y-3 text-red-100/80">
-                            <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> "Black box" automations where we can’t baseline outcomes</li>
+                            <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> &quot;Black box&quot; automations where we can’t baseline outcomes</li>
                             <li className="flex gap-2"><X className="w-5 h-5 shrink-0" /> Production workflows with ungoverned model autonomy for writes</li>
                         </ul>
                     </div>

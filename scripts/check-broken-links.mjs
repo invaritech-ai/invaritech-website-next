@@ -8,7 +8,6 @@ const __dirname = path.dirname(__filename);
 const DIST_DIR = path.resolve(__dirname, '../dist');
 
 const brokenLinks = [];
-const checkedLinks = new Set();
 const fileCache = new Set();
 
 // Pre-populate file cache
