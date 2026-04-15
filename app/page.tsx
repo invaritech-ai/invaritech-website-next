@@ -3,6 +3,7 @@ import ArtisticHomeHero from "@/components/artistic-home-hero";
 import WhatWeDoSection from "@/components/what-we-do-section";
 import WhatWeBuild from "@/components/what-we-build";
 import SelectedWorkSection from "@/components/selected-work";
+import Testimonials from "@/components/testimonials";
 import HowWeWorkSection from "@/components/how-we-work";
 import AssessmentBannerSection from "@/components/assessment-banner";
 import ExpansionPathsSection from "@/components/expansion-paths";
@@ -21,6 +22,7 @@ export default function Home() {
       <WhatWeDoSection />
       <WhatWeBuild />
       <SelectedWorkSection />
+      <Testimonials />
       <HowWeWorkSection />
       <AssessmentBannerSection />
       <ExpansionPathsSection />

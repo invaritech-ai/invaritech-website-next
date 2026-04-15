@@ -153,6 +153,17 @@ export default function RootLayout({
                     name="facebook-domain-verification"
                     content="40eogslk5htol3s1lsoqadxgh2h657"
                 />
+                {/* Non-standard but requested by some validators/tools */}
+                <meta
+                    property="og:logo"
+                    content="https://www.invaritech.ai/logo-image.png"
+                />
+                {/* Explicit absolute OG image hints for stricter scrapers */}
+                <meta
+                    property="og:image:secure_url"
+                    content="https://www.invaritech.ai/og-image.png"
+                />
+                <meta property="og:image:type" content="image/png" />
                 <link rel="preconnect" href="https://www.google.com" />
                 <link
                     rel="preconnect"

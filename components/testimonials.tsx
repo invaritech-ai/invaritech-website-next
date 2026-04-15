@@ -1,15 +1,24 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 export default function Testimonials() {
     return (
-        <section className="py-16 md:py-32">
-            <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
-                <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
-                    <h2 className="text-4xl font-medium lg:text-5xl">
-                        Trusted by operators who ship real systems
+        <section className="relative overflow-hidden bg-card py-24 md:py-32">
+            <div className="absolute top-0 left-0 h-[1px] w-full editorial-divider-full" />
+
+            <div className="mx-auto max-w-7xl space-y-10 px-6 md:space-y-16">
+                <div className="relative z-10 mx-auto max-w-3xl space-y-6 text-center md:space-y-8">
+                    <div className="flex items-center justify-center gap-3">
+                        <span className="text-[11px] font-mono text-primary/50">05</span>
+                        <div className="h-[1px] w-6 bg-primary/30" />
+                        <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                            Phase 2: Client Signal
+                        </p>
+                    </div>
+                    <h2 className="font-editorial text-5xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-7xl">
+                        Trusted by Operators
                     </h2>
-                    <p className="text-muted-foreground">
+                    <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
                         Verified feedback from our Google Business Profile.
                     </p>
                     <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-primary">
@@ -18,8 +27,8 @@ export default function Testimonials() {
                     </div>
                 </div>
 
-                <div className="grid gap-4 md:grid-cols-2">
-                    <Card>
+                <div className="grid gap-5 md:grid-cols-2">
+                    <Card className="rounded-none border-border bg-background shadow-none">
                         <CardHeader className="pb-3">
                             <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary">
                                 API Delivery
@@ -38,8 +47,7 @@ export default function Testimonials() {
                                 </p>
 
                                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
-                                    <Avatar className="size-12">
-                                        <AvatarImage src="" alt="Matthew Baldwin" />
+                                    <Avatar className="size-12 border border-border bg-card">
                                         <AvatarFallback>MB</AvatarFallback>
                                     </Avatar>
 
@@ -56,7 +64,7 @@ export default function Testimonials() {
                         </CardContent>
                     </Card>
 
-                    <Card>
+                    <Card className="rounded-none border-border bg-background shadow-none">
                         <CardHeader className="pb-3">
                             <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary">
                                 Website Rebuild
@@ -74,8 +82,7 @@ export default function Testimonials() {
                                 </p>
 
                                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
-                                    <Avatar className="size-12">
-                                        <AvatarImage src="" alt="China Coast Community" />
+                                    <Avatar className="size-12 border border-border bg-card">
                                         <AvatarFallback>CC</AvatarFallback>
                                     </Avatar>
                                     <div>
