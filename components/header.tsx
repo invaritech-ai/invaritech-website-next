@@ -65,10 +65,10 @@ export const HeroHeader = () => {
             <div className="relative z-[102] flex items-center justify-between px-6 py-5 md:px-12 md:py-6">
                 <Link
                     href="/"
-                    className="pointer-events-auto flex items-center gap-3 group"
+                    className="pointer-events-auto inline-flex min-h-10 items-center gap-3 group"
                     onClick={() => setIsOpen(false)}
                 >
-                    <div className="relative size-9 overflow-hidden">
+                    <div className="relative flex size-10 items-center justify-center overflow-hidden">
                         <LogoIcon className="size-9 transition-transform duration-700 ease-in-out group-hover:rotate-180" />
                     </div>
                     <span className="font-semibold tracking-tight text-lg text-foreground hidden md:block">
@@ -118,30 +118,33 @@ export const HeroHeader = () => {
                                     <Link
                                         href={item.href}
                                         onClick={() => setIsOpen(false)}
-                                        className="relative flex items-center justify-between w-full px-4 md:px-6 py-3 md:py-5 border-b border-border/60 hover:border-primary/40 transition-colors duration-300"
+                                        className="relative flex min-h-12 items-center justify-between w-full px-4 md:px-6 py-3 md:py-5 border-b border-border/60 hover:border-primary/40 transition-colors duration-300"
                                     >
-                                        <span className="text-xs font-mono text-muted-foreground group-hover:text-primary transition-colors duration-300">
+                                        <span className="text-xs font-mono text-foreground-muted group-hover:text-primary transition-colors duration-300">
                                             {item.id}
                                         </span>
                                         <span className={cn(
                                             "font-editorial text-4xl md:text-7xl lg:text-8xl font-semibold tracking-tight transition-all duration-300",
-                                            pathname === item.href ? "text-primary" : "text-foreground/80 group-hover:text-foreground"
+                                            pathname === item.href ? "text-primary" : "text-foreground/90 group-hover:text-foreground"
                                         )}>
                                             {item.name}
                                         </span>
-                                        <ArrowUpRight className="size-5 md:size-8 text-muted-foreground group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-0" />
+                                        <ArrowUpRight className="size-5 md:size-8 text-foreground-muted group-hover:text-primary transition-all duration-300 opacity-0 group-hover:opacity-100 -translate-x-3 group-hover:translate-x-0" />
                                     </Link>
                                 </div>
                             ))}
                         </nav>
 
-                        <div className="menu-footer w-full flex justify-between items-end text-xs md:text-sm font-mono text-muted-foreground uppercase tracking-wider shrink-0">
+                        <div className="menu-footer w-full flex justify-between items-end text-xs md:text-sm font-mono text-foreground-muted uppercase tracking-wider shrink-0">
                             <div className="hidden md:block">
                                 Global Strategic Hubs<br />
                                 US &middot; HK &middot; IN &middot; MY
                             </div>
                             <div className="text-right">
-                                <a href="mailto:hello@invaritech.ai" className="hover:text-foreground transition-colors">
+                                <a
+                                    href="mailto:hello@invaritech.ai"
+                                    className="inline-flex min-h-10 items-center px-2 hover:text-foreground transition-colors"
+                                >
                                     hello@invaritech.ai
                                 </a>
                             </div>

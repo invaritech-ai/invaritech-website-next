@@ -56,13 +56,13 @@ export function ToolPageShell({
                     <div className="flex items-center gap-2 mb-10">
                         <Link
                             href="/tools/"
-                            className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors group"
+                            className="inline-flex min-h-10 items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-foreground-muted hover:text-primary transition-colors group"
                         >
                             <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
                             All Tools
                         </Link>
                         <span className="text-border font-mono text-[10px]">/</span>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground/60">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle">
                             {breadcrumb}
                         </span>
                     </div>
@@ -81,7 +81,7 @@ export function ToolPageShell({
                             <span className="text-primary">{titleParts[1]}</span>
                         </h1>
 
-                        <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                        <p className="text-lg text-foreground-muted leading-relaxed max-w-xl">
                             {description}
                         </p>
                     </header>
@@ -93,19 +93,19 @@ export function ToolPageShell({
                     {(footerLabel || footerText || footerLink) && (
                         <div className="mt-20 pt-12 border-t border-border">
                             {footerLabel && (
-                                <p className="text-muted-foreground/60 font-mono text-xs uppercase tracking-widest mb-4">
+                                <p className="text-foreground-subtle font-mono text-xs uppercase tracking-widest mb-4">
                                     {footerLabel}
                                 </p>
                             )}
                             {footerText && (
-                                <p className="text-muted-foreground text-sm leading-relaxed max-w-xl mb-8">
+                                <p className="text-foreground-muted text-sm leading-relaxed max-w-xl mb-8">
                                     {footerText}
                                 </p>
                             )}
                             {footerLink && (
                                 <Link
                                     href={footerLink.href}
-                                    className="inline-flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors"
+                                    className="inline-flex min-h-10 items-center gap-2 text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors"
                                 >
                                     <ArrowRight className="w-3 h-3" />
                                     {footerLink.label}

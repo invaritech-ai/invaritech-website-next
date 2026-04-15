@@ -151,7 +151,7 @@ export default function ServicesPage() {
                                             <div>
                                                 <p className="text-sm font-semibold text-foreground uppercase tracking-wider mb-1">{item.phase}</p>
                                                 <p
-                                                    className="text-xs text-muted-foreground font-mono leading-relaxed group-hover/sprint:text-foreground/70 transition-colors duration-500"
+                                                    className="text-xs text-muted-foreground font-mono leading-relaxed group-hover/sprint:text-foreground-subtle transition-colors duration-500"
                                                     style={{ transitionDelay: `${i * 65}ms` }}
                                                 >{item.desc}</p>
                                             </div>
@@ -159,7 +159,7 @@ export default function ServicesPage() {
                                     ))}
                                 </div>
                                 <div className="mt-8 pt-6 border-t border-border">
-                                    <p className="text-[10px] font-mono text-muted-foreground/60 uppercase tracking-[0.2em]">Fixed scope · Measurable output · 30 days</p>
+                                    <p className="text-[10px] font-mono text-foreground-subtle uppercase tracking-[0.2em]">Fixed scope · Measurable output · 30 days</p>
                                 </div>
                             </div>
                         </div>
@@ -188,7 +188,7 @@ export default function ServicesPage() {
                                         <div className="size-12 border border-border bg-background flex items-center justify-center group-hover:border-primary/30 transition-colors">
                                             <Icon className="size-6 text-primary" />
                                         </div>
-                                        <span className="text-[11px] font-mono text-muted-foreground/50">0{index + 1}</span>
+                                        <span className="text-[11px] font-mono text-foreground-subtle">0{index + 1}</span>
                                     </div>
 
                                     <h3 className="font-editorial text-2xl font-semibold mb-4 group-hover:text-primary transition-colors">

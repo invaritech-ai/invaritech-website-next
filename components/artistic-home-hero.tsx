@@ -17,6 +17,19 @@ export default function ArtisticHomeHero() {
 
     useGSAP(() => {
         const ctx = gsap.context(() => {
+            const prefersReducedMotion =
+                typeof window !== "undefined" &&
+                window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+            if (prefersReducedMotion) {
+                gsap.set(".hero-eyebrow, .hero-line, .hero-sub, .hero-cta, .hero-chip", {
+                    opacity: 1,
+                    y: 0,
+                    clearProps: "transform",
+                });
+                return;
+            }
+
             gsap.from(".hero-eyebrow", {
                 opacity: 0,
                 y: 12,
@@ -85,7 +98,7 @@ export default function ArtisticHomeHero() {
             <div className="relative z-10 container mx-auto px-6 h-full flex flex-col items-center justify-center text-center">
                 <div className="hero-eyebrow mb-10 mt-32 flex items-center gap-3">
                     <div className="h-[1px] w-8 bg-primary/40" />
-                    <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-muted-foreground">
+                    <span className="text-[11px] font-mono uppercase tracking-[0.25em] text-foreground-subtle">
                         {BRAND_EYEBROW}
                     </span>
                     <div className="h-[1px] w-8 bg-primary/40" />
@@ -98,16 +111,16 @@ export default function ArtisticHomeHero() {
                     <span className="hero-line text-6xl md:text-[8.5rem] lg:text-[10rem] font-semibold leading-[0.88] tracking-tight text-primary block">
                         GOVERNED AI
                     </span>
-                    <span className="hero-line text-3xl md:text-5xl lg:text-6xl leading-[1] tracking-tight text-muted-foreground font-light block mt-3">
+                    <span className="hero-line text-3xl md:text-5xl lg:text-6xl leading-[1] tracking-tight text-foreground-muted font-light block mt-3">
                         ON YOUR INFRASTRUCTURE
                     </span>
                 </h1>
 
                 <div className="hero-sub mt-12 max-w-2xl">
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                    <p className="text-lg md:text-xl text-foreground-muted leading-relaxed">
                         One production-grade AI automation, live in 30 days — layered on your existing stack with governance built in: permissions, audit logs, and rollback paths.
                     </p>
-                    <span className="text-primary/70 block mt-3 font-mono text-xs uppercase tracking-[0.2em]">
+                    <span className="text-primary/80 block mt-3 font-mono text-xs uppercase tracking-[0.2em]">
                         No migration. No vendor lock-in. Before/after KPI validation.
                     </span>
                 </div>
@@ -116,7 +129,7 @@ export default function ArtisticHomeHero() {
                     <Button
                         asChild
                         size="lg"
-                        className="h-13 px-8 rounded-none bg-primary text-white font-semibold text-base hover:bg-foreground transition-all duration-300 shadow-sm"
+                        className="h-13 px-8 rounded-none bg-primary text-primary-foreground font-semibold text-base hover:bg-foreground hover:text-background transition-all duration-300 shadow-sm"
                     >
                         <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
                             {BOOK_MEETING_CTA} <ArrowRight className="ml-2 h-4 w-4" />
@@ -143,7 +156,7 @@ export default function ArtisticHomeHero() {
                         "Start in 1-2 weeks if qualified",
                         "Before/after KPI validation",
                     ].map((text, i) => (
-                        <div key={i} className="hero-chip flex items-center gap-2 px-4 py-2 bg-secondary/60 border border-border/50 text-[11px] font-mono text-muted-foreground">
+                        <div key={i} className="hero-chip flex items-center gap-2 px-4 py-2 bg-secondary/60 border border-border/50 text-[11px] font-mono text-foreground-muted">
                             <div className="w-1 h-1 bg-primary rounded-full" />
                             {text}
                         </div>

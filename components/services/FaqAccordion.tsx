@@ -24,6 +24,9 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
                 >
                     <button
                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                        id={`faq-button-${i}`}
+                        aria-expanded={openFaq === i}
+                        aria-controls={`faq-panel-${i}`}
                         className="w-full flex items-center justify-between p-6 text-left hover:bg-secondary/40 transition-colors"
                     >
                         <span className="font-semibold text-foreground">
@@ -39,7 +42,12 @@ export function FaqAccordion({ faqs }: FaqAccordionProps) {
                         className={`grid transition-all duration-300 ease-in-out ${openFaq === i ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
                     >
                         <div className="overflow-hidden">
-                            <div className="p-6 pt-0 text-muted-foreground leading-relaxed border-t border-border">
+                            <div
+                                id={`faq-panel-${i}`}
+                                aria-labelledby={`faq-button-${i}`}
+                                role="region"
+                                className="p-6 pt-0 text-muted-foreground leading-relaxed border-t border-border"
+                            >
                                 {faq.answer}
                             </div>
                         </div>

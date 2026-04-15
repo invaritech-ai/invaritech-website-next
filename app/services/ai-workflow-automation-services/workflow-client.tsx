@@ -50,7 +50,7 @@ export default function WorkflowClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -59,7 +59,7 @@ export default function WorkflowClient() {
                             WORKFLOW AUTOMATION
                         </TextEffect>
                         <br />
-                        <span className="text-muted-foreground/70">
+                        <span className="text-foreground-subtle">
                             CONSULTING SERVICES
                         </span>
                     </h1>
@@ -89,7 +89,7 @@ export default function WorkflowClient() {
                                 existing ERP. Serving teams in Singapore, Hong
                                 Kong, Malaysia, and the Philippines.
                             </p>
-                            <p className="text-lg text-foreground/80 font-mono">
+                            <p className="text-lg text-foreground-muted font-mono">
                                 We are practitioners, not advisors. We build the
                                 pipeline.
                             </p>
@@ -160,19 +160,19 @@ export default function WorkflowClient() {
             <section className="reveal-section py-6 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     <div className="border border-border bg-card p-5 flex flex-col sm:flex-row gap-4 items-start">
-                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground/50 shrink-0 pt-1">
+                        <span className="text-xs font-mono uppercase tracking-widest text-foreground-subtle shrink-0 pt-1">
                             Not this
                         </span>
                         <div className="flex flex-wrap gap-3">
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">
                                 Not RPA point-and-click — we map entire workflow
                                 contracts, not individual clicks
                             </span>
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">
                                 Not a Zapier stack — no-code breaks at
                                 auditability and governance boundaries
                             </span>
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">
                                 Not a chatbot — we automate processes
                                 end-to-end, not individual conversations
                             </span>
@@ -203,7 +203,7 @@ export default function WorkflowClient() {
                                 resolution for controllers managing multi-entity
                                 books.
                             </p>
-                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                            <p className="text-xs font-mono text-primary/80 uppercase tracking-widest">
                                 CFOs · Controllers · Finance Ops
                             </p>
                         </div>
@@ -217,7 +217,7 @@ export default function WorkflowClient() {
                                 compliance reporting — replacing manual
                                 spreadsheet handoffs with audited pipelines.
                             </p>
-                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                            <p className="text-xs font-mono text-primary/80 uppercase tracking-widest">
                                 Ops Managers · Plant Controllers · Supply Chain Leads
                             </p>
                         </div>
@@ -231,7 +231,7 @@ export default function WorkflowClient() {
                                 pipelines, and client reporting automation for
                                 firms scaling without adding ops headcount.
                             </p>
-                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                            <p className="text-xs font-mono text-primary/80 uppercase tracking-widest">
                                 COOs · Managing Partners · Ops Directors
                             </p>
                         </div>
@@ -278,7 +278,7 @@ export default function WorkflowClient() {
 
                         {/* Month-End Close */}
                         <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors flex flex-col">
-                            <div className="size-12 rounded-none bg-blue-500/10 flex items-center justify-center text-primary/70 mb-6">
+                            <div className="size-12 rounded-none bg-blue-500/10 flex items-center justify-center text-primary/80 mb-6">
                                 <Check className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-4">
@@ -292,7 +292,7 @@ export default function WorkflowClient() {
                             <div className="pt-4 border-t border-border mt-auto">
                                 <Link
                                     href="/blog/month-end-close-automation/"
-                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/70 hover:text-foreground transition-colors"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/80 hover:text-foreground transition-colors"
                                 >
                                     <ArrowRight className="w-3 h-3" /> Cut Your
                                     Close to 3 Days
@@ -302,7 +302,7 @@ export default function WorkflowClient() {
 
                         {/* Cash Flow */}
                         <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors flex flex-col">
-                            <div className="size-12 rounded-none bg-purple-500/10 flex items-center justify-center text-primary/70 mb-6">
+                            <div className="size-12 rounded-none bg-purple-500/10 flex items-center justify-center text-primary/80 mb-6">
                                 <LineChart className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-4">
@@ -317,7 +317,7 @@ export default function WorkflowClient() {
                             <div className="pt-4 border-t border-border mt-auto">
                                 <Link
                                     href="/blog/cash-flow-visibility-automation/"
-                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/70 hover:text-foreground transition-colors"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/80 hover:text-foreground transition-colors"
                                 >
                                     <ArrowRight className="w-3 h-3" /> Read the
                                     Architecture
@@ -343,7 +343,7 @@ export default function WorkflowClient() {
                     </div>
 
                     <div className="overflow-hidden border border-border rounded-none">
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-card font-mono text-sm uppercase tracking-wider text-muted-foreground/70 border-b border-border">
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-card font-mono text-sm uppercase tracking-wider text-foreground-subtle border-b border-border">
                             <div className="p-4 md:p-6">Layer</div>
                             <div className="p-4 md:p-6">What it does</div>
                             <div className="p-4 md:p-6">How it behaves</div>
@@ -363,7 +363,7 @@ export default function WorkflowClient() {
                             <div className="p-6 border-b md:border-b-0 border-border text-muted-foreground">
                                 AI structures messy inputs into standard JSON
                             </div>
-                            <div className="p-6 text-foreground/80 font-mono text-sm flex items-center">
+                            <div className="p-6 text-foreground-muted font-mono text-sm flex items-center">
                                 <span className="px-2 py-1 bg-yellow-500/10 text-yellow-500 rounded text-xs border border-yellow-500/20">
                                     Low-confidence flags a human
                                 </span>
@@ -372,7 +372,7 @@ export default function WorkflowClient() {
 
                         {/* Row 2: Writing */}
                         <div className="grid grid-cols-1 md:grid-cols-4 bg-card group hover:bg-card transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-border text-primary/70 font-bold flex items-center gap-2">
+                            <div className="p-6 border-b md:border-b-0 border-border text-primary/80 font-bold flex items-center gap-2">
                                 <Database className="w-4 h-4" /> Writing
                                 (Deterministic)
                             </div>
@@ -383,7 +383,7 @@ export default function WorkflowClient() {
                                 Hard-coded matching logic + explicit approval
                                 gates
                             </div>
-                            <div className="p-6 text-foreground/80 font-mono text-sm flex items-center">
+                            <div className="p-6 text-foreground-muted font-mono text-sm flex items-center">
                                 <span className="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs border border-green-500/20">
                                     Zero probabilistic writes
                                 </span>
@@ -504,7 +504,7 @@ export default function WorkflowClient() {
                                     {i + 1}
                                 </div>
                                 <div>
-                                    <p className="text-xs font-mono uppercase tracking-widest text-primary/60 mb-1">
+                                    <p className="text-xs font-mono uppercase tracking-widest text-primary/80 mb-1">
                                         {step.phase}
                                     </p>
                                     <h3 className="text-2xl font-bold mb-3">
@@ -628,7 +628,7 @@ export default function WorkflowClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-foreground">
                         Build for <span className="text-primary">Scale</span>{" "}
                         not Just <br /> Efficiency.
                     </h2>
@@ -650,21 +650,21 @@ export default function WorkflowClient() {
                     <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
                         <Link
                             href="/services/ai-automation-sprint/"
-                            className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" /> Start with the
                             30-Day Sprint
                         </Link>
                         <Link
                             href="/services/ai-integration-services/"
-                            className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" /> Need ERP
                             integration?
                         </Link>
                         <Link
                             href="/services/ai-automation-consulting/"
-                            className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" /> Not sure which workflow to start with?
                         </Link>

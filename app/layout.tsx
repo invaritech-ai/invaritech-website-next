@@ -195,7 +195,7 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     <LenisScroll>
-                        <div className="fixed inset-0 z-[-1] pointer-events-none grain-overlay opacity-40" />
+                        <div className="fixed inset-0 z-[-1] pointer-events-none grain-overlay opacity-30" />
                         <div className="relative z-10">
                             <HeroHeader />
                             {children}

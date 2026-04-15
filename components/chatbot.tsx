@@ -15,6 +15,7 @@ export const Chatbot = () => {
     const PRIMARY_COLOR = "#C8962D"; // Amber to match site primary
     const BG_COLOR = "#FBF8F3";      // Cream background
     const MUTED_COLOR = "#7C6E58";   // Warm muted
+    const ON_AMBER_COLOR = "#1A1209"; // AA-compliant text on amber
     const BOT_BG = "#F2EDE3";        // Slightly darker cream for bot messages
     const USER_BG = "#C8962D";       // Amber for user messages
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
@@ -185,11 +186,11 @@ export const Chatbot = () => {
                 disclaimer: {
                     title: "System Note",
                     message:
-                        'By accessing this terminal, you agree to the <a target="_blank" href="https://www.invaritech.ai/terms/" style="color: #C8962D; text-decoration: underline;">Protocols</a>',
+                        'By accessing this terminal, you agree to the <a target="_blank" rel="noopener noreferrer" href="https://www.invaritech.ai/terms/" style="color: #C8962D; text-decoration: underline;">Protocols</a>',
                     textColor: MUTED_COLOR,
                     buttonColor: PRIMARY_COLOR,
                     buttonText: "INITIALIZE LINK",
-                    buttonTextColor: "white",
+                    buttonTextColor: ON_AMBER_COLOR,
                     blurredBackgroundColor: "rgba(251, 248, 243, 0.85)",
                     backgroundColor: BG_COLOR,
                 },
@@ -265,7 +266,7 @@ export const Chatbot = () => {
                     }
                     .guest-message {
                         background-color: #C8962D !important;
-                        color: #fff !important;
+                        color: ${ON_AMBER_COLOR} !important;
                         border: none !important;
                     }
                     .bot-message {
@@ -333,7 +334,7 @@ export const Chatbot = () => {
                     },
                     userMessage: {
                         backgroundColor: USER_BG,
-                        textColor: "#ffffff",
+                        textColor: ON_AMBER_COLOR,
                         showAvatar: false,
                         avatarSrc: "",
                     },

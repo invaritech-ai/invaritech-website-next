@@ -37,23 +37,23 @@ export default function FooterSection() {
                                 <LogoIcon className="size-10 group-hover:drop-shadow-[0_0_8px_rgba(199,64,45,0.3)] transition-all duration-300" />
                                 <div className="flex flex-col items-center">
                                     <Logo />
-                                    <span className="text-[9px] uppercase tracking-[0.3em] text-primary font-bold text-center">Visionary Intelligence</span>
+                                    <span className="text-[10px] uppercase tracking-[0.3em] text-primary/90 font-bold text-center">Visionary Intelligence</span>
                                 </div>
                             </div>
                         </Link>
-                        <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                        <p className="text-sm text-foreground-muted leading-relaxed max-w-xs">
                             Governed AI systems for enterprises that need proof, not promises. We deliver one production-grade automation in 30 days, layered on top of what you already run.
                         </p>
                     </div>
 
                     <div className="lg:ml-auto">
-                        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6">Navigation</h3>
+                        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-subtle mb-6">Navigation</h3>
                         <ul className="space-y-3">
                             {navigationLinks.map((link, index) => (
                                 <li key={index}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300 flex items-center group"
+                                        className="inline-flex min-h-10 items-center text-sm text-foreground-muted hover:text-foreground transition-all duration-300 group"
                                     >
                                         <span className="w-0 group-hover:w-3 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all duration-300 opacity-0 group-hover:opacity-100" />
                                         {link.title}
@@ -64,13 +64,13 @@ export default function FooterSection() {
                     </div>
 
                     <div className="lg:ml-auto">
-                        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6">Legal & Sync</h3>
+                        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-subtle mb-6">Legal & Sync</h3>
                         <ul className="space-y-3">
                             {companyLinks.map((link, index) => (
                                 <li key={index}>
                                     <Link
                                         href={link.href}
-                                        className="text-sm text-muted-foreground hover:text-foreground transition-all duration-300"
+                                        className="inline-flex min-h-10 items-center text-sm text-foreground-muted hover:text-foreground transition-all duration-300"
                                     >
                                         {link.title}
                                     </Link>
@@ -81,12 +81,12 @@ export default function FooterSection() {
 
                     <div className="flex flex-col gap-8 lg:items-end">
                         <div className="flex flex-col lg:items-end gap-2">
-                            <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-2">Connect</h3>
+                            <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-subtle mb-2">Connect</h3>
                             <div className="flex gap-5">
                                 <Link
                                     href="https://x.com/invaritechai"
                                     target="_blank"
-                                    className="text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-300"
+                                    className="inline-flex size-10 items-center justify-center text-foreground-muted hover:text-foreground hover:scale-110 transition-all duration-300"
                                     aria-label="X"
                                 >
                                     <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
@@ -96,7 +96,7 @@ export default function FooterSection() {
                                 <Link
                                     href="https://linkedin.com/company/invaritechai"
                                     target="_blank"
-                                    className="text-muted-foreground hover:text-foreground hover:scale-110 transition-all duration-300"
+                                    className="inline-flex size-10 items-center justify-center text-foreground-muted hover:text-foreground hover:scale-110 transition-all duration-300"
                                     aria-label="LinkedIn"
                                 >
                                     <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
@@ -108,7 +108,7 @@ export default function FooterSection() {
 
                         <div className="mt-auto pt-16 lg:pt-0">
                             <div className="h-[1px] w-full bg-border md:hidden mb-8" />
-                            <p className="text-[11px] text-muted-foreground lg:text-right font-mono tracking-tighter">
+                            <p className="text-[11px] text-foreground-subtle lg:text-right font-mono tracking-tighter">
                                 &copy; {new Date().getFullYear()} INVARITECH. <br className="hidden lg:block" />
                                 ALL SYSTEMS OPERATIONAL.
                             </p>

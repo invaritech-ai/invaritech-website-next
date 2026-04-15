@@ -306,7 +306,7 @@ export function InvoiceExtractor() {
                                     ? "border-primary bg-primary/5"
                                     : file
                                     ? "border-primary/50 bg-primary/5"
-                                    : "border-border hover:border-primary/40 hover:bg-white/[0.02]"
+                                    : "border-border hover:border-primary/40 hover:bg-secondary/40"
                             }`}
                         >
                             <input
@@ -496,7 +496,7 @@ export function InvoiceExtractor() {
                                         </thead>
                                         <tbody>
                                             {result.line_items.map((item, i) => (
-                                                <tr key={i} className="border-b border-border hover:bg-white/[0.02] transition-colors">
+                                                <tr key={i} className="border-b border-border hover:bg-secondary/40 transition-colors">
                                                     <td className="px-3 py-2 text-foreground/80 text-xs">
                                                         <div>{item.name}</div>
                                                         {item.description && (
@@ -538,7 +538,7 @@ export function InvoiceExtractor() {
                                             onChange={(e) => setEmailValue(e.target.value)}
                                             onKeyDown={(e) => e.key === "Enter" && handleEmailCapture()}
                                             placeholder="you@company.com"
-                                            className="flex-1 bg-card border border-border text-foreground font-mono text-xs px-3 py-2 placeholder-white/20 focus:outline-none focus:border-primary/60"
+                                            className="flex-1 bg-card border border-border text-foreground font-mono text-xs px-3 py-2 placeholder-white/60 focus:outline-none focus:border-primary/60"
                                         />
                                         <button
                                             onClick={handleEmailCapture}
@@ -568,7 +568,7 @@ export function InvoiceExtractor() {
                             </button>
                             <button
                                 onClick={() => downloadCSV("summary_csv")}
-                                className="flex items-center justify-center gap-2 border border-border text-muted-foreground hover:bg-card hover:text-white px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
+                                className="flex items-center justify-center gap-2 border border-border text-muted-foreground hover:bg-card hover:text-foreground px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
                             >
                                 <Download className="w-3.5 h-3.5" />
                                 SUMMARY CSV

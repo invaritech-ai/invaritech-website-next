@@ -117,7 +117,7 @@ const VisionaryContainer = ({ children, className }: { children: React.ReactNode
 );
 
 const VisionaryLabel = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <Label className={cn("text-xs font-mono tracking-widest uppercase text-muted-foreground mb-3 block", className)}>
+    <Label className={cn("text-xs font-mono tracking-widest uppercase text-foreground-muted mb-3 block", className)}>
         {children}
     </Label>
 );
@@ -126,7 +126,7 @@ const VisionaryProgress = ({ current, total }: { current: number; total: number 
     <div className="mb-12">
         <div className="flex justify-between items-end mb-4">
             <span className="text-[10px] font-mono tracking-[0.2em] text-primary uppercase">System Scan: {Math.round((current / total) * 100)}%</span>
-            <span className="text-[10px] font-mono tracking-[0.2em] text-muted-foreground uppercase">Phase 0{current} / 0{total}</span>
+            <span className="text-[10px] font-mono tracking-[0.2em] text-foreground-subtle uppercase">Phase 0{current} / 0{total}</span>
         </div>
         <div className="h-[2px] w-full bg-background relative">
             <motion.div
@@ -349,7 +349,7 @@ export function AssessmentWizard() {
                         </Select>
                     </div>
                     <div className="flex justify-between gap-4 pt-4">
-                        <button onClick={prevStep} className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors">BACK</button>
+                        <button onClick={prevStep} className="inline-flex min-h-10 items-center px-3 text-[10px] font-mono tracking-widest uppercase text-foreground-muted hover:text-foreground transition-colors">BACK</button>
                         <MagneticButton
                             onClick={nextStep}
                             disabled={!inputs.monthlyVolumeBand || !inputs.currentAHTBand || !inputs.errorTolerance}
@@ -397,7 +397,7 @@ export function AssessmentWizard() {
                         </Select>
                     </div>
                     <div className="flex justify-between gap-4 pt-4">
-                        <button onClick={prevStep} className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors">BACK</button>
+                        <button onClick={prevStep} className="inline-flex min-h-10 items-center px-3 text-[10px] font-mono tracking-widest uppercase text-foreground-muted hover:text-foreground transition-colors">BACK</button>
                         <MagneticButton
                             onClick={nextStep}
                             disabled={!inputs.processMaturity || !inputs.dataStructure || !inputs.dataAccessReadiness}
@@ -437,7 +437,7 @@ export function AssessmentWizard() {
                         </Select>
                     </div>
                     <div className="flex justify-between gap-4 pt-4">
-                        <button onClick={prevStep} className="text-[10px] font-mono tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors">BACK</button>
+                        <button onClick={prevStep} className="inline-flex min-h-10 items-center px-3 text-[10px] font-mono tracking-widest uppercase text-foreground-muted hover:text-foreground transition-colors">BACK</button>
                         <MagneticButton
                             onClick={() => setStep(5)}
                             disabled={!inputs.sponsorReady || !inputs.budgetFit}

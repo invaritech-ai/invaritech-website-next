@@ -80,18 +80,18 @@ export default function BlogsPage() {
                             INSIGHTS &amp;
                         </TextEffect>
                         <br />
-                        <span className="text-muted-foreground">ANALYSIS</span>
+                        <span className="text-foreground-muted">ANALYSIS</span>
                     </h1>
 
                     <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between border-t border-border pt-8">
-                        <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light">
+                        <p className="text-xl md:text-2xl text-foreground-muted max-w-2xl font-light">
                             Case Studies, Engineering Notes, and Strategic Implementation Guides.
                         </p>
                         <div className="flex flex-wrap gap-2">
                             {categories.map((category) => (
                                 <span
                                     key={category}
-                                    className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
+                                    className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
                                 >
                                     {category}
                                 </span>
@@ -132,13 +132,13 @@ export default function BlogsPage() {
                                                 />
                                             ) : (
                                                 <div className="absolute inset-0 flex items-center justify-center bg-card">
-                                                    <span className="font-editorial text-4xl text-muted-foreground/20 font-semibold">
+                                                    <span className="font-editorial text-4xl text-foreground-subtle/60 font-semibold">
                                                         {index + 1 < 10 ? `0${index + 1}` : index + 1}
                                                     </span>
                                                 </div>
                                             )}
 
-                                            <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 border border-border text-[10px] font-mono text-muted-foreground">
+                                            <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 border border-border text-[10px] font-mono text-foreground-subtle">
                                                 {estimateReadingTime(post.content)} MIN READ
                                             </div>
                                         </div>
@@ -149,7 +149,7 @@ export default function BlogsPage() {
                                                 {post.tags.slice(0, 2).map((tag) => (
                                                     <span
                                                         key={tag}
-                                                        className="text-[10px] font-mono uppercase tracking-wider text-primary"
+                                                        className="text-[10px] font-mono uppercase tracking-wider text-foreground-muted"
                                                     >
                                                         #{tag}
                                                     </span>
@@ -160,12 +160,12 @@ export default function BlogsPage() {
                                                 {post.title}
                                             </h2>
 
-                                            <p className="text-muted-foreground text-base leading-relaxed line-clamp-3 mb-6 flex-1">
+                                            <p className="text-foreground-muted text-base leading-relaxed line-clamp-3 mb-6 flex-1">
                                                 {post.excerpt}
                                             </p>
 
                                             <div className="flex items-center justify-between border-t border-border pt-4 mt-auto">
-                                                <span className="text-sm font-mono text-muted-foreground">
+                                                <span className="text-sm font-mono text-foreground-subtle">
                                                     {formatDate(post.publishedAt)}
                                                 </span>
                                                 <div className="flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">

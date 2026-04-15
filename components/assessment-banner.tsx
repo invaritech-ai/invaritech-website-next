@@ -66,18 +66,19 @@ export default function AssessmentBannerSection() {
                             give you a projected monthly ROI and your Automation Archetype.
                         </p>
 
-                        <Link href="/tools/assessment/">
-                            <button className="group relative px-8 py-4 bg-primary text-white font-semibold text-base overflow-hidden transition-all hover:bg-foreground shadow-sm">
-                                <span className="relative z-10 flex items-center">
-                                    Score My Readiness
-                                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                            </button>
+                        <Link
+                            href="/tools/assessment/"
+                            className="group relative inline-flex items-center px-8 py-4 bg-primary text-primary-foreground font-semibold text-base overflow-hidden transition-all hover:bg-foreground hover:text-background shadow-sm"
+                        >
+                            <span className="relative z-10 flex items-center">
+                                Score My Readiness
+                                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </span>
                         </Link>
                     </div>
 
                     <div className="ab-card border border-border bg-card p-8">
-                        <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary/50 mb-6">
+                        <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-foreground-subtle mb-6">
                             What you receive
                         </div>
                         <div className="space-y-0">
@@ -86,7 +87,7 @@ export default function AssessmentBannerSection() {
                                     key={i}
                                     className="flex items-start justify-between py-4 border-b border-border/60 last:border-0 group"
                                 >
-                                    <span className="text-sm font-medium text-foreground/80 group-hover:text-foreground transition-colors">
+                                    <span className="text-sm font-medium text-foreground-muted group-hover:text-foreground transition-colors">
                                         {o.label}
                                     </span>
                                     <span className="text-xs text-muted-foreground font-mono text-right max-w-[140px]">

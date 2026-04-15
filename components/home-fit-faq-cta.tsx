@@ -176,6 +176,9 @@ export default function HomeFitFaqCta() {
                                 >
                                     <button
                                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                        aria-expanded={openFaq === i}
+                                        aria-controls={`faq-panel-${i}`}
+                                        id={`faq-button-${i}`}
                                         className="w-full flex items-center justify-between p-5 text-left hover:bg-card transition-colors"
                                     >
                                         <span className="font-medium text-foreground text-[15px]">
@@ -187,6 +190,9 @@ export default function HomeFitFaqCta() {
                                     </button>
 
                                     <div
+                                        id={`faq-panel-${i}`}
+                                        role="region"
+                                        aria-labelledby={`faq-button-${i}`}
                                         className={`grid transition-all duration-300 ease-in-out ${
                                             openFaq === i
                                                 ? "grid-rows-[1fr] opacity-100"

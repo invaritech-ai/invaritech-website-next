@@ -31,7 +31,7 @@ export default function ConsultingClient() {
                         Service Offering
                     </Badge>
                     
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             AI AUTOMATION CONSULTING
                         </TextEffect>
@@ -48,7 +48,7 @@ export default function ConsultingClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 If scope is already clear, go straight to the Sprint. Choose consulting when you have multiple automation ideas with no clear prioritisation, a compliance blocker, or stakeholders who disagree on what success looks like. Serving leadership teams across Singapore, Hong Kong, Malaysia, and the Philippines.
                             </p>
-                            <p className="text-lg text-foreground/80 font-mono italic border-t border-border pt-6">
+                            <p className="text-lg text-foreground-muted font-mono italic border-t border-border pt-6">
                                 &ldquo;If AI cannot be tied to a measurable operational objective, it should not be funded.&rdquo;
                             </p>
                         </div>
@@ -109,11 +109,11 @@ export default function ConsultingClient() {
             <section className="reveal-section py-6 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     <div className="border border-border bg-card p-5 flex flex-col sm:flex-row gap-4 items-start">
-                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground/50 shrink-0 pt-1">Not this</span>
+                        <span className="text-xs font-mono uppercase tracking-widest text-foreground-subtle shrink-0 pt-1">Not this</span>
                         <div className="flex flex-wrap gap-3">
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not a strategy deck — we produce executable, Sprint-ready specs</span>
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not tool selection — we recommend based on workflow fit, then build</span>
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not innovation theater — every engagement ends with something buildable</span>
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">Not a strategy deck — we produce executable, Sprint-ready specs</span>
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">Not tool selection — we recommend based on workflow fit, then build</span>
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">Not innovation theater — every engagement ends with something buildable</span>
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@ export default function ConsultingClient() {
 	                            </p>
                             <div className="grid sm:grid-cols-2 gap-8 mb-8">
                                 <div>
-                                    <h4 className="text-xs uppercase tracking-widest text-muted-foreground/60 mb-4 font-mono">The Standard Fluff</h4>
+                                    <h4 className="text-xs uppercase tracking-widest text-foreground-subtle mb-4 font-mono">The Standard Fluff</h4>
                                     <ul className="space-y-3">
                                         <li className="flex items-center gap-2 text-sm text-muted-foreground line-through"><ArrowRight className="size-3" /> 40-slide decks</li>
                                         <li className="flex items-center gap-2 text-sm text-muted-foreground line-through"><ArrowRight className="size-3" /> High-level maps</li>
@@ -269,7 +269,7 @@ export default function ConsultingClient() {
                             { title: "Deliver the Spec", desc: "Build-ready plan with acceptance criteria and a Sprint track." }
                         ].map((step, i) => (
                             <div key={i} className="relative z-10 pl-16 group">
-                                <div className="absolute left-0 top-0 size-10 rounded-full bg-background border border-border flex items-center justify-center text-sm font-bold text-muted-foreground/70 group-hover:border-primary group-hover:text-primary transition-colors">
+                                <div className="absolute left-0 top-0 size-10 rounded-full bg-background border border-border flex items-center justify-center text-sm font-bold text-foreground-subtle group-hover:border-primary group-hover:text-primary transition-colors">
                                     {i + 1}
                                 </div>
                                 <h3 className="text-2xl font-bold text-foreground mb-2">{step.title}</h3>
@@ -295,7 +295,7 @@ export default function ConsultingClient() {
              {/* Final CTA */}
              <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-	                    <h2 className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
+	                    <h2 className="text-4xl md:text-7xl font-bold mb-8 tracking-tighter text-foreground">
 	                        Let&apos;s Find Your <span className="text-primary">Wedge</span>.
 	                    </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">
@@ -310,16 +310,16 @@ export default function ConsultingClient() {
                         </MagneticButton>
                     </a>
                     <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Scope already clear? See the Sprint
                         </Link>
-                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Workflow optimisation
                         </Link>
-                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> System integration work
                         </Link>
-                        <Link href="/blog/cash-flow-visibility-automation/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/blog/cash-flow-visibility-automation/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Finance workflow case study
                         </Link>
                     </div>

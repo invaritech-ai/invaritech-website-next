@@ -98,7 +98,7 @@ export default function WhatWeDoSection() {
                 <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                     <div className="lg:sticky lg:top-32">
                         <div className="wwd-header flex items-center gap-3 mb-6">
-                            <span className="text-[11px] font-mono text-primary/50">01</span>
+                            <span className="text-[11px] font-mono text-foreground-subtle">01</span>
                             <div className="h-[1px] w-6 bg-primary/30" />
                             <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                                 Phase 1: The Wedge
@@ -107,7 +107,7 @@ export default function WhatWeDoSection() {
 
                         <h2 className="wwd-header font-editorial text-5xl font-semibold leading-[0.9] md:text-7xl tracking-tight text-foreground">
                             30-Day<br />
-                            <span className="text-muted-foreground">Drop-In Sprint</span>
+                            <span className="text-foreground-muted">Drop-In Sprint</span>
                         </h2>
 
                         <p className="wwd-header mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed">
@@ -133,7 +133,7 @@ export default function WhatWeDoSection() {
                         {outcomes.map((item) => (
                             <div
                                 key={item.title}
-                                className="wwd-card group relative p-8 border border-border bg-card hover:bg-secondary/50 transition-all duration-400 hover:border-primary/20"
+                                className="wwd-card group relative p-8 border border-border bg-card hover:bg-secondary/50 transition-all duration-300 hover:border-primary/20"
                             >
                                 <div className="absolute top-4 right-4 opacity-30 group-hover:opacity-70 transition-opacity text-primary">
                                     <item.icon className="w-5 h-5" />
@@ -154,7 +154,7 @@ export default function WhatWeDoSection() {
                                     <h3 className="font-editorial text-xl font-semibold text-foreground mb-2">Ready to verify fit?</h3>
                                     <p className="text-sm text-muted-foreground">Review scope, guardrails, and prerequisites before you book.</p>
                                 </div>
-                                <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold">
+                                <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold">
                                     <Link href="/services/ai-automation-sprint/">
                                         View Sprint Details
                                     </Link>

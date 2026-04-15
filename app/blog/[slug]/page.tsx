@@ -117,7 +117,7 @@ function markdownComponents(slug: string) {
             <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>
         ),
         td: ({ children }: { children?: React.ReactNode }) => (
-            <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>
+            <td className="px-4 py-3 text-foreground-muted text-sm leading-relaxed">{children}</td>
         ),
         h1: ({ children }: { children?: React.ReactNode }) => (
             <h2 className="font-editorial text-3xl md:text-5xl font-semibold mt-20 mb-10 text-foreground border-l-4 border-primary pl-6">
@@ -138,13 +138,13 @@ function markdownComponents(slug: string) {
         a: ({ href, children }: { href?: string; children?: React.ReactNode }) => {
             if (href?.startsWith("/")) {
                 return (
-                    <Link href={href} className="text-primary font-medium no-underline border-b border-primary/40 hover:border-primary transition-all hover:bg-primary/5 px-0.5">
+                    <Link href={href} className="inline-block text-primary font-medium no-underline border-b border-primary/40 hover:border-primary transition-all hover:bg-primary/5 px-1 py-1 -my-1 leading-[inherit]">
                         {children}
                     </Link>
                 );
             }
             return (
-                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary font-medium no-underline border-b border-primary/40 hover:border-primary transition-all hover:bg-primary/5 px-0.5">
+                <a href={href} target="_blank" rel="noopener noreferrer" className="inline-block text-primary font-medium no-underline border-b border-primary/40 hover:border-primary transition-all hover:bg-primary/5 px-1 py-1 -my-1 leading-[inherit]">
                     {children}
                 </a>
             );
@@ -163,7 +163,7 @@ function markdownComponents(slug: string) {
                 <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-border group-hover:border-primary/30 transition-colors" />
                 </div>
-                <div className="relative z-10 bg-card px-4 font-mono text-[10px] text-muted-foreground tracking-[0.3em] uppercase">
+                <div className="relative z-10 bg-card px-4 font-mono text-[10px] text-foreground-subtle tracking-[0.3em] uppercase">
                     {"// —— //"}
                 </div>
             </div>
@@ -172,7 +172,7 @@ function markdownComponents(slug: string) {
             <ul className="space-y-4 my-8 pl-0 list-none">{children}</ul>
         ),
         li: ({ children }: { children?: React.ReactNode }) => (
-            <li className="flex items-start gap-4 text-foreground/80 group">
+            <li className="flex items-start gap-4 text-foreground-muted group">
                 <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
                 <span className="leading-[1.85] group-hover:text-foreground transition-colors">{children}</span>
             </li>
@@ -220,11 +220,8 @@ export default async function BlogPostPage({ params }: Props) {
                         {/* Header Area */}
                         <header className="mb-16 pb-12 border-b border-border">
                             {/* Meta Top Bar */}
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 font-mono text-xs text-muted-foreground uppercase tracking-widest border-l-2 border-primary/40 pl-4">
-                                <Link
-                                    href="/blog/"
-                                    className="flex items-center gap-2 hover:text-foreground transition-colors group"
-                                >
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 font-mono text-xs text-foreground-subtle uppercase tracking-widest border-l-2 border-primary/40 pl-4">
+                                <Link href="/blog/" className="inline-flex min-h-10 items-center gap-2 hover:text-foreground transition-colors group">
                                     <ArrowLeft className="size-3 transition-transform group-hover:-translate-x-1" />
                                     Return to Archive
                                 </Link>
@@ -243,7 +240,7 @@ export default async function BlogPostPage({ params }: Props) {
                             {/* Eyebrow */}
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="h-[1px] w-8 bg-primary/40" />
-                                <span className="font-mono text-primary text-[11px] tracking-[0.22em] uppercase">
+                                <span className="font-mono text-foreground-subtle text-[11px] tracking-[0.22em] uppercase">
                                     Intelligence // Strategy
                                 </span>
                             </div>
@@ -257,7 +254,7 @@ export default async function BlogPostPage({ params }: Props) {
                             <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-border">
                                 <div className="flex flex-wrap gap-2">
                                     {post.tags.map((tag) => (
-                                        <span key={tag} className="text-[10px] font-mono px-3 py-1.5 border border-primary/20 text-primary bg-primary/[0.05]">
+                                        <span key={tag} className="text-[10px] font-mono px-3 py-1.5 border border-primary/20 text-foreground-muted bg-primary/[0.05]">
                                             #{tag}
                                         </span>
                                     ))}
@@ -269,7 +266,7 @@ export default async function BlogPostPage({ params }: Props) {
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="font-semibold text-foreground">{post.author.name}</span>
-                                        <span className="text-muted-foreground text-xs font-mono uppercase tracking-wider">{post.author.role}</span>
+                                        <span className="text-foreground-subtle text-xs font-mono uppercase tracking-wider">{post.author.role}</span>
                                     </div>
                                 </div>
                             </div>
@@ -281,7 +278,7 @@ export default async function BlogPostPage({ params }: Props) {
                                 {/* Marginalia track */}
                                 <div className="hidden md:flex flex-col items-center w-px bg-gradient-to-b from-primary/40 via-border to-transparent sticky top-32 h-[calc(100vh-8rem)]">
                                     <div className="w-1.5 h-1.5 bg-primary mb-12" />
-                                    <div className="writing-vertical-rl text-[10px] text-muted-foreground/40 font-mono tracking-[0.2em] uppercase py-12">
+                                    <div className="writing-vertical-rl text-[10px] text-foreground-subtle/70 font-mono tracking-[0.2em] uppercase py-12">
                                         INVARITECH INTELLIGENCE ARCHIVE
                                     </div>
                                     <div className="w-1.5 h-1.5 bg-border mt-auto" />
@@ -290,7 +287,7 @@ export default async function BlogPostPage({ params }: Props) {
                                 {/* Prose feed */}
                                 <div className="prose prose-lg max-w-none flex-1
                                     prose-headings:text-foreground prose-headings:tracking-tight
-                                    prose-p:text-foreground/80 prose-p:leading-[1.85]
+                                    prose-p:text-foreground-muted prose-p:leading-[1.85]
                                     prose-a:text-primary prose-a:no-underline
                                     prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:not-italic
                                     prose-strong:text-foreground
@@ -313,7 +310,7 @@ export default async function BlogPostPage({ params }: Props) {
                                                 className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
                                                 priority
                                             />
-                                            <div className="absolute bottom-4 right-4 font-mono text-[10px] text-muted-foreground/60 tracking-widest bg-background/80 px-2 py-0.5">
+                                            <div className="absolute bottom-4 right-4 font-mono text-[10px] text-foreground-subtle tracking-widest bg-background/80 px-2 py-0.5">
                                                 IMG_REF: {slug.toUpperCase()}
                                             </div>
                                         </div>
@@ -336,11 +333,11 @@ export default async function BlogPostPage({ params }: Props) {
                             <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
                                 READY TO <span className="text-primary">AUTOMATE</span>?
                             </h2>
-                            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+                            <p className="text-lg text-foreground-muted mb-12 max-w-2xl mx-auto">
                                 Schedule a 30-minute call to scope your biggest bottleneck. No pitch — just engineering strategy.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-13 px-8">
+                                <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
                                     <a
                                         href={BOOK_MEETING_URL}
                                         target="_blank"

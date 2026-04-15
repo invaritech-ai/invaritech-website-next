@@ -31,12 +31,12 @@ export default function IntegrationClient() {
                         Service Offering
                     </Badge>
                     
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect per="word" preset="slide" className="inline-block">
                             AI INTEGRATION
                         </TextEffect>
                         <br />
-                        <span className="text-muted-foreground/70">SERVICES</span>
+                        <span className="text-foreground-subtle">SERVICES</span>
                     </h1>
                     
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
@@ -50,7 +50,7 @@ export default function IntegrationClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 For organisations with strict data residency, security policies, or regulatory constraints, we design the gateway first: VPC-deployable, auditable, model-agnostic, and owned by you. Switch providers without rewriting the workflow.
                             </p>
-                            <p className="text-lg text-foreground/80 font-mono">
+                            <p className="text-lg text-foreground-muted font-mono">
                                 No replatforming. No shadow AI. No brittle "glue code."
                             </p>
                         </div>
@@ -111,11 +111,11 @@ export default function IntegrationClient() {
             <section className="reveal-section py-6 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     <div className="border border-border bg-card p-5 flex flex-col sm:flex-row gap-4 items-start">
-                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground/50 shrink-0 pt-1">Not this</span>
+                        <span className="text-xs font-mono uppercase tracking-widest text-foreground-subtle shrink-0 pt-1">Not this</span>
                         <div className="flex flex-wrap gap-3">
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not a chatbot layer — chat is an interface, this is infrastructure</span>
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not a no-code connector — Zapier/Make break at governance scale</span>
-                            <span className="text-xs text-muted-foreground/70 border border-border px-3 py-1.5 font-mono">Not vendor middleware — you own every line of the integration we build</span>
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">Not a chatbot layer — chat is an interface, this is infrastructure</span>
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">Not a no-code connector — Zapier/Make break at governance scale</span>
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">Not vendor middleware — you own every line of the integration we build</span>
                         </div>
                     </div>
                 </div>
@@ -222,7 +222,7 @@ export default function IntegrationClient() {
                     </div>
 
                     <div className="overflow-hidden border border-border rounded-none">
-                        <div className="grid grid-cols-1 md:grid-cols-2 bg-card font-mono text-sm uppercase tracking-wider text-muted-foreground/70 border-b border-border">
+                        <div className="grid grid-cols-1 md:grid-cols-2 bg-card font-mono text-sm uppercase tracking-wider text-foreground-subtle border-b border-border">
                             <div className="p-4 md:p-6">Capability</div>
                             <div className="p-4 md:p-6">What it enables</div>
                         </div>
@@ -313,18 +313,18 @@ export default function IntegrationClient() {
             {/* Further Reading */}
             <section className="reveal-section py-12 px-6 relative z-10 border-t border-border">
                 <div className="max-w-3xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                    <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground/50">Further Reading</p>
+                    <p className="text-xs font-mono uppercase tracking-widest text-foreground-subtle">Further Reading</p>
                     <div className="flex flex-col items-start gap-3">
                         <Link
                             href="/blog/ai-invoice-data-extraction/"
-                            className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" />
                             Invoice data extraction architecture for AP automation
                         </Link>
                         <Link
                             href="/blog/cash-flow-visibility-automation/"
-                            className="text-sm font-mono tracking-widest uppercase text-muted-foreground/70 hover:text-foreground transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-foreground transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" />
                             Cash flow visibility automation for 13-week forecasts
@@ -338,7 +338,7 @@ export default function IntegrationClient() {
              {/* Final CTA */}
              <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-foreground">
                         Connect <span className="text-primary">Without</span> Surrendering <br/> Your Stack.
                     </h2>
                     <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto font-light">
@@ -353,13 +353,13 @@ export default function IntegrationClient() {
                         </MagneticButton>
                     </a>
                     <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Automate the workflow layer too
                         </Link>
-                        <Link href="/services/ai-automation-consulting/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-consulting/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Not sure where the wedge is?
                         </Link>
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
                         </Link>
                     </div>

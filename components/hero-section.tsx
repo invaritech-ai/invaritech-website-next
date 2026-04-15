@@ -47,7 +47,7 @@ export default function HeroSection() {
 
             <div className="mx-auto max-w-7xl px-3 sm:px-6">
                 <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-                    <div className="text-foreground">
+                    <div className="text-white">
                         <TextEffect
                             per="char"
                             preset="fade-in-blur"
@@ -61,7 +61,7 @@ export default function HeroSection() {
                             preset="fade-in-blur"
                             speedSegment={0.45}
                             as="h1"
-                            className="max-w-4xl text-balance text-5xl font-semibold leading-[0.9] md:text-7xl xl:text-[5.45rem]"
+                            className="max-w-4xl text-balance text-5xl font-semibold leading-[0.9] text-white md:text-7xl xl:text-[5.45rem]"
                         >
                             Enterprise AI Automation Without Disruption
                         </TextEffect>
@@ -78,7 +78,7 @@ export default function HeroSection() {
                             incrementally, and measurably.
                         </TextEffect>
 
-                        <div className="mt-7 inline-flex items-center rounded-full border border-primary/50 bg-primary/20 px-5 py-2 text-sm font-medium text-foreground">
+                        <div className="mt-7 inline-flex items-center rounded-full border border-primary/50 bg-primary/20 px-5 py-2 text-sm font-medium text-white/90">
                             £8,000-£12,000 per sprint · fixed scope for faster
                             internal approval
                         </div>

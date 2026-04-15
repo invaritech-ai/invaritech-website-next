@@ -48,7 +48,7 @@ export default function ChatbotClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -57,7 +57,7 @@ export default function ChatbotClient() {
                             AI CHATBOT
                         </TextEffect>
                         <br />
-                        <span className="text-muted-foreground/70">
+                        <span className="text-foreground-subtle">
                             DEVELOPMENT SERVICES
                         </span>
                     </h1>
@@ -82,7 +82,7 @@ export default function ChatbotClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 Multilingual deployment included — English, Cantonese, Mandarin, and Bahasa. Language is identity; governed AI should respect that.
                             </p>
-                            <p className="text-lg text-foreground/80 font-mono">
+                            <p className="text-lg text-foreground-muted font-mono">
                                 No open-ended experiments. No token-burning
                                 toys. No shadow AI.
                             </p>
@@ -193,7 +193,7 @@ export default function ChatbotClient() {
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
                     <div className="bg-red-900/10 border border-red-500/20 rounded-none p-8 md:p-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-red-50">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-red-900 dark:text-red-50">
                             Why Most Fail
                         </h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-list">
@@ -227,7 +227,7 @@ export default function ChatbotClient() {
                                     <h3 className="font-bold text-foreground mb-2">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm text-red-200/60">
+                                    <p className="text-sm text-red-900/70 dark:text-red-200/70">
                                         {item.desc}
                                     </p>
                                 </div>
@@ -370,7 +370,7 @@ export default function ChatbotClient() {
                                         Bahasa
                                     </span>
                                 </div>
-                                <p className="mt-4 text-xs text-muted-foreground/70 italic">
+                                <p className="mt-4 text-xs text-foreground-subtle italic">
                                     Language is identity. Governed AI should
                                     respect that.
                                 </p>
@@ -437,7 +437,7 @@ export default function ChatbotClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-foreground">
                         One Objective. Clear Boundaries. <br />{" "}
                         <span className="text-primary">Go / No-Go.</span>
                     </h2>
@@ -457,10 +457,10 @@ export default function ChatbotClient() {
                         </MagneticButton>
                     </a>
                     <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Automate the workflow behind the chat
                         </Link>
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
                         </Link>
                     </div>

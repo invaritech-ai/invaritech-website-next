@@ -166,13 +166,14 @@ export function CoreThesisSection() {
                      We do not burn money on AI where simpler systems work better.
                  </h3>
                  <div className="flex flex-wrap justify-center gap-4">
-                     <Link href="/services/ai-automation-sprint/">
-                        <button className="group relative px-8 py-4 bg-primary text-primary-foreground font-bold text-lg overflow-hidden transition-all hover:bg-foreground">
-                            <span className="relative z-10 flex items-center">
-                                Start with the Sprint <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </span>
-                        </button>
-                     </Link>
+                    <Link
+                        href="/services/ai-automation-sprint/"
+                        className="group relative px-8 py-4 bg-primary text-primary-foreground font-bold text-lg overflow-hidden transition-all hover:bg-foreground"
+                    >
+                        <span className="relative z-10 flex items-center">
+                            Start with the Sprint <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        </span>
+                    </Link>
                  </div>
              </div>
 

@@ -55,7 +55,7 @@ export default function BackendClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-foreground">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -64,7 +64,7 @@ export default function BackendClient() {
                             GENERATIVE AI
                         </TextEffect>
                         <br />
-                        <span className="text-muted-foreground/70">
+                        <span className="text-foreground-subtle">
                             DEVELOPMENT SERVICES
                         </span>
                     </h1>
@@ -87,7 +87,7 @@ export default function BackendClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                                 We engineer the production layer that keeps costs controlled, outputs testable, and AI decisions auditable — so your margins don&apos;t erode as you scale.
                             </p>
-                            <p className="text-lg text-foreground/80 font-mono">
+                            <p className="text-lg text-foreground-muted font-mono">
                                 Usage scales. Margins stay protected.
                             </p>
                         </div>
@@ -312,12 +312,12 @@ export default function BackendClient() {
                             </div>
                             <div className="space-y-2">
                                 <p>
-                                    <span className="text-primary/70">git</span>{" "}
+                                    <span className="text-primary/80">git</span>{" "}
                                     commit -m &quot;feat: optimize
                                     categorization prompt&quot;
                                 </p>
                                 <p>
-                                    <span className="text-primary/70">
+                                    <span className="text-primary/80">
                                         Running evaluators...
                                     </span>
                                 </p>
@@ -361,7 +361,7 @@ export default function BackendClient() {
                     </div>
 
                     <div className="overflow-hidden border border-border rounded-none">
-                        <div className="grid grid-cols-1 md:grid-cols-3 bg-card font-mono text-sm uppercase tracking-wider text-muted-foreground/70 border-b border-border">
+                        <div className="grid grid-cols-1 md:grid-cols-3 bg-card font-mono text-sm uppercase tracking-wider text-foreground-subtle border-b border-border">
                             <div className="p-4 md:p-6">Task Type</div>
                             <div className="p-4 md:p-6">Best Tool</div>
                             <div className="p-4 md:p-6">Why It Wins</div>
@@ -385,7 +385,7 @@ export default function BackendClient() {
                             <div className="p-6 border-b md:border-b-0 border-border text-foreground font-bold">
                                 Bridge Logic
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-border text-primary/70 font-mono flex items-center gap-2">
+                            <div className="p-6 border-b md:border-b-0 border-border text-primary/80 font-mono flex items-center gap-2">
                                 <Cpu className="w-4 h-4" /> Generative AI
                             </div>
                             <div className="p-6 text-muted-foreground text-sm">
@@ -456,7 +456,7 @@ export default function BackendClient() {
                                 </div>
                             </div>
                             <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
-                                <Activity className="w-6 h-6 text-primary/70 shrink-0" />
+                                <Activity className="w-6 h-6 text-primary/80 shrink-0" />
                                 <div>
                                     <h4 className="font-bold text-foreground mb-1">
                                         Auditability
@@ -588,7 +588,7 @@ export default function BackendClient() {
                         <p className="font-mono text-primary text-lg mb-4">
                             The Difference is the Plumbing
                         </p>
-                        <div className="flex flex-wrap justify-center gap-4 text-sm text-foreground/70">
+                        <div className="flex flex-wrap justify-center gap-4 text-sm text-foreground-subtle">
                             <span className="px-3 py-1 border border-border rounded-full">
                                 Idempotency
                             </span>
@@ -659,7 +659,7 @@ export default function BackendClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-foreground">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-foreground">
                         Ready for{" "}
                         <span className="text-primary">Production</span>?
                     </h2>
@@ -680,10 +680,10 @@ export default function BackendClient() {
                         </MagneticButton>
                     </a>
                     <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Validate first with the 30-Day Sprint
                         </Link>
-                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-muted-foreground/50 hover:text-muted-foreground transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-integration-services/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Need system integration?
                         </Link>
                     </div>

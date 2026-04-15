@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import {
     ArrowRight,
     Clock,
@@ -11,6 +10,30 @@ import Link from "next/link";
 import { HIRING_OPEN, HIRING_STATUS_MESSAGE } from "@/lib/careers";
 import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_URL } from "@/lib/marketing";
+
+export const metadata: Metadata = {
+    title: "Careers | INVARITECH",
+    description:
+        "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",
+    openGraph: {
+        title: "Careers | INVARITECH",
+        description:
+            "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",
+        url: "https://www.invaritech.ai/careers/",
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Careers" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Careers | INVARITECH",
+        description:
+            "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",
+        images: ["/og-image.png"],
+    },
+    alternates: {
+        canonical: "https://www.invaritech.ai/careers/",
+    },
+};
 
 const cultureItems = [
     { label: "Principals, not managers", body: "You work directly with founders. No account managers, no ticket queues. Every project has one owner who cares about the outcome." },
@@ -80,7 +103,7 @@ export default function CareersPage() {
                         {cultureItems.map((item) => (
                             <div
                                 key={item.label}
-                                className="group border border-border bg-card p-8 hover:bg-secondary/50 hover:border-primary/20 transition-all duration-400"
+                                className="group border border-border bg-card p-8 hover:bg-secondary/50 hover:border-primary/20 transition-all duration-300"
                             >
                                 <h3 className="font-editorial text-xl font-semibold text-foreground mb-3 group-hover:translate-x-1 transition-transform duration-300">
                                     {item.label}
