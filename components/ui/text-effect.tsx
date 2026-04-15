@@ -275,19 +275,37 @@ export function TextEffect({
                     onAnimationComplete={onAnimationComplete}
                     onAnimationStart={onAnimationStart}
                     style={style}
+                    {...(per !== "line" ? { "aria-label": children } : {})}
                 >
+                    {/*
+ Word/char splits use aria-hidden segments; do not also emit sr-only
+                      duplicate of `children` — crawlers often concatenate both and produce
+                      doubled titles (e.g. sitelinks). aria-label gives assistive tech one name.
+                      Line mode keeps a single visible text path (no sr-only in that mode).
+                    */}
                     {per !== "line" ? (
-                        <span className="sr-only">{children}</span>
-                    ) : null}
-                    {segments.map((segment, index) => (
-                        <AnimationComponent
-                            key={`${per}-${index}-${segment}`}
-                            segment={segment}
-                            variants={computedVariants.item}
-                            per={per}
-                            segmentWrapperClassName={segmentWrapperClassName}
-                        />
-                    ))}
+                        <span aria-hidden="true">
+                            {segments.map((segment, index) => (
+                                <AnimationComponent
+                                    key={`${per}-${index}-${segment}`}
+                                    segment={segment}
+                                    variants={computedVariants.item}
+                                    per={per}
+                                    segmentWrapperClassName={segmentWrapperClassName}
+                                />
+                            ))}
+                        </span>
+                    ) : (
+                        segments.map((segment, index) => (
+                            <AnimationComponent
+                                key={`${per}-${index}-${segment}`}
+                                segment={segment}
+                                variants={computedVariants.item}
+                                per={per}
+                                segmentWrapperClassName={segmentWrapperClassName}
+                            />
+                        ))
+                    )}
                 </MotionTag>
             )}
         </AnimatePresence>

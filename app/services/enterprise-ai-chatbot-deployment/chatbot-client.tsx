@@ -48,7 +48,7 @@ export default function ChatbotClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -57,7 +57,7 @@ export default function ChatbotClient() {
                             AI CHATBOT
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">
+                        <span className="text-foreground-subtle">
                             DEVELOPMENT SERVICES
                         </span>
                     </h1>
@@ -67,7 +67,7 @@ export default function ChatbotClient() {
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                            <p className="text-xl md:text-2xl text-foreground font-medium mb-6">
                                 Control, not Curiosity.
                             </p>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
@@ -82,29 +82,29 @@ export default function ChatbotClient() {
                             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                                 Multilingual deployment included — English, Cantonese, Mandarin, and Bahasa. Language is identity; governed AI should respect that.
                             </p>
-                            <p className="text-lg text-white/80 font-mono">
+                            <p className="text-lg text-foreground-muted font-mono">
                                 No open-ended experiments. No token-burning
                                 toys. No shadow AI.
                             </p>
                         </div>
                         <div className="md:w-1/3 space-y-4">
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Best For</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed">
                                     Ops teams handling sensitive knowledge — finance, HR, legal — who need governance and measurable outcomes, not a cool bot.
                                 </p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Typical Timeline</h3>
                                 <p className="text-sm text-muted-foreground">Chatbot Fit Audit → governed pilot (30 days) → measurement + optional expansion.</p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">What Happens After</h3>
                                 <p className="text-sm text-muted-foreground">You own the deployment. Runbook and operating model included. Retainer available for updates and model drift.</p>
                             </div>
-                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                            <div className="bg-primary/10 border border-primary/30 rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">Engagement</h3>
-                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-white font-semibold">USD $10,000</span>.</p>
+                                <p className="text-sm text-muted-foreground">Fixed-scope. Starts at <span className="text-foreground font-semibold">USD $10,000</span>.</p>
                             </div>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ export default function ChatbotClient() {
                             </MagneticButton>
                         </a>
                         <Link href="/work/">
-                            <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 text-lg hover:bg-white/10">
+                            <MagneticButton className="bg-transparent border border-border text-foreground px-8 py-4 text-lg hover:bg-muted/30">
                                 See Work / Results
                             </MagneticButton>
                         </Link>
@@ -129,7 +129,7 @@ export default function ChatbotClient() {
             </section>
 
             {/* Who It's For */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card ">
                 <div className="max-w-5xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-16">
                         <div>
@@ -171,7 +171,7 @@ export default function ChatbotClient() {
                             </ul>
                         </div>
                     </div>
-                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                    <div className="mt-12 p-6 border border-border rounded-none bg-card max-w-2xl">
                         <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             {[
@@ -192,8 +192,8 @@ export default function ChatbotClient() {
             {/* Why Most Fail */}
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
-                    <div className="bg-red-900/10 border border-red-500/20 rounded-3xl p-8 md:p-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-red-50">
+                    <div className="bg-red-900/10 border border-red-500/20 rounded-none p-8 md:p-12">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-red-900 dark:text-red-50">
                             Why Most Fail
                         </h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-list">
@@ -221,13 +221,13 @@ export default function ChatbotClient() {
                             ].map((item, i) => (
                                 <div
                                     key={i}
-                                    className="stagger-item p-6 border border-red-500/10 rounded-xl bg-black/40 hover:bg-red-900/20 transition-colors"
+                                    className="stagger-item p-6 border border-red-500/10 rounded-none bg-card hover:bg-red-900/20 transition-colors"
                                 >
                                     <X className="w-6 h-6 text-red-500 mb-4" />
-                                    <h3 className="font-bold text-white mb-2">
+                                    <h3 className="font-bold text-foreground mb-2">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm text-red-200/60">
+                                    <p className="text-sm text-red-900/70 dark:text-red-200/70">
                                         {item.desc}
                                     </p>
                                 </div>
@@ -238,7 +238,7 @@ export default function ChatbotClient() {
             </section>
 
             {/* What "Enterprise" Means (Governance) */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card">
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-16">
                         <Badge
@@ -292,12 +292,12 @@ export default function ChatbotClient() {
                         ].map((item, i) => (
                             <div
                                 key={i}
-                                className="stagger-item p-6 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 transition-colors"
+                                className="stagger-item p-6 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors"
                             >
                                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
                                     <item.icon className="w-6 h-6" />
                                 </div>
-                                <h3 className="font-bold text-white mb-2">
+                                <h3 className="font-bold text-foreground mb-2">
                                     {item.title}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
@@ -314,7 +314,7 @@ export default function ChatbotClient() {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid md:grid-cols-2 gap-12">
                         {/* Valid Objective */}
-                        <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+                        <div className="bg-card border border-border rounded-none p-8">
                             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                                 <Check className="w-6 h-6 text-primary" /> Valid
                                 Objectives
@@ -329,7 +329,7 @@ export default function ChatbotClient() {
                                 ].map((item, i) => (
                                     <li
                                         key={i}
-                                        className="flex gap-3 text-muted-foreground border-b border-white/5 pb-3 last:border-0 last:pb-0"
+                                        className="flex gap-3 text-muted-foreground border-b border-border pb-3 last:border-0 last:pb-0"
                                     >
                                         <span className="text-primary font-mono text-sm pt-1">
                                             0{i + 1}
@@ -341,7 +341,7 @@ export default function ChatbotClient() {
                         </div>
 
                         {/* Adoption Reality */}
-                        <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
+                        <div className="bg-card border border-border rounded-none p-8">
                             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
                                 <User className="w-6 h-6 text-primary" />{" "}
                                 Adoption Reality
@@ -352,25 +352,25 @@ export default function ChatbotClient() {
                                 requires accuracy, governance, and usefulness
                                 inside workflow.
                             </p>
-                            <div className="bg-black/40 rounded-xl p-6 border border-white/5">
-                                <h4 className="font-bold text-white mb-3 text-sm uppercase tracking-widest">
+                            <div className="bg-card rounded-none p-6 border border-border">
+                                <h4 className="font-bold text-foreground mb-3 text-sm uppercase tracking-widest">
                                     Multilingual Deployment
                                 </h4>
                                 <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-                                    <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">
+                                    <span className="px-3 py-1 bg-card rounded-full border border-border">
                                         English
                                     </span>
-                                    <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">
+                                    <span className="px-3 py-1 bg-card rounded-full border border-border">
                                         Cantonese
                                     </span>
-                                    <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">
+                                    <span className="px-3 py-1 bg-card rounded-full border border-border">
                                         Mandarin
                                     </span>
-                                    <span className="px-3 py-1 bg-white/5 rounded-full border border-white/10">
+                                    <span className="px-3 py-1 bg-card rounded-full border border-border">
                                         Bahasa
                                     </span>
                                 </div>
-                                <p className="mt-4 text-xs text-white/50 italic">
+                                <p className="mt-4 text-xs text-foreground-subtle italic">
                                     Language is identity. Governed AI should
                                     respect that.
                                 </p>
@@ -381,7 +381,7 @@ export default function ChatbotClient() {
             </section>
 
             {/* Infrastructure Model */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20 backdrop-blur-sm">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card ">
                 <div className="max-w-5xl mx-auto text-center">
                     <h2 className="text-3xl md:text-5xl font-bold mb-8">
                         No Forced Lock-In
@@ -392,24 +392,24 @@ export default function ChatbotClient() {
                         approved providers, or keep cost visibility.
                     </p>
                     <div className="grid md:grid-cols-3 gap-6 stagger-list">
-                        <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h4 className="font-bold text-white mb-2">
+                        <div className="stagger-item p-6 border border-border rounded-none bg-card">
+                            <h4 className="font-bold text-foreground mb-2">
                                 Host Yourself
                             </h4>
                             <p className="text-sm text-muted-foreground">
                                 VPC or on-prem where required.
                             </p>
                         </div>
-                        <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h4 className="font-bold text-white mb-2">
+                        <div className="stagger-item p-6 border border-border rounded-none bg-card">
+                            <h4 className="font-bold text-foreground mb-2">
                                 Approved Models
                             </h4>
                             <p className="text-sm text-muted-foreground">
                                 Use providers you already trust.
                             </p>
                         </div>
-                        <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40">
-                            <h4 className="font-bold text-white mb-2">
+                        <div className="stagger-item p-6 border border-border rounded-none bg-card">
+                            <h4 className="font-bold text-foreground mb-2">
                                 Cost Visibility
                             </h4>
                             <p className="text-sm text-muted-foreground">
@@ -423,7 +423,7 @@ export default function ChatbotClient() {
             <FounderTrustSection />
 
             {/* FAQ */}
-            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5">
+            <section className="reveal-section py-24 px-6 relative z-10 bg-card">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
@@ -437,7 +437,7 @@ export default function ChatbotClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-foreground">
                         One Objective. Clear Boundaries. <br />{" "}
                         <span className="text-primary">Go / No-Go.</span>
                     </h2>
@@ -456,11 +456,11 @@ export default function ChatbotClient() {
                             Request a Chatbot Fit Audit
                         </MagneticButton>
                     </a>
-                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
-                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2">
+                    <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
+                        <Link href="/services/ai-workflow-automation-services/" className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Automate the workflow behind the chat
                         </Link>
-                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2">
+                        <Link href="/services/ai-automation-sprint/" className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2">
                             <ArrowRight className="w-3 h-3" /> Start with the 30-Day Sprint
                         </Link>
                     </div>

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Cormorant_Garamond } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import Script from "next/script";
 import "./globals.css";
 import { LenisScroll } from "@/components/ui/LenisScroll";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
 import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
@@ -37,6 +37,13 @@ const geistMono = localFont({
     variable: "--font-geist-mono",
     display: "swap",
     fallback: ["monospace"],
+});
+
+const cormorant = Cormorant_Garamond({
+    subsets: ["latin"],
+    weight: ["300", "400", "500", "600", "700"],
+    variable: "--font-serif",
+    display: "swap",
 });
 
 const metadataVerification: Metadata["verification"] = {
@@ -140,13 +147,12 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning className="dark">
+        <html lang="en" suppressHydrationWarning className="light">
             <head>
                 <meta
                     name="facebook-domain-verification"
                     content="40eogslk5htol3s1lsoqadxgh2h657"
                 />
-                {/* Resource hints for external domains */}
                 <link rel="preconnect" href="https://www.google.com" />
                 <link
                     rel="preconnect"
@@ -155,7 +161,6 @@ export default function RootLayout({
                 <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
                 <link rel="dns-prefetch" href="https://assets.apollo.io" />
 
-                {/* Structured data - inline scripts are fine, they don't block */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -181,16 +186,16 @@ export default function RootLayout({
                 </Script>
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+                className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased bg-background text-foreground overflow-x-hidden`}
             >
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="dark"
+                    defaultTheme="light"
                     enableSystem={false}
                     disableTransitionOnChange
                 >
                     <LenisScroll>
-                        <ArtisticBackground />
+                        <div className="fixed inset-0 z-[-1] pointer-events-none grain-overlay opacity-30" />
                         <div className="relative z-10">
                             <HeroHeader />
                             {children}
@@ -200,7 +205,6 @@ export default function RootLayout({
                     </LenisScroll>
                 </ThemeProvider>
 
-                {/* Third-party scripts with optimized loading strategies */}
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-JJPJBB10G7"
                     strategy="afterInteractive"

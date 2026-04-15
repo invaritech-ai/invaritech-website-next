@@ -19,13 +19,13 @@ export default function manifest(): MetadataRoute.Manifest {
         categories: ["business", "productivity", "technology"],
         icons: [
             {
-                src: "/logo-image.png",
+                src: "/icon-192.png",
                 sizes: "192x192",
                 type: "image/png",
                 purpose: "any",
             },
             {
-                src: "/logo-image.png",
+                src: "/icon-512.png",
                 sizes: "512x512",
                 type: "image/png",
                 purpose: "any",
@@ -33,7 +33,7 @@ export default function manifest(): MetadataRoute.Manifest {
         ],
         screenshots: [
             {
-                src: "/logo.png",
+                src: "/manifest-screenshot-1280x720.png",
                 sizes: "1280x720",
                 type: "image/png",
                 form_factor: "wide",

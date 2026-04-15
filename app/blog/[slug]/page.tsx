@@ -7,9 +7,8 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Script from "next/script";
-import { ArtisticBackground } from "@/components/ui/ArtisticBackground";
-import { TextEffect } from "@/components/ui/text-effect";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { Button } from "@/components/ui/button";
+import { BOOK_MEETING_URL } from "@/lib/marketing";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -17,20 +16,14 @@ type Props = {
 
 export async function generateStaticParams() {
     const slugs = getAllSlugs();
-    return slugs.map((slug) => ({
-        slug: slug,
-    }));
+    return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = getPostBySlug(slug);
 
-    if (!post) {
-        return {
-            title: "Post Not Found",
-        };
-    }
+    if (!post) return { title: "Post Not Found" };
 
     const imageUrl = post.coverImage || "/og-image.png";
 
@@ -47,14 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             publishedTime: post.publishedAt,
             authors: [post.author.name],
             tags: post.tags,
-            images: [
-                {
-                    url: imageUrl,
-                    width: 1200,
-                    height: 630,
-                    alt: post.title,
-                },
-            ],
+            images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title }],
         },
         twitter: {
             card: "summary_large_image",
@@ -70,17 +56,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 function formatDate(dateString: string): string {
     const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    });
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 }
 
 function estimateReadingTime(content: string): number {
-    const wordsPerMinute = 200;
-    const wordCount = content.split(/\s+/).length;
-    return Math.ceil(wordCount / wordsPerMinute);
+    return Math.ceil(content.split(/\s+/).length / 200);
 }
 
 function generateArticleSchema(post: {
@@ -95,45 +75,115 @@ function generateArticleSchema(post: {
 }) {
     const baseUrl = "https://www.invaritech.ai";
     const url = `${baseUrl}/blog/${post.slug}/`;
-    const imageUrl = post.coverImage
-        ? `${baseUrl}${post.coverImage}`
-        : `${baseUrl}/og-image.png`;
+    const imageUrl = post.coverImage ? `${baseUrl}${post.coverImage}` : `${baseUrl}/og-image.png`;
 
     return {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         headline: post.title,
         description: post.excerpt,
-        image: {
-            "@type": "ImageObject",
-            url: imageUrl,
-            width: 1200,
-            height: 630,
-        },
+        image: { "@type": "ImageObject", url: imageUrl, width: 1200, height: 630 },
         datePublished: post.publishedAt,
         dateModified: post.dateModified ?? post.publishedAt,
-        author: {
-            "@type": "Person",
-            name: post.author.name,
-            jobTitle: post.author.role,
-        },
+        author: { "@type": "Person", name: post.author.name, jobTitle: post.author.role },
         publisher: {
             "@type": "Organization",
             name: "INVARITECH",
-            logo: {
-                "@type": "ImageObject",
-                url: `${baseUrl}/logo.png`,
-                width: 512,
-                height: 512,
-            },
+            logo: { "@type": "ImageObject", url: `${baseUrl}/logo.png`, width: 512, height: 512 },
         },
-        mainEntityOfPage: {
-            "@type": "WebPage",
-            "@id": url,
-        },
-        url: url,
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        url,
         articleSection: "Regulatory Compliance",
         keywords: post.title,
+    };
+}
+
+// Shared markdown component definitions for light theme
+function markdownComponents(slug: string) {
+    return {
+        table: ({ children }: { children?: React.ReactNode }) => (
+            <div className="overflow-x-auto my-10">
+                <table className="w-full border-collapse font-mono text-sm">{children}</table>
+            </div>
+        ),
+        thead: ({ children }: { children?: React.ReactNode }) => (
+            <thead className="border-b border-primary/30">{children}</thead>
+        ),
+        tbody: ({ children }: { children?: React.ReactNode }) => <tbody>{children}</tbody>,
+        tr: ({ children }: { children?: React.ReactNode }) => (
+            <tr className="border-b border-border hover:bg-secondary/40 transition-colors">{children}</tr>
+        ),
+        th: ({ children }: { children?: React.ReactNode }) => (
+            <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>
+        ),
+        td: ({ children }: { children?: React.ReactNode }) => (
+            <td className="px-4 py-3 text-foreground-muted text-sm leading-relaxed">{children}</td>
+        ),
+        h1: ({ children }: { children?: React.ReactNode }) => (
+            <h2 className="font-editorial text-3xl md:text-5xl font-semibold mt-20 mb-10 text-foreground border-l-4 border-primary pl-6">
+                {children}
+            </h2>
+        ),
+        h2: ({ children }: { children?: React.ReactNode }) => (
+            <h3 className="font-editorial text-2xl md:text-4xl font-semibold mt-16 mb-8 text-foreground">
+                {children}
+            </h3>
+        ),
+        h3: ({ children }: { children?: React.ReactNode }) => (
+            <h4 className="font-editorial text-xl md:text-2xl font-semibold mt-12 mb-6 text-foreground flex items-center gap-3">
+                <span className="w-2 h-2 bg-primary/50 rotate-45 shrink-0" />
+                {children}
+            </h4>
+        ),
+        a: ({ href, children }: { href?: string; children?: React.ReactNode }) => {
+            if (href?.startsWith("/")) {
+                return (
+                    <Link href={href} className="inline-block text-primary font-medium no-underline border-b border-primary/40 hover:border-primary transition-all hover:bg-primary/5 px-1 py-1 -my-1 leading-[inherit]">
+                        {children}
+                    </Link>
+                );
+            }
+            return (
+                <a href={href} target="_blank" rel="noopener noreferrer" className="inline-block text-primary font-medium no-underline border-b border-primary/40 hover:border-primary transition-all hover:bg-primary/5 px-1 py-1 -my-1 leading-[inherit]">
+                    {children}
+                </a>
+            );
+        },
+        blockquote: ({ children }: { children?: React.ReactNode }) => (
+            <blockquote className="border-l-4 border-primary bg-primary/[0.04] p-8 my-10 not-italic relative overflow-hidden group">
+                <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest flex items-center gap-2">
+                    <div className="w-2 h-2 bg-primary" />
+                    {"// NOTE"}
+                </div>
+                <div className="text-lg md:text-xl text-foreground/90 leading-relaxed font-light">{children}</div>
+            </blockquote>
+        ),
+        hr: () => (
+            <div className="my-16 relative flex items-center justify-center group">
+                <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-border group-hover:border-primary/30 transition-colors" />
+                </div>
+                <div className="relative z-10 bg-card px-4 font-mono text-[10px] text-foreground-subtle tracking-[0.3em] uppercase">
+                    {"// —— //"}
+                </div>
+            </div>
+        ),
+        ul: ({ children }: { children?: React.ReactNode }) => (
+            <ul className="space-y-4 my-8 pl-0 list-none">{children}</ul>
+        ),
+        li: ({ children }: { children?: React.ReactNode }) => (
+            <li className="flex items-start gap-4 text-foreground-muted group">
+                <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
+                <span className="leading-[1.85] group-hover:text-foreground transition-colors">{children}</span>
+            </li>
+        ),
+        strong: ({ children }: { children?: React.ReactNode }) => (
+            <strong className="font-semibold text-foreground bg-primary/[0.06] px-1 border border-primary/10">
+                {children}
+            </strong>
+        ),
+        // Suppress unused slug warning
+        ...(slug ? {} : {}),
     };
 }
 
@@ -141,14 +191,11 @@ export default async function BlogPostPage({ params }: Props) {
     const { slug } = await params;
     const post = getPostBySlug(slug);
 
-    if (!post) {
-        notFound();
-    }
+    if (!post) notFound();
 
     const articleSchema = generateArticleSchema(post);
+    const components = markdownComponents(slug);
 
-    // If the post has a cover image, split content at the first --- so the
-    // image appears after the intro paragraphs rather than before all content.
     const hrIndex = post.coverImage ? post.content.indexOf("\n---\n") : -1;
     const hasIntroSplit = hrIndex !== -1;
     const introContent = hasIntroSplit ? post.content.slice(0, hrIndex) : null;
@@ -159,23 +206,22 @@ export default async function BlogPostPage({ params }: Props) {
             <Script
                 id="article-schema"
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify(articleSchema),
-                }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
             />
-            <main className="min-h-screen bg-[#030305] relative overflow-hidden">
-                <ArtisticBackground />
+            <main className="min-h-screen bg-background relative overflow-hidden">
+                {/* Ambient background */}
+                <div className="absolute inset-0 pointer-events-none z-0">
+                    <div className="absolute top-0 left-0 w-full h-full opacity-[0.012]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                    <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[120px]" />
+                </div>
 
                 <article className="relative z-10 pt-32 pb-24 px-6 md:px-0">
                     <div className="max-w-4xl mx-auto">
                         {/* Header Area */}
-                        <header className="mb-24 border-b border-white/10 pb-12">
+                        <header className="mb-16 pb-12 border-b border-border">
                             {/* Meta Top Bar */}
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 font-mono text-xs text-muted-foreground uppercase tracking-widest border-l-2 border-primary/50 pl-4">
-                                <Link
-                                    href="/blog/"
-                                    className="flex items-center gap-2 hover:text-white transition-colors group"
-                                >
+                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12 font-mono text-xs text-foreground-subtle uppercase tracking-widest border-l-2 border-primary/40 pl-4">
+                                <Link href="/blog/" className="inline-flex min-h-10 items-center gap-2 hover:text-foreground transition-colors group">
                                     <ArrowLeft className="size-3 transition-transform group-hover:-translate-x-1" />
                                     Return to Archive
                                 </Link>
@@ -191,277 +237,119 @@ export default async function BlogPostPage({ params }: Props) {
                                 </div>
                             </div>
 
-                             {/* Eyebrow */}
-                            <div className="mb-6">
-                                <span className="font-mono text-primary text-sm tracking-widest uppercase">
-                                    INTELLIGENCE // STRATEGY
+                            {/* Eyebrow */}
+                            <div className="flex items-center gap-3 mb-6">
+                                <div className="h-[1px] w-8 bg-primary/40" />
+                                <span className="font-mono text-foreground-subtle text-[11px] tracking-[0.22em] uppercase">
+                                    Intelligence // Strategy
                                 </span>
                             </div>
 
                             {/* Title */}
-                            <h1 className="text-4xl md:text-7xl font-bold tracking-tighter mb-8 leading-[0.9] text-white mix-blend-difference">
-                                <TextEffect per="word" preset="slide">
-                                    {post.title}
-                                </TextEffect>
+                            <h1 className="font-editorial text-4xl md:text-7xl font-semibold tracking-tight mb-8 leading-[0.9] text-foreground">
+                                {post.title}
                             </h1>
 
                             {/* Tags + Author */}
-                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-white/5">
+                            <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-8 border-t border-border">
                                 <div className="flex flex-wrap gap-2">
                                     {post.tags.map((tag) => (
-                                        <span key={tag} className="text-xs font-mono px-3 py-1.5 border border-white/10 text-primary bg-primary/5 rounded hover:bg-primary/10 transition-colors">
+                                        <span key={tag} className="text-[10px] font-mono px-3 py-1.5 border border-primary/20 text-foreground-muted bg-primary/[0.05]">
                                             #{tag}
                                         </span>
                                     ))}
                                 </div>
 
                                 <div className="flex items-center gap-4 text-sm">
-                                    <div className="size-10 rounded-full bg-white/10 flex items-center justify-center font-bold text-white border border-white/20">
+                                    <div className="size-10 bg-card border border-border flex items-center justify-center font-semibold text-foreground">
                                         {post.author.name.charAt(0)}
                                     </div>
                                     <div className="flex flex-col">
-                                        <span className="font-bold text-white">{post.author.name}</span>
-                                        <span className="text-muted-foreground text-xs font-mono uppercase">{post.author.role}</span>
+                                        <span className="font-semibold text-foreground">{post.author.name}</span>
+                                        <span className="text-foreground-subtle text-xs font-mono uppercase tracking-wider">{post.author.role}</span>
                                     </div>
                                 </div>
                             </div>
                         </header>
 
-                        {/* Content */}
-                        <div className="relative flex gap-8 md:gap-12">
-                            {/* Marginalia Track */}
-                            <div className="hidden md:flex flex-col items-center w-px bg-gradient-to-b from-primary/50 via-white/5 to-transparent sticky top-32 h-[calc(100vh-8rem)]">
-                                <div className="w-1.5 h-1.5 rounded-full bg-primary mb-12" />
-                                <div className="writing-vertical-rl text-[10px] text-white/20 font-mono tracking-[0.2em] uppercase py-12">
-                                    INVARITECH INTELLIGENCE ARCHIVE
-                                </div>
-                                <div className="w-1.5 h-1.5 rounded-full bg-white/10 mt-auto" />
-                            </div>
-
-                            {/* Prose Feed */}
-                            <div className="prose prose-xl prose-invert max-w-none flex-1
-                                prose-headings:text-white prose-headings:tracking-tight
-                                prose-p:text-white/80 prose-p:leading-[1.85]
-                                prose-a:text-primary prose-a:font-medium prose-a:no-underline prose-a:border-b prose-a:border-primary/30 hover:prose-a:border-primary prose-a:transition-all
-                                prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:bg-white/5 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
-                                prose-strong:text-white prose-strong:font-bold prose-strong:text-shadow-sm
-                                prose-code:text-primary prose-code:bg-primary/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-sm prose-code:font-mono prose-code:text-sm">
-
-                                {/* Intro — rendered before the cover image when split is active */}
-                                {hasIntroSplit && (
-                                    <ReactMarkdown
-                                        remarkPlugins={[remarkGfm]}
-                                        components={{
-                                        table: ({ children }) => (
-                                            <div className="overflow-x-auto my-10">
-                                                <table className="w-full border-collapse font-mono text-sm">{children}</table>
-                                            </div>
-                                        ),
-                                        thead: ({ children }) => <thead className="border-b border-primary/40">{children}</thead>,
-                                        tbody: ({ children }) => <tbody>{children}</tbody>,
-                                        tr: ({ children }) => <tr className="border-b border-white/10 hover:bg-white/[0.03] transition-colors">{children}</tr>,
-                                        th: ({ children }) => <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>,
-                                        td: ({ children }) => <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>,
-                                        h1: ({ children }) => (
-                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
-                                                {children}
-                                            </h2>
-                                        ),
-                                        h2: ({ children }) => (
-                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-white group flex items-center">
-                                                <span className="text-primary/40 mr-4 font-mono text-lg group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 -ml-10 w-6 text-right">#</span>
-                                                {children}
-                                            </h3>
-                                        ),
-                                        h3: ({ children }) => (
-                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-white flex items-center gap-3">
-                                                <span className="w-2 h-2 bg-primary/50 rounded-sm rotate-45" />
-                                                {children}
-                                            </h4>
-                                        ),
-                                        a: ({ href, children }) => {
-                                            if (href?.startsWith("/")) {
-                                                return (
-                                                    <Link href={href} className="text-primary font-bold no-underline border-b-2 border-primary/30 hover:border-primary transition-all hover:bg-primary/5 px-1 -mx-1 rounded-sm">
-                                                        {children}
-                                                    </Link>
-                                                );
-                                            }
-                                            return (
-                                                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary font-bold no-underline border-b-2 border-primary/30 hover:border-primary transition-all hover:bg-primary/5 px-1 -mx-1 rounded-sm">
-                                                    {children}
-                                                </a>
-                                            );
-                                        },
-                                        blockquote: ({ children }) => (
-                                            <blockquote className="border-l-4 border-primary bg-white/5 p-8 my-10 rounded-r-xl not-italic relative overflow-hidden group">
-                                                <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest opacity-70 group-hover:opacity-100 transition-opacity flex items-center gap-2">
-                                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                                                    {"// SYSTEM NOTE"}
-                                                </div>
-                                                <div className="text-lg md:text-xl text-white/90 leading-relaxed font-light">{children}</div>
-                                            </blockquote>
-                                        ),
-                                        hr: () => (
-                                            <div className="my-16 relative flex items-center justify-center group">
-                                                <div className="absolute inset-0 flex items-center">
-                                                    <div className="w-full border-t border-primary/20 group-hover:border-primary/40 transition-colors"></div>
-                                                </div>
-                                                <div className="relative z-10 bg-[#030305] px-4 font-mono text-[10px] text-primary/50 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">
-                                                    {"// SYSTEM_BREAK //"}
-                                                </div>
-                                            </div>
-                                        ),
-                                        ul: ({ children }) => (
-                                            <ul className="space-y-4 my-8 pl-0 list-none">
-                                                {children}
-                                            </ul>
-                                        ),
-                                        li: ({ children }) => (
-                                            <li className="flex items-start gap-4 text-white/75 group">
-                                                <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
-                                                <span className="leading-[1.85] group-hover:text-white transition-colors">{children}</span>
-                                            </li>
-                                        ),
-                                        strong: ({ children }) => (
-                                            <strong className="font-bold text-white bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
-                                                {children}
-                                            </strong>
-                                        )
-                                        }}
-                                    >
-                                        {introContent}
-                                    </ReactMarkdown>
-                                )}
-
-                                {/* Cover image — after intro when split, hidden otherwise */}
-                                {post.coverImage && (
-                                    <div className="relative my-12 border-y border-white/10 group not-prose overflow-hidden">
-                                        <Image
-                                            src={post.coverImage}
-                                            alt={post.title}
-                                            width={1200}
-                                            height={630}
-                                            className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
-                                            priority
-                                        />
-                                        <div className="absolute bottom-4 right-4 font-mono text-[10px] text-white/50 tracking-widest">
-                                            IMG_REF: {slug.toUpperCase()}
-                                        </div>
+                        {/* Parchment reading card */}
+                        <div className="bg-card border border-border/60 p-8 md:p-14 mb-16">
+                            <div className="relative flex gap-8 md:gap-12">
+                                {/* Marginalia track */}
+                                <div className="hidden md:flex flex-col items-center w-px bg-gradient-to-b from-primary/40 via-border to-transparent sticky top-32 h-[calc(100vh-8rem)]">
+                                    <div className="w-1.5 h-1.5 bg-primary mb-12" />
+                                    <div className="writing-vertical-rl text-[10px] text-foreground-subtle/70 font-mono tracking-[0.2em] uppercase py-12">
+                                        INVARITECH INTELLIGENCE ARCHIVE
                                     </div>
-                                )}
+                                    <div className="w-1.5 h-1.5 bg-border mt-auto" />
+                                </div>
 
-                                {/* Main body content */}
-                                <ReactMarkdown
-                                    remarkPlugins={[remarkGfm]}
-                                    components={{
-                                        table: ({ children }) => (
-                                            <div className="overflow-x-auto my-10">
-                                                <table className="w-full border-collapse font-mono text-sm">{children}</table>
+                                {/* Prose feed */}
+                                <div className="prose prose-lg max-w-none flex-1
+                                    prose-headings:text-foreground prose-headings:tracking-tight
+                                    prose-p:text-foreground-muted prose-p:leading-[1.85]
+                                    prose-a:text-primary prose-a:no-underline
+                                    prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:not-italic
+                                    prose-strong:text-foreground
+                                    prose-code:text-primary prose-code:bg-primary/[0.08] prose-code:px-1.5 prose-code:py-0.5 prose-code:font-mono prose-code:text-sm prose-code:rounded-none
+                                    prose-pre:bg-card prose-pre:border prose-pre:border-border prose-pre:rounded-none">
+
+                                    {hasIntroSplit && (
+                                        <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+                                            {introContent}
+                                        </ReactMarkdown>
+                                    )}
+
+                                    {post.coverImage && (
+                                        <div className="relative my-12 border border-border group not-prose overflow-hidden">
+                                            <Image
+                                                src={post.coverImage}
+                                                alt={post.title}
+                                                width={1200}
+                                                height={630}
+                                                className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
+                                                priority
+                                            />
+                                            <div className="absolute bottom-4 right-4 font-mono text-[10px] text-foreground-subtle tracking-widest bg-background/80 px-2 py-0.5">
+                                                IMG_REF: {slug.toUpperCase()}
                                             </div>
-                                        ),
-                                        thead: ({ children }) => <thead className="border-b border-primary/40">{children}</thead>,
-                                        tbody: ({ children }) => <tbody>{children}</tbody>,
-                                        tr: ({ children }) => <tr className="border-b border-white/10 hover:bg-white/[0.03] transition-colors">{children}</tr>,
-                                        th: ({ children }) => <th className="text-left px-4 py-3 text-primary font-mono text-xs uppercase tracking-widest whitespace-nowrap">{children}</th>,
-                                        td: ({ children }) => <td className="px-4 py-3 text-muted-foreground text-sm leading-relaxed">{children}</td>,
-                                        h1: ({ children }) => (
-                                            <h2 className="text-3xl md:text-5xl font-bold mt-20 mb-10 text-white border-l-4 border-primary pl-6 flex items-center gap-4">
-                                                {children}
-                                            </h2>
-                                        ),
-                                        h2: ({ children }) => (
-                                            <h3 className="text-2xl md:text-4xl font-bold mt-16 mb-8 text-white group flex items-center">
-                                                <span className="text-primary/40 mr-4 font-mono text-lg group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100 -ml-10 w-6 text-right">#</span>
-                                                {children}
-                                            </h3>
-                                        ),
-                                        h3: ({ children }) => (
-                                            <h4 className="text-xl md:text-2xl font-bold mt-12 mb-6 text-white flex items-center gap-3">
-                                                <span className="w-2 h-2 bg-primary/50 rounded-sm rotate-45" />
-                                                {children}
-                                            </h4>
-                                        ),
-                                        a: ({ href, children }) => {
-                                            if (href?.startsWith("/")) {
-                                                return (
-                                                    <Link href={href} className="text-primary font-bold no-underline border-b-2 border-primary/30 hover:border-primary transition-all hover:bg-primary/5 px-1 -mx-1 rounded-sm">
-                                                        {children}
-                                                    </Link>
-                                                );
-                                            }
-                                            return (
-                                                <a href={href} target="_blank" rel="noopener noreferrer" className="text-primary font-bold no-underline border-b-2 border-primary/30 hover:border-primary transition-all hover:bg-primary/5 px-1 -mx-1 rounded-sm">
-                                                    {children}
-                                                </a>
-                                            );
-                                        },
-                                        blockquote: ({ children }) => (
-                                            <blockquote className="border-l-4 border-primary bg-white/5 p-8 my-10 rounded-r-xl not-italic relative overflow-hidden group">
-                                                <div className="font-mono text-xs text-primary mb-4 uppercase tracking-widest opacity-70 group-hover:opacity-100 transition-opacity flex items-center gap-2">
-                                                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                                                    {"// SYSTEM NOTE"}
-                                                </div>
-                                                <div className="text-lg md:text-xl text-white/90 leading-relaxed font-light">{children}</div>
-                                            </blockquote>
-                                        ),
-                                        hr: () => (
-                                            <div className="my-16 relative flex items-center justify-center group">
-                                                <div className="absolute inset-0 flex items-center">
-                                                    <div className="w-full border-t border-primary/20 group-hover:border-primary/40 transition-colors"></div>
-                                                </div>
-                                                <div className="relative z-10 bg-[#030305] px-4 font-mono text-[10px] text-primary/50 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">
-                                                    {"// SYSTEM_BREAK //"}
-                                                </div>
-                                            </div>
-                                        ),
-                                        ul: ({ children }) => (
-                                            <ul className="space-y-4 my-8 pl-0 list-none">
-                                                {children}
-                                            </ul>
-                                        ),
-                                        li: ({ children }) => (
-                                            <li className="flex items-start gap-4 text-white/75 group">
-                                                <span className="mt-2 w-1.5 h-1.5 bg-primary/50 group-hover:bg-primary transition-colors rotate-45 shrink-0" />
-                                                <span className="leading-[1.85] group-hover:text-white transition-colors">{children}</span>
-                                            </li>
-                                        ),
-                                        strong: ({ children }) => (
-                                            <strong className="font-bold text-white bg-white/5 px-1 rounded mx-0.5 border border-white/10 group-hover:border-primary/30 transition-colors shadow-[0_0_10px_rgba(255,255,255,0.05)]">
-                                                {children}
-                                            </strong>
-                                        )
-                                    }}
-                                >
-                                    {bodyContent}
-                                </ReactMarkdown>
+                                        </div>
+                                    )}
+
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+                                        {bodyContent}
+                                    </ReactMarkdown>
+                                </div>
                             </div>
                         </div>
 
                         {/* Footer CTA */}
-                        <section className="mt-32 pt-16 border-t border-white/10 text-center">
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6 max-w-3xl mx-auto text-white">
+                        <section className="mt-16 pt-16 border-t border-border text-center">
+                            <div className="flex items-center justify-center gap-3 mb-8">
+                                <div className="h-[1px] w-8 bg-primary/40" />
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Start Your Sprint</span>
+                                <div className="h-[1px] w-8 bg-primary/40" />
+                            </div>
+                            <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
                                 READY TO <span className="text-primary">AUTOMATE</span>?
                             </h2>
-                            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+                            <p className="text-lg text-foreground-muted mb-12 max-w-2xl mx-auto">
                                 Schedule a 30-minute call to scope your biggest bottleneck. No pitch — just engineering strategy.
                             </p>
-                            <div className="flex justify-center">
-                                <MagneticButton className="px-12 py-6 text-xl">
+                            <div className="flex flex-col sm:flex-row justify-center gap-4">
+                                <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
                                     <a
-                                        href="https://calendly.com/hello-invaritech/30min"
+                                        href={BOOK_MEETING_URL}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex items-center gap-3"
                                     >
-                                        Start Transmission <ArrowRight className="w-6 h-6" />
+                                        Book a Scoping Call <ArrowRight className="w-5 h-5" />
                                     </a>
-                                </MagneticButton>
-                            </div>
-                             <div className="mt-12 text-sm text-muted-foreground">
-                                <p>
-                                    Or explore our <Link href="/services/" className="underline hover:text-white text-primary/80">Services Hub</Link> for more options.
-                                </p>
+                                </Button>
+                                <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
+                                    <Link href="/services/">Explore Services</Link>
+                                </Button>
                             </div>
                         </section>
                     </div>

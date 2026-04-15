@@ -9,7 +9,7 @@ const bullets = [
 
 export function AssessmentTeaser() {
     return (
-        <section className="reveal-section py-20 px-6 relative z-10 border-t border-white/10 bg-primary/5">
+        <section className="reveal-section py-20 px-6 relative z-10 border-t border-border bg-primary/[0.04]">
             <div className="max-w-5xl mx-auto">
                 <div className="flex flex-col md:flex-row gap-10 items-center justify-between">
                     <div className="flex-1">
@@ -19,7 +19,7 @@ export function AssessmentTeaser() {
                                 Free Diagnostic
                             </p>
                         </div>
-                        <h2 className="text-2xl md:text-3xl font-bold mb-4 tracking-tight">
+                        <h2 className="font-editorial text-2xl md:text-3xl font-semibold mb-4 tracking-tight text-foreground">
                             Is your stack ready for AI?
                         </h2>
                         <p className="text-muted-foreground mb-6 max-w-lg">
@@ -27,20 +27,20 @@ export function AssessmentTeaser() {
                         </p>
                         <ul className="space-y-3 mb-8">
                             {bullets.map((b) => (
-                                <li key={b} className="flex items-center gap-3 text-sm text-white/80">
+                                <li key={b} className="flex items-center gap-3 text-sm text-foreground/80">
                                     <CheckCircle className="w-4 h-4 text-primary shrink-0" />
                                     {b}
                                 </li>
                             ))}
                         </ul>
                         <Link href="/tools/assessment/">
-                            <span className="inline-flex items-center gap-2 bg-primary text-black px-6 py-3 text-sm font-bold uppercase tracking-widest hover:bg-white transition-colors">
+                            <span className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 text-sm font-bold uppercase tracking-widest hover:bg-foreground transition-colors">
                                 Take the assessment <ArrowRight className="w-4 h-4" />
                             </span>
                         </Link>
                     </div>
 
-                    <div className="hidden md:block w-px self-stretch bg-white/10" />
+                    <div className="hidden md:block w-px self-stretch bg-border" />
 
                     <div className="flex-shrink-0 text-center md:text-right">
                         <p className="text-6xl font-bold text-primary/20 font-mono leading-none mb-2">3</p>

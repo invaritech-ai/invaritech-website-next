@@ -7,51 +7,48 @@ export default function Testimonials() {
             <div className="mx-auto max-w-6xl space-y-8 px-6 md:space-y-16">
                 <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12">
                     <h2 className="text-4xl font-medium lg:text-5xl">
-                        Built by makers, loved by thousands of developers
+                        Trusted by operators who ship real systems
                     </h2>
-                    <p>
-                        INVARITECH is evolving to be more than just the models.
-                        It supports an entire ecosystem of APIs and platforms
-                        helping developers and businesses innovate.
+                    <p className="text-muted-foreground">
+                        Verified feedback from our Google Business Profile.
                     </p>
+                    <div className="inline-flex items-center gap-2 border border-primary/20 bg-primary/10 px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-primary">
+                        <span className="text-sm leading-none">★★★★★</span>
+                        <span>5.0 on Google Business Profile</span>
+                    </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-2">
-                    {/* Large featured testimonial - spans 2 columns and 2 rows */}
-                    <Card className="sm:col-span-2 lg:col-span-2 lg:row-span-2">
+                <div className="grid gap-4 md:grid-cols-2">
+                    <Card>
                         <CardHeader className="pb-3">
+                            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary">
+                                API Delivery
+                            </p>
                         </CardHeader>
                         <CardContent className="pt-0">
                             <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                                <p className="text-xl font-medium">
-                                    INVARITECH has transformed the way I develop
-                                    web applications. Their extensive collection
-                                    of UI components, blocks, and templates has
-                                    significantly accelerated my workflow. The
-                                    flexibility to customize every aspect allows
-                                    me to create unique user experiences.
-                                    INVARITECH is a game-changer for modern web
-                                    development.
+                                <p className="text-lg font-medium leading-relaxed">
+                                    “Aditi and her team did an excellent job
+                                    with the development of an API with the
+                                    EU&apos;s TRACES platform for our business.
+                                    They are extremely professional, and we were
+                                    very impressed by their skills, knowledge
+                                    and reactivity. I wouldn&apos;t hesitate to
+                                    recommend them.”
                                 </p>
 
                                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
                                     <Avatar className="size-12">
-                                        <AvatarImage
-                                            src="https://tailus.io/images/reviews/shekinah.webp"
-                                            alt="Shekinah Tshiokufila"
-                                            height="400"
-                                            width="400"
-                                            loading="lazy"
-                                        />
-                                        <AvatarFallback>ST</AvatarFallback>
+                                        <AvatarImage src="" alt="Matthew Baldwin" />
+                                        <AvatarFallback>MB</AvatarFallback>
                                     </Avatar>
 
                                     <div>
                                         <cite className="text-sm font-medium">
-                                            Shekinah Tshiokufila
+                                            Matthew Baldwin
                                         </cite>
                                         <span className="text-muted-foreground block text-sm">
-                                            Software Engineer
+                                            Founder, Baldwin Consultancies
                                         </span>
                                     </div>
                                 </div>
@@ -59,101 +56,34 @@ export default function Testimonials() {
                         </CardContent>
                     </Card>
 
-                    {/* Medium testimonial - spans 2 columns */}
-                    <Card className="sm:col-span-2 lg:col-span-2">
-                        <CardContent className="h-full pt-6">
+                    <Card>
+                        <CardHeader className="pb-3">
+                            <p className="text-[10px] font-mono uppercase tracking-[0.2em] text-primary">
+                                Website Rebuild
+                            </p>
+                        </CardHeader>
+                        <CardContent className="h-full pt-0">
                             <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                                <p className="text-xl font-medium">
-                                    INVARITECH is really extraordinary and very
-                                    practical, no need to break your head. A
-                                    real gold mine.
+                                <p className="text-lg font-medium leading-relaxed">
+                                    “We are grateful to Invaritech for taking
+                                    on our project with such professionalism and
+                                    attention to detail. Their team guided us
+                                    step by step, helping us update and refine
+                                    our website pages and sections. The revised
+                                    website now better serves our community.”
                                 </p>
 
                                 <div className="grid grid-cols-[auto_1fr] items-center gap-3">
                                     <Avatar className="size-12">
-                                        <AvatarImage
-                                            src="https://tailus.io/images/reviews/jonathan.webp"
-                                            alt="Jonathan Yombo"
-                                            height="400"
-                                            width="400"
-                                            loading="lazy"
-                                        />
-                                        <AvatarFallback>JY</AvatarFallback>
+                                        <AvatarImage src="" alt="China Coast Community" />
+                                        <AvatarFallback>CC</AvatarFallback>
                                     </Avatar>
                                     <div>
                                         <cite className="text-sm font-medium">
-                                            Jonathan Yombo
+                                            China Coast Community
                                         </cite>
                                         <span className="text-muted-foreground block text-sm">
-                                            Software Engineer
-                                        </span>
-                                    </div>
-                                </div>
-                            </blockquote>
-                        </CardContent>
-                    </Card>
-
-                    {/* Small testimonial */}
-                    <Card>
-                        <CardContent className="h-full pt-6">
-                            <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                                <p>
-                                    Great work on the INVARITECH platform. This
-                                    is one of the best development experiences I
-                                    have seen so far!
-                                </p>
-
-                                <div className="grid items-center gap-3 [grid-template-columns:auto_1fr]">
-                                    <Avatar className="size-12">
-                                        <AvatarImage
-                                            src="https://tailus.io/images/reviews/yucel.webp"
-                                            alt="Yucel Faruksahan"
-                                            height="400"
-                                            width="400"
-                                            loading="lazy"
-                                        />
-                                        <AvatarFallback>YF</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <cite className="text-sm font-medium">
-                                            Yucel Faruksahan
-                                        </cite>
-                                        <span className="text-muted-foreground block text-sm">
-                                            Creator, Tailkits
-                                        </span>
-                                    </div>
-                                </div>
-                            </blockquote>
-                        </CardContent>
-                    </Card>
-
-                    {/* Small testimonial */}
-                    <Card>
-                        <CardContent className="h-full pt-6">
-                            <blockquote className="grid h-full grid-rows-[1fr_auto] gap-6">
-                                <p>
-                                    The precision and attention to detail in
-                                    INVARITECH&apos;s solutions is unmatched.
-                                    Truly premium quality.
-                                </p>
-
-                                <div className="grid grid-cols-[auto_1fr] gap-3">
-                                    <Avatar className="size-12">
-                                        <AvatarImage
-                                            src="https://tailus.io/images/reviews/rodrigo.webp"
-                                            alt="Rodrigo Aguilar"
-                                            height="400"
-                                            width="400"
-                                            loading="lazy"
-                                        />
-                                        <AvatarFallback>RA</AvatarFallback>
-                                    </Avatar>
-                                    <div>
-                                        <p className="text-sm font-medium">
-                                            Rodrigo Aguilar
-                                        </p>
-                                        <span className="text-muted-foreground block text-sm">
-                                            Creator, TailwindAwesome
+                                            Charity Organization
                                         </span>
                                     </div>
                                 </div>

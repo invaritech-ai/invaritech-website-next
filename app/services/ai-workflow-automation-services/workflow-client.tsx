@@ -50,7 +50,7 @@ export default function WorkflowClient() {
                         Service Offering
                     </Badge>
 
-                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 mix-blend-difference text-white">
+                    <h1 className="text-[8vw] md:text-[5vw] leading-[0.9] font-bold tracking-tighter mb-8 text-foreground">
                         <TextEffect
                             per="word"
                             preset="slide"
@@ -59,7 +59,7 @@ export default function WorkflowClient() {
                             WORKFLOW AUTOMATION
                         </TextEffect>
                         <br />
-                        <span className="text-white/50">
+                        <span className="text-foreground-subtle">
                             CONSULTING SERVICES
                         </span>
                     </h1>
@@ -69,7 +69,7 @@ export default function WorkflowClient() {
 
                     <div className="flex flex-col md:flex-row gap-12 items-start mt-12">
                         <div className="md:w-2/3 border-l-2 border-primary/50 pl-8">
-                            <p className="text-xl md:text-2xl text-white font-medium mb-6">
+                            <p className="text-xl md:text-2xl text-foreground font-medium mb-6">
                                 We turn operational friction into operational
                                 liquidity for finance, manufacturing, and
                                 operations teams across APAC.
@@ -89,13 +89,13 @@ export default function WorkflowClient() {
                                 existing ERP. Serving teams in Singapore, Hong
                                 Kong, Malaysia, and the Philippines.
                             </p>
-                            <p className="text-lg text-white/80 font-mono">
+                            <p className="text-lg text-foreground-muted font-mono">
                                 We are practitioners, not advisors. We build the
                                 pipeline.
                             </p>
                         </div>
                         <div className="md:w-1/3 space-y-4">
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">
                                     Best For
                                 </h3>
@@ -106,7 +106,7 @@ export default function WorkflowClient() {
                                     spreadsheet drift, or a 10-day close cycle.
                                 </p>
                             </div>
-                            <div className="bg-white/5 border border-white/10 rounded-xl p-6">
+                            <div className="bg-card border border-border rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">
                                     Typical Timeline
                                 </h3>
@@ -115,12 +115,12 @@ export default function WorkflowClient() {
                                     stabilization.
                                 </p>
                             </div>
-                            <div className="bg-primary/10 border border-primary/30 rounded-xl p-6">
+                            <div className="bg-primary/10 border border-primary/30 rounded-none p-6">
                                 <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-3">
                                     Engagement
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Fixed-scope. Starts at <span className="text-white font-semibold">USD $10,000</span>.
+                                    Fixed-scope. Starts at <span className="text-foreground font-semibold">USD $10,000</span>.
                                 </p>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ export default function WorkflowClient() {
                         </a>
                     </div>
 
-                    <div className="mt-12 p-6 border border-white/10 rounded-xl bg-black/40 max-w-2xl">
+                    <div className="mt-12 p-6 border border-border rounded-none bg-card max-w-2xl">
                         <h3 className="text-sm font-mono uppercase tracking-widest text-primary mb-4">Not A Fit If</h3>
                         <ul className="space-y-3 text-sm text-muted-foreground">
                             {[
@@ -159,20 +159,20 @@ export default function WorkflowClient() {
             {/* What It Is NOT */}
             <section className="reveal-section py-6 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
-                    <div className="border border-white/10 bg-white/[0.02] p-5 flex flex-col sm:flex-row gap-4 items-start">
-                        <span className="text-xs font-mono uppercase tracking-widest text-white/30 shrink-0 pt-1">
+                    <div className="border border-border bg-card p-5 flex flex-col sm:flex-row gap-4 items-start">
+                        <span className="text-xs font-mono uppercase tracking-widest text-foreground-subtle shrink-0 pt-1">
                             Not this
                         </span>
                         <div className="flex flex-wrap gap-3">
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">
                                 Not RPA point-and-click — we map entire workflow
                                 contracts, not individual clicks
                             </span>
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">
                                 Not a Zapier stack — no-code breaks at
                                 auditability and governance boundaries
                             </span>
-                            <span className="text-xs text-white/50 border border-white/10 px-3 py-1.5 font-mono">
+                            <span className="text-xs text-foreground-subtle border border-border px-3 py-1.5 font-mono">
                                 Not a chatbot — we automate processes
                                 end-to-end, not individual conversations
                             </span>
@@ -182,7 +182,7 @@ export default function WorkflowClient() {
             </section>
 
             {/* Industries We Serve */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Who We Work With
@@ -193,7 +193,7 @@ export default function WorkflowClient() {
                         Hong Kong, Malaysia, and the Philippines.
                     </p>
                     <div className="grid md:grid-cols-3 gap-8 stagger-list">
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
+                        <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors">
                             <h3 className="text-xl font-bold mb-4">
                                 Finance & Accounting
                             </h3>
@@ -203,11 +203,11 @@ export default function WorkflowClient() {
                                 resolution for controllers managing multi-entity
                                 books.
                             </p>
-                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                            <p className="text-xs font-mono text-primary/80 uppercase tracking-widest">
                                 CFOs · Controllers · Finance Ops
                             </p>
                         </div>
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
+                        <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors">
                             <h3 className="text-xl font-bold mb-4">
                                 Manufacturing & Supply Chain
                             </h3>
@@ -217,11 +217,11 @@ export default function WorkflowClient() {
                                 compliance reporting — replacing manual
                                 spreadsheet handoffs with audited pipelines.
                             </p>
-                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                            <p className="text-xs font-mono text-primary/80 uppercase tracking-widest">
                                 Ops Managers · Plant Controllers · Supply Chain Leads
                             </p>
                         </div>
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors">
+                        <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors">
                             <h3 className="text-xl font-bold mb-4">
                                 Logistics & Professional Services
                             </h3>
@@ -231,7 +231,7 @@ export default function WorkflowClient() {
                                 pipelines, and client reporting automation for
                                 firms scaling without adding ops headcount.
                             </p>
-                            <p className="text-xs font-mono text-primary/60 uppercase tracking-widest">
+                            <p className="text-xs font-mono text-primary/80 uppercase tracking-widest">
                                 COOs · Managing Partners · Ops Directors
                             </p>
                         </div>
@@ -240,7 +240,7 @@ export default function WorkflowClient() {
             </section>
 
             {/* Finance Pipelines */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         Financial Pipelines We Build
@@ -252,8 +252,8 @@ export default function WorkflowClient() {
                     </p>
                     <div className="grid md:grid-cols-3 gap-8 stagger-list">
                         {/* AP */}
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
-                            <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+                        <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors flex flex-col">
+                            <div className="size-12 rounded-none bg-primary/10 flex items-center justify-center text-primary mb-6">
                                 <FileText className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-4">
@@ -265,10 +265,10 @@ export default function WorkflowClient() {
                                 invoices on arrival and route them for immediate
                                 approval.
                             </p>
-                            <div className="pt-4 border-t border-white/10 mt-auto">
+                            <div className="pt-4 border-t border-border mt-auto">
                                 <Link
                                     href="/blog/ai-invoice-data-extraction/"
-                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary hover:text-white transition-colors"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary hover:text-foreground transition-colors"
                                 >
                                     <ArrowRight className="w-3 h-3" /> Read the
                                     Architecture
@@ -277,8 +277,8 @@ export default function WorkflowClient() {
                         </div>
 
                         {/* Month-End Close */}
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
-                            <div className="size-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6">
+                        <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors flex flex-col">
+                            <div className="size-12 rounded-none bg-blue-500/10 flex items-center justify-center text-primary/80 mb-6">
                                 <Check className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-4">
@@ -289,10 +289,10 @@ export default function WorkflowClient() {
                                 deploy deterministic matching engines to clear
                                 90% of your bank reconciliation automatically.
                             </p>
-                            <div className="pt-4 border-t border-white/10 mt-auto">
+                            <div className="pt-4 border-t border-border mt-auto">
                                 <Link
                                     href="/blog/month-end-close-automation/"
-                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-blue-400 hover:text-white transition-colors"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/80 hover:text-foreground transition-colors"
                                 >
                                     <ArrowRight className="w-3 h-3" /> Cut Your
                                     Close to 3 Days
@@ -301,8 +301,8 @@ export default function WorkflowClient() {
                         </div>
 
                         {/* Cash Flow */}
-                        <div className="stagger-item p-8 border border-white/10 rounded-3xl bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
-                            <div className="size-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
+                        <div className="stagger-item p-8 border border-border rounded-none bg-card hover:bg-muted/30 transition-colors flex flex-col">
+                            <div className="size-12 rounded-none bg-purple-500/10 flex items-center justify-center text-primary/80 mb-6">
                                 <LineChart className="w-6 h-6" />
                             </div>
                             <h3 className="text-xl font-bold mb-4">
@@ -314,10 +314,10 @@ export default function WorkflowClient() {
                                 start modeling runway with real-time aggregated
                                 data.
                             </p>
-                            <div className="pt-4 border-t border-white/10 mt-auto">
+                            <div className="pt-4 border-t border-border mt-auto">
                                 <Link
                                     href="/blog/cash-flow-visibility-automation/"
-                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-purple-400 hover:text-white transition-colors"
+                                    className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-primary/80 hover:text-foreground transition-colors"
                                 >
                                     <ArrowRight className="w-3 h-3" /> Read the
                                     Architecture
@@ -329,7 +329,7 @@ export default function WorkflowClient() {
             </section>
 
             {/* Architecture Table */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -342,8 +342,8 @@ export default function WorkflowClient() {
                         </p>
                     </div>
 
-                    <div className="overflow-hidden border border-white/10 rounded-2xl">
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-white/5 font-mono text-sm uppercase tracking-wider text-white/50 border-b border-white/10">
+                    <div className="overflow-hidden border border-border rounded-none">
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-card font-mono text-sm uppercase tracking-wider text-foreground-subtle border-b border-border">
                             <div className="p-4 md:p-6">Layer</div>
                             <div className="p-4 md:p-6">What it does</div>
                             <div className="p-4 md:p-6">How it behaves</div>
@@ -351,19 +351,19 @@ export default function WorkflowClient() {
                         </div>
 
                         {/* Row 1: Reading */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-black/20 border-b border-white/10 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-primary font-bold flex items-center gap-2">
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-card border-b border-border group hover:bg-card transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-border text-primary font-bold flex items-center gap-2">
                                 <FileText className="w-4 h-4" /> Reading
                                 (Probabilistic)
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                            <div className="p-6 border-b md:border-b-0 border-border text-muted-foreground">
                                 Invoice parsing, CSV ingestion, bank file
                                 normalization
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                            <div className="p-6 border-b md:border-b-0 border-border text-muted-foreground">
                                 AI structures messy inputs into standard JSON
                             </div>
-                            <div className="p-6 text-white/80 font-mono text-sm flex items-center">
+                            <div className="p-6 text-foreground-muted font-mono text-sm flex items-center">
                                 <span className="px-2 py-1 bg-yellow-500/10 text-yellow-500 rounded text-xs border border-yellow-500/20">
                                     Low-confidence flags a human
                                 </span>
@@ -371,19 +371,19 @@ export default function WorkflowClient() {
                         </div>
 
                         {/* Row 2: Writing */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 bg-black/40 group hover:bg-white/5 transition-colors">
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-blue-400 font-bold flex items-center gap-2">
+                        <div className="grid grid-cols-1 md:grid-cols-4 bg-card group hover:bg-card transition-colors">
+                            <div className="p-6 border-b md:border-b-0 border-border text-primary/80 font-bold flex items-center gap-2">
                                 <Database className="w-4 h-4" /> Writing
                                 (Deterministic)
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                            <div className="p-6 border-b md:border-b-0 border-border text-muted-foreground">
                                 Ledger entries, ERP syncs, bank reconciliations
                             </div>
-                            <div className="p-6 border-b md:border-b-0 border-white/5 text-muted-foreground">
+                            <div className="p-6 border-b md:border-b-0 border-border text-muted-foreground">
                                 Hard-coded matching logic + explicit approval
                                 gates
                             </div>
-                            <div className="p-6 text-white/80 font-mono text-sm flex items-center">
+                            <div className="p-6 text-foreground-muted font-mono text-sm flex items-center">
                                 <span className="px-2 py-1 bg-green-500/10 text-green-500 rounded text-xs border border-green-500/20">
                                     Zero probabilistic writes
                                 </span>
@@ -392,7 +392,7 @@ export default function WorkflowClient() {
                     </div>
 
                     <div className="mt-8 text-center">
-                        <p className="text-white/60 text-sm font-mono border border-white/10 inline-block px-4 py-2 rounded-full bg-black/40">
+                        <p className="text-muted-foreground text-sm font-mono border border-border inline-block px-4 py-2 rounded-full bg-card">
                             Confidence scores can inform insights. They do not
                             authorize operations.
                         </p>
@@ -403,7 +403,7 @@ export default function WorkflowClient() {
             {/* Governance Gap */}
             <section className="reveal-section py-24 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto">
-                    <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
+                    <div className="bg-card border border-border rounded-none p-8 md:p-12">
                         <div className="max-w-3xl mx-auto text-center mb-16">
                             <h2 className="text-3xl md:text-4xl font-bold mb-6">
                                 The Governance Gap
@@ -422,7 +422,7 @@ export default function WorkflowClient() {
                                     of hidden logic: 400 disconnected
                                     automations, no owner, and no audit trail.
                                 </p>
-                                <div className="p-6 bg-red-900/10 border border-red-500/20 rounded-xl">
+                                <div className="p-6 bg-red-900/10 border border-red-500/20 rounded-none">
                                     <h4 className="text-red-400 font-bold mb-2 flex items-center gap-2">
                                         <X className="w-4 h-4" /> The
                                         &ldquo;Messy Tangle&rdquo;
@@ -435,7 +435,7 @@ export default function WorkflowClient() {
                                 </div>
                             </div>
                             <div className="space-y-4 stagger-list">
-                                <h3 className="text-lg font-bold text-white mb-4">
+                                <h3 className="text-lg font-bold text-foreground mb-4">
                                     We Build Visibility-First:
                                 </h3>
                                 {[
@@ -446,15 +446,15 @@ export default function WorkflowClient() {
                                 ].map((item, i) => (
                                     <div
                                         key={i}
-                                        className="stagger-item flex items-center gap-3 p-4 bg-black/40 border border-white/5 rounded-lg"
+                                        className="stagger-item flex items-center gap-3 p-4 bg-card border border-border rounded-lg"
                                     >
                                         <Check className="w-5 h-5 text-primary" />
-                                        <span className="text-white/90">
+                                        <span className="text-foreground">
                                             {item}
                                         </span>
                                     </div>
                                 ))}
-                                <p className="text-sm text-primary font-mono mt-4 pt-4 border-t border-white/10">
+                                <p className="text-sm text-primary font-mono mt-4 pt-4 border-t border-border">
                                     If a step fails, you know why in seconds,
                                     not hours.
                                 </p>
@@ -465,7 +465,7 @@ export default function WorkflowClient() {
             </section>
 
             {/* Methodology */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-t border-white/10 bg-black/20">
+            <section className="reveal-section py-24 px-6 relative z-10 border-t border-border bg-card">
                 <div className="max-w-4xl mx-auto">
                     <Badge
                         variant="outline"
@@ -504,7 +504,7 @@ export default function WorkflowClient() {
                                     {i + 1}
                                 </div>
                                 <div>
-                                    <p className="text-xs font-mono uppercase tracking-widest text-primary/60 mb-1">
+                                    <p className="text-xs font-mono uppercase tracking-widest text-primary/80 mb-1">
                                         {step.phase}
                                     </p>
                                     <h3 className="text-2xl font-bold mb-3">
@@ -521,10 +521,10 @@ export default function WorkflowClient() {
             </section>
 
             {/* ROI Calculator */}
-            <section className="reveal-section py-16 px-6 relative z-10 border-t border-white/10">
-                <div className="max-w-4xl mx-auto bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 text-center">
+            <section className="reveal-section py-16 px-6 relative z-10 border-t border-border">
+                <div className="max-w-4xl mx-auto bg-primary/10 border border-primary/20 rounded-none p-8 md:p-12 text-center">
                     <Calculator className="w-12 h-12 text-primary mx-auto mb-6" />
-                    <h3 className="text-2xl font-bold text-white mb-4">
+                    <h3 className="text-2xl font-bold text-foreground mb-4">
                         Calculate Your Manual Tax
                     </h3>
                     <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
@@ -549,7 +549,7 @@ export default function WorkflowClient() {
             </section>
 
             {/* Guardrails */}
-            <section className="reveal-section py-24 px-6 relative z-10 border-y border-white/10 bg-black/20 backdrop-blur-sm">
+            <section className="reveal-section py-24 px-6 relative z-10 border-y border-border bg-card ">
                 <div className="max-w-6xl mx-auto">
                     <div className="flex flex-col md:flex-row gap-16 items-center">
                         <div className="md:w-1/2">
@@ -569,10 +569,10 @@ export default function WorkflowClient() {
                             </p>
                         </div>
                         <div className="md:w-1/2 w-full space-y-4 stagger-list">
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
                                 <GitBranch className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Deterministic Fallbacks
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -582,10 +582,10 @@ export default function WorkflowClient() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
                                 <Lock className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Token Discipline
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -594,10 +594,10 @@ export default function WorkflowClient() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="stagger-item p-6 border border-white/10 rounded-xl bg-black/40 flex gap-4">
+                            <div className="stagger-item p-6 border border-border rounded-none bg-card flex gap-4">
                                 <ShieldCheck className="w-6 h-6 text-primary shrink-0" />
                                 <div>
-                                    <h4 className="font-bold text-white mb-1">
+                                    <h4 className="font-bold text-foreground mb-1">
                                         Auditability
                                     </h4>
                                     <p className="text-sm text-muted-foreground">
@@ -614,7 +614,7 @@ export default function WorkflowClient() {
             <FounderTrustSection />
 
             {/* FAQ */}
-            <section className="reveal-section py-24 px-6 relative z-10 bg-white/5 border-t border-white/10">
+            <section className="reveal-section py-24 px-6 relative z-10 bg-card border-t border-border">
                 <div className="max-w-3xl mx-auto">
                     <h2 className="text-4xl font-bold mb-12 text-center">
                         FAQ
@@ -628,7 +628,7 @@ export default function WorkflowClient() {
             {/* Final CTA */}
             <section className="reveal-section py-32 px-6 relative z-10">
                 <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter mix-blend-difference text-white">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-8 tracking-tighter text-foreground">
                         Build for <span className="text-primary">Scale</span>{" "}
                         not Just <br /> Efficiency.
                     </h2>
@@ -647,24 +647,24 @@ export default function WorkflowClient() {
                             Request a Workflow Diagnostic
                         </MagneticButton>
                     </a>
-                    <div className="mt-12 pt-12 border-t border-white/10 flex flex-col sm:flex-row gap-6 justify-center">
+                    <div className="mt-12 pt-12 border-t border-border flex flex-col sm:flex-row gap-6 justify-center">
                         <Link
                             href="/services/ai-automation-sprint/"
-                            className="text-sm font-mono tracking-widest uppercase text-primary/70 hover:text-primary transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" /> Start with the
                             30-Day Sprint
                         </Link>
                         <Link
                             href="/services/ai-integration-services/"
-                            className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" /> Need ERP
                             integration?
                         </Link>
                         <Link
                             href="/services/ai-automation-consulting/"
-                            className="text-sm font-mono tracking-widest uppercase text-white/30 hover:text-white/60 transition-colors flex items-center gap-2"
+                            className="text-sm font-mono tracking-widest uppercase text-foreground-subtle hover:text-muted-foreground transition-colors inline-flex min-h-10 items-center gap-2"
                         >
                             <ArrowRight className="w-3 h-3" /> Not sure which workflow to start with?
                         </Link>

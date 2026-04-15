@@ -33,7 +33,6 @@ export const metadata: Metadata = {
 };
 
 const BASE = "https://www.invaritech.ai";
-const ORG = { "@type": "Organization", "name": "Invaritech", "url": BASE };
 
 export default function ServicesPage() {
     const jsonLd = [

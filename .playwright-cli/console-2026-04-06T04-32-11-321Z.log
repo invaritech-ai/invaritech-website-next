@@ -1,0 +1,20 @@
+[12544946ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=ADf-SjAWKlAc7XWJYDRbk' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[12785983ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=ADf-SjAWKlAc7XWJYDRbk' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[13026989ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=ADf-SjAWKlAc7XWJYDRbk' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[13029682ms] [WARNING] GSAP target .ffc-bullet not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/28165_next_dist_72841bb9._.js:2297
+[13029683ms] [WARNING] GSAP target  not found. https://gsap.com @ http://localhost:3000/_next/static/chunks/28165_next_dist_72841bb9._.js:2297
+[13030158ms] [WARNING] Ignoring Event: localhost @ http://localhost:3000/_next/static/chunks/28165_next_dist_72841bb9._.js:2297
+[13030203ms] [ERROR] Access to fetch at 'https://wvbknd.leadsy.ai/v1/website-visitors/test' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:3000/:0
+[13030203ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://wvbknd.leadsy.ai/v1/website-visitors/test:0
+[13030204ms] [ERROR] > error: TypeError: Failed to fetch
+    at e (https://r2.leadsy.ai/tag.js:1:173)
+    at https://r2.leadsy.ai/tag.js:1:638
+    at https://r2.leadsy.ai/tag.js:1:922 @ http://localhost:3000/_next/static/chunks/28165_next_dist_72841bb9._.js:3127
+[13030846ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://aplo-evnt.com/api/v1/intent_pixel/track_request?app_id=69ae995320f12f0015033d60:0
+[13031414ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://a.remarketstats.com/px/smart/?c=24d1add2443e239&type=img&partner_id=1rQPfvIzStzrxlsWj&partner_rid=a621cbd5-9d20-4ad5-89ca-79dc3503feb4:0
+[13032164ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://match.prod.bidr.io/cookie-sync/fivebyfive:0
+[13932006ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14173017ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14414025ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14655029ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886
+[14896038ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=7QpCvWYUygFjuMzn3rBUV' failed: WebSocket opening handshake timed out @ http://localhost:3000/_next/static/chunks/28165_next_dist_client_877ae65e._.js:10886

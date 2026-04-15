@@ -94,13 +94,13 @@ export default function InvoiceAutomationSingaporePage() {
             <div className="min-h-screen bg-background text-foreground">
 
                 {/* Hero */}
-                <section className="pt-40 pb-20 px-6 border-b border-white/10">
+                <section className="pt-40 pb-20 px-6 border-b border-border">
                     <div className="max-w-4xl mx-auto">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-8 bg-primary/60" />
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">Singapore // Finance Automation</p>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-white">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-foreground">
                             Invoice Processing Automation<br />
                             <span className="text-primary">for Singapore Finance Teams</span>
                         </h1>
@@ -114,7 +114,7 @@ export default function InvoiceAutomationSingaporePage() {
                                 </MagneticButton>
                             </Link>
                             <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                                <MagneticButton className="bg-transparent border border-white/20 text-white px-8 py-4 hover:bg-white/10 transition-colors">
+                                <MagneticButton className="bg-transparent border border-border text-foreground px-8 py-4 hover:bg-card transition-colors">
                                     Book a 30-Min AP Audit
                                 </MagneticButton>
                             </a>
@@ -123,18 +123,18 @@ export default function InvoiceAutomationSingaporePage() {
                 </section>
 
                 {/* Pain Points */}
-                <section className="py-20 px-6 border-b border-white/10 bg-black/20">
+                <section className="py-20 px-6 border-b border-border bg-card">
                     <div className="max-w-4xl mx-auto">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="h-px w-8 bg-primary/60" />
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">The Problem</p>
                         </div>
-                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-white">
+                        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-foreground">
                             Manual invoice processing is costing Singapore finance teams more than they realise
                         </h2>
                         <div className="grid md:grid-cols-2 gap-6">
                             {painPoints.map((item, i) => (
-                                <div key={i} className="flex gap-4 p-6 border border-white/10 bg-white/5">
+                                <div key={i} className="flex gap-4 p-6 border border-border bg-card">
                                     <item.icon className="size-5 text-primary shrink-0 mt-0.5" />
                                     <p className="text-muted-foreground leading-relaxed">{item.text}</p>
                                 </div>
@@ -144,7 +144,7 @@ export default function InvoiceAutomationSingaporePage() {
                 </section>
 
                 {/* Free Tool CTA */}
-                <section className="py-20 px-6 border-b border-white/10">
+                <section className="py-20 px-6 border-b border-border">
                     <div className="max-w-4xl mx-auto">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="h-px w-8 bg-primary/60" />
@@ -152,7 +152,7 @@ export default function InvoiceAutomationSingaporePage() {
                         </div>
                         <div className="grid md:grid-cols-2 gap-12 items-center">
                             <div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                                     Extract invoice data in seconds. Free.
                                 </h2>
                                 <p className="text-muted-foreground leading-relaxed mb-8">
@@ -172,7 +172,7 @@ export default function InvoiceAutomationSingaporePage() {
                                     </MagneticButton>
                                 </Link>
                             </div>
-                            <div className="bg-white/5 border border-white/10 p-8">
+                            <div className="bg-card border border-border p-8">
                                 <p className="text-xs font-mono uppercase tracking-widest text-primary mb-4">What you get</p>
                                 <div className="space-y-4">
                                     {[
@@ -180,8 +180,8 @@ export default function InvoiceAutomationSingaporePage() {
                                         { label: "Summary CSV", desc: "Invoice header, totals, GST, and currency" },
                                         { label: "Structured JSON", desc: "For developers connecting to their own systems" },
                                     ].map((item, i) => (
-                                        <div key={i} className="border-t border-white/10 pt-4">
-                                            <p className="font-bold text-white text-sm mb-1">{item.label}</p>
+                                        <div key={i} className="border-t border-border pt-4">
+                                            <p className="font-bold text-foreground text-sm mb-1">{item.label}</p>
                                             <p className="text-sm text-muted-foreground">{item.desc}</p>
                                         </div>
                                     ))}
@@ -192,7 +192,7 @@ export default function InvoiceAutomationSingaporePage() {
                 </section>
 
                 {/* Full Sprint */}
-                <section className="py-20 px-6 border-b border-white/10 bg-black/20">
+                <section className="py-20 px-6 border-b border-border bg-card">
                     <div className="max-w-4xl mx-auto">
                         <div className="flex items-center gap-3 mb-8">
                             <div className="h-px w-8 bg-primary/60" />
@@ -200,7 +200,7 @@ export default function InvoiceAutomationSingaporePage() {
                         </div>
                         <div className="grid md:grid-cols-2 gap-12 items-start">
                             <div>
-                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
                                     Need the full AP automation system?
                                 </h2>
                                 <p className="text-muted-foreground leading-relaxed mb-6">
@@ -222,10 +222,10 @@ export default function InvoiceAutomationSingaporePage() {
                                     { step: "03", title: "ERP integration", desc: "Clean data pushed to Xero, NetSuite, SAP, or your spreadsheet" },
                                     { step: "04", title: "Exception handling", desc: "Mismatches, missing fields, and anomalies routed to a human queue" },
                                 ].map((item, i) => (
-                                    <div key={i} className="flex gap-4 p-5 border border-white/10 bg-white/5">
+                                    <div key={i} className="flex gap-4 p-5 border border-border bg-card">
                                         <span className="text-xs font-mono text-primary/60 pt-0.5 shrink-0">{item.step}</span>
                                         <div>
-                                            <p className="font-bold text-white text-sm mb-1">{item.title}</p>
+                                            <p className="font-bold text-foreground text-sm mb-1">{item.title}</p>
                                             <p className="text-sm text-muted-foreground">{item.desc}</p>
                                         </div>
                                     </div>
@@ -236,9 +236,9 @@ export default function InvoiceAutomationSingaporePage() {
                 </section>
 
                 {/* FAQ */}
-                <section className="py-20 px-6 border-b border-white/10">
+                <section className="py-20 px-6 border-b border-border">
                     <div className="max-w-3xl mx-auto">
-                        <h2 className="text-3xl font-bold mb-12 font-mono tracking-tighter text-white">FAQ</h2>
+                        <h2 className="text-3xl font-bold mb-12 font-mono tracking-tighter text-foreground">FAQ</h2>
                         <div className="space-y-6">
                             {[
                                 {
@@ -254,8 +254,8 @@ export default function InvoiceAutomationSingaporePage() {
                                     a: "Our 30-day sprint delivers a production-ready invoice processing automation integrated with your existing ERP or spreadsheet workflow. Fixed scope, fixed price, defined outcome.",
                                 },
                             ].map((item, i) => (
-                                <div key={i} className="border-t border-white/10 pt-6">
-                                    <p className="font-bold text-white mb-3">{item.q}</p>
+                                <div key={i} className="border-t border-border pt-6">
+                                    <p className="font-bold text-foreground mb-3">{item.q}</p>
                                     <p className="text-muted-foreground leading-relaxed">{item.a}</p>
                                 </div>
                             ))}
@@ -266,7 +266,7 @@ export default function InvoiceAutomationSingaporePage() {
                 {/* Final CTA */}
                 <section className="py-24 px-6">
                     <div className="max-w-3xl mx-auto text-center">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tighter text-white">
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tighter text-foreground">
                             Start with the free tool.<br />
                             <span className="text-primary">Scale when you are ready.</span>
                         </h2>
@@ -280,7 +280,7 @@ export default function InvoiceAutomationSingaporePage() {
                                 </MagneticButton>
                             </Link>
                             <Link href="/tools/invoice-processing-automation-hong-kong/">
-                                <MagneticButton className="bg-transparent border border-white/20 text-white px-10 py-5 text-lg hover:bg-white/10 transition-colors">
+                                <MagneticButton className="bg-transparent border border-border text-foreground px-10 py-5 text-lg hover:bg-card transition-colors">
                                     Hong Kong version
                                 </MagneticButton>
                             </Link>

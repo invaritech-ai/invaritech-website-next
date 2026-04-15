@@ -80,10 +80,10 @@ Full analysis at: ${window.location.origin}/assessment
                             { label: "READINESS", val: result.readinessScore, color: "bg-blue-500" },
                             { label: "RISK INDEX", val: result.riskScore, color: "bg-orange-500" }
                         ].map((m, i) => (
-                            <div key={i} className="border border-white/10 bg-white/5 p-8 group hover:bg-white/10 transition-colors relative overflow-hidden">
+                            <div key={i} className="border border-border bg-card p-8 group hover:bg-secondary/40 transition-colors relative overflow-hidden">
                                 <div className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase mb-8">{m.label}</div>
                                 <div className="text-6xl font-bold tracking-tighter mb-2">{m.val}</div>
-                                <div className="h-[2px] w-full bg-white/5 overflow-hidden absolute bottom-0 left-0">
+                                <div className="h-[2px] w-full bg-card overflow-hidden absolute bottom-0 left-0">
                                      <motion.div 
                                         initial={{ width: 0 }}
                                         animate={{ width: `${m.val}%` }}
@@ -96,7 +96,7 @@ Full analysis at: ${window.location.origin}/assessment
                     </div>
 
                     {/* Strategic block */}
-                    <div className="border border-white/10 bg-white/5 p-12 relative overflow-hidden group">
+                    <div className="border border-border bg-card p-12 relative overflow-hidden group">
                          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[120px] group-hover:bg-primary/10 transition-colors duration-1000" />
                          <div className="absolute top-0 left-0 w-1 h-32 bg-primary/50" />
                          
@@ -107,7 +107,7 @@ Full analysis at: ${window.location.origin}/assessment
                              {result.strategicAdvice}
                          </p>
                          
-                         <div className="grid md:grid-cols-2 gap-12 pt-12 border-t border-white/10">
+                         <div className="grid md:grid-cols-2 gap-12 pt-12 border-t border-border">
                             <div>
                                 <h4 className="text-[10px] font-mono tracking-widest text-primary uppercase mb-6 flex items-center underline decoration-primary/30 underline-offset-8">Key Strengths</h4>
                                 <ul className="space-y-4">
@@ -134,8 +134,8 @@ Full analysis at: ${window.location.origin}/assessment
 
                 {/* Sidebar ROI */}
                 <div className="space-y-8">
-                     <div className="border border-white/10 bg-white/5 p-8 flex flex-col justify-between h-[320px] relative overflow-hidden hover:bg-white/10 transition-colors group">
-                        <div className="absolute top-4 right-4 text-white/5 group-hover:text-white/10 transition-colors">
+                     <div className="border border-border bg-card p-8 flex flex-col justify-between h-[320px] relative overflow-hidden hover:bg-secondary/40 transition-colors group">
+                        <div className="absolute top-4 right-4 text-muted-foreground group-hover:text-muted-foreground transition-colors">
                             <ArrowRight className="w-12 h-12 -rotate-45" />
                         </div>
                         <h3 className="text-[10px] font-mono tracking-widest text-primary uppercase">Est. Recovered Hours / Mo</h3>
@@ -144,7 +144,7 @@ Full analysis at: ${window.location.origin}/assessment
                             <div className="text-[10px] font-mono text-muted-foreground uppercase opacity-50 tracking-widest">Operational Capacity Freeload</div>
                         </div>
                      </div>
-                     <div className="border border-white/10 bg-primary/5 p-8 flex flex-col justify-between h-[320px] relative overflow-hidden hover:bg-primary/10 transition-colors group">
+                     <div className="border border-border bg-primary/5 p-8 flex flex-col justify-between h-[320px] relative overflow-hidden hover:bg-primary/10 transition-colors group">
                         <div className="absolute top-4 right-4 text-primary/10 group-hover:text-primary/20 transition-colors">
                             <Zap className="w-12 h-12" />
                         </div>
@@ -157,7 +157,7 @@ Full analysis at: ${window.location.origin}/assessment
                      
                      <div className="pt-8 space-y-6">
                          <div className="text-[10px] font-mono tracking-widest text-muted-foreground uppercase flex items-center gap-4">
-                            <span className="w-8 h-[1px] bg-white/10" />
+                            <span className="w-8 h-[1px] bg-secondary/40" />
                             Command Center
                          </div>
                          <div className="grid gap-3">
@@ -182,7 +182,7 @@ Full analysis at: ${window.location.origin}/assessment
 
                             <button
                                 onClick={onReset}
-                                className="w-full h-12 border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 font-mono text-xs tracking-widest uppercase transition-colors"
+                                className="w-full h-12 border border-border text-muted-foreground hover:text-muted-foreground hover:border-border font-mono text-xs tracking-widest uppercase transition-colors"
                             >
                                 Retake Assessment
                             </button>
@@ -192,7 +192,7 @@ Full analysis at: ${window.location.origin}/assessment
             </div>
 
             {/* Math Breakdown */}
-            <div className="pt-24 border-t border-white/10">
+            <div className="pt-24 border-t border-border">
                  <div className="flex items-center gap-4 mb-12">
                     <Calculator className="w-5 h-5 text-primary opacity-50" />
                     <h3 className="text-[10px] font-mono tracking-[0.3em] text-muted-foreground uppercase">Mathematical Governance Protocol</h3>
@@ -211,7 +211,7 @@ Full analysis at: ${window.location.origin}/assessment
                         </div>
                      ))}
                  </div>
-                 <p className="mt-16 text-[10px] text-muted-foreground font-light leading-relaxed italic max-w-4ful border-l border-white/20 pl-6 uppercase tracking-widest opacity-40">
+                 <p className="mt-16 text-[10px] text-muted-foreground font-light leading-relaxed italic max-w-4ful border-l border-border pl-6 uppercase tracking-widest opacity-40">
                     Calculations follow the Invaritech ROI Framework v4.2. Benchmarked against {formatLabel(inputs.functionFocus || result.calculationBasis.functionFocus)} datasets. Accuracy floor: 85% for initial neural deployments.
                  </p>
             </div>

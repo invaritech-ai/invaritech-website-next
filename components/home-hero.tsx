@@ -49,7 +49,7 @@ export default function HomeHero() {
 
             <div className="mx-auto max-w-7xl px-3 sm:px-6">
                 <div className="grid items-start gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
-                    <div className="text-white">
+                    <div className="text-foreground">
                         <TextEffect
                             per="char"
                             preset="fade-in-blur"
@@ -83,10 +83,10 @@ export default function HomeHero() {
                             before/after impact.
                         </TextEffect>
 
-                        <div className="mt-7 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-none border border-white/20 bg-black/25 px-5 py-3 text-sm font-medium text-white backdrop-blur">
+                        <div className="mt-7 inline-flex flex-wrap items-center gap-x-3 gap-y-2 rounded-none border border-white/20 bg-black/25 px-5 py-3 text-sm font-medium text-foreground backdrop-blur">
                             <span className="text-white/80">
                                 Fixed scope:{" "}
-                                <span className="font-semibold text-white">
+                                <span className="font-semibold text-foreground">
                                     $10,000-$15,000 USD
                                 </span>{" "}
                                 <span className="text-white/60">
@@ -136,7 +136,7 @@ export default function HomeHero() {
                                     asChild
                                     size="lg"
                                     variant="outline"
-                                    className="rounded-none border-white/25 bg-transparent text-white hover:bg-white/10 hover:text-white"
+                                    className="rounded-none border-white/25 bg-transparent text-foreground hover:bg-white/10 hover:text-foreground"
                                 >
                                     <Link href="/services/ai-automation-sprint/">
                                         View the Sprint
@@ -192,7 +192,7 @@ export default function HomeHero() {
                         className="relative"
                     >
                         <div className="relative rounded-none border border-white/15 bg-black/35 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-6">
-                            <div className="mb-4 flex items-center justify-between gap-3 rounded-none border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-white">
+                            <div className="mb-4 flex items-center justify-between gap-3 rounded-none border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-foreground">
                                 <span>30-Day Drop-In AI Automation Sprint</span>
                                 <span className="rounded-full border border-primary/45 bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">
                                     Live Build

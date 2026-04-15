@@ -1,7 +1,11 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Brain, FileText, Eye, DollarSign, Code } from "lucide-react";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import Link from "next/link";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const solutions = [
     {
@@ -43,7 +47,7 @@ const solutions = [
 ];
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
-    <div className="size-10 flex items-center justify-center rounded-none bg-primary/10 border border-white/10 group-hover:border-primary/40 group-hover:bg-primary/15 transition-colors">
+    <div className="size-9 flex items-center justify-center border border-border bg-secondary/50 group-hover:border-primary/30 group-hover:bg-primary/[0.06] transition-colors">
         <div className="text-primary">
             {children}
         </div>
@@ -51,44 +55,79 @@ const CardDecorator = ({ children }: { children: ReactNode }) => (
 );
 
 export default function WhatWeBuild() {
+    const sectionRef = useRef<HTMLElement>(null);
+
+    useGSAP(() => {
+        const ctx = gsap.context(() => {
+            gsap.from(".wwb-header", {
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 80%",
+                    once: true,
+                },
+                opacity: 0,
+                y: 24,
+                duration: 0.5,
+                stagger: 0.08,
+                ease: "power2.out",
+            });
+
+            gsap.from(".wwb-card", {
+                scrollTrigger: {
+                    trigger: ".wwb-grid",
+                    start: "top 85%",
+                    once: true,
+                },
+                opacity: 0,
+                y: 20,
+                duration: 0.45,
+                stagger: 0.06,
+                ease: "power2.out",
+            });
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
+
     return (
-        <section className="relative overflow-hidden py-16 md:py-32 bg-[#030305] border-t border-white/5">
-            <div className="absolute inset-0 -z-10 opacity-[0.03] bg-[url('/noise.png')] mix-blend-overlay" />
+        <section ref={sectionRef} className="relative overflow-hidden py-16 md:py-32 bg-card">
+            <div className="absolute top-0 left-0 w-full h-[1px] editorial-divider-full" />
 
             <div className="mx-auto max-w-6xl px-6">
                 <div className="mb-12">
-                    <div className="flex items-center gap-3 mb-6">
-                        <div className="h-px w-8 bg-primary/60"></div>
-                        <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                    <div className="wwb-header flex items-center gap-3 mb-6">
+                        <span className="text-[11px] font-mono text-primary/50">02</span>
+                        <div className="h-[1px] w-6 bg-primary/30" />
+                        <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                             What We Build
                         </p>
                     </div>
-                    <h2 className="text-balance text-5xl font-bold leading-[0.9] tracking-tight text-white md:text-7xl mb-4">
-                        Intelligent systems<br/>that reduce cost-to-serve.
+                    <h2 className="wwb-header font-editorial text-5xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-7xl mb-4">
+                        Intelligent systems<br />that reduce cost-to-serve.
                     </h2>
-                    <p className="text-lg text-white/60 max-w-2xl">
+                    <p className="wwb-header text-lg text-muted-foreground max-w-2xl">
                         Every engagement delivers one production-grade automation—auditable, governed, and measurably better than the baseline.
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 mb-px">
+                <div className="wwb-grid grid md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-border">
                     {solutions.map((solution) => (
                         <div
                             key={solution.title}
-                            className="group bg-[#030305] p-6 hover:bg-white/[0.02] transition-colors border border-white/5 hover:border-primary/20"
+                            className="wwb-card group bg-background p-6 hover:bg-card transition-colors"
                         >
                             <CardDecorator>
-                                <solution.icon className="size-5" aria-hidden />
+                                <solution.icon className="size-4" aria-hidden />
                             </CardDecorator>
-                            <h3 className="mt-5 font-semibold text-white text-base">
+                            <h3 className="mt-5 font-semibold text-foreground text-base">
                                 {solution.title}
                             </h3>
-                            <p className="mt-2 text-sm text-white/50 leading-relaxed mb-4">
+                            <p className="mt-2 text-sm text-muted-foreground leading-relaxed mb-4">
                                 {solution.description}
                             </p>
-                            <div className="border-l-2 border-primary/30 bg-primary/5 pl-3 py-1.5">
-                                <p className="text-xs font-mono text-primary/80 mb-0.5">Outcomes</p>
-                                <p className="text-xs text-white/40 leading-relaxed">
+                            <div className="border-l-2 border-primary/25 bg-primary/[0.03] pl-3 py-1.5">
+                                <p className="text-[10px] font-mono text-primary/70 mb-0.5">Outcomes</p>
+                                <p className="text-xs text-muted-foreground leading-relaxed">
                                     {solution.outcomes}
                                 </p>
                             </div>
@@ -97,9 +136,9 @@ export default function WhatWeBuild() {
                 </div>
 
                 <div className="mt-10">
-                    <Button asChild variant="outline" size="lg" className="rounded-none border-white/10 bg-transparent text-white hover:bg-white hover:text-black transition-colors">
+                    <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-colors">
                         <Link href="/work/">
-                            See proof of delivery →
+                            See proof of delivery &rarr;
                         </Link>
                     </Button>
                 </div>

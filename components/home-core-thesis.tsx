@@ -49,7 +49,7 @@ export default function HomeCoreThesis() {
     return (
         <section
             ref={containerRef}
-            className="relative overflow-hidden bg-black py-20 md:py-32"
+            className="relative overflow-hidden bg-background py-20 md:py-32"
         >
             <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
                 <div className="absolute inset-0 bg-[radial-gradient(65%_70%_at_10%_20%,rgba(255,198,46,0.12),transparent_60%),radial-gradient(60%_70%_at_85%_40%,rgba(58,255,213,0.08),transparent_65%)]" />
@@ -58,7 +58,7 @@ export default function HomeCoreThesis() {
 
             <div className="mx-auto max-w-7xl px-6">
                 <div className="mb-12 grid gap-6 md:mb-16 lg:grid-cols-[1fr_auto] lg:items-end">
-                    <div className="max-w-3xl text-white">
+                    <div className="max-w-3xl text-foreground">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-px w-8 bg-primary/60"></div>
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">Core Thesis</p>
@@ -66,7 +66,7 @@ export default function HomeCoreThesis() {
                         <h2 className="text-balance text-4xl font-semibold leading-[0.95] md:text-6xl">
                             Layered intelligence beats replacement.
                         </h2>
-                        <p className="mt-5 max-w-2xl text-lg text-white/75">
+                        <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
                             Most AI projects fail because they start by
                             replacing systems of record. We do the opposite:
                             keep what runs the business, then add an
@@ -76,7 +76,7 @@ export default function HomeCoreThesis() {
                     </div>
 
                     <div className="hidden lg:block text-right">
-                        <div className="inline-block border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/70 backdrop-blur">
+                        <div className="inline-block border border-border bg-card px-4 py-3 text-sm text-muted-foreground backdrop-blur">
                             A thesis you can defend in governance reviews.
                         </div>
                     </div>
@@ -84,7 +84,7 @@ export default function HomeCoreThesis() {
 
                 <div className="relative">
                     {/* Spine - Pulsing Energy Beam */}
-                    <div className="absolute left-4 top-0 bottom-0 w-px bg-white/10 md:left-1/2 md:-translate-x-1/2" />
+                    <div className="absolute left-4 top-0 bottom-0 w-px bg-secondary/40 md:left-1/2 md:-translate-x-1/2" />
                     <motion.div
                         style={{ scaleY, originY: 0 }}
                         className="absolute left-4 top-0 bottom-0 w-[3px] bg-gradient-to-b from-primary via-white to-primary shadow-[0_0_30px_rgba(255,140,0,0.6)] md:left-1/2 md:-translate-x-1/2 rounded-full"
@@ -107,7 +107,7 @@ export default function HomeCoreThesis() {
                     </div>
                 </div>
 
-                <div className="mt-20 rounded-none border border-primary/20 bg-primary/5 p-8 text-center text-white backdrop-blur md:mt-32">
+                <div className="mt-20 rounded-none border border-primary/20 bg-primary/5 p-8 text-center text-foreground backdrop-blur md:mt-32">
                     <p className="text-balance text-3xl font-bold md:text-5xl tracking-tight">
                         We don’t burn money on AI where simpler systems work
                         better.
@@ -132,7 +132,7 @@ function SpineCard({ point, index }: { point: ThesisPoint; index: number }) {
             )}
         >
             {/* Dot + connector */}
-            <div className="absolute left-4 top-7 h-3 w-3 rounded-full border border-white/25 bg-black md:left-1/2 md:-translate-x-1/2">
+            <div className="absolute left-4 top-7 h-3 w-3 rounded-full border border-border bg-background md:left-1/2 md:-translate-x-1/2">
                 <motion.div
                     initial={{ scale: 0 }}
                     animate={{ scale: isInView ? 1 : 0 }}
@@ -154,12 +154,12 @@ function SpineCard({ point, index }: { point: ThesisPoint; index: number }) {
                     filter: isInView ? "blur(0px)" : "blur(12px)",
                 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className="ml-12 max-w-xl border border-white/10 bg-white/5 p-8 text-white backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)] md:ml-0 md:w-[46%] hover:border-primary/30 transition-colors duration-500"
+                className="ml-12 max-w-xl border border-border bg-card p-8 text-foreground backdrop-blur-md shadow-[0_0_30px_rgba(0,0,0,0.5)] md:ml-0 md:w-[46%] hover:border-primary/30 transition-colors duration-500"
             >
                 <h3 className="text-2xl font-bold leading-tight md:text-4xl tracking-tight mb-4">
                     {point.title}
                 </h3>
-                <p className="text-base text-white/70 md:text-lg leading-relaxed font-light">
+                <p className="text-base text-muted-foreground md:text-lg leading-relaxed font-light">
                     {point.detail}
                 </p>
             </motion.div>

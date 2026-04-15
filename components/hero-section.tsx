@@ -61,7 +61,7 @@ export default function HeroSection() {
                             preset="fade-in-blur"
                             speedSegment={0.45}
                             as="h1"
-                            className="max-w-4xl text-balance text-5xl font-semibold leading-[0.9] md:text-7xl xl:text-[5.45rem]"
+                            className="max-w-4xl text-balance text-5xl font-semibold leading-[0.9] text-white md:text-7xl xl:text-[5.45rem]"
                         >
                             Enterprise AI Automation Without Disruption
                         </TextEffect>
@@ -78,7 +78,7 @@ export default function HeroSection() {
                             incrementally, and measurably.
                         </TextEffect>
 
-                        <div className="mt-7 inline-flex items-center rounded-full border border-primary/50 bg-primary/20 px-5 py-2 text-sm font-medium text-white">
+                        <div className="mt-7 inline-flex items-center rounded-full border border-primary/50 bg-primary/20 px-5 py-2 text-sm font-medium text-white/90">
                             £8,000-£12,000 per sprint · fixed scope for faster
                             internal approval
                         </div>
@@ -154,7 +154,7 @@ export default function HeroSection() {
                         className="relative"
                     >
                         <div className="relative rounded-[2rem] border border-white/15 bg-black/35 p-5 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-6">
-                            <div className="mb-4 flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-white">
+                            <div className="mb-4 flex items-center justify-between rounded-2xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-foreground">
                                 <span>30-Day Drop-In AI Automation Sprint</span>
                                 <span className="rounded-full border border-primary/45 bg-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em]">
                                     Live Build

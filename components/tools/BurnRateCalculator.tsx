@@ -53,11 +53,11 @@ function NumberInput({
     return (
         <div className="space-y-2">
             <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70">
+                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                     {label}
                 </span>
-                <div className="flex items-center border border-white/20 bg-black/40 focus-within:border-primary/60 transition-colors w-full sm:w-auto">
-                    <span className="text-xs font-mono text-white/40 pl-3 pr-1 select-none">{symbol}</span>
+                <div className="flex items-center border border-border bg-background focus-within:border-primary/60 transition-colors w-full sm:w-auto">
+                    <span className="text-xs font-mono text-muted-foreground/60 pl-3 pr-1 select-none">{symbol}</span>
                     <input
                         type="text"
                         inputMode="numeric"
@@ -70,12 +70,12 @@ function NumberInput({
                             setRaw(String(v));
                             onChange(v);
                         }}
-                        className="bg-transparent text-right text-xl font-bold tracking-tighter text-white flex-1 sm:w-28 pr-3 py-2 outline-none tabular-nums"
+                        className="bg-transparent text-right text-xl font-bold tracking-tighter text-foreground flex-1 sm:w-28 pr-3 py-2 outline-none tabular-nums"
                     />
                 </div>
             </div>
             {note && (
-                <p className="text-[10px] font-mono text-white/40 leading-relaxed">{note}</p>
+                <p className="text-[10px] font-mono text-muted-foreground/60 leading-relaxed">{note}</p>
             )}
         </div>
     );
@@ -92,10 +92,10 @@ function DaysSlider({
     return (
         <div className="space-y-3">
             <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/70">
+                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                     Days to receive cash report
                 </span>
-                <span className="text-xl font-bold tracking-tighter text-white tabular-nums">
+                <span className="text-xl font-bold tracking-tighter text-foreground tabular-nums">
                     {value} {value === 1 ? "day" : "days"}
                 </span>
             </div>
@@ -127,7 +127,7 @@ function DaysSlider({
                     background: `linear-gradient(to right, var(--primary) ${pct}%, rgba(255,255,255,0.2) ${pct}%)`,
                 }}
             />
-            <p className="text-[10px] font-mono text-white/40 leading-relaxed">
+            <p className="text-[10px] font-mono text-muted-foreground/60 leading-relaxed">
                 After month-end close, how many days until the CFO receives the cash position update?
             </p>
         </div>
@@ -188,7 +188,7 @@ export function BurnRateCalculator() {
         <div className="space-y-2">
             {/* Currency selector */}
             <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs font-mono uppercase tracking-widest text-white/60 shrink-0">
+                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground shrink-0">
                     Currency
                 </span>
                 <div className="flex gap-1">
@@ -199,7 +199,7 @@ export function BurnRateCalculator() {
                             className={`px-4 py-2 text-xs font-mono uppercase tracking-widest border transition-all duration-150 ${
                                 currency === c
                                     ? "border-primary bg-primary text-black font-bold"
-                                    : "border-white/20 text-white/50 hover:border-white/40 hover:text-white/80"
+                                    : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
                             }`}
                         >
                             {c}
@@ -209,10 +209,10 @@ export function BurnRateCalculator() {
             </div>
 
             {/* Main grid */}
-            <div className="grid lg:grid-cols-2 gap-px bg-white/10">
+            <div className="grid lg:grid-cols-2 gap-4">
                 {/* Inputs */}
-                <div className="bg-[#0a0a0c] p-5 sm:p-8 space-y-8">
-                    <div className="flex items-center gap-3 pb-6 border-b border-white/15">
+                <div className="bg-card p-5 sm:p-8 space-y-8">
+                    <div className="flex items-center gap-3 pb-6 border-b border-border">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
                             Your Numbers
@@ -247,8 +247,8 @@ export function BurnRateCalculator() {
                 </div>
 
                 {/* Results */}
-                <div className="bg-[#080808] p-5 sm:p-8 space-y-6 flex flex-col">
-                    <div className="flex items-center gap-3 pb-6 border-b border-white/15">
+                <div className="bg-background p-5 sm:p-8 space-y-6 flex flex-col">
+                    <div className="flex items-center gap-3 pb-6 border-b border-border">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
                             Your Cash Position
@@ -257,10 +257,10 @@ export function BurnRateCalculator() {
 
                     {/* Net burn / profit */}
                     <div className="flex items-baseline justify-between">
-                        <span className="text-xs font-mono uppercase tracking-widest text-white/60">
+                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
                             {isCashPositive ? "Net monthly profit" : "Net monthly burn"}
                         </span>
-                        <span className={`text-2xl font-bold tracking-tighter tabular-nums ${isCashPositive ? "text-primary" : "text-white"}`}>
+                        <span className={`text-2xl font-bold tracking-tighter tabular-nums ${isCashPositive ? "text-primary" : "text-foreground"}`}>
                             {fmt(isCashPositive ? netProfit : netBurn, cfg.symbol)}
                         </span>
                     </div>
@@ -292,8 +292,8 @@ export function BurnRateCalculator() {
                     </div>
 
                     {/* Projections */}
-                    <div className="border border-white/15 p-5">
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-4">
+                    <div className="border border-border p-5">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-4">
                             Projected Cash Balance
                         </div>
                         <div className="grid grid-cols-3 gap-2 sm:gap-4">
@@ -303,12 +303,12 @@ export function BurnRateCalculator() {
                                 { label: "12 Months", value: proj12 },
                             ].map(({ label, value }) => (
                                 <div key={label}>
-                                    <div className="text-[9px] font-mono uppercase tracking-wider text-white/40 mb-1">
+                                    <div className="text-[9px] font-mono uppercase tracking-wider text-muted-foreground/60 mb-1">
                                         {label}
                                     </div>
                                     <div
                                         className={`text-lg font-bold tracking-tighter tabular-nums ${
-                                            value < 0 ? "text-red-400" : value < balance * 0.3 ? "text-yellow-400" : "text-white"
+                                            value < 0 ? "text-red-400" : value < balance * 0.3 ? "text-yellow-400" : "text-foreground"
                                         }`}
                                     >
                                         {value < 0 ? `-${fmt(Math.abs(value), cfg.symbol)}` : fmt(value, cfg.symbol)}
@@ -319,19 +319,19 @@ export function BurnRateCalculator() {
                     </div>
 
                     {/* Visibility lag */}
-                    <div className="border border-white/10 bg-white/[0.03] p-5 mt-auto">
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/60 mb-2">
+                    <div className="border border-border bg-white/[0.03] p-5 mt-auto">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">
                             Reporting Lag Cost
                         </div>
                         <div className="flex items-baseline justify-between gap-2">
-                            <div className="text-2xl font-bold tracking-tighter text-white/80 tabular-nums">
+                            <div className="text-2xl font-bold tracking-tighter text-muted-foreground tabular-nums">
                                 {fmt(lagCost, cfg.symbol)}
                             </div>
-                            <div className="text-[10px] font-mono text-white/40 text-right leading-tight">
+                            <div className="text-[10px] font-mono text-muted-foreground/60 text-right leading-tight">
                                 of cash movement happens<br />before your report arrives
                             </div>
                         </div>
-                        <p className="text-[10px] font-mono text-white/35 mt-3 leading-relaxed">
+                        <p className="text-[10px] font-mono text-muted-foreground mt-3 leading-relaxed">
                             {reportDays} days of cash movement before your report arrives. Decisions made on data that is {reportDays} days old miss this window entirely.
                         </p>
                     </div>
@@ -339,15 +339,15 @@ export function BurnRateCalculator() {
             </div>
 
             {/* Methodology */}
-            <div className="pt-5 border-t border-white/10">
-                <p className="text-[10px] font-mono text-white/40 leading-relaxed">
+            <div className="pt-5 border-t border-border">
+                <p className="text-[10px] font-mono text-muted-foreground/60 leading-relaxed">
                     METHODOLOGY — Runway = Cash Balance ÷ Net Monthly Burn (costs − revenue). Projections assume constant burn/profit. Reporting lag cost = (days / 30) × gross throughput (inflows + outflows). This is a directional model; actual runway depends on payment timing, seasonality, and one-time items.
                 </p>
             </div>
 
             {/* CTA */}
-            <div className="border border-white/15 bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-                <p className="text-sm font-mono text-white/70 leading-relaxed">
+            <div className="border border-border bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+                <p className="text-sm font-mono text-muted-foreground leading-relaxed">
                     Visibility lag is an infrastructure problem. We build the automated cash reporting layer that eliminates it.
                 </p>
                 <Link

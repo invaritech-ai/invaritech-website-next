@@ -211,7 +211,7 @@ export default function PrivacyPage() {
                                 If you have any questions about this Privacy Policy or wish to exercise your rights, please contact our Data Protection Officer at{" "}
                                 <a
                                     href="mailto:hello@invaritech.ai"
-                                    className="text-primary hover:text-white transition-colors border-b border-primary/50 hover:border-white"
+                                    className="text-primary hover:text-foreground transition-colors border-b border-primary/50 hover:border-foreground"
                                 >
                                     hello@invaritech.ai
                                 </a>

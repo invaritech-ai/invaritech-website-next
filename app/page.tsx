@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-[#030305] selection:bg-primary/30 selection:text-primary">
+    <main className="flex min-h-screen flex-col bg-background selection:bg-primary/20 selection:text-primary">
       <ArtisticHomeHero />
       <WhatWeDoSection />
       <WhatWeBuild />
