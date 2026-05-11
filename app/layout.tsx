@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Cormorant_Garamond } from "next/font/google";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import Script from "next/script";
@@ -37,13 +36,6 @@ const geistMono = localFont({
     variable: "--font-geist-mono",
     display: "swap",
     fallback: ["monospace"],
-});
-
-const cormorant = Cormorant_Garamond({
-    subsets: ["latin"],
-    weight: ["300", "400", "500", "600", "700"],
-    variable: "--font-serif",
-    display: "swap",
 });
 
 const metadataVerification: Metadata["verification"] = {
@@ -197,7 +189,7 @@ export default function RootLayout({
                 </Script>
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
             >
                 <ThemeProvider
                     attribute="class"

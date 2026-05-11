@@ -50,7 +50,7 @@
     --sidebar-ring: #C8962D;
 
     --font-sans: var(--font-geist-sans), ui-sans-serif, sans-serif, system-ui;
-    --font-serif: var(--font-serif-custom), "Libre Baskerville", serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", serif;
     --font-mono: var(--font-geist-mono), "IBM Plex Mono", monospace;
 
     --radius: 0.125rem;
