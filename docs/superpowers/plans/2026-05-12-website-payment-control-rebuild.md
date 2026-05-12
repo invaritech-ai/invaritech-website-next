@@ -58,6 +58,20 @@ Keep:
 
 There are uncommitted prototype edits from the interrupted implementation pass. The implementation worker should review them with `git diff` before editing, keep only the parts matching this plan, and reshape them into the final design. Do not revert unrelated user changes. These prototype edits are not an approved implementation by themselves.
 
+## Website Copy Standard
+
+Public website copy must sound like a technical founder speaking plainly to a finance operator.
+
+Hard rules:
+
+- Do not use em dashes.
+- Do not use en dashes.
+- Do not use formulaic contrast lines like `It is not an X problem. It is a Y problem.`
+- Do not use obvious AI-written rhetoric such as `not just X, but Y`, `X is not merely Y`, `the future of`, `unlock`, `supercharge`, `seamless`, `transform`, or `revolutionize`.
+- Prefer short direct sentences.
+- Use concrete nouns from the buyer's work: invoice, payment, approver, evidence, exception, supplier, carrier, statement, POD, queue, audit trail.
+- Use contractions sparingly. Prefer steady, professional copy.
+
 ---
 
 ### Task 1: Establish The Site Design Language
@@ -1205,7 +1219,22 @@ Expected:
 - Structural classes are acceptable only where they express behavior or positioning, such as `relative`, `absolute`, `hidden`, `group`, `contents`, `sr-only`, `z-*`, icon sizes, or animation hooks.
 - No kept public page introduces random hardcoded Tailwind classes for `px-*`, `py-*`, `mt-*`, `mb-*`, `gap-*`, `text-*`, `bg-*`, `border-*`, `rounded-*`, `max-w-*`, or responsive typography when a `site-*` primitive exists.
 
-- [ ] **Step 6: Final text scan**
+- [ ] **Step 6: Copy-style scan**
+
+Run:
+
+```bash
+rg "—|–|It is not|It's not|not just|not merely|the future of|unlock|supercharge|seamless|transform|revolutionize" app components lib
+```
+
+Expected:
+
+- No matches in kept public pages or shared shell.
+- No em dashes or en dashes in public website copy.
+- No formulaic `It is not X. It is Y.` style copy.
+- No obvious AI-written marketing phrases.
+
+- [ ] **Step 7: Final text scan**
 
 Run:
 
@@ -1215,7 +1244,7 @@ rg "governed AI|AI automation|Drop-In Sprint|ROI Wedge|Explore the Sprint|The Sp
 
 Expected: No matches in kept public pages or shared shell. Matches in deleted files should not exist after Task 10.
 
-- [ ] **Step 7: Commit QA fixes**
+- [ ] **Step 8: Commit QA fixes**
 
 If fixes were needed:
 

@@ -300,6 +300,26 @@ Use a quiet, operational, finance-control aesthetic:
 
 The design should feel like a controlled operating manual, not a hype page.
 
+## Website Copy Standard
+
+Public website copy must sound like a technical founder speaking plainly to a finance operator.
+
+Hard rules:
+
+- Do not use em dashes.
+- Do not use en dashes.
+- Do not use formulaic contrast lines like `It is not an X problem. It is a Y problem.`
+- Do not use obvious AI-written rhetoric such as `not just X, but Y`, `X is not merely Y`, `the future of`, `unlock`, `supercharge`, `seamless`, `transform`, or `revolutionize`.
+- Prefer short direct sentences.
+- Use concrete nouns from the buyer's work: invoice, payment, approver, evidence, exception, supplier, carrier, statement, POD, queue, audit trail.
+- Use contractions sparingly. Prefer steady, professional copy.
+
+Approved style:
+
+- `We help finance teams reduce manual exception chasing, tighten approvals, and reduce dollar leakage across the software they already use.`
+- `Are your payment controls still living in inboxes, spreadsheets, and tribal knowledge?`
+- `Every release decision is replayable with owner, timestamp, and audit notes.`
+
 ## Design System Requirement
 
 Before rebuilding pages, define the reusable design language in `app/globals.css`.
