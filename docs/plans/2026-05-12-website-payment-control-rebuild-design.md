@@ -300,6 +300,27 @@ Use a quiet, operational, finance-control aesthetic:
 
 The design should feel like a controlled operating manual, not a hype page.
 
+## Design System Requirement
+
+Before rebuilding pages, define the reusable design language in `app/globals.css`.
+
+The implementation should establish shared primitives for:
+
+- Colors and section backgrounds.
+- Border radius.
+- Desktop, tablet, and mobile section spacing.
+- Horizontal page margins.
+- Typography scale.
+- Grids.
+- Cards.
+- Buttons.
+- Form inputs.
+- Notices and divider panels.
+
+Rebuilt pages should use semantic site classes such as `site-page`, `site-section`, `site-container`, `site-h1`, `site-h2`, `site-lead`, `site-card`, `site-button`, and `site-input`.
+
+Do not scatter random one-off Tailwind classes across page JSX for colors, margins, padding, gaps, text sizing, borders, or radius. If a visual pattern is needed, add a named design primitive first, then use that primitive on the page.
+
 ## Implementation Guardrails
 
 - Delete or redirect old public routes only after redirect handling is in place.
