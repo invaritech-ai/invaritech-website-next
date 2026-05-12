@@ -321,6 +321,18 @@ Allow structural utilities only when a semantic class does not express the layou
 If a new visual pattern is needed, add a semantic class in app/globals.css first, then use it.
 ```
 
+Frontend-design direction:
+
+```txt
+Concept: The controlled ledger.
+Build the site like a finance operator's control room: ledgers, rule tables, approval queues, evidence stamps, and audit trails.
+Tone: brutally clear, editorial, industrial, quietly premium.
+Use full-width bands, constrained content, ledger rows, rule-table grids, numbered lanes, and evidence panels.
+Avoid generic SaaS cards, abstract AI graphics, purple or blue AI gradients, orbs, bokeh, chatbot bubbles, and decorative dashboards.
+Use restrained motion only for hierarchy. Motion must use transform and opacity, and must honor reduced motion.
+Interactive states must increase contrast. Cards can change surface or border contrast, but must not jump or resize.
+```
+
 - [ ] **Step 3: Verify font variables and design primitive names exist**
 
 Run:

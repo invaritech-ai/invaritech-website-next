@@ -300,6 +300,70 @@ Use a quiet, operational, finance-control aesthetic:
 
 The design should feel like a controlled operating manual, not a hype page.
 
+## Frontend Design Direction
+
+Use this aesthetic concept:
+
+`The controlled ledger.`
+
+The site should feel like a finance operator's control room, built from ledgers, rule tables, approval queues, evidence stamps, and audit trails. It should be distinctive through precision, rhythm, and operational detail rather than decoration.
+
+Tone:
+
+- Brutally clear.
+- Editorial.
+- Industrial.
+- Quietly premium.
+- Built for repeat operators, not casual browsing.
+
+Memorable visual signal:
+
+The visitor should remember the site as the one with rule-table structure, audit marks, evidence lanes, and controlled payment language. It should not look like a generic AI automation agency, SaaS template, or startup landing page.
+
+Composition rules:
+
+- Use full-width bands and constrained inner content.
+- Prefer ledger rows, rule-table grids, numbered lanes, and evidence panels over floating marketing cards.
+- Keep repeated cards sharp and compact with radius at `0.125rem`.
+- Use asymmetry only where it clarifies hierarchy, such as a large editorial heading beside a compact evidence panel.
+- Keep the next section slightly visible below the hero on common desktop and mobile viewports.
+- Do not use generic hero illustration, abstract SVG art, gradient blobs, bokeh, or decorative orbs.
+- Do not use split hero card patterns.
+
+Visual motifs allowed:
+
+- Ledger lines.
+- Fine rule-table borders.
+- Timestamp-like labels.
+- Approval queue statuses.
+- Evidence tags.
+- Audit-note panels.
+- Monospace reference IDs.
+- Subtle paper grain already present in the site.
+
+Visual motifs not allowed:
+
+- Purple or blue AI gradients.
+- Orb backgrounds.
+- Abstract neural-network graphics.
+- Chatbot-like bubbles.
+- Oversized SaaS feature cards.
+- Decorative dashboards that do not show the actual payment-control concept.
+
+Motion:
+
+- Keep motion restrained.
+- Use transform and opacity only.
+- Honor reduced motion.
+- Use motion to reveal hierarchy, not to entertain.
+- Prefer one composed page-load or section reveal over scattered micro-animations.
+
+Interaction:
+
+- Buttons, links, and form controls must have visible hover and focus-visible states.
+- Interactive states should increase contrast.
+- Cards may change surface color or border contrast on hover, but should not jump or resize.
+
 ## Website Copy Standard
 
 Public website copy must sound like a technical founder speaking plainly to a finance operator.
