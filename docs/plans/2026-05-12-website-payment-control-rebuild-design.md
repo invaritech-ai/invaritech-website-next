@@ -341,6 +341,35 @@ Rebuilt pages should use semantic site classes such as `site-page`, `site-sectio
 
 Do not scatter random one-off Tailwind classes across page JSX for colors, margins, padding, gaps, text sizing, borders, or radius. If a visual pattern is needed, add a named design primitive first, then use that primitive on the page.
 
+## Typography Specification
+
+Font families:
+
+- Display font: `--font-display`, using Georgia, Cambria, and Times New Roman fallbacks.
+- Body font: `--font-body`, using the local Geist variable font.
+- Label font: `--font-label`, using the local Geist Mono variable font.
+
+Usage:
+
+- `site-h1`, `site-h2`, and `site-h3` use the display font.
+- `site-lead`, `site-body`, `site-small`, forms, cards, and paragraphs use the body font.
+- `site-kicker`, `site-meta`, `site-label`, and compact operational labels use the label font.
+
+Scale:
+
+- Hero heading: mobile `text-6xl`, tablet `text-8xl`, desktop `text-[8.5rem]`, line height `0.9`.
+- Section heading: mobile `text-4xl`, tablet and desktop `text-6xl`, tight line height.
+- Card heading: mobile `text-2xl`, tablet and desktop `text-3xl`, tight line height.
+- Lead copy: mobile `text-xl`, tablet and desktop `text-2xl`, relaxed line height.
+- Body copy: mobile `text-base`, tablet and desktop `text-lg`, relaxed line height.
+- Labels: `11px` mono uppercase with controlled tracking.
+
+Rules:
+
+- Do not choose fonts inside page JSX.
+- Do not add ad hoc `text-*`, `leading-*`, `tracking-*`, or `font-*` classes in page JSX when a `site-*` typography primitive exists.
+- If a new type style is needed, define it in `app/globals.css` first.
+
 ## Implementation Guardrails
 
 - Delete or redirect old public routes only after redirect handling is in place.

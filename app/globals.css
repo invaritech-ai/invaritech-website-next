@@ -49,9 +49,12 @@
     --sidebar-border: #DDD5C8;
     --sidebar-ring: #C8962D;
 
-    --font-sans: var(--font-geist-sans), ui-sans-serif, sans-serif, system-ui;
-    --font-serif: Georgia, Cambria, "Times New Roman", serif;
-    --font-mono: var(--font-geist-mono), "IBM Plex Mono", monospace;
+    --font-body: var(--font-geist-sans), ui-sans-serif, sans-serif, system-ui;
+    --font-display: Georgia, Cambria, "Times New Roman", serif;
+    --font-label: var(--font-geist-mono), "IBM Plex Mono", monospace;
+    --font-sans: var(--font-body);
+    --font-serif: var(--font-display);
+    --font-mono: var(--font-label);
 
     --radius: 0.125rem;
 }
@@ -228,6 +231,18 @@ body {
 
     .site-kicker {
         @apply mb-8 inline-flex max-w-max border-y border-primary/30 py-2 text-[11px] font-mono uppercase tracking-[0.24em] text-primary;
+    }
+
+    .site-font-display {
+        font-family: var(--font-display);
+    }
+
+    .site-font-body {
+        font-family: var(--font-body);
+    }
+
+    .site-font-label {
+        font-family: var(--font-label);
     }
 
     .site-h1 {

@@ -4,7 +4,7 @@
 
 **Goal:** Rebuild the public INVARITECH website around founder-led payment control design, keeping only the approved IA and redirecting legacy broad AI automation routes.
 
-**Architecture:** First establish a shared design language in `app/globals.css`: color tokens, radius rules, responsive spacing, typography primitives, layout primitives, cards, buttons, and form controls. Then rebuild the old broad AI homepage/service structure with a small set of focused App Router pages that consume those semantic classes instead of inventing hardcoded Tailwind styling per page. Use `next.config.ts` redirects for legacy URLs and keep sitemap/structured data aligned with the reduced IA.
+**Architecture:** First establish a shared design language in `app/globals.css`: color tokens, font specs, radius rules, responsive spacing, typography primitives, layout primitives, cards, buttons, and form controls. Then rebuild the old broad AI homepage/service structure with a small set of focused App Router pages that consume those semantic classes instead of inventing hardcoded Tailwind styling per page. Use `next.config.ts` redirects for legacy URLs and keep sitemap/structured data aligned with the reduced IA.
 
 **Tech Stack:** Next.js 16 App Router, React 19, Tailwind CSS 4, TypeScript, lucide-react icons, existing `/api/contact` proxy, existing Calendly URL in `lib/marketing.ts`.
 
@@ -119,6 +119,18 @@ Append this `@layer components` block after the existing global utility definiti
 
     .site-kicker {
         @apply mb-8 inline-flex max-w-max border-y border-primary/30 py-2 text-[11px] font-mono uppercase tracking-[0.24em] text-primary;
+    }
+
+    .site-font-display {
+        font-family: var(--font-display);
+    }
+
+    .site-font-body {
+        font-family: var(--font-body);
+    }
+
+    .site-font-label {
+        font-family: var(--font-label);
     }
 
     .site-h1 {
@@ -244,21 +256,22 @@ Use site-page for page roots.
 Use site-section or site-section-hero for vertical rhythm.
 Use site-container or site-container-narrow for horizontal margins.
 Use site-h1/site-h2/site-h3/site-lead/site-body/site-small/site-meta for typography.
+Use site-font-display/site-font-body/site-font-label only when a one-off element needs a family without a full type scale.
 Use site-grid/site-grid-two/site-grid-three plus site-card/site-card-muted for repeated cards.
 Use site-button/site-button-secondary for CTAs.
 Use site-form/site-field/site-label/site-input/site-textarea for forms.
 Use site-menu-link/site-menu-footer/site-logo-strapline for shared navigation and footer styling.
-Do not hardcode random Tailwind color, radius, margin, padding, text-size, or gap classes in page JSX.
+Do not hardcode random Tailwind color, radius, margin, padding, font, text-size, leading, tracking, or gap classes in page JSX.
 Allow structural utilities only when a semantic class does not express the layout, such as contents, sr-only, hidden, group, absolute, relative, z-index, or icon sizing where needed.
 If a new visual pattern is needed, add a semantic class in app/globals.css first, then use it.
 ```
 
-- [ ] **Step 3: Verify design primitive names exist**
+- [ ] **Step 3: Verify font variables and design primitive names exist**
 
 Run:
 
 ```bash
-rg "site-section|site-container|site-h1|site-card|site-button|site-input" app/globals.css
+rg "font-display|font-body|font-label|site-section|site-container|site-h1|site-card|site-button|site-input" app/globals.css
 ```
 
 Expected: All class names are found.
