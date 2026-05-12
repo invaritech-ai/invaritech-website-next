@@ -280,17 +280,20 @@ textarea {
     }
 
     .site-h1 {
-        @apply font-editorial text-6xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-8xl lg:text-[8.5rem];
+        @apply text-6xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-8xl lg:text-[8.5rem];
+        font-family: var(--font-display);
         text-wrap: balance;
     }
 
     .site-h2 {
-        @apply font-editorial text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl;
+        @apply text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl;
+        font-family: var(--font-display);
         text-wrap: balance;
     }
 
     .site-h3 {
-        @apply font-editorial text-2xl font-semibold leading-tight text-foreground md:text-3xl;
+        @apply text-2xl font-semibold leading-tight text-foreground md:text-3xl;
+        font-family: var(--font-display);
         text-wrap: balance;
     }
 
@@ -419,5 +422,203 @@ textarea {
 
     .site-logo-strapline {
         @apply text-center text-[10px] font-bold uppercase tracking-[0.3em] text-primary/90;
+    }
+
+    .site-shell-header {
+        @apply fixed inset-x-0 top-0 z-[100] pointer-events-none;
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+
+    .site-shell-header-inner {
+        @apply relative z-[120] mx-auto flex w-[calc(100%-2rem)] max-w-7xl items-center justify-between border border-border bg-background/85 px-4 py-3 shadow-sm backdrop-blur-md md:w-[calc(100%-3rem)] md:px-5;
+    }
+
+    .site-shell-brand {
+        @apply pointer-events-auto inline-flex min-w-0 items-center gap-3 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-shell-brand-mark {
+        @apply flex size-10 shrink-0 items-center justify-center border border-border bg-card transition-[border-color,background-color] duration-200 group-hover:border-primary/40 group-hover:bg-background;
+    }
+
+    .site-shell-brand-icon {
+        @apply size-7;
+    }
+
+    .site-shell-brand-copy {
+        @apply hidden min-w-0 md:block;
+    }
+
+    .site-shell-brand-name {
+        @apply block text-sm font-semibold tracking-[0.14em] text-foreground;
+    }
+
+    .site-shell-brand-line {
+        @apply mt-1 block text-[10px] font-mono uppercase tracking-[0.2em] text-foreground-subtle;
+    }
+
+    .site-shell-nav {
+        @apply pointer-events-auto hidden items-center gap-1 md:flex;
+    }
+
+    .site-shell-nav-link {
+        @apply inline-flex min-h-10 items-center border border-transparent px-3 text-sm font-medium text-foreground-muted transition-[border-color,background-color,color] duration-200 hover:border-border hover:bg-card hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-shell-nav-link-active {
+        @apply border-border bg-card text-foreground;
+    }
+
+    .site-shell-nav-cta {
+        @apply ml-2 inline-flex min-h-10 items-center bg-foreground px-4 text-sm font-semibold text-background transition-[background-color,color] duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-shell-menu-button {
+        @apply pointer-events-auto inline-flex min-h-11 items-center gap-3 border border-border bg-card px-4 text-sm font-semibold text-foreground transition-[border-color,background-color,color] duration-200 hover:border-primary/40 hover:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden;
+    }
+
+    .site-shell-menu-icon {
+        @apply relative size-4;
+    }
+
+    .site-shell-menu-line {
+        @apply absolute left-0 h-px w-full bg-foreground transition-[top,transform] duration-200;
+    }
+
+    .site-shell-menu-line-first {
+        @apply top-1;
+    }
+
+    .site-shell-menu-line-second {
+        @apply top-3;
+    }
+
+    .site-shell-menu-line-first-open {
+        @apply top-2 rotate-45;
+    }
+
+    .site-shell-menu-line-second-open {
+        @apply top-2 -rotate-45;
+    }
+
+    .site-shell-mobile-panel {
+        @apply fixed inset-x-0 bottom-0 top-0 z-[90] overflow-y-auto overscroll-contain border-b border-border bg-background/95 px-6 pb-8 pt-24 shadow-lg backdrop-blur-md md:hidden;
+        padding-top: max(6rem, calc(env(safe-area-inset-top) + 5rem));
+    }
+
+    .site-shell-mobile-nav {
+        @apply mx-auto flex max-w-3xl flex-col;
+    }
+
+    .site-shell-mobile-link {
+        @apply grid min-h-14 grid-cols-[2rem_1fr_1.5rem] items-center gap-3 border-t border-border px-1 py-3 transition-[background-color,color] duration-200 hover:bg-card hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-shell-mobile-link-active {
+        @apply bg-card text-foreground;
+    }
+
+    .site-shell-mobile-index {
+        @apply text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .site-shell-mobile-title {
+        @apply text-center text-2xl font-semibold leading-none text-foreground sm:text-3xl;
+        font-family: var(--font-display);
+    }
+
+    .site-shell-mobile-arrow {
+        @apply ml-auto size-5 text-foreground-subtle;
+    }
+
+    .site-shell-mobile-footer {
+        @apply mx-auto mt-8 max-w-3xl border-t border-border pt-5 text-center text-[11px] font-mono uppercase leading-relaxed tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .site-footer {
+        @apply relative overflow-hidden border-t border-border bg-card py-16 md:py-20;
+    }
+
+    .site-footer-watermark {
+        @apply pointer-events-none absolute -bottom-10 left-1/2 select-none -translate-x-1/2 whitespace-nowrap text-[8rem] font-bold uppercase leading-none tracking-tighter text-foreground opacity-[0.025] md:text-[14rem] lg:text-[18rem];
+        font-family: var(--font-display);
+    }
+
+    .site-footer-container {
+        @apply relative z-10 mx-auto w-full max-w-7xl px-6;
+    }
+
+    .site-footer-grid {
+        @apply grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr];
+    }
+
+    .site-footer-brand {
+        @apply flex max-w-sm flex-col items-start gap-6;
+    }
+
+    .site-footer-logo-row {
+        @apply inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-footer-logo-mark {
+        @apply flex size-11 items-center justify-center border border-border bg-background;
+    }
+
+    .site-footer-logo-icon {
+        @apply size-8;
+    }
+
+    .site-footer-logo-copy {
+        @apply flex flex-col items-center;
+    }
+
+    .site-footer-logo-text {
+        @apply h-7 w-auto;
+    }
+
+    .site-footer-text {
+        @apply text-sm leading-relaxed text-foreground-muted;
+        text-wrap: pretty;
+    }
+
+    .site-footer-heading {
+        @apply mb-4 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .site-footer-link-list {
+        @apply space-y-2;
+    }
+
+    .site-footer-link {
+        @apply inline-flex min-h-10 items-center text-sm text-foreground-muted transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-footer-social-row {
+        @apply flex gap-3;
+    }
+
+    .site-footer-social-link {
+        @apply inline-flex size-10 items-center justify-center border border-border text-foreground-muted transition-[border-color,background-color,color] duration-200 hover:border-primary/40 hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .site-footer-social-icon {
+        @apply size-5;
+    }
+
+    .site-footer-bottom {
+        @apply mt-14 flex flex-col gap-3 border-t border-border pt-6 text-[11px] font-mono uppercase leading-relaxed tracking-[0.16em] text-foreground-subtle md:flex-row md:items-center md:justify-between;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .site-shell-brand-mark,
+        .site-shell-nav-link,
+        .site-shell-nav-cta,
+        .site-shell-menu-button,
+        .site-shell-menu-line,
+        .site-shell-mobile-link,
+        .site-footer-link,
+        .site-footer-social-link {
+            transition-duration: 1ms;
+        }
     }
 }
