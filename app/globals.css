@@ -192,3 +192,153 @@ body {
     background-repeat: repeat;
     background-size: 256px 256px;
 }
+
+@layer components {
+    .site-page {
+        @apply min-h-screen bg-background text-foreground;
+    }
+
+    .site-section {
+        @apply py-16 md:py-24 lg:py-28;
+    }
+
+    .site-section-hero {
+        @apply pt-28 pb-20 md:pt-36 md:pb-28;
+    }
+
+    .site-section-muted {
+        @apply border-y border-border bg-card;
+    }
+
+    .site-container {
+        @apply mx-auto w-full max-w-7xl px-6;
+    }
+
+    .site-container-narrow {
+        @apply mx-auto w-full max-w-5xl px-6;
+    }
+
+    .site-split {
+        @apply grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-end;
+    }
+
+    .site-split-balanced {
+        @apply grid gap-12 lg:grid-cols-2 lg:items-start;
+    }
+
+    .site-kicker {
+        @apply mb-8 inline-flex max-w-max border-y border-primary/30 py-2 text-[11px] font-mono uppercase tracking-[0.24em] text-primary;
+    }
+
+    .site-h1 {
+        @apply font-editorial text-6xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-8xl lg:text-[8.5rem];
+    }
+
+    .site-h2 {
+        @apply font-editorial text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl;
+    }
+
+    .site-h3 {
+        @apply font-editorial text-2xl font-semibold leading-tight text-foreground md:text-3xl;
+    }
+
+    .site-lead {
+        @apply text-xl leading-relaxed text-foreground-muted md:text-2xl;
+    }
+
+    .site-body {
+        @apply text-base leading-relaxed text-muted-foreground md:text-lg;
+    }
+
+    .site-small {
+        @apply text-sm leading-relaxed text-foreground-subtle;
+    }
+
+    .site-meta {
+        @apply text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .site-grid {
+        @apply grid gap-[1px] bg-border;
+    }
+
+    .site-grid-two {
+        @apply grid gap-[1px] bg-border md:grid-cols-2;
+    }
+
+    .site-grid-three {
+        @apply grid gap-[1px] bg-border md:grid-cols-3;
+    }
+
+    .site-card {
+        @apply bg-background p-6 transition-colors hover:bg-card md:p-7;
+    }
+
+    .site-card-muted {
+        @apply bg-card p-6;
+    }
+
+    .site-card-title {
+        @apply text-lg font-semibold leading-tight text-foreground;
+    }
+
+    .site-card-body {
+        @apply mt-3 text-sm leading-relaxed text-muted-foreground;
+    }
+
+    .site-icon {
+        @apply mb-6 size-5 text-primary;
+    }
+
+    .site-button-row {
+        @apply flex flex-col gap-4 sm:flex-row;
+    }
+
+    .site-button {
+        @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background;
+    }
+
+    .site-button-secondary {
+        @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background;
+    }
+
+    .site-form {
+        @apply space-y-5 border border-border bg-card p-6;
+    }
+
+    .site-field {
+        @apply space-y-2;
+    }
+
+    .site-label {
+        @apply text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .site-input {
+        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none transition-[color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/50;
+    }
+
+    .site-textarea {
+        @apply min-h-36 w-full rounded-none border border-input bg-background px-3 py-3 text-sm outline-none transition-[color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/50;
+    }
+
+    .site-notice {
+        @apply border-l-2 border-primary bg-primary/[0.04] p-6;
+    }
+
+    .site-divider-panel {
+        @apply border-y border-border py-10;
+    }
+
+    .site-menu-link {
+        @apply relative flex min-h-12 w-full items-center justify-between border-b border-border/60 px-4 py-3 transition-colors duration-300 hover:border-primary/40 md:px-6 md:py-5;
+    }
+
+    .site-menu-footer {
+        @apply hidden md:block;
+    }
+
+    .site-logo-strapline {
+        @apply text-center text-[10px] font-bold uppercase tracking-[0.3em] text-primary/90;
+    }
+}
