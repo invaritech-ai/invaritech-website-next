@@ -81,10 +81,35 @@ Hard rules:
 
 - [ ] **Step 1: Add semantic site primitives**
 
-Append this `@layer components` block after the existing global utility definitions in `app/globals.css`. These classes become the design contract for rebuilt public pages. Page JSX should use these classes instead of ad hoc Tailwind spacing, color, radius, and typography utilities.
+Add these global interaction rules before the existing `body` rule, then append the `@layer components` block after the existing global utility definitions in `app/globals.css`. These classes become the design contract for rebuilt public pages. Page JSX should use these classes instead of ad hoc Tailwind spacing, color, radius, typography, focus, and form-state utilities.
 
 ```css
+html {
+    scroll-padding-top: 6rem;
+}
+
+body {
+    font-family: var(--font-body);
+    -webkit-tap-highlight-color: rgba(200,150,45,0.18);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+:target {
+    scroll-margin-top: 6rem;
+}
+
 @layer components {
+    .site-skip-link {
+        @apply fixed left-4 top-4 z-[200] -translate-y-20 bg-foreground px-4 py-3 text-sm font-semibold text-background transition-transform duration-200 focus-visible:translate-y-0 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50;
+    }
+
     .site-page {
         @apply min-h-screen bg-background text-foreground;
     }
@@ -135,22 +160,27 @@ Append this `@layer components` block after the existing global utility definiti
 
     .site-h1 {
         @apply font-editorial text-6xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-8xl lg:text-[8.5rem];
+        text-wrap: balance;
     }
 
     .site-h2 {
         @apply font-editorial text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl;
+        text-wrap: balance;
     }
 
     .site-h3 {
         @apply font-editorial text-2xl font-semibold leading-tight text-foreground md:text-3xl;
+        text-wrap: balance;
     }
 
     .site-lead {
         @apply text-xl leading-relaxed text-foreground-muted md:text-2xl;
+        text-wrap: pretty;
     }
 
     .site-body {
         @apply text-base leading-relaxed text-muted-foreground md:text-lg;
+        text-wrap: pretty;
     }
 
     .site-small {
@@ -187,6 +217,7 @@ Append this `@layer components` block after the existing global utility definiti
 
     .site-card-body {
         @apply mt-3 text-sm leading-relaxed text-muted-foreground;
+        text-wrap: pretty;
     }
 
     .site-icon {
@@ -198,11 +229,15 @@ Append this `@layer components` block after the existing global utility definiti
     }
 
     .site-button {
-        @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background;
+        @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
     }
 
     .site-button-secondary {
-        @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background;
+        @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .site-link {
+        @apply text-foreground underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     }
 
     .site-form {
@@ -218,15 +253,31 @@ Append this `@layer components` block after the existing global utility definiti
     }
 
     .site-input {
-        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none transition-[color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/50;
+        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20;
+    }
+
+    .site-select {
+        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm text-foreground outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20;
     }
 
     .site-textarea {
-        @apply min-h-36 w-full rounded-none border border-input bg-background px-3 py-3 text-sm outline-none transition-[color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/50;
+        @apply min-h-36 w-full rounded-none border border-input bg-background px-3 py-3 text-sm outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20;
     }
 
     .site-notice {
         @apply border-l-2 border-primary bg-primary/[0.04] p-6;
+    }
+
+    .site-error {
+        @apply border border-destructive/30 bg-destructive/5 p-3 text-sm leading-relaxed text-destructive;
+    }
+
+    .site-success {
+        @apply border border-primary/30 bg-primary/[0.05] p-6 text-sm leading-relaxed text-foreground;
+    }
+
+    .site-status {
+        @apply text-sm leading-relaxed text-muted-foreground;
     }
 
     .site-divider-panel {
@@ -234,7 +285,7 @@ Append this `@layer components` block after the existing global utility definiti
     }
 
     .site-menu-link {
-        @apply relative flex min-h-12 w-full items-center justify-between border-b border-border/60 px-4 py-3 transition-colors duration-300 hover:border-primary/40 md:px-6 md:py-5;
+        @apply relative flex min-h-12 w-full items-center justify-between border-b border-border/60 px-4 py-3 transition-colors duration-300 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:px-6 md:py-5;
     }
 
     .site-menu-footer {
@@ -258,10 +309,14 @@ Use site-container or site-container-narrow for horizontal margins.
 Use site-h1/site-h2/site-h3/site-lead/site-body/site-small/site-meta for typography.
 Use site-font-display/site-font-body/site-font-label only when a one-off element needs a family without a full type scale.
 Use site-grid/site-grid-two/site-grid-three plus site-card/site-card-muted for repeated cards.
-Use site-button/site-button-secondary for CTAs.
-Use site-form/site-field/site-label/site-input/site-textarea for forms.
+Use site-button/site-button-secondary/site-link for CTAs and links.
+Use site-form/site-field/site-label/site-input/site-select/site-textarea for forms.
+Use site-error/site-success/site-status with aria-live for form feedback and async updates.
+Use site-skip-link at the layout level before the header.
 Use site-menu-link/site-menu-footer/site-logo-strapline for shared navigation and footer styling.
 Do not hardcode random Tailwind color, radius, margin, padding, font, text-size, leading, tracking, or gap classes in page JSX.
+Do not use outline-none without a focus-visible replacement.
+Do not use transition-all. List animated properties.
 Allow structural utilities only when a semantic class does not express the layout, such as contents, sr-only, hidden, group, absolute, relative, z-index, or icon sizing where needed.
 If a new visual pattern is needed, add a semantic class in app/globals.css first, then use it.
 ```
@@ -271,7 +326,7 @@ If a new visual pattern is needed, add a semantic class in app/globals.css first
 Run:
 
 ```bash
-rg "font-display|font-body|font-label|site-section|site-container|site-h1|site-card|site-button|site-input" app/globals.css
+rg "font-display|font-body|font-label|site-skip-link|site-section|site-container|site-h1|site-card|site-button|site-input|site-error|site-status" app/globals.css
 ```
 
 Expected: All class names are found.
@@ -1224,6 +1279,7 @@ Run:
 
 ```bash
 rg 'className="' app components
+rg "transition-all|outline-none|<input|<select|<textarea|aria-live" app components
 ```
 
 Expected:
@@ -1231,6 +1287,11 @@ Expected:
 - Kept public pages use semantic classes from `app/globals.css` for colors, spacing, radius, typography, cards, grids, buttons, and form controls.
 - Structural classes are acceptable only where they express behavior or positioning, such as `relative`, `absolute`, `hidden`, `group`, `contents`, `sr-only`, `z-*`, icon sizes, or animation hooks.
 - No kept public page introduces random hardcoded Tailwind classes for `px-*`, `py-*`, `mt-*`, `mb-*`, `gap-*`, `text-*`, `bg-*`, `border-*`, `rounded-*`, `max-w-*`, or responsive typography when a `site-*` primitive exists.
+- No `transition-all`.
+- No `outline-none` without focus-visible replacement.
+- All form controls have labels, `name`, meaningful `autocomplete`, correct `type` or `inputMode`, and inline errors near the field.
+- Async form feedback uses `aria-live="polite"`.
+- Icon-only buttons have `aria-label`; decorative icons use `aria-hidden="true"`.
 
 - [ ] **Step 6: Copy-style scan**
 

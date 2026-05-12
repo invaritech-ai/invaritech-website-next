@@ -154,12 +154,30 @@
     --animate-pulse-slow: pulse-slow 6s cubic-bezier(0.4,0,0.6,1) infinite;
 }
 
+html {
+    scroll-padding-top: 6rem;
+}
+
 body {
     cursor: default;
     overflow-x: hidden;
     font-size: 1.0625rem;
+    font-family: var(--font-body);
     background: var(--background);
     color: var(--foreground);
+    -webkit-tap-highlight-color: rgba(200,150,45,0.18);
+}
+
+button,
+a,
+input,
+select,
+textarea {
+    touch-action: manipulation;
+}
+
+:target {
+    scroll-margin-top: 6rem;
 }
 
 .text-balance {
@@ -197,6 +215,10 @@ body {
 }
 
 @layer components {
+    .site-skip-link {
+        @apply fixed left-4 top-4 z-[200] -translate-y-20 bg-foreground px-4 py-3 text-sm font-semibold text-background transition-transform duration-200 focus-visible:translate-y-0 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50;
+    }
+
     .site-page {
         @apply min-h-screen bg-background text-foreground;
     }
@@ -247,22 +269,27 @@ body {
 
     .site-h1 {
         @apply font-editorial text-6xl font-semibold leading-[0.9] tracking-tight text-foreground md:text-8xl lg:text-[8.5rem];
+        text-wrap: balance;
     }
 
     .site-h2 {
         @apply font-editorial text-4xl font-semibold leading-tight tracking-tight text-foreground md:text-6xl;
+        text-wrap: balance;
     }
 
     .site-h3 {
         @apply font-editorial text-2xl font-semibold leading-tight text-foreground md:text-3xl;
+        text-wrap: balance;
     }
 
     .site-lead {
         @apply text-xl leading-relaxed text-foreground-muted md:text-2xl;
+        text-wrap: pretty;
     }
 
     .site-body {
         @apply text-base leading-relaxed text-muted-foreground md:text-lg;
+        text-wrap: pretty;
     }
 
     .site-small {
@@ -299,6 +326,7 @@ body {
 
     .site-card-body {
         @apply mt-3 text-sm leading-relaxed text-muted-foreground;
+        text-wrap: pretty;
     }
 
     .site-icon {
@@ -310,11 +338,15 @@ body {
     }
 
     .site-button {
-        @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background;
+        @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
     }
 
     .site-button-secondary {
-        @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background;
+        @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .site-link {
+        @apply text-foreground underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     }
 
     .site-form {
@@ -330,15 +362,31 @@ body {
     }
 
     .site-input {
-        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none transition-[color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/50;
+        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20;
+    }
+
+    .site-select {
+        @apply h-11 w-full rounded-none border border-input bg-background px-3 text-sm text-foreground outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20;
     }
 
     .site-textarea {
-        @apply min-h-36 w-full rounded-none border border-input bg-background px-3 py-3 text-sm outline-none transition-[color,box-shadow] focus:border-ring focus:ring-3 focus:ring-ring/50;
+        @apply min-h-36 w-full rounded-none border border-input bg-background px-3 py-3 text-sm outline-none transition-[border-color,box-shadow] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-60 aria-invalid:border-destructive aria-invalid:ring-destructive/20;
     }
 
     .site-notice {
         @apply border-l-2 border-primary bg-primary/[0.04] p-6;
+    }
+
+    .site-error {
+        @apply border border-destructive/30 bg-destructive/5 p-3 text-sm leading-relaxed text-destructive;
+    }
+
+    .site-success {
+        @apply border border-primary/30 bg-primary/[0.05] p-6 text-sm leading-relaxed text-foreground;
+    }
+
+    .site-status {
+        @apply text-sm leading-relaxed text-muted-foreground;
     }
 
     .site-divider-panel {
@@ -346,7 +394,7 @@ body {
     }
 
     .site-menu-link {
-        @apply relative flex min-h-12 w-full items-center justify-between border-b border-border/60 px-4 py-3 transition-colors duration-300 hover:border-primary/40 md:px-6 md:py-5;
+        @apply relative flex min-h-12 w-full items-center justify-between border-b border-border/60 px-4 py-3 transition-colors duration-300 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:px-6 md:py-5;
     }
 
     .site-menu-footer {

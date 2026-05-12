@@ -341,6 +341,26 @@ Rebuilt pages should use semantic site classes such as `site-page`, `site-sectio
 
 Do not scatter random one-off Tailwind classes across page JSX for colors, margins, padding, gaps, text sizing, borders, or radius. If a visual pattern is needed, add a named design primitive first, then use that primitive on the page.
 
+## Web Interface Guidelines Requirement
+
+The rebuilt site must follow the Vercel Web Interface Guidelines.
+
+Foundation rules:
+
+- Add a skip link before the header.
+- Use visible `focus-visible` states for links, buttons, menu items, and form controls.
+- Never use `outline-none` without a focus-visible replacement.
+- Do not use `transition-all`; list animated properties.
+- Add `touch-action: manipulation` for interactive elements.
+- Use `scroll-padding-top` and `scroll-margin-top` for anchor navigation.
+- Use `text-wrap: balance` on headings and `text-wrap: pretty` on readable body copy.
+- Inputs, selects, and textareas must use labels, `name`, meaningful `autocomplete`, and correct `type` or `inputMode`.
+- Inline form errors should sit near the field and provide a next step.
+- Async form feedback should use `aria-live="polite"`.
+- Icon-only buttons need `aria-label`; decorative icons need `aria-hidden="true"`.
+- Images need `alt`; decorative images should use empty alt text.
+- Use semantic HTML before ARIA.
+
 ## Typography Specification
 
 Font families:
