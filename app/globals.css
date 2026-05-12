@@ -364,6 +364,10 @@ textarea {
         @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
     }
 
+    .site-button-icon {
+        @apply ml-2 size-4;
+    }
+
     .site-link {
         @apply text-foreground underline decoration-primary/40 underline-offset-4 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     }
@@ -410,6 +414,219 @@ textarea {
 
     .site-divider-panel {
         @apply border-y border-border py-10;
+    }
+
+    .site-home-hero {
+        @apply relative isolate overflow-hidden;
+    }
+
+    .site-home-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background-image:
+            linear-gradient(to right, rgba(28,20,16,0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(28,20,16,0.04) 1px, transparent 1px);
+        background-size: 72px 72px;
+    }
+
+    .site-home-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto;
+        z-index: -1;
+        height: 20rem;
+        background: linear-gradient(180deg, rgba(200,150,45,0.16), rgba(251,248,243,0));
+    }
+
+    .site-home-hero-grid {
+        @apply mx-auto grid w-full max-w-7xl gap-12 px-6 text-center;
+    }
+
+    .site-home-hero-copy {
+        @apply mx-auto max-w-5xl;
+    }
+
+    .site-home-hero-copy .site-kicker {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-home-hero-copy .site-h1 {
+        font-size: clamp(4.5rem, 8vw, 7.5rem);
+    }
+
+    @media (max-width: 40rem) {
+        .site-home-hero-copy .site-h1 {
+            font-size: clamp(3rem, 14.5vw, 3.8rem);
+        }
+    }
+
+    .site-home-hero-copy .site-lead {
+        margin-top: 2rem;
+    }
+
+    .site-home-hero-support {
+        @apply mx-auto mt-5 max-w-3xl text-sm font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .site-home-hero-copy .site-button-row-center {
+        margin-top: 2.5rem;
+    }
+
+    .site-home-proof {
+        @apply mx-auto w-full max-w-5xl border-y border-border bg-background/55 p-6 text-left;
+    }
+
+    .site-home-proof-row {
+        @apply grid gap-3 border-b border-border py-5 last:border-b-0 sm:grid-cols-[8rem_1fr];
+    }
+
+    .site-home-proof-label {
+        @apply text-[11px] font-mono uppercase tracking-[0.2em] text-primary;
+    }
+
+    .site-home-proof-text {
+        @apply text-base leading-relaxed text-foreground-muted md:text-lg;
+        text-wrap: pretty;
+    }
+
+    .site-home-section-intro {
+        @apply mx-auto mb-12 max-w-4xl text-center;
+    }
+
+    .site-home-section-intro .site-kicker {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-home-section-intro .site-body {
+        margin-top: 1.5rem;
+    }
+
+    .site-home-symptom-grid {
+        @apply grid gap-[1px] bg-border md:grid-cols-2;
+    }
+
+    .site-home-symptom-card {
+        @apply bg-background p-6 text-left transition-colors hover:bg-card md:p-7;
+    }
+
+    .site-home-question {
+        @apply mx-auto mt-10 max-w-3xl border-l-2 border-primary bg-primary/[0.04] p-6 text-left;
+    }
+
+    .site-home-question-title {
+        @apply text-xl font-medium leading-relaxed text-foreground;
+        text-wrap: pretty;
+    }
+
+    .site-home-question-body {
+        @apply mt-4 text-base leading-relaxed text-muted-foreground;
+        text-wrap: pretty;
+    }
+
+    .site-home-vertical-grid {
+        @apply grid gap-[1px] bg-border md:grid-cols-2;
+    }
+
+    .site-home-vertical-card {
+        @apply bg-background p-6 text-left transition-colors hover:bg-card md:p-7;
+    }
+
+    .site-home-vertical-card .site-h3 {
+        margin-top: 1rem;
+    }
+
+    .site-home-card-meta {
+        @apply mt-6 border-t border-border pt-4 text-xs font-mono uppercase tracking-[0.16em] text-primary/80;
+    }
+
+    .site-home-process-grid {
+        @apply mx-auto grid w-full max-w-7xl gap-14 px-6 lg:grid-cols-[0.9fr_1.1fr];
+    }
+
+    .site-home-criteria {
+        @apply mt-8 border border-border bg-background p-6 text-left;
+    }
+
+    .site-home-criteria .site-meta {
+        margin-bottom: 1rem;
+    }
+
+    .site-home-criteria-list {
+        @apply space-y-3;
+    }
+
+    .site-home-criteria-item {
+        @apply flex gap-3 text-sm leading-relaxed text-muted-foreground;
+    }
+
+    .site-home-criteria-icon {
+        @apply mt-0.5 size-4 shrink-0 text-primary;
+    }
+
+    .site-home-step-grid {
+        @apply grid gap-[1px] bg-border;
+    }
+
+    .site-home-step {
+        @apply grid gap-5 bg-background p-6 text-left sm:grid-cols-[4rem_1fr];
+    }
+
+    .site-home-step-index {
+        @apply text-5xl font-semibold text-primary/70;
+        font-family: var(--font-display);
+    }
+
+    .site-home-step-body {
+        @apply mt-2 text-base leading-relaxed text-muted-foreground;
+        text-wrap: pretty;
+    }
+
+    .site-home-final-panel {
+        @apply border-y border-border py-12;
+    }
+
+    .site-home-final-layout {
+        @apply grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center;
+    }
+
+    .site-home-final-copy {
+        @apply mx-auto max-w-3xl text-center lg:mx-0 lg:text-left;
+    }
+
+    .site-home-final-copy .site-icon {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-home-final-copy .site-body {
+        margin-top: 1.25rem;
+    }
+
+    .site-home-final-copy .site-small {
+        margin-top: 1rem;
+    }
+
+    @media (min-width: 64rem) {
+        .site-home-final-copy .site-icon {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .site-home-final-actions {
+        @apply flex flex-col items-center justify-center gap-4 sm:flex-row lg:flex-col;
+    }
+
+    .site-home-trust-grid {
+        @apply mt-12 grid gap-[1px] bg-border md:grid-cols-3;
+    }
+
+    .site-home-trust-card {
+        @apply bg-card p-6 text-left;
     }
 
     .site-menu-link {
