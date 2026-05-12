@@ -243,6 +243,18 @@ textarea {
         @apply mx-auto w-full max-w-5xl px-6;
     }
 
+    .site-container-center {
+        @apply mx-auto w-full max-w-5xl px-6 text-center;
+    }
+
+    .site-copy-center {
+        @apply mx-auto max-w-3xl text-center;
+    }
+
+    .site-header-center {
+        @apply mx-auto max-w-4xl text-center;
+    }
+
     .site-split {
         @apply grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-end;
     }
@@ -335,6 +347,10 @@ textarea {
 
     .site-button-row {
         @apply flex flex-col gap-4 sm:flex-row;
+    }
+
+    .site-button-row-center {
+        @apply flex flex-col items-center justify-center gap-4 sm:flex-row;
     }
 
     .site-button {

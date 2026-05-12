@@ -134,6 +134,18 @@ textarea {
         @apply mx-auto w-full max-w-5xl px-6;
     }
 
+    .site-container-center {
+        @apply mx-auto w-full max-w-5xl px-6 text-center;
+    }
+
+    .site-copy-center {
+        @apply mx-auto max-w-3xl text-center;
+    }
+
+    .site-header-center {
+        @apply mx-auto max-w-4xl text-center;
+    }
+
     .site-split {
         @apply grid gap-10 lg:grid-cols-[1fr_0.85fr] lg:items-end;
     }
@@ -228,6 +240,10 @@ textarea {
         @apply flex flex-col gap-4 sm:flex-row;
     }
 
+    .site-button-row-center {
+        @apply flex flex-col items-center justify-center gap-4 sm:flex-row;
+    }
+
     .site-button {
         @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
     }
@@ -305,11 +321,11 @@ Every rebuilt public page/component must follow these rules:
 ```txt
 Use site-page for page roots.
 Use site-section or site-section-hero for vertical rhythm.
-Use site-container or site-container-narrow for horizontal margins.
+Use site-container, site-container-narrow, site-container-center, site-copy-center, and site-header-center for horizontal margins and centered composition.
 Use site-h1/site-h2/site-h3/site-lead/site-body/site-small/site-meta for typography.
 Use site-font-display/site-font-body/site-font-label only when a one-off element needs a family without a full type scale.
 Use site-grid/site-grid-two/site-grid-three plus site-card/site-card-muted for repeated cards.
-Use site-button/site-button-secondary/site-link for CTAs and links.
+Use site-button/site-button-secondary/site-button-row-center/site-link for CTAs and links.
 Use site-form/site-field/site-label/site-input/site-select/site-textarea for forms.
 Use site-error/site-success/site-status with aria-live for form feedback and async updates.
 Use site-skip-link at the layout level before the header.
@@ -327,7 +343,8 @@ Frontend-design direction:
 Concept: The controlled ledger.
 Build the site like a finance operator's control room: ledgers, rule tables, approval queues, evidence stamps, and audit trails.
 Tone: brutally clear, editorial, industrial, quietly premium.
-Use full-width bands, constrained content, ledger rows, rule-table grids, numbered lanes, and evidence panels.
+Use a centered website composition by default: centered page headers, centered primary CTAs, and centered content blocks.
+Use full-width bands, constrained centered content, ledger rows, rule-table grids, numbered lanes, and evidence panels.
 Avoid generic SaaS cards, abstract AI graphics, purple or blue AI gradients, orbs, bokeh, chatbot bubbles, and decorative dashboards.
 Use restrained motion only for hierarchy. Motion must use transform and opacity, and must honor reduced motion.
 Interactive states must increase contrast. Cards can change surface or border contrast, but must not jump or resize.
@@ -338,7 +355,7 @@ Interactive states must increase contrast. Cards can change surface or border co
 Run:
 
 ```bash
-rg "font-display|font-body|font-label|site-skip-link|site-section|site-container|site-h1|site-card|site-button|site-input|site-error|site-status" app/globals.css
+rg "font-display|font-body|font-label|site-skip-link|site-section|site-container-center|site-header-center|site-copy-center|site-h1|site-card|site-button-row-center|site-input|site-error|site-status" app/globals.css
 ```
 
 Expected: All class names are found.

@@ -323,9 +323,11 @@ The visitor should remember the site as the one with rule-table structure, audit
 Composition rules:
 
 - Use full-width bands and constrained inner content.
+- Keep the website composition centered by default.
+- Use centered page headers, centered primary CTAs, and centered content blocks unless a specific rule table or queue layout needs a grid.
 - Prefer ledger rows, rule-table grids, numbered lanes, and evidence panels over floating marketing cards.
 - Keep repeated cards sharp and compact with radius at `0.125rem`.
-- Use asymmetry only where it clarifies hierarchy, such as a large editorial heading beside a compact evidence panel.
+- Use asymmetry sparingly, and only inside a centered container.
 - Keep the next section slightly visible below the hero on common desktop and mobile viewports.
 - Do not use generic hero illustration, abstract SVG art, gradient blobs, bokeh, or decorative orbs.
 - Do not use split hero card patterns.
@@ -401,7 +403,7 @@ The implementation should establish shared primitives for:
 - Form inputs.
 - Notices and divider panels.
 
-Rebuilt pages should use semantic site classes such as `site-page`, `site-section`, `site-container`, `site-h1`, `site-h2`, `site-lead`, `site-card`, `site-button`, and `site-input`.
+Rebuilt pages should use semantic site classes such as `site-page`, `site-section`, `site-container`, `site-container-center`, `site-header-center`, `site-copy-center`, `site-h1`, `site-h2`, `site-lead`, `site-card`, `site-button`, and `site-input`.
 
 Do not scatter random one-off Tailwind classes across page JSX for colors, margins, padding, gaps, text sizing, borders, or radius. If a visual pattern is needed, add a named design primitive first, then use that primitive on the page.
 
