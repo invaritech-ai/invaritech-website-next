@@ -1,4 +1,4 @@
-const HOMEPAGE_LAST_MODIFIED = "2026-04-15T00:00:00.000Z";
+const HOMEPAGE_LAST_MODIFIED = "2026-05-12T00:00:00.000Z";
 
 export const structuredData = {
     "@context": "https://schema.org",
@@ -7,9 +7,9 @@ export const structuredData = {
             "@type": "Organization",
             "@id": "https://www.invaritech.ai/#organization",
             name: "INVARITECH",
-            alternateName: "INVARITECH AI Automation Studio",
+            alternateName: "INVARITECH Payment Control Design",
             description:
-                "INVARITECH delivers drop-in AI automations for medium and enterprise teams. We plug intelligence into existing ERP, CRM, and internal workflows without disruptive rebuilds.",
+                "INVARITECH designs, builds, and maintains payment controls for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
             url: "https://www.invaritech.ai",
             logo: {
                 "@type": "ImageObject",
@@ -29,10 +29,8 @@ export const structuredData = {
                 email: "hello@invaritech.ai",
                 availableLanguage: ["English"],
                 areaServed: [
-                    { "@type": "Country", name: "Singapore" },
-                    { "@type": "Country", name: "Hong Kong" },
-                    { "@type": "Country", name: "Malaysia" },
-                    { "@type": "Country", name: "Philippines" },
+                    { "@type": "Country", name: "Australia" },
+                    { "@type": "Place", name: "APAC" },
                 ],
             },
             sameAs: [
@@ -47,22 +45,21 @@ export const structuredData = {
             foundingDate: "2025",
             industry: "Technology",
             knowsAbout: [
-                "Enterprise AI Automation",
-                "Workflow Automation",
-                "ERP Integration",
-                "CRM Integration",
-                "Operational Efficiency",
-                "AI Guardrails",
-                "Production AI Systems",
+                "Payment Control Design",
+                "Accounts Payable Controls",
+                "Invoice Exception Management",
+                "Supplier Payment Verification",
+                "Audit Trail Design",
+                "Finance Operations",
             ],
         },
         {
             "@type": "WebSite",
             "@id": "https://www.invaritech.ai/#website",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Drop-In AI Automations for Enterprises",
+            name: "INVARITECH - Payment Control Design for Finance Teams",
             description:
-                "Drop-In AI automations for enterprises that cannot afford disruption. One production-grade automation in 30 days.",
+                "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
@@ -71,9 +68,9 @@ export const structuredData = {
             "@type": "WebPage",
             "@id": "https://www.invaritech.ai/#webpage",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Drop-In AI Automations for Enterprises That Cannot Afford Disruption",
+            name: "INVARITECH - Payment Control Design for Australian Finance Teams",
             description:
-                "We add intelligence to your existing systems safely, incrementally, and measurably. In 30 days you get one production-grade AI automation with measurable before/after impact.",
+                "We help finance teams reduce manual exception chasing, tighten approvals, and reduce dollar leakage across the systems they already use.",
             isPartOf: {
                 "@id": "https://www.invaritech.ai/#website",
             },
@@ -91,23 +88,21 @@ export const structuredData = {
         },
         {
             "@type": "Service",
-            name: "30-Day Drop-In AI Automation Sprint",
+            name: "Fixed-Scope Payment Control Sprint",
             description:
-                "In 30 days, INVARITECH delivers one production-grade AI automation running on top of your existing infrastructure, solving one clearly defined bottleneck with measurable before/after impact.",
-            url: "https://www.invaritech.ai/services/ai-automation-sprint/",
+                "INVARITECH designs and builds one payment-control workflow with agreed acceptance criteria, exception routing, approval evidence, audit trails, and ongoing managed support.",
+            url: "https://www.invaritech.ai/",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Enterprise AI Automation Sprint",
+            serviceType: "Payment Control Design",
             areaServed: [
-                    { "@type": "Country", name: "Singapore" },
-                    { "@type": "Country", name: "Hong Kong" },
-                    { "@type": "Country", name: "Malaysia" },
-                    { "@type": "Country", name: "Philippines" },
+                    { "@type": "Country", name: "Australia" },
+                    { "@type": "Place", name: "APAC" },
                 ],
             audience: {
                 "@type": "BusinessAudience",
-                audienceType: "COO, Head of Operations, CTO, Tech Lead",
+                audienceType: "AP Manager, Financial Controller, Finance Operations, Shared Services",
             },
             offers: {
                 "@type": "AggregateOffer",
@@ -119,18 +114,16 @@ export const structuredData = {
         },
         {
             "@type": "Service",
-            name: "Custom Software on Existing Infrastructure",
+            name: "Managed Finance Workflow Support",
             description:
-                "Custom software and AI layers that make current enterprise systems smarter without replatforming or locking teams into new vendors.",
+                "Ongoing support for live finance controls, including rule updates, exception queue tuning, monitoring, audit-log maintenance, and small changes that keep the agreed objective working.",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Custom Software Development",
+            serviceType: "Managed Payment Control Support",
             areaServed: [
-                    { "@type": "Country", name: "Singapore" },
-                    { "@type": "Country", name: "Hong Kong" },
-                    { "@type": "Country", name: "Malaysia" },
-                    { "@type": "Country", name: "Philippines" },
+                    { "@type": "Country", name: "Australia" },
+                    { "@type": "Place", name: "APAC" },
                 ],
         },
     ],

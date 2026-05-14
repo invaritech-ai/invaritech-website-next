@@ -2,32 +2,33 @@ import { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog-posts";
 import { TextEffect } from "@/components/ui/text-effect";
 import Link from "next/link";
-import { MoveUpRight } from "lucide-react";
+import { ArrowRight, MoveUpRight } from "lucide-react";
 import Image from "next/image";
+import { RULE_TABLE_CTA } from "@/lib/marketing";
 
 export const metadata: Metadata = {
-    title: "Blogs - Case Studies, Build Notes, and BOFU Answers",
+    title: "Operational Playbooks for Cleaner Finance Ops",
     description:
-        "Daily content from INVARITECH on enterprise AI automation: case studies, developer journey, CEO corner, and bottom-of-funnel implementation answers.",
+        "Step-by-step guides, workflow teardowns, and practical notes for teams reducing invoice exceptions, manual review load, and audit gaps.",
     openGraph: {
-        title: "INVARITECH Blog - Enterprise AI Automation Insights",
+        title: "INVARITECH Blog - Operational Playbooks for Cleaner Finance Ops",
         description:
-            "Case studies, engineering notes, founder POV, and BOFU guidance for teams implementing AI automation on existing infrastructure.",
+            "Guides, workflow teardowns, and practical notes for finance teams reducing invoice exceptions, manual review load, and audit gaps.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH Blog - Enterprise AI Automation Insights",
+                alt: "INVARITECH Blog - Operational Playbooks for Cleaner Finance Ops",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH Blog — AI Automation Insights",
+        title: "INVARITECH Blog - Operational Playbooks",
         description:
-            "Case studies, engineering notes, and BOFU guidance for teams implementing AI automation on existing infrastructure.",
+            "Practical guides for reducing invoice exceptions, manual review load, and audit gaps.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -50,7 +51,7 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-const categories = ["Case Studies", "Developer Journey", "CEO Corner", "BOFU Q&A"];
+const categories = ["AP Controls", "Invoice Exceptions", "Payment Risk", "Finance Ops", "Audit Trails"];
 
 export default function BlogsPage() {
     const posts = getAllPosts();
@@ -72,20 +73,20 @@ export default function BlogsPage() {
                         preset="fade"
                         className="text-[11px] font-mono tracking-[0.22em] text-primary mb-8 block uppercase"
                     >
-                        Intelligence Archive
+                        Finance Ops Notes
                     </TextEffect>
 
                     <h1 className="font-editorial text-6xl md:text-[9rem] leading-[0.88] font-semibold tracking-tight mb-12 text-foreground">
                         <TextEffect per="word" preset="fade" className="inline">
-                            INSIGHTS &amp;
+                            OPERATIONAL
                         </TextEffect>
                         <br />
-                        <span className="text-foreground-muted">ANALYSIS</span>
+                        <span className="text-foreground-muted">PLAYBOOKS</span>
                     </h1>
 
                     <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between border-t border-border pt-8">
                         <p className="text-xl md:text-2xl text-foreground-muted max-w-2xl font-light">
-                            Case Studies, Engineering Notes, and Strategic Implementation Guides.
+                            Step-by-step guides, workflow teardowns, and practical notes for teams actively reducing invoice exceptions and manual review loads.
                         </p>
                         <div className="flex flex-wrap gap-2">
                             {categories.map((category) => (
@@ -104,6 +105,19 @@ export default function BlogsPage() {
             {/* Blog Posts Grid */}
             <section className="px-6 pb-32 relative z-10">
                 <div className="max-w-7xl mx-auto">
+                    <div className="mb-12 flex flex-col gap-5 border-y border-border py-7 md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 className="font-editorial text-3xl font-semibold">Start with a payment-control rule table.</h2>
+                            <p className="mt-2 text-muted-foreground">A practical workbook for mapping exception checks, approval evidence, and audit notes.</p>
+                        </div>
+                        <Link
+                            href="/resources/"
+                            className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
+                        >
+                            {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                    </div>
+
                     {posts.length === 0 ? (
                         <div className="text-center py-24 border border-dashed border-border">
                             <p className="text-muted-foreground text-xl font-mono">

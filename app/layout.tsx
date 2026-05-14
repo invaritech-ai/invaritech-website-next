@@ -6,6 +6,7 @@ import Script from "next/script";
 import "./globals.css";
 import { LenisScroll } from "@/components/ui/LenisScroll";
 import { HeroHeader } from "@/components/header";
+import SiteSpotlight from "@/components/hero-spotlight";
 import FooterSection from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
 import { Analytics } from "@vercel/analytics/next";
@@ -52,27 +53,23 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default: "AI Automation Services for Enterprises | INVARITECH",
+        default: "Payment Control Design for Australian Finance Teams | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "Drop-in AI automations for enterprises that cannot afford disruption. One production-grade automation deployed on your existing systems in 30 days. Serving Singapore, Hong Kong, Malaysia, and the Philippines.",
+        "Founder-led payment control design for Australian finance teams. Reduce manual exceptions, tighten approvals, and reduce dollar leakage without changing systems.",
     keywords: [
         "INVARITECH",
-        "enterprise AI automation",
-        "drop-in automation",
-        "ops automation sprint",
-        "30-day AI automation sprint",
-        "workflow automation",
-        "custom software",
-        "ERP integration",
-        "CRM integration",
-        "production AI systems",
-        "operational efficiency",
-        "process automation",
-        "infrastructure augmentation",
-        "AI ops",
-        "enterprise software delivery",
+        "payment control design",
+        "finance operations",
+        "accounts payable controls",
+        "invoice exception management",
+        "supplier payment controls",
+        "freight invoice variance",
+        "payment approval workflow",
+        "audit trail automation",
+        "Australian finance teams",
+        "finance ops exceptions",
     ],
     authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
@@ -101,24 +98,24 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         url: "https://www.invaritech.ai",
-        title: "AI Automation Services for Enterprises | INVARITECH",
+        title: "Payment Control Design for Australian Finance Teams | INVARITECH",
         description:
-            "Drop-in AI automations for enterprises across APAC. One production-grade automation deployed on your existing systems in 30 days.",
+            "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "AI Automation Services for Enterprises | INVARITECH",
+                alt: "Payment Control Design for Australian Finance Teams | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Automation Services for Enterprises | INVARITECH",
+        title: "Payment Control Design for Australian Finance Teams | INVARITECH",
         description:
-            "One production-grade AI automation deployed on your existing systems in 30 days. Serving teams in Singapore, Hong Kong, Malaysia, and the Philippines.",
+            "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },
@@ -199,6 +196,7 @@ export default function RootLayout({
                 >
                     <LenisScroll>
                         <div className="fixed inset-0 z-[-1] pointer-events-none grain-overlay opacity-30" />
+                        <SiteSpotlight />
                         <div className="relative z-10">
                             <HeroHeader />
                             {children}

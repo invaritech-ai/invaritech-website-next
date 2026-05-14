@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL, BRAND_EYEBROW, RULE_TABLE_CTA } from "@/lib/marketing";
+import SystemsScramble from "@/components/systems-scramble";
 
 const proofRows = [
     {
@@ -115,7 +116,10 @@ export default function PaymentControlHome() {
                 <div className="site-home-hero-grid">
                     <div className="site-home-hero-copy">
                         <p className="site-kicker">{BRAND_EYEBROW}</p>
-                        <h1 className="site-h1">Clean up payment controls without changing systems.</h1>
+                        <h1 className="site-h1">
+                            Clean up payment controls without changing{" "}
+                            <SystemsScramble />.
+                        </h1>
                         <p className="site-lead">
                             We help finance teams reduce manual exception chasing, tighten approvals, and
                             reduce dollar leakage across the software they already use.
