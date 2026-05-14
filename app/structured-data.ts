@@ -38,10 +38,6 @@ export const structuredData = {
                 "https://linkedin.com/company/invaritechai",
                 "https://github.com/invaritech-ai",
             ],
-            address: {
-                "@type": "PostalAddress",
-                addressCountry: "US",
-            },
             foundingDate: "2025",
             industry: "Technology",
             knowsAbout: [
@@ -79,7 +75,7 @@ export const structuredData = {
             },
             primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://www.invaritech.ai/logo-image.png",
+                url: "https://www.invaritech.ai/og-image.png",
                 width: 1200,
                 height: 630,
             },
@@ -106,7 +102,7 @@ export const structuredData = {
             },
             offers: {
                 "@type": "AggregateOffer",
-                priceCurrency: "USD",
+                priceCurrency: "AUD",
                 lowPrice: "10000",
                 highPrice: "15000",
                 offerCount: "1",

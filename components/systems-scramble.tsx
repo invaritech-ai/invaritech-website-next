@@ -108,7 +108,7 @@ export default function SystemsScramble() {
             className="systems-scramble"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            aria-label={WORD}
+            aria-hidden="true"
             style={{ display: "inline-flex", verticalAlign: "top", position: "relative" }}
         >
             {/* Sketch circle — inline style forces absolute positioning over flex context */}

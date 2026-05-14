@@ -124,11 +124,13 @@ export default function PaymentControlHome() {
                         <p className="site-kicker">{BRAND_EYEBROW}</p>
                         <h1 className="site-h1">
                             Clean up payment controls without changing{" "}
+                            <span className="sr-only">systems</span>
                             <SystemsScramble />.
                         </h1>
                         <p className="site-lead">
-                            We help finance teams reduce manual exception chasing, tighten approvals, and
-                            reduce dollar leakage across the software they already use.
+                            We help accounts payable and finance operations teams reduce invoice exception
+                            chasing, tighten approval controls, and reduce payment leakage across the
+                            software they already use.
                         </p>
                         <p className="site-home-hero-support">
                             Founder-led. One client at a time. Fixed scope first, then managed support.
@@ -163,8 +165,9 @@ export default function PaymentControlHome() {
                         <p className="site-kicker">The problem</p>
                         <h2 className="site-h2">What your finance team is dealing with</h2>
                         <p className="site-body">
-                            Finance workflows rarely break in one obvious place. The friction shows up as
-                            daily symptoms that your team has learned to work around.
+                            Accounts payable and finance operations workflows rarely break in one obvious
+                            place. Invoice exceptions, freight invoice variances, and supplier payment
+                            gaps show up as daily symptoms your team has learned to work around.
                         </p>
                     </div>
 
@@ -192,7 +195,8 @@ export default function PaymentControlHome() {
                             Are your payment controls still living in inboxes, spreadsheets, and tribal knowledge?
                         </p>
                         <p className="site-home-question-body">
-                            We turn manual exception chasing into controlled, auditable workflows inside your current stack.
+                            We design accounts payable controls and supplier payment workflows that handle
+                            invoice exceptions, approval evidence, and audit trails inside your current stack.
                         </p>
                     </div>
                 </div>
