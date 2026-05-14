@@ -8,6 +8,7 @@ const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
     guide: "Guide",
     calculator: "Calculator",
     template: "Template",
+    tool: "Tool",
 };
 
 export default function ResourceCard({ resource }: { resource: Resource }) {

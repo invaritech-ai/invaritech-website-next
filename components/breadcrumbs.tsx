@@ -14,16 +14,8 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
     const breadcrumbItems = createBreadcrumbItems(items);
 
     return (
-        <nav
-            aria-label="Breadcrumb"
-            className={[
-                "border-y border-border/70 py-3",
-                className,
-            ]
-                .filter(Boolean)
-                .join(" ")}
-        >
-            <ol className="flex flex-wrap items-center gap-x-2 gap-y-2 text-[12px] font-mono uppercase tracking-[0.16em] text-foreground-subtle">
+        <nav aria-label="Breadcrumb" className={className}>
+            <ol className="flex flex-wrap items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
                 {breadcrumbItems.map((item, index) => (
                     <li
                         key={`${item.label}-${index}`}
@@ -32,14 +24,14 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
                         {item.current || !item.href ? (
                             <span
                                 aria-current={item.current ? "page" : undefined}
-                                className="truncate font-medium text-foreground"
+                                className="truncate text-foreground/70"
                             >
                                 {item.label}
                             </span>
                         ) : (
                             <Link
                                 href={item.href}
-                                className="truncate text-foreground-muted transition-colors hover:text-foreground"
+                                className="truncate transition-colors hover:text-foreground"
                             >
                                 {item.label}
                             </Link>

@@ -7,8 +7,10 @@ const navigationLinks = [
     { title: "Home", href: "/" },
     { title: "Resources", href: "/resources/" },
     { title: "Blog", href: "/blog/" },
+    { title: "Work", href: "/work/" },
     { title: "About", href: "/about/" },
     { title: "Contact", href: "/contact/" },
+    { title: "Careers", href: "/careers/" },
     { title: BOOK_MEETING_CTA, href: BOOK_MEETING_URL },
 ];
 

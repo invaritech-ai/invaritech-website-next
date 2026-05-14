@@ -55,11 +55,11 @@ export function ToolPageShell({
                     {/* Breadcrumb */}
                     <div className="flex items-center gap-2 mb-10">
                         <Link
-                            href="/tools/"
+                            href="/resources/"
                             className="inline-flex min-h-10 items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-foreground-muted hover:text-primary transition-colors group"
                         >
                             <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
-                            All Tools
+                            Resources
                         </Link>
                         <span className="text-border font-mono text-[10px]">/</span>
                         <span className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle">

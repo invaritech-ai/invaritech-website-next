@@ -39,6 +39,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/resources/invoice-extractor/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/resources/cost-to-close-calculator/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/work/`,
             changeFrequency: "monthly",
             priority: 0.8,

@@ -3,9 +3,9 @@ import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { InvoiceExtractor } from "@/components/tools/InvoiceExtractor";
 
 export const metadata: Metadata = {
-    title: "Free AI Invoice Data Extractor — PDF to CSV | INVARITECH Tools",
+    title: "Free AI Invoice Data Extractor — PDF to CSV | INVARITECH",
     description:
-        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Free. No signup. Works with GST, SST, and VAT invoices across Singapore, Hong Kong, Malaysia, and the Philippines.",
+        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Free. No signup required.",
     keywords: [
         "invoice data extractor",
         "PDF invoice parser",
@@ -17,20 +17,20 @@ export const metadata: Metadata = {
         "AP automation tool",
     ],
     alternates: {
-        canonical: "https://www.invaritech.ai/tools/invoice-extractor/",
+        canonical: "https://www.invaritech.ai/resources/invoice-extractor/",
     },
     openGraph: {
         title: "Free AI Invoice Data Extractor — PDF to CSV",
         description:
-            "Upload any invoice or receipt. AI extracts supplier, line items, totals, and tax into a clean CSV. Free, no signup. Works with GST, SST, and VAT.",
-        url: "https://www.invaritech.ai/tools/invoice-extractor/",
+            "Upload any invoice or receipt. AI extracts supplier, line items, totals, and tax into a clean CSV. Free, no signup.",
+        url: "https://www.invaritech.ai/resources/invoice-extractor/",
         type: "website",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Free AI Invoice Data Extractor — INVARITECH Tools",
+                alt: "Free AI Invoice Data Extractor — INVARITECH",
             },
         ],
     },
@@ -48,14 +48,14 @@ const jsonLd = {
     "@type": "SoftwareApplication",
     name: "Invoice Data Extractor",
     description:
-        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV. Works with GST, SST, and VAT invoices.",
-    url: "https://www.invaritech.ai/tools/invoice-extractor/",
+        "Upload any invoice or receipt (PDF, JPG, PNG) and extract supplier name, line items, totals, and tax into a clean CSV.",
+    url: "https://www.invaritech.ai/resources/invoice-extractor/",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     offers: {
         "@type": "Offer",
         price: "0",
-        priceCurrency: "USD",
+        priceCurrency: "AUD",
     },
     provider: {
         "@type": "Organization",
@@ -65,7 +65,6 @@ const jsonLd = {
     featureList: [
         "Extract invoice line items to CSV",
         "Supports PDF, JPG, and PNG invoices",
-        "Handles GST, SST, and VAT invoices",
         "Exports items CSV and summary CSV",
         "No signup required",
     ],
@@ -81,11 +80,7 @@ export default function InvoiceExtractorPage() {
             maxWidth="3xl"
             jsonLd={jsonLd}
             footerLabel="WHAT THIS DEMONSTRATES"
-            footerText="This is the same document parsing and structured-data extraction layer we integrate into accounts-payable pipelines, ERP ingestion flows, and finance automation systems for clients in Hong Kong and Singapore. Supports GST, SST, and VAT invoices. Accepts messy scanned PDFs, photographed receipts, and multi-line vendor invoices with inconsistent formatting — the model handles layout variation without template configuration. Rate limited to 5 extractions per day per IP address."
-            footerLink={{
-                href: "/services/ai-integration-services/",
-                label: "See AI Integration Services",
-            }}
+            footerText="This is the same document parsing and structured-data extraction layer we integrate into accounts-payable pipelines, ERP ingestion flows, and finance automation systems. Accepts messy scanned PDFs, photographed receipts, and multi-line vendor invoices with inconsistent formatting — the model handles layout variation without template configuration. Rate limited to 5 extractions per day per IP address."
         >
             <InvoiceExtractor />
         </ToolPageShell>

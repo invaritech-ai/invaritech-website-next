@@ -72,6 +72,81 @@ const nextConfig: NextConfig = {
             },
 
             // ── Tools → Resources ─────────────────────────────────────────
+            // Moved tools get specific destinations
+            {
+                source: "/tools/invoice-extractor",
+                destination: "/resources/invoice-extractor/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-extractor/",
+                destination: "/resources/invoice-extractor/",
+                permanent: true,
+            },
+            {
+                source: "/tools/cost-to-close-calculator",
+                destination: "/resources/cost-to-close-calculator/",
+                permanent: true,
+            },
+            {
+                source: "/tools/cost-to-close-calculator/",
+                destination: "/resources/cost-to-close-calculator/",
+                permanent: true,
+            },
+            // Retired tools → resources index
+            {
+                source: "/tools/assessment",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/assessment/",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/burn-rate-calculator",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/burn-rate-calculator/",
+                destination: "/resources/",
+                permanent: true,
+            },
+            // Old geo pages → homepage
+            {
+                source: "/tools/invoice-processing-automation-hong-kong",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-processing-automation-hong-kong/",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-processing-automation-singapore",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-processing-automation-singapore/",
+                destination: "/",
+                permanent: true,
+            },
+            // /assessment/ redirect page → resources
+            {
+                source: "/assessment",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/assessment/",
+                destination: "/resources/",
+                permanent: true,
+            },
+            // Tools index → resources
             {
                 source: "/tools",
                 destination: "/resources/",

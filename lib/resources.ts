@@ -3,7 +3,8 @@ export type ResourceCategory =
     | "checklist"
     | "guide"
     | "calculator"
-    | "template";
+    | "template"
+    | "tool";
 
 export type ResourceAccess = "open" | "gated" | "coming-soon";
 
@@ -26,6 +27,7 @@ export const CATEGORY_LABELS: Record<ResourceCategory | "all", string> = {
     guide: "Guides",
     calculator: "Calculators",
     template: "Templates",
+    tool: "Tools",
 };
 
 export const CATEGORY_KEYS = [
@@ -35,6 +37,7 @@ export const CATEGORY_KEYS = [
     "guide",
     "calculator",
     "template",
+    "tool",
 ] as const;
 
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
@@ -91,6 +94,28 @@ export const resources: Resource[] = [
         industry: "All industries",
         format: "Spreadsheet template",
         access: "coming-soon",
+    },
+    {
+        slug: "invoice-extractor",
+        title: "Invoice Data Extractor",
+        excerpt:
+            "Upload any PDF, JPG, or PNG invoice. AI extracts supplier name, line items, totals, and tax into a clean CSV. Free, no signup required.",
+        category: "tool",
+        industry: "All industries",
+        format: "Live tool",
+        access: "open",
+        subpageHref: "/resources/invoice-extractor/",
+    },
+    {
+        slug: "cost-to-close-calculator",
+        title: "Cost-to-Close Calculator",
+        excerpt:
+            "Three inputs. See how much your month-end close cycle costs annually and what automation saves. No signup required.",
+        category: "tool",
+        industry: "All industries",
+        format: "Live calculator",
+        access: "open",
+        subpageHref: "/resources/cost-to-close-calculator/",
     },
     {
         slug: "payment-release-audit-trail-checklist",
