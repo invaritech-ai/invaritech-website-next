@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import Script from "next/script";
 import "./globals.css";
+import "@fontsource-variable/source-sans-3";
 import { LenisScroll } from "@/components/ui/LenisScroll";
 import { HeroHeader } from "@/components/header";
 import SiteSpotlight from "@/components/hero-spotlight";

@@ -96,10 +96,10 @@ export default function SystemsScramble() {
     return (
         <span
             ref={containerRef}
+            className="systems-scramble"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             aria-label={WORD}
-            // Keep the outer span as a tight inline container with no extra height.
             style={{ display: "inline-flex", verticalAlign: "top" }}
         >
             {WORD.split("").map((char, i) => (
@@ -107,6 +107,9 @@ export default function SystemsScramble() {
                     {char}
                 </span>
             ))}
+            <span className="systems-scramble-underline-dot" aria-hidden="true" />
+            <span className="systems-scramble-underline-solid" aria-hidden="true" />
+            <span className="systems-scramble-label" aria-hidden="true">current stack</span>
         </span>
     );
 }

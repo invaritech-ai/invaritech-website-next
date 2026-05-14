@@ -5,7 +5,6 @@ import {
     Gauge,
     Landmark,
     Route,
-    ShieldCheck,
     Truck,
     Warehouse,
 } from "lucide-react";
@@ -13,21 +12,9 @@ import Link from "next/link";
 
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL, BRAND_EYEBROW, RULE_TABLE_CTA } from "@/lib/marketing";
 import SystemsScramble from "@/components/systems-scramble";
-
-const proofRows = [
-    {
-        label: "Control",
-        body: "Supplier, carrier, invoice, and claim exceptions routed before release.",
-    },
-    {
-        label: "Evidence",
-        body: "Verification notes, approver, timestamp, and source documents held together.",
-    },
-    {
-        label: "Outcome",
-        body: "Fewer manual reviews, cleaner approvals, and less leakage from preventable errors.",
-    },
-];
+import ExceptionPacket from "@/components/exception-packet";
+import RouteLineAnimation from "@/components/route-line-animation";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 const symptoms = [
     "Invoice-to-PO mismatches",
@@ -112,6 +99,8 @@ const trustCards = [
 export default function PaymentControlHome() {
     return (
         <main id="main-content" className="site-page" tabIndex={-1}>
+
+            {/* ── Hero ──────────────────────────────────────────────── */}
             <section className="site-section-hero site-home-hero">
                 <div className="site-home-hero-grid">
                     <div className="site-home-hero-copy">
@@ -143,20 +132,19 @@ export default function PaymentControlHome() {
                         </div>
                     </div>
 
-                    <div className="site-home-proof" aria-label="Control design summary">
-                        {proofRows.map((row) => (
-                            <div key={row.label} className="site-home-proof-row">
-                                <span className="site-home-proof-label">{row.label}</span>
-                                <p className="site-home-proof-text">{row.body}</p>
-                            </div>
-                        ))}
+                    <div className="site-home-hero-artefact">
+                        <ExceptionPacket />
+                        <RouteLineAnimation />
                     </div>
                 </div>
             </section>
 
+            {/* ── The Problem ───────────────────────────────────────── */}
             <section className="site-section site-section-muted">
                 <div className="site-container">
-                    <div className="site-home-section-intro">
+                    <div className="reveal-ledger-line" data-reveal="ledger-line" aria-hidden="true" />
+
+                    <div className="site-home-section-intro" data-reveal="block">
                         <p className="site-kicker">The problem</p>
                         <h2 className="site-h2">What your finance team is dealing with</h2>
                         <p className="site-body">
@@ -165,16 +153,16 @@ export default function PaymentControlHome() {
                         </p>
                     </div>
 
-                    <div className="site-home-symptom-grid">
+                    <div className="site-home-symptom-grid" data-reveal="stagger">
                         {symptoms.map((symptom) => (
-                            <div key={symptom} className="site-home-symptom-card">
+                            <div key={symptom} className="site-home-symptom-card" data-reveal-child>
                                 <FileWarning className="site-icon" aria-hidden="true" />
                                 <p className="site-card-title">{symptom}</p>
                             </div>
                         ))}
                     </div>
 
-                    <div className="site-home-question">
+                    <div className="site-home-question" data-reveal="block">
                         <p className="site-home-question-title">
                             Are your payment controls still living in inboxes, spreadsheets, and tribal knowledge?
                         </p>
@@ -185,9 +173,12 @@ export default function PaymentControlHome() {
                 </div>
             </section>
 
+            {/* ── Who It's For ──────────────────────────────────────── */}
             <section className="site-section">
                 <div className="site-container">
-                    <div className="site-home-section-intro">
+                    <div className="reveal-ledger-line" data-reveal="ledger-line" aria-hidden="true" />
+
+                    <div className="site-home-section-intro" data-reveal="block">
                         <p className="site-kicker">Who it is for</p>
                         <h2 className="site-h2">Built for teams like yours</h2>
                         <p className="site-body">
@@ -196,17 +187,27 @@ export default function PaymentControlHome() {
                         </p>
                     </div>
 
-                    <div className="site-home-vertical-grid">
-                        {verticals.map((vertical) => {
+                    <div className="site-home-vertical-ledger" data-reveal="stagger">
+                        {verticals.map((vertical, index) => {
                             const Icon = vertical.icon;
-
                             return (
-                                <article key={vertical.companyType} className="site-home-vertical-card">
-                                    <Icon className="site-icon" aria-hidden="true" />
-                                    <p className="site-meta">{vertical.companyType}</p>
-                                    <h3 className="site-h3">{vertical.pain}</h3>
-                                    <p className="site-card-body">{vertical.details}</p>
-                                    <p className="site-home-card-meta">{vertical.buyers}</p>
+                                <article
+                                    key={vertical.companyType}
+                                    className="ledger-entry"
+                                    data-reveal-child
+                                >
+                                    <span className="ledger-entry-number" aria-hidden="true">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                    <div>
+                                        <div className="ledger-entry-meta">
+                                            <Icon className="ledger-entry-icon" aria-hidden="true" />
+                                            <p className="site-meta">{vertical.companyType}</p>
+                                        </div>
+                                        <h3 className="site-h3">{vertical.pain}</h3>
+                                        <p className="site-card-body">{vertical.details}</p>
+                                        <p className="site-home-card-meta">{vertical.buyers}</p>
+                                    </div>
                                 </article>
                             );
                         })}
@@ -214,9 +215,10 @@ export default function PaymentControlHome() {
                 </div>
             </section>
 
+            {/* ── How It Works ──────────────────────────────────────── */}
             <section className="site-section site-section-muted">
                 <div className="site-home-process-grid">
-                    <div className="site-copy-center">
+                    <div className="site-copy-center" data-reveal="block">
                         <p className="site-kicker">How it works</p>
                         <h2 className="site-h2">A fixed-scope control sprint</h2>
                         <p className="site-body">
@@ -236,12 +238,12 @@ export default function PaymentControlHome() {
                         </div>
                     </div>
 
-                    <div className="site-home-step-grid">
+                    <div className="site-home-step-ledger" data-reveal="stagger">
                         {workflowSteps.map((step, index) => (
-                            <div key={step.title} className="site-home-step">
-                                <span className="site-home-step-index">
+                            <div key={step.title} className="site-home-step" data-reveal-child>
+                                <div className="site-home-step-node" aria-hidden="true">
                                     {String(index + 1).padStart(2, "0")}
-                                </span>
+                                </div>
                                 <div>
                                     <h3 className="site-card-title">{step.title}</h3>
                                     <p className="site-home-step-body">{step.body}</p>
@@ -252,9 +254,10 @@ export default function PaymentControlHome() {
                 </div>
             </section>
 
+            {/* ── Final CTA ─────────────────────────────────────────── */}
             <section className="site-section">
                 <div className="site-container">
-                    <div className="site-home-final-panel">
+                    <div className="site-home-final-panel" data-reveal="block">
                         <div className="site-home-final-layout">
                             <div className="site-home-final-copy">
                                 <Route className="site-icon" aria-hidden="true" />
@@ -285,17 +288,23 @@ export default function PaymentControlHome() {
                         </div>
                     </div>
 
-                    <div className="site-home-trust-grid">
-                        {trustCards.map((card) => (
-                            <div key={card.title} className="site-home-trust-card">
-                                <ShieldCheck className="site-icon" aria-hidden="true" />
-                                <h3 className="site-card-title">{card.title}</h3>
-                                <p className="site-card-body">{card.body}</p>
+                    <div className="site-home-trust-ledger" data-reveal="stagger">
+                        {trustCards.map((card, index) => (
+                            <div key={card.title} className="site-home-trust-entry" data-reveal-child>
+                                <span className="site-home-trust-number" aria-hidden="true">
+                                    {String(index + 1).padStart(2, "0")}
+                                </span>
+                                <div>
+                                    <h3 className="site-card-title">{card.title}</h3>
+                                    <p className="site-card-body">{card.body}</p>
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
+
+            <HomepageScrollAnimations />
         </main>
     );
 }
