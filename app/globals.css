@@ -1082,6 +1082,504 @@ textarea {
         color: var(--chart-3);
     }
 
+    /* ── Tool Surfaces ─────────────────────────────────────── */
+    .tool-surface {
+        @apply mx-auto w-full space-y-3;
+    }
+
+    .tool-surface-narrow {
+        @apply max-w-3xl;
+    }
+
+    .tool-surface-wide {
+        @apply max-w-4xl;
+    }
+
+    .tool-panel {
+        @apply border border-border bg-background p-6 md:p-8;
+    }
+
+    .tool-panel-muted {
+        @apply border border-border bg-card p-6 md:p-8;
+    }
+
+    .tool-panel-stack {
+        @apply space-y-8;
+    }
+
+    .tool-state-stack {
+        @apply space-y-6;
+    }
+
+    .tool-state-stack-lg {
+        @apply space-y-8;
+    }
+
+    .tool-grid {
+        @apply grid gap-[1px] bg-border lg:grid-cols-2;
+    }
+
+    .tool-header-row {
+        @apply flex items-center gap-3 border-b border-border pb-6;
+    }
+
+    .tool-header-row-between {
+        @apply flex items-center justify-between gap-4 border-b border-border pb-6;
+    }
+
+    .tool-header-rule {
+        @apply h-px w-8 bg-primary/60;
+    }
+
+    .tool-kicker {
+        @apply text-xs font-mono uppercase tracking-[0.22em] text-primary;
+    }
+
+    .tool-kicker-spaced {
+        @apply mb-3;
+    }
+
+    .tool-label {
+        @apply text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .tool-label-spaced {
+        @apply mb-1;
+    }
+
+    .tool-label-primary {
+        @apply text-[10px] font-mono uppercase tracking-[0.18em] text-primary;
+    }
+
+    .tool-label-error {
+        @apply text-destructive;
+    }
+
+    .tool-value {
+        @apply text-sm font-mono text-foreground;
+    }
+
+    .tool-value-total {
+        @apply font-semibold text-primary;
+    }
+
+    .tool-value-lg {
+        @apply text-2xl font-semibold tracking-tight text-foreground tabular-nums;
+    }
+
+    .tool-value-right {
+        @apply text-right;
+    }
+
+    .tool-value-muted {
+        @apply text-muted-foreground;
+    }
+
+    .tool-value-tier-good {
+        @apply text-primary;
+    }
+
+    .tool-value-tier-average {
+        @apply text-chart-4;
+    }
+
+    .tool-value-tier-slow {
+        @apply text-destructive;
+    }
+
+    .tool-value-suffix {
+        @apply ml-1 text-xs font-normal text-foreground-subtle;
+    }
+
+    .tool-value-xl {
+        @apply text-4xl font-semibold tracking-tight text-foreground tabular-nums md:text-6xl;
+    }
+
+    .tool-value-accent {
+        @apply text-3xl font-semibold tracking-tight text-primary tabular-nums;
+    }
+
+    .tool-small {
+        @apply text-[10px] font-mono leading-relaxed tracking-[0.08em] text-foreground-subtle;
+    }
+
+    .tool-small-spaced {
+        @apply mt-1;
+    }
+
+    .tool-small-spaced-lg {
+        @apply mt-2;
+    }
+
+    .tool-small-offset {
+        @apply mt-0.5;
+    }
+
+    .tool-small-center {
+        @apply text-center;
+    }
+
+    .tool-copy {
+        @apply text-sm leading-relaxed text-muted-foreground;
+    }
+
+    .tool-inline-icon-row {
+        @apply flex items-center gap-3;
+    }
+
+    .tool-selected-file,
+    .tool-empty-file {
+        @apply space-y-3;
+    }
+
+    .tool-selected-file {
+        @apply space-y-2;
+    }
+
+    .tool-icon {
+        @apply size-8;
+    }
+
+    .tool-icon-sm {
+        @apply size-4 shrink-0;
+    }
+
+    .tool-icon-xs {
+        @apply size-3.5 shrink-0;
+    }
+
+    .tool-icon-primary {
+        @apply text-primary;
+    }
+
+    .tool-icon-muted {
+        @apply text-foreground-subtle;
+    }
+
+    .tool-icon-error {
+        @apply text-destructive;
+    }
+
+    .tool-dropzone {
+        @apply cursor-pointer border-2 border-dashed border-border p-10 text-center transition-colors hover:border-primary/40 hover:bg-card md:p-12;
+    }
+
+    .tool-dropzone-active,
+    .tool-dropzone-selected {
+        @apply border-primary/60 bg-primary/[0.05];
+    }
+
+    .tool-dropzone-icon {
+        @apply mx-auto size-8 text-primary/80;
+    }
+
+    .tool-dropzone-copy {
+        @apply text-sm font-mono uppercase tracking-[0.16em] text-foreground-muted;
+    }
+
+    .tool-dropzone-note {
+        @apply text-xs font-mono uppercase tracking-[0.16em] text-foreground-subtle;
+    }
+
+    .tool-progress-state {
+        @apply space-y-8 py-12;
+    }
+
+    .tool-progress {
+        @apply relative h-px w-full bg-border;
+    }
+
+    .tool-progress-bar {
+        @apply absolute inset-y-0 left-0 bg-primary transition-all ease-out;
+    }
+
+    .tool-progress-glow {
+        @apply absolute top-1/2 h-3 w-1 -translate-y-1/2 bg-primary blur-sm transition-all ease-out;
+    }
+
+    .tool-action-row {
+        @apply flex flex-col gap-3 border-t border-border pt-4 sm:flex-row;
+    }
+
+    .tool-action-spacer {
+        @apply sm:ml-auto;
+    }
+
+    .tool-button-primary {
+        @apply inline-flex min-h-12 w-full items-center justify-center gap-2 bg-primary px-6 text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-foreground hover:text-background disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .tool-button-fit {
+        @apply w-auto shrink-0;
+    }
+
+    .tool-button-ghost {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 border border-border px-4 text-xs font-mono uppercase tracking-[0.14em] text-foreground-muted transition-colors hover:bg-card hover:text-foreground disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .tool-button-subtle {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 px-4 text-xs font-mono uppercase tracking-[0.14em] text-foreground-subtle transition-colors hover:text-foreground disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .tool-segmented {
+        @apply flex flex-wrap gap-1;
+    }
+
+    .tool-segment {
+        @apply border border-border px-4 py-2 text-xs font-mono uppercase tracking-[0.14em] text-foreground-subtle transition-colors hover:border-primary/40 hover:text-foreground;
+    }
+
+    .tool-segment-active {
+        @apply border-primary bg-primary text-primary-foreground;
+    }
+
+    .tool-slider-field {
+        @apply space-y-3;
+    }
+
+    .tool-slider-row {
+        @apply flex items-baseline justify-between gap-4;
+    }
+
+    .tool-slider {
+        @apply h-[3px] w-full cursor-pointer appearance-none;
+    }
+
+    .tool-slider::-webkit-slider-thumb {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        background: var(--primary);
+        border-radius: 0;
+        transition: transform 100ms ease;
+        box-shadow: 0 0 12px color-mix(in oklch, var(--primary) 70%, transparent);
+    }
+
+    .tool-slider::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+    }
+
+    .tool-slider::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+        background: var(--primary);
+        border: 0;
+        border-radius: 0;
+    }
+
+    .tool-metric-grid {
+        @apply grid grid-cols-2 gap-4 border-t border-border pt-6;
+    }
+
+    .tool-metric {
+        @apply border border-border p-4;
+    }
+
+    .tool-result-highlight {
+        @apply relative overflow-hidden border border-primary/40 bg-primary/[0.08] p-6;
+    }
+
+    .tool-result-row {
+        @apply flex items-baseline justify-between gap-4;
+    }
+
+    .tool-metric-row {
+        @apply flex items-start justify-between gap-4;
+    }
+
+    .tool-metric-save {
+        @apply shrink-0 text-right;
+    }
+
+    .tool-divider {
+        @apply border-t border-border pt-5;
+    }
+
+    .tool-result-highlight::before,
+    .tool-result-highlight::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, color-mix(in oklch, var(--primary) 65%, transparent), transparent);
+    }
+
+    .tool-result-highlight::before {
+        top: 0;
+    }
+
+    .tool-result-highlight::after {
+        bottom: 0;
+        opacity: 0.35;
+    }
+
+    .tool-table-wrap {
+        @apply overflow-x-auto;
+    }
+
+    .tool-table {
+        @apply w-full border-collapse font-mono text-sm;
+    }
+
+    .tool-table-head th {
+        @apply border-b border-primary/30 px-3 py-2 text-left text-[10px] font-mono uppercase tracking-[0.16em] text-primary;
+    }
+
+    .tool-table-head th:not(:first-child) {
+        text-align: right;
+    }
+
+    .tool-table-row {
+        @apply border-b border-border transition-colors hover:bg-card;
+    }
+
+    .tool-table-row td {
+        @apply px-3 py-2 text-xs text-muted-foreground;
+    }
+
+    .tool-table-row td:first-child {
+        @apply text-foreground;
+    }
+
+    .tool-table-row td:not(:first-child) {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .tool-status-success {
+        @apply text-xs font-mono uppercase tracking-[0.14em] text-primary;
+    }
+
+    .tool-status-error {
+        @apply flex items-start gap-4 border-l-2 border-destructive pl-4;
+    }
+
+    .tool-inline-form {
+        @apply flex flex-col gap-2 sm:flex-row;
+    }
+
+    .tool-data-grid {
+        @apply grid grid-cols-2 gap-4 md:grid-cols-3;
+    }
+
+    .tool-totals-grid {
+        @apply grid grid-cols-2 gap-4 border border-border p-4 md:grid-cols-4;
+    }
+
+    .tool-email-panel {
+        @apply space-y-3 border border-border p-4;
+    }
+
+    .tool-benchmark {
+        @apply space-y-3;
+    }
+
+    .tool-benchmark-header {
+        @apply mb-1 flex items-center justify-between gap-4;
+    }
+
+    .tool-benchmark-bar {
+        @apply relative flex h-8 border border-border;
+    }
+
+    .tool-benchmark-segment {
+        @apply border-r border-border last:border-r-0;
+    }
+
+    .tool-benchmark-best {
+        @apply bg-primary/35;
+    }
+
+    .tool-benchmark-good {
+        @apply bg-primary/20;
+    }
+
+    .tool-benchmark-average {
+        @apply bg-chart-4/15;
+    }
+
+    .tool-benchmark-slow {
+        @apply bg-destructive/10;
+    }
+
+    .tool-benchmark-marker {
+        @apply absolute bottom-0 top-0 w-[2px] transition-all duration-500;
+    }
+
+    .tool-benchmark-marker::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -6px;
+        width: 10px;
+        height: 10px;
+        transform: translateX(-50%) rotate(45deg);
+        background: currentColor;
+    }
+
+    .tool-benchmark-marker-current {
+        @apply bg-foreground text-foreground;
+    }
+
+    .tool-benchmark-marker-target {
+        @apply bg-primary text-primary shadow-[0_0_8px_var(--primary)];
+    }
+
+    .tool-benchmark-tier {
+        @apply border px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-[0.14em];
+    }
+
+    .tool-benchmark-tier-best {
+        @apply border-primary/50 bg-primary/10 text-primary;
+    }
+
+    .tool-benchmark-tier-good {
+        @apply border-primary/30 bg-primary/5 text-primary/80;
+    }
+
+    .tool-benchmark-tier-average {
+        @apply border-chart-4/40 bg-chart-4/10 text-chart-4;
+    }
+
+    .tool-benchmark-tier-slow {
+        @apply border-destructive/35 bg-destructive/5 text-destructive;
+    }
+
+    .tool-benchmark-labels {
+        @apply flex text-[9px] font-mono uppercase tracking-[0.12em] text-foreground-subtle;
+    }
+
+    .tool-benchmark-label {
+        @apply overflow-hidden px-0.5 text-center;
+    }
+
+    .tool-benchmark-legend {
+        @apply flex flex-wrap items-center gap-x-6 gap-y-1.5 pt-1 text-[10px] font-mono text-foreground-subtle;
+    }
+
+    .tool-benchmark-legend-item {
+        @apply flex items-center gap-2;
+    }
+
+    .tool-benchmark-dot {
+        @apply inline-block size-2 rotate-45 shrink-0;
+    }
+
+    .tool-benchmark-dot-current {
+        @apply bg-foreground;
+    }
+
+    .tool-benchmark-dot-target {
+        @apply bg-primary shadow-[0_0_6px_var(--primary)];
+    }
+
+    .tool-cta-panel {
+        @apply flex flex-col items-start justify-between gap-4 border border-border bg-primary/[0.04] p-6 sm:flex-row sm:items-center;
+    }
+
     /* ── Route Line ─────────────────────────────────────────── */
     .route-line-wrap {
         padding: 0.75rem 0.25rem 0.25rem;
