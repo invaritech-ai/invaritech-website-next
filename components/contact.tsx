@@ -10,7 +10,7 @@ import Link from "next/link";
 import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { TurnstileWidget } from "@/components/turnstile-widget";
 import { submitContactLead } from "@/app/actions/leads";
-import { getAttributionData } from "@/lib/attribution";
+import { appendAttributionToFormData } from "@/lib/attribution";
 import {
     Calendar,
     Mail,
@@ -169,10 +169,7 @@ export default function ContactSection() {
         fd.set("message", formData.message);
         fd.set("cf_turnstile_token", turnstileToken);
 
-        const attribution = getAttributionData();
-        for (const [key, value] of Object.entries(attribution)) {
-            fd.set(key, value);
-        }
+        appendAttributionToFormData(fd);
 
         const result = await submitContactLead(fd);
 

@@ -36,14 +36,21 @@ export function captureFirstLanding(): void {
     }
 }
 
+export function appendAttributionToFormData(fd: FormData): void {
+    const attribution = getAttributionData();
+    for (const [key, value] of Object.entries(attribution)) {
+        fd.set(key, value);
+    }
+}
+
 function param(params: URLSearchParams, key: string): string {
     return params.get(key) ?? "";
 }
 
-export function getAttributionData(): AttributionData {
-    const params = new URLSearchParams(
-        typeof window !== "undefined" ? window.location.search : ""
-    );
+function getAttributionData(): AttributionData {
+    const isClient = typeof window !== "undefined";
+    const hasDocument = typeof document !== "undefined";
+    const params = new URLSearchParams(isClient ? window.location.search : "");
 
     let landingUrl = "";
     let landingPath = "";
@@ -55,10 +62,10 @@ export function getAttributionData(): AttributionData {
     }
 
     return {
-        submit_page_url: typeof window !== "undefined" ? window.location.href : "",
-        submit_page_path: typeof window !== "undefined" ? window.location.pathname : "",
-        submit_page_title: typeof document !== "undefined" ? document.title : "",
-        referrer: typeof document !== "undefined" ? document.referrer : "",
+        submit_page_url: isClient ? window.location.href : "",
+        submit_page_path: isClient ? window.location.pathname : "",
+        submit_page_title: hasDocument ? document.title : "",
+        referrer: hasDocument ? document.referrer : "",
         landing_page_url: landingUrl,
         landing_page_path: landingPath,
         utm_source: param(params, "utm_source"),

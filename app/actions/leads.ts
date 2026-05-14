@@ -1,7 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
-import { appendLeadRow } from "@/lib/sheets";
+import { appendLeadRow, type LeadRow } from "@/lib/sheets";
 import type { AttributionData } from "@/lib/attribution";
 
 interface ActionResult {
@@ -58,38 +58,22 @@ function extractAttribution(fd: FormData): AttributionData {
     };
 }
 
-export async function submitContactLead(formData: FormData): Promise<ActionResult> {
-    try {
-        const name = String(formData.get("name") ?? "").trim();
-        const email = String(formData.get("email") ?? "").trim();
-        const company = String(formData.get("company") ?? "").trim();
-        const phone = String(formData.get("phone") ?? "").trim();
-        const country = String(formData.get("country") ?? "").trim();
-        const message = String(formData.get("message") ?? "").trim();
-        const token = String(formData.get("cf_turnstile_token") ?? "").trim();
+type LeadFields = Omit<LeadRow, "attribution" | "turnstile_status" | "turnstile_hostname">;
 
-        if (!name) return { success: false, error: "Name is required" };
-        if (!email) return { success: false, error: "Email is required" };
-        if (!EMAIL_RE.test(email)) return { success: false, error: "Please enter a valid email address" };
-        if (!country) return { success: false, error: "Country is required" };
-        if (!message) return { success: false, error: "Message is required" };
+async function verifyAndAppend(
+    token: string,
+    formData: FormData,
+    fields: LeadFields,
+    label: string,
+): Promise<ActionResult> {
+    try {
         if (!token) return { success: false, error: "Verification required" };
 
         const turnstile = await verifyTurnstile(token);
         if (!turnstile.success) return { success: false, error: "Verification failed. Please try again." };
 
         await appendLeadRow({
-            form_type: "contact",
-            source: "contact",
-            name,
-            email,
-            company,
-            phone,
-            country,
-            role: "",
-            industry: "",
-            main_control_problem: "",
-            message,
+            ...fields,
             attribution: extractAttribution(formData),
             turnstile_status: "verified",
             turnstile_hostname: turnstile.hostname,
@@ -97,50 +81,51 @@ export async function submitContactLead(formData: FormData): Promise<ActionResul
 
         return { success: true };
     } catch (err) {
-        console.error("submitContactLead error:", err);
+        console.error(`${label} error:`, err);
         return { success: false, error: "Something went wrong. Please try again." };
     }
 }
 
+export async function submitContactLead(formData: FormData): Promise<ActionResult> {
+    const name    = String(formData.get("name")    ?? "").trim();
+    const email   = String(formData.get("email")   ?? "").trim();
+    const company = String(formData.get("company") ?? "").trim();
+    const phone   = String(formData.get("phone")   ?? "").trim();
+    const country = String(formData.get("country") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+    const token   = String(formData.get("cf_turnstile_token") ?? "").trim();
+
+    if (!name)                    return { success: false, error: "Name is required" };
+    if (!email)                   return { success: false, error: "Email is required" };
+    if (!EMAIL_RE.test(email))    return { success: false, error: "Please enter a valid email address" };
+    if (!country)                 return { success: false, error: "Country is required" };
+    if (!message)                 return { success: false, error: "Message is required" };
+
+    return verifyAndAppend(token, formData, {
+        form_type: "contact",
+        source: "contact",
+        name, email, company, phone, country, message,
+        role: "", industry: "", main_control_problem: "",
+    }, "submitContactLead");
+}
+
 export async function submitResourceLead(formData: FormData): Promise<ActionResult> {
-    try {
-        const email = String(formData.get("email") ?? "").trim();
-        const company = String(formData.get("company") ?? "").trim();
-        const role = String(formData.get("job_title") ?? "").trim();
-        const industry = String(formData.get("industry") ?? "").trim();
-        const main_control_problem = String(formData.get("main_control_problem") ?? "").trim();
-        const source = String(formData.get("source") ?? "resource").trim();
-        const token = String(formData.get("cf_turnstile_token") ?? "").trim();
+    const email               = String(formData.get("email")               ?? "").trim();
+    const company             = String(formData.get("company")             ?? "").trim();
+    const role                = String(formData.get("job_title")           ?? "").trim();
+    const industry            = String(formData.get("industry")            ?? "").trim();
+    const main_control_problem = String(formData.get("main_control_problem") ?? "").trim();
+    const source              = String(formData.get("source")              ?? "resource").trim();
+    const token               = String(formData.get("cf_turnstile_token") ?? "").trim();
 
-        if (!email) return { success: false, error: "Email is required" };
-        if (!EMAIL_RE.test(email)) return { success: false, error: "Please enter a valid email address" };
-        if (!company) return { success: false, error: "Company is required" };
-        if (!role) return { success: false, error: "Role is required" };
-        if (!token) return { success: false, error: "Verification required" };
+    if (!email)                return { success: false, error: "Email is required" };
+    if (!EMAIL_RE.test(email)) return { success: false, error: "Please enter a valid email address" };
+    if (!company)              return { success: false, error: "Company is required" };
+    if (!role)                 return { success: false, error: "Role is required" };
 
-        const turnstile = await verifyTurnstile(token);
-        if (!turnstile.success) return { success: false, error: "Verification failed. Please try again." };
-
-        await appendLeadRow({
-            form_type: "resource",
-            source,
-            name: "",
-            email,
-            company,
-            phone: "",
-            country: "",
-            role,
-            industry,
-            main_control_problem,
-            message: "",
-            attribution: extractAttribution(formData),
-            turnstile_status: "verified",
-            turnstile_hostname: turnstile.hostname,
-        });
-
-        return { success: true };
-    } catch (err) {
-        console.error("submitResourceLead error:", err);
-        return { success: false, error: "Something went wrong. Please try again." };
-    }
+    return verifyAndAppend(token, formData, {
+        form_type: "resource",
+        source, email, company, role, industry, main_control_problem,
+        name: "", phone: "", country: "", message: "",
+    }, "submitResourceLead");
 }

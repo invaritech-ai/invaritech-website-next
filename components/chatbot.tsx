@@ -107,34 +107,21 @@ export const Chatbot = () => {
             }
         };
 
+        const patchScrollables = (root: Element | Document | ShadowRoot) => {
+            const SELECTORS = '.chatbot-chat-view, div[class*="messages-container"], .rcb-chat-body';
+            root.querySelectorAll(SELECTORS).forEach((el) => {
+                if (!el.hasAttribute("data-lenis-prevent")) {
+                    el.setAttribute("data-lenis-prevent", "");
+                    (el as HTMLElement).style.pointerEvents = "auto";
+                    (el as HTMLElement).style.overscrollBehavior = "contain";
+                }
+            });
+        };
+
         // Polling to add data-lenis-prevent to Shadow DOM scroll container
         const interval = setInterval(() => {
             const flowise = document.querySelector("flowise-chatbot");
-            if (flowise && flowise.shadowRoot) {
-                const scrollables = flowise.shadowRoot.querySelectorAll(
-                    '.chatbot-chat-view, div[class*="messages-container"], .rcb-chat-body'
-                );
-                scrollables.forEach((el) => {
-                    if (!el.hasAttribute("data-lenis-prevent")) {
-                        el.setAttribute("data-lenis-prevent", "");
-                        // Also force pointer events just in case
-                        (el as HTMLElement).style.pointerEvents = "auto";
-                        (el as HTMLElement).style.overscrollBehavior = "contain";
-                    }
-                });
-            } else {
-                 // Fallback for non-shadow DOM implementations
-                 const scrollables = document.querySelectorAll(
-                    '.chatbot-chat-view, div[class*="messages-container"], .rcb-chat-body'
-                );
-                scrollables.forEach((el) => {
-                    if (!el.hasAttribute("data-lenis-prevent")) {
-                        el.setAttribute("data-lenis-prevent", "");
-                        (el as HTMLElement).style.pointerEvents = "auto";
-                        (el as HTMLElement).style.overscrollBehavior = "contain";
-                    }
-                });
-            }
+            patchScrollables(flowise?.shadowRoot ?? document);
         }, 1000);
 
         // Use capture phase to intercept before other handlers

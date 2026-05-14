@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getInvoiceBackendConfig, fetchFromInvoiceBackend } from "@/lib/invoice-backend";
 
 // No rate limiting on this route — status polling is exempt from the per-IP upload quota.
 // force-dynamic prevents Next.js from accidentally caching status responses.
@@ -9,18 +10,16 @@ export async function GET(
     { params }: { params: Promise<{ jobId: string }> }
 ) {
     const { jobId } = await params;
-    const backendUrl = process.env.INVOICE_BACKEND_BASE_URL;
-    const apiKey = process.env.INVOICE_BACKEND_API_KEY;
 
-    if (!backendUrl || !apiKey) {
-        return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
-    }
+    const config = getInvoiceBackendConfig();
+    if (config instanceof NextResponse) return config;
 
     try {
-        const response = await fetch(`${backendUrl}/api/v1/jobs/${jobId}`, {
-            headers: { "X-API-Key": apiKey },
-            cache: "no-store",
-        });
+        const response = await fetchFromInvoiceBackend(
+            `/api/v1/jobs/${jobId}`,
+            config,
+            { cache: "no-store" },
+        );
 
         const text = await response.text();
         let data: unknown;

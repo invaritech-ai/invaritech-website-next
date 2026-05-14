@@ -9,7 +9,7 @@ import { Label } from "@/components/ui/label";
 import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { TurnstileWidget } from "@/components/turnstile-widget";
 import { submitResourceLead } from "@/app/actions/leads";
-import { getAttributionData } from "@/lib/attribution";
+import { appendAttributionToFormData } from "@/lib/attribution";
 
 const industries = [
     "Freight & logistics",
@@ -87,10 +87,7 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
         fd.set("source", source);
         fd.set("cf_turnstile_token", turnstileToken);
 
-        const attribution = getAttributionData();
-        for (const [key, value] of Object.entries(attribution)) {
-            fd.set(key, value);
-        }
+        appendAttributionToFormData(fd);
 
         const result = await submitResourceLead(fd);
 
