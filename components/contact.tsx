@@ -242,14 +242,13 @@ export default function ContactSection() {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                                    Why partner with Invaritech?
+                                    Why partner with Invaritech for accounts payable automation?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    Invaritech leads architecture, delivery, and
-                                    accountability. Our partner engineering
-                                    network extends execution capacity, but you
-                                    always have one accountable owner for
-                                    outcomes.
+                                    Invaritech leads architecture, delivery, and accountability for
+                                    invoice approval workflow automation, duplicate payment prevention,
+                                    and payment fraud controls. Our partner engineering network extends
+                                    execution capacity, but you always have one accountable owner.
                                 </p>
                             </div>
 
@@ -261,9 +260,9 @@ export default function ContactSection() {
                                     <div>
                                         <h3 className="font-medium mb-1 text-foreground">Book a Meeting</h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Skip the email loop and book a
-                                            focused session directly with our
-                                            team.
+                                            Skip the email loop and bring one
+                                            real accounts payable workflow
+                                            problem to a focused scoping session.
                                         </p>
                                         <Button
                                             asChild
@@ -311,7 +310,7 @@ export default function ContactSection() {
                                     Send us a message
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Tell us a bit about your project and we&apos;ll be in touch.
+                                    Tell us which invoice approval workflow, supplier reconciliation, or payment risk process needs attention.
                                 </p>
                             </div>
 
@@ -393,7 +392,7 @@ export default function ContactSection() {
                                     <Textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Tell us about your project goals, timeline, and requirements..."
+                                        placeholder="Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}

@@ -84,9 +84,9 @@ Not every workflow justifies a full infrastructure build. The disciplined approa
 For teams unsure whether their compliance workflow justifies custom infrastructure, the first step is structured evaluation:
 
 - **[Contact](/contact/)** (map your workflow gaps with the engineering team)
-- **[AI Automation Consulting](/services/ai-automation-consulting/)** (quantified diagnostic, diagnose first)
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (ship a wedge in 30 days)
-- **[AI Integration Services](/services/ai-integration-services/)** (integrate at depth)
+- **[AI Automation Consulting](/contact/)** (quantified diagnostic, diagnose first)
+- **[AI Automation Sprint](/contact/)** (ship a wedge in 30 days)
+- **[AI Integration Services](/work/eudr-compliance-bridge/)** (integrate at depth)
 
 Use controlled and measurable execution with explicit governance boundaries.
 

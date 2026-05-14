@@ -46,7 +46,7 @@ Replace headcount-first framing with workflow framing.
 
 Identify which workflow segments can run deterministically in the background.
 
-That is the shift from headcount-led scaling to infrastructure-led scaling. [Workflow automation services](/services/ai-workflow-automation-services/) make it concrete: identify the segments that run deterministically, automate them, and free your team for the decisions that actually need them.
+That is the shift from headcount-led scaling to infrastructure-led scaling. [Workflow automation services](/work/) make it concrete: identify the segments that run deterministically, automate them, and free your team for the decisions that actually need them.
 
 ---
 
@@ -81,7 +81,7 @@ Weak automation:
 
 Robust automation:
 
-- [API-first integrations](/services/ai-integration-services/) where possible
+- [API-first integrations](/work/eudr-compliance-bridge/) where possible
 - deterministic logic
 - explicit failure modes
 - complete logs
@@ -102,8 +102,8 @@ EUDR submission volume shows the failure mode clearly: manual workflows hit capa
 If you want a quantified view of where your bottleneck is, start here:
 
 - **[Contact](/contact/)** (map your workflow gaps)
-- **[AI Automation Consulting](/services/ai-automation-consulting/)**
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
+- **[AI Automation Consulting](/contact/)**
+- **[AI Automation Sprint](/contact/)** (30 days)
 `,
     author: {
         name: "Avishek Majumder",

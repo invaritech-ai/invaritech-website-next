@@ -18,18 +18,18 @@ import { BOOK_MEETING_URL, BOOK_MEETING_CTA } from "@/lib/marketing";
 const resourceNotes = [
     {
         icon: ListChecks,
-        title: "Ordered checks",
-        body: "Rule logic for spotting exceptions before a payment is released.",
+        title: "Invoice approval checks",
+        body: "Ordered checks for catching invoice exceptions before payment release.",
     },
     {
         icon: ShieldCheck,
-        title: "Evidence standard",
-        body: "What should be attached before an exception can be approved.",
+        title: "Fraud evidence standard",
+        body: "What evidence to attach for vendor bank detail changes and high-risk approvals.",
     },
     {
         icon: FileSpreadsheet,
-        title: "Queue design",
-        body: "Owner, status, SLA, approval note, and audit trail fields.",
+        title: "Exception queue design",
+        body: "Owner, status, SLA, approval note, and audit trail fields in one queue.",
     },
 ];
 
@@ -52,16 +52,16 @@ export default function ResourceLibraryClient() {
                             <div className="mb-8 flex items-center gap-3" data-reveal="block">
                                 <div className="h-px w-8 bg-primary/60" />
                                 <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                    Payment Control Resources
+                                    Accounts Payable Automation Resources
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical accounts payable control resources for finance teams.
+                                Practical resources for invoice approval workflow and AP automation.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Rule tables, checklists, and guides for teams managing invoice
-                            approval workflow gaps, invoice exceptions, and payment approval checks.
+                            Rule tables, checklists, and guides for teams reducing duplicate payments,
+                            improving supplier statement reconciliation, and preventing payment diversion fraud.
                         </p>
                     </div>
                 </div>
@@ -78,12 +78,12 @@ export default function ResourceLibraryClient() {
                                 Featured resource
                             </div>
                             <h2 className="site-h2">
-                                Supplier Payment Control Rule Table
+                                Invoice Approval Workflow & Supplier Payment Controls Rule Table
                             </h2>
                             <p className="site-lead mt-6">
-                                A zero-fluff workbook for mapping supplier payment controls,
-                                invoice exception routing, payment approval checks, and audit notes
-                                before a payment is ever released.
+                                A zero-fluff workbook for mapping invoice approval workflow steps,
+                                supplier payment controls, exception routing, and payment approval checks
+                                before payment is released.
                             </p>
                             <div className="mt-10 grid gap-[1px] bg-border sm:grid-cols-3">
                                 {resourceNotes.map((note) => (
@@ -99,8 +99,8 @@ export default function ResourceLibraryClient() {
                             </div>
                             <p className="mt-8 text-sm leading-relaxed text-foreground-subtle">
                                 Most resources stay open. The workbook request asks for a few
-                                operational fields because accounts payable controls vary by
-                                industry, workflow, and exception type.
+                                operational fields because accounts payable automation requirements vary
+                                by industry, workflow, and exception type.
                             </p>
                         </div>
 
@@ -177,13 +177,13 @@ export default function ResourceLibraryClient() {
                         data-reveal="block"
                     >
                         <div>
-                                <h2 className="site-h3">Have a live exception problem?</h2>
-                                <p className="site-body mt-3">
-                                    Bring one real invoice approval workflow or supplier payment
-                                    exception example. We will tell you if it is a fit for a
-                                    fixed-scope control sprint.
-                                </p>
-                            </div>
+                            <h2 className="site-h3">Have a live exception problem?</h2>
+                            <p className="site-body mt-3">
+                                Bring one real invoice approval workflow, supplier statement
+                                reconciliation issue, or duplicate payment example. We will tell you
+                                if it is a fit for a fixed-scope automation sprint.
+                            </p>
+                        </div>
                         <a
                             href={BOOK_MEETING_URL}
                             target="_blank"

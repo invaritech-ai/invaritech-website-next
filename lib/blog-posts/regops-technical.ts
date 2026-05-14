@@ -127,8 +127,8 @@ This is not primarily a convenience initiative. It protects margin and delivery 
 
 If your workflow is integration-heavy and regulator-facing, treat it as infrastructure early.
 
-- **[AI Integration Services](/services/ai-integration-services/)**
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
+- **[AI Integration Services](/work/eudr-compliance-bridge/)**
+- **[AI Automation Sprint](/contact/)** (30 days)
 
 Build one controlled wedge first, then expand.
     `,

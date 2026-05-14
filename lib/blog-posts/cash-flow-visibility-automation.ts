@@ -12,7 +12,7 @@
 
 // This is not an accounting problem. It is an infrastructure problem.
 
-// Manual [cash flow reporting](/tools/burn-rate-calculator/) is a trailing indicator by design. You consolidate bank statements at the end of the month. You run reconciliation. You reconcile AP and AR. Then — after the [month-end close automation](/blog/month-end-close-automation/) is complete — someone aggregates the outputs into a cash flow spreadsheet and emails it to leadership.
+// Manual [cash flow reporting](/resources/cost-to-close-calculator/) is a trailing indicator by design. You consolidate bank statements at the end of the month. You run reconciliation. You reconcile AP and AR. Then — after the [month-end close automation](/blog/month-end-close-automation/) is complete — someone aggregates the outputs into a cash flow spreadsheet and emails it to leadership.
 
 // By the time that email arrives, the data is already stale. Payments have gone out. Revenue has come in. The number in the spreadsheet no longer describes reality.
 
@@ -74,7 +74,7 @@
 
 // **Visibility Layer.** A dashboard (or automated report pushed to Slack, email, or directly into the CFO's existing tools) that shows the current cash position, the 13-week projection by week, and flagged exceptions — invoices that are overdue, cash dips projected below a threshold, concentrations in a single customer or vendor. This layer is where finance teams actually interact with the data.
 
-// This is the type of system we deploy under our [AI workflow automation services](/services/ai-workflow-automation-services/), even when the workflow is entirely deterministic with no AI inference involved. The value is in the connection and the continuous update, not in the model complexity.
+// This is the type of system we deploy under our [AI workflow automation services](/work/), even when the workflow is entirely deterministic with no AI inference involved. The value is in the connection and the continuous update, not in the model complexity.
 
 // ---
 
@@ -106,7 +106,7 @@
 // - **You are managing multiple entities with separate bank accounts.** Manual consolidation at scale is operationally fragile and slow.
 // - **Your rolling forecast horizon is less than 6 weeks.** If you cannot see 6 weeks out with reasonable accuracy, you do not have enough lead time to make meaningful financial decisions.
 
-// The [burn rate calculator](/tools/burn-rate-calculator/) on this site is a simple entry point — enter your current cash position, monthly costs, and revenue, and it will show you your runway and the dollar value of your current reporting lag. If the lag cost number is uncomfortable, that is the number to focus on.
+// The [burn rate calculator](/resources/cost-to-close-calculator/) on this site is a simple entry point — enter your current cash position, monthly costs, and revenue, and it will show you your runway and the dollar value of your current reporting lag. If the lag cost number is uncomfortable, that is the number to focus on.
 
 // ---
 
@@ -118,7 +118,7 @@
 
 // Either way, the right starting point is a scoped diagnostic — a one-week exercise that maps your current data sources, identifies the integration points, and defines the normalization logic before any code is written.
 
-// [Our 30-Day Sprint](/services/ai-automation-sprint/) is designed for exactly this: a fixed-scope engagement that delivers a production-ready pipeline, not a strategy document. If cash visibility is the bottleneck, that is what we build.
+// [Our 30-Day Sprint](/contact/) is designed for exactly this: a fixed-scope engagement that delivers a production-ready pipeline, not a strategy document. If cash visibility is the bottleneck, that is what we build.
 //     `,
 //     author: {
 //         name: "Avishek Majumder",
@@ -176,7 +176,7 @@ This is exactly where AI proves its worth. AI models can now take five disparate
 
 ## Security, Data Integrity, and the Cost Reality
 
-Security and data integrity are of paramount importance when dealing with financial records. We have to architect these systems carefully to prevent leaks and ensure idempotency. This is exactly why [AI integration services](/services/ai-integration-services/) should be treated as a core part of finance automation architecture, not an afterthought.
+Security and data integrity are of paramount importance when dealing with financial records. We have to architect these systems carefully to prevent leaks and ensure idempotency. This is exactly why [AI integration services](/work/eudr-compliance-bridge/) should be treated as a core part of finance automation architecture, not an afterthought.
 
 However, we also need to have an honest conversation about cost. I often see companies wanting military grade data isolation on a startup budget. If a company can only afford twenty to thirty dollars a month for software, they should not ask for a locally deployed, completely isolated environment for AI processing. 
 
@@ -194,7 +194,7 @@ To build a reliable 13 week rolling forecast, we rely on three specific data str
 
 **3. Fixed and Variable Opex Baseline:** Rent, payroll, SaaS subscriptions, interest payments. A connected payroll integration and expense management feed gives you the baseline without manual extraction.
 
-When these three data streams feed a central aggregation layer, cleaned and formatted by an AI pipeline, you can generate that 13 week rolling forecast automatically. This is the same infrastructure pattern we build in [AI workflow automation services](/services/ai-workflow-automation-services/).
+When these three data streams feed a central aggregation layer, cleaned and formatted by an AI pipeline, you can generate that 13 week rolling forecast automatically. This is the same infrastructure pattern we build in [AI workflow automation services](/work/).
 
 ---
 
@@ -216,7 +216,7 @@ You are running your operations on copied and pasted files. Every manual step pa
 
 Fixing cash flow visibility is a data infrastructure project. It requires connecting source systems, normalizing their outputs, and building a continuous update loop.
 
-Give me 30 days. I will connect your systems, handle the messy file formatting with AI, fix the idempotent data issues, and automate the currency conversions. You will stop manually manipulating files; you will just log in and see your actual numbers. If you want a fixed scope implementation path, this is exactly what our [AI automation sprint](/services/ai-automation-sprint/) is built for.
+Give me 30 days. I will connect your systems, handle the messy file formatting with AI, fix the idempotent data issues, and automate the currency conversions. You will stop manually manipulating files; you will just log in and see your actual numbers. If you want a fixed scope implementation path, this is exactly what our [AI automation sprint](/contact/) is built for.
 
 If cash visibility is the bottleneck, that is what we build.
     `,

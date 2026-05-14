@@ -7,22 +7,22 @@ import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Payment Control Work & Delivered Systems",
+    title: "Accounts Payable Automation Work & Delivered Systems",
     description:
-        "Proof pages from founder-led workflow delivery across finance, compliance, and operations, including payment controls, approval workflows, and auditable exception handling.",
+        "Real accounts payable automation delivery across finance and operations, including invoice approval workflow design, duplicate payment prevention, and auditable exception handling.",
     openGraph: {
-        title: "Payment Control Work & Delivered Systems | INVARITECH",
+        title: "Accounts Payable Automation Work & Delivered Systems | INVARITECH",
         description:
-            "Proof pages from founder-led workflow delivery across finance, compliance, and operations, including payment controls, approval workflows, and auditable exception handling.",
+            "Real accounts payable automation delivery, including invoice approval workflow design, duplicate payment prevention, and auditable exception handling.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work — Automation Projects" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Payment Control Work & Delivered Systems | INVARITECH",
+        title: "Accounts Payable Automation Work & Delivered Systems | INVARITECH",
         description:
-            "Proof pages from founder-led workflow delivery across finance, compliance, and operations, including payment controls, approval workflows, and auditable exception handling.",
+            "Real accounts payable automation delivery, including invoice approval workflow design, duplicate payment prevention, and auditable exception handling.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -54,8 +54,8 @@ const projects = [
     {
         id: "custom",
         title: "Your Custom Solution",
-        category: "Consulting & Development",
-        description: "We identify your biggest bottleneck and deliver a custom automation solution within 30 days.",
+        category: "Accounts Payable Automation",
+        description: "We identify your biggest accounts payable bottleneck and deliver a custom automation workflow within 30 days.",
         tags: ["Analysis", "Strategy", "Custom Build"],
         image: "/work/custom-solution.webp",
         link: "https://calendly.com/hello-invaritech/30min",
@@ -87,14 +87,14 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Delivered Outcomes</p>
+                                <p className="site-eyebrow-text">Accounts Payable Automation Work</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Selected work. Production-grade automation across compliance, finance, and operations.
+                                Selected work. Production-grade accounts payable automation systems in the wild.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We work across compliance, finance, and operations — building systems that eliminate manual work at volume. Each engagement is scoped around a specific bottleneck. Every project below shipped to production.
+                            We build invoice approval workflow systems, duplicate payment prevention checks, and auditable exception routing for finance teams. Each engagement is scoped around one bottleneck and shipped to production.
                         </p>
                     </div>
                 </div>
@@ -186,10 +186,10 @@ export default function WorkPage() {
                         <div className="h-[1px] w-8 bg-primary/40" />
                     </div>
                     <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight mb-8 max-w-3xl mx-auto">
-                        Ready to build your own proof point?
+                        Ready to fix one accounts payable workflow bottleneck?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                        Book a 30-minute diagnostic to identify one ROI wedge. No pitch — just engineering strategy.
+                        Book a 30-minute diagnostic to map one invoice approval workflow, exception queue, or payment risk control. No pitch, just delivery strategy.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
                         <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">

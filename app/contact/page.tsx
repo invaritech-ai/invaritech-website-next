@@ -9,20 +9,20 @@ const ContactSection = dynamic(() => import("@/components/contact"), {
 });
 
 export const metadata: Metadata = {
-    title: "Book an AI Automation Scoping Call",
+    title: "Book an Accounts Payable Automation Scoping Call",
     description:
-        "Book a 30-minute scoping call with INVARITECH. Tell us the workflow, we'll scope the automation. No pitch deck — just architecture and next steps.",
+        "Book a 30-minute accounts payable automation scoping call. We map your invoice approval workflow, duplicate payment risks, and implementation path.",
     openGraph: {
-        title: "Book an AI Automation Scoping Call | INVARITECH",
-        description: "Book a 30-minute scoping call with INVARITECH. Tell us the workflow, we'll scope the automation. No pitch deck — just architecture and next steps.",
+        title: "Book an Accounts Payable Automation Scoping Call | INVARITECH",
+        description: "Book a 30-minute scoping call to map your invoice approval workflow, duplicate payment risks, and implementation path.",
         url: "https://www.invaritech.ai/contact/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH — Book a Meeting" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Book an AI Automation Scoping Call | INVARITECH",
-        description: "Tell us the workflow, we'll scope the automation. No pitch deck — just architecture and next steps.",
+        title: "Book an Accounts Payable Automation Scoping Call | INVARITECH",
+        description: "Tell us your invoice approval workflow and payment risks. We'll scope the automation path.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -59,11 +59,11 @@ export default function ContactPage() {
                                 <p className="site-eyebrow-text">Get In Touch</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Book an AI automation scoping call.
+                                Book an accounts payable automation scoping call.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Whether you need to automate complex workflows or configure a custom solution, we are ready to engineer your solution.
+                            Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the quickest path to production.
                         </p>
                     </div>
                 </div>

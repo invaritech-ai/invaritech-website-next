@@ -102,8 +102,8 @@ Before hiring again, quantify your workflow. Map repeatable steps, rework freque
 Start with:
 
 - **[Contact](/contact/)** (map your workflow gaps)
-- **[AI Automation Consulting](/services/ai-automation-consulting/)**
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
+- **[AI Automation Consulting](/contact/)**
+- **[AI Automation Sprint](/contact/)** (30 days)
 
 RegOps does not replace consultants. It gives consultancy teams a delivery model that can grow with lower structural fragility.
     `,

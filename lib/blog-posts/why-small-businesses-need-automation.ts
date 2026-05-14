@@ -20,7 +20,7 @@ When you look at financial tasks at small agencies, the daily operational bottle
 
 Then comes the reconciliation phase. You have to match purchase orders against the final invoices and receipts; this is the only way to figure out if a vendor delivered all the items in the order, or if they over delivered.
 
-Furthermore, bulk invoice and receipt generation requires highly custom plugins for most companies. They usually have a very specific invoice format, or a unique logic for receipt generation. Finally, if a business operates across many different banks, which is almost always the case, the aggregation of those statements into a universal account becomes absolutely non negotiable. Connecting those disparate sources cleanly — pulling and normalizing feeds across multiple banking formats — is precisely what [AI integration services](/services/ai-integration-services/) handle, without requiring a bank switch or a new accounting platform.
+Furthermore, bulk invoice and receipt generation requires highly custom plugins for most companies. They usually have a very specific invoice format, or a unique logic for receipt generation. Finally, if a business operates across many different banks, which is almost always the case, the aggregation of those statements into a universal account becomes absolutely non negotiable. Connecting those disparate sources cleanly — pulling and normalizing feeds across multiple banking formats — is precisely what [AI integration services](/work/eudr-compliance-bridge/) handle, without requiring a bank switch or a new accounting platform.
 
 ---
 
@@ -30,7 +30,7 @@ Most small businesses will start with a few accessible SaaS subscriptions: an em
 
 Big software vendors will try to sell you a massive ERP system; you do not need that. The [build vs. buy framework](/blog/building-vs-buying-custom-automation/) is useful here: if the workflow is high-volume, repeatable, and deeply tied to how your business runs, generic software will always force you to bend around its assumptions. The typical instinct for a growing business is just to hire more headcount; you do not need that either.
 
-The solution is the middle path: you need a custom glove solution fitted exactly to your needs. This means paying a one time build cost, followed by a minimal monthly maintenance fee. [AI workflow automation services](/services/ai-workflow-automation-services/) built around your existing stack, not a rip-and-replace, are what make this viable for small teams. This approach can save hundreds of hours for a small team.
+The solution is the middle path: you need a custom glove solution fitted exactly to your needs. This means paying a one time build cost, followed by a minimal monthly maintenance fee. [AI workflow automation services](/work/) built around your existing stack, not a rip-and-replace, are what make this viable for small teams. This approach can save hundreds of hours for a small team.
 
 ---
 
@@ -50,7 +50,7 @@ Many owners think they can just hire a cheap intern to do the manual data entry 
 
 A custom software pipeline does not need retraining; it does not make typos; it does not quit. Business automation is about building infrastructure that scales with you, rather than hiring temporary hands to patch a leaking ship.
 
-If you are unsure which process to automate first, start with a structured workflow review. [AI automation consulting](/services/ai-automation-consulting/) is built around that question: identify the highest-ROI wedge before committing to a build.
+If you are unsure which process to automate first, start with a structured workflow review. [AI automation consulting](/contact/) is built around that question: identify the highest-ROI wedge before committing to a build.
     `,
     author: {
         name: "Avishek Majumder",

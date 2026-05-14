@@ -45,9 +45,9 @@ export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 const resources: Resource[] = [
     {
         slug: "supplier-payment-control-rule-table",
-        title: "Supplier Payment Control Rule Table",
+        title: "Invoice Approval Workflow & Supplier Payment Controls Rule Table",
         excerpt:
-            "A zero-fluff workbook for mapping payment-change checks, exception routing, approval evidence, and audit notes before a payment is ever released.",
+            "A zero-fluff workbook for mapping invoice approval workflow checks, payment-change controls, exception routing, and approval evidence before payment release.",
         category: "rule-table",
         industry: "All industries",
         format: "Workbook (.xlsx)",
@@ -59,7 +59,7 @@ const resources: Resource[] = [
         slug: "changed-bank-detail-verification-checklist",
         title: "Changed Bank Detail Verification Checklist",
         excerpt:
-            "Step-by-step verification checks for supplier bank-detail change requests before any payment is authorised.",
+            "Step-by-step supplier bank detail verification checks to prevent payment diversion fraud before any payment is authorised.",
         category: "checklist",
         industry: "All industries",
         format: "PDF checklist",
@@ -69,7 +69,7 @@ const resources: Resource[] = [
         slug: "freight-invoice-variance-rule-table",
         title: "Freight Invoice Variance Rule Table",
         excerpt:
-            "Freight invoice audit control logic for catching carrier surcharge overcharges, rate-card mismatches, and duplicate invoice variants before release.",
+            "Freight invoice audit controls for catching carrier surcharge overcharges, rate-card mismatches, and duplicate invoice variants before release.",
         category: "rule-table",
         industry: "Freight & logistics",
         format: "Workbook (.xlsx)",
@@ -79,7 +79,7 @@ const resources: Resource[] = [
         slug: "po-invoice-receipt-mismatch-guide",
         title: "PO / Invoice / Receipt Mismatch Guide",
         excerpt:
-            "A practical guide to three-way match exceptions: what causes them, how to classify them, and how to route them for approval.",
+            "A practical guide to three-way match exceptions in accounts payable automation: what causes them, how to classify them, and how to route them for approval.",
         category: "guide",
         industry: "Manufacturing / Distribution",
         format: "PDF guide",
@@ -89,7 +89,7 @@ const resources: Resource[] = [
         slug: "exception-queue-template",
         title: "Exception Queue Template",
         excerpt:
-            "Owner, status, SLA, approval note, and audit trail fields — a ready-to-use queue structure for invoice exception management.",
+            "Owner, status, SLA, approval note, and audit trail fields: a ready-to-use queue structure for invoice exception management in accounts payable workflow automation.",
         category: "template",
         industry: "All industries",
         format: "Spreadsheet template",
@@ -99,7 +99,7 @@ const resources: Resource[] = [
         slug: "invoice-extractor",
         title: "Invoice Data Extractor",
         excerpt:
-            "Upload any PDF, JPG, or PNG invoice. AI extracts supplier name, line items, totals, and tax into a clean CSV. Free, no signup required.",
+            "Upload any PDF, JPG, or PNG invoice. AI extracts supplier name, line items, totals, and tax into a clean CSV for accounts payable automation workflows. Free, no signup required.",
         category: "tool",
         industry: "All industries",
         format: "Live tool",
@@ -121,7 +121,7 @@ const resources: Resource[] = [
         slug: "payment-release-audit-trail-checklist",
         title: "Payment Release Audit Trail Checklist",
         excerpt:
-            "Verification checklist for ensuring every release decision has owner, timestamp, evidence reference, and approval notes attached.",
+            "Verification checklist for ensuring the payment approval process records owner, timestamp, evidence reference, and approval notes for every release.",
         category: "checklist",
         industry: "All industries",
         format: "PDF checklist",

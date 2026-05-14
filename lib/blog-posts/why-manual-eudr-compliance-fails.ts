@@ -133,8 +133,8 @@ If you are assessing EUDR automation readiness, start with:
 
 If EUDR is material and volume will not stay small, treat it as integration and state management early:
 
-- **[AI Integration Services](/services/ai-integration-services/)**
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
+- **[AI Integration Services](/work/eudr-compliance-bridge/)**
+- **[AI Automation Sprint](/contact/)** (30 days)
 
 For broader system philosophy:
 

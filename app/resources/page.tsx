@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "Accounts Payable Control Resources — Rule Tables, Guides & Checklists",
+    title: "Accounts Payable Automation Resources — Workflow Guides & Templates",
     description:
-        "Practical resources for accounts payable controls, including invoice approval workflow guides, payment approval checks, and invoice exception management templates.",
+        "Practical accounts payable automation resources, including invoice approval workflow guides, duplicate payment prevention checklists, supplier statement reconciliation support, and freight invoice audit tools.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Accounts Payable Control Resources — INVARITECH",
+        title: "Accounts Payable Automation Resources — INVARITECH",
         description:
-            "Rule tables, guides, and checklists for accounts payable controls, invoice approval workflow, payment approval checks, and exception handling.",
+            "Rule tables, guides, and checklists for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and freight invoice audit controls.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Payment Control Resources",
+                alt: "Accounts Payable Automation Resources",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Accounts Payable Control Resources — INVARITECH",
+        title: "Accounts Payable Automation Resources — INVARITECH",
         description:
-            "Rule tables, guides, and checklists for accounts payable controls, invoice approval workflow, payment approval checks, and exception handling.",
+            "Rule tables, guides, and checklists for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and freight invoice audit.",
         images: ["/og-image.png"],
     },
 };

@@ -127,11 +127,11 @@ It often means engineering a controlled layer that:
 
 For integration-heavy environments, implement the bridge layer without replatforming:
 
-- **[AI Integration Services](/services/ai-integration-services/)**
+- **[AI Integration Services](/work/eudr-compliance-bridge/)**
 
 For repeatable, high-volume workflows where volume is growing and manual handling is the constraint:
 
-- **[AI Workflow Automation Services](/services/ai-workflow-automation-services/)**
+- **[AI Workflow Automation Services](/work/)**
 
 ---
 
@@ -156,10 +156,10 @@ Building early without clear constraints usually adds avoidable complexity.
 If you are evaluating whether your workflow justifies custom infrastructure:
 
 - **[Contact](/contact/)** (map your workflow before building)
-- **[AI Automation Consulting](/services/ai-automation-consulting/)** (quantified diagnostic)
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30-day measurable wedge)
+- **[AI Automation Consulting](/contact/)** (quantified diagnostic)
+- **[AI Automation Sprint](/contact/)** (30-day measurable wedge)
 
-The [process](/services/ai-automation-sprint) starts with quantified workflow economics, then architecture, then execution.
+The [process](/contact/) starts with quantified workflow economics, then architecture, then execution.
     `,
     author: {
         name: "Avishek Majumder",

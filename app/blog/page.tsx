@@ -7,28 +7,28 @@ import { RULE_TABLE_CTA } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Operational Playbooks for Cleaner Finance Ops",
+    title: "Accounts Payable Automation Blog & Workflow Guides",
     description:
-        "Step-by-step guides, workflow teardowns, and practical notes for teams reducing invoice exceptions, manual review load, and audit gaps.",
+        "Step-by-step accounts payable automation guides covering invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and payment fraud prevention.",
     openGraph: {
-        title: "INVARITECH Blog - Operational Playbooks for Cleaner Finance Ops",
+        title: "INVARITECH Blog - Accounts Payable Automation Guides",
         description:
-            "Guides, workflow teardowns, and practical notes for finance teams reducing invoice exceptions, manual review load, and audit gaps.",
+            "Practical guides for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and payment fraud prevention.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH Blog - Operational Playbooks for Cleaner Finance Ops",
+                alt: "INVARITECH Blog - Accounts Payable Automation Guides",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH Blog - Operational Playbooks",
+        title: "INVARITECH Blog - Accounts Payable Automation",
         description:
-            "Practical guides for reducing invoice exceptions, manual review load, and audit gaps.",
+            "Practical guides for invoice approval workflow, duplicate payment prevention, and supplier reconciliation.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -51,7 +51,7 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-const categories = ["AP Controls", "Invoice Exceptions", "Payment Risk", "Finance Ops", "Audit Trails"];
+const categories = ["Accounts Payable Automation", "Invoice Approval Workflow", "Duplicate Payments", "Supplier Reconciliation", "Payment Fraud Prevention"];
 
 export default function BlogsPage() {
     const posts = getAllPosts();
@@ -72,15 +72,15 @@ export default function BlogsPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Finance Ops Notes</p>
+                                <p className="site-eyebrow-text">Accounts Payable Automation Blog</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Operational playbooks for cleaner finance ops.
+                                Practical guides for accounts payable automation.
                             </h1>
                         </div>
                         <div data-reveal="block">
                             <p className="site-lead">
-                                Step-by-step guides, workflow teardowns, and practical notes for teams actively reducing invoice exceptions and manual review loads.
+                                Learn how to design invoice approval workflow controls, reduce duplicate payments, improve supplier statement reconciliation, and prevent payment diversion fraud.
                             </p>
                             <div className="mt-6 flex flex-wrap gap-2">
                                 {categories.map((category) => (
@@ -102,8 +102,8 @@ export default function BlogsPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-12 flex flex-col gap-5 border-y border-border py-7 md:flex-row md:items-center md:justify-between">
                         <div>
-                            <h2 className="font-editorial text-3xl font-semibold">Start with a payment-control rule table.</h2>
-                            <p className="mt-2 text-muted-foreground">A practical workbook for mapping exception checks, approval evidence, and audit notes.</p>
+                            <h2 className="font-editorial text-3xl font-semibold">Start with an invoice approval workflow rule table.</h2>
+                            <p className="mt-2 text-muted-foreground">A practical workbook for mapping payment approval checks, exception routes, and audit evidence.</p>
                         </div>
                         <Link
                             href="/resources/"

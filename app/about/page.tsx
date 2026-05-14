@@ -7,22 +7,22 @@ import { Metadata } from "next";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "About INVARITECH | Founder-Led Payment Control Design",
+    title: "About INVARITECH | Founder-Led Accounts Payable Automation",
     description:
-        "INVARITECH works with one client at a time to design, build, and maintain finance workflows that reduce exception handling without forcing a system overhaul.",
+        "INVARITECH works with one client at a time to design and deliver accounts payable automation, invoice approval workflow controls, and auditable finance operations.",
     openGraph: {
-        title: "About INVARITECH | Founder-Led Payment Control Design",
+        title: "About INVARITECH | Founder-Led Accounts Payable Automation",
         description:
-            "Founder-led payment control design for finance teams. One client at a time, fixed scope, measurable acceptance criteria, and ongoing managed support.",
+            "Founder-led accounts payable automation for finance teams. Fixed scope, measurable acceptance criteria, and ongoing managed support.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH - Founder-Led Payment Control Design" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH - Founder-Led Accounts Payable Automation" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "About INVARITECH | Founder-Led Payment Control Design",
+        title: "About INVARITECH | Founder-Led Accounts Payable Automation",
         description:
-            "One client at a time. Fixed-scope payment control design with measurable acceptance criteria and ongoing managed support.",
+            "One client at a time. Fixed-scope accounts payable automation with measurable acceptance criteria and ongoing managed support.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -62,11 +62,11 @@ export default function AboutPage() {
                                 <p className="site-eyebrow-text">Founder-led service model</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Payment control design with direct principal involvement.
+                                Accounts payable automation with direct principal involvement.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We work with one client at a time to design, build, and maintain finance workflows that reduce exception handling without forcing an expensive system overhaul.
+                            We work with one client at a time to design invoice approval workflow systems, reduce duplicate payments, and improve finance controls without forcing an expensive system overhaul.
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                             Fixed scope. Measurable outcomes. Managed after delivery.
                         </h2>
                         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                            We do not sell generic automation projects or bloated consulting hours. We agree the objective first, lock in the acceptance criteria, and build directly around the systems your team already knows.
+                            We do not sell generic automation projects or bloated consulting hours. We agree the accounts payable objective first, lock in acceptance criteria, and build around the systems your team already uses.
                         </p>
                     </div>
 
@@ -102,10 +102,10 @@ export default function AboutPage() {
                 <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                     <div className="relative border border-primary/20 bg-primary/[0.04] p-8 md:p-10">
                         <blockquote className="font-editorial text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                            &ldquo;The people who scope your controls stay hands-on for the build.&rdquo;
+                            &ldquo;The people who scope your invoice approval workflow stay hands-on for the build.&rdquo;
                         </blockquote>
                         <p className="mt-6 text-muted-foreground leading-relaxed">
-                            That continuity matters when the work touches payment approvals, supplier records, audit evidence, and the daily habits of a finance team.
+                            That continuity matters when work touches payment approvals, supplier bank detail changes, audit evidence, and daily finance operations.
                         </p>
                         <div className="mt-8 flex items-center gap-4">
                             <Avatar className="h-12 w-12 border border-primary/30">
@@ -124,10 +124,10 @@ export default function AboutPage() {
                         <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Why this model exists</h2>
                         <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
                             <p>
-                                Payment-control work fails when the builder treats it like a generic software task. The hard part is not only the interface or integration. It is knowing which exceptions should stop payment, what evidence matters, who owns the decision, and how to make the result auditable.
+                                Accounts payable automation fails when builders treat it like generic software. The hard part is deciding which invoice exceptions should block payment, what evidence matters, who owns each approval, and how to keep the workflow auditable.
                             </p>
                             <p>
-                                We keep the engagement narrow so the objective can be owned. The first sprint gives you a live control. The managed support keeps it useful as rules, vendors, teams, and edge cases change.
+                                We keep each engagement narrow so one workflow objective can be owned. The first sprint delivers one live control. Managed support keeps it useful as rules, vendors, teams, and edge cases change.
                             </p>
                         </div>
                     </div>
@@ -166,9 +166,9 @@ export default function AboutPage() {
             <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
                 <div className="grid gap-8 border-y border-border py-10 md:grid-cols-[1fr_auto] md:items-center">
                     <div>
-                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with a real control problem.</h2>
+                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real accounts payable bottleneck.</h2>
                         <p className="mt-3 text-muted-foreground">
-                            Request the rule table first, or book a call if you already know which exception workflow needs attention.
+                            Request the rule table first, or book a call if you already know which invoice approval workflow or supplier exception needs attention.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 sm:flex-row">

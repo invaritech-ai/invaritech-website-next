@@ -28,18 +28,18 @@ That manual flow creates a recurring operating cost. It extends reporting cycles
 
 Cloud based AP automation helps when it is built on deterministic data architecture. Moving from manual entry to a structured pipeline is what enables a shift from a ten-day close to a three-day close with stronger consistency controls.
 
-To evaluate this directly, run a sample document through the [free AI invoice extractor](/tools/invoice-extractor/) and review the structured output.
+To evaluate this directly, run a sample document through the [free AI invoice extractor](/resources/invoice-extractor/) and review the structured output.
 
 ---
 
 ## The Role of Data Architecture in Automated Invoice Processing
 
-Many teams treat AP automation as a software procurement decision. In practice, invoice processing quality depends on data architecture, which is why [workflow automation consulting services](/services/ai-workflow-automation-services/) focus on pipeline design as much as tool choice.
+Many teams treat AP automation as a software procurement decision. In practice, invoice processing quality depends on data architecture, which is why [workflow automation consulting services](/work/) focus on pipeline design as much as tool choice.
 
 A robust pipeline ingests, cleanses, and validates inputs from messy sources: email attachments, phone photos, and scanned PDFs. Data must be normalized before it reaches accounting systems. That includes date standardization, currency normalization, and anomaly detection at intake.
 
 If low-quality inputs pass into ERP writes, automation increases error velocity rather than reducing risk.
-You can evaluate document quality against this model by running a sample through the [free AI invoice extractor](/tools/invoice-extractor/) and inspecting the raw structured output.
+You can evaluate document quality against this model by running a sample through the [free AI invoice extractor](/resources/invoice-extractor/) and inspecting the raw structured output.
 
 ---
 
@@ -50,7 +50,7 @@ Modern accounts payable operations need infrastructure that remains stable when 
 With cloud-native or hybrid architecture, teams can scale processing capacity while maintaining secure access patterns. The same architecture supports programmatic integration with systems like NetSuite, Xero, and SAP through controlled API orchestration.
 
 This is an execution model, not a branding exercise. The objective is reliable, secure movement of financial data across systems.
-To benchmark extraction behavior on your own layouts, [test a document here](/tools/invoice-extractor/).
+To benchmark extraction behavior on your own layouts, [test a document here](/resources/invoice-extractor/).
 
 ---
 
@@ -69,7 +69,7 @@ Deterministic checks enforce arithmetic and schema integrity. For example, the s
 ### 3. Audit Logging and Traceability
 
 Each extraction step should be logged. A well-architected system keeps an immutable trail from final structured output back to the source PDF, which is required for audit review and reconciliation.
-You can inspect a live JSON or CSV payload by running a sample through the [free AI invoice extractor](/tools/invoice-extractor/).
+You can inspect a live JSON or CSV payload by running a sample through the [free AI invoice extractor](/resources/invoice-extractor/).
 
 ---
 
@@ -77,10 +77,10 @@ You can inspect a live JSON or CSV payload by running a sample through the [free
 
 For many mid-market firms, the main concern is replatforming risk. Most teams do not want to replace ERP systems only to improve invoice intake.
 
-A bridge layer solves this by connecting extraction services with existing business systems. Building this layer with validation logic, rollback paths, and audit trails is the core of [AI integration services for ERP and finance systems](/services/ai-integration-services/). It enforces data contracts, routes approved entries, and writes clean payloads into the ledger.
+A bridge layer solves this by connecting extraction services with existing business systems. Building this layer with validation logic, rollback paths, and audit trails is the core of [AI integration services for ERP and finance systems](/work/eudr-compliance-bridge/). It enforces data contracts, routes approved entries, and writes clean payloads into the ledger.
 
 This design improves automation depth without replacing your accounting backbone.
-Before committing to implementation, [upload an invoice here](/tools/invoice-extractor/) and review field-level output.
+Before committing to implementation, [upload an invoice here](/resources/invoice-extractor/) and review field-level output.
 
 ---
 
@@ -125,11 +125,11 @@ Yes. Structured output can map directly to ERP schemas (NetSuite, Xero, SAP) and
 - [Month-End Close Automation: Cut Your Close from 10 Days to 3](/blog/month-end-close-automation/): how invoice automation fits into the full finance close stack
 - [Cash Flow Visibility Automation: 13-Week Forecasting Infrastructure](/blog/cash-flow-visibility-automation/): connect invoice, AP, and bank data into rolling cash visibility
 - [Why Small Businesses Need Automation](/blog/why-small-businesses-need-automation/): the operational context for why invoice extraction is often the first bottleneck that breaks a growing team
-- [AI Integration Services for ERP and Finance Systems](/services/ai-integration-services/): gateway architecture for governed invoice pipelines
+- [AI Integration Services for ERP and Finance Systems](/work/eudr-compliance-bridge/): gateway architecture for governed invoice pipelines
 - [Cost-to-Close Calculator](/resources/cost-to-close-calculator/): estimate the cost of manual finance workflows before committing to a build
 
 ---
 
-For a practical evaluation, [upload a sample document to the Free AI Invoice Extractor](/tools/invoice-extractor/) and inspect the structured output.
+For a practical evaluation, [upload a sample document to the Free AI Invoice Extractor](/resources/invoice-extractor/) and inspect the structured output.
 `,
 };

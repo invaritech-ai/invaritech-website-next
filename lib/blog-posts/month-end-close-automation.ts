@@ -12,7 +12,7 @@ In the financial hubs of Hong Kong and Singapore, the "10-day close" is often ac
 
 The bottleneck is not accounting complexity. It is coordination friction. Fragmented bank files, spreadsheet drift, and inbox archeology absorb the first two weeks of your month. You are not just losing time; you are losing agility.
 
-We build [custom workflow automation pipelines](/services/ai-workflow-automation-services/) that turn this manual repetition into governed, invisible infrastructure. We transform the month-end close from a chaotic scramble into a highly predictable engine.
+We build [custom workflow automation pipelines](/work/) that turn this manual repetition into governed, invisible infrastructure. We transform the month-end close from a chaotic scramble into a highly predictable engine.
 
 ---
 
@@ -118,7 +118,7 @@ In finance, a hallucination is a liability. Our architecture follows a strict go
 
 AI assists at the reading layer (OCR, parsing, extraction). It *never* owns the financial write. Finance remains the pilot.
 
-For teams running Xero, NetSuite, or SAP, the connection between the automation pipeline and the ledger is its own architecture problem. That is what our [AI integration services](/services/ai-integration-services/) handle alongside the workflow build — the governed bridge layer that routes approved entries to your ERP without manual re-entry.
+For teams running Xero, NetSuite, or SAP, the connection between the automation pipeline and the ledger is its own architecture problem. That is what our [AI integration services](/work/eudr-compliance-bridge/) handle alongside the workflow build — the governed bridge layer that routes approved entries to your ERP without manual re-entry.
 
 ---
 
@@ -126,7 +126,7 @@ For teams running Xero, NetSuite, or SAP, the connection between the automation 
 
 Month-end close automation is not just about speed. It is about operational discipline. It is about building a finance function that can scale its throughput without endlessly scaling its headcount.
 
-We execute this as a definitive [30-Day Sprint](/services/ai-automation-sprint/):
+We execute this as a definitive [30-Day Sprint](/contact/):
 
 - **Week 1:** Map your spreadsheet flow and identify bottlenecks
 - **Week 2:** Build the ingestion and normalization pipeline
@@ -154,7 +154,7 @@ A one-page financial model for the business case. Take it into your next board o
 
 Stop letting the 10-day close drain your team's agility. Use our [Cost-to-Close Calculator](/resources/cost-to-close-calculator/) to see your actual annual manual tax in under 30 seconds. Then [contact our engineering team](/contact/) to map your exact blueprint for a 3-day close.
 
-If your cash position report also arrives 10–15 days after the period closes, the close is only part of the problem. See how [cash flow visibility automation](/blog/cash-flow-visibility-automation/) fixes the upstream reporting gap — and use the [burn rate calculator](/tools/burn-rate-calculator/) to put a dollar figure on your current reporting lag.
+If your cash position report also arrives 10–15 days after the period closes, the close is only part of the problem. See how [cash flow visibility automation](/blog/cash-flow-visibility-automation/) fixes the upstream reporting gap — and use the [burn rate calculator](/resources/cost-to-close-calculator/) to put a dollar figure on your current reporting lag.
     `,
     author: {
         name: "Avishek Majumder",
