@@ -144,7 +144,7 @@ If that mapping is difficult, treat that as a diagnostic signal.
 
 Start with:
 
-- **[Assessment](/tools/assessment/)** (map your workflow gaps)
+- **[Contact](/contact/)** (map your workflow gaps)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 

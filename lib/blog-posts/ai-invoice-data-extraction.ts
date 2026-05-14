@@ -126,7 +126,7 @@ Yes. Structured output can map directly to ERP schemas (NetSuite, Xero, SAP) and
 - [Cash Flow Visibility Automation: 13-Week Forecasting Infrastructure](/blog/cash-flow-visibility-automation/): connect invoice, AP, and bank data into rolling cash visibility
 - [Why Small Businesses Need Automation](/blog/why-small-businesses-need-automation/): the operational context for why invoice extraction is often the first bottleneck that breaks a growing team
 - [AI Integration Services for ERP and Finance Systems](/services/ai-integration-services/): gateway architecture for governed invoice pipelines
-- [Free AI Readiness Assessment](/tools/assessment/): evaluate workflow automation potential before committing to a build
+- [Cost-to-Close Calculator](/resources/cost-to-close-calculator/): estimate the cost of manual finance workflows before committing to a build
 
 ---
 

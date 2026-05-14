@@ -155,7 +155,7 @@ Building early without clear constraints usually adds avoidable complexity.
 
 If you are evaluating whether your workflow justifies custom infrastructure:
 
-- **[Assessment](/tools/assessment/)** (map your workflow before building)
+- **[Contact](/contact/)** (map your workflow before building)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)** (quantified diagnostic)
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30-day measurable wedge)
 

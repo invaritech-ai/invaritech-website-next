@@ -307,7 +307,7 @@ export default function ResourceRuleTableClient() {
 
                         {/* Right: download form */}
                         <div data-reveal="block">
-                            <ResourceDownloadForm />
+                            <ResourceDownloadForm source="supplier-payment-control-rule-table" />
                         </div>
                     </div>
                 </div>

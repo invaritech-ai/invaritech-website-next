@@ -101,7 +101,7 @@ EUDR submission volume shows the failure mode clearly: manual workflows hit capa
 
 If you want a quantified view of where your bottleneck is, start here:
 
-- **[Assessment](/tools/assessment/)** (map your workflow gaps)
+- **[Contact](/contact/)** (map your workflow gaps)
 - **[AI Automation Consulting](/services/ai-automation-consulting/)**
 - **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
 `,

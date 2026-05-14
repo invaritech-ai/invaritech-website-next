@@ -1,13 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { useRecaptcha } from "@/hooks/useRecaptcha";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
+import { TurnstileWidget } from "@/components/turnstile-widget";
+import { submitContactLead } from "@/app/actions/leads";
+import { getAttributionData } from "@/lib/attribution";
 import {
     Calendar,
     Mail,
@@ -108,21 +111,14 @@ export default function ContactSection() {
         error: null,
     });
 
-    // Initialize reCAPTCHA
-    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-    const { executeRecaptcha } = useRecaptcha({
-        siteKey: recaptchaSiteKey || "",
-        action: "contact_form_submit",
-    });
+    const [turnstileToken, setTurnstileToken] = useState<string>("");
+    const turnstileRef = useRef<TurnstileInstance>(null);
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
     const validateForm = (): boolean => {
@@ -150,70 +146,49 @@ export default function ContactSection() {
             setFormState((prev) => ({ ...prev, error: "Message is required" }));
             return false;
         }
+        if (!turnstileToken) {
+            setFormState((prev) => ({ ...prev, error: "Please complete the verification" }));
+            return false;
+        }
         return true;
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!validateForm()) {
-            return;
-        }
+        if (!validateForm()) return;
 
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
-        try {
-            // Execute reCAPTCHA
-            let recaptchaToken = null;
-            if (recaptchaSiteKey) {
-                recaptchaToken = await executeRecaptcha();
-                if (!recaptchaToken) {
-                    throw new Error("reCAPTCHA verification failed");
-                }
-            }
+        const fd = new FormData();
+        fd.set("name", formData.name);
+        fd.set("email", formData.email);
+        fd.set("phone", formData.phone);
+        fd.set("country", formData.country);
+        fd.set("company", formData.company);
+        fd.set("message", formData.message);
+        fd.set("cf_turnstile_token", turnstileToken);
 
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    source: "Contact Form",
-                    recaptchaToken,
-                }),
-            });
+        const attribution = getAttributionData();
+        for (const [key, value] of Object.entries(attribution)) {
+            fd.set(key, value);
+        }
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Failed to submit form");
-            }
+        const result = await submitContactLead(fd);
 
-            const result = await response.json();
-            if (!result.success) {
-                throw new Error(result.error || "Failed to submit form");
-            }
-
-            setFormState({ isSubmitting: false, isSuccess: true, error: null });
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                country: "",
-                company: "",
-                message: "",
-            });
-        } catch (error) {
-            console.error("Form submission error:", error);
+        if (!result.success) {
+            turnstileRef.current?.reset();
+            setTurnstileToken("");
             setFormState({
                 isSubmitting: false,
                 isSuccess: false,
-                error:
-                    error instanceof Error
-                        ? error.message
-                        : "An unexpected error occurred",
+                error: result.error ?? "Failed to submit form",
             });
+            return;
         }
+
+        setFormState({ isSubmitting: false, isSuccess: true, error: null });
+        setFormData({ name: "", email: "", phone: "", country: "", company: "", message: "" });
     };
 
     if (formState.isSuccess) {
@@ -420,6 +395,13 @@ export default function ContactSection() {
                                     />
                                 </div>
 
+                                <TurnstileWidget
+                                    ref={turnstileRef}
+                                    onSuccess={setTurnstileToken}
+                                    onError={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                                    onExpire={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                                />
+
                                 {formState.error && (
                                     <div className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2">
                                         <span className="font-mono font-medium">ERR:</span> {formState.error}
@@ -428,7 +410,7 @@ export default function ContactSection() {
 
                                 <Button
                                     type="submit"
-                                    disabled={formState.isSubmitting}
+                                    disabled={formState.isSubmitting || !turnstileToken}
                                     className="w-full rounded-none"
                                     size="lg"
                                 >

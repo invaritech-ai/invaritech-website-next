@@ -121,15 +121,15 @@ export default function AsteriskMath() {
                                 </h3>
                             </div>
                             <p className="text-muted-foreground mb-6">
-                                Use our assessment tool to get personalized
-                                projections based on your specific workflow and
-                                team size.
+                                Use the cost-to-close calculator to estimate the
+                                annual cost of manual finance work before a
+                                deeper workflow review.
                             </p>
 	                            <a
-	                                href="/tools/assessment/"
+	                                href="/resources/cost-to-close-calculator/"
 	                                className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
 	                            >
-	                                Get your Ops Efficiency Score
+	                                Calculate Your Manual Tax
 	                            </a>
                         </CardContent>
                     </Card>

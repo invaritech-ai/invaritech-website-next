@@ -50,7 +50,7 @@ Many owners think they can just hire a cheap intern to do the manual data entry 
 
 A custom software pipeline does not need retraining; it does not make typos; it does not quit. Business automation is about building infrastructure that scales with you, rather than hiring temporary hands to patch a leaking ship.
 
-If you are unsure which process to automate first, the [free AI readiness assessment](/tools/assessment/) identifies your highest-ROI wedge in under five minutes. For teams that want a structured conversation before committing to a build, [AI automation consulting](/services/ai-automation-consulting/) starts with exactly that question.
+If you are unsure which process to automate first, start with a structured workflow review. [AI automation consulting](/services/ai-automation-consulting/) is built around that question: identify the highest-ROI wedge before committing to a build.
     `,
     author: {
         name: "Avishek Majumder",

@@ -1,11 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
+import { TurnstileWidget } from "@/components/turnstile-widget";
+import { submitResourceLead } from "@/app/actions/leads";
+import { getAttributionData } from "@/lib/attribution";
 
 const industries = [
     "Freight & logistics",
@@ -28,7 +32,11 @@ const exceptionTypes = [
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
-export default function ResourceDownloadForm() {
+interface Props {
+    source?: string;
+}
+
+export default function ResourceDownloadForm({ source = "resource" }: Props) {
     const router = useRouter();
     const [state, setState] = useState<FormState>("idle");
     const [error, setError] = useState<string | null>(null);
@@ -39,6 +47,8 @@ export default function ResourceDownloadForm() {
         industry: industries[0],
         exceptionType: exceptionTypes[0],
     });
+    const [turnstileToken, setTurnstileToken] = useState<string>("");
+    const turnstileRef = useRef<TurnstileInstance>(null);
 
     // Redirect to interactive tool after success
     useEffect(() => {
@@ -55,38 +65,44 @@ export default function ResourceDownloadForm() {
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
+        const rawForm = new FormData(event.currentTarget);
+        const submittedForm = {
+            email: String(rawForm.get("email") || form.email),
+            company: String(rawForm.get("company") || form.company),
+            role: String(rawForm.get("job_title") || form.role),
+            industry: String(rawForm.get("industry") || form.industry),
+            exceptionType: String(rawForm.get("main_control_problem") || form.exceptionType),
+        };
+
+        setForm(submittedForm);
         setState("submitting");
         setError(null);
 
-        try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    name: form.role || "Resource requester",
-                    email: form.email,
-                    company: form.company,
-                    country: "Australia / APAC",
-                    phone: "",
-                    source: "Supplier Payment Control Rule Table",
-                    message: [
-                        `Resource request: Supplier Payment Control Rule Table`,
-                        `Role: ${form.role}`,
-                        `Industry: ${form.industry}`,
-                        `Main exception type: ${form.exceptionType}`,
-                    ].join("\n"),
-                }),
-            });
+        const fd = new FormData();
+        fd.set("email", submittedForm.email);
+        fd.set("company", submittedForm.company);
+        fd.set("job_title", submittedForm.role);
+        fd.set("industry", submittedForm.industry);
+        fd.set("main_control_problem", submittedForm.exceptionType);
+        fd.set("source", source);
+        fd.set("cf_turnstile_token", turnstileToken);
 
-            if (!response.ok) {
-                throw new Error("The request could not be sent. Please email hello@invaritech.ai.");
-            }
-
-            setState("success");
-        } catch (submitError) {
-            setState("error");
-            setError(submitError instanceof Error ? submitError.message : "Something went wrong.");
+        const attribution = getAttributionData();
+        for (const [key, value] of Object.entries(attribution)) {
+            fd.set(key, value);
         }
+
+        const result = await submitResourceLead(fd);
+
+        if (!result.success) {
+            turnstileRef.current?.reset();
+            setTurnstileToken("");
+            setState("error");
+            setError(result.error ?? "The request could not be sent. Please email hello@invaritech.ai.");
+            return;
+        }
+
+        setState("success");
     }
 
     if (state === "success") {
@@ -102,7 +118,11 @@ export default function ResourceDownloadForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-5 border border-border bg-card p-6">
+        <form
+            id="resource-download-form"
+            onSubmit={handleSubmit}
+            className="space-y-5 border border-border bg-card p-6"
+        >
             <div>
                 <h3 className="font-editorial text-3xl font-semibold">Request the workbook.</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -114,7 +134,9 @@ export default function ResourceDownloadForm() {
                 <Field label="Work email" id="resource-email">
                     <Input
                         id="resource-email"
+                        name="email"
                         type="email"
+                        autoComplete="email"
                         required
                         value={form.email}
                         onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
@@ -124,6 +146,8 @@ export default function ResourceDownloadForm() {
                 <Field label="Company" id="resource-company">
                     <Input
                         id="resource-company"
+                        name="company"
+                        autoComplete="organization"
                         required
                         value={form.company}
                         onChange={(event) => setForm((current) => ({ ...current, company: event.target.value }))}
@@ -133,6 +157,8 @@ export default function ResourceDownloadForm() {
                 <Field label="Role" id="resource-role">
                     <Input
                         id="resource-role"
+                        name="job_title"
+                        autoComplete="organization-title"
                         required
                         value={form.role}
                         onChange={(event) => setForm((current) => ({ ...current, role: event.target.value }))}
@@ -142,6 +168,7 @@ export default function ResourceDownloadForm() {
                 <Field label="Industry" id="resource-industry">
                     <select
                         id="resource-industry"
+                        name="industry"
                         value={form.industry}
                         onChange={(event) => setForm((current) => ({ ...current, industry: event.target.value }))}
                         className="h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/50"
@@ -156,6 +183,7 @@ export default function ResourceDownloadForm() {
             <Field label="Main control problem" id="resource-exception">
                 <select
                     id="resource-exception"
+                    name="main_control_problem"
                     value={form.exceptionType}
                     onChange={(event) => setForm((current) => ({ ...current, exceptionType: event.target.value }))}
                     className="h-11 w-full rounded-none border border-input bg-background px-3 text-sm outline-none focus:border-ring focus:ring-3 focus:ring-ring/50"
@@ -166,6 +194,13 @@ export default function ResourceDownloadForm() {
                 </select>
             </Field>
 
+            <TurnstileWidget
+                ref={turnstileRef}
+                onSuccess={setTurnstileToken}
+                onError={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                onExpire={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+            />
+
             {state === "error" && (
                 <p className="border border-destructive/30 bg-destructive/5 p-3 text-sm text-destructive">
                     {error}
@@ -174,7 +209,7 @@ export default function ResourceDownloadForm() {
 
             <Button
                 type="submit"
-                disabled={state === "submitting"}
+                disabled={state === "submitting" || !turnstileToken}
                 className="h-12 w-full rounded-none bg-primary text-base font-semibold text-primary-foreground hover:bg-foreground hover:text-background"
             >
                 {state === "submitting" ? "Sending..." : "Request the Workbook"}
