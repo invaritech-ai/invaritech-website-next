@@ -84,7 +84,7 @@ const workflowSteps = [
     },
     {
         title: "Build around current systems",
-        body: "We add rule logic, exception routing, approvals, evidence capture, and audit trails without forcing a system change.",
+        body: "We add rule logic, invoice exception management routing, payment approval checks, evidence capture, and audit trails without forcing a system change.",
     },
     {
         title: "Keep it working",
@@ -122,15 +122,18 @@ export default function PaymentControlHome() {
                 <div className="site-home-hero-grid">
                     <div className="site-home-hero-copy">
                         <p className="site-kicker">{BRAND_EYEBROW}</p>
-                        <h1 className="site-h1">
-                            Clean up payment controls without changing{" "}
-                            <span className="sr-only">systems</span>
-                            <SystemsScramble />.
-                        </h1>
+                        <div className="site-h1-decor-wrap">
+                            <h1 className="site-h1">
+                                Clean up payment controls without changing systems.
+                            </h1>
+                            <span className="site-h1-scramble-overlay" aria-hidden="true">
+                                <SystemsScramble />
+                            </span>
+                        </div>
                         <p className="site-lead">
-                            We help accounts payable and finance operations teams reduce invoice exception
-                            chasing, tighten approval controls, and reduce payment leakage across the
-                            software they already use.
+                            We help Australian finance and accounts payable teams strengthen controls
+                            around invoice exceptions, payment approvals, duplicate payments, and supplier
+                            payment workflows without replacing the software they already use.
                         </p>
                         <p className="site-home-hero-support">
                             Founder-led. One client at a time. Fixed scope first, then managed support.
@@ -165,9 +168,10 @@ export default function PaymentControlHome() {
                         <p className="site-kicker">The problem</p>
                         <h2 className="site-h2">What your finance team is dealing with</h2>
                         <p className="site-body">
-                            Accounts payable and finance operations workflows rarely break in one obvious
-                            place. Invoice exceptions, freight invoice variances, and supplier payment
-                            gaps show up as daily symptoms your team has learned to work around.
+                            Accounts payable controls rarely fail in one obvious place. Invoice approval
+                            workflow gaps, supplier statement reconciliation issues, freight invoice audit
+                            misses, and duplicate vendor payments show up as daily symptoms your team has
+                            learned to work around.
                         </p>
                     </div>
 
@@ -196,7 +200,8 @@ export default function PaymentControlHome() {
                         </p>
                         <p className="site-home-question-body">
                             We design accounts payable controls and supplier payment workflows that handle
-                            invoice exceptions, approval evidence, and audit trails inside your current stack.
+                            invoice exceptions, payment approval checks, and audit trails inside your
+                            current stack.
                         </p>
                     </div>
                 </div>
@@ -290,8 +295,9 @@ export default function PaymentControlHome() {
                                 <Route className="site-icon" aria-hidden="true" />
                                 <h2 className="site-h2">Start with the rule table.</h2>
                                 <p className="site-body">
-                                    Request the workbook we use to map exception routing, evidence capture,
-                                    approval checks, and audit notes before payment release.
+                                    Request the workbook we use to map supplier payment controls, invoice
+                                    exception routing, payment approval checks, and audit notes before
+                                    payment release.
                                 </p>
                                 <p className="site-small">
                                     Use it to see how we think before booking a call.

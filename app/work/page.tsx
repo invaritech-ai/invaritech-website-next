@@ -6,22 +6,22 @@ import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 export const metadata: Metadata = {
-    title: "AI Automation Case Studies | Delivered Outcomes",
+    title: "Payment Control Work & Delivered Systems",
     description:
-        "Real automation projects with measurable outcomes. See how we build compliance bridges, data pipelines, and AP automation for enterprise and mid-market teams across APAC.",
+        "Proof pages from founder-led workflow delivery across finance, compliance, and operations, including payment controls, approval workflows, and auditable exception handling.",
     openGraph: {
-        title: "AI Automation Case Studies | Delivered Outcomes | INVARITECH",
+        title: "Payment Control Work & Delivered Systems | INVARITECH",
         description:
-            "Real automation projects with measurable outcomes. Compliance bridges, data pipelines, and AP automation for enterprise teams across Singapore, Hong Kong, Malaysia, and the Philippines.",
+            "Proof pages from founder-led workflow delivery across finance, compliance, and operations, including payment controls, approval workflows, and auditable exception handling.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work — Automation Projects" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Automation Case Studies | Delivered Outcomes | INVARITECH",
+        title: "Payment Control Work & Delivered Systems | INVARITECH",
         description:
-            "Real automation projects with measurable outcomes. Compliance bridges, data pipelines, and AP automation for enterprise teams across APAC.",
+            "Proof pages from founder-led workflow delivery across finance, compliance, and operations, including payment controls, approval workflows, and auditable exception handling.",
         images: ["/og-image.png"],
     },
     alternates: {

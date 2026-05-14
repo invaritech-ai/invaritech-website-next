@@ -101,7 +101,7 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai",
         title: "Payment Control Design for Australian Finance Teams | INVARITECH",
         description:
-            "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
+            "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
         siteName: "INVARITECH",
         images: [
             {
@@ -116,7 +116,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Payment Control Design for Australian Finance Teams | INVARITECH",
         description:
-            "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
+            "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },
