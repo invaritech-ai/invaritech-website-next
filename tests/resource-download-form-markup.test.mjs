@@ -20,6 +20,6 @@ describe("ResourceDownloadForm Apollo field mapping", () => {
     });
 
     it("binds Apollo to the resource download form explicitly", () => {
-        assert.match(pageSource, /formElement:'#resource-download-form'/);
+        assert.match(pageSource, /formSelector:\s*"#resource-download-form"/);
     });
 });

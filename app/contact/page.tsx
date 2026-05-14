@@ -1,6 +1,8 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
+import Script from "next/script";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
+import { createApolloInboundScript } from "@/lib/apollo-inbound";
 
 const ContactSection = dynamic(() => import("@/components/contact"), {
     loading: () => <div className="h-[600px] animate-pulse bg-muted/30" />,
@@ -28,9 +30,18 @@ export const metadata: Metadata = {
     },
 };
 
+const APOLLO_CONTACT_SCRIPT = createApolloInboundScript({
+    formSelector: "#contact-form",
+});
+
 export default function ContactPage() {
     return (
         <main className="site-page relative overflow-hidden">
+            <Script
+                id="apollo-inbound-contact"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{ __html: APOLLO_CONTACT_SCRIPT }}
+            />
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="site-page-grid" />

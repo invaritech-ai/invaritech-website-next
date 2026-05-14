@@ -121,28 +121,28 @@ export default function ContactSection() {
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const validateForm = (): boolean => {
-        if (!formData.name.trim()) {
+    const validateForm = (values: FormData): boolean => {
+        if (!values.name.trim()) {
             setFormState((prev) => ({ ...prev, error: "Name is required" }));
             return false;
         }
-        if (!formData.email.trim()) {
+        if (!values.email.trim()) {
             setFormState((prev) => ({ ...prev, error: "Email is required" }));
             return false;
         }
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
+        if (!emailRegex.test(values.email)) {
             setFormState((prev) => ({
                 ...prev,
                 error: "Please enter a valid email address",
             }));
             return false;
         }
-        if (!formData.country.trim()) {
+        if (!values.country.trim()) {
             setFormState((prev) => ({ ...prev, error: "Country is required" }));
             return false;
         }
-        if (!formData.message.trim()) {
+        if (!values.message.trim()) {
             setFormState((prev) => ({ ...prev, error: "Message is required" }));
             return false;
         }
@@ -153,20 +153,30 @@ export default function ContactSection() {
         return true;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const rawForm = new FormData(e.currentTarget);
+        const submittedForm: FormData = {
+            name: String(rawForm.get("name") || formData.name),
+            email: String(rawForm.get("email") || formData.email),
+            phone: String(rawForm.get("phone") || formData.phone),
+            country: String(rawForm.get("country") || formData.country),
+            company: String(rawForm.get("company") || formData.company),
+            message: String(rawForm.get("message") || formData.message),
+        };
 
-        if (!validateForm()) return;
+        setFormData(submittedForm);
+        if (!validateForm(submittedForm)) return;
 
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
         const fd = new FormData();
-        fd.set("name", formData.name);
-        fd.set("email", formData.email);
-        fd.set("phone", formData.phone);
-        fd.set("country", formData.country);
-        fd.set("company", formData.company);
-        fd.set("message", formData.message);
+        fd.set("name", submittedForm.name);
+        fd.set("email", submittedForm.email);
+        fd.set("phone", submittedForm.phone);
+        fd.set("country", submittedForm.country);
+        fd.set("company", submittedForm.company);
+        fd.set("message", submittedForm.message);
         fd.set("cf_turnstile_token", turnstileToken);
 
         appendAttributionToFormData(fd);
@@ -305,7 +315,7 @@ export default function ContactSection() {
                                 </p>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-5">
+                            <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
                                         <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Full name *</Label>
