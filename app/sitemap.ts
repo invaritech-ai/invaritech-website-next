@@ -39,11 +39,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/work/`,
+            changeFrequency: "monthly",
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/work/eudr-compliance-bridge/`,
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/blog/`,
             changeFrequency: "weekly",
             priority: 0.7,
         },
         ...blogPostEntries,
+        {
+            url: `${baseUrl}/contact/`,
+            changeFrequency: "yearly",
+            priority: 0.5,
+        },
         {
             url: `${baseUrl}/privacy/`,
             changeFrequency: "yearly",

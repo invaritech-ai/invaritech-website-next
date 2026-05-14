@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import {
-    ArrowLeft,
     ArrowRight,
     ClipboardList,
     Route,
@@ -10,6 +8,7 @@ import {
     FileSpreadsheet,
     ListChecks,
 } from "lucide-react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import ResourceDownloadForm from "@/components/resource-download-form";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 import { BOOK_MEETING_URL, BOOK_MEETING_CTA } from "@/lib/marketing";
@@ -101,19 +100,19 @@ const whatIsInside = [
 export default function ResourceRuleTableClient() {
     return (
         <main className="site-page" id="main-content" tabIndex={-1}>
-            {/* ── Back link ─────────────────────────────────────────── */}
-            <div className="site-container pt-10">
-                <Link
-                    href="/resources/"
-                    className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle transition-colors hover:text-foreground"
-                >
-                    <ArrowLeft className="size-3" aria-hidden="true" />
-                    Back to Resources
-                </Link>
+            {/* ── Breadcrumb ────────────────────────────────────────── */}
+            <div className="site-container pt-32 md:pt-36">
+                <Breadcrumbs
+                    items={[
+                        { label: "Home", href: "/" },
+                        { label: "Resources", href: "/resources/" },
+                        { label: "Supplier Payment Control Rule Table" },
+                    ]}
+                />
             </div>
 
             {/* ── Hero ──────────────────────────────────────────────── */}
-            <section className="site-section-hero">
+            <section className="pt-16 pb-20 md:pt-20 md:pb-28">
                 <div className="site-container">
                     <div className="site-split">
                         <div>
