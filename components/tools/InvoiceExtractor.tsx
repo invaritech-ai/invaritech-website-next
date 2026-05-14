@@ -354,7 +354,7 @@ export function InvoiceExtractor() {
                                 onClick={handleSubmit}
                                 className="w-full bg-primary text-black font-bold font-mono text-sm tracking-widest uppercase py-4 hover:bg-white transition-colors"
                             >
-                                EXTRACT DATA
+                                EXTRACT INVOICE DATA
                             </button>
                         )}
                     </div>
@@ -433,7 +433,7 @@ export function InvoiceExtractor() {
                             <div className="flex items-center gap-3">
                                 <CheckCircle2 className="w-4 h-4 text-primary" />
                                 <span className="text-xs font-mono uppercase tracking-widest text-primary">
-                                    EXTRACTION COMPLETE
+                                    INVOICE DATA READY
                                 </span>
                             </div>
                             <span className="text-xs font-mono text-muted-foreground/60 uppercase px-2 py-1 border border-border">
@@ -529,7 +529,7 @@ export function InvoiceExtractor() {
                             ) : (
                                 <>
                                     <p className="text-muted-foreground font-mono text-xs uppercase tracking-widest">
-                                        EMAIL ME A COPY OF THESE RESULTS
+                                        EMAIL ME THE CSV RESULTS
                                     </p>
                                     <div className="flex gap-2">
                                         <input
@@ -578,7 +578,7 @@ export function InvoiceExtractor() {
                                 className="sm:ml-auto flex items-center justify-center gap-2 text-muted-foreground/60 hover:text-muted-foreground px-4 py-3 font-mono text-xs uppercase tracking-widest transition-colors"
                             >
                                 <RotateCcw className="w-3.5 h-3.5" />
-                                EXTRACT ANOTHER
+                                CHECK ANOTHER INVOICE
                             </button>
                         </div>
                     </div>
@@ -613,7 +613,7 @@ export function InvoiceExtractor() {
 
             {/* Rate limit note */}
             <p className="text-muted-foreground font-mono text-[10px] tracking-widest text-center py-2">
-                5 EXTRACTIONS PER DAY — IP-BASED LIMIT
+                5 INVOICE EXTRACTIONS PER DAY — IP-BASED LIMIT
             </p>
         </div>
     );

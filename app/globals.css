@@ -484,20 +484,36 @@ textarea {
         letter-spacing: -0.035em;
     }
 
-    .site-h1-decor-wrap {
+    /* Inline word wrapper — "systems" lives here */
+    .site-h1-systems-wrap {
         position: relative;
         display: inline-block;
+        white-space: nowrap;
+    }
+
+    /* Semantic text: visible on mobile/tablet, transparent on desktop (scramble overlays it) */
+    .site-h1-systems-text {
+        color: inherit;
     }
 
     .site-h1-scramble-overlay {
         position: absolute;
-        right: 0.02em;
-        top: 0.02em;
+        top: 0;
+        left: 0;
         display: none;
         pointer-events: none;
+        white-space: nowrap;
+    }
+
+    /* Re-enable hover on the scramble itself inside the overlay */
+    .site-h1-scramble-overlay .systems-scramble {
+        pointer-events: auto;
     }
 
     @media (min-width: 64rem) {
+        .site-h1-systems-text {
+            color: transparent;
+        }
         .site-h1-scramble-overlay {
             display: inline-flex;
         }

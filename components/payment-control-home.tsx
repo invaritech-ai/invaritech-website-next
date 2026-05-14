@@ -122,14 +122,15 @@ export default function PaymentControlHome() {
                 <div className="site-home-hero-grid">
                     <div className="site-home-hero-copy">
                         <p className="site-kicker">{BRAND_EYEBROW}</p>
-                        <div className="site-h1-decor-wrap">
-                            <h1 className="site-h1">
-                                Clean up payment controls without changing systems.
-                            </h1>
-                            <span className="site-h1-scramble-overlay" aria-hidden="true">
-                                <SystemsScramble />
-                            </span>
-                        </div>
+                        <h1 className="site-h1">
+                            Clean up payment controls without changing{" "}
+                            <span className="site-h1-systems-wrap">
+                                <span className="site-h1-systems-text">systems</span>
+                                <span className="site-h1-scramble-overlay" aria-hidden="true">
+                                    <SystemsScramble />
+                                </span>
+                            </span>.
+                        </h1>
                         <p className="site-lead">
                             We help Australian finance and accounts payable teams strengthen controls
                             around invoice exceptions, payment approvals, duplicate payments, and supplier

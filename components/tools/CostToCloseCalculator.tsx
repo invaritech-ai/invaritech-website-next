@@ -308,7 +308,7 @@ export function CostToCloseCalculator() {
                         step={5}
                         onChange={setHoursPerPerson}
                         displayValue={`${hoursPerPerson}h / month`}
-                        note="Reconciliation, data cleaning, journal entries, ERP posting. Industry median: 30–50h/person"
+                        note="Reconciliation, exception review, approval follow-up, journal entries, ERP posting"
                     />
 
                     <SliderInput
@@ -362,7 +362,7 @@ export function CostToCloseCalculator() {
                     <div className="flex items-center gap-3 pb-6 border-b border-border">
                         <div className="h-px w-8 bg-primary/60" />
                         <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                            Your Manual Tax
+                            Close Cost Estimate
                         </span>
                     </div>
 
@@ -387,14 +387,14 @@ export function CostToCloseCalculator() {
                             {fmt(annualManualTax, cfg.symbol)}
                         </div>
                         <div className="text-xs font-mono text-muted-foreground mt-2">
-                            per year in close labor — money you could redeploy
+                            per year in close labor and manual review time
                         </div>
                     </div>
 
                     {/* After automation + Savings row */}
                     <div className="border border-border p-5 space-y-4">
                         <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                            After Automation — 70% reduction
+                            After Workflow Control — 70% reduction model
                         </div>
                         <div className="flex items-start justify-between gap-4">
                             <div>
@@ -437,9 +437,10 @@ export function CostToCloseCalculator() {
             {/* Methodology */}
             <div className="pt-5 border-t border-border">
                 <p className="text-[10px] font-mono text-muted-foreground/60 leading-relaxed">
-                    METHODOLOGY — Savings estimate based on 70% reduction in
-                    manual close hours, consistent with published ROI studies
-                    from Netgain, DOKKA, and FloQast. Days-to-close derived from{" "}
+                    METHODOLOGY — Savings estimate uses a 70% reduction model for
+                    manual close work after exception handling, reconciliations,
+                    approval follow-up, and recurring checks are controlled or
+                    automated. Days-to-close derived from{" "}
                     {HOURS_PER_CLOSE_DAY}h of focused close work per person per
                     day: the industry standard for active reconciliation
                     periods. Benchmarks sourced from Ledge 2025 survey of 100
@@ -450,8 +451,8 @@ export function CostToCloseCalculator() {
             {/* CTA */}
             <div className="border border-border bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
                 <p className="text-sm font-mono text-muted-foreground leading-relaxed">
-                    Ready to close in 3 days? We will map your exact blueprint
-                    on a free call.
+                    Want to know what sits behind the number? Bring one close
+                    workflow or approval bottleneck to a scoping call.
                 </p>
                 <Link
                     href="https://calendly.com/hello-invaritech/30min"
@@ -459,7 +460,7 @@ export function CostToCloseCalculator() {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 bg-primary text-black px-6 py-3 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white transition-colors shrink-0"
                 >
-                    Book Assessment
+                    Book Scoping Call
                     <ArrowRight className="w-3 h-3" />
                 </Link>
             </div>

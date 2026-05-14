@@ -15,10 +15,12 @@ const industries = [
 ];
 
 const exceptionTypes = [
-    "Supplier payment checks",
+    "Supplier payment controls",
+    "Payment approval checks",
     "Carrier invoice variance",
     "PO / invoice mismatch",
     "Supplier statement gaps",
+    "Duplicate payment risk",
     "Progress claims",
     "Not sure yet",
 ];
@@ -78,7 +80,7 @@ export default function ResourceDownloadForm() {
                 <CheckCircle2 className="mb-5 size-7 text-primary" />
                 <h3 className="font-editorial text-3xl font-semibold">Request received.</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
-                    We will send the rule table to your work email. If the exception type needs a better-fit version, we will tailor the first note around that.
+                    We will send the rule table to your work email. If your exception type needs a better-fit version, we will tailor the first note around that workflow.
                 </p>
             </div>
         );
@@ -87,9 +89,9 @@ export default function ResourceDownloadForm() {
     return (
         <form onSubmit={handleSubmit} className="space-y-5 border border-border bg-card p-6">
             <div>
-                <h3 className="font-editorial text-3xl font-semibold">Tell us where to send it.</h3>
+                <h3 className="font-editorial text-3xl font-semibold">Request the workbook.</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    A few operational fields help us send the most relevant version instead of a generic download.
+                    A few operational fields help us send the most relevant version for your supplier payment controls and exception workflow.
                 </p>
             </div>
 
@@ -136,7 +138,7 @@ export default function ResourceDownloadForm() {
                 </Field>
             </div>
 
-            <Field label="Main exception type" id="resource-exception">
+            <Field label="Main control problem" id="resource-exception">
                 <select
                     id="resource-exception"
                     value={form.exceptionType}
@@ -160,7 +162,7 @@ export default function ResourceDownloadForm() {
                 disabled={state === "submitting"}
                 className="h-12 w-full rounded-none bg-primary text-base font-semibold text-primary-foreground hover:bg-foreground hover:text-background"
             >
-                {state === "submitting" ? "Sending..." : "Request the Rule Table"}
+                {state === "submitting" ? "Sending..." : "Request the Workbook"}
                 <ArrowRight className="ml-2 size-4" />
             </Button>
         </form>

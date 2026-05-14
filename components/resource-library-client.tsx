@@ -92,12 +92,12 @@ export default function ResourceLibraryClient() {
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical payment-control resources for finance teams.
+                                Practical accounts payable control resources for finance teams.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Rule tables, checklists, and guides for teams dealing with
-                            invoice exceptions, approval gaps, and manual payment checks.
+                            Rule tables, checklists, and guides for teams managing invoice
+                            approval workflow gaps, invoice exceptions, and payment approval checks.
                         </p>
                     </div>
                 </div>
@@ -117,9 +117,9 @@ export default function ResourceLibraryClient() {
                                 Supplier Payment Control Rule Table
                             </h2>
                             <p className="site-lead mt-6">
-                                A zero-fluff workbook for mapping payment-change checks,
-                                exception routing, approval evidence, and audit notes before
-                                a payment is ever released.
+                                A zero-fluff workbook for mapping supplier payment controls,
+                                invoice exception routing, payment approval checks, and audit notes
+                                before a payment is ever released.
                             </p>
                             <div className="mt-10 grid gap-[1px] bg-border sm:grid-cols-3">
                                 {resourceNotes.map((note) => (
@@ -134,9 +134,9 @@ export default function ResourceLibraryClient() {
                                 ))}
                             </div>
                             <p className="mt-8 text-sm leading-relaxed text-foreground-subtle">
-                                Most resources will stay open. The workbook request asks for
-                                a few fields because the same control pattern changes by
-                                industry and exception type.
+                                Most resources stay open. The workbook request asks for a few
+                                operational fields because accounts payable controls vary by
+                                industry, workflow, and exception type.
                             </p>
                         </div>
 
@@ -266,12 +266,13 @@ export default function ResourceLibraryClient() {
                         data-reveal="block"
                     >
                         <div>
-                            <h2 className="site-h3">Have a live exception problem?</h2>
-                            <p className="site-body mt-3">
-                                Bring one real example to a scoping call and we will tell
-                                you whether it is a fit for a fixed-scope control sprint.
-                            </p>
-                        </div>
+                                <h2 className="site-h3">Have a live exception problem?</h2>
+                                <p className="site-body mt-3">
+                                    Bring one real invoice approval workflow or supplier payment
+                                    exception example. We will tell you if it is a fit for a
+                                    fixed-scope control sprint.
+                                </p>
+                            </div>
                         <a
                             href={BOOK_MEETING_URL}
                             target="_blank"

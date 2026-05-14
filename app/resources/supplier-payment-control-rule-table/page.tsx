@@ -3,17 +3,17 @@ import Script from "next/script";
 import ResourceRuleTableClient from "@/components/resource-rule-table-client";
 
 export const metadata: Metadata = {
-    title: "Supplier Payment Control Rule Table — Download",
+    title: "Supplier Payment Control Rule Table for AP Teams",
     description:
-        "A rule table workbook for mapping supplier payment-change checks, exception routing, approval evidence, and audit notes before payment release. Free for finance teams.",
+        "Download a supplier payment control rule table for mapping payment approval checks, invoice exception routing, evidence, and audit notes before release.",
     alternates: {
         canonical:
             "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
     },
     openGraph: {
-        title: "Supplier Payment Control Rule Table — INVARITECH",
+        title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
         description:
-            "Rule table workbook for mapping payment exceptions, routing, approval evidence, and audit trails. Free for finance teams.",
+            "Workbook for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
         url: "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
         type: "website",
         images: [
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Supplier Payment Control Rule Table — INVARITECH",
+        title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
         description:
-            "Rule table workbook for mapping payment exceptions, routing, approval evidence, and audit trails.",
+            "Map supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
         images: ["/og-image.png"],
     },
 };
@@ -61,7 +61,7 @@ const schemas = [
         "@type": "CreativeWork",
         name: "Supplier Payment Control Rule Table",
         description:
-            "Rule table workbook for mapping payment exceptions, routing, approval evidence, and audit notes before payment release.",
+            "Rule table workbook for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit notes before release.",
         author: {
             "@type": "Organization",
             name: "INVARITECH",

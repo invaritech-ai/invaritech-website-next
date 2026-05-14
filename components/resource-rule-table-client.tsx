@@ -55,7 +55,7 @@ const whoItIsFor = [
     {
         icon: ClipboardList,
         title: "AP Managers and Controllers",
-        body: "Teams dealing with supplier payment-change requests, bank detail changes, and exception approval gaps.",
+        body: "Teams dealing with supplier payment-change requests, bank detail changes, invoice approval workflow gaps, and release checks.",
     },
     {
         icon: Route,
@@ -65,7 +65,7 @@ const whoItIsFor = [
     {
         icon: ShieldCheck,
         title: "Freight, wholesale, manufacturing, and mining finance teams",
-        body: "Any team with high supplier invoice volumes where exceptions cause rework, leakage, or audit exposure.",
+        body: "Teams with high supplier invoice volumes where exceptions create rework, duplicate payment risk, leakage, or audit exposure.",
     },
 ];
 
@@ -73,12 +73,12 @@ const whatIsInside = [
     {
         n: "01",
         title: "Exception condition library",
-        body: "Pre-built list of common payment exception conditions, ready to adapt to your supplier and invoice types.",
+        body: "Pre-built list of supplier payment and invoice exception conditions, ready to adapt to your team.",
     },
     {
         n: "02",
         title: "Control check column",
-        body: "What check must pass before the exception can proceed — callback, evidence, match, or hold.",
+        body: "What payment approval check must pass before the exception can proceed: callback, evidence, match, or hold.",
     },
     {
         n: "03",
@@ -88,7 +88,7 @@ const whatIsInside = [
     {
         n: "04",
         title: "Evidence standard",
-        body: "What documentation must be attached before an exception can be approved — no ambiguity.",
+        body: "What documentation must be attached before an exception can be approved.",
     },
     {
         n: "05",
@@ -128,9 +128,9 @@ export default function ResourceRuleTableClient() {
                         </div>
                         <p className="site-lead" data-reveal="block">
                             For finance teams checking supplier payment-detail changes,
-                            invoice exceptions, and release approvals before payment.
-                            A workbook that maps the control check, evidence required,
-                            routing, and audit trail for each exception type.
+                            invoice exceptions, and payment approvals before release.
+                            Map the approval check, owner, evidence, routing, and audit
+                            trail for each exception type.
                         </p>
                     </div>
                 </div>
@@ -182,10 +182,10 @@ export default function ResourceRuleTableClient() {
                             </div>
                             <h2 className="site-h2">Five sections. No filler.</h2>
                             <p className="site-body mt-6">
-                                Each section maps to a real step in the exception-handling
-                                process — from first flag to final release decision. The
-                                workbook is ready to use as-is or adapted to your team&apos;s
-                                naming and routing.
+                                Each section maps to a real step in the invoice exception
+                                management process, from first flag to final release
+                                decision. Use it as-is, or adapt the names, owners, and
+                                routing to your current workflow.
                             </p>
                         </div>
 
@@ -325,8 +325,9 @@ export default function ResourceRuleTableClient() {
                                 Prefer to talk through a live exception first?
                             </h2>
                             <p className="site-body mt-3">
-                                Bring one real example to a scoping call. We will tell you
-                                whether it fits a fixed-scope control sprint.
+                                Bring one real supplier payment exception or invoice
+                                approval workflow. We will tell you whether it fits a
+                                fixed-scope control sprint.
                             </p>
                         </div>
                         <a

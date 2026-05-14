@@ -69,7 +69,7 @@ export const resources: Resource[] = [
         slug: "freight-invoice-variance-rule-table",
         title: "Freight Invoice Variance Rule Table",
         excerpt:
-            "Rule logic for catching carrier surcharge overcharges, rate-card mismatches, and duplicate invoice variants before release.",
+            "Freight invoice audit control logic for catching carrier surcharge overcharges, rate-card mismatches, and duplicate invoice variants before release.",
         category: "rule-table",
         industry: "Freight & logistics",
         format: "Workbook (.xlsx)",
@@ -89,7 +89,7 @@ export const resources: Resource[] = [
         slug: "exception-queue-template",
         title: "Exception Queue Template",
         excerpt:
-            "Owner, status, SLA, approval note, and audit trail fields — a ready-to-use queue structure for payment exception management.",
+            "Owner, status, SLA, approval note, and audit trail fields — a ready-to-use queue structure for invoice exception management.",
         category: "template",
         industry: "All industries",
         format: "Spreadsheet template",

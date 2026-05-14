@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ReactNode } from "react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 
 interface ToolPageShellProps {
     breadcrumb: string;
@@ -35,7 +36,7 @@ export function ToolPageShell({
     children,
 }: ToolPageShellProps) {
     return (
-        <main className="min-h-screen bg-background relative overflow-hidden">
+        <main className="site-page" id="main-content" tabIndex={-1}>
             {jsonLd && (
                 <script
                     type="application/ld+json"
@@ -43,78 +44,73 @@ export function ToolPageShell({
                 />
             )}
 
-            {/* Ambient background */}
-            <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
-                <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
-                <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
+            {/* Breadcrumb */}
+            <div className="site-container pt-32 md:pt-36">
+                <Breadcrumbs
+                    items={[
+                        { label: "Home", href: "/" },
+                        { label: "Resources", href: "/resources/" },
+                        { label: breadcrumb },
+                    ]}
+                />
             </div>
 
-            <div className="relative z-10 pt-32 pb-24 px-6">
-                <div className={`${maxWidthClasses[maxWidth]} mx-auto`}>
-                    {/* Breadcrumb */}
-                    <div className="flex items-center gap-2 mb-10">
-                        <Link
-                            href="/resources/"
-                            className="inline-flex min-h-10 items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-foreground-muted hover:text-primary transition-colors group"
-                        >
-                            <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-1" />
-                            Resources
-                        </Link>
-                        <span className="text-border font-mono text-[10px]">/</span>
-                        <span className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle">
-                            {breadcrumb}
-                        </span>
-                    </div>
-
-                    {/* Header */}
-                    <header className="mb-16">
-                        <div className="flex items-center gap-3 mb-6">
+            {/* Hero */}
+            <section className="pt-16 pb-14 md:pt-20 md:pb-20">
+                <div className="site-container">
+                    <div className={`${maxWidthClasses[maxWidth]} mx-auto`}>
+                        <div className="mb-6 flex items-center gap-3">
                             <div className="h-px w-8 bg-primary/60" />
-                            <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                            <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
                                 {eyebrow}
                             </p>
                         </div>
 
-                        <h1 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight leading-[0.9] text-foreground mb-6">
+                        <h1 className="site-h2 mb-6">
                             {titleParts[0]}{" "}
                             <span className="text-primary">{titleParts[1]}</span>
                         </h1>
 
-                        <p className="text-lg text-foreground-muted leading-relaxed max-w-xl">
-                            {description}
-                        </p>
-                    </header>
+                        <p className="site-lead max-w-2xl">{description}</p>
+                    </div>
+                </div>
+            </section>
 
-                    {/* Tool */}
-                    {children}
+            {/* Tool content */}
+            <section className="pb-24">
+                <div className="site-container">
+                    <div className={`${maxWidthClasses[maxWidth]} mx-auto`}>
+                        {children}
+                    </div>
+                </div>
+            </section>
 
-                    {/* Footer context */}
-                    {(footerLabel || footerText || footerLink) && (
-                        <div className="mt-20 pt-12 border-t border-border">
+            {/* Footer context */}
+            {(footerLabel || footerText || footerLink) && (
+                <section className="site-section pt-0">
+                    <div className="site-container">
+                        <div className={`${maxWidthClasses[maxWidth]} mx-auto border-t border-border pt-12`}>
                             {footerLabel && (
-                                <p className="text-foreground-subtle font-mono text-xs uppercase tracking-widest mb-4">
+                                <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-foreground-subtle">
                                     {footerLabel}
                                 </p>
                             )}
                             {footerText && (
-                                <p className="text-foreground-muted text-sm leading-relaxed max-w-xl mb-8">
-                                    {footerText}
-                                </p>
+                                <p className="site-body max-w-3xl">{footerText}</p>
                             )}
                             {footerLink && (
                                 <Link
                                     href={footerLink.href}
-                                    className="inline-flex min-h-10 items-center gap-2 text-sm font-mono tracking-widest uppercase text-primary/80 hover:text-primary transition-colors"
+                                    className="mt-7 inline-flex min-h-10 items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-primary transition-colors hover:text-foreground"
                                 >
-                                    <ArrowRight className="w-3 h-3" />
+                                    <ArrowRight className="size-3" aria-hidden="true" />
                                     {footerLink.label}
                                 </Link>
                             )}
                         </div>
-                    )}
-                </div>
-            </div>
+                    </div>
+                </section>
+            )}
         </main>
     );
 }

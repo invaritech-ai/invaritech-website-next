@@ -3,9 +3,9 @@ import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { CostToCloseCalculator } from "@/components/tools/CostToCloseCalculator";
 
 export const metadata: Metadata = {
-    title: "Free Month-End Close Cost Calculator | INVARITECH",
+    title: "Free Month-End Close Cost Calculator for Finance Teams",
     description:
-        "Calculate your annual month-end close cost in 30 seconds. Enter team size, hours per close, and loaded hourly rate to see your hidden manual cost and projected savings.",
+        "Calculate the annual cost of manual month-end close work, reconciliation, approval delays, and finance team review time in 30 seconds.",
     keywords: [
         "month end close cost calculator",
         "finance automation ROI calculator",
@@ -14,14 +14,16 @@ export const metadata: Metadata = {
         "manual tax calculator",
         "finance team ROI",
         "AP automation ROI",
+        "finance workflow automation",
+        "approval workflow cost",
     ],
     alternates: {
         canonical: "https://www.invaritech.ai/resources/cost-to-close-calculator/",
     },
     openGraph: {
-        title: "Free Month-End Close Cost Calculator — INVARITECH",
+        title: "Free Month-End Close Cost Calculator for Finance Teams",
         description:
-            "How much is your manual close cycle costing you? Enter 3 numbers and see your annual manual cost and savings from automation.",
+            "Enter 3 numbers to estimate the annual cost of manual close work, reconciliation, approval delays, and finance team review time.",
         url: "https://www.invaritech.ai/resources/cost-to-close-calculator/",
         type: "website",
         images: [
@@ -35,9 +37,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Free Month-End Close Cost Calculator",
+        title: "Free Month-End Close Cost Calculator for Finance Teams",
         description:
-            "3 inputs. Instant result. See your annual close cost and savings from automation.",
+            "Estimate your annual manual close cost in 30 seconds.",
         images: ["/og-image.png"],
     },
 };
@@ -47,7 +49,7 @@ const jsonLd = {
     "@type": "SoftwareApplication",
     name: "Month-End Close Cost Calculator",
     description:
-        "Calculate your annual month-end close cost and see your savings potential from automation.",
+        "Calculate the annual cost of manual month-end close work, reconciliation, approval delays, and finance team review time.",
     url: "https://www.invaritech.ai/resources/cost-to-close-calculator/",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
@@ -64,7 +66,7 @@ const jsonLd = {
     featureList: [
         "Calculate monthly and annual close cost",
         "Benchmark your close cycle against industry data",
-        "See projected savings from automation",
+        "Estimate time and cost tied to manual finance workflows",
         "No signup required",
     ],
 };
@@ -73,16 +75,16 @@ export default function CostToCloseCalculatorPage() {
     return (
         <ToolPageShell
             breadcrumb="Cost-to-Close Calculator"
-            eyebrow="LIVE TOOL // FINANCE"
+            eyebrow="Live Tool"
             titleParts={["Cost-to-Close", "Calculator"]}
-            description="Three inputs. Instant result. See exactly how much your current close cycle costs and how much automation saves."
+            description="Three inputs. Instant result. Estimate what month-end close, reconciliation, and approval follow-up cost your finance team each year."
             maxWidth="4xl"
             jsonLd={jsonLd}
-            footerLabel="WHAT THIS DEMONSTRATES"
-            footerText="This calculator uses the same cost model we run during control scoping. The 70% reduction figure is conservative — finance teams typically see 75–85% in manual hour reduction after automating exception handling and approval workflows."
+            footerLabel="Where this fits"
+            footerText="This calculator is a first-pass model. In a control sprint, we replace broad estimates with your actual close steps, exception queues, approval checks, and evidence requirements before recommending what should be automated or left alone."
             footerLink={{
                 href: "/blog/month-end-close-automation/",
-                label: "Read: How to Cut Your Close from 10 Days to 3",
+                label: "Read the close automation guide",
             }}
         >
             <CostToCloseCalculator />

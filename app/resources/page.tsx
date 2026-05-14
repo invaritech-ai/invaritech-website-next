@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "Payment Control Resources — Rule Tables, Checklists & Guides",
+    title: "Accounts Payable Control Resources — Rule Tables, Guides & Checklists",
     description:
-        "Practical rule tables, checklists, and guides for finance teams reducing invoice exceptions, approval gaps, and manual payment checks.",
+        "Practical resources for accounts payable controls, including invoice approval workflow guides, payment approval checks, and invoice exception management templates.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Payment Control Resources — INVARITECH",
+        title: "Accounts Payable Control Resources — INVARITECH",
         description:
-            "Rule tables, checklists, and guides for finance teams dealing with invoice exceptions, approval gaps, and manual payment checks.",
+            "Rule tables, guides, and checklists for accounts payable controls, invoice approval workflow, payment approval checks, and exception handling.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Payment Control Resources — INVARITECH",
+        title: "Accounts Payable Control Resources — INVARITECH",
         description:
-            "Rule tables, checklists, and guides for finance teams dealing with invoice exceptions, approval gaps, and manual payment checks.",
+            "Rule tables, guides, and checklists for accounts payable controls, invoice approval workflow, payment approval checks, and exception handling.",
         images: ["/og-image.png"],
     },
 };
