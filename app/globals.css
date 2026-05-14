@@ -614,7 +614,7 @@ textarea {
     }
 
     .site-home-final-panel {
-        @apply border-y border-border py-12;
+        @apply border-t border-border py-12;
     }
 
     .site-home-final-layout {
@@ -1194,9 +1194,6 @@ textarea {
         text-align: left;
     }
 
-    .ledger-entry:first-child {
-        border-top: 1px solid var(--border);
-    }
 
     .ledger-entry-number {
         font-family: var(--font-mono);
@@ -1279,7 +1276,6 @@ textarea {
     /* ── Trust ledger entries ───────────────────────────────── */
     .site-home-trust-ledger {
         margin-top: 2.5rem;
-        border-top: 1px solid var(--border);
     }
 
     .site-home-trust-entry {
@@ -1298,6 +1294,121 @@ textarea {
         letter-spacing: 0.1em;
         color: var(--primary);
         padding-top: 0.25rem;
+    }
+
+    /* ── Exception Pressure Ledger ─────────────────────────────── */
+    .pressure-ledger {
+        position: relative;
+        max-width: 60rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2.5rem;
+        background: var(--packet-bg);
+        border: 1px solid var(--border);
+    }
+
+    .pressure-ledger-bar {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: var(--primary);
+    }
+
+    .pressure-ledger-inner {
+        padding: 1.5rem 1.75rem;
+    }
+
+    .pressure-ledger-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .pressure-col {
+        padding: 0 1.25rem;
+        position: relative;
+    }
+
+    .pressure-col:first-child {
+        padding-left: 0;
+    }
+
+    .pressure-col:last-child {
+        padding-right: 0;
+    }
+
+    .pressure-col + .pressure-col::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1.75rem;
+        bottom: 0.5rem;
+        width: 1px;
+        background: color-mix(in oklch, var(--primary) 18%, var(--border));
+    }
+
+    .pressure-col-label {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .pressure-col-rule {
+        height: 1px;
+        background: color-mix(in oklch, var(--primary) 25%, transparent);
+        margin-bottom: 0.875rem;
+    }
+
+    .pressure-col-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pressure-item {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: var(--font-mono);
+        font-size: 0.8125rem;
+        color: var(--foreground-muted);
+        padding: 0.4rem 0;
+        border-bottom: 1px solid color-mix(in oklch, var(--border) 55%, transparent);
+        line-height: 1.4;
+    }
+
+    .pressure-item:last-child {
+        border-bottom: none;
+    }
+
+    .pressure-item::before {
+        content: "";
+        flex-shrink: 0;
+        width: 4px;
+        height: 4px;
+        background: color-mix(in oklch, var(--primary) 60%, transparent);
+    }
+
+    @media (max-width: 48rem) {
+        .pressure-ledger-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .pressure-col {
+            padding: 0 0 1.25rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pressure-col:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .pressure-col + .pressure-col::before {
+            display: none;
+        }
     }
 
     /* ── Scroll reveal helpers ──────────────────────────────── */

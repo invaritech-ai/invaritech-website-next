@@ -1,7 +1,6 @@
 import {
     ArrowRight,
     ClipboardCheck,
-    FileWarning,
     Gauge,
     Landmark,
     Route,
@@ -16,13 +15,31 @@ import ExceptionPacket from "@/components/exception-packet";
 import RouteLineAnimation from "@/components/route-line-animation";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
-const symptoms = [
-    "Invoice-to-PO mismatches",
-    "Supplier statement gaps",
-    "Missing proof-of-delivery documents",
-    "Carrier surcharge variances",
-    "Duplicate payment variants",
-    "Approvals that rely on memory instead of evidence",
+const pressureGroups = [
+    {
+        label: "Rework",
+        items: [
+            "PO-invoice mismatch",
+            "Missing proof-of-delivery",
+            "Partial receipts not matched",
+        ],
+    },
+    {
+        label: "Leakage",
+        items: [
+            "Carrier surcharge variance",
+            "Duplicate payment variants",
+            "Missed credits and returns",
+        ],
+    },
+    {
+        label: "Control gaps",
+        items: [
+            "Approvals based on memory",
+            "Supplier statement gaps",
+            "Missing evidence on release",
+        ],
+    },
 ];
 
 const verticals = [
@@ -142,9 +159,7 @@ export default function PaymentControlHome() {
             {/* ── The Problem ───────────────────────────────────────── */}
             <section className="site-section site-section-muted">
                 <div className="site-container">
-                    <div className="reveal-ledger-line" data-reveal="ledger-line" aria-hidden="true" />
-
-                    <div className="site-home-section-intro" data-reveal="block">
+<div className="site-home-section-intro" data-reveal="block">
                         <p className="site-kicker">The problem</p>
                         <h2 className="site-h2">What your finance team is dealing with</h2>
                         <p className="site-body">
@@ -153,13 +168,23 @@ export default function PaymentControlHome() {
                         </p>
                     </div>
 
-                    <div className="site-home-symptom-grid" data-reveal="stagger">
-                        {symptoms.map((symptom) => (
-                            <div key={symptom} className="site-home-symptom-card" data-reveal-child>
-                                <FileWarning className="site-icon" aria-hidden="true" />
-                                <p className="site-card-title">{symptom}</p>
+                    <div className="pressure-ledger" aria-label="Common payment control pressure points">
+                        <div className="pressure-ledger-bar" aria-hidden="true" />
+                        <div className="pressure-ledger-inner">
+                            <div className="pressure-ledger-grid" data-reveal="stagger">
+                                {pressureGroups.map((group) => (
+                                    <div key={group.label} className="pressure-col" data-reveal-child>
+                                        <p className="pressure-col-label">{group.label}</p>
+                                        <div className="pressure-col-rule" aria-hidden="true" />
+                                        <ul className="pressure-col-list" aria-label={group.label}>
+                                            {group.items.map((item) => (
+                                                <li key={item} className="pressure-item">{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+                        </div>
                     </div>
 
                     <div className="site-home-question" data-reveal="block">
@@ -176,9 +201,7 @@ export default function PaymentControlHome() {
             {/* ── Who It's For ──────────────────────────────────────── */}
             <section className="site-section">
                 <div className="site-container">
-                    <div className="reveal-ledger-line" data-reveal="ledger-line" aria-hidden="true" />
-
-                    <div className="site-home-section-intro" data-reveal="block">
+<div className="site-home-section-intro" data-reveal="block">
                         <p className="site-kicker">Who it is for</p>
                         <h2 className="site-h2">Built for teams like yours</h2>
                         <p className="site-body">
