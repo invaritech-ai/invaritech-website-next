@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,6 +29,7 @@ const exceptionTypes = [
 type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function ResourceDownloadForm() {
+    const router = useRouter();
     const [state, setState] = useState<FormState>("idle");
     const [error, setError] = useState<string | null>(null);
     const [form, setForm] = useState({
@@ -37,6 +39,19 @@ export default function ResourceDownloadForm() {
         industry: industries[0],
         exceptionType: exceptionTypes[0],
     });
+
+    // Redirect to interactive tool after success
+    useEffect(() => {
+        if (state === "success") {
+            const timer = setTimeout(() => {
+                const encodedIndustry = encodeURIComponent(form.industry);
+                router.push(
+                    `/resources/supplier-payment-control-rule-table/interactive?industry=${encodedIndustry}`
+                );
+            }, 1500);
+            return () => clearTimeout(timer);
+        }
+    }, [state, form.industry, router]);
 
     async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
@@ -80,7 +95,7 @@ export default function ResourceDownloadForm() {
                 <CheckCircle2 className="mb-5 size-7 text-primary" />
                 <h3 className="font-editorial text-3xl font-semibold">Request received.</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
-                    We will send the rule table to your work email. If your exception type needs a better-fit version, we will tailor the first note around that workflow.
+                    Loading your personalized control table...
                 </p>
             </div>
         );
