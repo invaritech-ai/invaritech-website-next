@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const regopsStrategy: BlogPost = {
     slug: "regops-strategy",
     title: "RegOps: The Missing Link for Scaling Your ESG Consultancy",
     excerpt:

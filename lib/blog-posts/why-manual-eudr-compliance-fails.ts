@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const whyManualEudrFails: BlogPost = {
     slug: "why-manual-eudr-compliance-fails",
     title: "Why Manual EUDR Compliance Fails at Scale: A Case Study",
     excerpt:

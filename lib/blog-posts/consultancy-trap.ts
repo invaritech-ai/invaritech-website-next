@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const consultancyTrap: BlogPost = {
     slug: "consultancy-trap",
     title: "The Consultancy Trap: Why \"Heroic\" Manual Compliance Caps Your Revenue",
     excerpt:

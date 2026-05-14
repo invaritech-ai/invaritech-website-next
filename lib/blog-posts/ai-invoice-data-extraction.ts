@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const aiInvoiceDataExtraction: BlogPost = {
     slug: "ai-invoice-data-extraction",
     title: "The Architecture of Efficiency: Why Data Infrastructure is the Real Secret to Cloud Based AP Automation",
     excerpt:

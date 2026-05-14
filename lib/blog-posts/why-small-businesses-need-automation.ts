@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const whySmallBusinesses: BlogPost = {
     slug: "why-small-businesses-need-automation",
     title: "Why Small Businesses Need Automation: The Boiling Pot of Manual Operations",
     excerpt:

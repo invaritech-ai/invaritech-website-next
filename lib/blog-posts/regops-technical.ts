@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const regopsTechnical: BlogPost = {
     slug: "regops-technical",
     title: "Anatomy of a RegOps Bridge: Integrating the Tools You Already Use",
     excerpt:

@@ -1,0 +1,27 @@
+{
+    "ignoreDependencyOverrides": [
+        { "package": "solid-js" },
+        { "package": "seroval" },
+        { "package": "axios" },
+        { "package": "tar" },
+        { "package": "minimatch" },
+        { "package": "ajv" },
+        { "package": "js-yaml" },
+        { "package": "qs" },
+        { "package": "esbuild" },
+        { "package": "vite" },
+        { "package": "rollup" },
+        { "package": "lodash" }
+    ],
+    "ignoreDependencies": [
+        "googleapis"
+    ],
+    "ignoreExports": [
+        { "file": "app/manifest.ts", "exports": ["dynamic"] },
+        { "file": "app/robots.ts", "exports": ["dynamic"] },
+        { "file": "app/sitemap.ts", "exports": ["dynamic"] }
+    ],
+    "ignorePatterns": [
+        "tests/**"
+    ]
+}

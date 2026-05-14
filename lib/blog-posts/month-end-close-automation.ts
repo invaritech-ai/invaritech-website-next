@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const monthEndClose: BlogPost = {
     slug: "month-end-close-automation",
     title: "Month-End Close Automation: Cut Your Close from 10 Days to 3 (Without Replacing Excel)",
     excerpt:

@@ -42,7 +42,7 @@ export const CATEGORY_KEYS = [
 
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
-export const resources: Resource[] = [
+const resources: Resource[] = [
     {
         slug: "supplier-payment-control-rule-table",
         title: "Supplier Payment Control Rule Table",
@@ -130,9 +130,3 @@ export const resources: Resource[] = [
 ];
 
 export const getAllResources = (): Resource[] => resources;
-
-export const getFeaturedResource = (): Resource | undefined =>
-    resources.find((r) => r.featured);
-
-export const getResourceBySlug = (slug: string): Resource | undefined =>
-    resources.find((r) => r.slug === slug);

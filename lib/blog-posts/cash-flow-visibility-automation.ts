@@ -1,4 +1,4 @@
-// import { BlogPost } from "../blog-posts";
+// import type { BlogPost } from "../blog-posts-types";
 
 // export const post: BlogPost = {
 //     slug: "cash-flow-visibility-automation",
@@ -130,9 +130,9 @@
 //     coverImage: "/blog/cash-flow-visibility.webp",
 // };
 
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const cashFlowVisibility: BlogPost = {
     slug: "cash-flow-visibility-automation",
     title: "Cash Flow Visibility Automation: The Realities of Data Pipelines and 13 Week Forecasts",
     excerpt:

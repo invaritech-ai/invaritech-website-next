@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const whyConsultanciesGetStuck: BlogPost = {
     slug: "why-consultancies-get-stuck",
     title: "Why Consultancies Get Stuck: The Hidden Cost of Manual Compliance Work",
     excerpt:

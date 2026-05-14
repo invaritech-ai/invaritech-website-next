@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const buildingVsBuying: BlogPost = {
     slug: "building-vs-buying-custom-automation",
     title: "Build vs. Buy Automation: A Capital Allocation Decision",
     excerpt:

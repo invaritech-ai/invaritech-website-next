@@ -1,6 +1,6 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const complianceAutomation: BlogPost = {
     slug: "compliance-automation-done-right",
     title: "Compliance Automation Done Right: Deterministic Systems vs. Black-Box AI",
     excerpt:
