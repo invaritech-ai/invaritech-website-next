@@ -4,19 +4,30 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, it } from "node:test";
 
-const retiredFeaturePaths = [
+const retiredFeatureDirectories = [
     "app/api/assessment",
+    "api-server/app/api/assessment",
     "components/assessment",
+];
+
+const retiredFeatureFiles = [
     "components/assessment-banner.tsx",
     "components/services/AssessmentTeaser.tsx",
+    "api-server/lib/assessment-calculator.ts",
     "lib/assessment-calculator.ts",
 ];
 
 const activeSourceFiles = [
     "app",
+    "api-server/app",
+    "api-server/lib",
     "components",
     "lib/blog-posts",
 ].flatMap((root) => {
+    if (!existsSync(join(process.cwd(), root))) {
+        return [];
+    }
+
     return execFileSync("find", [root, "-type", "f"], { encoding: "utf8" })
         .trim()
         .split("\n")
@@ -30,7 +41,19 @@ const activeSourceFiles = [
 
 describe("retired assessment feature", () => {
     it("has no runnable assessment feature files", () => {
-        for (const relativePath of retiredFeaturePaths) {
+        for (const relativePath of retiredFeatureDirectories) {
+            if (!existsSync(join(process.cwd(), relativePath))) {
+                continue;
+            }
+
+            const files = execFileSync("find", [relativePath, "-type", "f"], {
+                encoding: "utf8",
+            }).trim();
+
+            assert.equal(files, "", `${relativePath} should not contain files`);
+        }
+
+        for (const relativePath of retiredFeatureFiles) {
             assert.equal(
                 existsSync(join(process.cwd(), relativePath)),
                 false,
