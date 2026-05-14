@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
     title: "Payment Control Work & Delivered Systems",
@@ -64,10 +65,10 @@ const projects = [
 
 export default function WorkPage() {
     return (
-        <main className="min-h-screen bg-background text-foreground relative overflow-hidden selection:bg-primary/20 selection:text-primary">
+        <main className="site-page relative overflow-hidden selection:bg-primary/20 selection:text-primary">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="site-page-grid" />
                 <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
                 <div className="absolute bottom-1/3 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
             </div>
@@ -79,25 +80,28 @@ export default function WorkPage() {
                 </span>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-20 px-6 md:px-8">
-                {/* Header */}
-                <header className="mb-32">
-                    <div className="flex items-center gap-3 mb-8">
-                        <div className="h-[1px] w-8 bg-primary/40" />
-                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Delivered Outcomes</span>
+            {/* Hero */}
+            <section className="site-section-hero relative z-10">
+                <div className="site-container">
+                    <div className="site-split">
+                        <div>
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">Delivered Outcomes</p>
+                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Selected work. Production-grade automation across compliance, finance, and operations.
+                            </h1>
+                        </div>
+                        <p className="site-lead" data-reveal="block">
+                            We work across compliance, finance, and operations — building systems that eliminate manual work at volume. Each engagement is scoped around a specific bottleneck. Every project below shipped to production.
+                        </p>
                     </div>
-                    <h1 className="font-editorial text-6xl md:text-9xl font-semibold tracking-tight mb-8 leading-[0.9] text-foreground">
-                        SELECTED WORK
-                    </h1>
-                    <p className="text-xl text-muted-foreground md:text-2xl font-light max-w-2xl border-l-2 border-primary/30 pl-6 py-2">
-                        Engineering leverage through production-grade automation. A curated record of delivered outcomes.
-                    </p>
-                    <p className="text-base text-muted-foreground max-w-2xl mt-8 leading-relaxed">
-                        We work across compliance, finance, and operations — building systems that eliminate manual work at volume. Each engagement is scoped around a specific bottleneck. Every project below shipped to production.
-                    </p>
-                </header>
+                </div>
+            </section>
 
-                {/* Projects */}
+            {/* Projects */}
+            <div className="relative z-10 site-container pb-20">
                 <div className="space-y-32">
                     {projects.map((project, index) => (
                         <div key={project.id} className="group relative">
@@ -194,6 +198,8 @@ export default function WorkPage() {
                     </Button>
                 </div>
             </div>
+
+            <HomepageScrollAnimations />
         </main>
     );
 }

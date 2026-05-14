@@ -4,6 +4,7 @@ import { BOOK_MEETING_URL, RULE_TABLE_CTA } from "@/lib/marketing";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
     title: "About INVARITECH | Founder-Led Payment Control Design",
@@ -51,20 +52,23 @@ const standards = [
 
 export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-background pt-28 md:pt-36">
-            <section className="mx-auto max-w-7xl px-6 pb-20 md:pb-28">
-                <div className="grid gap-12 lg:grid-cols-[1fr_0.8fr] lg:items-end">
-                    <div>
-                        <p className="mb-8 max-w-max border-y border-primary/30 py-2 text-[11px] font-mono uppercase tracking-[0.24em] text-primary">
-                            Founder-led service model
+        <main className="site-page">
+            <section className="site-section-hero">
+                <div className="site-container">
+                    <div className="site-split">
+                        <div>
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">Founder-led service model</p>
+                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Payment control design with direct principal involvement.
+                            </h1>
+                        </div>
+                        <p className="site-lead" data-reveal="block">
+                            We work with one client at a time to design, build, and maintain finance workflows that reduce exception handling without forcing an expensive system overhaul.
                         </p>
-                        <h1 className="font-editorial text-6xl font-semibold leading-[0.9] tracking-tight md:text-8xl">
-                            Payment control design with direct principal involvement.
-                        </h1>
                     </div>
-                    <p className="text-xl leading-relaxed text-foreground-muted">
-                        We work with one client at a time to design, build, and maintain finance workflows that reduce exception handling without forcing an expensive system overhaul.
-                    </p>
                 </div>
             </section>
 
@@ -184,6 +188,8 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            <HomepageScrollAnimations />
         </main>
     );
 }

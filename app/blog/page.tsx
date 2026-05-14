@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog-posts";
-import { TextEffect } from "@/components/ui/text-effect";
 import Link from "next/link";
 import { ArrowRight, MoveUpRight } from "lucide-react";
 import Image from "next/image";
 import { RULE_TABLE_CTA } from "@/lib/marketing";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
     title: "Operational Playbooks for Cleaner Finance Ops",
@@ -57,46 +57,41 @@ export default function BlogsPage() {
     const posts = getAllPosts();
 
     return (
-        <main className="min-h-screen bg-background relative overflow-hidden">
+        <main className="site-page relative overflow-hidden">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="site-page-grid" />
                 <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
                 <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
             </div>
 
-            {/* Header */}
-            <section className="pt-32 pb-16 px-6 relative z-10">
-                <div className="max-w-7xl mx-auto">
-                    <TextEffect
-                        per="char"
-                        preset="fade"
-                        className="text-[11px] font-mono tracking-[0.22em] text-primary mb-8 block uppercase"
-                    >
-                        Finance Ops Notes
-                    </TextEffect>
-
-                    <h1 className="font-editorial text-6xl md:text-[9rem] leading-[0.88] font-semibold tracking-tight mb-12 text-foreground">
-                        <TextEffect per="word" preset="fade" className="inline">
-                            OPERATIONAL
-                        </TextEffect>
-                        <br />
-                        <span className="text-foreground-muted">PLAYBOOKS</span>
-                    </h1>
-
-                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between border-t border-border pt-8">
-                        <p className="text-xl md:text-2xl text-foreground-muted max-w-2xl font-light">
-                            Step-by-step guides, workflow teardowns, and practical notes for teams actively reducing invoice exceptions and manual review loads.
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            {categories.map((category) => (
-                                <span
-                                    key={category}
-                                    className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
-                                >
-                                    {category}
-                                </span>
-                            ))}
+            {/* Hero */}
+            <section className="site-section-hero relative z-10">
+                <div className="site-container">
+                    <div className="site-split">
+                        <div>
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">Finance Ops Notes</p>
+                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Operational playbooks for cleaner finance ops.
+                            </h1>
+                        </div>
+                        <div data-reveal="block">
+                            <p className="site-lead">
+                                Step-by-step guides, workflow teardowns, and practical notes for teams actively reducing invoice exceptions and manual review loads.
+                            </p>
+                            <div className="mt-6 flex flex-wrap gap-2">
+                                {categories.map((category) => (
+                                    <span
+                                        key={category}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
+                                    >
+                                        {category}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -194,6 +189,8 @@ export default function BlogsPage() {
                     )}
                 </div>
             </section>
+
+            <HomepageScrollAnimations />
         </main>
     );
 }
