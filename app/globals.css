@@ -1134,9 +1134,25 @@ textarea {
         opacity: 1;
     }
 
+    .systems-scramble-circle {
+        position: absolute;
+        top: -10px;
+        left: -14px;
+        width: calc(100% + 28px);
+        height: calc(100% + 20px);
+        pointer-events: none;
+        overflow: visible;
+    }
+
+    @media (max-width: 40rem) {
+        .systems-scramble-circle {
+            display: none;
+        }
+    }
+
     .systems-scramble-label {
         position: absolute;
-        bottom: calc(-1em - 4px);
+        top: calc(100% + 14px);
         left: 0;
         font-family: var(--font-mono);
         font-size: 0.5rem;

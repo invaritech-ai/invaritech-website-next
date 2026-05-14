@@ -8,7 +8,7 @@ const auditEntries = [
     { time: "10:42", event: "Exception flagged by matching engine" },
     { time: "10:51", event: "Rate card and POD evidence attached" },
     { time: "11:06", event: "AP Lead reviewed and noted variance" },
-    { time: "11:11", event: "Held — awaiting Controller sign-off" },
+    { time: "11:11", event: "Held, awaiting Controller sign-off" },
 ];
 
 export default function ExceptionPacket() {
@@ -42,7 +42,7 @@ export default function ExceptionPacket() {
                     <dt className="exception-packet-field-label">Variance</dt>
                     <dd className="exception-packet-field-value">+$1,240 vs contracted rate</dd>
                     <dt className="exception-packet-field-label">Issue</dt>
-                    <dd className="exception-packet-field-value">Carrier surcharge — rate card mismatch</dd>
+                    <dd className="exception-packet-field-value">Carrier surcharge (rate card mismatch)</dd>
                 </dl>
 
                 <div className="exception-packet-desktop">
