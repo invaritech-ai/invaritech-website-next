@@ -56,6 +56,8 @@ Neither path works. The SaaS tool ingests garbage. The custom layer has nothing 
 
 The operational leverage only appears after the data contract is defined. That is usually a week of architecture work, not a six-month governance project.
 
+If AP invoice throughput is the bottleneck, this is where an [invoice data extraction architecture](/blog/ai-invoice-data-extraction/) usually becomes the first practical wedge.
+
 ---
 
 ## Example: Regulatory Submission Pipelines (EUDR)

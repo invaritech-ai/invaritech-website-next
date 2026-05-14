@@ -158,6 +158,8 @@ Cash flow is the exact same concept: to tackle a problem, first we have to know 
 
 The root cause of lagging reports is human triggers. Someone copies the AR aging report; someone maps the payroll run to a cash line. Every manual step introduces friction and delays the final output.
 
+If you are running a smaller team and this feels familiar, this [small business automation guide](/blog/why-small-businesses-need-automation/) explains how to sequence hiring and workflow automation decisions.
+
 ---
 
 ## The APAC Banking Reality: APIs and Security Risks

@@ -155,6 +155,8 @@ A one-page financial model for the business case. Take it into your next board o
 Stop letting the 10-day close drain your team's agility. Use our [Cost-to-Close Calculator](/resources/cost-to-close-calculator/) to see your actual annual manual tax in under 30 seconds. Then [contact our engineering team](/contact/) to map your exact blueprint for a 3-day close.
 
 If your cash position report also arrives 10–15 days after the period closes, the close is only part of the problem. See how [cash flow visibility automation](/blog/cash-flow-visibility-automation/) fixes the upstream reporting gap — and use the [burn rate calculator](/resources/cost-to-close-calculator/) to put a dollar figure on your current reporting lag.
+
+For founder teams deciding where to start, this [small business automation playbook](/blog/why-small-businesses-need-automation/) maps how to choose the first workflow wedge without overbuilding.
     `,
     author: {
         name: "Avishek Majumder",
