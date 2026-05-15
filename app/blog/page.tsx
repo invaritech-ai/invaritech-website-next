@@ -103,10 +103,10 @@ export default function BlogsPage() {
                     <div className="mb-12 flex flex-col gap-5 border-y border-border py-7 md:flex-row md:items-center md:justify-between">
                         <div>
                             <h2 className="font-editorial text-3xl font-semibold">Start with an invoice approval workflow rule table.</h2>
-                            <p className="mt-2 text-muted-foreground">A practical workbook for mapping payment approval checks, exception routes, and audit evidence.</p>
+                            <p className="mt-2 text-muted-foreground">A practical table for mapping payment approval checks, exception routes, and audit evidence.</p>
                         </div>
                         <Link
-                            href="/resources/"
+                            href="/resources/supplier-payment-control-rule-table/interactive/"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
                             {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />

@@ -6,7 +6,7 @@ export type ResourceCategory =
     | "template"
     | "tool";
 
-export type ResourceAccess = "open" | "gated" | "coming-soon";
+export type ResourceAccess = "open" | "coming-soon";
 
 export interface Resource {
     slug: string;
@@ -47,11 +47,11 @@ const resources: Resource[] = [
         slug: "supplier-payment-control-rule-table",
         title: "Invoice Approval Workflow & Supplier Payment Controls Rule Table",
         excerpt:
-            "A zero-fluff workbook for mapping invoice approval workflow checks, payment-change controls, exception routing, and approval evidence before payment release.",
+            "An interactive rule table for mapping invoice approval workflow checks, payment-change controls, exception routing, and approval evidence before payment release.",
         category: "rule-table",
         industry: "All industries",
-        format: "Workbook (.xlsx)",
-        access: "gated",
+        format: "Interactive web table",
+        access: "open",
         featured: true,
         subpageHref: "/resources/supplier-payment-control-rule-table/",
     },
@@ -72,7 +72,7 @@ const resources: Resource[] = [
             "Freight invoice audit controls for catching carrier surcharge overcharges, rate-card mismatches, and duplicate invoice variants before release.",
         category: "rule-table",
         industry: "Freight & logistics",
-        format: "Workbook (.xlsx)",
+        format: "Rule table",
         access: "coming-soon",
     },
     {
@@ -92,7 +92,7 @@ const resources: Resource[] = [
             "Owner, status, SLA, approval note, and audit trail fields: a ready-to-use queue structure for invoice exception management in accounts payable workflow automation.",
         category: "template",
         industry: "All industries",
-        format: "Spreadsheet template",
+        format: "Queue template",
         access: "coming-soon",
     },
     {

@@ -1,12 +1,11 @@
 import { Metadata } from "next";
 import Script from "next/script";
 import ResourceRuleTableClient from "@/components/resource-rule-table-client";
-import { createApolloInboundScript } from "@/lib/apollo-inbound";
 
 export const metadata: Metadata = {
     title: "Supplier Payment Control Rule Table for AP Teams",
     description:
-        "Download a supplier payment control rule table for mapping payment approval checks, invoice exception routing, evidence, and audit notes before release.",
+        "View a supplier payment control rule table for mapping payment approval checks, invoice exception routing, evidence, and audit notes before release.",
     alternates: {
         canonical:
             "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
         description:
-            "Workbook for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
+            "Interactive rule table for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
         url: "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
         type: "website",
         images: [
@@ -62,21 +61,16 @@ const schemas = [
         "@type": "CreativeWork",
         name: "Supplier Payment Control Rule Table",
         description:
-            "Rule table workbook for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit notes before release.",
+            "Interactive rule table for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit notes before release.",
         author: {
             "@type": "Organization",
             name: "INVARITECH",
             url: BASE,
         },
         url: `${BASE}/resources/supplier-payment-control-rule-table/`,
-        encodingFormat:
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        encodingFormat: "text/html",
     },
 ];
-
-const APOLLO_INBOUND_SCRIPT = createApolloInboundScript({
-    formSelector: "#resource-download-form",
-});
 
 export default function RuleTablePage() {
     return (
@@ -89,13 +83,6 @@ export default function RuleTablePage() {
                     dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
                 />
             ))}
-            <Script
-                id="apollo-inbound"
-                strategy="afterInteractive"
-                dangerouslySetInnerHTML={{
-                    __html: APOLLO_INBOUND_SCRIPT,
-                }}
-            />
             <ResourceRuleTableClient />
         </>
     );

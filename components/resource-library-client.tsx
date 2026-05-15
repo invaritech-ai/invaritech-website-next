@@ -81,7 +81,7 @@ export default function ResourceLibraryClient() {
                                 Invoice Approval Workflow & Supplier Payment Controls Rule Table
                             </h2>
                             <p className="site-lead mt-6">
-                                A zero-fluff workbook for mapping invoice approval workflow steps,
+                                An interactive table for mapping invoice approval workflow steps,
                                 supplier payment controls, exception routing, and payment approval checks
                                 before payment is released.
                             </p>
@@ -98,9 +98,8 @@ export default function ResourceLibraryClient() {
                                 ))}
                             </div>
                             <p className="mt-8 text-sm leading-relaxed text-foreground-subtle">
-                                Most resources stay open. The workbook request asks for a few
-                                operational fields because accounts payable automation requirements vary
-                                by industry, workflow, and exception type.
+                                Use it as a starting point for reviewing the checks, owners, evidence,
+                                and audit trail your team needs before payment release.
                             </p>
                         </div>
 
@@ -108,10 +107,10 @@ export default function ResourceLibraryClient() {
                         <RuleTablePreview
                             footer={
                                 <Link
-                                    href="/resources/supplier-payment-control-rule-table/"
+                                    href="/resources/supplier-payment-control-rule-table/interactive/"
                                     className="site-button gap-2"
                                 >
-                                    View &amp; Request Rule Table
+                                    Open Rule Table
                                     <ArrowRight className="size-4" aria-hidden="true" />
                                 </Link>
                             }

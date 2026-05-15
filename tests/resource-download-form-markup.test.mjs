@@ -31,8 +31,9 @@ describe("ResourceDownloadForm Apollo field mapping", () => {
         assert.doesNotMatch(source, /name="job_title"[\s\S]{0,300}value=\{form\.role\}/);
     });
 
-    it("binds Apollo to the resource download form explicitly", () => {
-        assert.match(pageSource, /formSelector:\s*"#resource-download-form"/);
+    it("does not bind the open rule-table page to a resource request form", () => {
+        assert.doesNotMatch(pageSource, /formSelector:\s*"#resource-download-form"/);
+        assert.doesNotMatch(pageSource, /resource-download-form/);
     });
 
     it("uses Apollo's current init API before deprecated fallbacks", () => {

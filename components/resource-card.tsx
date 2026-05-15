@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Clock, Lock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import type { Resource, ResourceCategory } from "@/lib/resources";
 
 const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
@@ -13,7 +13,16 @@ const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
 
 export default function ResourceCard({ resource }: { resource: Resource }) {
     const isComingSoon = resource.access === "coming-soon";
-    const isGated = resource.access === "gated";
+    const ctaLabel =
+        resource.category === "tool"
+            ? resource.slug === "cost-to-close-calculator"
+                ? "Open Calculator"
+                : "Open Tool"
+            : resource.category === "rule-table"
+              ? "View Rule Table"
+              : resource.category === "guide"
+                ? "Read Guide"
+                : `View ${CATEGORY_DISPLAY[resource.category]}`;
 
     return (
         <article
@@ -31,12 +40,6 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <span className="border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-primary">
                     {CATEGORY_DISPLAY[resource.category]}
                 </span>
-                {isGated && (
-                    <span className="flex items-center gap-1 border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
-                        <Lock className="size-3" aria-hidden="true" />
-                        Gated
-                    </span>
-                )}
                 {isComingSoon && (
                     <span className="flex items-center gap-1 border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
                         <Clock className="size-3" aria-hidden="true" />
@@ -68,9 +71,9 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <Link
                     href={resource.subpageHref}
                     className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-primary transition-colors hover:text-foreground"
-                    aria-label={`View and request: ${resource.title}`}
+                    aria-label={`${ctaLabel}: ${resource.title}`}
                 >
-                    View &amp; Request
+                    {ctaLabel}
                     <ArrowRight className="size-3" aria-hidden="true" />
                 </Link>
             )}

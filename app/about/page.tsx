@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { ArrowRight, Bug, ClipboardCheck, Handshake, PenTool } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Handshake, PenTool, ShieldCheck } from "lucide-react";
 import { BOOK_MEETING_URL, RULE_TABLE_CTA } from "@/lib/marketing";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,18 +35,18 @@ const SHOW_AVISHEK = true;
 const standards = [
     {
         icon: ClipboardCheck,
-        title: "Objectives first",
-        body: "We agree the workflow objective and three measurable acceptance criteria before any build starts.",
+        title: "Clear objective first",
+        body: "Before build starts, we agree the workflow, the control outcome, and how success will be checked.",
     },
     {
-        icon: Bug,
-        title: "Bugs are on us",
-        body: "If the agreed control does not work as specified, we fix it without charging for the correction.",
+        icon: ShieldCheck,
+        title: "Clear delivery responsibility",
+        body: "If an agreed workflow does not behave as specified, we stay with it until the agreed control works as intended.",
     },
     {
         icon: Handshake,
-        title: "New scope stays separate",
-        body: "New features or new exception families are scoped separately after the original objective is delivered.",
+        title: "Scope stays transparent",
+        body: "If a new feature or exception family appears, we separate it from the original objective so timelines and tradeoffs stay clear.",
     },
 ];
 
@@ -62,11 +62,11 @@ export default function AboutPage() {
                                 <p className="site-eyebrow-text">Founder-led service model</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Accounts payable automation with direct principal involvement.
+                                Practical accounts payable automation, led by the people who scope it.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We work with one client at a time to design invoice approval workflow systems, reduce duplicate payments, and improve finance controls without forcing an expensive system overhaul.
+                            We help finance teams strengthen invoice approvals, duplicate payment checks, and supplier payment controls around the systems they already use.
                         </p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                             Fixed scope. Measurable outcomes. Managed after delivery.
                         </h2>
                         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                            We do not sell generic automation projects or bloated consulting hours. We agree the accounts payable objective first, lock in acceptance criteria, and build around the systems your team already uses.
+                            We start with one workflow, one owner, and clear acceptance criteria. Then we build the control around the systems your finance team already uses.
                         </p>
                     </div>
 
@@ -102,7 +102,7 @@ export default function AboutPage() {
                 <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                     <div className="relative border border-primary/20 bg-primary/[0.04] p-8 md:p-10">
                         <blockquote className="font-editorial text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                            &ldquo;The people who scope your invoice approval workflow stay hands-on for the build.&rdquo;
+                            &ldquo;The people who scope your invoice approval workflow stay close to the build.&rdquo;
                         </blockquote>
                         <p className="mt-6 text-muted-foreground leading-relaxed">
                             That continuity matters when work touches payment approvals, supplier bank detail changes, audit evidence, and daily finance operations.
@@ -124,10 +124,10 @@ export default function AboutPage() {
                         <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Why this model exists</h2>
                         <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
                             <p>
-                                Accounts payable automation fails when builders treat it like generic software. The hard part is deciding which invoice exceptions should block payment, what evidence matters, who owns each approval, and how to keep the workflow auditable.
+                                Accounts payable automation is not only a software problem. The work also depends on which invoice exceptions should block payment, what evidence matters, who owns each approval, and how the final decision can be reviewed later.
                             </p>
                             <p>
-                                We keep each engagement narrow so one workflow objective can be owned. The first sprint delivers one live control. Managed support keeps it useful as rules, vendors, teams, and edge cases change.
+                                We keep each engagement narrow so one workflow objective can be owned properly. After the first control is live, managed support helps it keep working as rules, vendors, teams, and edge cases change.
                             </p>
                         </div>
                     </div>
@@ -143,20 +143,20 @@ export default function AboutPage() {
                             name="Aditi Garg"
                             role="Director & Founder"
                             image="/aditi-1.webp"
-                            bio="Operations leader. Goldman Sachs, Uber, BMW. Turns fragmented operational workflows into governed, high-throughput operating models."
+                            bio="Operations leader with experience at Goldman Sachs, Uber, and BMW. Helps teams turn fragmented workflows into clearer, more governed operating processes."
                         />
                         <FounderCard
                             name="Abhishek Agarwal"
                             role="Co-founder"
                             image="/abhishek.webp"
-                            bio="Founder, Codeacious Tech. Hands-on delivery for enterprise and e-commerce systems, with architecture programs driving $80M+ in validated value."
+                            bio="Founder of Codeacious Tech. Leads hands-on delivery for enterprise and e-commerce systems, including architecture programs tied to $80M+ in validated value."
                         />
                         {SHOW_AVISHEK && (
                             <FounderCard
                                 name="Avishek Majumder"
                                 role="Co-founder & CEO"
                                 image="/avishek.webp"
-                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for regulated, compliance-heavy environments."
+                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for regulated and compliance-heavy environments."
                             />
                         )}
                     </div>
@@ -168,12 +168,12 @@ export default function AboutPage() {
                     <div>
                         <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real accounts payable bottleneck.</h2>
                         <p className="mt-3 text-muted-foreground">
-                            Request the rule table first, or book a call if you already know which invoice approval workflow or supplier exception needs attention.
+                            View the rule table first, or book a call if you already know which invoice approval workflow or supplier exception needs attention.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Link
-                            href="/resources/"
+                            href="/resources/supplier-payment-control-rule-table/interactive/"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
                             {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />

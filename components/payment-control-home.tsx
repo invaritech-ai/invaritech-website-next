@@ -140,7 +140,7 @@ export default function PaymentControlHome() {
                             Founder-led. One client at a time. Fixed scope first, then managed support.
                         </p>
                         <div className="site-button-row-center">
-                            <Link href="/resources/" className="site-button">
+                            <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button">
                                 {RULE_TABLE_CTA}
                                 <ArrowRight className="site-button-icon" aria-hidden="true" />
                             </Link>
@@ -296,7 +296,7 @@ export default function PaymentControlHome() {
                                 <Route className="site-icon" aria-hidden="true" />
                                 <h2 className="site-h2">Start with the rule table.</h2>
                                 <p className="site-body">
-                                    Request the workbook we use to map supplier payment controls, invoice
+                                    Open the table we use to map supplier payment controls, invoice
                                     exception routing, payment approval checks, and audit notes before
                                     payment release.
                                 </p>
@@ -306,7 +306,7 @@ export default function PaymentControlHome() {
                             </div>
 
                             <div className="site-home-final-actions">
-                                <Link href="/resources/" className="site-button">
+                                <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button">
                                     {RULE_TABLE_CTA}
                                     <ArrowRight className="site-button-icon" aria-hidden="true" />
                                 </Link>

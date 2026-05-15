@@ -113,7 +113,7 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
         return (
             <div className="border border-primary/30 bg-primary/[0.05] p-8">
                 <CheckCircle2 className="mb-5 size-7 text-primary" />
-                <h3 className="font-editorial text-3xl font-semibold">Request received.</h3>
+                <h3 className="font-editorial text-3xl font-semibold">Details received.</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
                     Loading your personalized control table...
                 </p>
@@ -128,9 +128,9 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
             className="space-y-5 border border-border bg-card p-6"
         >
             <div>
-                <h3 className="font-editorial text-3xl font-semibold">Request the workbook.</h3>
+                <h3 className="font-editorial text-3xl font-semibold">Send workflow details.</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    A few operational fields help us send the most relevant version for your supplier payment controls and exception workflow.
+                    A few operational fields help us open the table with the most relevant supplier payment controls and exception workflow context.
                 </p>
             </div>
 
@@ -216,7 +216,7 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
                 disabled={state === "submitting" || !turnstileToken}
                 className="h-12 w-full rounded-none bg-primary text-base font-semibold text-primary-foreground hover:bg-foreground hover:text-background"
             >
-                {state === "submitting" ? "Sending..." : "Request the Workbook"}
+                {state === "submitting" ? "Sending..." : "Send Details"}
                 <ArrowRight className="ml-2 size-4" />
             </Button>
         </form>

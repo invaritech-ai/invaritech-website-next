@@ -9,7 +9,6 @@ import {
     ListChecks,
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import ResourceDownloadForm from "@/components/resource-download-form";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 import RuleTablePreview from "@/components/rule-table-preview";
 import { BOOK_MEETING_URL, BOOK_MEETING_CTA } from "@/lib/marketing";
@@ -183,23 +182,22 @@ export default function ResourceRuleTableClient() {
                 </div>
             </section>
 
-            {/* ── Request section ───────────────────────────────────── */}
-            <section className="site-section" id="request">
+            {/* ── Open table section ────────────────────────────────── */}
+            <section className="site-section" id="table">
                 <div className="site-container">
                     <div className="mb-10 flex items-center gap-3" data-reveal="block">
                         <div className="h-px w-8 bg-primary/60" />
                         <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                            Request access
+                            Open resource
                         </p>
                     </div>
                     <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-start">
-                        {/* Left: mini preview */}
                         <RuleTablePreview
                             footer={
                                 <div className="flex flex-wrap gap-4">
                                     <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.14em] text-foreground-subtle">
                                         <FileSpreadsheet className="size-3.5 text-primary" aria-hidden="true" />
-                                        Workbook (.xlsx)
+                                        Interactive table
                                     </div>
                                     <div className="flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.14em] text-foreground-subtle">
                                         <ListChecks className="size-3.5 text-primary" aria-hidden="true" />
@@ -209,9 +207,21 @@ export default function ResourceRuleTableClient() {
                             }
                         />
 
-                        {/* Right: download form */}
-                        <div data-reveal="block">
-                            <ResourceDownloadForm source="supplier-payment-control-rule-table" />
+                        <div className="bg-card border border-border p-8 md:p-10" data-reveal="block">
+                            <h2 className="site-h3">Use the table in your browser.</h2>
+                            <p className="site-body mt-4">
+                                Filter supplier payment controls by industry, exception type,
+                                control type, and priority. Use the rows as a practical starting
+                                point for reviewing owners, evidence requirements, audit trail
+                                fields, and release checks.
+                            </p>
+                            <a
+                                href="/resources/supplier-payment-control-rule-table/interactive/"
+                                className="site-button mt-8 gap-2"
+                            >
+                                Open Rule Table
+                                <ArrowRight className="size-4" aria-hidden="true" />
+                            </a>
                         </div>
                     </div>
                 </div>

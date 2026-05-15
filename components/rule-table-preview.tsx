@@ -53,10 +53,10 @@ export default function RuleTablePreview({ footer }: RuleTablePreviewProps) {
                 <p className="exception-packet-eyebrow">Rule Table — Preview</p>
                 <div className="exception-packet-header">
                     <span
-                        className="control-stamp control-stamp-held"
-                        aria-label="Gated resource"
+                        className="control-stamp control-stamp-resolved"
+                        aria-label="Open resource"
                     >
-                        Gated
+                        Open
                     </span>
                 </div>
                 <p className="exception-packet-section-label">Sample control rules</p>
@@ -85,7 +85,7 @@ export default function RuleTablePreview({ footer }: RuleTablePreviewProps) {
                     </table>
                 </div>
                 <p className="mt-3 font-mono text-[10px] tracking-[0.1em] text-foreground-subtle">
-                    5 of 18 rows shown — request access for full workbook
+                    5 of 18 rows shown — open the full interactive table
                 </p>
                 {footer && <div className="mt-6">{footer}</div>}
             </div>
