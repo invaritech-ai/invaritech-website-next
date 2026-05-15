@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function InteractiveControlTablePage() {
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-12 sm:py-16">
+      <div className="container mx-auto px-4 pt-28 pb-12 md:pt-36 md:pb-16">
         <Suspense fallback={<div>Loading...</div>}>
           <SupplierPaymentControlTool />
         </Suspense>
