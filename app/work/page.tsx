@@ -7,22 +7,22 @@ import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Accounts Payable Automation Work & Delivered Systems",
+    title: "Operational Automation for Finance Teams & Delivered Systems",
     description:
-        "Real accounts payable automation delivery across finance and operations, including invoice approval workflow design, duplicate payment prevention, and auditable exception handling.",
+        "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling. Includes international regulated-work proof.",
     openGraph: {
-        title: "Accounts Payable Automation Work & Delivered Systems | INVARITECH",
+        title: "Operational Automation for Finance Teams & Delivered Systems | INVARITECH",
         description:
-            "Real accounts payable automation delivery, including invoice approval workflow design, duplicate payment prevention, and auditable exception handling.",
+            "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work — Automation Projects" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Accounts Payable Automation Work & Delivered Systems | INVARITECH",
+        title: "Operational Automation for Finance Teams & Delivered Systems | INVARITECH",
         description:
-            "Real accounts payable automation delivery, including invoice approval workflow design, duplicate payment prevention, and auditable exception handling.",
+            "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -34,7 +34,7 @@ const projects = [
     {
         id: "eudr",
         title: "EUDR Compliance Bridge",
-        category: "Automation & Compliance",
+        category: "International Proof Case",
         description: "A Python FastAPI bridge enabling a French operator to submit thousands of EUDR Due Diligence Statements via a simple REST API.",
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
         image: "/eudr-preview.webp",
@@ -42,21 +42,11 @@ const projects = [
         metric: "Thousands of submissions in minutes",
     },
     {
-        id: "charity",
-        title: "China Coast Community",
-        category: "Web & Automation",
-        description: "Modernizing the digital presence and operational flow for a premier elderly care charity in HK. Connecting front-end engagement to CRM-led donor management.",
-        tags: ["Next.js", "Stripe", "CRM Integration"],
-        image: "/ccc-isometric.webp",
-        link: "https://www.chinacoastcommunity.org.hk",
-        metric: "Live Site",
-    },
-    {
         id: "custom",
-        title: "Your Custom Solution",
-        category: "Accounts Payable Automation",
-        description: "We identify your biggest accounts payable bottleneck and deliver a custom automation workflow within 30 days.",
-        tags: ["Analysis", "Strategy", "Custom Build"],
+        title: "Your Finance Ops Bottleneck",
+        category: "Finance Ops Optimization",
+        description: "We identify one invoice, cash, or close bottleneck and deliver a custom automation workflow within 30 days.",
+        tags: ["Analysis", "Strategy", "Finance Ops"],
         image: "/work/custom-solution.webp",
         link: "https://calendly.com/hello-invaritech/30min",
         buttonText: "Talk to Us",
@@ -87,14 +77,14 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Accounts Payable Automation Work</p>
+                                <p className="site-eyebrow-text">Operational Automation for Finance Teams</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Selected work. Production-grade accounts payable automation systems in the wild.
+                                Operational automation for finance teams.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We build invoice approval workflow systems, duplicate payment prevention checks, and auditable exception routing for finance teams. Each engagement is scoped around one bottleneck and shipped to production.
+                            We build invoice approval workflows, duplicate payment prevention checks, cash visibility automation, and auditable exception routing for finance teams. The EUDR bridge below is the proof point: strict, regulated work delivered end to end.
                         </p>
                     </div>
                 </div>
@@ -186,10 +176,10 @@ export default function WorkPage() {
                         <div className="h-[1px] w-8 bg-primary/40" />
                     </div>
                     <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight mb-8 max-w-3xl mx-auto">
-                        Ready to fix one accounts payable workflow bottleneck?
+                        Ready to fix one finance-ops workflow bottleneck?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                        Book a 30-minute diagnostic to map one invoice approval workflow, exception queue, or payment risk control. No pitch, just delivery strategy.
+                        Book a 30-minute diagnostic to map one invoice approval workflow, cash visibility gap, or month-end close bottleneck. No pitch, just delivery strategy.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
                         <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">

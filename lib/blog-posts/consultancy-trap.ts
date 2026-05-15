@@ -2,21 +2,23 @@ import type { BlogPost } from "../blog-posts-types";
 
 export const consultancyTrap: BlogPost = {
     slug: "consultancy-trap",
-    title: "The Consultancy Trap: Why \"Heroic\" Manual Compliance Caps Your Revenue",
+    title: "The Consultancy Trap: Why Manual Compliance Caps Revenue in Regulated Work",
     excerpt:
-        "Manual compliance delivery eventually limits revenue growth. This post explains the operating cost, the warning signals, and how RegOps supports scalable throughput.",
+        "Manual compliance delivery eventually limits revenue growth. This post shows why heroic delivery breaks at scale, what the warning signs look like, and how RegOps supports scalable throughput.",
     content: `
 ## The Heroic Ceiling
 
-There is a pattern in boutique compliance and ESG consultancies.
+There is a pattern in boutique compliance, ESG, and regulatory consultancies.
 
-They win clients. They build recurring revenue. They stay comfortable.
+They win clients. They build recurring revenue. They stay busy.
 
 Delivery happens through spreadsheets, inbox threads, shared drives, and portal logins. It works. Deadlines are met. But the system underneath is fragile.
 
 The firm depends on experienced consultants who remember portal quirks, filing edge cases, client-specific exceptions, and unwritten internal rules. At small scale, that looks like expertise. At larger scale, it becomes operational risk.
 
 If one person leaving breaks you, you do not have a business. You have dependency.
+
+For Australian firms working across finance, environment, and compliance delivery, this is the point where growth starts to feel heavier instead of more profitable.
 
 ---
 
@@ -35,6 +37,8 @@ Heroics erode:
 
 Most firms plateau not because demand dries up, but because delivery capacity becomes constrained by fear of failure.
 
+That is a systems problem, not a sales problem.
+
 ---
 
 ## The Self-Deception Layer
@@ -49,6 +53,8 @@ Hiring is linear scaling. Linear scaling caps margin.
 
 At some point, adding headcount increases coordination complexity faster than it increases output. You start managing people instead of improving throughput.
 
+If the firm depends on a few senior people to carry every exception, the business is already slower than it looks on paper.
+
 ---
 
 ## The Revenue Constraint Nobody Talks About
@@ -59,6 +65,9 @@ Larger contracts feel risky. Volume increases create anxiety. Recurring work fee
 
 That is not a sales issue. It is an operating model issue.
 
+The question is not "Can we win the work?"
+The question is "Can we deliver it repeatedly without burning the team?"
+
 ---
 
 ## When Automation Is Not the Answer
@@ -68,6 +77,8 @@ Automation is premature when the client base is still small and manageable, the 
 If every case is unique and requires independent legal interpretation, forcing automation is artificial.
 
 Infrastructure should follow repeatability, not precede it.
+
+That is the line. Automate the repeatable parts. Keep humans on judgment and escalation.
 
 ---
 
@@ -84,6 +95,8 @@ You likely need RegOps infrastructure when:
 At that stage, hiring more analysts increases complexity without increasing resilience.
 
 The problem is not talent. It is system design.
+
+The real signal is when senior people spend their week moving data instead of applying judgment.
 
 ---
 
@@ -104,6 +117,7 @@ This is RegOps: operational infrastructure that supports revenue expansion witho
 In practice, the delivery side breaks into two tracks. The [workflow automation layer](/work/) handles repeatable pipeline logic — intake, routing, status transitions, scheduled jobs. The [integration layer](/work/eudr-compliance-bridge/) handles the connections between your intake channels, approval workflows, and submission targets. Both sit over your existing systems without displacing them.
 
 If you want the architecture pattern behind this shift, see **[Anatomy of a RegOps Bridge](/blog/regops-technical/)**.
+If you want the operating model, read **[RegOps strategy](/blog/regops-strategy/)**.
 
 ---
 
@@ -123,6 +137,8 @@ Growing without strong internal systems is risky. Manual heroics affect trust wh
 Enterprise buyers and investors look for delivery resilience. If your operating model depends on individual memory rather than explicit systems, that risk is visible during due diligence.
 
 It may not show up in your monthly P&L. It shows up in valuation confidence.
+
+This is especially true once delivery becomes a core part of the product, not just a service add-on.
 
 ---
 
@@ -145,17 +161,17 @@ If that mapping is difficult, treat that as a diagnostic signal.
 Start with:
 
 - **[Contact](/contact/)** (map your workflow gaps)
-- **[AI Automation Consulting](/contact/)**
-- **[AI Automation Sprint](/contact/)** (30 days)
+- **[Book a Workflow Review](/contact/)**
+- **[Finance Ops Sprint](/contact/)** (30 days)
 
 This approach does not replace consultants. It protects growth capacity by reducing workflow fragility.
     `,
     author: {
         name: "Aditi Garg",
-        role: "Director and Founder",
+        role: "Founder and Director",
     },
     publishedAt: "2025-11-20T10:00:00Z",
-    dateModified: "2026-02-15T10:00:00Z",
-    tags: ["ConsultancyGrowth", "RegOps", "Scalability", "ESG", "Automation"],
+    dateModified: "2026-05-15T10:00:00Z",
+    tags: ["ConsultancyGrowth", "RegOps", "Scalability", "ESG", "Automation", "Regulatory operations"],
     coverImage: "/blog/consultancy-trap.webp",
 };

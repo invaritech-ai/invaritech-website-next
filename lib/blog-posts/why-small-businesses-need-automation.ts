@@ -249,7 +249,7 @@ If you want help choosing the first wedge, [book a scoping call](/contact/). If 
     `,
     author: {
         name: "Avishek Majumder",
-        role: "Co founder and CEO",
+        role: "Co-founder and CEO",
     },
     publishedAt: "2026-03-05T08:00:00Z",
     dateModified: "2026-05-14T12:00:00Z",
