@@ -10,6 +10,7 @@ import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { TurnstileWidget } from "@/components/turnstile-widget";
 import { submitResourceLead } from "@/app/actions/leads";
 import { appendAttributionToFormData } from "@/lib/attribution";
+import { controlRuleIndustries } from "@/lib/supplier-control-rules";
 
 const industries = [
     "Freight & logistics",
@@ -29,6 +30,8 @@ const exceptionTypes = [
     "Progress claims",
     "Not sure yet",
 ];
+
+const controlRuleIndustrySet = new Set(controlRuleIndustries);
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -54,9 +57,13 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
     useEffect(() => {
         if (state === "success") {
             const timer = setTimeout(() => {
-                const encodedIndustry = encodeURIComponent(form.industry);
+                const params = new URLSearchParams();
+                if (controlRuleIndustrySet.has(form.industry)) {
+                    params.set("industry", form.industry);
+                }
+                const query = params.toString();
                 router.push(
-                    `/resources/supplier-payment-control-rule-table/interactive?industry=${encodedIndustry}`
+                    `/resources/supplier-payment-control-rule-table/interactive${query ? `?${query}` : ""}`
                 );
             }, 1500);
             return () => clearTimeout(timer);
