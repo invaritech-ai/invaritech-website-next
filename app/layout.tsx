@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     },
     openGraph: {
         type: "website",
-        locale: "en_US",
+        locale: "en_AU",
         url: "https://www.invaritech.ai",
         title: "Payment Control Design for Australian Finance Teams | INVARITECH",
         description:
@@ -138,7 +138,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning className="light">
+        <html lang="en-AU" suppressHydrationWarning className="light">
             <head>
                 <meta
                     name="facebook-domain-verification"

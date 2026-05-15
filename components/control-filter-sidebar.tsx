@@ -1,7 +1,7 @@
 "use client";
 
 import { X } from "lucide-react";
-import { controlRules, controlTypes, priorities, type ControlRule } from "@/lib/supplier-control-rules";
+import { controlRules, controlTypes, priorities } from "@/lib/supplier-control-rules";
 
 interface ControlFilterSidebarProps {
   selectedIndustries: string[];

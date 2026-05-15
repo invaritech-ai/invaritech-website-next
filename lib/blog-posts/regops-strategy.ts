@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const regopsStrategy: BlogPost = {
     slug: "regops-strategy",
     title: "RegOps: The Missing Link for Scaling Your ESG Consultancy",
+    seoTitle: "RegOps for ESG Consultancy Scale",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "RegOps applies engineering discipline to compliance delivery so ESG consultancies can scale with lower operational risk. This post explains the RegOps Bridge model and when infrastructure investment is justified.",
     content: `

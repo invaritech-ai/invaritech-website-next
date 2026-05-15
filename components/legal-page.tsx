@@ -1,5 +1,4 @@
 import { TextEffect } from "@/components/ui/text-effect";
-import { Separator } from "@/components/ui/separator";
 
 interface LegalPageProps {
     titleLine1: string;

@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const cashFlowVisibility: BlogPost = {
     slug: "cash-flow-visibility-automation",
     title: "Cash Flow Forecasting Automation in Australia: Building a Reliable 13 Week Forecast System",
+    seoTitle: "13-Week Cash Flow Forecast Automation",
+    articleSection: "Finance Operations",
     excerpt:
         "Decisions on hiring, payment timing, and credit controls all depend on knowing your current cash position. This guide explains how to build cash flow forecasting automation in Australia with a reliable 13-week model, secure data ingestion, and measurable finance outcomes.",
     content: `

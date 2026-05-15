@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const consultancyTrap: BlogPost = {
     slug: "consultancy-trap",
     title: "The Consultancy Trap: Why Manual Compliance Caps Revenue in Regulated Work",
+    seoTitle: "The Consultancy Trap in Compliance Delivery",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "Manual compliance delivery eventually limits revenue growth. This post shows why heroic delivery breaks at scale, what the warning signs look like, and how RegOps supports scalable throughput.",
     content: `

@@ -3,7 +3,7 @@ import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { CostToCloseCalculator } from "@/components/tools/CostToCloseCalculator";
 
 export const metadata: Metadata = {
-    title: "Free Month-End Close Cost Calculator for Finance Teams",
+    title: "Month-End Close Cost Calculator",
     description:
         "Calculate the annual cost of manual month-end close work, reconciliation, approval delays, and finance team review time in 30 seconds.",
     keywords: [

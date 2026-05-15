@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const whySmallBusinesses: BlogPost = {
     slug: "why-small-businesses-need-automation",
     title: "Why Small Businesses Need Automation: A Finance and Operations Playbook for Founders",
+    seoTitle: "Small Business Automation for Finance Ops",
+    articleSection: "Finance Operations",
     excerpt:
         "Small businesses usually hit an operations wall before they hit a sales wall. This guide shows founders when to hire, when to automate, and how to prioritize finance and ops workflows for measurable ROI.",
     content: `

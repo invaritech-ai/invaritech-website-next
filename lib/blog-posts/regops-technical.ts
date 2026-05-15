@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const regopsTechnical: BlogPost = {
     slug: "regops-technical",
     title: "Anatomy of a RegOps Bridge: How Compliance Automation Connects the Tools You Already Use",
+    seoTitle: "RegOps Bridge Architecture for Compliance",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "A RegOps Bridge is the technical layer behind compliance automation in regulated environments. It connects client inputs, internal systems, and regulator interfaces through deterministic logic, state tracking, and audit trails.",
     content: `

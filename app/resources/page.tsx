@@ -3,7 +3,7 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "Accounts Payable Automation Resources — Workflow Guides & Templates",
+    title: "AP Automation Resources & Templates",
     description:
         "Practical accounts payable automation resources, including invoice approval workflow guides, duplicate payment prevention checklists, supplier statement reconciliation support, and freight invoice audit tools.",
     alternates: {

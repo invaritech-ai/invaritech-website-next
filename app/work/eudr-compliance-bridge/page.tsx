@@ -8,7 +8,7 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
-    title: "EUDR Compliance Bridge | Regulated Workflow Automation",
+    title: "EUDR Compliance Bridge Case Study",
     description:
         "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
     openGraph: {

@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const monthEndClose: BlogPost = {
     slug: "month-end-close-automation",
     title: "Month-End Close Automation in Australia: Cut the Close Without Replacing Excel",
+    seoTitle: "Month-End Close Automation in Australia",
+    articleSection: "Finance Operations",
     excerpt:
         "Australian finance teams still lose days to reconciliations, journal prep, and checklist chasing. This guide explains what month-end close automation is, what to automate first, and how to keep Excel in the loop.",
     content: `

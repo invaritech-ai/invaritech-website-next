@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const aiInvoiceDataExtraction: BlogPost = {
     slug: "ai-invoice-data-extraction",
     title: "Invoice Data Extraction for Accounts Payable Automation: A Practical Architecture Guide",
+    seoTitle: "Invoice Data Extraction for AP Automation",
+    articleSection: "Finance Operations",
     excerpt:
         "Australian finance teams still lose days every month to manual invoice handling. This practical guide explains how invoice data extraction supports accounts payable automation with deterministic controls, exception routing, and ERP-ready outputs.",
     author: {

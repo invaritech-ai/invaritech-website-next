@@ -1,6 +1,8 @@
 export interface BlogPost {
     slug: string;
     title: string;
+    seoTitle?: string;
+    articleSection: "Finance Operations" | "Regulatory Compliance";
     excerpt: string;
     content: string;
     author: {
@@ -16,6 +18,8 @@ export interface BlogPost {
 export interface BlogPostMetadata {
     slug: string;
     title: string;
+    seoTitle?: string;
+    articleSection: "Finance Operations" | "Regulatory Compliance";
     excerpt: string;
     content: string;
     author: {

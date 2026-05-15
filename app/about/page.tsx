@@ -7,7 +7,7 @@ import { Metadata } from "next";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "About INVARITECH | Founder-Led Accounts Payable Automation",
+    title: "Founder-Led AP Automation Team",
     description:
         "INVARITECH works with one client at a time to design and deliver accounts payable automation, invoice approval workflow controls, and auditable finance operations.",
     openGraph: {

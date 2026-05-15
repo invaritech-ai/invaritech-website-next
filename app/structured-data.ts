@@ -1,4 +1,4 @@
-const HOMEPAGE_LAST_MODIFIED = "2026-05-12T00:00:00.000Z";
+const HOMEPAGE_LAST_MODIFIED = "2026-05-15T00:00:00.000Z";
 
 export const structuredData = {
     "@context": "https://schema.org",

@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const complianceAutomation: BlogPost = {
     slug: "compliance-automation-done-right",
     title: "Compliance Automation Done Right: Deterministic Systems for Regulated Work",
+    seoTitle: "Compliance Automation Done Right",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "Compliance automation only works in regulated environments when it is deterministic, auditable, and easy to govern. This post explains where black-box AI fails, where it fits, and how RegOps turns compliance into an operating model.",
     content: `

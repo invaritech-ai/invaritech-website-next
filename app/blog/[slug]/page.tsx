@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const imageUrl = post.coverImage || "/og-image.png";
 
     return {
-        title: `${post.title} - INVARITECH Blog`,
+        title: { absolute: post.seoTitle ?? post.title },
         description: post.excerpt,
         keywords: post.tags,
         authors: [{ name: post.author.name }],
@@ -67,6 +67,9 @@ function generateArticleSchema(post: {
     title: string;
     excerpt: string;
     content: string;
+    seoTitle?: string;
+    articleSection: string;
+    tags: string[];
     author: { name: string; role: string };
     publishedAt: string;
     dateModified?: string;
@@ -89,12 +92,12 @@ function generateArticleSchema(post: {
         publisher: {
             "@type": "Organization",
             name: "INVARITECH",
-            logo: { "@type": "ImageObject", url: `${baseUrl}/logo.png`, width: 512, height: 512 },
+            logo: { "@type": "ImageObject", url: `${baseUrl}/logo-image.png`, width: 512, height: 512 },
         },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         url,
-        articleSection: "Regulatory Compliance",
-        keywords: post.title,
+        articleSection: post.articleSection,
+        keywords: post.tags.join(", "),
     };
 }
 
@@ -348,7 +351,7 @@ export default async function BlogPostPage({ params }: Props) {
                                     </a>
                                 </Button>
                                 <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
-                                    <Link href="/services/">Explore Services</Link>
+                                    <Link href="/work/">Explore Work</Link>
                                 </Button>
                             </div>
                         </section>

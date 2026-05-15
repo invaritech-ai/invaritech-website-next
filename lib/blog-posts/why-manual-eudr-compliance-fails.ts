@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const whyManualEudrFails: BlogPost = {
     slug: "why-manual-eudr-compliance-fails",
     title: "Why Manual EUDR Compliance Fails in Regulatory Environments: What RegOps Changes",
+    seoTitle: "Why Manual EUDR Compliance Fails",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "Manual EUDR compliance is one example of a broader regulatory-operations problem. This case study shows why regulator-facing work needs deterministic validation, audit trails, and state management instead of spreadsheets and portal chasing.",
     content: `

@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState, useMemo } from "react";
-import { controlRules, type ControlRule } from "@/lib/supplier-control-rules";
+import { controlRules } from "@/lib/supplier-control-rules";
 import { ControlFilterSidebar } from "./control-filter-sidebar";
 import { ControlRuleTable } from "./control-rule-table";
 import { ControlUpsellBridge } from "./control-upsell-bridge";

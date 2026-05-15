@@ -7,7 +7,7 @@ import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Operational Automation for Finance Teams & Delivered Systems",
+    title: "Finance Automation Work & Case Studies",
     description:
         "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling. Includes international regulated-work proof.",
     openGraph: {

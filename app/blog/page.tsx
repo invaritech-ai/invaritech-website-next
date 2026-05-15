@@ -7,13 +7,13 @@ import { RULE_TABLE_CTA } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Accounts Payable Automation Blog & Workflow Guides",
+    title: "Finance Operations & Compliance Automation Blog",
     description:
-        "Step-by-step accounts payable automation guides covering invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and payment fraud prevention.",
+        "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
     openGraph: {
-        title: "INVARITECH Blog - Accounts Payable Automation Guides",
+        title: "Finance Operations & Compliance Automation Guides",
         description:
-            "Practical guides for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and payment fraud prevention.",
+            "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH Blog - Accounts Payable Automation",
+        title: "Finance Operations & Compliance Automation Guides",
         description:
-            "Practical guides for invoice approval workflow, duplicate payment prevention, and supplier reconciliation.",
+            "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -51,7 +51,7 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-const categories = ["Accounts Payable Automation", "Invoice Approval Workflow", "Duplicate Payments", "Supplier Reconciliation", "Payment Fraud Prevention"];
+const categories = ["Finance Operations", "Accounts Payable", "Month-End Close", "Cash Visibility", "RegOps"];
 
 export default function BlogsPage() {
     const posts = getAllPosts();

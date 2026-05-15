@@ -552,7 +552,7 @@ export function InvoiceExtractor() {
                                     </div>
                                     <p className="tool-small">
                                         By submitting you agree to our{" "}
-                                        <a href="/privacy" className="site-link">Privacy Policy</a>.
+                                        <a href="/privacy/" className="site-link">Privacy Policy</a>.
                                         No spam.
                                     </p>
                                 </>

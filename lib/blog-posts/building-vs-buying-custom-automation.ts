@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const buildingVsBuying: BlogPost = {
     slug: "building-vs-buying-custom-automation",
     title: "Build vs Buy Automation for Finance and Operations Teams: A Capital Allocation Framework",
+    seoTitle: "Build vs Buy Automation for Finance Teams",
+    articleSection: "Finance Operations",
     excerpt:
         "Most automation decisions fail before any code is written because the economics are unclear. This framework helps Australian finance and operations teams decide when custom automation outperforms SaaS for integration-heavy workflows.",
     content: `

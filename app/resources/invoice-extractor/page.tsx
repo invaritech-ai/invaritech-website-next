@@ -3,7 +3,7 @@ import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { InvoiceExtractor } from "@/components/tools/InvoiceExtractor";
 
 export const metadata: Metadata = {
-    title: "Free Invoice Data Extractor for AP Teams | PDF to CSV",
+    title: "Invoice Data Extractor for AP Teams",
     description:
         "Upload a PDF, JPG, or PNG invoice and extract supplier, line items, totals, and tax to CSV for accounts payable review and invoice approval workflows.",
     keywords: [

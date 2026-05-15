@@ -1,10 +1,12 @@
 import { Suspense } from "react";
+import { Metadata } from "next";
 import { SupplierPaymentControlTool } from "@/components/supplier-payment-control-tool";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Supplier Payment Control Rule Table | Invaritech",
   description:
     "Interactive control rule table for supplier payment exceptions. Filter by industry, exception type, and priority to find the controls relevant to your workflow.",
+  robots: { index: false, follow: true },
 };
 
 export default function InteractiveControlTablePage() {

@@ -3,6 +3,8 @@ import type { BlogPost } from "../blog-posts-types";
 export const whyConsultanciesGetStuck: BlogPost = {
     slug: "why-consultancies-get-stuck",
     title: "Why Consultancies Get Stuck: The Hidden Cost of Manual Compliance Work",
+    seoTitle: "Why Compliance Consultancies Get Stuck",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "Manual compliance work often scales with fragility, not headcount. This post explains why hiring alone fails, what RegOps changes, and how to start with a measurable automation wedge.",
     content: `

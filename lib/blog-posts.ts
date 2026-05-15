@@ -32,6 +32,8 @@ export function getAllPosts(): BlogPostMetadata[] {
         .map((post) => ({
             slug: post.slug,
             title: post.title,
+            seoTitle: post.seoTitle,
+            articleSection: post.articleSection,
             excerpt: post.excerpt,
             content: post.content,
             author: post.author,
