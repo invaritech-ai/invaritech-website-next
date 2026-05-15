@@ -142,7 +142,7 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
                         type="email"
                         autoComplete="email"
                         required
-                        value={form.email}
+                        defaultValue={form.email}
                         onChange={(event) => setForm((current) => ({ ...current, email: event.target.value }))}
                         className="h-11 rounded-none bg-background"
                     />
@@ -153,7 +153,7 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
                         name="company"
                         autoComplete="organization"
                         required
-                        value={form.company}
+                        defaultValue={form.company}
                         onChange={(event) => setForm((current) => ({ ...current, company: event.target.value }))}
                         className="h-11 rounded-none bg-background"
                     />
@@ -164,7 +164,7 @@ export default function ResourceDownloadForm({ source = "resource" }: Props) {
                         name="job_title"
                         autoComplete="organization-title"
                         required
-                        value={form.role}
+                        defaultValue={form.role}
                         onChange={(event) => setForm((current) => ({ ...current, role: event.target.value }))}
                         className="h-11 rounded-none bg-background"
                     />

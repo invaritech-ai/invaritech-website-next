@@ -317,26 +317,26 @@ export default function ContactSection() {
                             <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Full name *</Label>
-                                        <Input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            placeholder="John Doe"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
                                         <Label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email *</Label>
                                         <Input
                                             type="email"
                                             id="email"
                                             name="email"
                                             placeholder="john@company.com"
-                                            value={formData.email}
+                                            defaultValue={formData.email}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Full name *</Label>
+                                        <Input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            placeholder="John Doe"
+                                            defaultValue={formData.name}
                                             onChange={handleInputChange}
                                             required
                                             className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
@@ -352,7 +352,7 @@ export default function ContactSection() {
                                             id="phone"
                                             name="phone"
                                             placeholder="+1 (555) 000-0000"
-                                            value={formData.phone}
+                                            defaultValue={formData.phone}
                                             onChange={handleInputChange}
                                             className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
@@ -364,7 +364,7 @@ export default function ContactSection() {
                                             id="country"
                                             name="country"
                                             placeholder="United States"
-                                            value={formData.country}
+                                            defaultValue={formData.country}
                                             onChange={handleInputChange}
                                             required
                                             className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
@@ -379,7 +379,7 @@ export default function ContactSection() {
                                         id="company"
                                         name="company"
                                         placeholder="acme.com"
-                                        value={formData.company}
+                                        defaultValue={formData.company}
                                         onChange={handleInputChange}
                                         className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                     />
@@ -393,7 +393,7 @@ export default function ContactSection() {
                                         id="message"
                                         name="message"
                                         placeholder="Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."
-                                        value={formData.message}
+                                        defaultValue={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}
                                         required
