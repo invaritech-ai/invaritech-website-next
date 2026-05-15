@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_URL } from "@/lib/marketing";
 
 export const metadata: Metadata = {
+    robots: { index: false, follow: false },
     title: "Careers | INVARITECH",
     description:
         "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",

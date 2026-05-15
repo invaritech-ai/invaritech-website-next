@@ -3,16 +3,16 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-type Currency = "SGD" | "HKD" | "MYR" | "USD";
+type Currency = "AUD" | "HKD" | "USD";
 
 const CURRENCY_CONFIG: Record<
     Currency,
     { symbol: string; default: number; min: number; max: number; step: number }
 > = {
-    SGD: { symbol: "S$", default: 55, min: 20, max: 150, step: 5 },
+    AUD: { symbol: "A$", default: 75, min: 30, max: 220, step: 5 },
     HKD: { symbol: "HK$", default: 120, min: 50, max: 350, step: 10 },
-    MYR: { symbol: "RM", default: 35, min: 15, max: 100, step: 5 },
     USD: { symbol: "$", default: 45, min: 20, max: 200, step: 5 },
 };
 
@@ -35,6 +35,19 @@ function getTier(days: number) {
         BENCHMARK_TIERS.find((t) => days <= t.end) ??
         BENCHMARK_TIERS[BENCHMARK_TIERS.length - 1]
     );
+}
+
+function getTierClass(days: number) {
+    if (days <= 3) return "tool-benchmark-tier-best";
+    if (days <= 5) return "tool-benchmark-tier-good";
+    if (days <= 7) return "tool-benchmark-tier-average";
+    return "tool-benchmark-tier-slow";
+}
+
+function getValueTierClass(days: number) {
+    if (days <= 5) return "tool-value-tier-good";
+    if (days <= 7) return "tool-value-tier-average";
+    return "tool-value-tier-slow";
 }
 
 function fmt(amount: number, symbol: string): string {
@@ -65,12 +78,12 @@ function SliderInput({
 }) {
     const pct = ((value - min) / (max - min)) * 100;
     return (
-        <div className="space-y-3">
-            <div className="flex items-baseline justify-between gap-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground shrink-0">
+        <div className="tool-slider-field">
+            <div className="tool-slider-row">
+                <span className="tool-label">
                     {label}
                 </span>
-                <span className="text-xl font-bold tracking-tighter text-foreground tabular-nums text-right">
+                <span className="tool-value-lg tool-value-right">
                     {displayValue}
                 </span>
             </div>
@@ -81,29 +94,13 @@ function SliderInput({
                 step={step}
                 value={value}
                 onChange={(e) => onChange(Number(e.target.value))}
-                className="w-full h-[3px] appearance-none cursor-pointer
-                    [&::-webkit-slider-thumb]:appearance-none
-                    [&::-webkit-slider-thumb]:w-[18px]
-                    [&::-webkit-slider-thumb]:h-[18px]
-                    [&::-webkit-slider-thumb]:bg-primary
-                    [&::-webkit-slider-thumb]:rounded-none
-                    [&::-webkit-slider-thumb]:cursor-pointer
-                    [&::-webkit-slider-thumb]:transition-transform
-                    [&::-webkit-slider-thumb]:duration-100
-                    [&::-webkit-slider-thumb]:hover:scale-125
-                    [&::-webkit-slider-thumb]:shadow-[0_0_12px_var(--primary)]
-                    [&::-moz-range-thumb]:w-[18px]
-                    [&::-moz-range-thumb]:h-[18px]
-                    [&::-moz-range-thumb]:bg-primary
-                    [&::-moz-range-thumb]:rounded-none
-                    [&::-moz-range-thumb]:border-0
-                    [&::-moz-range-thumb]:cursor-pointer"
+                className="tool-slider"
                 style={{
                     background: `linear-gradient(to right, var(--primary) ${pct}%, rgba(255,255,255,0.2) ${pct}%)`,
                 }}
             />
             {note && (
-                <p className="text-[10px] font-mono text-muted-foreground leading-relaxed">
+                <p className="tool-small">
                     {note}
                 </p>
             )}
@@ -126,10 +123,10 @@ function BenchmarkBar({
         `${Math.min(Math.max(((d - MIN_DAYS) / scale) * 100, 0), 100)}%`;
 
     const segments = [
-        { end: 3, bg: "bg-primary/40" },
-        { end: 5, bg: "bg-primary/20" },
-        { end: 7, bg: "bg-yellow-500/20" },
-        { end: 15, bg: "bg-red-500/20" },
+        { end: 3, className: "tool-benchmark-best" },
+        { end: 5, className: "tool-benchmark-good" },
+        { end: 7, className: "tool-benchmark-average" },
+        { end: 15, className: "tool-benchmark-slow" },
     ];
 
     let prevEnd = MIN_DAYS;
@@ -143,59 +140,47 @@ function BenchmarkBar({
     const currentTier = getTier(currentDays);
 
     return (
-        <div className="space-y-3">
-            <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+        <div className="tool-benchmark">
+            <div className="tool-benchmark-header">
+                <span className="tool-label">
                     Close Cycle Benchmark
                 </span>
                 <span
-                    className={`text-[10px] font-mono uppercase tracking-widest font-bold px-2 py-0.5 border ${
-                        currentDays <= 3
-                            ? "border-primary/50 text-primary bg-primary/10"
-                            : currentDays <= 5
-                              ? "border-primary/30 text-primary/80 bg-primary/5"
-                              : currentDays <= 7
-                                ? "border-yellow-500/40 text-yellow-400 bg-yellow-500/10"
-                                : "border-red-500/40 text-red-400 bg-red-500/10"
-                    }`}
+                    className={cn("tool-benchmark-tier", getTierClass(currentDays))}
                 >
                     {currentTier.label}
                 </span>
             </div>
 
             {/* Bar */}
-            <div className="relative h-8 flex border border-border">
+            <div className="tool-benchmark-bar">
                 {segmentsWithWidths.map((seg, i) => (
                     <div
                         key={i}
-                        className={`${seg.bg} ${i < segments.length - 1 ? "border-r border-border" : ""}`}
+                        className={cn("tool-benchmark-segment", seg.className)}
                         style={{ width: `${seg.width}%` }}
                     />
                 ))}
 
                 {/* Target position (after automation) */}
                 <div
-                    className="absolute top-0 bottom-0 w-[2px] bg-primary transition-all duration-500 shadow-[0_0_8px_var(--primary)]"
+                    className="tool-benchmark-marker tool-benchmark-marker-target"
                     style={{ left: getPos(Math.max(targetDays, MIN_DAYS)) }}
-                >
-                    <div className="absolute -top-[6px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] rotate-45 bg-primary shadow-[0_0_8px_var(--primary)]" />
-                </div>
+                />
 
                 {/* Current position */}
                 <div
-                    className="absolute top-0 bottom-0 w-[2px] bg-white transition-all duration-500"
+                    className="tool-benchmark-marker tool-benchmark-marker-current"
                     style={{ left: getPos(Math.min(currentDays, MAX_DAYS)) }}
-                >
-                    <div className="absolute -top-[6px] left-1/2 -translate-x-1/2 w-[10px] h-[10px] rotate-45 bg-white" />
-                </div>
+                />
             </div>
 
             {/* Tier labels */}
-            <div className="flex text-[9px] font-mono uppercase tracking-wider">
+            <div className="tool-benchmark-labels">
                 {segmentsWithWidths.map((seg, i) => (
                     <div
                         key={i}
-                        className="text-center text-muted-foreground overflow-hidden px-0.5"
+                        className="tool-benchmark-label"
                         style={{ width: `${seg.width}%` }}
                     >
                         {BENCHMARK_TIERS[i].label}
@@ -204,14 +189,14 @@ function BenchmarkBar({
             </div>
 
             {/* Legend */}
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-1.5 text-[10px] font-mono text-muted-foreground pt-1">
-                <span className="flex items-center gap-2">
-                    <span className="w-[8px] h-[8px] rotate-45 bg-white inline-block shrink-0" />
+            <div className="tool-benchmark-legend">
+                <span className="tool-benchmark-legend-item">
+                    <span className="tool-benchmark-dot tool-benchmark-dot-current" />
                     NOW: ~{Math.round(currentDays)} DAYS —{" "}
                     {getTier(currentDays).label}
                 </span>
-                <span className="flex items-center gap-2">
-                    <span className="w-[8px] h-[8px] rotate-45 bg-primary inline-block shrink-0 shadow-[0_0_6px_var(--primary)]" />
+                <span className="tool-benchmark-legend-item">
+                    <span className="tool-benchmark-dot tool-benchmark-dot-target" />
                     AFTER: ~{Math.max(1, Math.round(targetDays))} DAYS —
                     BEST-IN-CLASS
                 </span>
@@ -223,8 +208,8 @@ function BenchmarkBar({
 export function CostToCloseCalculator() {
     const [teamSize, setTeamSize] = useState(3);
     const [hoursPerPerson, setHoursPerPerson] = useState(30);
-    const [currency, setCurrency] = useState<Currency>("SGD");
-    const [hourlyRate, setHourlyRate] = useState(CURRENCY_CONFIG.SGD.default);
+    const [currency, setCurrency] = useState<Currency>("AUD");
+    const [hourlyRate, setHourlyRate] = useState(CURRENCY_CONFIG.AUD.default);
 
     const handleCurrencyChange = (c: Currency) => {
         setCurrency(c);
@@ -254,22 +239,21 @@ export function CostToCloseCalculator() {
     const currentTier = getTier(currentDays);
 
     return (
-        <div className="space-y-2">
+        <div className="tool-surface tool-surface-wide">
             {/* Currency selector */}
-            <div className="flex items-center gap-4 mb-6">
-                <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground shrink-0">
+            <div className="tool-header-row-between">
+                <span className="tool-label">
                     Currency
                 </span>
-                <div className="flex gap-1">
+                <div className="tool-segmented">
                     {(Object.keys(CURRENCY_CONFIG) as Currency[]).map((c) => (
                         <button
                             key={c}
                             onClick={() => handleCurrencyChange(c)}
-                            className={`px-4 py-2 text-xs font-mono uppercase tracking-widest border transition-all duration-150 ${
-                                currency === c
-                                    ? "border-primary bg-primary text-black font-bold"
-                                    : "border-border text-muted-foreground hover:border-primary/40 hover:text-foreground"
-                            }`}
+                            className={cn(
+                                "tool-segment",
+                                currency === c ? "tool-segment-active" : undefined,
+                            )}
                         >
                             {c}
                         </button>
@@ -278,13 +262,13 @@ export function CostToCloseCalculator() {
             </div>
 
             {/* Main grid: inputs + results */}
-            <div className="grid lg:grid-cols-2 gap-4">
+            <div className="tool-grid">
                 {/* Inputs panel */}
-                <div className="bg-card p-8 space-y-8">
+                <div className="tool-panel-muted tool-panel-stack">
                     {/* Panel header */}
-                    <div className="flex items-center gap-3 pb-6 border-b border-border">
-                        <div className="h-px w-8 bg-primary/60" />
-                        <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                    <div className="tool-header-row">
+                        <div className="tool-header-rule" />
+                        <span className="tool-kicker">
                             Your Current State
                         </span>
                     </div>
@@ -308,7 +292,7 @@ export function CostToCloseCalculator() {
                         step={5}
                         onChange={setHoursPerPerson}
                         displayValue={`${hoursPerPerson}h / month`}
-                        note="Reconciliation, data cleaning, journal entries, ERP posting. Industry median: 30–50h/person"
+                        note="Reconciliation, exception review, approval follow-up, journal entries, ERP posting"
                     />
 
                     <SliderInput
@@ -323,32 +307,27 @@ export function CostToCloseCalculator() {
                     />
 
                     {/* Quick summary inside input panel */}
-                    <div className="pt-6 border-t border-border grid grid-cols-2 gap-4">
+                    <div className="tool-metric-grid">
                         <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-1">
+                            <div className="tool-label tool-label-spaced">
                                 Total hours/mo
                             </div>
-                            <div className="text-2xl font-bold tracking-tighter text-foreground tabular-nums">
+                            <div className="tool-value-lg">
                                 {Math.round(totalHoursPerMonth)}h
                             </div>
                         </div>
                         <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-1">
+                            <div className="tool-label tool-label-spaced">
                                 Est. days to close
                             </div>
                             <div
-                                className={`text-2xl font-bold tracking-tighter tabular-nums ${
-                                    currentDays <= 3
-                                        ? "text-primary"
-                                        : currentDays <= 5
-                                          ? "text-primary/90"
-                                          : currentDays <= 7
-                                            ? "text-yellow-400"
-                                            : "text-red-400"
-                                }`}
+                                className={cn(
+                                    "tool-value-lg",
+                                    getValueTierClass(currentDays),
+                                )}
                             >
                                 ~{Math.round(currentDays)} days
-                                <span className="text-xs font-normal text-muted-foreground/60 ml-1">
+                                <span className="tool-value-suffix">
                                     {currentTier.pct}
                                 </span>
                             </div>
@@ -357,67 +336,65 @@ export function CostToCloseCalculator() {
                 </div>
 
                 {/* Results panel */}
-                <div className="bg-background p-8 space-y-6 flex flex-col">
+                <div className="tool-panel tool-panel-stack">
                     {/* Panel header */}
-                    <div className="flex items-center gap-3 pb-6 border-b border-border">
-                        <div className="h-px w-8 bg-primary/60" />
-                        <span className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                            Your Manual Tax
+                    <div className="tool-header-row">
+                        <div className="tool-header-rule" />
+                        <span className="tool-kicker">
+                            Close Cost Estimate
                         </span>
                     </div>
 
                     {/* Monthly cost — secondary metric */}
-                    <div className="flex items-baseline justify-between">
-                        <span className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                    <div className="tool-result-row">
+                        <span className="tool-label">
                             Monthly close cost
                         </span>
-                        <span className="text-2xl font-bold tracking-tighter text-foreground tabular-nums">
+                        <span className="tool-value-lg">
                             {fmt(monthlyCloseCost, cfg.symbol)}
                         </span>
                     </div>
 
                     {/* Annual Manual Tax — HEADLINE */}
-                    <div className="border border-primary/40 bg-primary/8 p-6 relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-primary/0 via-primary/70 to-primary/0" />
-                        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-primary/0 via-primary/20 to-primary/0" />
-                        <div className="text-xs font-mono uppercase tracking-[0.22em] text-primary mb-3">
+                    <div className="tool-result-highlight">
+                        <div className="tool-kicker tool-kicker-spaced">
                             Annual &ldquo;Manual Tax&rdquo;
                         </div>
-                        <div className="text-5xl md:text-6xl font-bold tracking-tighter text-foreground tabular-nums leading-none">
+                        <div className="tool-value-xl">
                             {fmt(annualManualTax, cfg.symbol)}
                         </div>
-                        <div className="text-xs font-mono text-muted-foreground mt-2">
-                            per year in close labor — money you could redeploy
+                        <div className="tool-small tool-small-spaced-lg">
+                            per year in close labor and manual review time
                         </div>
                     </div>
 
                     {/* After automation + Savings row */}
-                    <div className="border border-border p-5 space-y-4">
-                        <div className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                            After Automation — 70% reduction
+                    <div className="tool-metric tool-state-stack">
+                        <div className="tool-label">
+                            After Workflow Control — 70% reduction model
                         </div>
-                        <div className="flex items-start justify-between gap-4">
+                        <div className="tool-metric-row">
                             <div>
-                                <div className="text-2xl font-bold tracking-tighter text-muted-foreground tabular-nums">
+                                <div className="tool-value-lg tool-value-muted">
                                     {fmt(annualAfter, cfg.symbol)}
-                                    <span className="text-xs font-normal text-muted-foreground/60 ml-1">
+                                    <span className="tool-value-suffix">
                                         /yr
                                     </span>
                                 </div>
-                                <div className="text-[10px] font-mono text-muted-foreground mt-1">
+                                <div className="tool-small tool-small-spaced">
                                     ~{Math.max(1, Math.round(daysAfter))} days
                                     to close · {Math.round(residualTotalHours)}
                                     h/month
                                 </div>
                             </div>
-                            <div className="text-right shrink-0">
-                                <div className="text-[10px] font-mono uppercase tracking-widest text-primary mb-1">
+                            <div className="tool-metric-save">
+                                <div className="tool-label-primary tool-label-spaced">
                                     You save
                                 </div>
-                                <div className="text-3xl font-bold tracking-tighter text-primary tabular-nums">
+                                <div className="tool-value-accent">
                                     {fmt(annualSavings, cfg.symbol)}
                                 </div>
-                                <div className="text-[10px] font-mono text-muted-foreground mt-1">
+                                <div className="tool-small mt-1">
                                     {Math.round(hoursReclaimed)}h reclaimed/yr
                                 </div>
                             </div>
@@ -425,7 +402,7 @@ export function CostToCloseCalculator() {
                     </div>
 
                     {/* Benchmark bar */}
-                    <div className="mt-auto pt-2">
+                    <div>
                         <BenchmarkBar
                             currentDays={currentDays}
                             targetDays={daysAfter}
@@ -435,11 +412,12 @@ export function CostToCloseCalculator() {
             </div>
 
             {/* Methodology */}
-            <div className="pt-5 border-t border-border">
-                <p className="text-[10px] font-mono text-muted-foreground/60 leading-relaxed">
-                    METHODOLOGY — Savings estimate based on 70% reduction in
-                    manual close hours, consistent with published ROI studies
-                    from Netgain, DOKKA, and FloQast. Days-to-close derived from{" "}
+            <div className="tool-divider">
+                <p className="tool-small">
+                    METHODOLOGY — Savings estimate uses a 70% reduction model for
+                    manual close work after exception handling, reconciliations,
+                    approval follow-up, and recurring checks are controlled or
+                    automated. Days-to-close derived from{" "}
                     {HOURS_PER_CLOSE_DAY}h of focused close work per person per
                     day: the industry standard for active reconciliation
                     periods. Benchmarks sourced from Ledge 2025 survey of 100
@@ -448,19 +426,19 @@ export function CostToCloseCalculator() {
             </div>
 
             {/* CTA */}
-            <div className="border border-border bg-white/[0.03] p-6 flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-                <p className="text-sm font-mono text-muted-foreground leading-relaxed">
-                    Ready to close in 3 days? We will map your exact blueprint
-                    on a free call.
+            <div className="tool-cta-panel">
+                <p className="tool-copy">
+                    Want to know what sits behind the number? Bring one close
+                    workflow or approval bottleneck to a scoping call.
                 </p>
                 <Link
                     href="https://calendly.com/hello-invaritech/30min"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-primary text-black px-6 py-3 text-xs font-mono font-bold uppercase tracking-widest hover:bg-white transition-colors shrink-0"
+                    className="tool-button-primary tool-button-fit"
                 >
-                    Book Assessment
-                    <ArrowRight className="w-3 h-3" />
+                    Book Scoping Call
+                    <ArrowRight className="tool-icon-xs" />
                 </Link>
             </div>
         </div>

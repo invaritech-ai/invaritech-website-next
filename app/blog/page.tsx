@@ -1,33 +1,34 @@
 import { Metadata } from "next";
 import { getAllPosts } from "@/lib/blog-posts";
-import { TextEffect } from "@/components/ui/text-effect";
 import Link from "next/link";
-import { MoveUpRight } from "lucide-react";
+import { ArrowRight, MoveUpRight } from "lucide-react";
 import Image from "next/image";
+import { RULE_TABLE_CTA } from "@/lib/marketing";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Blogs - Case Studies, Build Notes, and BOFU Answers",
+    title: "Finance Operations & Compliance Automation Blog",
     description:
-        "Daily content from INVARITECH on enterprise AI automation: case studies, developer journey, CEO corner, and bottom-of-funnel implementation answers.",
+        "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
     openGraph: {
-        title: "INVARITECH Blog - Enterprise AI Automation Insights",
+        title: "Finance Operations & Compliance Automation Guides",
         description:
-            "Case studies, engineering notes, founder POV, and BOFU guidance for teams implementing AI automation on existing infrastructure.",
+            "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH Blog - Enterprise AI Automation Insights",
+                alt: "INVARITECH Blog - Accounts Payable Automation Guides",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH Blog — AI Automation Insights",
+        title: "Finance Operations & Compliance Automation Guides",
         description:
-            "Case studies, engineering notes, and BOFU guidance for teams implementing AI automation on existing infrastructure.",
+            "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -50,52 +51,47 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-const categories = ["Case Studies", "Developer Journey", "CEO Corner", "BOFU Q&A"];
+const categories = ["Finance Operations", "Accounts Payable", "Month-End Close", "Cash Visibility", "RegOps"];
 
 export default function BlogsPage() {
     const posts = getAllPosts();
 
     return (
-        <main className="min-h-screen bg-background relative overflow-hidden">
+        <main className="site-page relative overflow-hidden">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="site-page-grid" />
                 <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
                 <div className="absolute bottom-1/4 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
             </div>
 
-            {/* Header */}
-            <section className="pt-32 pb-16 px-6 relative z-10">
-                <div className="max-w-7xl mx-auto">
-                    <TextEffect
-                        per="char"
-                        preset="fade"
-                        className="text-[11px] font-mono tracking-[0.22em] text-primary mb-8 block uppercase"
-                    >
-                        Intelligence Archive
-                    </TextEffect>
-
-                    <h1 className="font-editorial text-6xl md:text-[9rem] leading-[0.88] font-semibold tracking-tight mb-12 text-foreground">
-                        <TextEffect per="word" preset="fade" className="inline">
-                            INSIGHTS &amp;
-                        </TextEffect>
-                        <br />
-                        <span className="text-foreground-muted">ANALYSIS</span>
-                    </h1>
-
-                    <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between border-t border-border pt-8">
-                        <p className="text-xl md:text-2xl text-foreground-muted max-w-2xl font-light">
-                            Case Studies, Engineering Notes, and Strategic Implementation Guides.
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                            {categories.map((category) => (
-                                <span
-                                    key={category}
-                                    className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
-                                >
-                                    {category}
-                                </span>
-                            ))}
+            {/* Hero */}
+            <section className="site-section-hero relative z-10">
+                <div className="site-container">
+                    <div className="site-split">
+                        <div>
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">Accounts Payable Automation Blog</p>
+                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Practical guides for accounts payable automation.
+                            </h1>
+                        </div>
+                        <div data-reveal="block">
+                            <p className="site-lead">
+                                Learn how to design invoice approval workflow controls, reduce duplicate payments, improve supplier statement reconciliation, and prevent payment diversion fraud.
+                            </p>
+                            <div className="mt-6 flex flex-wrap gap-2">
+                                {categories.map((category) => (
+                                    <span
+                                        key={category}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
+                                    >
+                                        {category}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -104,6 +100,19 @@ export default function BlogsPage() {
             {/* Blog Posts Grid */}
             <section className="px-6 pb-32 relative z-10">
                 <div className="max-w-7xl mx-auto">
+                    <div className="mb-12 flex flex-col gap-5 border-y border-border py-7 md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 className="font-editorial text-3xl font-semibold">Start with an invoice approval workflow rule table.</h2>
+                            <p className="mt-2 text-muted-foreground">A practical workbook for mapping payment approval checks, exception routes, and audit evidence.</p>
+                        </div>
+                        <Link
+                            href="/resources/"
+                            className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
+                        >
+                            {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                    </div>
+
                     {posts.length === 0 ? (
                         <div className="text-center py-24 border border-dashed border-border">
                             <p className="text-muted-foreground text-xl font-mono">
@@ -180,6 +189,8 @@ export default function BlogsPage() {
                     )}
                 </div>
             </section>
+
+            <HomepageScrollAnimations />
         </main>
     );
 }

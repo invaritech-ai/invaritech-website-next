@@ -29,89 +29,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/resources/`,
+            changeFrequency: "weekly",
+            priority: 0.9,
+        },
+        {
+            url: `${baseUrl}/resources/supplier-payment-control-rule-table/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/resources/invoice-extractor/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/resources/cost-to-close-calculator/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/work/`,
             changeFrequency: "monthly",
-            priority: 0.9,
+            priority: 0.8,
         },
         {
             url: `${baseUrl}/work/eudr-compliance-bridge/`,
             changeFrequency: "monthly",
             priority: 0.7,
-        },
-        {
-            url: `${baseUrl}/services/`,
-            changeFrequency: "monthly",
-            priority: 0.9,
-        },
-        {
-            url: `${baseUrl}/services/ai-workflow-automation-services/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/services/ai-integration-services/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/services/enterprise-ai-chatbot-deployment/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/services/generative-ai-backend-development/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/services/ai-automation-consulting/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/services/ai-automation-sprint/`,
-            changeFrequency: "weekly",
-            priority: 0.95,
-        },
-/*         {
-            url: `${baseUrl}/results/`,
-            changeFrequency: "monthly",
-            priority: 0.7,
-        }, */
-        {
-            url: `${baseUrl}/tools/`,
-            changeFrequency: "weekly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/tools/assessment/`,
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/tools/invoice-extractor/`,
-            changeFrequency: "monthly",
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/tools/invoice-processing-automation-singapore/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/tools/invoice-processing-automation-hong-kong/`,
-            changeFrequency: "monthly",
-            priority: 0.85,
-        },
-        {
-            url: `${baseUrl}/tools/cost-to-close-calculator/`,
-            changeFrequency: "monthly",
-            priority: 0.75,
-        },
-        {
-            url: `${baseUrl}/tools/burn-rate-calculator/`,
-            changeFrequency: "monthly",
-            priority: 0.75,
         },
         {
             url: `${baseUrl}/blog/`,
@@ -120,14 +65,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         ...blogPostEntries,
         {
-            url: `${baseUrl}/careers/`,
-            changeFrequency: "monthly",
-            priority: 0.6,
-        },
-        {
             url: `${baseUrl}/contact/`,
-            changeFrequency: "monthly",
-            priority: 0.7,
+            changeFrequency: "yearly",
+            priority: 0.5,
         },
         {
             url: `${baseUrl}/privacy/`,

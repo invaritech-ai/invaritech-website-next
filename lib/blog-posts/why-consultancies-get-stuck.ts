@@ -1,8 +1,10 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const whyConsultanciesGetStuck: BlogPost = {
     slug: "why-consultancies-get-stuck",
     title: "Why Consultancies Get Stuck: The Hidden Cost of Manual Compliance Work",
+    seoTitle: "Why Compliance Consultancies Get Stuck",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "Manual compliance work often scales with fragility, not headcount. This post explains why hiring alone fails, what RegOps changes, and how to start with a measurable automation wedge.",
     content: `
@@ -46,7 +48,7 @@ Replace headcount-first framing with workflow framing.
 
 Identify which workflow segments can run deterministically in the background.
 
-That is the shift from headcount-led scaling to infrastructure-led scaling. [Workflow automation services](/services/ai-workflow-automation-services/) make it concrete: identify the segments that run deterministically, automate them, and free your team for the decisions that actually need them.
+That is the shift from headcount-led scaling to infrastructure-led scaling. [Workflow automation services](/work/) make it concrete: identify the segments that run deterministically, automate them, and free your team for the decisions that actually need them.
 
 ---
 
@@ -81,7 +83,7 @@ Weak automation:
 
 Robust automation:
 
-- [API-first integrations](/services/ai-integration-services/) where possible
+- [API-first integrations](/work/eudr-compliance-bridge/) where possible
 - deterministic logic
 - explicit failure modes
 - complete logs
@@ -101,13 +103,13 @@ EUDR submission volume shows the failure mode clearly: manual workflows hit capa
 
 If you want a quantified view of where your bottleneck is, start here:
 
-- **[Assessment](/tools/assessment/)** (map your workflow gaps)
-- **[AI Automation Consulting](/services/ai-automation-consulting/)**
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
+- **[Contact](/contact/)** (map your workflow gaps)
+- **[Book a Workflow Review](/contact/)**
+- **[Finance Ops Sprint](/contact/)** (30 days)
 `,
     author: {
         name: "Avishek Majumder",
-        role: "CEO",
+        role: "Co-founder and CEO",
     },
     publishedAt: "2025-10-01T10:00:00Z",
     dateModified: "2026-02-15T10:00:00Z",

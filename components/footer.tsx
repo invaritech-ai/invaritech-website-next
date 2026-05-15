@@ -1,119 +1,138 @@
-import { Logo, LogoIcon } from "@/components/logo";
 import Link from "next/link";
+
+import { Logo, LogoIcon } from "@/components/logo";
+import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 const navigationLinks = [
     { title: "Home", href: "/" },
-    { title: "About", href: "/about/" },
-    { title: "Services", href: "/services/" },
-    { title: "Work", href: "/work/" },
+    { title: "Resources", href: "/resources/" },
     { title: "Blog", href: "/blog/" },
-    { title: "Tools", href: "/tools/" },
-    { title: "Careers", href: "/careers/" },
+    { title: "Work", href: "/work/" },
+    { title: "About", href: "/about/" },
     { title: "Contact", href: "/contact/" },
+    { title: BOOK_MEETING_CTA, href: BOOK_MEETING_URL },
 ];
 
-const companyLinks = [
+const legalLinks = [
     { title: "Privacy Policy", href: "/privacy/" },
     { title: "Terms of Service", href: "/terms/" },
 ];
 
-export default function FooterSection() {
-    return (
-        <footer className="relative overflow-hidden bg-card py-16 md:py-24">
-            <div className="absolute top-0 left-0 h-[1px] w-full bg-gradient-to-r from-transparent via-primary/25 to-transparent" />
+const socialLinks = [
+    {
+        title: "X",
+        href: "https://x.com/invaritechai",
+        icon: (
+            <svg className="site-footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+        ),
+    },
+    {
+        title: "LinkedIn",
+        href: "https://linkedin.com/company/invaritechai",
+        icon: (
+            <svg className="site-footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.98 0 1.771-.773 1.771-1.729V1.729C24 .774 23.205 0 22.225 0z" />
+            </svg>
+        ),
+    },
+];
 
-            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 select-none pointer-events-none opacity-[0.02] whitespace-nowrap">
-                <span className="font-editorial text-[15rem] md:text-[25rem] font-bold tracking-tighter uppercase text-foreground">
-                    INVARITECH
-                </span>
+function isExternalLink(href: string) {
+    return href.startsWith("http");
+}
+
+function FooterLink({ href, title }: { href: string; title: string }) {
+    const external = isExternalLink(href);
+
+    return (
+        <Link
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="site-footer-link"
+        >
+            {title}
+        </Link>
+    );
+}
+
+export default function FooterSection() {
+    const currentYear = new Intl.DateTimeFormat("en", {
+        year: "numeric",
+        timeZone: "UTC",
+    }).format(new Date());
+
+    return (
+        <footer className="site-footer">
+            <div className="site-footer-watermark" aria-hidden="true">
+                INVARITECH
             </div>
 
-            <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="grid grid-cols-1 gap-12 lg:grid-cols-4 lg:gap-8">
-
-                    <div className="flex flex-col gap-6 items-start lg:col-span-1">
-                        <Link href="/" aria-label="go home" className="group">
-                            <div className="flex items-center gap-3">
-                                <LogoIcon className="size-10 group-hover:drop-shadow-[0_0_8px_rgba(199,64,45,0.3)] transition-all duration-300" />
-                                <div className="flex flex-col items-center">
-                                    <Logo />
-                                    <span className="text-[10px] uppercase tracking-[0.3em] text-primary/90 font-bold text-center">Visionary Intelligence</span>
-                                </div>
-                            </div>
+            <div className="site-footer-container">
+                <div className="site-footer-grid">
+                    <div className="site-footer-brand">
+                        <Link href="/" aria-label="INVARITECH home" className="site-footer-logo-row">
+                            <span className="site-footer-logo-mark" aria-hidden="true">
+                                <LogoIcon className="site-footer-logo-icon" />
+                            </span>
+                            <span className="site-footer-logo-copy">
+                                <Logo className="site-footer-logo-text" />
+                                <span className="site-logo-strapline">Payment Controls</span>
+                            </span>
                         </Link>
-                        <p className="text-sm text-foreground-muted leading-relaxed max-w-xs">
-                            Governed AI systems for enterprises that need proof, not promises. We deliver one production-grade automation in 30 days, layered on top of what you already run.
+
+                        <p className="site-footer-text">
+                            Founder-led payment control design for finance teams that need cleaner approvals,
+                            fewer manual exceptions, and less leakage without changing systems.
                         </p>
                     </div>
 
-                    <div className="lg:ml-auto">
-                        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-subtle mb-6">Navigation</h3>
-                        <ul className="space-y-3">
-                            {navigationLinks.map((link, index) => (
-                                <li key={index}>
-                                    <Link
-                                        href={link.href}
-                                        className="inline-flex min-h-10 items-center text-sm text-foreground-muted hover:text-foreground transition-all duration-300 group"
-                                    >
-                                        <span className="w-0 group-hover:w-3 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all duration-300 opacity-0 group-hover:opacity-100" />
-                                        {link.title}
-                                    </Link>
+                    <nav aria-label="Footer navigation">
+                        <h2 className="site-footer-heading">Navigation</h2>
+                        <ul className="site-footer-link-list">
+                            {navigationLinks.map((link) => (
+                                <li key={link.title}>
+                                    <FooterLink href={link.href} title={link.title} />
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </nav>
 
-                    <div className="lg:ml-auto">
-                        <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-subtle mb-6">Legal & Sync</h3>
-                        <ul className="space-y-3">
-                            {companyLinks.map((link, index) => (
-                                <li key={index}>
-                                    <Link
-                                        href={link.href}
-                                        className="inline-flex min-h-10 items-center text-sm text-foreground-muted hover:text-foreground transition-all duration-300"
-                                    >
-                                        {link.title}
-                                    </Link>
+                    <nav aria-label="Legal navigation">
+                        <h2 className="site-footer-heading">Legal</h2>
+                        <ul className="site-footer-link-list">
+                            {legalLinks.map((link) => (
+                                <li key={link.title}>
+                                    <FooterLink href={link.href} title={link.title} />
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </nav>
 
-                    <div className="flex flex-col gap-8 lg:items-end">
-                        <div className="flex flex-col lg:items-end gap-2">
-                            <h3 className="text-[10px] font-bold uppercase tracking-[0.2em] text-foreground-subtle mb-2">Connect</h3>
-                            <div className="flex gap-5">
+                    <div>
+                        <h2 className="site-footer-heading">Connect</h2>
+                        <div className="site-footer-social-row">
+                            {socialLinks.map((link) => (
                                 <Link
-                                    href="https://x.com/invaritechai"
+                                    key={link.title}
+                                    href={link.href}
                                     target="_blank"
-                                    className="inline-flex size-10 items-center justify-center text-foreground-muted hover:text-foreground hover:scale-110 transition-all duration-300"
-                                    aria-label="X"
+                                    rel="noopener noreferrer"
+                                    className="site-footer-social-link"
+                                    aria-label={link.title}
                                 >
-                                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                                    </svg>
+                                    {link.icon}
                                 </Link>
-                                <Link
-                                    href="https://linkedin.com/company/invaritechai"
-                                    target="_blank"
-                                    className="inline-flex size-10 items-center justify-center text-foreground-muted hover:text-foreground hover:scale-110 transition-all duration-300"
-                                    aria-label="LinkedIn"
-                                >
-                                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.98 0 1.771-.773 1.771-1.729V1.729C24 .774 23.205 0 22.225 0z" />
-                                    </svg>
-                                </Link>
-                            </div>
-                        </div>
-
-                        <div className="mt-auto pt-16 lg:pt-0">
-                            <div className="h-[1px] w-full bg-border md:hidden mb-8" />
-                            <p className="text-[11px] text-foreground-subtle lg:text-right font-mono tracking-tighter">
-                                &copy; {new Date().getFullYear()} INVARITECH. <br className="hidden lg:block" />
-                                ALL SYSTEMS OPERATIONAL.
-                            </p>
+                            ))}
                         </div>
                     </div>
+                </div>
+
+                <div className="site-footer-bottom">
+                    <p>&copy; {currentYear} INVARITECH. All rights reserved.</p>
+                    <p>Australia-first. Founder-led. One client at a time.</p>
                 </div>
             </div>
         </footer>

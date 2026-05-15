@@ -4,24 +4,25 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "AI Automation Case Studies | Delivered Outcomes",
+    title: "Finance Automation Work & Case Studies",
     description:
-        "Real automation projects with measurable outcomes. See how we build compliance bridges, data pipelines, and AP automation for enterprise and mid-market teams across APAC.",
+        "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling. Includes international regulated-work proof.",
     openGraph: {
-        title: "AI Automation Case Studies | Delivered Outcomes | INVARITECH",
+        title: "Operational Automation for Finance Teams & Delivered Systems | INVARITECH",
         description:
-            "Real automation projects with measurable outcomes. Compliance bridges, data pipelines, and AP automation for enterprise teams across Singapore, Hong Kong, Malaysia, and the Philippines.",
+            "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work — Automation Projects" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "AI Automation Case Studies | Delivered Outcomes | INVARITECH",
+        title: "Operational Automation for Finance Teams & Delivered Systems | INVARITECH",
         description:
-            "Real automation projects with measurable outcomes. Compliance bridges, data pipelines, and AP automation for enterprise teams across APAC.",
+            "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -33,7 +34,7 @@ const projects = [
     {
         id: "eudr",
         title: "EUDR Compliance Bridge",
-        category: "Automation & Compliance",
+        category: "International Proof Case",
         description: "A Python FastAPI bridge enabling a French operator to submit thousands of EUDR Due Diligence Statements via a simple REST API.",
         tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
         image: "/eudr-preview.webp",
@@ -41,21 +42,11 @@ const projects = [
         metric: "Thousands of submissions in minutes",
     },
     {
-        id: "charity",
-        title: "China Coast Community",
-        category: "Web & Automation",
-        description: "Modernizing the digital presence and operational flow for a premier elderly care charity in HK. Connecting front-end engagement to CRM-led donor management.",
-        tags: ["Next.js", "Stripe", "CRM Integration"],
-        image: "/ccc-isometric.webp",
-        link: "https://www.chinacoastcommunity.org.hk",
-        metric: "Live Site",
-    },
-    {
         id: "custom",
-        title: "Your Custom Solution",
-        category: "Consulting & Development",
-        description: "We identify your biggest bottleneck and deliver a custom automation solution within 30 days.",
-        tags: ["Analysis", "Strategy", "Custom Build"],
+        title: "Your Finance Ops Bottleneck",
+        category: "Finance Ops Optimization",
+        description: "We identify one invoice, cash, or close bottleneck and deliver a custom automation workflow within 30 days.",
+        tags: ["Analysis", "Strategy", "Finance Ops"],
         image: "/work/custom-solution.webp",
         link: "https://calendly.com/hello-invaritech/30min",
         buttonText: "Talk to Us",
@@ -64,10 +55,10 @@ const projects = [
 
 export default function WorkPage() {
     return (
-        <main className="min-h-screen bg-background text-foreground relative overflow-hidden selection:bg-primary/20 selection:text-primary">
+        <main className="site-page relative overflow-hidden selection:bg-primary/20 selection:text-primary">
             {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-full h-full opacity-[0.015]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
+                <div className="site-page-grid" />
                 <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
                 <div className="absolute bottom-1/3 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
             </div>
@@ -79,25 +70,28 @@ export default function WorkPage() {
                 </span>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto pt-32 pb-20 px-6 md:px-8">
-                {/* Header */}
-                <header className="mb-32">
-                    <div className="flex items-center gap-3 mb-8">
-                        <div className="h-[1px] w-8 bg-primary/40" />
-                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Delivered Outcomes</span>
+            {/* Hero */}
+            <section className="site-section-hero relative z-10">
+                <div className="site-container">
+                    <div className="site-split">
+                        <div>
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">Operational Automation for Finance Teams</p>
+                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Operational automation for finance teams.
+                            </h1>
+                        </div>
+                        <p className="site-lead" data-reveal="block">
+                            We build invoice approval workflows, duplicate payment prevention checks, cash visibility automation, and auditable exception routing for finance teams. The EUDR bridge below is the proof point: strict, regulated work delivered end to end.
+                        </p>
                     </div>
-                    <h1 className="font-editorial text-6xl md:text-9xl font-semibold tracking-tight mb-8 leading-[0.9] text-foreground">
-                        SELECTED WORK
-                    </h1>
-                    <p className="text-xl text-muted-foreground md:text-2xl font-light max-w-2xl border-l-2 border-primary/30 pl-6 py-2">
-                        Engineering leverage through production-grade automation. A curated record of delivered outcomes.
-                    </p>
-                    <p className="text-base text-muted-foreground max-w-2xl mt-8 leading-relaxed">
-                        We work across compliance, finance, and operations — building systems that eliminate manual work at volume. Each engagement is scoped around a specific bottleneck. Every project below shipped to production.
-                    </p>
-                </header>
+                </div>
+            </section>
 
-                {/* Projects */}
+            {/* Projects */}
+            <div className="relative z-10 site-container pb-20">
                 <div className="space-y-32">
                     {projects.map((project, index) => (
                         <div key={project.id} className="group relative">
@@ -182,10 +176,10 @@ export default function WorkPage() {
                         <div className="h-[1px] w-8 bg-primary/40" />
                     </div>
                     <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight mb-8 max-w-3xl mx-auto">
-                        Ready to build your own proof point?
+                        Ready to fix one finance-ops workflow bottleneck?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                        Book a 30-minute diagnostic to identify one ROI wedge. No pitch — just engineering strategy.
+                        Book a 30-minute diagnostic to map one invoice approval workflow, cash visibility gap, or month-end close bottleneck. No pitch, just delivery strategy.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
                         <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
@@ -194,6 +188,8 @@ export default function WorkPage() {
                     </Button>
                 </div>
             </div>
+
+            <HomepageScrollAnimations />
         </main>
     );
 }

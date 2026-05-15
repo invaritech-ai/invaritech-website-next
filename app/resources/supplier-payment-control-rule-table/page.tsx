@@ -1,0 +1,102 @@
+import { Metadata } from "next";
+import Script from "next/script";
+import ResourceRuleTableClient from "@/components/resource-rule-table-client";
+import { createApolloInboundScript } from "@/lib/apollo-inbound";
+
+export const metadata: Metadata = {
+    title: "Supplier Payment Control Rule Table for AP Teams",
+    description:
+        "Download a supplier payment control rule table for mapping payment approval checks, invoice exception routing, evidence, and audit notes before release.",
+    alternates: {
+        canonical:
+            "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
+    },
+    openGraph: {
+        title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
+        description:
+            "Workbook for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
+        url: "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
+        type: "website",
+        images: [
+            {
+                url: "/og-image.png",
+                width: 1200,
+                height: 630,
+                alt: "Supplier Payment Control Rule Table",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
+        description:
+            "Map supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
+        images: ["/og-image.png"],
+    },
+};
+
+const BASE = "https://www.invaritech.ai";
+
+const schemas = [
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: BASE },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "Resources",
+                item: `${BASE}/resources/`,
+            },
+            {
+                "@type": "ListItem",
+                position: 3,
+                name: "Supplier Payment Control Rule Table",
+                item: `${BASE}/resources/supplier-payment-control-rule-table/`,
+            },
+        ],
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        name: "Supplier Payment Control Rule Table",
+        description:
+            "Rule table workbook for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit notes before release.",
+        author: {
+            "@type": "Organization",
+            name: "INVARITECH",
+            url: BASE,
+        },
+        url: `${BASE}/resources/supplier-payment-control-rule-table/`,
+        encodingFormat:
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    },
+];
+
+const APOLLO_INBOUND_SCRIPT = createApolloInboundScript({
+    formSelector: "#resource-download-form",
+});
+
+export default function RuleTablePage() {
+    return (
+        <>
+            {schemas.map((schema, i) => (
+                <Script
+                    key={i}
+                    id={`schema-rule-table-${i}`}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+            ))}
+            <Script
+                id="apollo-inbound"
+                strategy="afterInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: APOLLO_INBOUND_SCRIPT,
+                }}
+            />
+            <ResourceRuleTableClient />
+        </>
+    );
+}

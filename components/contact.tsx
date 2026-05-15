@@ -1,13 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { useRecaptcha } from "@/hooks/useRecaptcha";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
+import { TurnstileWidget } from "@/components/turnstile-widget";
+import { submitContactLead } from "@/app/actions/leads";
+import { appendAttributionToFormData } from "@/lib/attribution";
 import {
     Calendar,
     Mail,
@@ -108,112 +111,91 @@ export default function ContactSection() {
         error: null,
     });
 
-    // Initialize reCAPTCHA
-    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-    const { executeRecaptcha } = useRecaptcha({
-        siteKey: recaptchaSiteKey || "",
-        action: "contact_form_submit",
-    });
+    const [turnstileToken, setTurnstileToken] = useState<string>("");
+    const turnstileRef = useRef<TurnstileInstance>(null);
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const validateForm = (): boolean => {
-        if (!formData.name.trim()) {
+    const validateForm = (values: FormData): boolean => {
+        if (!values.name.trim()) {
             setFormState((prev) => ({ ...prev, error: "Name is required" }));
             return false;
         }
-        if (!formData.email.trim()) {
+        if (!values.email.trim()) {
             setFormState((prev) => ({ ...prev, error: "Email is required" }));
             return false;
         }
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
+        if (!emailRegex.test(values.email)) {
             setFormState((prev) => ({
                 ...prev,
                 error: "Please enter a valid email address",
             }));
             return false;
         }
-        if (!formData.country.trim()) {
+        if (!values.country.trim()) {
             setFormState((prev) => ({ ...prev, error: "Country is required" }));
             return false;
         }
-        if (!formData.message.trim()) {
+        if (!values.message.trim()) {
             setFormState((prev) => ({ ...prev, error: "Message is required" }));
+            return false;
+        }
+        if (!turnstileToken) {
+            setFormState((prev) => ({ ...prev, error: "Please complete the verification" }));
             return false;
         }
         return true;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const rawForm = new FormData(e.currentTarget);
+        const submittedForm: FormData = {
+            name: String(rawForm.get("name") || formData.name),
+            email: String(rawForm.get("email") || formData.email),
+            phone: String(rawForm.get("phone") || formData.phone),
+            country: String(rawForm.get("country") || formData.country),
+            company: String(rawForm.get("company") || formData.company),
+            message: String(rawForm.get("message") || formData.message),
+        };
 
-        if (!validateForm()) {
-            return;
-        }
+        setFormData(submittedForm);
+        if (!validateForm(submittedForm)) return;
 
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
-        try {
-            // Execute reCAPTCHA
-            let recaptchaToken = null;
-            if (recaptchaSiteKey) {
-                recaptchaToken = await executeRecaptcha();
-                if (!recaptchaToken) {
-                    throw new Error("reCAPTCHA verification failed");
-                }
-            }
+        const fd = new FormData();
+        fd.set("name", submittedForm.name);
+        fd.set("email", submittedForm.email);
+        fd.set("phone", submittedForm.phone);
+        fd.set("country", submittedForm.country);
+        fd.set("company", submittedForm.company);
+        fd.set("message", submittedForm.message);
+        fd.set("cf_turnstile_token", turnstileToken);
 
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    source: "Contact Form",
-                    recaptchaToken,
-                }),
-            });
+        appendAttributionToFormData(fd);
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Failed to submit form");
-            }
+        const result = await submitContactLead(fd);
 
-            const result = await response.json();
-            if (!result.success) {
-                throw new Error(result.error || "Failed to submit form");
-            }
-
-            setFormState({ isSubmitting: false, isSuccess: true, error: null });
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                country: "",
-                company: "",
-                message: "",
-            });
-        } catch (error) {
-            console.error("Form submission error:", error);
+        if (!result.success) {
+            turnstileRef.current?.reset();
+            setTurnstileToken("");
             setFormState({
                 isSubmitting: false,
                 isSuccess: false,
-                error:
-                    error instanceof Error
-                        ? error.message
-                        : "An unexpected error occurred",
+                error: result.error ?? "Failed to submit form",
             });
+            return;
         }
+
+        setFormState({ isSubmitting: false, isSuccess: true, error: null });
+        setFormData({ name: "", email: "", phone: "", country: "", company: "", message: "" });
     };
 
     if (formState.isSuccess) {
@@ -260,14 +242,13 @@ export default function ContactSection() {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                                    Why partner with Invaritech?
+                                    Why partner with Invaritech for accounts payable automation?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    Invaritech leads architecture, delivery, and
-                                    accountability. Our partner engineering
-                                    network extends execution capacity, but you
-                                    always have one accountable owner for
-                                    outcomes.
+                                    Invaritech leads architecture, delivery, and accountability for
+                                    invoice approval workflow automation, duplicate payment prevention,
+                                    and payment fraud controls. Our partner engineering network extends
+                                    execution capacity, but you always have one accountable owner.
                                 </p>
                             </div>
 
@@ -279,9 +260,9 @@ export default function ContactSection() {
                                     <div>
                                         <h3 className="font-medium mb-1 text-foreground">Book a Meeting</h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Skip the email loop and book a
-                                            focused session directly with our
-                                            team.
+                                            Skip the email loop and bring one
+                                            real accounts payable workflow
+                                            problem to a focused scoping session.
                                         </p>
                                         <Button
                                             asChild
@@ -329,11 +310,11 @@ export default function ContactSection() {
                                     Send us a message
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Tell us a bit about your project and we&apos;ll be in touch.
+                                    Tell us which invoice approval workflow, supplier reconciliation, or payment risk process needs attention.
                                 </p>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-5">
+                            <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
                                         <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Full name *</Label>
@@ -411,7 +392,7 @@ export default function ContactSection() {
                                     <Textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Tell us about your project goals, timeline, and requirements..."
+                                        placeholder="Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."
                                         value={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}
@@ -419,6 +400,13 @@ export default function ContactSection() {
                                         className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground resize-none"
                                     />
                                 </div>
+
+                                <TurnstileWidget
+                                    ref={turnstileRef}
+                                    onSuccess={setTurnstileToken}
+                                    onError={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                                    onExpire={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                                />
 
                                 {formState.error && (
                                     <div className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2">
@@ -428,7 +416,7 @@ export default function ContactSection() {
 
                                 <Button
                                     type="submit"
-                                    disabled={formState.isSubmitting}
+                                    disabled={formState.isSubmitting || !turnstileToken}
                                     className="w-full rounded-none"
                                     size="lg"
                                 >

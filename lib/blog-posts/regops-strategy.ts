@@ -1,8 +1,10 @@
-import { BlogPost } from "../blog-posts";
+import type { BlogPost } from "../blog-posts-types";
 
-export const post: BlogPost = {
+export const regopsStrategy: BlogPost = {
     slug: "regops-strategy",
     title: "RegOps: The Missing Link for Scaling Your ESG Consultancy",
+    seoTitle: "RegOps for ESG Consultancy Scale",
+    articleSection: "Regulatory Compliance",
     excerpt:
         "RegOps applies engineering discipline to compliance delivery so ESG consultancies can scale with lower operational risk. This post explains the RegOps Bridge model and when infrastructure investment is justified.",
     content: `
@@ -101,15 +103,15 @@ Before hiring again, quantify your workflow. Map repeatable steps, rework freque
 
 Start with:
 
-- **[Assessment](/tools/assessment/)** (map your workflow gaps)
-- **[AI Automation Consulting](/services/ai-automation-consulting/)**
-- **[AI Automation Sprint](/services/ai-automation-sprint/)** (30 days)
+- **[Contact](/contact/)** (map your workflow gaps)
+- **[Book a Workflow Review](/contact/)**
+- **[Finance Ops Sprint](/contact/)** (30 days)
 
 RegOps does not replace consultants. It gives consultancy teams a delivery model that can grow with lower structural fragility.
     `,
     author: {
         name: "Aditi Garg",
-        role: "Director and Founder",
+        role: "Founder and Director",
     },
     publishedAt: "2025-10-10T10:00:00Z",
     dateModified: "2026-02-15T10:00:00Z",

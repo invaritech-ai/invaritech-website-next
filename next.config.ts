@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
     trailingSlash: true,
     async redirects() {
         return [
-            // Specific blog slug remaps (must come before the wildcard below)
+            // ── Blog ──────────────────────────────────────────────────────
+            // Specific slug remaps (before wildcard)
             {
                 source: "/blogs/building-vs-buying-automation-software",
                 destination: "/blog/building-vs-buying-custom-automation/",
@@ -25,7 +26,7 @@ const nextConfig: NextConfig = {
                 destination: "/blog/compliance-automation-done-right/",
                 permanent: true,
             },
-            // Old /blogs/ path → current /blog/ path (preserves crawl equity)
+            // Old /blogs/:slug → /blog/:slug/
             {
                 source: "/blogs/:slug",
                 destination: "/blog/:slug/",
@@ -36,7 +37,7 @@ const nextConfig: NextConfig = {
                 destination: "/blog/:slug/",
                 permanent: true,
             },
-            // Old /blogs/ index → current /blog/ index
+            // Old /blogs/ index → /blog/
             {
                 source: "/blogs",
                 destination: "/blog/",
@@ -47,60 +48,8 @@ const nextConfig: NextConfig = {
                 destination: "/blog/",
                 permanent: true,
             },
-            // Old /solutions/ → /services/
-            {
-                source: "/solutions",
-                destination: "/services/",
-                permanent: true,
-            },
-            {
-                source: "/solutions/",
-                destination: "/services/",
-                permanent: true,
-            },
-            // Old service slugs → current service pages
-            {
-                source: "/services/ai-automation",
-                destination: "/services/ai-workflow-automation-services/",
-                permanent: true,
-            },
-            {
-                source: "/services/ai-automation/",
-                destination: "/services/ai-workflow-automation-services/",
-                permanent: true,
-            },
-            {
-                source: "/services/backend-development",
-                destination: "/services/generative-ai-backend-development/",
-                permanent: true,
-            },
-            {
-                source: "/services/backend-development/",
-                destination: "/services/generative-ai-backend-development/",
-                permanent: true,
-            },
-            {
-                source: "/services/ecommerce-development",
-                destination: "/services/",
-                permanent: true,
-            },
-            {
-                source: "/services/ecommerce-development/",
-                destination: "/services/",
-                permanent: true,
-            },
-            // Old compliance-bridge service → EUDR work case study
-            {
-                source: "/services/compliance-bridge",
-                destination: "/work/eudr-compliance-bridge/",
-                permanent: true,
-            },
-            {
-                source: "/services/compliance-bridge/",
-                destination: "/work/eudr-compliance-bridge/",
-                permanent: true,
-            },
-            // Old /use-cases/ → /work/
+
+            // ── Work / Portfolio ──────────────────────────────────────────
             {
                 source: "/use-cases",
                 destination: "/work/",
@@ -111,7 +60,6 @@ const nextConfig: NextConfig = {
                 destination: "/work/",
                 permanent: true,
             },
-            // Old /portfolio/ → /work/
             {
                 source: "/portfolio",
                 destination: "/work/",
@@ -122,39 +70,166 @@ const nextConfig: NextConfig = {
                 destination: "/work/",
                 permanent: true,
             },
-            // Old /weekend-suite/ → 30-Day Sprint
+
+            // ── Tools → Resources ─────────────────────────────────────────
+            // Moved tools get specific destinations
+            {
+                source: "/tools/invoice-extractor",
+                destination: "/resources/invoice-extractor/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-extractor/",
+                destination: "/resources/invoice-extractor/",
+                permanent: true,
+            },
+            {
+                source: "/tools/cost-to-close-calculator",
+                destination: "/resources/cost-to-close-calculator/",
+                permanent: true,
+            },
+            {
+                source: "/tools/cost-to-close-calculator/",
+                destination: "/resources/cost-to-close-calculator/",
+                permanent: true,
+            },
+            // Retired tools → resources index
+            {
+                source: "/tools/assessment",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/assessment/",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/burn-rate-calculator",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/burn-rate-calculator/",
+                destination: "/resources/",
+                permanent: true,
+            },
+            // Old geo pages → homepage
+            {
+                source: "/tools/invoice-processing-automation-hong-kong",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-processing-automation-hong-kong/",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-processing-automation-singapore",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/tools/invoice-processing-automation-singapore/",
+                destination: "/",
+                permanent: true,
+            },
+            // /assessment/ redirect page → resources
+            {
+                source: "/assessment",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/assessment/",
+                destination: "/resources/",
+                permanent: true,
+            },
+            // Tools index → resources
+            {
+                source: "/tools",
+                destination: "/resources/",
+                permanent: true,
+            },
+            {
+                source: "/tools/",
+                destination: "/resources/",
+                permanent: true,
+            },
+
+            // ── Services (removed) → Homepage ─────────────────────────────
+            // Specific compliance-bridge link preserved for inbound equity
+            {
+                source: "/services/compliance-bridge",
+                destination: "/work/eudr-compliance-bridge/",
+                permanent: true,
+            },
+            {
+                source: "/services/compliance-bridge/",
+                destination: "/work/eudr-compliance-bridge/",
+                permanent: true,
+            },
+            // All other /services/* → homepage
+            {
+                source: "/services/:path*",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/solutions",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/solutions/",
+                destination: "/",
+                permanent: true,
+            },
+
+            // ── Old sprint / campaign pages (removed) → Homepage ──────────
             {
                 source: "/weekend-suite",
-                destination: "/services/ai-automation-sprint/",
+                destination: "/",
                 permanent: true,
             },
             {
                 source: "/weekend-suite/",
-                destination: "/services/ai-automation-sprint/",
+                destination: "/",
                 permanent: true,
             },
-            // Legacy sprint aliases → canonical sprint service page
             {
                 source: "/ai-automation-sprint",
-                destination: "/services/ai-automation-sprint/",
+                destination: "/",
                 permanent: true,
             },
             {
                 source: "/ai-automation-sprint/",
-                destination: "/services/ai-automation-sprint/",
+                destination: "/",
                 permanent: true,
             },
             {
                 source: "/ops-efficiency-sprint",
-                destination: "/services/ai-automation-sprint/",
+                destination: "/",
                 permanent: true,
             },
             {
                 source: "/ops-efficiency-sprint/",
-                destination: "/services/ai-automation-sprint/",
+                destination: "/",
                 permanent: true,
             },
-            // Old legal page slugs
+            {
+                source: "/results",
+                destination: "/",
+                permanent: true,
+            },
+            {
+                source: "/results/",
+                destination: "/",
+                permanent: true,
+            },
+
+            // ── Legal ─────────────────────────────────────────────────────
             {
                 source: "/terms-of-service",
                 destination: "/terms/",
@@ -175,7 +250,8 @@ const nextConfig: NextConfig = {
                 destination: "/privacy/",
                 permanent: true,
             },
-            // Old career detail page → careers index
+
+            // ── Careers ───────────────────────────────────────────────────
             {
                 source: "/careers/full-stack-developer",
                 destination: "/careers/",

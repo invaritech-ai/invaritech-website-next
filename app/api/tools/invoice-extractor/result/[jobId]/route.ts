@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getInvoiceBackendConfig, fetchFromInvoiceBackend } from "@/lib/invoice-backend";
 
 const ARTIFACT_TYPES = ["raw_json", "items_csv", "summary_csv"] as const;
 type ArtifactType = (typeof ARTIFACT_TYPES)[number];
@@ -19,45 +20,34 @@ export async function GET(
         return NextResponse.json({ error: "Invalid artifact type" }, { status: 400 });
     }
 
-    const backendUrl = process.env.INVOICE_BACKEND_BASE_URL;
-    const apiKey = process.env.INVOICE_BACKEND_API_KEY;
+    const config = getInvoiceBackendConfig();
+    if (config instanceof NextResponse) return config;
 
-    if (!backendUrl || !apiKey) {
-        return NextResponse.json({ error: "Service unavailable" }, { status: 503 });
-    }
-
+    const artifactUrl = new URL(`${config.baseUrl}/api/v1/jobs/${jobId}/artifacts/${type}`);
     const email = request.nextUrl.searchParams.get("email");
-    const artifactUrl = new URL(`${backendUrl}/api/v1/jobs/${jobId}/artifacts/${type}`);
     if (email) artifactUrl.searchParams.set("email", email);
 
     try {
-        const response = await fetch(artifactUrl.toString(), {
-            headers: { "X-API-Key": apiKey },
-        });
+        const response = await fetchFromInvoiceBackend(
+            artifactUrl.pathname + artifactUrl.search,
+            config,
+        );
 
         if (!response.ok) {
             const text = await response.text();
             let data: unknown;
-            try {
-                data = JSON.parse(text);
-            } catch {
-                data = { error: "Artifact fetch failed" };
-            }
+            try { data = JSON.parse(text); } catch { data = { error: "Artifact fetch failed" }; }
             return NextResponse.json(data, { status: response.status });
         }
 
         if (type === "raw_json") {
-            const data = await response.json();
-            return NextResponse.json(data);
+            return NextResponse.json(await response.json());
         }
 
-        // CSV — return with download headers
-        const text = await response.text();
-        const filename = CSV_FILENAMES[type];
-        return new NextResponse(text, {
+        return new NextResponse(await response.text(), {
             headers: {
                 "Content-Type": "text/csv; charset=utf-8",
-                "Content-Disposition": `attachment; filename="${filename}"`,
+                "Content-Disposition": `attachment; filename="${CSV_FILENAMES[type]}"`,
             },
         });
     } catch (err) {

@@ -8,13 +8,13 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { MagneticButton } from "@/components/ui/MagneticButton";
 
 export const metadata: Metadata = {
-    title: "EUDR Compliance Automation | 100K+ Monthly Submissions",
+    title: "EUDR Compliance Bridge Case Study",
     description:
-        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — processing 100,000+ DDS submissions per month.",
+        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
     openGraph: {
-        title: "EUDR Compliance Automation | 100K+ Monthly Submissions | INVARITECH",
+        title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — processing 100,000+ DDS submissions per month.",
+            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "EUDR Compliance Automation | 100K+ Monthly Submissions | INVARITECH",
+        title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators. 100,000+ DDS submissions per month with validation, audit logs, and controlled retries.",
+            "EUDR compliance automation for high-volume commodity operators with validation, audit logs, and controlled retries.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -125,7 +125,7 @@ export default function EudrCaseStudyPage() {
 
                     <div className="mb-16 max-w-3xl">
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. This is the type of work we deliver under <Link href="/services/ai-integration-services/" className="text-foreground underline decoration-primary/50 hover:decoration-primary transition-all">AI Integration Services</Link>, even when the core constraint is protocol and governance, not AI.
+                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers.
                         </p>
                     </div>
 
@@ -328,7 +328,7 @@ export default function EudrCaseStudyPage() {
                     </div>
                     <div className="mt-12 text-sm text-muted-foreground max-w-lg mx-auto">
                         <p>
-                            For teams that want a structured path to EUDR backend development, we typically start with the <Link href="/services/ai-automation-sprint/" className="underline hover:text-foreground text-primary/80">AI Automation Sprint</Link>.
+                            For teams that need this level of control in a finance-ops workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or book a scoping call.
                         </p>
                     </div>
                 </section>
