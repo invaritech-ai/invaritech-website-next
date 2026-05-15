@@ -96,6 +96,17 @@ const resources: Resource[] = [
         access: "coming-soon",
     },
     {
+        slug: "invoice-processing-automation",
+        title: "Invoice Processing Automation Guide",
+        excerpt:
+            "A practical guide to automated invoice processing for accounts payable teams: invoice OCR, data extraction, validation rules, exception routing, approval workflow controls, and audit trails.",
+        category: "guide",
+        industry: "All industries",
+        format: "Web guide",
+        access: "open",
+        subpageHref: "/resources/invoice-processing-automation/",
+    },
+    {
         slug: "invoice-extractor",
         title: "Invoice Data Extractor",
         excerpt:

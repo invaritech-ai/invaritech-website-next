@@ -14,7 +14,7 @@ interface ToolPageShellProps {
     footerText?: string;
     footerLink?: { href: string; label: string };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    jsonLd?: Record<string, any>;
+    jsonLd?: Record<string, any> | Record<string, any>[];
     children: ReactNode;
 }
 

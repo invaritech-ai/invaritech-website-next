@@ -117,22 +117,22 @@ const nextConfig: NextConfig = {
             // Old geo pages → homepage
             {
                 source: "/tools/invoice-processing-automation-hong-kong",
-                destination: "/",
+                destination: "/resources/invoice-processing-automation/",
                 permanent: true,
             },
             {
                 source: "/tools/invoice-processing-automation-hong-kong/",
-                destination: "/",
+                destination: "/resources/invoice-processing-automation/",
                 permanent: true,
             },
             {
                 source: "/tools/invoice-processing-automation-singapore",
-                destination: "/",
+                destination: "/resources/invoice-processing-automation/",
                 permanent: true,
             },
             {
                 source: "/tools/invoice-processing-automation-singapore/",
-                destination: "/",
+                destination: "/resources/invoice-processing-automation/",
                 permanent: true,
             },
             // /assessment/ redirect page → resources
