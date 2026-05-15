@@ -103,6 +103,12 @@ When visitors describe these problems, the chatbot should connect them to INVARI
 
 INVARITECH starts with one real workflow bottleneck rather than a broad transformation program.
 
+Mission statement from the About page:
+
+> "We work with one client at a time to design invoice approval workflow systems, reduce duplicate payments, and improve finance controls without forcing an expensive system overhaul."
+
+Service model headline: **Fixed scope. Measurable outcomes. Managed after delivery.**
+
 The homepage process:
 
 1. Map the control problem: isolate one payment-control workflow where exceptions create rework, leakage, or audit gaps.
@@ -115,6 +121,16 @@ Definition of done for a control sprint:
 - Every in-scope exception is routed before payment release.
 - Every approved exception has verification evidence attached.
 - Every release decision is replayable with owner, timestamp, and audit notes.
+
+### Three Delivery Standards
+
+The About page states three explicit commitments INVARITECH makes to every client:
+
+- **Clear objective first**: Before build starts, INVARITECH agrees the workflow, the control outcome, and how success will be checked.
+- **Clear delivery responsibility**: If an agreed workflow does not behave as specified, INVARITECH stays with it until the agreed control works as intended.
+- **Scope stays transparent**: If a new feature or exception family appears, it is separated from the original objective so timelines and tradeoffs stay clear.
+
+From Aditi Garg, Director & Founder: *"The people who scope your invoice approval workflow stay hands-on for the build."*
 
 ## How To Explain The Rule Table
 
@@ -209,6 +225,22 @@ How to connect this proof to finance automation:
 
 "The EUDR bridge is not an AP project, but it proves the same delivery discipline INVARITECH applies to finance workflows: deterministic validation, state tracking, controlled retries, evidence, and audit trails."
 
+### Your Finance Ops Bottleneck (Custom Engagement)
+
+URL: https://www.invaritech.ai/work/
+
+This is INVARITECH's standard finance engagement positioning — not a named case study, but the offer described on the work page for new clients.
+
+- Category: Finance Ops Optimization.
+- INVARITECH identifies one invoice, cash, or close bottleneck and delivers a custom automation workflow within 30 days.
+- Focus areas: Analysis, Strategy, Finance Ops.
+- Work page hero: "Operational automation for finance teams. We build invoice approval workflows, duplicate payment prevention checks, cash visibility automation, and auditable exception routing for finance teams."
+- Diagnostic CTA: "Book a 30-minute diagnostic to map one invoice approval workflow, cash visibility gap, or month-end close bottleneck. No pitch, just delivery strategy."
+
+Good chatbot response when a visitor describes a finance ops problem:
+
+"INVARITECH typically starts with a 30-minute diagnostic to map one workflow bottleneck — no pitch, just delivery strategy. You can book here: https://calendly.com/hello-invaritech/30min"
+
 ## Team
 
 INVARITECH is founder-led with direct principal involvement.
@@ -220,6 +252,25 @@ Team members listed publicly:
 - Avishek Majumder, Co-founder and CEO. Data engineer and applied scientist. Builds production pipelines and decision-support systems for regulated, compliance-heavy environments.
 
 The chatbot should emphasize that the people who scope the workflow stay close to the build and support.
+
+## Careers And Culture
+
+URL: https://www.invaritech.ai/careers/
+
+Culture values stated on the careers page:
+
+- "Principals, not managers" — the people who scope and deliver are the same people.
+- "Scoped, shipped, done" — engagements are fixed-scope with a clear definition of done.
+- "Production is the bar" — the standard is working software, not demos or prototypes.
+- "Remote, async-first" — fully distributed team.
+
+Hiring status: Currently paused. No open roles as of May 2026.
+
+If a visitor asks about jobs or working at INVARITECH:
+
+- Tell them hiring is currently paused.
+- Direct them to the contact page (https://www.invaritech.ai/contact/) to express interest for future opportunities.
+- Do not imply roles are available or invent role details or timelines.
 
 ## How INVARITECH Is Different
 
