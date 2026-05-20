@@ -7,13 +7,13 @@ import { Metadata } from "next";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Founder-Led AP Automation Team",
+    title: "About INVARITECH | Payment Controls Team",
     description:
-        "INVARITECH works with one client at a time to design and deliver accounts payable automation, invoice approval workflow controls, and auditable finance operations.",
+        "A small technical team that built reconciliation systems used by Goldman Sachs. We deliver AP payment controls for Australian mid-market finance teams — fixed scope, written acceptance criteria, managed support.",
     openGraph: {
-        title: "About INVARITECH | Founder-Led Accounts Payable Automation",
+        title: "About INVARITECH | Payment Controls Team",
         description:
-            "Founder-led accounts payable automation for finance teams. Fixed scope, measurable acceptance criteria, and ongoing managed support.",
+            "A small technical team with a Goldman Sachs reconciliation track record. Fixed-scope AP controls for Australian freight, construction, and distribution teams.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH - Founder-Led Accounts Payable Automation" }],
@@ -59,14 +59,14 @@ export default function AboutPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Founder-led service model</p>
+                                <p className="site-eyebrow-text">A small team. Serious work.</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical accounts payable automation, led by the people who scope it.
+                                We&apos;re not a local firm. Here&apos;s why that might be exactly what you need.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We help finance teams strengthen invoice approvals, duplicate payment checks, and supplier payment controls around the systems they already use.
+                            We&apos;re based in Asia. We charge less than an Australian firm because we don&apos;t carry the overhead of one. What we do have: a track record of building reconciliation systems used by Goldman Sachs, and a model where the person who scopes your problem is the person who builds it.
                         </p>
                     </div>
                 </div>
@@ -77,10 +77,10 @@ export default function AboutPage() {
                     <div>
                         <p className="mb-5 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">How we work</p>
                         <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">
-                            Fixed scope. Measurable outcomes. Managed after delivery.
+                            Fixed scope. Written outcomes. Managed after delivery.
                         </h2>
                         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                            We start with one workflow, one owner, and clear acceptance criteria. Then we build the control around the systems your finance team already uses.
+                            We start with one workflow, one owner, and acceptance criteria both parties sign off on before a line of code is written. Then we build the control around the systems your finance team already uses.
                         </p>
                     </div>
 
@@ -102,10 +102,12 @@ export default function AboutPage() {
                 <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                     <div className="relative border border-primary/20 bg-primary/[0.04] p-8 md:p-10">
                         <blockquote className="font-editorial text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                            &ldquo;The people who scope your invoice approval workflow stay close to the build.&rdquo;
+                            &ldquo;We earn trust through the work, not the introduction.&rdquo;
                         </blockquote>
                         <p className="mt-6 text-muted-foreground leading-relaxed">
-                            That continuity matters when work touches payment approvals, supplier bank detail changes, audit evidence, and daily finance operations.
+                            No Sydney office means no Sydney overhead. It also means you get
+                            a founder on your problem, not an account manager — and you pay
+                            for the outcome, not the postcode.
                         </p>
                         <div className="mt-8 flex items-center gap-4">
                             <Avatar className="h-12 w-12 border border-primary/30">
@@ -124,10 +126,16 @@ export default function AboutPage() {
                         <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Why this model exists</h2>
                         <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
                             <p>
-                                Accounts payable automation is not only a software problem. The work also depends on which invoice exceptions should block payment, what evidence matters, who owns each approval, and how the final decision can be reviewed later.
+                                AP problems are not only software problems. They depend on
+                                which exceptions should block payment, what evidence matters,
+                                who owns each approval, and how the final decision can be
+                                reconstructed six months later.
                             </p>
                             <p>
-                                We keep each engagement narrow so one workflow objective can be owned properly. After the first control is live, managed support helps it keep working as rules, vendors, teams, and edge cases change.
+                                We keep each engagement narrow so one workflow can be owned
+                                properly. After the first control is live, managed support
+                                keeps it working as rules, vendors, teams, and edge cases
+                                change over time.
                             </p>
                         </div>
                     </div>
@@ -143,20 +151,20 @@ export default function AboutPage() {
                             name="Aditi Garg"
                             role="Director & Founder"
                             image="/aditi-1.webp"
-                            bio="Operations leader with experience at Goldman Sachs, Uber, and BMW. Helps teams turn fragmented workflows into clearer, more governed operating processes."
+                            bio="Built reconciliation and payment control systems used by Goldman Sachs. Delivered operational programs for Uber and BMW. At Invaritech, she scopes every engagement and stays close to delivery."
                         />
                         <FounderCard
                             name="Abhishek Agarwal"
                             role="Co-founder"
                             image="/abhishek.webp"
-                            bio="Founder of Codeacious Tech. Leads hands-on delivery for enterprise and e-commerce systems, including architecture programs tied to $80M+ in validated value."
+                            bio="Founder of Codeacious Tech. Delivered enterprise systems across finance, retail, and regulated industries — including architecture programs behind A$80M+ in client outcomes."
                         />
                         {SHOW_AVISHEK && (
                             <FounderCard
                                 name="Avishek Majumder"
                                 role="Co-founder & CEO"
                                 image="/avishek.webp"
-                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for regulated and compliance-heavy environments."
+                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for compliance-heavy environments. Specialises in anomaly detection and predictive systems."
                             />
                         )}
                     </div>
@@ -166,17 +174,17 @@ export default function AboutPage() {
             <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
                 <div className="grid gap-8 border-y border-border py-10 md:grid-cols-[1fr_auto] md:items-center">
                     <div>
-                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real accounts payable bottleneck.</h2>
+                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real AP bottleneck.</h2>
                         <p className="mt-3 text-muted-foreground">
-                            View the rule table first, or book a call if you already know which invoice approval workflow or supplier exception needs attention.
+                            Run the free scan first, or book a call if you already know which workflow needs attention.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Link
-                            href="/resources/supplier-payment-control-rule-table/interactive/"
+                            href="/contact/?scan=1"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />
+                            Get Your Free AP Controls Scan <ArrowRight className="ml-2 size-4" />
                         </Link>
                         <Link
                             href={BOOK_MEETING_URL}

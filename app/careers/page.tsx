@@ -40,7 +40,7 @@ const cultureItems = [
     { label: "Principals, not managers", body: "You work directly with founders. No account managers, no ticket queues. Every project has one owner who cares about the outcome." },
     { label: "Scoped, shipped, done", body: "We run fixed-scope sprints with defined deliverables. Vague retainers aren't how we operate — clarity of output is the standard." },
     { label: "Production is the bar", body: "Prototypes don't ship to clients. Everything we build is governed, tested, and documented enough to be handed off and maintained." },
-    { label: "Remote, async-first", body: "The team is distributed across Southeast Asia. We communicate in writing, move fast on decisions, and avoid synchronous overhead." },
+    { label: "Remote, async-first", body: "The team is distributed across Asia. We communicate in writing, move fast on decisions, and avoid synchronous overhead." },
 ];
 
 const jobs = [
@@ -50,9 +50,9 @@ const jobs = [
         department: "Engineering",
         location: "Remote",
         type: "Full-time (Hourly Contract)",
-        pay: "HKD 32–39 / hr",
+        pay: "Competitive — based on experience",
         description:
-            "We are looking for an experienced Full-Stack Software Engineer to join our team and help build the next generation of digital solutions.",
+            "We are looking for an experienced Full-Stack Software Engineer to join our team and help build AP automation and payment control systems for Australian mid-market finance teams.",
     },
 ];
 

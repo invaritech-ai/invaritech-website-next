@@ -6,6 +6,9 @@ import {
     Route,
     Truck,
     Warehouse,
+    ScanLine,
+    ShieldCheck,
+    Users,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -47,44 +50,44 @@ const verticals = [
         icon: Truck,
         companyType: "Freight & logistics",
         pain: "Margin leakage from carrier overcharges",
-        details: "Surcharge variance, duplicate invoice variants, missing PODs, and rate-card mismatches.",
+        details: "Surcharge variance, duplicate invoice variants, missing PODs, and rate-card mismatches your team catches manually — if at all.",
         buyers: "AP Manager, Controller, Finance Ops",
     },
     {
         icon: Warehouse,
         companyType: "Wholesale & distribution",
         pain: "Silent leakage from duplicate and erroneous payments",
-        details: "PO-invoice mismatch, split shipments, supplier statement gaps, credits, and returns.",
+        details: "PO-invoice mismatch, split shipments, supplier statement gaps, credits and returns that never came back.",
         buyers: "Finance Manager, AP Lead, Shared Services",
     },
     {
         icon: Gauge,
         companyType: "Manufacturing",
         pain: "Manual review load from three-way match exceptions",
-        details: "PO, goods receipt, invoice mismatch, material price variance, and unit conversion issues.",
+        details: "PO, goods receipt, invoice mismatch — landing in someone's inbox and waiting until month-end to matter.",
         buyers: "Controller, Finance Ops, Operations Finance",
     },
     {
         icon: Landmark,
-        companyType: "Mining & construction",
+        companyType: "Construction",
         pain: "High-value payment control risk",
-        details: "Progress claim validation, retention release, variation mismatch, and project cost-code errors.",
+        details: "Progress claims that move through email. Retentions released on memory. Variation approvals nobody can reconstruct six months later.",
         buyers: "Commercial Finance, AP Manager, Controller",
     },
 ];
 
 const workflowSteps = [
     {
-        title: "Map the control problem",
-        body: "We isolate one payment-control workflow where exceptions create rework, leakage, or audit gaps.",
+        title: "Map the real problem",
+        body: "We find the one payment-control workflow where exceptions are creating rework, leakage, or audit gaps.",
     },
     {
-        title: "Lock the objective",
-        body: "Before build starts, we agree three measurable acceptance criteria that are inside our control.",
+        title: "Write down what done means",
+        body: "Before build starts, we agree three measurable acceptance criteria that are inside our control. Both parties sign off.",
     },
     {
-        title: "Build around current systems",
-        body: "We add rule logic, invoice exception management routing, payment approval checks, evidence capture, and audit trails without forcing a system change.",
+        title: "Build around what you already use",
+        body: "Rule logic, exception routing, payment approval checks, evidence capture, and audit trails — without forcing a system change.",
     },
     {
         title: "Keep it working",
@@ -94,23 +97,31 @@ const workflowSteps = [
 
 const acceptanceCriteria = [
     "Every in-scope exception is routed before payment release.",
-    "Every approved exception has verification evidence attached.",
-    "Every release decision is replayable with owner, timestamp, and audit notes.",
+    "Every approved exception has verification evidence on file.",
+    "Every decision is replayable — owner, timestamp, audit notes.",
 ];
 
-const trustCards = [
+const trustSignals = [
     {
-        title: "Control design",
-        body: "Rules, queues, approval evidence, release decisions, and replayable audit trails.",
+        icon: ShieldCheck,
+        label: "Reconciliation systems built for Goldman Sachs",
     },
     {
-        title: "Founder-led service",
-        body: "The people who scope the workflow stay close to the build and support.",
+        icon: Users,
+        label: "One team per client. Your project never shares attention.",
     },
     {
-        title: "Ongoing managed care",
-        body: "Low-cost maintenance after delivery so the agreed control keeps working as rules change.",
+        icon: ClipboardCheck,
+        label: "Acceptance criteria in writing before build starts.",
     },
+];
+
+const scanChecks = [
+    "Duplicate payments — same supplier, same amount, within 30 days",
+    "Near-duplicate payments — same supplier, similar amount, different invoice numbers",
+    "Vendor master anomalies — accounts changed recently, mismatched ABNs",
+    "Round-number invoice patterns — a common indicator of manual manipulation",
+    "High-frequency invoicing from a single supplier — split billing to avoid approval thresholds",
 ];
 
 export default function PaymentControlHome() {
@@ -132,16 +143,17 @@ export default function PaymentControlHome() {
                             </span>.
                         </h1>
                         <p className="site-lead">
-                            We help Australian finance and accounts payable teams strengthen controls
-                            around invoice exceptions, payment approvals, duplicate payments, and supplier
-                            payment workflows without replacing the software they already use.
+                            We built reconciliation systems used by Goldman Sachs.
+                            We work out of Asia, not Sydney — which is why we cost
+                            less than a local firm. One client. One team. Fixed scope.
                         </p>
                         <p className="site-home-hero-support">
-                            Founder-led. One client at a time. Fixed scope first, then managed support.
+                            The person who scopes it builds it. Written acceptance
+                            criteria before anything starts. Managed support after delivery.
                         </p>
                         <div className="site-button-row-center">
-                            <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button">
-                                {RULE_TABLE_CTA}
+                            <Link href="/contact/?scan=1" className="site-button">
+                                Get Your Free AP Controls Scan
                                 <ArrowRight className="site-button-icon" aria-hidden="true" />
                             </Link>
                             <a
@@ -162,17 +174,39 @@ export default function PaymentControlHome() {
                 </div>
             </section>
 
+            {/* ── Trust Strip ───────────────────────────────────────── */}
+            <section className="border-y border-border bg-card py-6" aria-label="Trust signals">
+                <div className="mx-auto max-w-7xl px-6">
+                    <div className="grid gap-6 sm:grid-cols-3">
+                        {trustSignals.map((signal) => {
+                            const Icon = signal.icon;
+                            return (
+                                <div key={signal.label} className="flex items-center gap-3">
+                                    <Icon className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                                    <p className="text-[13px] leading-snug text-foreground-subtle">
+                                        {signal.label}
+                                    </p>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </section>
+
             {/* ── The Problem ───────────────────────────────────────── */}
             <section className="site-section site-section-muted">
                 <div className="site-container">
-<div className="site-home-section-intro" data-reveal="block">
+                    <div className="site-home-section-intro" data-reveal="block">
                         <p className="site-kicker">The problem</p>
-                        <h2 className="site-h2">What your finance team is dealing with</h2>
+                        <h2 className="site-h2">AP controls don&apos;t fail spectacularly. They fail quietly.</h2>
                         <p className="site-body">
-                            Accounts payable controls rarely fail in one obvious place. Invoice approval
-                            workflow gaps, supplier statement reconciliation issues, freight invoice audit
-                            misses, and duplicate vendor payments show up as daily symptoms your team has
-                            learned to work around.
+                            In the gap between what your team checks and what actually moves.
+                            A carrier invoice comes in 15% over the agreed rate. Someone flags
+                            it by email. It sits for three days. Either it gets paid wrong or
+                            a person chases it down manually.
+                        </p>
+                        <p className="site-body">
+                            That&apos;s one invoice. You have thirty more this week.
                         </p>
                     </div>
 
@@ -197,12 +231,12 @@ export default function PaymentControlHome() {
 
                     <div className="site-home-question" data-reveal="block">
                         <p className="site-home-question-title">
-                            Are your payment controls still living in inboxes, spreadsheets, and tribal knowledge?
+                            Are your payment controls still living in inboxes, spreadsheets, and one person&apos;s memory?
                         </p>
                         <p className="site-home-question-body">
-                            We design accounts payable controls and supplier payment workflows that handle
-                            invoice exceptions, payment approval checks, and audit trails inside your
-                            current stack.
+                            We build AP controls and supplier payment workflows that handle
+                            invoice exceptions, payment approval checks, and audit trails
+                            inside the systems you already use.
                         </p>
                     </div>
                 </div>
@@ -211,12 +245,13 @@ export default function PaymentControlHome() {
             {/* ── Who It's For ──────────────────────────────────────── */}
             <section className="site-section">
                 <div className="site-container">
-<div className="site-home-section-intro" data-reveal="block">
+                    <div className="site-home-section-intro" data-reveal="block">
                         <p className="site-kicker">Who it is for</p>
                         <h2 className="site-h2">Built for teams like yours</h2>
                         <p className="site-body">
-                            Built for Australian finance teams in freight, logistics, wholesale, distribution,
-                            manufacturing, mining, and construction.
+                            Australian finance teams in freight, logistics, wholesale,
+                            distribution, manufacturing, and construction — where supplier
+                            volume and payment complexity create daily manual work.
                         </p>
                     </div>
 
@@ -248,14 +283,69 @@ export default function PaymentControlHome() {
                 </div>
             </section>
 
-            {/* ── How It Works ──────────────────────────────────────── */}
+            {/* ── AP Controls Scan ──────────────────────────────────── */}
             <section className="site-section site-section-muted">
+                <div className="site-container">
+                    <div className="site-home-section-intro" data-reveal="block">
+                        <p className="site-kicker">Start here</p>
+                        <h2 className="site-h2">Find out what your AP data is hiding. It&apos;s free.</h2>
+                        <p className="site-body">
+                            Send us a 90-day export from Xero or MYOB. We run five checks
+                            against it and return a 2-page findings report within 48 hours.
+                        </p>
+                        <p className="site-body">
+                            No call. No pitch. Just findings from your own data. We built
+                            this because showing you something real beats anything we could
+                            say in an introduction. If we find a duplicate payment you
+                            didn&apos;t know about, you&apos;ll know we can do the work.
+                            If we find nothing, we&apos;ll tell you that honestly.
+                        </p>
+                    </div>
+
+                    <div className="mx-auto max-w-3xl" data-reveal="block">
+                        <div className="border border-border bg-background p-6 md:p-8">
+                            <div className="flex items-center gap-3 mb-6">
+                                <ScanLine className="size-5 text-primary" aria-hidden="true" />
+                                <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                                    What we check
+                                </p>
+                            </div>
+                            <ul className="space-y-3">
+                                {scanChecks.map((check) => (
+                                    <li key={check} className="flex items-start gap-3 text-sm leading-relaxed text-foreground-subtle">
+                                        <span className="mt-1.5 size-1.5 shrink-0 bg-primary/60 rounded-full" aria-hidden="true" />
+                                        {check}
+                                    </li>
+                                ))}
+                            </ul>
+                            <div className="mt-6 border-t border-border pt-6 text-xs text-foreground-subtle leading-relaxed">
+                                We sign a mutual NDA before you send anything. Your file is
+                                encrypted in transit, never shared, and deleted within 7 days.
+                            </div>
+                        </div>
+
+                        <div className="mt-6 flex flex-col gap-3 sm:flex-row" data-reveal="block">
+                            <Link href="/contact/?scan=1" className="site-button">
+                                Request Your Free AP Controls Scan
+                                <ArrowRight className="site-button-icon" aria-hidden="true" />
+                            </Link>
+                            <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button-secondary">
+                                {RULE_TABLE_CTA}
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── How It Works ──────────────────────────────────────── */}
+            <section className="site-section">
                 <div className="site-home-process-grid">
                     <div className="site-copy-center" data-reveal="block">
                         <p className="site-kicker">How it works</p>
-                        <h2 className="site-h2">A fixed-scope control sprint</h2>
+                        <h2 className="site-h2">One workflow. One team. Nothing starts until the scope is written down.</h2>
                         <p className="site-body">
-                            One workflow. One owner. Fixed scope. Measurable control improvements.
+                            We don&apos;t take on the next client until the current one is
+                            done. That means your problem gets a team whose only job is solving it.
                         </p>
 
                         <div className="site-home-criteria">
@@ -288,26 +378,28 @@ export default function PaymentControlHome() {
             </section>
 
             {/* ── Final CTA ─────────────────────────────────────────── */}
-            <section className="site-section">
+            <section className="site-section site-section-muted">
                 <div className="site-container">
                     <div className="site-home-final-panel" data-reveal="block">
                         <div className="site-home-final-layout">
                             <div className="site-home-final-copy">
                                 <Route className="site-icon" aria-hidden="true" />
-                                <h2 className="site-h2">Start with the rule table.</h2>
+                                <h2 className="site-h2">Not sure we&apos;re the right fit? Start with the scan.</h2>
                                 <p className="site-body">
-                                    Open the table we use to map supplier payment controls, invoice
-                                    exception routing, payment approval checks, and audit notes before
-                                    payment release.
+                                    Send us your AP data. If we find something worth fixing,
+                                    we&apos;ll tell you exactly what it would take. If we
+                                    don&apos;t, you&apos;ll know your controls are clean in
+                                    those five areas.
                                 </p>
                                 <p className="site-small">
-                                    Use it to see how we think before booking a call.
+                                    Either way, you&apos;ll know more about your payment
+                                    controls on Thursday than you do today.
                                 </p>
                             </div>
 
                             <div className="site-home-final-actions">
-                                <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button">
-                                    {RULE_TABLE_CTA}
+                                <Link href="/contact/?scan=1" className="site-button">
+                                    Get Your Free AP Controls Scan
                                     <ArrowRight className="site-button-icon" aria-hidden="true" />
                                 </Link>
                                 <a
@@ -320,20 +412,6 @@ export default function PaymentControlHome() {
                                 </a>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="site-home-trust-ledger" data-reveal="stagger">
-                        {trustCards.map((card, index) => (
-                            <div key={card.title} className="site-home-trust-entry" data-reveal-child>
-                                <span className="site-home-trust-number" aria-hidden="true">
-                                    {String(index + 1).padStart(2, "0")}
-                                </span>
-                                <div>
-                                    <h3 className="site-card-title">{card.title}</h3>
-                                    <p className="site-card-body">{card.body}</p>
-                                </div>
-                            </div>
-                        ))}
                     </div>
                 </div>
             </section>
