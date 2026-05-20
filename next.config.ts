@@ -262,6 +262,59 @@ const nextConfig: NextConfig = {
                 destination: "/careers/",
                 permanent: true,
             },
+
+            // ── Old RegOps / EUDR / consultancy blog posts → /blog/ ───────
+            // These posts belong to the old business. Removed from registry.
+            {
+                source: "/blog/regops-strategy",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/regops-strategy/",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/regops-technical",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/regops-technical/",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/why-consultancies-get-stuck",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/why-consultancies-get-stuck/",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/why-manual-eudr-compliance-fails",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/why-manual-eudr-compliance-fails/",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/consultancy-trap",
+                destination: "/blog/",
+                permanent: true,
+            },
+            {
+                source: "/blog/consultancy-trap/",
+                destination: "/blog/",
+                permanent: true,
+            },
         ];
     },
     images: {

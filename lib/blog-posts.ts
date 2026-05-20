@@ -1,11 +1,6 @@
 import type { BlogPost, BlogPostMetadata } from "./blog-posts-types";
-import { whyConsultanciesGetStuck } from "./blog-posts/why-consultancies-get-stuck";
 import { complianceAutomation } from "./blog-posts/compliance-automation-done-right";
 import { buildingVsBuying } from "./blog-posts/building-vs-buying-custom-automation";
-import { whyManualEudrFails } from "./blog-posts/why-manual-eudr-compliance-fails";
-import { regopsTechnical } from "./blog-posts/regops-technical";
-import { regopsStrategy } from "./blog-posts/regops-strategy";
-import { consultancyTrap } from "./blog-posts/consultancy-trap";
 import { monthEndClose } from "./blog-posts/month-end-close-automation";
 import { aiInvoiceDataExtraction } from "./blog-posts/ai-invoice-data-extraction";
 import { cashFlowVisibility } from "./blog-posts/cash-flow-visibility-automation";
@@ -13,14 +8,10 @@ import { whySmallBusinesses } from "./blog-posts/why-small-businesses-need-autom
 
 export type { BlogPost, BlogPostMetadata };
 
+// Old RegOps/EUDR/consultancy posts removed — slugs redirect to /blog/ via next.config.ts
 const blogPosts: BlogPost[] = [
-    whyConsultanciesGetStuck,
     complianceAutomation,
     buildingVsBuying,
-    whyManualEudrFails,
-    regopsTechnical,
-    regopsStrategy,
-    consultancyTrap,
     monthEndClose,
     aiInvoiceDataExtraction,
     cashFlowVisibility,

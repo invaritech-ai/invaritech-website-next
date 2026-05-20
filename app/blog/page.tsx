@@ -7,13 +7,13 @@ import { RULE_TABLE_CTA } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Finance Operations & Compliance Automation Blog",
+    title: "Accounts Payable Controls & Finance Automation Blog",
     description:
-        "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
+        "Practical guides for AP controls, invoice approval workflows, duplicate payment prevention, and finance automation for Australian mid-market teams.",
     openGraph: {
-        title: "Finance Operations & Compliance Automation Guides",
+        title: "Accounts Payable Controls & Finance Automation Blog",
         description:
-            "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
+            "Practical guides for AP controls, invoice approval workflows, duplicate payment prevention, and finance automation for Australian mid-market teams.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Finance Operations & Compliance Automation Guides",
         description:
-            "Practical guides for AP, close, cash visibility, compliance automation, and RegOps workflows.",
+            "Practical guides for AP controls, invoice approval workflows, duplicate payment prevention, and finance automation for Australian mid-market teams.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -51,7 +51,7 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-const categories = ["Finance Operations", "Accounts Payable", "Month-End Close", "Cash Visibility", "RegOps"];
+const categories = ["Accounts Payable", "Invoice Controls", "Month-End Close", "Finance Automation", "Cash Visibility"];
 
 export default function BlogsPage() {
     const posts = getAllPosts();
