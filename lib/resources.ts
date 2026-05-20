@@ -53,7 +53,7 @@ const resources: Resource[] = [
         format: "Interactive web table",
         access: "open",
         featured: true,
-        subpageHref: "/resources/supplier-payment-control-rule-table/",
+        subpageHref: "/resources/supplier-payment-control-rule-table/interactive/",
     },
     {
         slug: "changed-bank-detail-verification-checklist",
