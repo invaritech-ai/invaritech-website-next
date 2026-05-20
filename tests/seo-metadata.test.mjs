@@ -76,16 +76,16 @@ describe("SEO metadata", () => {
 
     it("keeps broad blog index metadata aligned to finance operations and compliance", () => {
         const source = read("app/blog/page.tsx");
-        assert.match(source, /title:\s*"Finance Operations & Compliance Automation Blog"/);
-        assert.match(source, /AP, close, cash visibility, compliance automation, and RegOps/);
+        assert.match(source, /title:\s*"Accounts Payable Controls & Finance Automation Blog"/);
+        assert.match(source, /AP controls, invoice approval workflows, duplicate payment prevention, and finance automation/);
         assert.match(source, /Finance Operations & Compliance Automation Guides/);
     });
 
     it("uses shortened page titles for launch-critical pages", () => {
         const expectedTitles = new Map([
             ["app/resources/page.tsx", "AP Automation Resources & Templates"],
-            ["app/work/page.tsx", "Finance Automation Work & Case Studies"],
-            ["app/about/page.tsx", "Founder-Led AP Automation Team"],
+            ["app/work/page.tsx", "Payment Controls Work & Proof"],
+            ["app/about/page.tsx", "About INVARITECH | Payment Controls for Australian Finance Teams"],
             ["app/work/eudr-compliance-bridge/page.tsx", "EUDR Compliance Bridge Case Study"],
             ["app/resources/invoice-extractor/page.tsx", "Invoice Data Extractor for AP Teams"],
             ["app/resources/cost-to-close-calculator/page.tsx", "Month-End Close Cost Calculator"],
@@ -124,5 +124,25 @@ describe("SEO metadata", () => {
             sitemapSource,
             /url: `\$\{baseUrl\}\/resources\/cost-to-close-calculator\/`,[\s\S]*?priority: 0\.8/
         );
+    });
+
+    it("surfaces Work and the free AP controls scan in primary discovery paths", () => {
+        const headerSource = read("components/header.tsx");
+        assert.match(headerSource, /\{\s*name:\s*"Work",\s*href:\s*"\/work\/"/);
+        assert.match(headerSource, /\{\s*name:\s*"Free AP Controls Scan",\s*href:\s*"\/contact\/\?scan=1"/);
+
+        assert.match(read("app/contact/page.tsx"), /\?\s*"Free AP Controls Scan"\s*:\s*"Get In Touch"/);
+
+        for (const path of [
+            "components/resource-library-client.tsx",
+            "app/blog/page.tsx",
+            "app/blog/[slug]/page.tsx",
+            "app/work/page.tsx",
+            "app/work/eudr-compliance-bridge/page.tsx",
+        ]) {
+            const source = read(path);
+            assert.match(source, /href="\/contact\/\?scan=1"/, path);
+            assert.match(source, /Free AP Controls Scan/, path);
+        }
     });
 });

@@ -50,7 +50,7 @@ const verticals = [
         icon: Truck,
         companyType: "Freight & logistics",
         pain: "Margin leakage from carrier overcharges",
-        details: "Surcharge variance, duplicate invoice variants, missing PODs, and rate-card mismatches your team catches manually — if at all.",
+        details: "Surcharge variance, duplicate invoice variants, missing PODs, and rate-card mismatches your team catches manually, if at all.",
         buyers: "AP Manager, Controller, Finance Ops",
     },
     {
@@ -64,7 +64,7 @@ const verticals = [
         icon: Gauge,
         companyType: "Manufacturing",
         pain: "Manual review load from three-way match exceptions",
-        details: "PO, goods receipt, invoice mismatch — landing in someone's inbox and waiting until month-end to matter.",
+        details: "PO, goods receipt, invoice mismatch, landing in someone's inbox and waiting until month-end to matter.",
         buyers: "Controller, Finance Ops, Operations Finance",
     },
     {
@@ -87,7 +87,7 @@ const workflowSteps = [
     },
     {
         title: "Build around what you already use",
-        body: "Rule logic, exception routing, payment approval checks, evidence capture, and audit trails — without forcing a system change.",
+        body: "Rule logic, exception routing, payment approval checks, evidence capture, and audit trails without forcing a system change.",
     },
     {
         title: "Keep it working",
@@ -98,7 +98,7 @@ const workflowSteps = [
 const acceptanceCriteria = [
     "Every in-scope exception is routed before payment release.",
     "Every approved exception has verification evidence on file.",
-    "Every decision is replayable — owner, timestamp, audit notes.",
+    "Every decision is replayable: owner, timestamp, audit notes.",
 ];
 
 const trustSignals = [
@@ -117,11 +117,11 @@ const trustSignals = [
 ];
 
 const scanChecks = [
-    "Duplicate payments — same supplier, same amount, within 30 days",
-    "Near-duplicate payments — same supplier, similar amount, different invoice numbers",
-    "Vendor master anomalies — accounts changed recently, mismatched ABNs",
-    "Round-number invoice patterns — a common indicator of manual manipulation",
-    "High-frequency invoicing from a single supplier — split billing to avoid approval thresholds",
+    "Duplicate payments: same supplier and amount in a 30-day window",
+    "Near-duplicate payments: same supplier, similar amount, different invoice numbers",
+    "Vendor master anomalies: accounts changed recently, mismatched ABNs",
+    "Round-number invoice patterns: a common indicator of manual manipulation",
+    "High-frequency invoicing from a single supplier: split billing to avoid approval thresholds",
 ];
 
 export default function PaymentControlHome() {
@@ -144,8 +144,8 @@ export default function PaymentControlHome() {
                         </h1>
                         <p className="site-lead">
                             We built reconciliation systems used by Goldman Sachs.
-                            We work out of Asia, not Sydney — which is why we cost
-                            less than a local firm. One client. One team. Fixed scope.
+                            We work out of Asia, not Sydney, which is why we cost
+                            half what a local firm would. One workflow. One team. Fixed scope.
                         </p>
                         <p className="site-home-hero-support">
                             The person who scopes it builds it. Written acceptance
@@ -250,7 +250,7 @@ export default function PaymentControlHome() {
                         <h2 className="site-h2">Built for teams like yours</h2>
                         <p className="site-body">
                             Australian finance teams in freight, logistics, wholesale,
-                            distribution, manufacturing, and construction — where supplier
+                            distribution, manufacturing, and construction, where supplier
                             volume and payment complexity create daily manual work.
                         </p>
                     </div>
@@ -344,8 +344,8 @@ export default function PaymentControlHome() {
                         <p className="site-kicker">How it works</p>
                         <h2 className="site-h2">One workflow. One team. Nothing starts until the scope is written down.</h2>
                         <p className="site-body">
-                            We don&apos;t take on the next client until the current one is
-                            done. That means your problem gets a team whose only job is solving it.
+                            Each client gets a dedicated delivery team. That team owns the
+                            workflow, the acceptance criteria, and the support after launch.
                         </p>
 
                         <div className="site-home-criteria">
@@ -392,8 +392,8 @@ export default function PaymentControlHome() {
                                     those five areas.
                                 </p>
                                 <p className="site-small">
-                                    Either way, you&apos;ll know more about your payment
-                                    controls on Thursday than you do today.
+                                    Either way, within 48 hours you&apos;ll know more about
+                                    your payment controls than you do today.
                                 </p>
                             </div>
 

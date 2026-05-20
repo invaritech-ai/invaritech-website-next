@@ -1,5 +1,4 @@
 import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Zap, Database, Globe } from "lucide-react";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
@@ -10,11 +9,11 @@ import { MagneticButton } from "@/components/ui/MagneticButton";
 export const metadata: Metadata = {
     title: "EUDR Compliance Bridge Case Study",
     description:
-        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
+        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries. Proof of disciplined regulated workflow delivery.",
     openGraph: {
         title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
+            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries. Proof of disciplined regulated workflow delivery.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -88,7 +87,7 @@ export default function EudrCaseStudyPage() {
                 <section className="mb-32">
                     <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Business Constraints</h2>
-                        <span className="font-mono text-xs text-muted-foreground hidden md:block">01 — CHALLENGE</span>
+                        <span className="font-mono text-xs text-muted-foreground hidden md:block">01: CHALLENGE</span>
                     </div>
                     
                     <div className="grid gap-6 md:grid-cols-3">
@@ -120,7 +119,7 @@ export default function EudrCaseStudyPage() {
                 <section className="mb-32">
                      <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Solution Overview</h2>
-                        <span className="font-mono text-xs text-muted-foreground hidden md:block">02 — ARCHITECTURE</span>
+                        <span className="font-mono text-xs text-muted-foreground hidden md:block">02: ARCHITECTURE</span>
                     </div>
 
                     <div className="mb-16 max-w-3xl">
@@ -264,12 +263,12 @@ export default function EudrCaseStudyPage() {
                 <section className="mb-32">
                     <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">The Impact</h2>
-                         <span className="font-mono text-xs text-muted-foreground hidden md:block">03 — RESULTS</span>
+                         <span className="font-mono text-xs text-muted-foreground hidden md:block">03: RESULTS</span>
                     </div>
                     <div className="grid gap-px bg-border border border-border sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
                         {[
                             { label: "Capacity", value: "100k+", desc: "Submissions/mo supported without new staff." },
-                            { label: "Risk", value: "-99%", desc: "Reduction in manual entry error exposure." },
+                            { label: "Risk", value: "-99%", desc: "Manual entry errors." },
                             { label: "Visibility", value: "100%", desc: "Instant search & audit for every submission." },
                             { label: "Control", value: "Full", desc: "Traceable state transitions & logs." }
                         ].map((stat, i) => (
@@ -299,8 +298,8 @@ export default function EudrCaseStudyPage() {
                                 <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Hardening & Deploy</p>
                             </div>
                             <div>
-                                <div className="text-3xl font-bold text-primary mb-1">$11,000 USD</div>
-                                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Total Investment</p>
+                                <div className="text-3xl font-bold text-primary mb-1">Fixed Scope</div>
+                                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Priced Separately</p>
                             </div>
                         </div>
                      </div>
@@ -309,26 +308,24 @@ export default function EudrCaseStudyPage() {
                 {/* CTA */}
                 <section className="text-center pt-24 border-t border-border">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6 max-w-3xl mx-auto">
-                        EXPECTING <span className="text-primary">EUDR VOLUME</span>?
+                        NEED THIS LEVEL OF <span className="text-primary">CONTROL</span>?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-                        If you anticipate high DDS throughput, you need deterministic submission control. The first step is a structured infrastructure diagnostic.
+                        For EUDR volume, we can scope deterministic submission control. For AP controls, start with one invoice approval, supplier reconciliation, or duplicate payment problem.
                     </p>
                     <div className="flex justify-center">
                         <MagneticButton className="px-12 py-6 text-xl">
-                            <a
-                                href={BOOK_MEETING_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <Link
+                                href="/contact/?scan=1"
                                 className="flex items-center gap-3"
                             >
-                                {BOOK_MEETING_CTA} <ArrowRight className="w-6 h-6" />
-                            </a>
+                                Free AP Controls Scan <ArrowRight className="w-6 h-6" />
+                            </Link>
                         </MagneticButton>
                     </div>
                     <div className="mt-12 text-sm text-muted-foreground max-w-lg mx-auto">
                         <p>
-                            For teams that need this level of control in a finance-ops workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or book a scoping call.
+                            For teams that need this level of control in a finance-ops workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or request the free AP controls scan.
                         </p>
                     </div>
                 </section>

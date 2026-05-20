@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     robots: { index: false, follow: false },
     title: "Careers | INVARITECH",
     description:
-        "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",
+        "Join INVARITECH to build AP payment controls, invoice approval workflows, and finance systems that clients can actually run.",
     openGraph: {
         title: "Careers | INVARITECH",
         description:
-            "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",
+            "Join INVARITECH to build AP payment controls, invoice approval workflows, and finance systems that clients can actually run.",
         url: "https://www.invaritech.ai/careers/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Careers" }],
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Careers | INVARITECH",
         description:
-            "Join INVARITECH's engineering team to build production-grade AI systems and workflow automation for enterprise operators.",
+            "Join INVARITECH to build AP payment controls, invoice approval workflows, and finance systems that clients can actually run.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 
 const cultureItems = [
     { label: "Principals, not managers", body: "You work directly with founders. No account managers, no ticket queues. Every project has one owner who cares about the outcome." },
-    { label: "Scoped, shipped, done", body: "We run fixed-scope sprints with defined deliverables. Vague retainers aren't how we operate — clarity of output is the standard." },
+    { label: "Scoped, shipped, done", body: "We run fixed-scope sprints with defined deliverables. Vague retainers aren't how we operate. Clarity of output is the standard." },
     { label: "Production is the bar", body: "Prototypes don't ship to clients. Everything we build is governed, tested, and documented enough to be handed off and maintained." },
     { label: "Remote, async-first", body: "The team is distributed across Asia. We communicate in writing, move fast on decisions, and avoid synchronous overhead." },
 ];
@@ -50,7 +50,7 @@ const jobs = [
         department: "Engineering",
         location: "Remote",
         type: "Full-time (Hourly Contract)",
-        pay: "Competitive — based on experience",
+        pay: "Competitive, based on experience",
         description:
             "We are looking for an experienced Full-Stack Software Engineer to join our team and help build AP automation and payment control systems for Australian mid-market finance teams.",
     },
@@ -70,7 +70,7 @@ export default function CareersPage() {
             <section className="pt-32 pb-20 px-6 relative z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex items-center gap-3 mb-8">
-                        <span className="text-[11px] font-mono text-primary/50">—</span>
+                        <span className="text-[11px] font-mono text-primary/50">01</span>
                         <div className="h-[1px] w-6 bg-primary/30" />
                         <p className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
                             Career Opportunities
@@ -78,12 +78,12 @@ export default function CareersPage() {
                     </div>
 
                     <h1 className="font-editorial text-6xl md:text-[9rem] font-semibold leading-[0.88] tracking-tight text-foreground mb-8">
-                        BUILD THE<br />
-                        <span className="text-muted-foreground">FUTURE</span>
+                        BUILD REAL<br />
+                        <span className="text-muted-foreground">CONTROLS</span>
                     </h1>
 
                     <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl font-light leading-relaxed">
-                        Join a team of obsessive engineers and designers. We don&apos;t just build software; we architect the operating systems of tomorrow&apos;s enterprises.
+                        We build AP payment controls for finance teams that need fewer manual exceptions, cleaner approval evidence, and less payment leakage. The work is narrow. The bar is real delivery.
                     </p>
                 </div>
             </section>

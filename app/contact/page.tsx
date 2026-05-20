@@ -9,20 +9,20 @@ const ContactSection = dynamic(() => import("@/components/contact"), {
 });
 
 export const metadata: Metadata = {
-    title: "Book an Accounts Payable Automation Scoping Call",
+    title: "Book an AP Payment Controls Scoping Call",
     description:
-        "Book a 30-minute accounts payable automation scoping call. We map your invoice approval workflow, duplicate payment risks, and implementation path.",
+        "Book a 30-minute AP payment controls scoping call. We map your invoice approval workflow, duplicate payment risks, and the fastest path to a working control.",
     openGraph: {
-        title: "Book an Accounts Payable Automation Scoping Call | INVARITECH",
-        description: "Book a 30-minute scoping call to map your invoice approval workflow, duplicate payment risks, and implementation path.",
+        title: "Book an AP Payment Controls Scoping Call | INVARITECH",
+        description: "Book a 30-minute scoping call to map your invoice approval workflow, duplicate payment risks, and the fastest path to a working control.",
         url: "https://www.invaritech.ai/contact/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH — Book a Meeting" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH - Book a Meeting" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Book an Accounts Payable Automation Scoping Call | INVARITECH",
-        description: "Tell us your invoice approval workflow and payment risks. We'll scope the automation path.",
+        title: "Book an AP Payment Controls Scoping Call | INVARITECH",
+        description: "Tell us your invoice approval workflow and payment risks. We'll scope the fastest path to a working control.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -34,7 +34,17 @@ const APOLLO_CONTACT_SCRIPT = createApolloInboundScript({
     formSelector: "#contact-form",
 });
 
-export default function ContactPage() {
+type ContactPageProps = {
+    searchParams?: Promise<{
+        scan?: string | string[];
+    }>;
+};
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+    const params = await searchParams;
+    const scanValue = Array.isArray(params?.scan) ? params?.scan[0] : params?.scan;
+    const scanRequested = scanValue === "1";
+
     return (
         <main className="site-page relative overflow-hidden">
             <Script
@@ -56,14 +66,20 @@ export default function ContactPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Get In Touch</p>
+                                <p className="site-eyebrow-text">
+                                    {scanRequested ? "Free AP Controls Scan" : "Get In Touch"}
+                                </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Book an accounts payable automation scoping call.
+                                {scanRequested
+                                    ? "Request a free AP controls scan."
+                                    : "Book an AP payment controls scoping call."}
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the quickest path to production.
+                            {scanRequested
+                                ? "Send a 90-day Xero or MYOB export. We will run five checks and return a 2-page findings report within 48 hours."
+                                : "Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the fastest path to a working control."}
                         </p>
                     </div>
                 </div>
@@ -72,7 +88,7 @@ export default function ContactPage() {
             {/* Contact form */}
             <div className="site-container relative z-10 pb-20">
                 <div className="bg-card border border-border p-8 md:p-12">
-                    <ContactSection />
+                    <ContactSection scanRequested={scanRequested} />
                 </div>
             </div>
 

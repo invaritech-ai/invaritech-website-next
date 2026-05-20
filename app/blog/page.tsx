@@ -3,7 +3,6 @@ import { getAllPosts } from "@/lib/blog-posts";
 import Link from "next/link";
 import { ArrowRight, MoveUpRight } from "lucide-react";
 import Image from "next/image";
-import { RULE_TABLE_CTA } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
@@ -102,14 +101,14 @@ export default function BlogsPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-12 flex flex-col gap-5 border-y border-border py-7 md:flex-row md:items-center md:justify-between">
                         <div>
-                            <h2 className="font-editorial text-3xl font-semibold">Start with an invoice approval workflow rule table.</h2>
-                            <p className="mt-2 text-muted-foreground">A practical table for mapping payment approval checks, exception routes, and audit evidence.</p>
+                            <h2 className="font-editorial text-3xl font-semibold">Want us to check one live AP risk?</h2>
+                            <p className="mt-2 text-muted-foreground">Send one invoice approval workflow, supplier reconciliation issue, or duplicate payment example.</p>
                         </div>
                         <Link
-                            href="/resources/supplier-payment-control-rule-table/interactive/"
+                            href="/contact/?scan=1"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />
+                            Free AP Controls Scan <ArrowRight className="ml-2 size-4" />
                         </Link>
                     </div>
 

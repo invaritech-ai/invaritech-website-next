@@ -9,7 +9,7 @@ export const structuredData = {
             name: "INVARITECH",
             alternateName: "INVARITECH Payment Control Design",
             description:
-                "INVARITECH designs, builds, and maintains payment controls for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
+                "INVARITECH designs, builds, and maintains payment controls for finance teams that need fewer manual exceptions, cleaner approvals, and less payment leakage without changing systems.",
             url: "https://www.invaritech.ai",
             logo: {
                 "@type": "ImageObject",
@@ -55,7 +55,7 @@ export const structuredData = {
             url: "https://www.invaritech.ai",
             name: "INVARITECH - Payment Control Design for Finance Teams",
             description:
-                "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less leakage without changing systems.",
+                "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less payment leakage without changing systems.",
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
             },

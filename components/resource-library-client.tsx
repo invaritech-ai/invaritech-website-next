@@ -13,7 +13,6 @@ import {
 import ResourceCard from "@/components/resource-card";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 import RuleTablePreview from "@/components/rule-table-preview";
-import { BOOK_MEETING_URL, BOOK_MEETING_CTA } from "@/lib/marketing";
 
 const resourceNotes = [
     {
@@ -179,19 +178,17 @@ export default function ResourceLibraryClient() {
                             <h2 className="site-h3">Have a live exception problem?</h2>
                             <p className="site-body mt-3">
                                 Bring one real invoice approval workflow, supplier statement
-                                reconciliation issue, or duplicate payment example. We will tell you
-                                if it is a fit for a fixed-scope automation sprint.
+                                reconciliation issue, or duplicate payment example. We will run the
+                                first checks and tell you where the control risk sits.
                             </p>
                         </div>
-                        <a
-                            href={BOOK_MEETING_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <Link
+                            href="/contact/?scan=1"
                             className="site-button gap-2"
                         >
-                            {BOOK_MEETING_CTA}
+                            Free AP Controls Scan
                             <ArrowRight className="size-4" aria-hidden="true" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>

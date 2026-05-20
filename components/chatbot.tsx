@@ -165,7 +165,7 @@ export const Chatbot = () => {
                 },
                 tooltip: {
                     showTooltip: !mobileMode,
-                    tooltipMessage: "Ask Iris",
+                    tooltipMessage: "Ask about AP controls",
                     tooltipBackgroundColor: "#FBF8F3",
                     tooltipTextColor: "#1A1209",
                     tooltipFontSize: 12,

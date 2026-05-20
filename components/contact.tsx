@@ -35,8 +35,11 @@ interface FormState {
     error: string | null;
 }
 
+interface ContactSectionProps {
+    scanRequested?: boolean;
+}
 
-export default function ContactSection() {
+export default function ContactSection({ scanRequested = false }: ContactSectionProps) {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -183,13 +186,12 @@ export default function ContactSection() {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                                    Why partner with Invaritech for accounts payable automation?
+                                    Why work with Invaritech on AP payment controls?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    Invaritech leads architecture, delivery, and accountability for
-                                    invoice approval workflow automation, duplicate payment prevention,
-                                    and payment fraud controls. Our partner engineering network extends
-                                    execution capacity, but you always have one accountable owner.
+                                    Invaritech scopes, builds, and supports invoice approval controls,
+                                    duplicate payment checks, and payment fraud controls. A founder stays
+                                    accountable from scoping through delivery.
                                 </p>
                             </div>
 
@@ -248,10 +250,12 @@ export default function ContactSection() {
                         <Card className="rounded-none border border-border bg-card  shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
                                 <h3 className="text-xl font-semibold mb-2 text-foreground">
-                                    Send us a message
+                                    {scanRequested ? "Request the free AP controls scan" : "Send us a message"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Tell us which invoice approval workflow, supplier reconciliation, or payment risk process needs attention.
+                                    {scanRequested
+                                        ? "Tell us which accounting system you use and the best way to handle the NDA before you send your export."
+                                        : "Tell us which invoice approval workflow, supplier reconciliation, or payment risk process needs attention."}
                                 </p>
                             </div>
 
@@ -328,12 +332,14 @@ export default function ContactSection() {
 
                                 <div className="space-y-2">
                                     <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                                        What would you like to automate or build? *
+                                        What payment control needs attention? *
                                     </Label>
                                     <Textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."
+                                        placeholder={scanRequested
+                                            ? "Example: I want the free AP controls scan. We use Xero and can provide a 90-day export after NDA."
+                                            : "Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."}
                                         defaultValue={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}
@@ -363,7 +369,7 @@ export default function ContactSection() {
                                 >
                                     {formState.isSubmitting
                                         ? "Sending..."
-                                        : "Send Message"}
+                                        : scanRequested ? "Request AP Controls Scan" : "Send Message"}
                                 </Button>
                             </form>
                         </Card>
@@ -379,8 +385,8 @@ export default function ContactSection() {
                             <div>
                                 <h3 className="text-lg font-semibold mb-2">Remote delivery, Australian focus</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                                    We&apos;re based in Asia and deliver remotely. No Sydney office
-                                    — that&apos;s what keeps our prices lower than a local firm.
+                                    We&apos;re based in Asia and deliver remotely. No Sydney office.
+                                    That&apos;s what keeps our prices lower than a local firm.
                                     Every engagement is handled directly by a founder, over video
                                     call and async communication, with full documentation and audit
                                     trails throughout.

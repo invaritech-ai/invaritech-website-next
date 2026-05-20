@@ -8,7 +8,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Script from "next/script";
 import { Button } from "@/components/ui/button";
-import { BOOK_MEETING_URL } from "@/lib/marketing";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -330,25 +329,23 @@ export default async function BlogPostPage({ params }: Props) {
                         <section className="mt-16 pt-16 border-t border-border text-center">
                             <div className="flex items-center justify-center gap-3 mb-8">
                                 <div className="h-[1px] w-8 bg-primary/40" />
-                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Start Your Sprint</span>
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Free AP Controls Scan</span>
                                 <div className="h-[1px] w-8 bg-primary/40" />
                             </div>
                             <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
-                                READY TO <span className="text-primary">AUTOMATE</span>?
+                                Want us to check one live AP control risk?
                             </h2>
                             <p className="text-lg text-foreground-muted mb-12 max-w-2xl mx-auto">
-                                Schedule a 30-minute call to scope your biggest bottleneck. No pitch — just engineering strategy.
+                                Send one invoice approval workflow, supplier reconciliation issue, or duplicate payment example. We will run the first checks and return a short findings report.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
-                                    <a
-                                        href={BOOK_MEETING_URL}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                    <Link
+                                        href="/contact/?scan=1"
                                         className="flex items-center gap-3"
                                     >
-                                        Book a Scoping Call <ArrowRight className="w-5 h-5" />
-                                    </a>
+                                        Free AP Controls Scan <ArrowRight className="w-5 h-5" />
+                                    </Link>
                                 </Button>
                                 <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
                                     <Link href="/work/">Explore Work</Link>

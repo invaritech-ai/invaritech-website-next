@@ -3,26 +3,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Finance Automation Work & Case Studies",
+    title: "Payment Controls Work & Proof",
     description:
-        "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling. Includes international regulated-work proof.",
+        "Delivered proof from regulated workflow work, plus AP payment controls for invoice approvals, duplicate payment checks, and auditable exception handling.",
     openGraph: {
-        title: "Operational Automation for Finance Teams & Delivered Systems | INVARITECH",
+        title: "Payment Controls Work & Delivered Proof | INVARITECH",
         description:
-            "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling.",
+            "Delivered proof from regulated workflow work, plus AP payment controls for invoice approvals, duplicate payment checks, and auditable exception handling.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work — Automation Projects" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Payment Controls Proof" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Operational Automation for Finance Teams & Delivered Systems | INVARITECH",
+        title: "Payment Controls Work & Delivered Proof | INVARITECH",
         description:
-            "Operational automation for finance teams, including invoice approval workflows, cash visibility, month-end close, and auditable exception handling.",
+            "Delivered proof from regulated workflow work, plus AP payment controls for invoice approvals, duplicate payment checks, and auditable exception handling.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -40,16 +39,6 @@ const projects = [
         image: "/eudr-preview.webp",
         link: "/work/eudr-compliance-bridge/",
         metric: "Thousands of submissions in minutes",
-    },
-    {
-        id: "custom",
-        title: "Your Finance Ops Bottleneck",
-        category: "Finance Ops Optimization",
-        description: "We identify one invoice, cash, or close bottleneck and deliver a custom automation workflow within 30 days.",
-        tags: ["Analysis", "Strategy", "Finance Ops"],
-        image: "/work/custom-solution.webp",
-        link: "https://calendly.com/hello-invaritech/30min",
-        buttonText: "Talk to Us",
     },
 ];
 
@@ -77,14 +66,14 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Operational Automation for Finance Teams</p>
+                                <p className="site-eyebrow-text">Payment controls and delivered proof</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Operational automation for finance teams.
+                                Proof we can deliver strict workflow controls.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We build invoice approval workflows, duplicate payment prevention checks, cash visibility automation, and auditable exception routing for finance teams. The EUDR bridge below is the proof point: strict, regulated work delivered end to end.
+                            We build invoice approval controls, duplicate payment checks, supplier exception routing, and audit evidence for finance teams. The EUDR bridge below is the proof point: strict, regulated workflow work delivered end to end.
                         </p>
                     </div>
                 </div>
@@ -156,7 +145,7 @@ export default function WorkPage() {
                                         <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
                                             <Link href={project.link} className="flex items-center gap-3">
                                                 <span className="text-sm font-semibold uppercase tracking-widest">
-                                                    {project.buttonText || (project.metric === "Live Site" ? "View Site" : "View Case")}
+                                                    {project.metric === "Live Site" ? "View Site" : "View Case"}
                                                 </span>
                                                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                             </Link>
@@ -172,19 +161,19 @@ export default function WorkPage() {
                 <div className="mt-40 border-t border-border pt-24 text-center">
                     <div className="flex items-center justify-center gap-3 mb-8">
                         <div className="h-[1px] w-8 bg-primary/40" />
-                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Start Your Sprint</span>
+                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Start With One Control</span>
                         <div className="h-[1px] w-8 bg-primary/40" />
                     </div>
                     <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight mb-8 max-w-3xl mx-auto">
-                        Ready to fix one finance-ops workflow bottleneck?
+                        Have an AP controls problem we should look at?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                        Book a 30-minute diagnostic to map one invoice approval workflow, cash visibility gap, or month-end close bottleneck. No pitch, just delivery strategy.
+                        Bring one invoice approval workflow, supplier reconciliation issue, or duplicate payment risk. We will run the first checks and tell you where the control risk sits.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
-                        <a href={BOOK_MEETING_URL} target="_blank" rel="noopener noreferrer">
-                            {BOOK_MEETING_CTA}
-                        </a>
+                        <Link href="/contact/?scan=1">
+                            Free AP Controls Scan
+                        </Link>
                     </Button>
                 </div>
             </div>

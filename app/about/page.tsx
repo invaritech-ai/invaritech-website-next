@@ -7,22 +7,22 @@ import { Metadata } from "next";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "About INVARITECH | Payment Controls Team",
+    title: "About INVARITECH | Payment Controls for Australian Finance Teams",
     description:
-        "A small technical team that built reconciliation systems used by Goldman Sachs. We deliver AP payment controls for Australian mid-market finance teams — fixed scope, written acceptance criteria, managed support.",
+        "A small technical team that built reconciliation systems used by Goldman Sachs. We deliver AP payment controls for Australian mid-market finance teams with fixed scope, written acceptance criteria, and managed support.",
     openGraph: {
-        title: "About INVARITECH | Payment Controls Team",
+        title: "About INVARITECH | Payment Controls for Australian Finance Teams",
         description:
             "A small technical team with a Goldman Sachs reconciliation track record. Fixed-scope AP controls for Australian freight, construction, and distribution teams.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH - Founder-Led Accounts Payable Automation" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH - Payment Controls for Australian Finance Teams" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "About INVARITECH | Founder-Led Accounts Payable Automation",
+        title: "About INVARITECH | Payment Controls for Australian Finance Teams",
         description:
-            "One client at a time. Fixed-scope accounts payable automation with measurable acceptance criteria and ongoing managed support.",
+            "Dedicated team per client. Fixed-scope AP payment controls with measurable acceptance criteria and ongoing managed support.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -80,7 +80,7 @@ export default function AboutPage() {
                             Fixed scope. Written outcomes. Managed after delivery.
                         </h2>
                         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                            We start with one workflow, one owner, and acceptance criteria both parties sign off on before a line of code is written. Then we build the control around the systems your finance team already uses.
+                            We start with one workflow, one owner, and acceptance criteria both parties sign off on before work begins. Then we build the control around the systems your finance team already uses.
                         </p>
                     </div>
 
@@ -106,7 +106,7 @@ export default function AboutPage() {
                         </blockquote>
                         <p className="mt-6 text-muted-foreground leading-relaxed">
                             No Sydney office means no Sydney overhead. It also means you get
-                            a founder on your problem, not an account manager — and you pay
+                            a founder on your problem, not an account manager. You pay
                             for the outcome, not the postcode.
                         </p>
                         <div className="mt-8 flex items-center gap-4">
@@ -157,7 +157,7 @@ export default function AboutPage() {
                             name="Abhishek Agarwal"
                             role="Co-founder"
                             image="/abhishek.webp"
-                            bio="Founder of Codeacious Tech. Delivered enterprise systems across finance, retail, and regulated industries — including architecture programs behind A$80M+ in client outcomes."
+                            bio="Founder of Codeacious Tech. Delivered enterprise systems across finance, retail, and regulated industries, including architecture programs tied to A$80M+ in client outcomes."
                         />
                         {SHOW_AVISHEK && (
                             <FounderCard

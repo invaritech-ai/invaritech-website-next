@@ -6,15 +6,15 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 
 import { LogoIcon } from "@/components/logo";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
     { name: "Home", href: "/", id: "01" },
     { name: "Resources", href: "/resources/", id: "02" },
     { name: "Blog", href: "/blog/", id: "03" },
-    { name: "About", href: "/about/", id: "04" },
-    { name: BOOK_MEETING_CTA, href: BOOK_MEETING_URL, id: "05" },
+    { name: "Work", href: "/work/", id: "04" },
+    { name: "About", href: "/about/", id: "05" },
+    { name: "Free AP Controls Scan", href: "/contact/?scan=1", id: "06" },
 ];
 
 function isExternalLink(href: string) {
@@ -58,6 +58,7 @@ export const HeroHeader = () => {
 
     const primaryLinks = menuItems.slice(0, -1);
     const ctaLink = menuItems[menuItems.length - 1];
+    const ctaIsExternal = isExternalLink(ctaLink.href);
 
     return (
         <header className="site-shell-header">
@@ -90,8 +91,8 @@ export const HeroHeader = () => {
                     ))}
                     <Link
                         href={ctaLink.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        target={ctaIsExternal ? "_blank" : undefined}
+                        rel={ctaIsExternal ? "noopener noreferrer" : undefined}
                         className="site-shell-nav-cta"
                     >
                         {ctaLink.name}
@@ -152,9 +153,9 @@ export const HeroHeader = () => {
                         })}
                     </nav>
                     <div className="site-shell-mobile-footer">
-                        Australia-first finance controls
+                        Asia-based AP payment controls
                         <br />
-                        Founder-led. One client at a time.
+                        Founder-led. Dedicated team per client.
                     </div>
                 </div>
             ) : null}

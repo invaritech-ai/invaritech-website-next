@@ -85,7 +85,7 @@ export default function FooterSection() {
 
                         <p className="site-footer-text">
                             Founder-led payment control design for finance teams that need cleaner approvals,
-                            fewer manual exceptions, and less leakage without changing systems.
+                            fewer manual exceptions, and less payment leakage without changing systems.
                         </p>
                     </div>
 
@@ -132,7 +132,7 @@ export default function FooterSection() {
 
                 <div className="site-footer-bottom">
                     <p>&copy; {currentYear} INVARITECH. All rights reserved.</p>
-                    <p>Australia-first. Founder-led. One client at a time.</p>
+                    <p>Asia-based delivery. Founder-led. Dedicated team per client.</p>
                 </div>
             </div>
         </footer>
