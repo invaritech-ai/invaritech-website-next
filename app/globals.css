@@ -1975,4 +1975,644 @@ textarea {
             linear-gradient(to bottom, rgba(11, 20, 16, 0.015) 1px, transparent 1px);
         background-size: 80px 80px;
     }
+
+    /* ══════════════════════════════════════════════════════════════
+       DOCUMENT-AESTHETIC HOMEPAGE (Exception Automation)
+       Codified composition utilities. All token-driven.
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Document metadata strip (top of hero) ──────────────────────────── */
+    .doc-strip {
+        @apply flex flex-wrap items-center gap-x-6 gap-y-2 border-y border-border py-3 text-[10px] font-mono uppercase tracking-[0.22em] text-foreground-subtle;
+    }
+    .doc-strip-cell {
+        @apply inline-flex items-center gap-2;
+    }
+    .doc-strip-cell strong {
+        @apply font-semibold text-foreground;
+    }
+    .doc-strip-divider {
+        @apply hidden h-3 w-px bg-border md:inline-block;
+    }
+    .doc-strip-spacer {
+        @apply ml-auto;
+    }
+
+    /* ── Diagonal stamp (large, hero-grade) ─────────────────────────────── */
+    .doc-stamp {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.75rem;
+        border: 1.5px solid var(--accent);
+        color: var(--accent);
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        font-weight: 600;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        line-height: 1;
+        transform: rotate(-3deg);
+        background: color-mix(in oklch, var(--accent) 4%, transparent);
+    }
+    .doc-stamp::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--accent);
+    }
+    .doc-stamp-forest {
+        border-color: var(--primary);
+        color: var(--primary);
+        background: color-mix(in oklch, var(--primary) 5%, transparent);
+    }
+    .doc-stamp-forest::before {
+        background: var(--primary);
+    }
+
+    /* ── Editorial hero headline (line-broken chapter title) ───────────── */
+    .doc-hero-headline {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(3rem, 6.4vw, 6.25rem);
+        line-height: 0.95;
+        letter-spacing: -0.025em;
+        color: var(--foreground);
+    }
+    .doc-hero-headline em {
+        font-style: italic;
+        font-weight: 400;
+        color: var(--primary);
+    }
+    .doc-hero-headline-strike {
+        text-decoration: line-through;
+        text-decoration-color: color-mix(in oklch, var(--foreground) 25%, transparent);
+        text-decoration-thickness: 2px;
+        color: var(--foreground-subtle);
+        font-weight: 400;
+    }
+
+    /* ── Section header with §-numeral and rule ─────────────────────────── */
+    .section-mark {
+        @apply flex items-baseline gap-4 border-b border-border pb-4 mb-12;
+    }
+    .section-mark-numeral {
+        @apply font-mono text-xs uppercase tracking-[0.24em] text-primary;
+        min-width: 2.5rem;
+    }
+    .section-mark-title {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+        line-height: 1.1;
+        letter-spacing: -0.015em;
+        color: var(--foreground);
+        flex: 1;
+    }
+    .section-mark-meta {
+        @apply hidden font-mono text-[10px] uppercase tracking-[0.22em] text-foreground-subtle md:inline-block;
+    }
+
+    /* ── Marginalia layout (numbered margin + body column) ──────────────── */
+    .marginalia {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    @media (min-width: 64rem) {
+        .marginalia {
+            grid-template-columns: 12rem 1fr;
+            gap: 3rem;
+        }
+    }
+    .marginalia-rail {
+        font-family: var(--font-mono);
+        font-size: 0.6875rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+        line-height: 1.7;
+    }
+    .marginalia-rail-key {
+        display: block;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+    }
+    .marginalia-body {
+        font-family: var(--font-display);
+        font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+        line-height: 1.4;
+        color: var(--foreground);
+        max-width: 38rem;
+        text-wrap: pretty;
+    }
+    .marginalia-body p + p {
+        margin-top: 1.25em;
+    }
+    .marginalia-body sup {
+        font-family: var(--font-mono);
+        font-size: 0.55em;
+        color: var(--accent);
+        margin-left: 0.15em;
+        vertical-align: super;
+    }
+
+    /* ── The Gap schematic (boxes + GAP label) ──────────────────────────── */
+    .gap-schematic {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        margin-top: 2.5rem;
+        position: relative;
+        border: 1px solid var(--border);
+        background: var(--card);
+    }
+    .gap-cell {
+        padding: 1.25rem 1rem;
+        border-right: 1px solid var(--border);
+        position: relative;
+        min-height: 7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .gap-cell:last-child { border-right: none; }
+    .gap-cell-label {
+        font-family: var(--font-mono);
+        font-size: 0.5625rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+    }
+    .gap-cell-name {
+        font-family: var(--font-display);
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--foreground);
+    }
+    .gap-cell-stores {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        line-height: 1.5;
+        color: var(--foreground-muted);
+        margin-top: 0.375rem;
+    }
+    .gap-overlay {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 0;
+        pointer-events: none;
+    }
+    .gap-overlay-rule {
+        position: absolute;
+        top: 0;
+        left: 6%;
+        right: 6%;
+        height: 1px;
+        background: repeating-linear-gradient(
+            to right,
+            var(--accent) 0,
+            var(--accent) 4px,
+            transparent 4px,
+            transparent 8px
+        );
+    }
+    .gap-overlay-stamp {
+        position: absolute;
+        top: -1rem;
+        left: 50%;
+        transform: translateX(-50%) rotate(-2deg);
+        background: var(--background);
+        padding: 0.25rem 0.75rem;
+        border: 1.5px solid var(--accent);
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-weight: 600;
+    }
+    @media (max-width: 48rem) {
+        .gap-schematic { grid-template-columns: 1fr 1fr; }
+        .gap-cell:nth-child(2n) { border-right: none; }
+        .gap-cell:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+        .gap-overlay { display: none; }
+    }
+
+    /* ── Exception Register (indexed table for use cases) ───────────────── */
+    .exception-register {
+        @apply border border-border bg-card;
+    }
+    .exception-register-head {
+        @apply grid items-center gap-4 border-b border-border bg-background px-5 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground-subtle;
+        grid-template-columns: 3rem 1fr 6rem 7rem 1.5rem;
+    }
+    .exception-register-head > span:nth-child(3),
+    .exception-register-head > span:nth-child(4) {
+        text-align: right;
+    }
+    .exception-register-row {
+        display: grid;
+        grid-template-columns: 3rem 1fr 6rem 7rem 1.5rem;
+        gap: 1rem;
+        align-items: center;
+        padding: 1.25rem 1.25rem;
+        border-bottom: 1px solid var(--border);
+        transition: background-color 0.2s ease;
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+    }
+    .exception-register-row:last-child { border-bottom: none; }
+    .exception-register-row:hover {
+        background: color-mix(in oklch, var(--primary) 4%, transparent);
+    }
+    .exception-register-row::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 2px;
+        background: var(--primary);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+    .exception-register-row:hover::before { opacity: 1; }
+    .exception-register-index {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--primary);
+        letter-spacing: 0.08em;
+    }
+    .exception-register-title {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    .exception-register-name {
+        font-family: var(--font-display);
+        font-size: 1.0625rem;
+        font-weight: 500;
+        color: var(--foreground);
+        line-height: 1.3;
+    }
+    .exception-register-catches {
+        font-family: var(--font-body);
+        font-size: 0.8125rem;
+        color: var(--foreground-muted);
+        line-height: 1.45;
+    }
+    .exception-register-tier {
+        font-family: var(--font-mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        text-align: right;
+        padding: 0.25rem 0.5rem;
+        border: 1px solid currentColor;
+        justify-self: end;
+        line-height: 1.4;
+    }
+    .exception-register-tier-light { color: color-mix(in oklch, var(--primary) 85%, transparent); }
+    .exception-register-tier-mid { color: var(--accent); }
+    .exception-register-tier-heavy { color: var(--destructive); }
+    .exception-register-price {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--foreground);
+        text-align: right;
+        white-space: nowrap;
+        tabular-nums: 1;
+    }
+    .exception-register-arrow {
+        font-family: var(--font-mono);
+        color: var(--foreground-subtle);
+        font-size: 1.125rem;
+        transition: transform 0.2s ease, color 0.2s ease;
+        text-align: right;
+    }
+    .exception-register-row:hover .exception-register-arrow {
+        transform: translateX(4px);
+        color: var(--primary);
+    }
+    @media (max-width: 48rem) {
+        .exception-register-head { display: none; }
+        .exception-register-row {
+            grid-template-columns: 2rem 1fr;
+            grid-template-areas:
+                "idx  title"
+                ".    tier"
+                ".    price";
+            gap: 0.5rem 1rem;
+            padding: 1rem 1rem;
+        }
+        .exception-register-index { grid-area: idx; align-self: start; padding-top: 0.25rem; }
+        .exception-register-title { grid-area: title; }
+        .exception-register-tier { grid-area: tier; justify-self: start; text-align: left; }
+        .exception-register-price { grid-area: price; text-align: left; }
+        .exception-register-arrow { display: none; }
+    }
+
+    /* ── Variance plot exhibit (hero-side visual) ───────────────────────── */
+    .variance-exhibit {
+        position: relative;
+        background: var(--card);
+        border: 1px solid var(--border);
+        padding: 1.5rem 1.25rem 1.25rem;
+    }
+    .variance-exhibit-bar {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 3px;
+        background: var(--primary);
+    }
+    .variance-exhibit-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    .variance-exhibit-title {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+    }
+    .variance-exhibit-id {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--primary);
+        letter-spacing: 0.1em;
+    }
+    .variance-exhibit-caption {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--foreground-muted);
+        line-height: 1.5;
+        margin-top: 0.75rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border);
+    }
+    .variance-exhibit-caption strong {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* ── Side-by-side comparison ────────────────────────────────────────── */
+    .compare-grid {
+        @apply grid border border-border bg-background md:grid-cols-2;
+    }
+    .compare-cell {
+        @apply p-7 md:p-9;
+        border-bottom: 1px solid var(--border);
+    }
+    .compare-cell:last-child { border-bottom: none; }
+    .compare-cell-stale {
+        background: var(--card);
+    }
+    .compare-cell-stale .compare-cell-title { color: var(--foreground-subtle); }
+    .compare-cell-stale .compare-cell-list li { color: var(--foreground-subtle); }
+    .compare-cell-stale .compare-cell-list li::before {
+        background: var(--foreground-subtle);
+    }
+    .compare-cell-live .compare-cell-list li::before {
+        background: var(--primary);
+    }
+    @media (min-width: 48rem) {
+        .compare-cell { border-bottom: none; border-right: 1px solid var(--border); }
+        .compare-cell:last-child { border-right: none; }
+    }
+    .compare-cell-label {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+        margin-bottom: 0.75rem;
+    }
+    .compare-cell-title {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--foreground);
+        margin-bottom: 1.25rem;
+    }
+    .compare-cell-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+    .compare-cell-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: 0.9375rem;
+        line-height: 1.5;
+        color: var(--foreground);
+    }
+    .compare-cell-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 0.75rem;
+        height: 1px;
+        background: var(--primary);
+    }
+
+    /* ── Exhibit register (proof cards as case-file thumbnails) ─────────── */
+    .exhibit-grid {
+        @apply grid gap-[1px] bg-border md:grid-cols-3;
+        margin-top: 1.5rem;
+    }
+    .exhibit-card {
+        @apply flex flex-col bg-background p-6 transition-colors duration-200 hover:bg-card;
+        min-height: 18rem;
+    }
+    .exhibit-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 1rem;
+    }
+    .exhibit-card-label {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--primary);
+    }
+    .exhibit-card-meta {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        color: var(--foreground-subtle);
+        letter-spacing: 0.1em;
+    }
+    .exhibit-card-title {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: var(--foreground);
+        margin-bottom: 0.75rem;
+    }
+    .exhibit-card-body {
+        font-size: 0.875rem;
+        line-height: 1.55;
+        color: var(--foreground-muted);
+        text-wrap: pretty;
+    }
+    .exhibit-card-footer {
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+    }
+    .exhibit-card-footer strong {
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* ── Audit CTA panel (stamped) ──────────────────────────────────────── */
+    .audit-cta {
+        position: relative;
+        border: 1.5px solid var(--primary);
+        background:
+            repeating-linear-gradient(
+                135deg,
+                color-mix(in oklch, var(--primary) 2.5%, transparent) 0,
+                color-mix(in oklch, var(--primary) 2.5%, transparent) 2px,
+                transparent 2px,
+                transparent 14px
+            ),
+            var(--background);
+        padding: 2.5rem 2rem;
+    }
+    @media (min-width: 64rem) {
+        .audit-cta { padding: 3rem 3rem 3rem 4rem; }
+    }
+    .audit-cta-stamp {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        transform: rotate(6deg);
+    }
+    .audit-cta-grid {
+        display: grid;
+        gap: 2rem;
+        align-items: end;
+    }
+    @media (min-width: 64rem) {
+        .audit-cta-grid {
+            grid-template-columns: 1.4fr 1fr;
+            gap: 4rem;
+        }
+    }
+    .audit-cta-headline {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 3.5vw, 3.25rem);
+        font-weight: 500;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        color: var(--foreground);
+        max-width: 22ch;
+    }
+    .audit-cta-supporting {
+        font-size: 0.9375rem;
+        line-height: 1.55;
+        color: var(--foreground-muted);
+        margin-top: 1.25rem;
+        max-width: 36ch;
+    }
+    .audit-cta-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+        border-left: 1px solid var(--border);
+        padding-left: 1.5rem;
+    }
+    .audit-cta-list li {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        letter-spacing: 0.06em;
+        color: var(--foreground);
+        line-height: 1.45;
+        position: relative;
+        padding-left: 1rem;
+    }
+    .audit-cta-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+    }
+
+    /* ── Footnotes block ────────────────────────────────────────────────── */
+    .footnotes {
+        @apply mt-20 border-t border-border pt-8;
+    }
+    .footnotes-title {
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+        margin-bottom: 1rem;
+    }
+    .footnotes-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        counter-reset: footnote;
+        display: grid;
+        gap: 0.5rem;
+    }
+    .footnotes-list li {
+        counter-increment: footnote;
+        position: relative;
+        padding-left: 2rem;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        line-height: 1.55;
+        color: var(--foreground-muted);
+    }
+    .footnotes-list li::before {
+        content: counter(footnote);
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 0.625rem;
+        color: var(--accent);
+        font-weight: 600;
+    }
+
+    /* ── Section spacing tightener for the new homepage ─────────────────── */
+    .doc-section {
+        @apply py-20 md:py-28;
+    }
+    .doc-section-tight {
+        @apply py-12 md:py-16;
+    }
+    .doc-container {
+        @apply mx-auto w-full max-w-6xl px-6;
+    }
 }
