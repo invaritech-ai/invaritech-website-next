@@ -12,12 +12,12 @@ const BubbleChat = dynamic(
 
 export const Chatbot = () => {
     const irisIconSrc = "/iris.webp";
-    const PRIMARY_COLOR = "#C8962D"; // Amber to match site primary
-    const BG_COLOR = "#FBF8F3";      // Cream background
-    const MUTED_COLOR = "#7C6E58";   // Warm muted
-    const ON_AMBER_COLOR = "#1A1209"; // AA-compliant text on amber
-    const BOT_BG = "#F2EDE3";        // Slightly darker cream for bot messages
-    const USER_BG = "#C8962D";       // Amber for user messages
+    const PRIMARY_COLOR = "#0F5132"; // Forest green to match site primary
+    const BG_COLOR = "#F7F7F4";      // Off-white background
+    const MUTED_COLOR = "#4B5550";   // Cool muted-foreground
+    const ON_PRIMARY_COLOR = "#FFFFFF"; // White text on forest green
+    const BOT_BG = "#EEEDE8";        // Secondary surface for bot messages
+    const USER_BG = "#0F5132";       // Forest green for user messages
     const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
     useEffect(() => {
@@ -166,19 +166,19 @@ export const Chatbot = () => {
                 tooltip: {
                     showTooltip: !mobileMode,
                     tooltipMessage: "Ask about AP controls",
-                    tooltipBackgroundColor: "#FBF8F3",
-                    tooltipTextColor: "#1A1209",
+                    tooltipBackgroundColor: "#F7F7F4",
+                    tooltipTextColor: "#0B1410",
                     tooltipFontSize: 12,
                 },
                 disclaimer: {
                     title: "System Note",
                     message:
-                        'By accessing this terminal, you agree to the <a target="_blank" rel="noopener noreferrer" href="https://www.invaritech.ai/terms/" style="color: #C8962D; text-decoration: underline;">Protocols</a>',
+                        'By accessing this terminal, you agree to the <a target="_blank" rel="noopener noreferrer" href="https://www.invaritech.ai/terms/" style="color: #0F5132; text-decoration: underline;">Protocols</a>',
                     textColor: MUTED_COLOR,
                     buttonColor: PRIMARY_COLOR,
                     buttonText: "INITIALIZE LINK",
-                    buttonTextColor: ON_AMBER_COLOR,
-                    blurredBackgroundColor: "rgba(251, 248, 243, 0.85)",
+                    buttonTextColor: ON_PRIMARY_COLOR,
+                    blurredBackgroundColor: "rgba(247, 247, 244, 0.85)",
                     backgroundColor: BG_COLOR,
                 },
                 customCSS: `
@@ -192,18 +192,18 @@ export const Chatbot = () => {
                     }
                     /* Light theme window */
                     .chatbot-container {
-                        border: 1px solid #C8962D !important;
+                        border: 1px solid #0F5132 !important;
                         box-shadow: 0 20px 50px rgba(0,0,0,0.12) !important;
                         font-family: 'IBM Plex Mono', monospace !important;
                         max-height: min(78dvh, calc(100vh - 140px)) !important;
-                        background-color: #FBF8F3 !important;
+                        background-color: #F7F7F4 !important;
                     }
                     /* Fix Close Button */
                     button[class*="absolute"][class*="right-"] {
                         right: 4px !important;
                         top: 4px !important;
                         margin: 0 !important;
-                        color: #1A1209 !important;
+                        color: #0B1410 !important;
                     }
 
                     /* Mobile Responsiveness */
@@ -219,47 +219,47 @@ export const Chatbot = () => {
                     }
 
                     button[class*="bubble"] {
-                        border: 1px solid #C8962D !important;
+                        border: 1px solid #0F5132 !important;
                     }
                     .chatbot-header {
-                        background-color: #FBF8F3 !important;
-                        border-bottom: 1px solid #E2D9C8 !important;
-                        color: #1A1209 !important;
+                        background-color: #F7F7F4 !important;
+                        border-bottom: 1px solid #E2E4DE !important;
+                        color: #0B1410 !important;
                     }
                     .chatbot-header span, .chatbot-header p, .chatbot-header div {
-                        color: #1A1209 !important;
+                        color: #0B1410 !important;
                     }
                     /* Header avatar */
                     .chatbot-header img {
                         width: 60px !important;
                         height: 60px !important;
                         max-width: 60px !important;
-                        border: 1px solid #C8962D !important;
-                        box-shadow: 0 0 12px rgba(200, 150, 45, 0.15);
+                        border: 1px solid #0F5132 !important;
+                        box-shadow: 0 0 12px rgba(15, 81, 50, 0.15);
                         border-radius: 50%;
                         object-fit: cover !important;
                     }
                     .chatbot-input {
-                        background-color: #F2EDE3 !important;
-                        border-top: 1px solid #E2D9C8 !important;
-                        color: #1A1209 !important;
+                        background-color: #EEEDE8 !important;
+                        border-top: 1px solid #E2E4DE !important;
+                        color: #0B1410 !important;
                     }
                     .chatbot-input textarea, .chatbot-input input {
-                        color: #1A1209 !important;
+                        color: #0B1410 !important;
                         background-color: transparent !important;
                     }
                     .chatbot-input textarea::placeholder, .chatbot-input input::placeholder {
-                        color: #7C6E58 !important;
+                        color: #4B5550 !important;
                     }
                     .guest-message {
-                        background-color: #C8962D !important;
-                        color: ${ON_AMBER_COLOR} !important;
+                        background-color: #0F5132 !important;
+                        color: ${ON_PRIMARY_COLOR} !important;
                         border: none !important;
                     }
                     .bot-message {
-                        background-color: #F2EDE3 !important;
-                        color: #1A1209 !important;
-                        border: 1px solid #E2D9C8 !important;
+                        background-color: #EEEDE8 !important;
+                        color: #0B1410 !important;
+                        border: 1px solid #E2E4DE !important;
                     }
                     /* Messages area */
                     div[class*="start-messages-container"],
@@ -269,12 +269,12 @@ export const Chatbot = () => {
                     .rcb-chat-body {
                         overflow-y: auto !important;
                         scrollbar-width: thin !important;
-                        scrollbar-color: #C8962D transparent !important;
+                        scrollbar-color: #0F5132 transparent !important;
                         height: 100% !important;
                         display: flex !important;
                         flex-direction: column !important;
                         overscroll-behavior: contain !important;
-                        background-color: #FBF8F3 !important;
+                        background-color: #F7F7F4 !important;
                     }
                     ::-webkit-scrollbar {
                         width: 6px;
@@ -283,11 +283,11 @@ export const Chatbot = () => {
                         background: transparent;
                     }
                     ::-webkit-scrollbar-thumb {
-                        background: #C8962D;
+                        background: #0F5132;
                         border-radius: 3px;
                     }
                     ::-webkit-scrollbar-thumb:hover {
-                        background: #A67B23;
+                        background: #0A3D24;
                     }
                 `,
                 chatWindow: {
@@ -315,20 +315,20 @@ export const Chatbot = () => {
                     renderHTML: true,
                     botMessage: {
                         backgroundColor: BOT_BG,
-                        textColor: "#1A1209",
+                        textColor: "#0B1410",
                         showAvatar: true,
                         avatarSrc: irisIconSrc,
                     },
                     userMessage: {
                         backgroundColor: USER_BG,
-                        textColor: ON_AMBER_COLOR,
+                        textColor: ON_PRIMARY_COLOR,
                         showAvatar: false,
                         avatarSrc: "",
                     },
                     textInput: {
                         placeholder: "Input query...",
                         backgroundColor: BOT_BG,
-                        textColor: "#1A1209",
+                        textColor: "#0B1410",
                         sendButtonColor: PRIMARY_COLOR,
                         maxChars: 500,
                         maxCharsWarningMessage: "Buffer Overflow. Limit: 500 chars.",
@@ -339,7 +339,7 @@ export const Chatbot = () => {
                         receiveSoundLocation: "receive_message.mp3",
                     },
                     feedback: {
-                        color: "#7C6E58",
+                        color: "#4B5550",
                     },
                     dateTimeToggle: {
                         date: true,
