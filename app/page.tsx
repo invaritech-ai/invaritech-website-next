@@ -1,16 +1,16 @@
 import { Metadata } from "next";
 
-import PaymentControlHome from "@/components/payment-control-home";
+import ExceptionAutomationHome from "@/components/exception-automation-home";
 
 export const metadata: Metadata = {
-    title: "Payment Control Design for Australian Finance Teams",
+    title: "Finance Exception Automation Systems — Invaritech",
     description:
-        "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
+        "Invaritech builds AI-powered automation systems for finance and operations teams buried in invoices, documents, approvals, and manual exception checks. Move faster without adding headcount.",
     alternates: {
         canonical: "https://www.invaritech.ai/",
     },
 };
 
 export default function Home() {
-    return <PaymentControlHome />;
+    return <ExceptionAutomationHome />;
 }
