@@ -146,14 +146,14 @@
     --radius-lg: var(--radius);
     --radius-xl: calc(var(--radius) + 4px);
 
-    --shadow-2xs: 0 1px 2px rgba(28,20,16,0.03);
-    --shadow-xs: 0 1px 3px rgba(28,20,16,0.04);
-    --shadow-sm: 0 1px 4px rgba(28,20,16,0.05);
-    --shadow: 0 2px 8px rgba(28,20,16,0.05);
-    --shadow-md: 0 4px 12px rgba(28,20,16,0.06);
-    --shadow-lg: 0 8px 24px rgba(28,20,16,0.07);
-    --shadow-xl: 0 16px 48px rgba(28,20,16,0.08);
-    --shadow-2xl: 0 24px 64px rgba(28,20,16,0.1);
+    --shadow-2xs: 0 1px 2px rgba(11, 20, 16,0.03);
+    --shadow-xs: 0 1px 3px rgba(11, 20, 16,0.04);
+    --shadow-sm: 0 1px 4px rgba(11, 20, 16,0.05);
+    --shadow: 0 2px 8px rgba(11, 20, 16,0.05);
+    --shadow-md: 0 4px 12px rgba(11, 20, 16,0.06);
+    --shadow-lg: 0 8px 24px rgba(11, 20, 16,0.07);
+    --shadow-xl: 0 16px 48px rgba(11, 20, 16,0.08);
+    --shadow-2xl: 0 24px 64px rgba(11, 20, 16,0.1);
 
     --animate-scan: scan 3s linear infinite;
     --animate-pulse-slow: pulse-slow 6s cubic-bezier(0.4,0,0.6,1) infinite;
@@ -170,7 +170,7 @@ body {
     font-family: var(--font-body);
     background: var(--background);
     color: var(--foreground);
-    -webkit-tap-highlight-color: rgba(200,150,45,0.18);
+    -webkit-tap-highlight-color: rgba(15, 81, 50,0.18);
 }
 
 button,
@@ -432,8 +432,8 @@ textarea {
         inset: 0;
         z-index: -2;
         background-image:
-            linear-gradient(to right, rgba(28,20,16,0.04) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(28,20,16,0.04) 1px, transparent 1px);
+            linear-gradient(to right, rgba(11, 20, 16,0.04) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(11, 20, 16,0.04) 1px, transparent 1px);
         background-size: 72px 72px;
     }
 
@@ -443,7 +443,7 @@ textarea {
         inset: 0 0 auto;
         z-index: -1;
         height: 20rem;
-        background: linear-gradient(180deg, rgba(200,150,45,0.16), rgba(251,248,243,0));
+        background: linear-gradient(180deg, rgba(15, 81, 50,0.16), rgba(247, 247, 244,0));
     }
 
     .site-spotlight {
@@ -456,12 +456,12 @@ textarea {
         background:
             radial-gradient(
                 220px circle at var(--sx, 50vw) var(--sy, 50vh),
-                rgba(200, 150, 45, 0.22),
+                rgba(15, 81, 50, 0.22),
                 transparent 100%
             ),
             radial-gradient(
                 750px circle at var(--sx, 50vw) var(--sy, 50vh),
-                rgba(200, 150, 45, 0.07),
+                rgba(15, 81, 50, 0.07),
                 transparent 70%
             );
         mix-blend-mode: overlay;
@@ -1971,8 +1971,8 @@ textarea {
         inset: 0;
         pointer-events: none;
         background-image:
-            linear-gradient(to right, rgba(28, 20, 16, 0.015) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(28, 20, 16, 0.015) 1px, transparent 1px);
+            linear-gradient(to right, rgba(11, 20, 16, 0.015) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(11, 20, 16, 0.015) 1px, transparent 1px);
         background-size: 80px 80px;
     }
 }
