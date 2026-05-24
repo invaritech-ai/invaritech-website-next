@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { Logo, LogoIcon } from "@/components/logo";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 const navigationLinks = [
     { title: "Home", href: "/" },
@@ -10,7 +9,7 @@ const navigationLinks = [
     { title: "Work", href: "/work/" },
     { title: "About", href: "/about/" },
     { title: "Contact", href: "/contact/" },
-    { title: BOOK_MEETING_CTA, href: BOOK_MEETING_URL },
+    { title: "Free AP Controls Scan", href: "/contact/?scan=1" },
 ];
 
 const legalLinks = [

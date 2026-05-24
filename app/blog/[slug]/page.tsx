@@ -274,7 +274,7 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
                         </header>
 
-                        {/* Parchment reading card */}
+                        {/* Reading card */}
                         <div className="bg-card border border-border/60 p-8 md:p-14 mb-16">
                             <div className="relative flex gap-8 md:gap-12">
                                 {/* Marginalia track */}

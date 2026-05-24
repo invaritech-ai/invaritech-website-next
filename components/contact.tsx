@@ -201,25 +201,34 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1 text-foreground">Book a Meeting</h3>
+                                        <h3 className="font-medium mb-1 text-foreground">
+                                            {scanRequested ? "Request the Scan" : "Book a Meeting"}
+                                        </h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Skip the email loop and bring one
-                                            real accounts payable workflow
-                                            problem to a focused scoping session.
+                                            {scanRequested
+                                                ? "Use the form to start the free AP controls scan. We will confirm the export, NDA, and next step before asking for data."
+                                                : "Skip the email loop and bring one real accounts payable workflow problem to a focused scoping session."}
                                         </p>
                                         <Button
                                             asChild
                                             variant="default"
                                             className="group rounded-none"
                                         >
-                                            <a
-                                                href={BOOK_MEETING_URL}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                {BOOK_MEETING_CTA}
-                                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                            </a>
+                                            {scanRequested ? (
+                                                <Link href="#contact-form">
+                                                    Use the Form
+                                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </Link>
+                                            ) : (
+                                                <a
+                                                    href={BOOK_MEETING_URL}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    {BOOK_MEETING_CTA}
+                                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </a>
+                                            )}
                                         </Button>
                                     </div>
                                 </div>

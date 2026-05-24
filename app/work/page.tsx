@@ -49,7 +49,7 @@ export default function WorkPage() {
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="site-page-grid" />
                 <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
-                <div className="absolute bottom-1/3 -right-32 w-[400px] h-[400px] bg-[#2B4A8A]/[0.03] rounded-full blur-[120px]" />
+                <div className="absolute bottom-1/3 -right-32 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-[120px]" />
             </div>
 
             {/* Ghost word */}

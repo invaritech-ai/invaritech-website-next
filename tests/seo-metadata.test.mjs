@@ -131,6 +131,9 @@ describe("SEO metadata", () => {
         assert.match(headerSource, /\{\s*name:\s*"Work",\s*href:\s*"\/work\/"/);
         assert.match(headerSource, /\{\s*name:\s*"Free AP Controls Scan",\s*href:\s*"\/contact\/\?scan=1"/);
 
+        const footerSource = read("components/footer.tsx");
+        assert.match(footerSource, /\{\s*title:\s*"Free AP Controls Scan",\s*href:\s*"\/contact\/\?scan=1"/);
+
         assert.match(read("app/contact/page.tsx"), /\?\s*"Free AP Controls Scan"\s*:\s*"Get In Touch"/);
 
         for (const path of [
