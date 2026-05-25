@@ -9,7 +9,7 @@ export const Logo = ({
 }) => {
     return (
         <Image
-            src="/logo-text.webp"
+            src="/logo-text.png"
             alt="Invaritech Logo"
             width={480}
             height={64}
@@ -30,7 +30,7 @@ export const LogoIcon = ({
 }) => {
     return (
         <Image
-            src="/logo-image.webp"
+            src="/logo-image.png"
             alt="Invaritech Icon"
             width={32}
             height={32}

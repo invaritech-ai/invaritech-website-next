@@ -32,10 +32,10 @@ const stagger = (i: number) => ({
 
 function CoverHero() {
     return (
-        <section className="site-home-hero relative overflow-hidden">
-            <div className="doc-container pt-28 pb-24 md:pt-36 md:pb-32 relative">
+        <section className="site-home-hero relative overflow-hidden lg:min-h-screen">
+            <div className="doc-container relative flex flex-col pt-28 pb-12 md:pt-32 md:pb-14 lg:min-h-screen lg:pt-32 lg:pb-10">
                 {/* Top metadata strip */}
-                <motion.div {...fadeUp} className="doc-strip mb-16">
+                <motion.div {...fadeUp} className="doc-strip mb-10 lg:mb-12">
                     <span className="doc-strip-cell">
                         <strong>INV / 2026 / 001</strong>
                     </span>
@@ -47,11 +47,11 @@ function CoverHero() {
                     <span className="doc-strip-cell">First Wedge: Finance Exception</span>
                     <span className="doc-strip-spacer hidden md:inline-block" />
                     <span className="doc-strip-cell hidden md:inline-flex">
-                        Filed <strong className="ml-1">24·05·2026</strong>
+                        Filed <strong className="ml-1">25·05·2026</strong>
                     </span>
                 </motion.div>
 
-                <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16 items-end">
+                <div className="grid flex-1 items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
                     {/* Left — headline column */}
                     <div>
                         <motion.div {...stagger(0)} className="flex items-center gap-3 mb-8">
@@ -99,9 +99,9 @@ function CoverHero() {
                         </motion.p>
                     </div>
 
-                    {/* Right — variance exhibit */}
+                    {/* Right — variance exhibit (animated video, SVG fallback) */}
                     <motion.aside {...stagger(2)} className="lg:pl-8">
-                        <VarianceExhibit />
+                        <VarianceExhibitVideo />
                     </motion.aside>
                 </div>
 
@@ -109,7 +109,7 @@ function CoverHero() {
                 <motion.div
                     {...fadeUp}
                     transition={{ ...fadeUp.transition, delay: 0.5 }}
-                    className="mt-20 flex items-center gap-6 border-y border-border py-4"
+                    className="mt-12 flex items-center gap-6 border-y border-border py-4 lg:mt-10"
                 >
                     <span className="doc-stamp">First Wedge</span>
                     <p className="flex-1 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
@@ -123,7 +123,37 @@ function CoverHero() {
     );
 }
 
+// Hero-side data exhibit — Remotion-rendered video.
+// The video itself contains the full exhibit chrome (title bar, axes,
+// caption, stamp), so we render it edge-to-edge inside a token-styled
+// frame to preserve the document aesthetic.
+function VarianceExhibitVideo() {
+    return (
+        <figure className="relative border border-border bg-card">
+            <span
+                aria-hidden="true"
+                className="absolute inset-y-0 left-0 w-[3px] bg-primary"
+            />
+            <video
+                src="/hero/hero.mp4"
+                poster="/hero/hero-poster.jpg"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Animated AP variance exhibit: 16-week invoice series with two duplicate-candidate outliers flagged in copper."
+                className="block aspect-[3/2] w-full"
+            >
+                {/* Inline SVG fallback for browsers without MP4 / video support */}
+                <VarianceExhibit />
+            </video>
+        </figure>
+    );
+}
+
 // Hero-side data exhibit. A stylised variance plot drawn as inline SVG.
+// Retained as the canonical static representation and as <video> fallback.
 function VarianceExhibit() {
     // Mock invoice-amount series with two clear duplicate-candidate outliers.
     const data = [
