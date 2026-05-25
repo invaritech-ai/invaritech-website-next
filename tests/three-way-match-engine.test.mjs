@@ -121,3 +121,29 @@ describe("runMatch", () => {
         assert.equal(results[1].status, "DUPLICATE_INVOICE");
     });
 });
+
+import { parseInvoiceRows, parsePoRows, parseGrRows } from "../components/glossary/three-way-matcher/csv-parser.ts";
+import { SAMPLE_INVOICES_CSV, SAMPLE_POS_CSV, SAMPLE_GRS_CSV } from "../components/glossary/three-way-matcher/sample-data.ts";
+
+describe("sample data coverage", () => {
+    it("surfaces all 8 status types when run with 2% tolerance", () => {
+        const invs = parseInvoiceRows(SAMPLE_INVOICES_CSV);
+        const pos = parsePoRows(SAMPLE_POS_CSV);
+        const grs = parseGrRows(SAMPLE_GRS_CSV);
+        const results = runMatch(invs, pos, grs, { amountTolerancePercent: 2 });
+        const statuses = new Set(results.map((r) => r.status));
+
+        for (const expected of [
+            "MATCHED",
+            "AMOUNT_VARIANCE",
+            "QUANTITY_VARIANCE",
+            "MISSING_PO",
+            "MISSING_GR",
+            "VENDOR_MISMATCH",
+            "LINE_DESC_MISMATCH",
+            "DUPLICATE_INVOICE",
+        ]) {
+            assert.ok(statuses.has(expected), `Sample should surface ${expected}; got ${[...statuses].join(", ")}`);
+        }
+    });
+});
