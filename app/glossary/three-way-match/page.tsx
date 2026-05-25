@@ -30,6 +30,17 @@ function GlossaryProse({ children }: { children: React.ReactNode }) {
     );
 }
 
+function FaqItem({ question, children }: { question: string; children: React.ReactNode }) {
+    return (
+        <details className="border-b border-border py-4">
+            <summary className="cursor-pointer text-lg font-medium text-foreground site-font-display">
+                {question}
+            </summary>
+            <div className="mt-3 text-foreground-muted">{children}</div>
+        </details>
+    );
+}
+
 export const metadata: Metadata = {
     title: "Three-Way Match: Invoice, PO & Goods Receipt Matching | Invaritech",
     description:
@@ -272,6 +283,191 @@ export default function ThreeWayMatchPage() {
                                     <p className="mt-2 max-w-xl text-base text-foreground-muted">
                                         We review your full AP workflow and recommend the smallest useful
                                         first system. Free during launch for selected finance teams.
+                                    </p>
+                                </div>
+                                <div className="flex md:justify-end">
+                                    <Link href="/contact" className="site-button px-7">
+                                        Book the audit
+                                        <span className="ml-2 font-mono text-xs opacity-70">↗</span>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Section 5 */}
+                        <GlossaryH2 id="beyond-client-side" eyebrow="Section 05">
+                            Beyond client-side: OCR, LLM matching, agentic workflows
+                        </GlossaryH2>
+                        <GlossaryProse>
+                            <p>
+                                The matcher on this page is honest about its limits. It runs in your
+                                browser, takes structured rows as input, joins them on PO number, and
+                                applies fixed rules. That is enough to demonstrate every canonical
+                                exception type. It is not enough to run against your real AP workflow.
+                            </p>
+                            <p>
+                                Real AP workflows feed three-way match with messy inputs. Invoices arrive
+                                as PDFs, sometimes scanned, sometimes machine-generated, sometimes
+                                embedded in email bodies with no attachment. POs sit in an ERP behind
+                                export jobs that drop fields silently. Goods receipt notes are often
+                                handwritten and photographed by the receiving team.
+                            </p>
+                            <p>
+                                A production three-way match system has to handle three classes of work
+                                the client-side tool cannot:
+                            </p>
+                            <ul className="mt-3 space-y-2 list-disc pl-6">
+                                <li>
+                                    <strong>Document intelligence.</strong> OCR the invoice PDF, extract
+                                    line items, vendor metadata, totals, and tax. Same for the goods
+                                    receipt note. The match runs on the extracted fields, not on a
+                                    spreadsheet someone typed.
+                                </li>
+                                <li>
+                                    <strong>Fuzzy normalization.</strong> &ldquo;Acme Corp&rdquo; on the
+                                    invoice, &ldquo;Acme Corporation Inc.&rdquo; on the PO, and
+                                    &ldquo;ACME CORP&rdquo; in the vendor master are the same supplier.
+                                    Real systems normalize against a vendor master list with confidence
+                                    scores, not exact-string equality.
+                                </li>
+                                <li>
+                                    <strong>Agentic exception routing.</strong> A flagged invoice does not
+                                    stop with a flag. An agent decides whether to ask the buyer for
+                                    approval evidence, request a corrected invoice from the supplier,
+                                    hold for receiving to post the GR, or route to a human reviewer with
+                                    the full context attached. Each decision is policy-driven and
+                                    logged for audit.
+                                </li>
+                            </ul>
+                            <p>
+                                The client-side tool above demonstrates the matching logic. The full
+                                system wraps it with the document intake, the normalization layer, and
+                                the routing agent.
+                            </p>
+                        </GlossaryProse>
+
+                        {/* Section 6 */}
+                        <GlossaryH2 id="how-invaritech-builds" eyebrow="Section 06">
+                            How Invaritech builds three-way match automation
+                        </GlossaryH2>
+                        <GlossaryProse>
+                            <p>
+                                We build three-way match systems as fixed-scope engagements. Each build
+                                starts with a workflow audit, a written scope with acceptance criteria,
+                                and a 4 to 8 week build cycle. We sit on top of your existing accounting
+                                system (NetSuite, QuickBooks, Xero, SAP, MYOB), pull exports, ingest
+                                invoice documents from your supplier inbox, and run the match against
+                                your rules and your vendor master.
+                            </p>
+                            <p>
+                                Pricing on a starting three-way match system is USD 8k to 25k depending
+                                on workflow complexity, data sources, and rule count. The system
+                                handover includes documented rules, monitoring, and a deferred period
+                                where we tune the matcher against your first 30 days of real exception
+                                traffic.
+                            </p>
+                            <p>
+                                Adjacent proof for the kind of regulatory document workflows this style
+                                of build handles: we shipped the EU TRACES platform integration for a
+                                client&apos;s sustainability compliance program. Public review from
+                                Matthew Baldwin:{" "}
+                                <em>
+                                    &ldquo;Aditi and her team did an excellent job with the development
+                                    of an API with the EU&apos;s TRACES platform for our business. They
+                                    are extremely professional, and we were very impressed by their
+                                    skills, knowledge and reactivity.&rdquo;
+                                </em>{" "}
+                                That build handled a hundred-plus document types, regulatory exception
+                                routing, and evidence capture. The three-way match build pattern is the
+                                same shape applied to AP.
+                            </p>
+                        </GlossaryProse>
+
+                        {/* Section 7 — FAQ */}
+                        <GlossaryH2 id="faq" eyebrow="Section 07">
+                            Frequently asked questions
+                        </GlossaryH2>
+                        <GlossaryProse>
+                            <FaqItem question="What's the difference between two-way and three-way matching?">
+                                Two-way match checks invoice against PO. Three-way adds the goods receipt
+                                note. The goods-receipt leg is the only control that catches fraudulent
+                                invoices for goods never delivered. Two-way match is fine for services,
+                                subscriptions, and other non-physical goods. Three-way is the standard
+                                for physical inventory and capex purchases.
+                            </FaqItem>
+                            <FaqItem question="What's an acceptable amount tolerance?">
+                                Most companies set 2 to 5 percent with a small dollar floor (typically
+                                $25 to $100) to handle freight and fuel surcharges without flagging
+                                every line. Tighter than 1 percent generates noise; looser than 10
+                                percent stops catching real variances. The right number is whatever your
+                                audit team has agreed to and can defend.
+                            </FaqItem>
+                            <FaqItem question="Do small businesses need three-way matching?">
+                                Below roughly 100 invoices a month, the manual cost of three-way match
+                                may exceed the loss from skipping it. Above that volume, the math
+                                flips. The most cost-effective entry point for small teams is automated
+                                duplicate-invoice detection plus PO-only match on amount, leaving the
+                                goods-receipt leg manual until volume justifies automating it.
+                            </FaqItem>
+                            <FaqItem question="Can three-way matching catch duplicate payments?">
+                                Yes, and it is one of the highest-value catches. The PO number is the
+                                join key. Two invoices referencing the same PO are by definition
+                                candidate duplicates, regardless of whether the invoice numbers, dates,
+                                or amounts match. The matcher above demonstrates this with the
+                                DUPLICATE_INVOICE status.
+                            </FaqItem>
+                            <FaqItem question="How long does AP automation take to implement?">
+                                A fixed-scope three-way match system from us takes 4 to 8 weeks from
+                                kick-off to production. Most of the time goes to data plumbing (export
+                                format edge cases, document intake reliability, vendor master
+                                normalization), not to the matching logic itself.
+                            </FaqItem>
+                            <FaqItem question="What about non-PO invoices?">
+                                Non-PO invoices (subscriptions, utilities, professional services without
+                                a formal PO) bypass three-way match by design. They run through a
+                                different control set: approval evidence by amount band, recurring-vendor
+                                spend monitoring, and budget-line matching. A three-way match system
+                                does not try to handle them; a complete AP exception system does.
+                            </FaqItem>
+                        </GlossaryProse>
+
+                        {/* Section 8 — Related entries (placeholder) */}
+                        <GlossaryH2 id="related" eyebrow="Section 08">
+                            Related reading
+                        </GlossaryH2>
+                        <GlossaryProse>
+                            <ul className="space-y-2 list-disc pl-6">
+                                <li>
+                                    <Link href="/work#document-matching" className="text-primary underline-offset-4 hover:underline">
+                                        Invoice and Document Matching System — services overview
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/resources/invoice-extractor" className="text-primary underline-offset-4 hover:underline">
+                                        Invoice Extractor — extract structured fields from PDF invoices
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/resources/supplier-payment-control-rule-table" className="text-primary underline-offset-4 hover:underline">
+                                        Supplier Payment Control Rule Table — interactive rule reference
+                                    </Link>
+                                </li>
+                            </ul>
+                        </GlossaryProse>
+
+                        {/* Footer primary CTA */}
+                        <div className="mt-16 border-t border-border pt-10">
+                            <div className="grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-center">
+                                <div>
+                                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
+                                        Ready to automate three-way matching?
+                                    </p>
+                                    <h3 className="mt-3 max-w-xl text-2xl font-medium text-foreground site-font-display">
+                                        Book a free Finance Exception Audit.
+                                    </h3>
+                                    <p className="mt-3 max-w-xl text-base text-foreground-muted">
+                                        We review your full AP workflow and recommend the smallest useful
+                                        first system. Free during launch.
                                     </p>
                                 </div>
                                 <div className="flex md:justify-end">
