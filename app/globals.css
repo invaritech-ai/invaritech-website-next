@@ -2207,15 +2207,14 @@ textarea {
     }
     .exception-register-head {
         @apply grid items-center gap-4 border-b border-border bg-background px-5 py-3 font-mono text-[10px] uppercase tracking-[0.2em] text-foreground-subtle;
-        grid-template-columns: 3rem 1fr 6rem 7rem 1.5rem;
+        grid-template-columns: 3rem 1fr 7rem 1.5rem;
     }
-    .exception-register-head > span:nth-child(3),
-    .exception-register-head > span:nth-child(4) {
+    .exception-register-head > span:nth-child(3) {
         text-align: right;
     }
     .exception-register-row {
         display: grid;
-        grid-template-columns: 3rem 1fr 6rem 7rem 1.5rem;
+        grid-template-columns: 3rem 1fr 7rem 1.5rem;
         gap: 1rem;
         align-items: center;
         padding: 1.25rem 1.25rem;
@@ -2302,14 +2301,12 @@ textarea {
             grid-template-columns: 2rem 1fr;
             grid-template-areas:
                 "idx  title"
-                ".    tier"
                 ".    price";
             gap: 0.5rem 1rem;
             padding: 1rem 1rem;
         }
         .exception-register-index { grid-area: idx; align-self: start; padding-top: 0.25rem; }
         .exception-register-title { grid-area: title; }
-        .exception-register-tier { grid-area: tier; justify-self: start; text-align: left; }
         .exception-register-price { grid-area: price; text-align: left; }
         .exception-register-arrow { display: none; }
     }
@@ -2614,5 +2611,208 @@ textarea {
     }
     .doc-container {
         @apply mx-auto w-full max-w-6xl px-6;
+    }
+
+    /* ── Live operations strip (ticking header) ─────────────────────────── */
+    .live-strip {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0 1.5rem;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        padding: 0.65rem 0;
+        font-family: var(--font-mono);
+        font-size: 0.625rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+    }
+    .live-strip-cell {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .live-strip-cell strong {
+        color: var(--foreground);
+        font-weight: 600;
+    }
+    .live-strip-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 9999px;
+        background: var(--primary);
+        box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 60%, transparent);
+        animation: live-strip-pulse 2.2s ease-out infinite;
+    }
+    .live-strip-queue {
+        color: var(--accent);
+    }
+    .live-strip-queue strong {
+        color: var(--accent);
+    }
+    .live-strip-spacer {
+        margin-left: auto;
+    }
+    @keyframes live-strip-pulse {
+        0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 50%, transparent); }
+        70% { box-shadow: 0 0 0 6px color-mix(in oklch, var(--primary) 0%, transparent); }
+        100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--primary) 0%, transparent); }
+    }
+
+    /* ── Redline headline (struck-out word with replacement) ────────────── */
+    .doc-redline {
+        position: relative;
+        display: inline-block;
+        font-style: normal;
+        font-weight: 400;
+        color: color-mix(in oklch, var(--foreground) 38%, transparent);
+        text-decoration: line-through;
+        text-decoration-color: var(--accent);
+        text-decoration-thickness: 3px;
+        margin-right: 0.25em;
+    }
+    .doc-redline-mark {
+        position: absolute;
+        top: -0.85rem;
+        left: 0;
+        font-family: var(--font-mono);
+        font-size: 0.55rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+        white-space: nowrap;
+        line-height: 1;
+    }
+
+    /* ── Run log sidebar (paired with hero video) ───────────────────────── */
+    .run-log {
+        border: 1px solid var(--border);
+        background: var(--card);
+        padding: 1rem 1.1rem;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        line-height: 1.55;
+        color: var(--foreground-muted);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        min-height: 11rem;
+    }
+    .run-log-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 0.55rem;
+        border-bottom: 1px dashed var(--border);
+        font-size: 0.6rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--foreground-subtle);
+    }
+    .run-log-head strong {
+        color: var(--foreground);
+        font-weight: 600;
+    }
+    .run-log-feed {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        flex: 1;
+    }
+    .run-log-line {
+        display: grid;
+        grid-template-columns: 5.5rem 1fr;
+        gap: 0.6rem;
+        opacity: 0;
+        transform: translateY(4px);
+        animation: run-log-in 0.35s ease-out forwards;
+    }
+    .run-log-time {
+        color: var(--foreground-subtle);
+    }
+    .run-log-line.is-flag .run-log-msg {
+        color: var(--accent);
+    }
+    .run-log-line.is-route .run-log-msg {
+        color: var(--primary);
+    }
+    .run-log-tag {
+        display: inline-block;
+        margin-right: 0.4em;
+        padding: 0 0.35em;
+        font-size: 0.55rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        background: color-mix(in oklch, var(--foreground) 7%, transparent);
+        color: var(--foreground-subtle);
+    }
+    .run-log-line.is-flag .run-log-tag {
+        background: color-mix(in oklch, var(--accent) 12%, transparent);
+        color: var(--accent);
+    }
+    .run-log-line.is-route .run-log-tag {
+        background: color-mix(in oklch, var(--primary) 12%, transparent);
+        color: var(--primary);
+    }
+    @keyframes run-log-in {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Colophon (set-in footer block) ─────────────────────────────────── */
+    .colophon {
+        border-top: 1px solid var(--border);
+        padding: 3rem 0 3.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        line-height: 1.65;
+        color: var(--foreground-subtle);
+    }
+    .colophon-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    @media (min-width: 768px) {
+        .colophon-grid {
+            grid-template-columns: 1.4fr 1fr 1fr;
+            gap: 3rem;
+        }
+    }
+    .colophon-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+    .colophon-label {
+        font-size: 0.55rem;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.4rem;
+    }
+    .colophon-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        border-bottom: 1px dashed color-mix(in oklch, var(--border) 60%, transparent);
+        padding: 0.25rem 0;
+    }
+    .colophon-row strong {
+        color: var(--foreground);
+        font-weight: 500;
+    }
+    .colophon-statement {
+        max-width: 28rem;
+        color: var(--foreground-muted);
+        font-size: 0.72rem;
+        line-height: 1.7;
+    }
+    .colophon-statement em {
+        font-style: italic;
+        color: var(--primary);
     }
 }

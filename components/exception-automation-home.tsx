@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 
 /**
  * Exception Automation — homepage.
@@ -27,6 +28,98 @@ const stagger = (i: number) => ({
 });
 
 // ─────────────────────────────────────────────────────────────────────
+// Live operations strip — ticking metadata bar at the very top of hero
+// ─────────────────────────────────────────────────────────────────────
+
+function LiveOpsStrip() {
+    const [now, setNow] = useState<Date | null>(null);
+
+    useEffect(() => {
+        setNow(new Date());
+        const t = setInterval(() => setNow(new Date()), 1000);
+        return () => clearInterval(t);
+    }, []);
+
+    const time = now
+        ? now.toLocaleTimeString("en-GB", {
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+              hour12: false,
+              timeZone: "UTC",
+          })
+        : "—— ——";
+
+    return (
+        <div className="live-strip">
+            <span className="live-strip-cell">
+                <span className="live-strip-dot" aria-hidden />
+                <strong>INVARITECH</strong>
+            </span>
+            <span className="live-strip-cell">
+                <strong>{time}</strong> UTC
+            </span>
+            <span className="live-strip-cell">Finance exception automation</span>
+            <span className="live-strip-spacer" />
+            <span className="live-strip-cell live-strip-queue">
+                Agentic review queue · sample
+            </span>
+        </div>
+    );
+}
+
+// ─────────────────────────────────────────────────────────────────────
+// Run log — synthetic, paced log lines under the hero video
+// ─────────────────────────────────────────────────────────────────────
+
+type LogKind = "scan" | "flag" | "route";
+type LogLine = { time: string; kind: LogKind; tag: string; msg: string };
+
+const LOG_SCRIPT: LogLine[] = [
+    { time: "14:32:07", kind: "scan", tag: "SCAN", msg: "1,284 invoices · 16-week window" },
+    { time: "14:32:09", kind: "flag", tag: "FLAG", msg: "INV-8821 — variance +87% vs median" },
+    { time: "14:32:09", kind: "flag", tag: "DUP", msg: "INV-8847 — near-duplicate of INV-8821" },
+    { time: "14:32:10", kind: "route", tag: "ROUTE", msg: "ap-review · evidence attached" },
+    { time: "14:32:11", kind: "scan", tag: "PASS", msg: "1,266 invoices cleared · no action" },
+];
+
+function RunLog() {
+    const [visible, setVisible] = useState(1);
+
+    useEffect(() => {
+        if (visible >= LOG_SCRIPT.length) {
+            const reset = setTimeout(() => setVisible(1), 4500);
+            return () => clearTimeout(reset);
+        }
+        const t = setTimeout(() => setVisible((v) => v + 1), 1100);
+        return () => clearTimeout(t);
+    }, [visible]);
+
+    return (
+        <div className="run-log" aria-label="Run log">
+            <div className="run-log-head">
+                <span><strong>Run log</strong> · sample</span>
+            </div>
+            <div className="run-log-feed">
+                {LOG_SCRIPT.slice(0, visible).map((l, i) => (
+                    <div
+                        key={`${l.time}-${i}`}
+                        className={`run-log-line is-${l.kind}`}
+                        style={{ animationDelay: "0s" }}
+                    >
+                        <span className="run-log-time">{l.time}</span>
+                        <span className="run-log-msg">
+                            <span className="run-log-tag">{l.tag}</span>
+                            {l.msg}
+                        </span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // 1. Cover Hero
 // ─────────────────────────────────────────────────────────────────────
 
@@ -34,48 +127,34 @@ function CoverHero() {
     return (
         <section className="site-home-hero relative overflow-hidden lg:min-h-screen">
             <div className="doc-container relative flex flex-col pt-28 pb-12 md:pt-32 md:pb-14 lg:min-h-screen lg:pt-32 lg:pb-10">
-                {/* Top metadata strip */}
-                <motion.div {...fadeUp} className="doc-strip mb-10 lg:mb-12">
-                    <span className="doc-strip-cell">
-                        <strong>INV / 2026 / 001</strong>
-                    </span>
-                    <span className="doc-strip-divider" />
-                    <span className="doc-strip-cell">Issue 02 · Rev. 4</span>
-                    <span className="doc-strip-divider" />
-                    <span className="doc-strip-cell">Classification: Public</span>
-                    <span className="doc-strip-divider" />
-                    <span className="doc-strip-cell">First Wedge: Finance Exception</span>
-                    <span className="doc-strip-spacer hidden md:inline-block" />
-                    <span className="doc-strip-cell hidden md:inline-flex">
-                        Filed <strong className="ml-1">25·05·2026</strong>
-                    </span>
+                {/* Live operations strip */}
+                <motion.div {...fadeUp} className="mb-10 lg:mb-12">
+                    <LiveOpsStrip />
                 </motion.div>
 
                 <div className="grid flex-1 items-center gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-16">
                     {/* Left — headline column */}
                     <div>
-                        <motion.div {...stagger(0)} className="flex items-center gap-3 mb-8">
-                            <span className="doc-stamp doc-stamp-forest">
-                                Operating Doctrine · 12.1
-                            </span>
-                            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-foreground-subtle">
-                                Hero Statement
-                            </span>
-                        </motion.div>
-
                         <motion.h1 {...stagger(1)} className="doc-hero-headline">
-                            Move faster<br />
-                            without <em>adding</em><br />
-                            headcount.
+                            Your AP team should review{" "}
+                            <em>exceptions</em>,<br />
+                            not{" "}
+                            <span className="doc-redline">
+                                <span className="doc-redline-mark">strike</span>
+                                check everything manually
+                            </span>
+                            hunt for them.
                         </motion.h1>
 
                         <motion.p
                             {...stagger(2)}
                             className="mt-10 max-w-xl text-lg leading-relaxed text-foreground-muted"
                         >
-                            Invaritech builds AI-powered automation systems for finance
-                            and operations teams buried in invoices, documents,
-                            approvals, and manual exception checks.
+                            Invaritech builds finance exception automation systems
+                            with agentic review interfaces. Fixed-scope builds for
+                            finance teams that want to reduce manual checks, catch
+                            payment-control risks, and move faster without adding
+                            AP headcount.
                         </motion.p>
 
                         <motion.div
@@ -83,11 +162,11 @@ function CoverHero() {
                             className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center"
                         >
                             <Link href="/contact" className="site-button px-7">
-                                Book a workflow audit
+                                Book a free Finance Exception Audit
                                 <span className="ml-2 font-mono text-xs opacity-70">↗</span>
                             </Link>
                             <Link href="#exceptions" className="site-button-secondary px-7">
-                                See the exception register
+                                See what we automate
                             </Link>
                         </motion.div>
 
@@ -99,23 +178,25 @@ function CoverHero() {
                         </motion.p>
                     </div>
 
-                    {/* Right — variance exhibit (animated video, SVG fallback) */}
+                    {/* Right — variance exhibit + run log */}
                     <motion.aside {...stagger(2)} className="lg:pl-8">
-                        <VarianceExhibitVideo />
+                        <div className="grid gap-4">
+                            <VarianceExhibitVideo />
+                            <RunLog />
+                        </div>
                     </motion.aside>
                 </div>
 
-                {/* Bottom rule strip — declaration of the wedge */}
+                {/* Bottom rule strip */}
                 <motion.div
                     {...fadeUp}
                     transition={{ ...fadeUp.transition, delay: 0.5 }}
-                    className="mt-12 flex items-center gap-6 border-y border-border py-4 lg:mt-10"
+                    className="mt-12 border-y border-border py-4 lg:mt-10"
                 >
-                    <span className="doc-stamp">First Wedge</span>
-                    <p className="flex-1 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
                         Catch duplicate bills, vendor-detail changes, invoice
-                        exceptions, and approval gaps&nbsp;—&nbsp;before they become costly
-                        manual work, payment leakage, or another AP hire.
+                        exceptions, and approval gaps. Before they become manual
+                        work, payment leakage, or another AP hire.
                     </p>
                 </motion.div>
             </div>
@@ -288,29 +369,27 @@ function MessyMiddle() {
         <section className="doc-section border-t border-border bg-card/40">
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
-                    <span className="section-mark-numeral">§ 01</span>
-                    <h2 className="section-mark-title">The messy middle</h2>
-                    <span className="section-mark-meta">Where leakage hides</span>
+                    <h2 className="section-mark-title">The work moved. Your tools didn&apos;t.</h2>
+                    <span className="section-mark-meta">Exception handling is the bottleneck</span>
                 </motion.header>
 
                 <motion.div {...fadeUp} className="marginalia">
                     <aside className="marginalia-rail">
-                        <span className="marginalia-rail-key">Enemy</span>
-                        Business-critical work trapped in human memory, inboxes,
-                        spreadsheets, and disconnected systems.
+                        <span className="marginalia-rail-key">The problem</span>
+                        Finance teams compare exports, PDFs, inboxes, approvals,
+                        and spreadsheets just to know which payments need attention.
                     </aside>
 
                     <div className="marginalia-body">
                         <p>
-                            Your accounting system stores transactions. Your inbox
-                            stores documents. Your spreadsheet stores exceptions.
-                            Your approval tool stores decisions. But the actual
-                            business logic lives in people&apos;s heads.<sup>1</sup>
+                            The data is in the systems. The checking happens
+                            between them. That gap is where duplicate bills slip
+                            through. Where vendor bank changes go unapproved.
+                            Where invoices get paid without matching evidence.
                         </p>
                         <p>
-                            Most growing finance teams don&apos;t fail because they
-                            lack another SaaS subscription. They struggle because
-                            the work <em>between</em> systems is still manual.
+                            You can hire more people to close the gap. Or you can
+                            put an agent in it.
                         </p>
                     </div>
                 </motion.div>
@@ -318,24 +397,24 @@ function MessyMiddle() {
                 <motion.div {...fadeUp} className="relative">
                     <div className="gap-schematic">
                         {[
-                            { label: "System A", name: "Accounting", stores: "Transactions, vendor master, GL codes." },
-                            { label: "System B", name: "Inbox", stores: "PDFs, emails, scanned bills, approvals." },
-                            { label: "System C", name: "Spreadsheet", stores: "Exception list, reviewer notes, hold flags." },
-                            { label: "System D", name: "Approval tool", stores: "Sign-offs, evidence, audit history." },
+                            { name: "Accounting", stores: "Transactions, vendor master, GL codes." },
+                            { name: "Inbox", stores: "PDFs, emails, scanned bills, approvals." },
+                            { name: "Spreadsheet", stores: "Exception list, reviewer notes, hold flags." },
+                            { name: "Approval tool", stores: "Sign-offs, evidence, audit history." },
                         ].map((c) => (
-                            <div key={c.label} className="gap-cell">
-                                <div>
-                                    <div className="gap-cell-label">{c.label}</div>
-                                    <div className="gap-cell-name mt-1">{c.name}</div>
-                                </div>
+                            <div key={c.name} className="gap-cell">
+                                <div className="gap-cell-name">{c.name}</div>
                                 <div className="gap-cell-stores">{c.stores}</div>
                             </div>
                         ))}
                         <div className="gap-overlay">
                             <div className="gap-overlay-rule" />
-                            <div className="gap-overlay-stamp">Gap · manual checks</div>
                         </div>
                     </div>
+                    <p className="mt-4 max-w-xl text-sm text-foreground-muted">
+                        The data is in the systems. The <em>work</em> — checking,
+                        matching, chasing, approving — happens in the gaps between them.
+                    </p>
                 </motion.div>
             </div>
         </section>
@@ -350,46 +429,36 @@ const REGISTER = [
     {
         idx: "01",
         name: "Duplicate Invoice Exception System",
-        catches: "Exact and near-duplicate supplier bills before payment release.",
-        tier: "light" as const,
-        tierLabel: "Tier 01",
-        price: "$4k–12k",
+        catches: "Flags exact and near-duplicate supplier bills before payment release.",
+        price: "USD 4k to 12k",
         href: "/work#duplicate-invoice",
     },
     {
         idx: "02",
         name: "Vendor Change Control System",
-        catches: "Bank-detail and master-data changes — routed for approval evidence.",
-        tier: "mid" as const,
-        tierLabel: "Tier 02",
-        price: "$5k–15k",
+        catches: "Detects supplier bank-detail or master-data changes and routes them for approval evidence.",
+        price: "USD 5k to 15k",
         href: "/work#vendor-change",
     },
     {
         idx: "03",
         name: "Approval Gap Detection System",
-        catches: "Bills or payments missing required approval evidence trails.",
-        tier: "mid" as const,
-        tierLabel: "Tier 02",
-        price: "$6k–18k",
+        catches: "Finds bills or payments missing required approval evidence.",
+        price: "USD 6k to 18k",
         href: "/work#approval-gap",
     },
     {
         idx: "04",
-        name: "Invoice & Document Matching System",
-        catches: "Invoices, POs, delivery notes, and service evidence — compared.",
-        tier: "heavy" as const,
-        tierLabel: "Tier 03",
-        price: "$8k–25k",
+        name: "Invoice And Document Matching System",
+        catches: "Compares invoices, POs, delivery notes, and service evidence. Surfaces what does not match.",
+        price: "USD 8k to 25k",
         href: "/work#document-matching",
     },
     {
         idx: "05",
         name: "AP Exception Dashboard",
-        catches: "Single review queue for every exception type, with reviewer assignment.",
-        tier: "heavy" as const,
-        tierLabel: "Tier 03",
-        price: "$10k–30k",
+        catches: "One agentic review queue across every exception type. Reviewer assignment, evidence links, exportable reports.",
+        price: "USD 10k to 30k",
         href: "/work#exception-dashboard",
     },
 ];
@@ -399,17 +468,15 @@ function ExceptionRegister() {
         <section id="exceptions" className="doc-section border-t border-border">
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
-                    <span className="section-mark-numeral">§ 02</span>
-                    <h2 className="section-mark-title">Exception register</h2>
-                    <span className="section-mark-meta">Five starting systems · fixed scope</span>
+                    <h2 className="section-mark-title">Five builds. One umbrella. Fixed scope.</h2>
+                    <span className="section-mark-meta">Finance exception automation systems</span>
                 </motion.header>
 
                 <motion.div {...fadeUp} className="exception-register">
                     <div className="exception-register-head">
-                        <span>Item</span>
-                        <span>System</span>
-                        <span>Tier</span>
-                        <span>Launch range</span>
+                        <span>#</span>
+                        <span>What it does</span>
+                        <span>Price range</span>
                         <span />
                     </div>
                     {REGISTER.map((row, i) => (
@@ -429,11 +496,6 @@ function ExceptionRegister() {
                                     <span className="exception-register-name">{row.name}</span>
                                     <span className="exception-register-catches">{row.catches}</span>
                                 </span>
-                                <span
-                                    className={`exception-register-tier exception-register-tier-${row.tier}`}
-                                >
-                                    {row.tierLabel}
-                                </span>
                                 <span className="exception-register-price">{row.price}</span>
                                 <span className="exception-register-arrow">→</span>
                             </Link>
@@ -445,7 +507,7 @@ function ExceptionRegister() {
                     {...fadeUp}
                     className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle"
                 >
-                    Launch ranges depend on workflow complexity, data sources, and exception rules.
+                    Price ranges depend on workflow complexity, data sources, and exception rules.
                 </motion.p>
             </div>
         </section>
@@ -489,7 +551,6 @@ function ServiceMethod() {
         <section className="doc-section border-t border-border bg-card/40">
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
-                    <span className="section-mark-numeral">§ 03</span>
                     <h2 className="section-mark-title">How builds work</h2>
                     <span className="section-mark-meta">
                         Find · Encode · Automate · Monitor · Improve
@@ -499,9 +560,9 @@ function ServiceMethod() {
                 <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
                     <motion.aside {...fadeUp} className="marginalia-rail">
                         <span className="marginalia-rail-key">Service method</span>
-                        Every engagement starts with a fixed scope, clear inputs,
-                        and written acceptance criteria. No open-ended discovery.
-                        No vague AI promises. Every build hands over working
+                        Every build starts with a fixed scope, clear inputs, and
+                        written acceptance criteria. No open-ended discovery. No
+                        vague AI promises. Each handover includes working
                         automation, documented rules, and a monitoring plan.
                     </motion.aside>
 
@@ -547,14 +608,13 @@ function WhyCustom() {
         <section className="doc-section border-t border-border">
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
-                    <span className="section-mark-numeral">§ 04</span>
-                    <h2 className="section-mark-title">Why generic SaaS breaks here</h2>
-                    <span className="section-mark-meta">Built for shape, not specifics</span>
+                    <h2 className="section-mark-title">Why custom beats off-the-shelf here</h2>
+                    <span className="section-mark-meta">Your exceptions are not standard</span>
                 </motion.header>
 
                 <motion.div {...fadeUp} className="compare-grid">
                     <div className="compare-cell compare-cell-stale">
-                        <div className="compare-cell-label">Configuration A · Off-the-shelf</div>
+                        <div className="compare-cell-label">Off-the-shelf</div>
                         <div className="compare-cell-title">
                             Generic AP / accounting tool
                         </div>
@@ -567,7 +627,7 @@ function WhyCustom() {
                         </ul>
                     </div>
                     <div className="compare-cell compare-cell-live">
-                        <div className="compare-cell-label">Configuration B · Invaritech</div>
+                        <div className="compare-cell-label">Invaritech</div>
                         <div className="compare-cell-title">
                             Custom exception &amp; control layer
                         </div>
@@ -586,8 +646,8 @@ function WhyCustom() {
                     className="mt-8 max-w-2xl font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle"
                 >
                     We work <em className="not-italic text-foreground">on top of</em>{" "}
-                    Xero, MYOB, QuickBooks, and ERP exports. We do not replace your
-                    accounting system.<sup className="ml-0.5 text-accent">2</sup>
+                    QuickBooks, NetSuite, SAP, Xero, and ERP exports. We do not
+                    replace your accounting system.
                 </motion.p>
             </div>
         </section>
@@ -600,24 +660,24 @@ function WhyCustom() {
 
 const EXHIBITS = [
     {
-        label: "Exhibit A",
-        meta: "Case · 2025/EUDR",
+        label: "Case study",
+        meta: "2025",
         title: "EUDR Compliance Bridge",
         body: "Regulatory document workflow with REST/SOAP integration, evidence capture, and exception routing across a hundred-plus document types.",
         proves: "Complex document workflows",
         href: "/work/eudr-compliance-bridge",
     },
     {
-        label: "Exhibit B",
-        meta: "Demo · 2026/RT",
+        label: "Live demo",
+        meta: "Interactive",
         title: "Supplier Payment Control Rule Table",
-        body: "Interactive rule-table demo: filter, severity-rank, and configure payment-control rules against a sample AP register.",
+        body: "Filter, severity-rank, and configure payment-control rules against a sample AP register.",
         proves: "Rule library + exception logic",
         href: "/resources/supplier-payment-control-rule-table",
     },
     {
-        label: "Exhibit C",
-        meta: "Tool · 2026/IE",
+        label: "Live tool",
+        meta: "Free",
         title: "Invoice Extractor",
         body: "Upload a supplier invoice PDF; extract structured fields, vendor metadata, and line items for downstream rule application.",
         proves: "Document intelligence pipeline",
@@ -630,19 +690,17 @@ function Exhibits() {
         <section className="doc-section border-t border-border bg-card/40">
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
-                    <span className="section-mark-numeral">§ 05</span>
-                    <h2 className="section-mark-title">Exhibits</h2>
-                    <span className="section-mark-meta">What we have automated</span>
+                    <h2 className="section-mark-title">See what we have automated</h2>
+                    <span className="section-mark-meta">Case study · demo · live tool</span>
                 </motion.header>
 
                 <motion.p
                     {...fadeUp}
                     className="max-w-2xl text-base leading-relaxed text-foreground-muted"
                 >
-                    Production work shipped to date. Each piece demonstrates one
-                    capability that recurs across finance-exception builds:
-                    document handling, exception routing, integration, or
-                    evidence capture.
+                    Each piece below shows one capability that recurs across
+                    finance exception builds: document handling, exception
+                    routing, integration, or evidence capture.
                 </motion.p>
 
                 <div className="exhibit-grid">
@@ -662,7 +720,7 @@ function Exhibits() {
                                 <h3 className="exhibit-card-title">{ex.title}</h3>
                                 <p className="exhibit-card-body">{ex.body}</p>
                                 <div className="exhibit-card-footer">
-                                    <span>Proves · <strong>{ex.proves}</strong></span>
+                                    <span><strong>{ex.proves}</strong></span>
                                     <span>↗</span>
                                 </div>
                             </Link>
@@ -683,15 +741,11 @@ function AuditCTA() {
         <section className="doc-section border-t border-border">
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
-                    <span className="section-mark-numeral">§ 06</span>
                     <h2 className="section-mark-title">Free finance exception audit</h2>
                     <span className="section-mark-meta">Free during launch</span>
                 </motion.header>
 
                 <motion.div {...fadeUp} className="audit-cta">
-                    <div className="audit-cta-stamp">
-                        <span className="doc-stamp">Launch offer</span>
-                    </div>
                     <div className="audit-cta-grid">
                         <div>
                             <h3 className="audit-cta-headline">
@@ -700,13 +754,13 @@ function AuditCTA() {
                             </h3>
                             <p className="audit-cta-supporting">
                                 We will identify the highest-value exception
-                                pattern in your current AP workflow and
-                                recommend the smallest useful first system.
-                                Free during launch for selected finance teams.
+                                pattern and recommend the smallest useful first
+                                system to build. Free during launch for selected
+                                finance teams.
                             </p>
                             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                                 <Link href="/contact" className="site-button px-7">
-                                    Book the audit
+                                    Book a free Finance Exception Audit
                                     <span className="ml-2 font-mono text-xs opacity-70">↗</span>
                                 </Link>
                                 <Link href="/contact" className="site-button-secondary px-7">
@@ -758,6 +812,65 @@ function Footnotes() {
 }
 
 // ─────────────────────────────────────────────────────────────────────
+// 9. Colophon (set-in footer — typefaces, palette, build)
+// ─────────────────────────────────────────────────────────────────────
+
+function Colophon() {
+    const buildDate = new Date().toLocaleDateString("en-AU", {
+        year: "numeric",
+        month: "short",
+        day: "2-digit",
+    });
+    return (
+        <section className="colophon">
+            <div className="doc-container">
+                <div className="colophon-grid">
+                    <div className="colophon-block">
+                        <div className="colophon-label">Colophon</div>
+                        <p className="colophon-statement">
+                            Set in <em>Source Serif 4</em> and <em>IBM Plex Mono</em>.
+                            Composed as a forensic-accounting deliverable: numbered
+                            sections, marginalia, exhibits, footnotes. Rendered{" "}
+                            {buildDate}, Melbourne.
+                        </p>
+                    </div>
+                    <div className="colophon-block">
+                        <div className="colophon-label">Typefaces</div>
+                        <div className="colophon-row">
+                            <span>Display / body</span>
+                            <strong>Source Serif 4</strong>
+                        </div>
+                        <div className="colophon-row">
+                            <span>Mono / metadata</span>
+                            <strong>IBM Plex Mono</strong>
+                        </div>
+                        <div className="colophon-row">
+                            <span>Sans (UI)</span>
+                            <strong>Source Sans 3</strong>
+                        </div>
+                    </div>
+                    <div className="colophon-block">
+                        <div className="colophon-label">Palette</div>
+                        <div className="colophon-row">
+                            <span>Forest (primary)</span>
+                            <strong>#0F5132</strong>
+                        </div>
+                        <div className="colophon-row">
+                            <span>Copper (accent)</span>
+                            <strong>#B45309</strong>
+                        </div>
+                        <div className="colophon-row">
+                            <span>Paper</span>
+                            <strong>#F7F7F4</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+}
+
+// ─────────────────────────────────────────────────────────────────────
 // Page export
 // ─────────────────────────────────────────────────────────────────────
 
@@ -771,7 +884,6 @@ export default function ExceptionAutomationHome() {
             <WhyCustom />
             <Exhibits />
             <AuditCTA />
-            <Footnotes />
         </main>
     );
 }
