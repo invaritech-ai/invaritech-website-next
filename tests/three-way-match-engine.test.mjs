@@ -25,3 +25,43 @@ describe("joinByPo", () => {
         assert.equal(entry.length, 2);
     });
 });
+
+import { isAmountWithinTolerance, jaccardTokenOverlap } from "../components/glossary/three-way-matcher/match-engine.ts";
+
+describe("isAmountWithinTolerance", () => {
+    it("uses the larger of percentage or $50 floor", () => {
+        // 2% of 100 = $2, floor is $50, so $50 wins
+        assert.equal(isAmountWithinTolerance(100, 140, 2), true);  // diff $40 <= $50
+        assert.equal(isAmountWithinTolerance(100, 160, 2), false); // diff $60 > $50
+
+        // 2% of 10000 = $200, $50 floor loses
+        assert.equal(isAmountWithinTolerance(10000, 10199, 2), true);  // diff $199 <= $200
+        assert.equal(isAmountWithinTolerance(10000, 10250, 2), false); // diff $250 > $200
+    });
+
+    it("treats zero tolerance as exact match (within floating-point epsilon)", () => {
+        assert.equal(isAmountWithinTolerance(100, 100, 0), true);
+        assert.equal(isAmountWithinTolerance(100, 100.001, 0), true); // within epsilon
+        assert.equal(isAmountWithinTolerance(100, 101, 0), false);
+    });
+});
+
+describe("jaccardTokenOverlap", () => {
+    it("returns 1.0 for identical token sets", () => {
+        assert.equal(jaccardTokenOverlap("office chairs", "office chairs"), 1);
+    });
+
+    it("returns 0 for disjoint token sets", () => {
+        assert.equal(jaccardTokenOverlap("office chairs", "laptop bag"), 0);
+    });
+
+    it("is case-insensitive and ignores punctuation", () => {
+        assert.equal(jaccardTokenOverlap("Office Chairs!", "office, chairs"), 1);
+    });
+
+    it("returns partial overlap correctly", () => {
+        // {office, chair, premium} vs {office, chair} = 2/3 ~= 0.667
+        const result = jaccardTokenOverlap("office chair premium", "office chair");
+        assert.ok(Math.abs(result - 2 / 3) < 0.001);
+    });
+});
