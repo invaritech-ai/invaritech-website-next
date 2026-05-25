@@ -13,6 +13,7 @@ type Props = {
     onToleranceChange: (v: number) => void;
     onMatchNow: () => void;
     onResetSample: () => void;
+    onCsvUpload: (target: "invoice" | "po" | "gr", file: File) => void;
 };
 
 const TABS = ["invoice", "po", "gr"] as const;
@@ -102,7 +103,36 @@ export function ThreeWayMatcherInput(props: Props) {
                     </button>
                 </div>
             </div>
+
+            {/* CSV upload row */}
+            <div className="mt-4 grid gap-3 border-t border-border pt-4 md:grid-cols-3">
+                <CsvUploadCell label="Upload invoice CSV" target="invoice" onUpload={props.onCsvUpload} />
+                <CsvUploadCell label="Upload PO CSV" target="po" onUpload={props.onCsvUpload} />
+                <CsvUploadCell label="Upload GR CSV" target="gr" onUpload={props.onCsvUpload} />
+            </div>
         </div>
+    );
+}
+
+function CsvUploadCell(props: {
+    label: string;
+    target: "invoice" | "po" | "gr";
+    onUpload: (target: "invoice" | "po" | "gr", file: File) => void;
+}) {
+    return (
+        <label className="flex cursor-pointer flex-col gap-1 border border-dashed border-border bg-background p-3 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-subtle hover:border-primary/50">
+            <span>{props.label}</span>
+            <input
+                type="file"
+                accept=".csv,.tsv,text/csv,text/tab-separated-values"
+                className="hidden"
+                onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) props.onUpload(props.target, file);
+                    e.target.value = "";
+                }}
+            />
+        </label>
     );
 }
 

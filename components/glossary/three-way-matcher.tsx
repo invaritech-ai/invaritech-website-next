@@ -70,6 +70,30 @@ export function ThreeWayMatcher() {
         trackGlossaryEvent("glossary_filter_chip_click", { filter });
     };
 
+    const handleCsvUpload = useCallback(
+        async (target: "invoice" | "po" | "gr", file: File) => {
+            try {
+                const text = await file.text();
+                if (target === "invoice") setInvoiceCsv(text);
+                else if (target === "po") setPoCsv(text);
+                else setGrCsv(text);
+                inputMethodRef.current = "csv-upload";
+                trackGlossaryEvent("glossary_tool_csv_upload", {
+                    success: true,
+                    file_type: file.type || "unknown",
+                    target,
+                });
+            } catch (err) {
+                trackGlossaryEvent("glossary_tool_csv_upload", {
+                    success: false,
+                    error_type: err instanceof Error ? err.name : "unknown",
+                    target,
+                });
+            }
+        },
+        []
+    );
+
     return (
         <div className="space-y-6">
             <ThreeWayMatcherInput
@@ -83,6 +107,7 @@ export function ThreeWayMatcher() {
                 onToleranceChange={handleToleranceChange}
                 onMatchNow={handleMatch}
                 onResetSample={handleReset}
+                onCsvUpload={handleCsvUpload}
             />
 
             <ThreeWayMatcherResults results={results} onFilterChange={handleFilterChange} />
