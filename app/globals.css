@@ -3316,4 +3316,16 @@ textarea {
     .demo-preview-badge {
         @apply absolute bottom-3 left-3 inline-block border border-primary/40 bg-background/85 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-primary;
     }
+
+    .final-cta-panel {
+        @apply mt-4 border border-border bg-card/40 p-8 md:p-12;
+    }
+
+    .final-cta-headline {
+        @apply max-w-3xl text-3xl font-medium leading-tight text-foreground site-font-display md:text-4xl;
+    }
+
+    .final-cta-body {
+        @apply mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted;
+    }
 }
