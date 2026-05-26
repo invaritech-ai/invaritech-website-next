@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { trackGlossaryEvent } from "@/lib/analytics/glossary-events";
+import { trackSiteEvent } from "@/lib/analytics/site-events";
 
 export function ThreeWayMatcherSecondaryCTA() {
     const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
@@ -26,7 +26,7 @@ export function ThreeWayMatcherSecondaryCTA() {
                 throw new Error(j.error ?? "Submission failed");
             }
             setStatus("sent");
-            trackGlossaryEvent("glossary_secondary_cta_submit", {
+            trackSiteEvent("glossary_secondary_cta_submit", {
                 has_invoice_csv: hasInvoice > 0,
                 has_po_csv: hasPo > 0,
                 has_gr_csv: hasGr > 0,

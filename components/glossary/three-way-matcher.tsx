@@ -17,7 +17,7 @@ import {
     SAMPLE_GRS_CSV,
 } from "./three-way-matcher/sample-data";
 import type { MatchResult } from "./three-way-matcher/types";
-import { trackGlossaryEvent } from "@/lib/analytics/glossary-events";
+import { trackSiteEvent } from "@/lib/analytics/site-events";
 
 export function ThreeWayMatcher() {
     const [invoiceCsv, setInvoiceCsv] = useState(SAMPLE_INVOICES_CSV);
@@ -34,7 +34,7 @@ export function ThreeWayMatcher() {
         const out = runMatch(invoices, pos, grs, { amountTolerancePercent: tolerance });
         setResults(out);
 
-        trackGlossaryEvent("glossary_tool_run", {
+        trackSiteEvent("glossary_tool_run", {
             tolerance_percent: tolerance,
             input_method: inputMethodRef.current,
             has_gr_data: grs.length > 0,
@@ -64,11 +64,11 @@ export function ThreeWayMatcher() {
 
     const handleToleranceChange = (v: number) => {
         setTolerance(v);
-        trackGlossaryEvent("glossary_tool_tolerance_change", { new_value: v });
+        trackSiteEvent("glossary_tool_tolerance_change", { new_value: v });
     };
 
     const handleFilterChange = (filter: FilterKey) => {
-        trackGlossaryEvent("glossary_filter_chip_click", { filter });
+        trackSiteEvent("glossary_filter_chip_click", { filter });
     };
 
     const handleCsvUpload = useCallback(
@@ -79,13 +79,13 @@ export function ThreeWayMatcher() {
                 else if (target === "po") setPoCsv(text);
                 else setGrCsv(text);
                 inputMethodRef.current = "csv-upload";
-                trackGlossaryEvent("glossary_tool_csv_upload", {
+                trackSiteEvent("glossary_tool_csv_upload", {
                     success: true,
                     file_type: file.type || "unknown",
                     target,
                 });
             } catch (err) {
-                trackGlossaryEvent("glossary_tool_csv_upload", {
+                trackSiteEvent("glossary_tool_csv_upload", {
                     success: false,
                     error_type: err instanceof Error ? err.name : "unknown",
                     target,

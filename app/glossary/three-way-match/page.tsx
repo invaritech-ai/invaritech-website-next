@@ -7,7 +7,7 @@ import {
     buildArticleSchema,
     buildFaqSchema,
 } from "@/lib/seo/three-way-match-schema";
-import { GlossaryPrimaryCTA } from "@/components/glossary/glossary-primary-cta";
+import { AuditCTA } from "@/components/home/_shared/audit-cta";
 
 const LAST_UPDATED = "25 May 2026";
 const READ_TIME = "12 min";
@@ -116,7 +116,7 @@ export default function ThreeWayMatchPage() {
 
                     {/* Primary CTA */}
                     <div className="glossary-cta-row mt-8">
-                        <GlossaryPrimaryCTA location="hero" label="Book a free Finance Exception Audit" />
+                        <AuditCTA location="hero" label="Book a Finance Workflow Audit" src="glossary-3wm" />
                         <a href="#matcher" className="site-button-secondary glossary-primary-cta">
                             Try the matcher below
                         </a>
@@ -293,7 +293,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <GlossaryPrimaryCTA location="mid" label="Book the audit" />
+                                    <AuditCTA location="mid" label="Book a Finance Workflow Audit" src="glossary-3wm" />
                                 </div>
                             </div>
                         </div>
@@ -475,7 +475,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <GlossaryPrimaryCTA location="footer" label="Book the audit" />
+                                    <AuditCTA location="footer" label="Book a Finance Workflow Audit" src="glossary-3wm" />
                                 </div>
                             </div>
                         </div>
