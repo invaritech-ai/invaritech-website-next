@@ -452,7 +452,7 @@ const REGISTER = [
         name: "Invoice And Document Matching System",
         catches: "Compares invoices, POs, delivery notes, and service evidence. Surfaces what does not match.",
         price: "USD 8k to 25k",
-        href: "/work#document-matching",
+        href: "/glossary/three-way-match/",
     },
     {
         idx: "05",

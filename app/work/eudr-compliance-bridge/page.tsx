@@ -124,7 +124,11 @@ export default function EudrCaseStudyPage() {
 
                     <div className="mb-16 max-w-3xl">
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers.
+                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
+                            <Link href="/glossary/three-way-match/" className="site-link">
+                                three-way match glossary entry
+                            </Link>
+                            .
                         </p>
                     </div>
 

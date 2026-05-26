@@ -64,6 +64,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/glossary/three-way-match/`,
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/blog/`,
             changeFrequency: "weekly",
             priority: 0.7,
