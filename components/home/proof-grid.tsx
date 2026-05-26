@@ -21,7 +21,7 @@ const FINANCE: Exhibit[] = [
         label: "Case study",
         meta: "2025",
         title: "EUDR Compliance Bridge",
-        body: "Regulatory document workflow with REST/SOAP integration, evidence capture, and exception routing across a hundred-plus document types.",
+        body: "Built by members of our team in prior roles. Regulatory document workflow with REST and SOAP integration. Evidence capture and exception routing across 100+ document types.",
         proves: "Complex document workflows",
         href: "/work/eudr-compliance-bridge",
     },
@@ -29,7 +29,7 @@ const FINANCE: Exhibit[] = [
         label: "Live demo",
         meta: "Interactive",
         title: "Three-Way Matcher",
-        body: "Compare invoices, POs, and goods receipts in the browser. Surfaces every canonical AP exception type against sample data.",
+        body: "Built by Invaritech. Compare invoices, POs, and goods receipts in the browser. Surfaces every canonical AP exception against sample data.",
         proves: "Finance exception logic",
         href: "/glossary/three-way-match/",
     },
@@ -37,15 +37,15 @@ const FINANCE: Exhibit[] = [
         label: "Live tool",
         meta: "Free",
         title: "Invoice Extractor",
-        body: "Upload a supplier invoice PDF; extract structured fields, vendor metadata, and line items for downstream rule application.",
-        proves: "Document intelligence pipeline",
+        body: "Built by Invaritech. Upload a supplier invoice PDF. Extract structured fields, vendor metadata, and line items for downstream rule application.",
+        proves: "Document intelligence",
         href: "/resources/invoice-extractor",
     },
     {
         label: "Interactive",
         meta: "Reference",
         title: "Supplier Payment Control Rule Table",
-        body: "Filter, severity-rank, and configure payment-control rules against a sample AP register.",
+        body: "Built by Invaritech. Filter, severity-rank, and configure payment-control rules against a sample AP register.",
         proves: "Rule library + exception logic",
         href: "/resources/supplier-payment-control-rule-table",
     },
@@ -56,7 +56,7 @@ const ADJACENT: Exhibit[] = [
         label: "Capability",
         meta: "Workflow",
         title: "Inventory Workflow Automation",
-        body: "Messaging-driven inventory operations workflows with structured-data capture and approval routing.",
+        body: "Built by members of our team in prior roles. Messaging-driven inventory operations with structured-data capture and approval routing.",
         proves: "Messaging-driven workflows",
         href: "/work",
     },
@@ -64,7 +64,7 @@ const ADJACENT: Exhibit[] = [
         label: "Capability",
         meta: "Workflow",
         title: "WhatsApp Booking Automation",
-        body: "Appointment booking and coordination flows delivered through messaging, with downstream data sync.",
+        body: "Built by members of our team in prior roles. Appointment booking and coordination delivered through WhatsApp with downstream data sync.",
         proves: "Conversational operations",
         href: "/work",
     },
@@ -72,8 +72,8 @@ const ADJACENT: Exhibit[] = [
         label: "Capability",
         meta: "Integration",
         title: "Regulatory API Bridges",
-        body: "REST-to-SOAP and other protocol bridges for high-volume regulatory document submission.",
-        proves: "Integration & protocol bridges",
+        body: "Built by members of our team in prior roles. REST-to-SOAP protocol bridges for high-volume regulatory document submission.",
+        proves: "Integration + protocol bridges",
         href: "/work/eudr-compliance-bridge",
     },
 ];
@@ -88,7 +88,9 @@ export function ProofGrid({ variant }: Props) {
                 <motion.header {...fadeUp} className="section-mark">
                     <h2 className="section-mark-title">Built from real automation work</h2>
                     <span className="section-mark-meta">
-                        {isFinanceEmphasis ? "Finance · adjacent capability" : "Capability across workflows"}
+                        {isFinanceEmphasis
+                            ? "Finance proof. Adjacent capability."
+                            : "Across booking, inventory, regulatory submission, and finance controls."}
                     </span>
                 </motion.header>
 
