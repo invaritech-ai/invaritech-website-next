@@ -24,6 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1.0,
         },
         {
+            url: `${baseUrl}/finance-exception-automation/`,
+            changeFrequency: "weekly",
+            priority: 0.9,
+        },
+        {
             url: `${baseUrl}/about/`,
             changeFrequency: "monthly",
             priority: 0.8,
