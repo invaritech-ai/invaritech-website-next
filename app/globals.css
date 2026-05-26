@@ -2968,11 +2968,14 @@ textarea {
         @apply font-mono text-[11px] uppercase tracking-[0.18em] text-primary;
     }
     .glossary-matcher-textarea {
-        @apply h-64 w-full resize-y border border-border bg-background p-3 font-mono leading-relaxed text-foreground;
+        @apply h-48 w-full resize-y border border-border bg-background p-3 font-mono leading-relaxed text-foreground md:h-64;
         font-size: 12px;
     }
     .glossary-matcher-hint {
         @apply mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-subtle;
+    }
+    .glossary-mobile-scroll-hint {
+        @apply border-b border-border bg-card/40 px-4 py-2 font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-subtle md:hidden;
     }
 
     /* Controls row */

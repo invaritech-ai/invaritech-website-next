@@ -106,6 +106,7 @@ export function ThreeWayMatcherResults({ results, onFilterChange }: Props) {
             </div>
 
             {/* Results table */}
+            <p className="glossary-mobile-scroll-hint">Scroll table horizontally →</p>
             <div className="glossary-matcher-table-wrap">
                 <table className="glossary-matcher-table">
                     <thead>
