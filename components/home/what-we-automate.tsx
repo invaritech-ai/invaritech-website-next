@@ -9,14 +9,14 @@ const CARDS = [
     {
         eyebrow: "Focus area",
         title: "Finance exception checks",
-        body: "Duplicate bills, vendor changes, approval gaps, invoice and PO matching, payment-control rules.",
+        body: "Duplicate invoices, vendor-detail changes, approval gaps, document mismatches, payment-control rules. Catch them before payment.",
         href: "/finance-exception-automation",
         cta: "See finance systems",
     },
     {
         eyebrow: "Adjacent",
         title: "Regulatory document workflows",
-        body: "Multi-document submission, evidence capture, exception routing across a hundred-plus document types.",
+        body: "Multi-document submission, evidence capture, exception routing across 100+ document types. Built for the EU TRACES regulatory bridge.",
         href: "/work/eudr-compliance-bridge",
         cta: "See EUDR case study",
     },

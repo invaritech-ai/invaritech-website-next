@@ -18,17 +18,17 @@ const COPY: Record<Variant, {
     gapCaption: React.ReactNode;
 }> = {
     broad: {
-        title: "Your software stores the transaction. Your team still checks the exceptions.",
-        meta: "Exception handling is the bottleneck",
+        title: "The work moved. Your tools didn't.",
+        meta: "Exception handling is the bottleneck.",
         railKey: "The problem",
         railBody:
             "Operations teams compare exports, PDFs, inboxes, approvals, and spreadsheets just to know which records need attention.",
         bodyParagraphs: [
             <>
-                The data is in the systems. The checking happens between them.
+                The data lives in the systems. The checking happens between them.
                 That gap is where duplicate bills slip through, where vendor bank
-                changes go unapproved, where regulatory submissions are missed,
-                and where invoices get paid without matching evidence.
+                changes go unapproved, where regulatory submissions get missed, and
+                where invoices get paid without matching evidence.
             </>,
             <>You can hire more people to close the gap. Or you can put an agent in it.</>,
         ],
@@ -40,8 +40,8 @@ const COPY: Record<Variant, {
         ],
         gapCaption: (
             <>
-                The data is in the systems. The <em>work</em> — checking,
-                matching, chasing, approving — happens in the gaps between them.
+                The data lives in the systems. The work happens in the gaps. Checking.
+                Matching. Chasing. Approving.
             </>
         ),
     },

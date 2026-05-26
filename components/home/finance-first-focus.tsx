@@ -13,25 +13,25 @@ export function FinanceFirstFocus() {
                     <h2 className="section-mark-title">
                         Finance exception automation is our first focus.
                     </h2>
-                    <span className="section-mark-meta">Depth before breadth</span>
+                    <span className="section-mark-meta">Depth before breadth.</span>
                 </motion.header>
 
                 <motion.div {...fadeUp} className="finance-first-grid">
                     <div className="finance-first-body">
                         <p>
-                            Finance teams handle exceptions every day — duplicate
-                            bills, vendor-detail changes, missing approvals,
-                            invoice and PO mismatches, unusual amounts. Each one
-                            is rule-driven, high-frequency, and high-stakes when
-                            it goes wrong. That made it the right depth area.
+                            Finance teams handle exceptions every day. Duplicate bills.
+                            Vendor-detail changes. Missing approvals. Invoice and PO
+                            mismatches. Unusual amounts. Each one is rule-driven,
+                            high-frequency, and high-stakes when it goes wrong. That
+                            made it the right depth area.
                         </p>
                         <p>
-                            We have built five fixed-scope finance exception
-                            systems: duplicate-invoice detection, vendor change
-                            control, approval-gap detection, three-way matching,
-                            and an AP exception dashboard. They sit on top of
-                            your accounting system, ingest your documents, and
-                            route only the cases that need human review.
+                            We have built five fixed-scope finance exception systems.
+                            Duplicate-invoice detection. Vendor change control.
+                            Approval-gap detection. Three-way matching. AP exception
+                            dashboard. They sit on top of your accounting system,
+                            ingest your documents, and route only the cases that need
+                            human review.
                         </p>
                     </div>
                     <div className="finance-first-cta">
