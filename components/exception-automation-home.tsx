@@ -7,6 +7,7 @@ import { LiveOpsStrip } from "@/components/home/live-ops-strip";
 import { Problem } from "@/components/home/problem";
 import { RunLog } from "@/components/home/run-log";
 import { ServiceMethod } from "@/components/home/service-method";
+import { SystemsRegister } from "@/components/home/systems-register";
 import { VarianceExhibitVideo } from "@/components/home/variance-exhibit-video";
 import { fadeUp, stagger } from "@/components/home/_motion";
 
@@ -101,99 +102,6 @@ function CoverHero() {
                         work, payment leakage, or another AP hire.
                     </p>
                 </motion.div>
-            </div>
-        </section>
-    );
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// 3. Exception Register (use cases as indexed table)
-// ─────────────────────────────────────────────────────────────────────
-
-const REGISTER = [
-    {
-        idx: "01",
-        name: "Duplicate Invoice Exception System",
-        catches: "Flags exact and near-duplicate supplier bills before payment release.",
-        price: "USD 4k to 12k",
-        href: "/work#duplicate-invoice",
-    },
-    {
-        idx: "02",
-        name: "Vendor Change Control System",
-        catches: "Detects supplier bank-detail or master-data changes and routes them for approval evidence.",
-        price: "USD 5k to 15k",
-        href: "/work#vendor-change",
-    },
-    {
-        idx: "03",
-        name: "Approval Gap Detection System",
-        catches: "Finds bills or payments missing required approval evidence.",
-        price: "USD 6k to 18k",
-        href: "/work#approval-gap",
-    },
-    {
-        idx: "04",
-        name: "Invoice And Document Matching System",
-        catches: "Compares invoices, POs, delivery notes, and service evidence. Surfaces what does not match.",
-        price: "USD 8k to 25k",
-        href: "/glossary/three-way-match/",
-    },
-    {
-        idx: "05",
-        name: "AP Exception Dashboard",
-        catches: "One agentic review queue across every exception type. Reviewer assignment, evidence links, exportable reports.",
-        price: "USD 10k to 30k",
-        href: "/work#exception-dashboard",
-    },
-];
-
-function ExceptionRegister() {
-    return (
-        <section id="exceptions" className="doc-section border-t border-border">
-            <div className="doc-container">
-                <motion.header {...fadeUp} className="section-mark">
-                    <h2 className="section-mark-title">Five builds. One umbrella. Fixed scope.</h2>
-                    <span className="section-mark-meta">Finance exception automation systems</span>
-                </motion.header>
-
-                <motion.div {...fadeUp} className="exception-register">
-                    <div className="exception-register-head">
-                        <span>#</span>
-                        <span>What it does</span>
-                        <span>Price range</span>
-                        <span />
-                    </div>
-                    {REGISTER.map((row, i) => (
-                        <motion.div
-                            key={row.idx}
-                            initial={{ opacity: 0, y: 12 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "-40px" }}
-                            transition={{ duration: 0.45, delay: i * 0.05, ease: [0.2, 0.7, 0.2, 1] }}
-                        >
-                            <Link
-                                href={row.href}
-                                className="exception-register-row"
-                            >
-                                <span className="exception-register-index">{row.idx}</span>
-                                <span className="exception-register-title">
-                                    <span className="exception-register-name">{row.name}</span>
-                                    <span className="exception-register-catches">{row.catches}</span>
-                                </span>
-                                <span className="exception-register-price">{row.price}</span>
-                                <span className="exception-register-arrow">→</span>
-                            </Link>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                <motion.p
-                    {...fadeUp}
-                    className="mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle"
-                >
-                    Price ranges depend on workflow complexity, data sources, and exception rules.
-                </motion.p>
             </div>
         </section>
     );
@@ -479,7 +387,7 @@ export default function ExceptionAutomationHome() {
         <main className="site-page">
             <CoverHero />
             <Problem variant="broad" />
-            <ExceptionRegister />
+            <SystemsRegister />
             <ServiceMethod variant="broad" />
             <WhyCustom />
             <Exhibits />
