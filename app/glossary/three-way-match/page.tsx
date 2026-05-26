@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ThreeWayMatcher } from "@/components/glossary/three-way-matcher";
+import {
+    buildBreadcrumbSchema,
+    buildArticleSchema,
+    buildFaqSchema,
+} from "@/lib/seo/three-way-match-schema";
 
 const LAST_UPDATED = "25 May 2026";
 const READ_TIME = "12 min";
@@ -47,7 +52,21 @@ export const metadata: Metadata = {
 };
 
 export default function ThreeWayMatchPage() {
+    const schemas = [
+        buildBreadcrumbSchema(),
+        buildArticleSchema({ lastUpdated: "2026-05-25" }),
+        buildFaqSchema(),
+    ];
+
     return (
+        <>
+            {schemas.map((schema, i) => (
+                <script
+                    key={i}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+                />
+            ))}
         <main className="site-page">
             <section className="doc-section">
                 <div className="doc-container">
@@ -472,5 +491,6 @@ export default function ThreeWayMatchPage() {
                 </div>
             </section>
         </main>
+        </>
     );
 }
