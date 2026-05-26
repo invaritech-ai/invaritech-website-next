@@ -3179,7 +3179,10 @@ textarea {
     .service-method-row { @apply grid grid-cols-[auto_1fr] gap-6 items-start; }
     .service-method-step { @apply font-mono text-2xl text-primary leading-none; }
     .service-method-body { @apply space-y-2; }
-    .service-method-title { @apply text-xl font-medium text-foreground site-font-display; }
+    .service-method-title {
+        @apply text-xl font-medium text-foreground;
+        font-family: var(--font-display);
+    }
     .service-method-text { @apply text-base leading-relaxed text-foreground-muted; }
     .service-method-output { @apply font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle; }
 
@@ -3236,7 +3239,8 @@ textarea {
     }
 
     .what-we-automate-title {
-        @apply mt-4 text-xl font-medium text-foreground site-font-display;
+        @apply mt-4 text-xl font-medium text-foreground;
+        font-family: var(--font-display);
     }
 
     .what-we-automate-body {
@@ -3322,7 +3326,8 @@ textarea {
     }
 
     .final-cta-headline {
-        @apply max-w-3xl text-3xl font-medium leading-tight text-foreground site-font-display md:text-4xl;
+        @apply max-w-3xl text-3xl font-medium leading-tight text-foreground md:text-4xl;
+        font-family: var(--font-display);
     }
 
     .final-cta-body {
