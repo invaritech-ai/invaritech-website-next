@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { LiveOpsStrip } from "@/components/home/live-ops-strip";
 import { Problem } from "@/components/home/problem";
 import { RunLog } from "@/components/home/run-log";
+import { ServiceMethod } from "@/components/home/service-method";
 import { VarianceExhibitVideo } from "@/components/home/variance-exhibit-video";
 import { fadeUp, stagger } from "@/components/home/_motion";
 
@@ -193,91 +194,6 @@ function ExceptionRegister() {
                 >
                     Price ranges depend on workflow complexity, data sources, and exception rules.
                 </motion.p>
-            </div>
-        </section>
-    );
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// 4. Service method (5 steps with vertical thread)
-// ─────────────────────────────────────────────────────────────────────
-
-const METHOD = [
-    {
-        title: "Find the leakage",
-        body: "Audit current workflow, documents, exports, approvals, and manual checks.",
-        output: "Workflow map · exception risk list",
-    },
-    {
-        title: "Encode the rules",
-        body: "Convert business logic into deterministic checks, AI-assisted matching, and exception rules.",
-        output: "Rule library · acceptance criteria",
-    },
-    {
-        title: "Automate the checks",
-        body: "Build the workflow layer that reviews documents and data before humans waste time.",
-        output: "Working automation · alerts",
-    },
-    {
-        title: "Monitor the exceptions",
-        body: "Surface only the cases that need human judgment. Everything else is logged and dismissed.",
-        output: "Exception dashboard · digest",
-    },
-    {
-        title: "Improve the workflow",
-        body: "Use real usage data to make the process faster, safer, and less dependent on headcount.",
-        output: "Rule updates · monthly delta",
-    },
-];
-
-function ServiceMethod() {
-    return (
-        <section className="doc-section border-t border-border bg-card/40">
-            <div className="doc-container">
-                <motion.header {...fadeUp} className="section-mark">
-                    <h2 className="section-mark-title">How builds work</h2>
-                    <span className="section-mark-meta">
-                        Find · Encode · Automate · Monitor · Improve
-                    </span>
-                </motion.header>
-
-                <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-                    <motion.aside {...fadeUp} className="marginalia-rail">
-                        <span className="marginalia-rail-key">Service method</span>
-                        Every build starts with a fixed scope, clear inputs, and
-                        written acceptance criteria. No open-ended discovery. No
-                        vague AI promises. Each handover includes working
-                        automation, documented rules, and a monitoring plan.
-                    </motion.aside>
-
-                    <div className="site-home-step-ledger">
-                        {METHOD.map((step, i) => (
-                            <motion.div
-                                key={step.title}
-                                initial={{ opacity: 0, x: 12 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true, margin: "-40px" }}
-                                transition={{ duration: 0.5, delay: i * 0.06, ease: [0.2, 0.7, 0.2, 1] }}
-                                className="site-home-step"
-                            >
-                                <div className="site-home-step-node">
-                                    {String(i + 1).padStart(2, "0")}
-                                </div>
-                                <div>
-                                    <div className="flex items-baseline gap-3 flex-wrap">
-                                        <span className="text-lg font-medium text-foreground site-font-display">
-                                            {step.title}
-                                        </span>
-                                        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-foreground-subtle">
-                                            → {step.output}
-                                        </span>
-                                    </div>
-                                    <p className="site-home-step-body">{step.body}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
             </div>
         </section>
     );
@@ -564,7 +480,7 @@ export default function ExceptionAutomationHome() {
             <CoverHero />
             <Problem variant="broad" />
             <ExceptionRegister />
-            <ServiceMethod />
+            <ServiceMethod variant="broad" />
             <WhyCustom />
             <Exhibits />
             <AuditCTA />

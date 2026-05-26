@@ -3174,4 +3174,12 @@ textarea {
     .problem-pain-list {
         @apply mt-2 mb-2 grid gap-1 list-disc pl-6 text-base;
     }
+
+    .service-method-list { @apply space-y-8 list-none p-0; }
+    .service-method-row { @apply grid grid-cols-[auto_1fr] gap-6 items-start; }
+    .service-method-step { @apply font-mono text-2xl text-primary leading-none; }
+    .service-method-body { @apply space-y-2; }
+    .service-method-title { @apply text-xl font-medium text-foreground site-font-display; }
+    .service-method-text { @apply text-base leading-relaxed text-foreground-muted; }
+    .service-method-output { @apply font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle; }
 }
