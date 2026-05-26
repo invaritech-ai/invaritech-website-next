@@ -3202,4 +3202,38 @@ textarea {
     .exception-register-footnote {
         @apply mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
     }
+
+    /* Money page */
+
+    .why-not-accounting-lede {
+        @apply mt-8 max-w-2xl text-base leading-relaxed text-foreground-muted;
+    }
+
+    .why-not-accounting-table-wrap {
+        @apply mt-8 overflow-x-auto border border-border;
+    }
+
+    .why-not-accounting-table {
+        @apply w-full border-collapse text-sm;
+    }
+
+    .why-not-accounting-table thead th {
+        @apply border-b border-border bg-card/60 px-4 py-3 text-left font-mono text-[11px] uppercase tracking-[0.18em] text-primary;
+    }
+
+    .why-not-accounting-table tbody td {
+        @apply border-b border-border/60 px-4 py-3 text-foreground;
+    }
+
+    .why-not-accounting-table tbody tr:last-child td {
+        @apply border-b-0;
+    }
+
+    .why-not-accounting-table tbody td:first-child {
+        @apply bg-card/40 text-foreground-muted;
+    }
+
+    .why-not-accounting-footer {
+        @apply mt-8 max-w-2xl font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
+    }
 }

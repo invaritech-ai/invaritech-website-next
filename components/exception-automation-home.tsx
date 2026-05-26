@@ -9,6 +9,7 @@ import { RunLog } from "@/components/home/run-log";
 import { ServiceMethod } from "@/components/home/service-method";
 import { SystemsRegister } from "@/components/home/systems-register";
 import { VarianceExhibitVideo } from "@/components/home/variance-exhibit-video";
+import { WhyNotAccounting } from "@/components/home/why-not-accounting";
 import { fadeUp, stagger } from "@/components/home/_motion";
 
 /**
@@ -102,61 +103,6 @@ function CoverHero() {
                         work, payment leakage, or another AP hire.
                     </p>
                 </motion.div>
-            </div>
-        </section>
-    );
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// 5. Why custom (Generic SaaS vs Invaritech Control Layer)
-// ─────────────────────────────────────────────────────────────────────
-
-function WhyCustom() {
-    return (
-        <section className="doc-section border-t border-border">
-            <div className="doc-container">
-                <motion.header {...fadeUp} className="section-mark">
-                    <h2 className="section-mark-title">Why custom beats off-the-shelf here</h2>
-                    <span className="section-mark-meta">Your exceptions are not standard</span>
-                </motion.header>
-
-                <motion.div {...fadeUp} className="compare-grid">
-                    <div className="compare-cell compare-cell-stale">
-                        <div className="compare-cell-label">Off-the-shelf</div>
-                        <div className="compare-cell-title">
-                            Generic AP / accounting tool
-                        </div>
-                        <ul className="compare-cell-list">
-                            <li>Detects exact-match duplicates only.</li>
-                            <li>No knowledge of your supplier naming conventions.</li>
-                            <li>Cannot enforce approval evidence by amount or vendor risk.</li>
-                            <li>Routes everything for review — including the boring 95%.</li>
-                            <li>Cannot read your inbox, PDFs, or sheet-based holds.</li>
-                        </ul>
-                    </div>
-                    <div className="compare-cell compare-cell-live">
-                        <div className="compare-cell-label">Invaritech</div>
-                        <div className="compare-cell-title">
-                            Custom exception &amp; control layer
-                        </div>
-                        <ul className="compare-cell-list">
-                            <li>Exact, fuzzy, and semantic duplicate detection.</li>
-                            <li>Encodes your supplier naming, references, and PO patterns.</li>
-                            <li>Approval rules per amount band, vendor risk, and document trail.</li>
-                            <li>Surfaces only the 5% worth a reviewer&apos;s time.</li>
-                            <li>Connects accounting exports, inbox, documents, and sheets.</li>
-                        </ul>
-                    </div>
-                </motion.div>
-
-                <motion.p
-                    {...fadeUp}
-                    className="mt-8 max-w-2xl font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle"
-                >
-                    We work <em className="not-italic text-foreground">on top of</em>{" "}
-                    QuickBooks, NetSuite, SAP, Xero, and ERP exports. We do not
-                    replace your accounting system.
-                </motion.p>
             </div>
         </section>
     );
@@ -389,7 +335,7 @@ export default function ExceptionAutomationHome() {
             <Problem variant="broad" />
             <SystemsRegister />
             <ServiceMethod variant="broad" />
-            <WhyCustom />
+            <WhyNotAccounting />
             <Exhibits />
             <AuditCTA />
         </main>
