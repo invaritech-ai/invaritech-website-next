@@ -7,6 +7,7 @@ import {
     buildArticleSchema,
     buildFaqSchema,
 } from "@/lib/seo/three-way-match-schema";
+import { GlossaryPrimaryCTA } from "@/components/glossary/glossary-primary-cta";
 
 const LAST_UPDATED = "25 May 2026";
 const READ_TIME = "12 min";
@@ -115,10 +116,7 @@ export default function ThreeWayMatchPage() {
 
                     {/* Primary CTA */}
                     <div className="glossary-cta-row mt-8">
-                        <Link href="/contact" className="site-button glossary-primary-cta">
-                            Book a free Finance Exception Audit
-                            <span className="glossary-cta-arrow">↗</span>
-                        </Link>
+                        <GlossaryPrimaryCTA location="hero" label="Book a free Finance Exception Audit" />
                         <a href="#matcher" className="site-button-secondary glossary-primary-cta">
                             Try the matcher below
                         </a>
@@ -295,10 +293,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <Link href="/contact" className="site-button glossary-primary-cta">
-                                        Book the audit
-                                        <span className="glossary-cta-arrow">↗</span>
-                                    </Link>
+                                    <GlossaryPrimaryCTA location="mid" label="Book the audit" />
                                 </div>
                             </div>
                         </div>
@@ -480,10 +475,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <Link href="/contact" className="site-button glossary-primary-cta">
-                                        Book the audit
-                                        <span className="glossary-cta-arrow">↗</span>
-                                    </Link>
+                                    <GlossaryPrimaryCTA location="footer" label="Book the audit" />
                                 </div>
                             </div>
                         </div>
