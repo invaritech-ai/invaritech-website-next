@@ -22,7 +22,7 @@ type Props = {
     className?: string;
 };
 
-const DEFAULT_LABEL = "Book a Finance Workflow Audit";
+const DEFAULT_LABEL = "Book a Finance Exception Audit Call";
 const DEFAULT_HREF = "/contact?audit=1";
 
 const SESSION_SRC_KEY = "invaritech.utm.src";
