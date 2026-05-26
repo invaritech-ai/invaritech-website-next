@@ -3292,4 +3292,28 @@ textarea {
     .why-not-accounting-footer {
         @apply mt-8 max-w-2xl font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
     }
+
+    .demo-preview-grid {
+        @apply mt-10 grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center;
+    }
+
+    .demo-preview-copy {
+        @apply space-y-5 max-w-xl text-base leading-relaxed text-foreground;
+    }
+
+    .demo-preview-reminder {
+        @apply border-l-[3px] border-primary bg-card/60 px-4 py-3 text-sm text-foreground-muted;
+    }
+
+    .demo-preview-tile {
+        @apply relative block overflow-hidden border border-border bg-card transition-colors hover:bg-card/80;
+    }
+
+    .demo-preview-image {
+        @apply block w-full h-auto;
+    }
+
+    .demo-preview-badge {
+        @apply absolute bottom-3 left-3 inline-block border border-primary/40 bg-background/85 px-2 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-primary;
+    }
 }
