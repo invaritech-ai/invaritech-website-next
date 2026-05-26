@@ -2,14 +2,23 @@ import Link from "next/link";
 
 import { Logo, LogoIcon } from "@/components/logo";
 
-const navigationLinks = [
+const companyLinks = [
     { title: "Home", href: "/" },
+    { title: "Finance Automation", href: "/finance-exception-automation/" },
+    { title: "Demo", href: "/glossary/three-way-match/" },
     { title: "Resources", href: "/resources/" },
     { title: "Blog", href: "/blog/" },
     { title: "Work", href: "/work/" },
     { title: "About", href: "/about/" },
     { title: "Contact", href: "/contact/" },
-    { title: "Free AP Controls Scan", href: "/contact/?scan=1" },
+];
+
+const financeLinks = [
+    { title: "Finance Exception Automation", href: "/finance-exception-automation/" },
+    { title: "Three-Way Matching", href: "/glossary/three-way-match/" },
+    { title: "Invoice Extractor", href: "/resources/invoice-extractor/" },
+    { title: "Cost to Close Calculator", href: "/resources/cost-to-close-calculator/" },
+    { title: "Payment Control Rules", href: "/resources/supplier-payment-control-rule-table/" },
 ];
 
 const legalLinks = [
@@ -89,9 +98,20 @@ export default function FooterSection() {
                     </div>
 
                     <nav aria-label="Footer navigation">
-                        <h2 className="site-footer-heading">Navigation</h2>
+                        <h2 className="site-footer-heading">Company</h2>
                         <ul className="site-footer-link-list">
-                            {navigationLinks.map((link) => (
+                            {companyLinks.map((link) => (
+                                <li key={link.title}>
+                                    <FooterLink href={link.href} title={link.title} />
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
+
+                    <nav aria-label="Finance Automation navigation">
+                        <h2 className="site-footer-heading">Finance Automation</h2>
+                        <ul className="site-footer-link-list">
+                            {financeLinks.map((link) => (
                                 <li key={link.title}>
                                     <FooterLink href={link.href} title={link.title} />
                                 </li>
