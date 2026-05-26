@@ -83,7 +83,7 @@ export default function ThreeWayMatchPage() {
                     {/* Eyebrow + H1 */}
                     <div className="glossary-eyebrow mb-6">
                         <div className="glossary-eyebrow-bar" />
-                        <p className="glossary-eyebrow-label">Glossary · Reference</p>
+                        <p className="glossary-eyebrow-label">Finance Automation Guide · Reference</p>
                     </div>
 
                     <h1 className="doc-hero-headline max-w-3xl">
@@ -116,7 +116,7 @@ export default function ThreeWayMatchPage() {
 
                     {/* Primary CTA */}
                     <div className="glossary-cta-row mt-8">
-                        <AuditCTA location="hero" label="Book a Finance Workflow Audit" src="glossary-3wm" />
+                        <AuditCTA location="hero" src="glossary-3wm" />
                         <a href="#matcher" className="site-button-secondary glossary-primary-cta">
                             Try the matcher below
                         </a>
@@ -293,7 +293,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <AuditCTA location="mid" label="Book a Finance Workflow Audit" src="glossary-3wm" />
+                                    <AuditCTA location="mid" src="glossary-3wm" />
                                 </div>
                             </div>
                         </div>
@@ -443,17 +443,17 @@ export default function ThreeWayMatchPage() {
                             <ul className="glossary-related-list">
                                 <li>
                                     <Link href="/work#document-matching" className="glossary-related-link">
-                                        Invoice and Document Matching System — services overview
+                                        Invoice and Document Matching System: services overview
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/resources/invoice-extractor" className="glossary-related-link">
-                                        Invoice Extractor — extract structured fields from PDF invoices
+                                        Invoice Extractor: extract structured fields from PDF invoices
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href="/resources/supplier-payment-control-rule-table" className="glossary-related-link">
-                                        Supplier Payment Control Rule Table — interactive rule reference
+                                        Supplier Payment Control Rule Table: interactive rule reference
                                     </Link>
                                 </li>
                             </ul>
@@ -475,7 +475,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <AuditCTA location="footer" label="Book a Finance Workflow Audit" src="glossary-3wm" />
+                                    <AuditCTA location="footer" src="glossary-3wm" />
                                 </div>
                             </div>
                         </div>
