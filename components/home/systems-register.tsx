@@ -26,7 +26,7 @@ const SYSTEMS: System[] = [
         idx: "01",
         anchor: "dup-invoice",
         name: "Duplicate Invoice Exception System",
-        catches: "Flags exact and near-duplicate supplier bills before payment using supplier, amount, invoice number, date, description, and fuzzy matching.",
+        catches: "Catches exact and near-duplicate supplier bills before payment. Matches on supplier, amount, invoice number, date, description, and fuzzy line items.",
         price: "USD 4k to 12k",
         detail: {
             inputs: ["Accounting export (AP)", "Inbox attachments (PDF, scanned)", "Vendor master"],
@@ -38,7 +38,7 @@ const SYSTEMS: System[] = [
         idx: "02",
         anchor: "vendor-change",
         name: "Vendor Change Control System",
-        catches: "Detects supplier bank-detail and master-data changes, routes them for approval, and captures evidence before payment risk increases.",
+        catches: "Detects when a supplier's bank details or master data change. Routes the change for approval. Stores the evidence.",
         price: "USD 5k to 15k",
         detail: {
             inputs: ["Vendor master snapshots", "Change request emails", "Approval policy thresholds"],
@@ -50,7 +50,7 @@ const SYSTEMS: System[] = [
         idx: "03",
         anchor: "approval-gap",
         name: "Approval Gap Detection System",
-        catches: "Finds bills or payments where approval evidence is missing, incomplete, or scattered across email, documents, and accounting exports.",
+        catches: "Finds bills where approval evidence is missing, incomplete, or scattered across email, documents, and accounting exports.",
         price: "USD 6k to 18k",
         detail: {
             inputs: ["AP export", "Email/Slack approval threads", "Policy thresholds by amount and vendor"],
@@ -62,7 +62,7 @@ const SYSTEMS: System[] = [
         idx: "04",
         anchor: "three-way",
         name: "3-Way Matching Exception System",
-        catches: "Compares invoices, purchase orders, and delivery/receipt evidence, then surfaces mismatches for human review.",
+        catches: "Compares invoices, purchase orders, and delivery receipts. Surfaces mismatches for review.",
         price: "USD 8k to 25k",
         href: "/glossary/three-way-match/",
     },
@@ -70,7 +70,7 @@ const SYSTEMS: System[] = [
         idx: "05",
         anchor: "dashboard",
         name: "AP Exception Dashboard",
-        catches: "Creates one review queue for duplicate candidates, vendor changes, missing approvals, mismatches, unusual amounts, and other finance exceptions.",
+        catches: "One review queue for every exception your team catches. Duplicates. Vendor changes. Missing approvals. Mismatches. Unusual amounts.",
         price: "USD 10k to 30k",
         detail: {
             inputs: ["Outputs of the four systems above", "Reviewer roster", "Notification preferences"],

@@ -11,23 +11,23 @@ export function DemoPreview() {
             <div className="doc-container">
                 <motion.header {...fadeUp} className="section-mark">
                     <h2 className="section-mark-title">
-                        See how finance exception automation works.
+                        See it work on three documents.
                     </h2>
-                    <span className="section-mark-meta">Live demo</span>
+                    <span className="section-mark-meta">Live demo · in-browser</span>
                 </motion.header>
 
                 <motion.div {...fadeUp} className="demo-preview-grid">
                     <div className="demo-preview-copy">
                         <p>
-                            Our 3-way matching demo shows how invoices, purchase
-                            orders, and delivery evidence can be compared
-                            automatically — with exceptions routed for review
-                            instead of manual checking.
+                            Open the matcher. Paste invoice, PO, and goods-receipt rows.
+                            Watch it flag duplicates, amount variances, missing receipts,
+                            vendor mismatches, and three more exception types. Runs in your
+                            browser. Your data never leaves the page.
                         </p>
                         <p className="demo-preview-reminder">
-                            3-way matching is one example. The same approach can
-                            be applied to duplicate bills, vendor changes,
-                            missing approvals, and other payment-control checks.
+                            Three-way matching is one example. The same pattern works for
+                            duplicate bills, vendor changes, approval gaps, and other
+                            payment-control checks.
                         </p>
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                             <Link

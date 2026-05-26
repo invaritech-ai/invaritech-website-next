@@ -47,10 +47,10 @@ const COPY: Record<Variant, {
     },
     finance: {
         title: "Your accounting system stores the transaction. Your team still checks the exceptions.",
-        meta: "Six pain patterns we see weekly",
+        meta: "Six pain patterns. All AP.",
         railKey: "The problem",
         railBody:
-            "Most finance teams do not lose time because they lack software. They lose time because the important checks still happen across inboxes, spreadsheets, PDFs, approval trails, and human memory.",
+            "Finance teams do not lose time because they lack software. They lose time because the checks still happen across inboxes, spreadsheets, PDFs, approval trails, and human memory.",
         bodyParagraphs: [
             <ul key="finance-pain-bullets" className="problem-pain-list">
                 <li>Duplicate supplier bills</li>
@@ -60,10 +60,7 @@ const COPY: Record<Variant, {
                 <li>Unusual amounts or descriptions</li>
                 <li>Documents scattered across email, folders, and accounting exports</li>
             </ul>,
-            <>
-                If your team manually checks these every week, that workflow is
-                ready for automation.
-            </>,
+            <>If your team runs these checks by hand every week, that workflow is ready to automate.</>,
         ],
         gapCells: [
             { name: "Accounting", stores: "Transactions, vendor master, GL codes." },
@@ -73,8 +70,8 @@ const COPY: Record<Variant, {
         ],
         gapCaption: (
             <>
-                The data is in the systems. The <em>work</em> — checking,
-                matching, chasing, approving — happens in the gaps between them.
+                The data lives in the systems. The work happens in the gaps. Checking.
+                Matching. Chasing. Approving.
             </>
         ),
     },
