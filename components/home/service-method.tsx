@@ -21,7 +21,7 @@ const METHOD_FINANCE = [
     { title: "Identify the highest-value exception", body: "We find the manual check most likely to reduce risk, save time, or avoid extra headcount.", output: "Ranked exception list · ROI estimate" },
     { title: "Build the first system", body: "We create a focused automation layer around your existing accounting tools, documents, and approval process.", output: "Working system · acceptance criteria" },
     { title: "Route exceptions for review", body: "Your team stops checking everything manually and reviews the cases that actually need attention.", output: "Review queue · evidence links" },
-    { title: "Improve over time", body: "Rules, thresholds, matching logic, and workflows are refined as real exceptions appear.", output: "Tuned rules · monthly delta" },
+    { title: "Improve over time", body: "We refine rules, thresholds, matching logic, and workflows as real exceptions appear.", output: "Tuned rules · monthly delta" },
 ];
 
 const COPY: Record<Variant, {
@@ -50,11 +50,10 @@ const COPY: Record<Variant, {
         method: METHOD_FINANCE,
         railBody: (
             <>
-                Each engagement is a fixed-scope build with a written
-                workflow map and acceptance criteria. We sit on top of your
-                accounting system; you keep your AP team and your reviewers.
-                The system runs against your first 30 days of real
-                exception traffic before we step back.
+                Each engagement is a fixed-scope build with a written workflow map and
+                acceptance criteria. We sit on top of your accounting system. You keep
+                your AP team and your reviewers. The system runs against your first
+                30 days of real exceptions before we step back.
             </>
         ),
     },

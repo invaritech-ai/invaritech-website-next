@@ -11,13 +11,13 @@ export function FinalCTA() {
             <div className="doc-container">
                 <motion.div {...fadeUp} className="final-cta-panel">
                     <h2 className="final-cta-headline">
-                        Before hiring another AP/admin person, check what can be{" "}
-                        <em className="italic text-primary">automated first</em>.
+                        Before you hire another AP person, see what can be automated first.
                     </h2>
                     <p className="final-cta-body">
-                        Our audit identifies the highest-value exception in your
-                        finance workflow and recommends the smallest useful first
-                        system. Free during launch for selected finance teams.
+                        The audit names the highest-value exception in your workflow
+                        and recommends the smallest useful first system. Free for
+                        qualified companies while we build proof. Becomes a paid $1k
+                        audit later.
                     </p>
                     <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                         <AuditCTA location="footer" />
