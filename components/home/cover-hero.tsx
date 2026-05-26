@@ -31,43 +31,42 @@ const COPY: Record<Variant, {
     homepage: {
         headlineLines: (
             <>
-                AI workflow automation for{" "}
-                <em>document-heavy</em>
+                Move faster without
                 <br />
-                operations.
+                adding headcount.
             </>
         ),
         subhead:
-            "Invaritech builds custom automation systems for finance, compliance, and operations teams that need to move faster without adding headcount.",
-        primaryLabel: "Explore Finance Automation",
+            "Invaritech builds workflow automation systems for document-heavy operations, starting with finance exception automation. We help growing companies catch finance exceptions before they become rework, leakage, or another hire.",
+        primaryLabel: "Book a Finance Exception Audit Call",
         primaryLocation: "hero",
-        primaryHref: "/finance-exception-automation",
-        secondaryLabel: "Try the matcher demo",
-        secondaryHref: "/glossary/three-way-match/",
+        primaryHref: "/contact?audit=1",
+        secondaryLabel: "Explore Finance Exception Systems",
+        secondaryHref: "/finance-exception-automation",
         trustLine:
-            "Built for teams using accounting systems, regulatory portals, document workflows, and approval chains.",
+            "Built for growing companies on Xero, MYOB, QuickBooks, NetSuite, and document-heavy finance workflows.",
         bottomStrip:
-            "Finance exception automation · regulatory document workflows · operations approval gaps · evidence capture. Built around existing systems, not on top of them.",
+            "Finance exception automation. Regulatory document workflows. Operations approval gaps. Built on top of your existing systems, not in place of them.",
     },
     landing: {
         headlineLines: (
             <>
                 Move faster without
                 <br />
-                adding <em>AP headcount</em>.
+                adding headcount.
             </>
         ),
         subhead:
-            "We build AI-powered finance exception systems that catch invoice mismatches, duplicate bills, vendor-detail changes, and approval gaps before payment release.",
-        primaryLabel: "Book a Finance Workflow Audit",
+            "Invaritech builds finance exception automation systems for growing teams. We catch duplicate invoices, vendor-detail changes, approval gaps, and payment-control risks before they become rework, leakage, or another hire.",
+        primaryLabel: "Book a Finance Exception Audit Call",
         primaryLocation: "hero",
         primaryHref: "/contact?audit=1",
-        secondaryLabel: "Try the 3-Way Matching Demo",
-        secondaryHref: "/glossary/three-way-match/",
+        secondaryLabel: "See Finance Exception Systems",
+        secondaryHref: "#systems",
         trustLine:
-            "Built for growing businesses using accounting systems, spreadsheets, email approvals, and document-heavy finance workflows.",
+            "Built for growing companies on Xero, MYOB, QuickBooks, NetSuite, and spreadsheet-driven finance workflows.",
         bottomStrip:
-            "Catch duplicate bills, vendor-detail changes, invoice exceptions, and approval gaps. Before they become manual work, payment leakage, or another AP hire.",
+            "Duplicate invoices. Vendor bank changes. Missing approvals. Mismatched documents. Caught before payment.",
     },
 };
 
