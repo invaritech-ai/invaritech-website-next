@@ -36,11 +36,10 @@ const COPY: Record<Variant, {
         method: METHOD_BROAD,
         railBody: (
             <>
-                Every build starts with a fixed scope, clear inputs, and
-                written acceptance criteria. No open-ended discovery. No
-                vague AI promises. Each handover includes working
-                automation, monitoring, and a deferred period to tune the
-                system against your first 30 days of real exception traffic.
+                Every build starts with a fixed scope, clear inputs, and written
+                acceptance criteria. No open-ended discovery. No vague AI promises.
+                Each handover includes working automation, monitoring, and a tuning
+                period against your first 30 days of real exceptions.
             </>
         ),
     },

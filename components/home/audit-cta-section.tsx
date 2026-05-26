@@ -18,25 +18,25 @@ const COPY: Record<Variant, {
     secondaryLabel: string;
 }> = {
     broad: {
-        title: "Free finance exception audit",
-        meta: "Free during launch",
+        title: "Book a Finance Exception Audit Call",
+        meta: "Free for qualified companies. Paid $1k later.",
         headline: (
             <>
-                Show us the finance workflow your team
-                checks <em className="italic text-primary">manually</em>.
+                Show us the manual checks your team runs every week. We will name the
+                one most ready to automate first.
             </>
         ),
         supporting:
-            "We will identify the highest-value exception pattern and recommend the smallest useful first system to build. Free during launch for selected finance teams.",
+            "You send us a sample export or a screen-share. We map the workflow, list the manual checks, rank them by risk and effort, and recommend the first system to build.",
         deliverables: [
             "Current workflow review",
-            "Sample export review where available",
+            "Sample export review (where available)",
             "Manual exception check mapping",
             "Payment-control risk list",
             "Recommended first system",
-            "Launch range + acceptance criteria",
+            "30-minute findings call",
         ],
-        secondaryLabel: "Send a sample export",
+        secondaryLabel: "Send a sample AP export",
     },
     finance: {
         title: "Book a Finance Exception Audit Call",
