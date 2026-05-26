@@ -3223,6 +3223,42 @@ textarea {
         @apply min-h-40 opacity-95;
     }
 
+    .what-we-automate-grid {
+        @apply mt-10 grid gap-px bg-border md:grid-cols-3;
+    }
+
+    .what-we-automate-card {
+        @apply block bg-background p-7 transition-colors hover:bg-card;
+    }
+
+    .what-we-automate-eyebrow {
+        @apply block font-mono text-[10px] uppercase tracking-[0.22em] text-primary;
+    }
+
+    .what-we-automate-title {
+        @apply mt-4 text-xl font-medium text-foreground site-font-display;
+    }
+
+    .what-we-automate-body {
+        @apply mt-3 text-sm leading-relaxed text-foreground-muted;
+    }
+
+    .what-we-automate-cta {
+        @apply mt-6 inline-block font-mono text-[11px] uppercase tracking-[0.18em] text-primary;
+    }
+
+    .finance-first-grid {
+        @apply mt-10 grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:items-center;
+    }
+
+    .finance-first-body {
+        @apply space-y-5 max-w-2xl text-base leading-relaxed text-foreground;
+    }
+
+    .finance-first-cta {
+        @apply flex lg:justify-end;
+    }
+
     /* Money page */
 
     .why-not-accounting-lede {
