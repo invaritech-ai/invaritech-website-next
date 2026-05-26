@@ -2487,7 +2487,7 @@ textarea {
     }
 
     /* ── Audit CTA panel (stamped) ──────────────────────────────────────── */
-    .audit-cta {
+    .audit-cta-panel {
         position: relative;
         border: 1.5px solid var(--primary);
         background:
@@ -2502,7 +2502,7 @@ textarea {
         padding: 2.5rem 2rem;
     }
     @media (min-width: 64rem) {
-        .audit-cta { padding: 3rem 3rem 3rem 4rem; }
+        .audit-cta-panel { padding: 3rem 3rem 3rem 4rem; }
     }
     .audit-cta-stamp {
         position: absolute;
@@ -3201,6 +3201,26 @@ textarea {
 
     .exception-register-footnote {
         @apply mt-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .proof-row-head {
+        @apply mt-10 mb-4 flex items-center gap-3;
+    }
+
+    .proof-row-head-second {
+        @apply mt-16;
+    }
+
+    .proof-row-key {
+        @apply font-mono text-[11px] uppercase tracking-[0.22em] text-primary;
+    }
+
+    .proof-grid-emphasis .exhibit-card {
+        @apply min-h-56;
+    }
+
+    .proof-grid-adjacent .exhibit-card {
+        @apply min-h-40 opacity-95;
     }
 
     /* Money page */
