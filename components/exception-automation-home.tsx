@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 
 import { LiveOpsStrip } from "@/components/home/live-ops-strip";
+import { Problem } from "@/components/home/problem";
 import { RunLog } from "@/components/home/run-log";
 import { VarianceExhibitVideo } from "@/components/home/variance-exhibit-video";
 import { fadeUp, stagger } from "@/components/home/_motion";
@@ -97,67 +98,6 @@ function CoverHero() {
                         Catch duplicate bills, vendor-detail changes, invoice
                         exceptions, and approval gaps. Before they become manual
                         work, payment leakage, or another AP hire.
-                    </p>
-                </motion.div>
-            </div>
-        </section>
-    );
-}
-
-// ─────────────────────────────────────────────────────────────────────
-// 2. The Messy Middle (problem)
-// ─────────────────────────────────────────────────────────────────────
-
-function MessyMiddle() {
-    return (
-        <section className="doc-section border-t border-border bg-card/40">
-            <div className="doc-container">
-                <motion.header {...fadeUp} className="section-mark">
-                    <h2 className="section-mark-title">The work moved. Your tools didn&apos;t.</h2>
-                    <span className="section-mark-meta">Exception handling is the bottleneck</span>
-                </motion.header>
-
-                <motion.div {...fadeUp} className="marginalia">
-                    <aside className="marginalia-rail">
-                        <span className="marginalia-rail-key">The problem</span>
-                        Finance teams compare exports, PDFs, inboxes, approvals,
-                        and spreadsheets just to know which payments need attention.
-                    </aside>
-
-                    <div className="marginalia-body">
-                        <p>
-                            The data is in the systems. The checking happens
-                            between them. That gap is where duplicate bills slip
-                            through. Where vendor bank changes go unapproved.
-                            Where invoices get paid without matching evidence.
-                        </p>
-                        <p>
-                            You can hire more people to close the gap. Or you can
-                            put an agent in it.
-                        </p>
-                    </div>
-                </motion.div>
-
-                <motion.div {...fadeUp} className="relative">
-                    <div className="gap-schematic">
-                        {[
-                            { name: "Accounting", stores: "Transactions, vendor master, GL codes." },
-                            { name: "Inbox", stores: "PDFs, emails, scanned bills, approvals." },
-                            { name: "Spreadsheet", stores: "Exception list, reviewer notes, hold flags." },
-                            { name: "Approval tool", stores: "Sign-offs, evidence, audit history." },
-                        ].map((c) => (
-                            <div key={c.name} className="gap-cell">
-                                <div className="gap-cell-name">{c.name}</div>
-                                <div className="gap-cell-stores">{c.stores}</div>
-                            </div>
-                        ))}
-                        <div className="gap-overlay">
-                            <div className="gap-overlay-rule" />
-                        </div>
-                    </div>
-                    <p className="mt-4 max-w-xl text-sm text-foreground-muted">
-                        The data is in the systems. The <em>work</em> — checking,
-                        matching, chasing, approving — happens in the gaps between them.
                     </p>
                 </motion.div>
             </div>
@@ -622,7 +562,7 @@ export default function ExceptionAutomationHome() {
     return (
         <main className="site-page">
             <CoverHero />
-            <MessyMiddle />
+            <Problem variant="broad" />
             <ExceptionRegister />
             <ServiceMethod />
             <WhyCustom />

@@ -3170,4 +3170,8 @@ textarea {
     .audit-cta-arrow {
         @apply ml-2 font-mono text-xs opacity-70;
     }
+
+    .problem-pain-list {
+        @apply mt-2 mb-2 grid gap-1 list-disc pl-6 text-base;
+    }
 }
