@@ -186,7 +186,7 @@ export default function ResourceLibraryClient() {
                             href="/contact?audit=1&src=resources"
                             className="site-button gap-2"
                         >
-                            Book a Finance Workflow Audit
+                            Book a Finance Exception Audit Call
                             <ArrowRight className="size-4" aria-hidden="true" />
                         </Link>
                     </div>

@@ -172,7 +172,7 @@ export default function WorkPage() {
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
                         <Link href="/contact?audit=1&src=work">
-                            Book a Finance Workflow Audit
+                            Book a Finance Exception Audit Call
                         </Link>
                     </Button>
                 </div>

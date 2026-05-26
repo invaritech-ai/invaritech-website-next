@@ -153,7 +153,7 @@ export default function PaymentControlHome() {
                         </p>
                         <div className="site-button-row-center">
                             <Link href="/contact?audit=1&src=payment-control-home" className="site-button">
-                                Book a Finance Workflow Audit
+                                Book a Finance Exception Audit Call
                                 <ArrowRight className="site-button-icon" aria-hidden="true" />
                             </Link>
                             <a
@@ -326,7 +326,7 @@ export default function PaymentControlHome() {
 
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row" data-reveal="block">
                             <Link href="/contact?audit=1&src=payment-control-home" className="site-button">
-                                Book a Finance Workflow Audit
+                                Book a Finance Exception Audit Call
                                 <ArrowRight className="site-button-icon" aria-hidden="true" />
                             </Link>
                             <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button-secondary">
@@ -399,7 +399,7 @@ export default function PaymentControlHome() {
 
                             <div className="site-home-final-actions">
                                 <Link href="/contact?audit=1&src=payment-control-home" className="site-button">
-                                    Book a Finance Workflow Audit
+                                    Book a Finance Exception Audit Call
                                     <ArrowRight className="site-button-icon" aria-hidden="true" />
                                 </Link>
                                 <a

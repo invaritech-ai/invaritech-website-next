@@ -329,7 +329,7 @@ export default async function BlogPostPage({ params }: Props) {
                         <section className="mt-16 pt-16 border-t border-border text-center">
                             <div className="flex items-center justify-center gap-3 mb-8">
                                 <div className="h-[1px] w-8 bg-primary/40" />
-                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Book a Finance Workflow Audit</span>
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Book a Finance Exception Audit Call</span>
                                 <div className="h-[1px] w-8 bg-primary/40" />
                             </div>
                             <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
@@ -344,7 +344,7 @@ export default async function BlogPostPage({ params }: Props) {
                                         href="/contact?audit=1&src=blog"
                                         className="flex items-center gap-3"
                                     >
-                                        Book a Finance Workflow Audit <ArrowRight className="w-5 h-5" />
+                                        Book a Finance Exception Audit Call <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 </Button>
                                 <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">

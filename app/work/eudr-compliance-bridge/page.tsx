@@ -323,7 +323,7 @@ export default function EudrCaseStudyPage() {
                                 href="/contact?audit=1&src=work-eudr"
                                 className="flex items-center gap-3"
                             >
-                                Book a Finance Workflow Audit <ArrowRight className="w-6 h-6" />
+                                Book a Finance Exception Audit Call <ArrowRight className="w-6 h-6" />
                             </Link>
                         </MagneticButton>
                     </div>
