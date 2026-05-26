@@ -9,12 +9,12 @@ import { LogoIcon } from "@/components/logo";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
-    { name: "Home", href: "/", id: "01" },
-    { name: "Resources", href: "/resources/", id: "02" },
-    { name: "Blog", href: "/blog/", id: "03" },
-    { name: "Work", href: "/work/", id: "04" },
-    { name: "About", href: "/about/", id: "05" },
-    { name: "Free AP Controls Scan", href: "/contact/?scan=1", id: "06" },
+    { name: "Finance Automation", href: "/finance-exception-automation", id: "01" },
+    { name: "Demo", href: "/glossary/three-way-match/", id: "02" },
+    { name: "Systems", href: "/finance-exception-automation#systems", id: "03" },
+    { name: "How It Works", href: "/finance-exception-automation#how", id: "04" },
+    { name: "Resources", href: "/resources/", id: "05" },
+    { name: "Book Audit", href: "/contact?audit=1", id: "06" },
 ];
 
 function isExternalLink(href: string) {
@@ -22,11 +22,9 @@ function isExternalLink(href: string) {
 }
 
 function isActivePath(pathname: string, href: string) {
-    if (isExternalLink(href)) {
-        return false;
-    }
-
-    return pathname === href || (href !== "/" && pathname.startsWith(href));
+    if (isExternalLink(href)) return false;
+    const hrefBase = href.split("#")[0].split("?")[0];
+    return pathname === hrefBase || (hrefBase !== "/" && pathname.startsWith(hrefBase));
 }
 
 export const HeroHeader = () => {
