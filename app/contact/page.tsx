@@ -37,6 +37,7 @@ const APOLLO_CONTACT_SCRIPT = createApolloInboundScript({
 type ContactPageProps = {
     searchParams?: Promise<{
         scan?: string | string[];
+        audit?: string | string[];
     }>;
 };
 
@@ -44,6 +45,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     const params = await searchParams;
     const scanValue = Array.isArray(params?.scan) ? params?.scan[0] : params?.scan;
     const scanRequested = scanValue === "1";
+    const auditValue = Array.isArray(params?.audit) ? params?.audit[0] : params?.audit;
+    const auditRequested = auditValue === "1";
 
     return (
         <main className="site-page relative overflow-hidden">
@@ -67,19 +70,27 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
                                 <p className="site-eyebrow-text">
-                                    {scanRequested ? "Free AP Controls Scan" : "Get In Touch"}
+                                    {auditRequested
+                                        ? "Book a Finance Workflow Audit"
+                                        : scanRequested
+                                          ? "Free AP Controls Scan"
+                                          : "Get In Touch"}
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                {scanRequested
-                                    ? "Request a free AP controls scan."
-                                    : "Book an AP payment controls scoping call."}
+                                {auditRequested
+                                    ? "Book a finance workflow audit."
+                                    : scanRequested
+                                      ? "Request a free AP controls scan."
+                                      : "Book an AP payment controls scoping call."}
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            {scanRequested
-                                ? "Send a 90-day Xero or MYOB export. We will run five checks and return a 2-page findings report within 48 hours."
-                                : "Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the fastest path to a working control."}
+                            {auditRequested
+                                ? "Tell us about the finance workflow you want to inspect. We will review one workflow, identify the highest-value exception to automate first, and send back a fixed-scope build estimate."
+                                : scanRequested
+                                  ? "Send a 90-day Xero or MYOB export. We will run five checks and return a 2-page findings report within 48 hours."
+                                  : "Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the fastest path to a working control."}
                         </p>
                     </div>
                 </div>

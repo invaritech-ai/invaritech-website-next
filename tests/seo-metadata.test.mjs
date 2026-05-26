@@ -126,15 +126,15 @@ describe("SEO metadata", () => {
         );
     });
 
-    it("surfaces Work and the free AP controls scan in primary discovery paths", () => {
+    it("surfaces Finance Automation and the audit CTA in primary discovery paths", () => {
         const headerSource = read("components/header.tsx");
-        assert.match(headerSource, /\{\s*name:\s*"Work",\s*href:\s*"\/work\/"/);
-        assert.match(headerSource, /\{\s*name:\s*"Free AP Controls Scan",\s*href:\s*"\/contact\/\?scan=1"/);
+        assert.match(headerSource, /\{\s*name:\s*"Finance Automation",\s*href:\s*"\/finance-exception-automation"/);
+        assert.match(headerSource, /\{\s*name:\s*"Book Audit",\s*href:\s*"\/contact\?audit=1"/);
 
         const footerSource = read("components/footer.tsx");
-        assert.match(footerSource, /\{\s*title:\s*"Free AP Controls Scan",\s*href:\s*"\/contact\/\?scan=1"/);
+        assert.match(footerSource, /\{\s*title:\s*"Finance Automation",\s*href:\s*"\/finance-exception-automation\/"/);
 
-        assert.match(read("app/contact/page.tsx"), /\?\s*"Free AP Controls Scan"\s*:\s*"Get In Touch"/);
+        assert.match(read("app/contact/page.tsx"), /"Book a Finance Workflow Audit"/);
 
         for (const path of [
             "components/resource-library-client.tsx",
@@ -144,8 +144,7 @@ describe("SEO metadata", () => {
             "app/work/eudr-compliance-bridge/page.tsx",
         ]) {
             const source = read(path);
-            assert.match(source, /href="\/contact\/\?scan=1"/, path);
-            assert.match(source, /Free AP Controls Scan/, path);
+            assert.match(source, /href="\/contact\?audit=1/, path);
         }
     });
 });

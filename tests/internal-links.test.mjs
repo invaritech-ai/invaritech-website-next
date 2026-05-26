@@ -82,15 +82,33 @@ describe("internal page links", () => {
     it("point directly to existing local pages without redirect-only paths", () => {
         const failures = [];
 
+        function normalize(path) {
+            if (path === "/") return path;
+            return path.replace(/\/$/, "");
+        }
+
+        const normalizedRoutes = new Set([...appRoutes].map(normalize));
+
         for (const file of sourceFiles) {
             for (const rawLink of extractInternalLinks(file)) {
-                const target = stripHashAndQuery(rawLink);
-                if (!appRoutes.has(target)) {
+                const target = normalize(stripHashAndQuery(rawLink));
+                if (!normalizedRoutes.has(target)) {
                     failures.push(`${file}: ${rawLink}`);
                 }
             }
         }
 
         assert.deepEqual(failures, []);
+    });
+});
+
+describe("money page is linked", () => {
+    it("at least one file references /finance-exception-automation", () => {
+        const files = sourceRoots.flatMap((root) => walkFiles(root));
+        const tsFiles = files.filter((p) => sourceExtensions.has(extensionOf(p)));
+        const matchCount = tsFiles.filter((p) =>
+            readFileSync(p, "utf-8").includes("/finance-exception-automation")
+        ).length;
+        assert.ok(matchCount >= 3, `Expected /finance-exception-automation in 3+ files; found ${matchCount}`);
     });
 });
