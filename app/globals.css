@@ -3144,4 +3144,30 @@ textarea {
     .glossary-secondary-cta-error {
         @apply text-sm text-red-600;
     }
+
+    /* Home page */
+
+    .home-trust-line {
+        @apply font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .home-bottom-strip {
+        @apply font-mono text-[11px] uppercase tracking-[0.18em] text-foreground;
+    }
+
+    .audit-cta-secondary {
+        @apply px-7;
+    }
+
+    .audit-cta {
+        @apply px-7;
+    }
+
+    .audit-cta-primary {
+        /* Layered on top of .site-button. */
+    }
+
+    .audit-cta-arrow {
+        @apply ml-2 font-mono text-xs opacity-70;
+    }
 }
