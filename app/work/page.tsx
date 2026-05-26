@@ -171,8 +171,8 @@ export default function WorkPage() {
                         Bring one invoice approval workflow, supplier reconciliation issue, or duplicate payment risk. We will run the first checks and tell you where the control risk sits.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
-                        <Link href="/contact/?scan=1">
-                            Free AP Controls Scan
+                        <Link href="/contact?audit=1&src=work">
+                            Book a Finance Workflow Audit
                         </Link>
                     </Button>
                 </div>

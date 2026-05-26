@@ -320,10 +320,10 @@ export default function EudrCaseStudyPage() {
                     <div className="flex justify-center">
                         <MagneticButton className="px-12 py-6 text-xl">
                             <Link
-                                href="/contact/?scan=1"
+                                href="/contact?audit=1&src=work-eudr"
                                 className="flex items-center gap-3"
                             >
-                                Free AP Controls Scan <ArrowRight className="w-6 h-6" />
+                                Book a Finance Workflow Audit <ArrowRight className="w-6 h-6" />
                             </Link>
                         </MagneticButton>
                     </div>

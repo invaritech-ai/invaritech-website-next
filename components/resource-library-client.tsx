@@ -183,10 +183,10 @@ export default function ResourceLibraryClient() {
                             </p>
                         </div>
                         <Link
-                            href="/contact/?scan=1"
+                            href="/contact?audit=1&src=resources"
                             className="site-button gap-2"
                         >
-                            Free AP Controls Scan
+                            Book a Finance Workflow Audit
                             <ArrowRight className="size-4" aria-hidden="true" />
                         </Link>
                     </div>

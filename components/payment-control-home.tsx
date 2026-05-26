@@ -152,8 +152,8 @@ export default function PaymentControlHome() {
                             criteria before anything starts. Managed support after delivery.
                         </p>
                         <div className="site-button-row-center">
-                            <Link href="/contact/?scan=1" className="site-button">
-                                Get Your Free AP Controls Scan
+                            <Link href="/contact?audit=1&src=payment-control-home" className="site-button">
+                                Book a Finance Workflow Audit
                                 <ArrowRight className="site-button-icon" aria-hidden="true" />
                             </Link>
                             <a
@@ -325,8 +325,8 @@ export default function PaymentControlHome() {
                         </div>
 
                         <div className="mt-6 flex flex-col gap-3 sm:flex-row" data-reveal="block">
-                            <Link href="/contact/?scan=1" className="site-button">
-                                Request Your Free AP Controls Scan
+                            <Link href="/contact?audit=1&src=payment-control-home" className="site-button">
+                                Book a Finance Workflow Audit
                                 <ArrowRight className="site-button-icon" aria-hidden="true" />
                             </Link>
                             <Link href="/resources/supplier-payment-control-rule-table/interactive/" className="site-button-secondary">
@@ -398,8 +398,8 @@ export default function PaymentControlHome() {
                             </div>
 
                             <div className="site-home-final-actions">
-                                <Link href="/contact/?scan=1" className="site-button">
-                                    Get Your Free AP Controls Scan
+                                <Link href="/contact?audit=1&src=payment-control-home" className="site-button">
+                                    Book a Finance Workflow Audit
                                     <ArrowRight className="site-button-icon" aria-hidden="true" />
                                 </Link>
                                 <a

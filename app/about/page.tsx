@@ -181,10 +181,10 @@ export default function AboutPage() {
                     </div>
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Link
-                            href="/contact/?scan=1"
+                            href="/contact?audit=1&src=about"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            Get Your Free AP Controls Scan <ArrowRight className="ml-2 size-4" />
+                            Book a Finance Workflow Audit <ArrowRight className="ml-2 size-4" />
                         </Link>
                         <Link
                             href={BOOK_MEETING_URL}

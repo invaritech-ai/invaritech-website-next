@@ -17,7 +17,7 @@ export function ControlUpsellBridge() {
       </div>
 
       <Link
-        href="/contact/"
+        href="/contact?audit=1&src=control-upsell"
         className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded hover:bg-foreground hover:text-background transition-colors font-semibold"
       >
         Let&apos;s build this for your team

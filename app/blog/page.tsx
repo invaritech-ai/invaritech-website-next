@@ -105,10 +105,10 @@ export default function BlogsPage() {
                             <p className="mt-2 text-muted-foreground">Send one invoice approval workflow, supplier reconciliation issue, or duplicate payment example.</p>
                         </div>
                         <Link
-                            href="/contact/?scan=1"
+                            href="/contact?audit=1&src=blog"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            Free AP Controls Scan <ArrowRight className="ml-2 size-4" />
+                            Book a Finance Workflow Audit <ArrowRight className="ml-2 size-4" />
                         </Link>
                     </div>
 
