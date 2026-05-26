@@ -95,7 +95,7 @@ export function ThreeWayMatcher() {
     );
 
     return (
-        <div className="space-y-6">
+        <div className="glossary-matcher">
             <ThreeWayMatcherInput
                 invoiceCsv={invoiceCsv}
                 poCsv={poCsv}
@@ -119,12 +119,12 @@ export function ThreeWayMatcher() {
 
 function PrivacyCallout() {
     return (
-        <aside className="border-l-[3px] border-primary bg-card/40 p-4 text-sm leading-relaxed text-foreground-muted">
+        <aside className="glossary-privacy-callout">
             <p>
-                <strong className="text-foreground">This runs entirely in your browser.</strong>{" "}
+                <strong className="glossary-privacy-callout-strong">This runs entirely in your browser.</strong>{" "}
                 Your data never leaves your device. Open DevTools, Network tab to verify.
             </p>
-            <p className="mt-2">
+            <p className="glossary-privacy-callout-secondary">
                 Server-side automation enables PDF OCR, fuzzy vendor normalization, semantic
                 line-item matching, and agentic exception routing. Not available in this client-side
                 demo.

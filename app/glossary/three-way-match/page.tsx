@@ -8,14 +8,12 @@ const READ_TIME = "12 min";
 
 function GlossaryH2({ id, eyebrow, children }: { id: string; eyebrow: string; children: React.ReactNode }) {
     return (
-        <header className="mt-16 mb-6">
-            <div className="mb-3 flex items-center gap-3">
-                <div className="h-px w-8 bg-primary/60" />
-                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-primary">
-                    {eyebrow}
-                </p>
+        <header className="glossary-section-header">
+            <div className="glossary-eyebrow mb-3">
+                <div className="glossary-eyebrow-bar" />
+                <p className="glossary-eyebrow-label-sm">{eyebrow}</p>
             </div>
-            <h2 id={id} className="text-3xl font-medium text-foreground site-font-display">
+            <h2 id={id} className="glossary-section-heading">
                 {children}
             </h2>
         </header>
@@ -23,20 +21,14 @@ function GlossaryH2({ id, eyebrow, children }: { id: string; eyebrow: string; ch
 }
 
 function GlossaryProse({ children }: { children: React.ReactNode }) {
-    return (
-        <div className="glossary-prose max-w-2xl text-foreground space-y-5 text-[17px] leading-[1.75]">
-            {children}
-        </div>
-    );
+    return <div className="glossary-prose">{children}</div>;
 }
 
 function FaqItem({ question, children }: { question: string; children: React.ReactNode }) {
     return (
-        <details className="border-b border-border py-4">
-            <summary className="cursor-pointer text-lg font-medium text-foreground site-font-display">
-                {question}
-            </summary>
-            <div className="mt-3 text-foreground-muted">{children}</div>
+        <details className="glossary-faq-item">
+            <summary className="glossary-faq-summary">{question}</summary>
+            <div className="glossary-faq-body">{children}</div>
         </details>
     );
 }
@@ -60,27 +52,25 @@ export default function ThreeWayMatchPage() {
             <section className="doc-section">
                 <div className="doc-container">
                     {/* Breadcrumb */}
-                    <nav className="mb-6 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle" aria-label="Breadcrumb">
-                        <Link href="/" className="hover:text-foreground">Invaritech</Link>
-                        <span className="mx-2">/</span>
+                    <nav className="glossary-breadcrumb mb-6" aria-label="Breadcrumb">
+                        <Link href="/" className="glossary-breadcrumb-link">Invaritech</Link>
+                        <span className="glossary-breadcrumb-separator">/</span>
                         <span>Glossary</span>
-                        <span className="mx-2">/</span>
-                        <span className="text-foreground">Three-Way Match</span>
+                        <span className="glossary-breadcrumb-separator">/</span>
+                        <span className="glossary-breadcrumb-current">Three-Way Match</span>
                     </nav>
 
                     {/* Eyebrow + H1 */}
-                    <div className="mb-6 flex items-center gap-3">
-                        <div className="h-px w-8 bg-primary/60" />
-                        <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
-                            Glossary · Reference
-                        </p>
+                    <div className="glossary-eyebrow mb-6">
+                        <div className="glossary-eyebrow-bar" />
+                        <p className="glossary-eyebrow-label">Glossary · Reference</p>
                     </div>
 
                     <h1 className="doc-hero-headline max-w-3xl">
                         Three-Way Match: Invoice, PO, and Goods Receipt Matching
                     </h1>
 
-                    <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground-muted">
+                    <p className="glossary-lead mt-8">
                         Three-way matching checks that an invoice, its purchase order, and the
                         goods receipt note all line up before a payment is released. It is the
                         backbone control most AP teams run by hand and the highest-leverage
@@ -90,27 +80,27 @@ export default function ThreeWayMatchPage() {
                     </p>
 
                     {/* Byline */}
-                    <div className="mt-8 border-y border-border py-4">
-                        <p className="text-sm text-foreground">
+                    <div className="glossary-byline mt-8">
+                        <p className="glossary-byline-name">
                             By <strong>Aditi Garg</strong> · Founder &amp; Director, Invaritech
                         </p>
-                        <p className="mt-1 max-w-2xl text-sm text-foreground-muted">
+                        <p className="glossary-byline-bio">
                             Aditi directs automation builds at Invaritech, including the EU TRACES
                             regulatory document workflow. She is now applying the same
                             exception-routing approach to finance and AP teams.
                         </p>
-                        <p className="mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle">
+                        <p className="glossary-byline-meta">
                             Last updated: {LAST_UPDATED} · {READ_TIME} read
                         </p>
                     </div>
 
                     {/* Primary CTA */}
-                    <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-                        <Link href="/contact" className="site-button px-7">
+                    <div className="glossary-cta-row mt-8">
+                        <Link href="/contact" className="site-button glossary-primary-cta">
                             Book a free Finance Exception Audit
-                            <span className="ml-2 font-mono text-xs opacity-70">↗</span>
+                            <span className="glossary-cta-arrow">↗</span>
                         </Link>
-                        <a href="#matcher" className="site-button-secondary px-7">
+                        <a href="#matcher" className="site-button-secondary glossary-primary-cta">
                             Try the matcher below
                         </a>
                     </div>
@@ -198,7 +188,7 @@ export default function ThreeWayMatchPage() {
                                 or one of seven exception types. Each exception is a real-world failure mode
                                 an AP team sees weekly.
                             </p>
-                            <ol className="mt-4 space-y-4 list-decimal pl-6">
+                            <ol className="mt-4 list-decimal space-y-4 pl-6">
                                 <li>
                                     <strong>Amount variance.</strong> Invoice and PO agree on supplier and
                                     line items but the amount differs beyond the tolerance band. Common
@@ -274,21 +264,21 @@ export default function ThreeWayMatchPage() {
                         </GlossaryProse>
 
                         {/* Mid-page primary CTA */}
-                        <div className="mt-12 border-y border-border py-8">
-                            <div className="grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-center">
+                        <div className="glossary-cta-card mt-12">
+                            <div className="glossary-cta-card-grid">
                                 <div>
-                                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
+                                    <p className="glossary-eyebrow-label">
                                         Book a free Finance Exception Audit
                                     </p>
-                                    <p className="mt-2 max-w-xl text-base text-foreground-muted">
+                                    <p className="glossary-cta-card-body">
                                         We review your full AP workflow and recommend the smallest useful
                                         first system. Free during launch for selected finance teams.
                                     </p>
                                 </div>
-                                <div className="flex md:justify-end">
-                                    <Link href="/contact" className="site-button px-7">
+                                <div className="glossary-cta-card-actions">
+                                    <Link href="/contact" className="site-button glossary-primary-cta">
                                         Book the audit
-                                        <span className="ml-2 font-mono text-xs opacity-70">↗</span>
+                                        <span className="glossary-cta-arrow">↗</span>
                                     </Link>
                                 </div>
                             </div>
@@ -316,7 +306,7 @@ export default function ThreeWayMatchPage() {
                                 A production three-way match system has to handle three classes of work
                                 the client-side tool cannot:
                             </p>
-                            <ul className="mt-3 space-y-2 list-disc pl-6">
+                            <ul className="mt-3 list-disc space-y-2 pl-6">
                                 <li>
                                     <strong>Document intelligence.</strong> OCR the invoice PDF, extract
                                     line items, vendor metadata, totals, and tax. Same for the goods
@@ -436,19 +426,19 @@ export default function ThreeWayMatchPage() {
                             Related reading
                         </GlossaryH2>
                         <GlossaryProse>
-                            <ul className="space-y-2 list-disc pl-6">
+                            <ul className="glossary-related-list">
                                 <li>
-                                    <Link href="/work#document-matching" className="text-primary underline-offset-4 hover:underline">
+                                    <Link href="/work#document-matching" className="glossary-related-link">
                                         Invoice and Document Matching System — services overview
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/resources/invoice-extractor" className="text-primary underline-offset-4 hover:underline">
+                                    <Link href="/resources/invoice-extractor" className="glossary-related-link">
                                         Invoice Extractor — extract structured fields from PDF invoices
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/resources/supplier-payment-control-rule-table" className="text-primary underline-offset-4 hover:underline">
+                                    <Link href="/resources/supplier-payment-control-rule-table" className="glossary-related-link">
                                         Supplier Payment Control Rule Table — interactive rule reference
                                     </Link>
                                 </li>
@@ -456,24 +446,24 @@ export default function ThreeWayMatchPage() {
                         </GlossaryProse>
 
                         {/* Footer primary CTA */}
-                        <div className="mt-16 border-t border-border pt-10">
-                            <div className="grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-center">
+                        <div className="glossary-cta-footer">
+                            <div className="glossary-cta-card-grid">
                                 <div>
-                                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-primary">
+                                    <p className="glossary-eyebrow-label">
                                         Ready to automate three-way matching?
                                     </p>
-                                    <h3 className="mt-3 max-w-xl text-2xl font-medium text-foreground site-font-display">
+                                    <h3 className="glossary-cta-footer-heading">
                                         Book a free Finance Exception Audit.
                                     </h3>
-                                    <p className="mt-3 max-w-xl text-base text-foreground-muted">
+                                    <p className="glossary-cta-card-body mt-3">
                                         We review your full AP workflow and recommend the smallest useful
                                         first system. Free during launch.
                                     </p>
                                 </div>
-                                <div className="flex md:justify-end">
-                                    <Link href="/contact" className="site-button px-7">
+                                <div className="glossary-cta-card-actions">
+                                    <Link href="/contact" className="site-button glossary-primary-cta">
                                         Book the audit
-                                        <span className="ml-2 font-mono text-xs opacity-70">↗</span>
+                                        <span className="glossary-cta-arrow">↗</span>
                                     </Link>
                                 </div>
                             </div>

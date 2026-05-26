@@ -2815,4 +2815,330 @@ textarea {
         font-style: italic;
         color: var(--primary);
     }
+
+    /* ══════════════════════════════════════════════════════════════
+       Glossary page (Three-Way Match and future entries)
+       ══════════════════════════════════════════════════════════════ */
+
+    /* ── Page-level eyebrow + section heading ───────────────────── */
+    .glossary-eyebrow {
+        @apply flex items-center gap-3;
+    }
+    .glossary-eyebrow-bar {
+        @apply h-px w-8 bg-primary/60;
+    }
+    .glossary-eyebrow-label {
+        @apply font-mono text-xs uppercase tracking-[0.22em] text-primary;
+    }
+    .glossary-eyebrow-label-sm {
+        @apply font-mono text-[11px] uppercase tracking-[0.22em] text-primary;
+    }
+
+    .glossary-section-header {
+        @apply mt-16 mb-6;
+    }
+    .glossary-section-heading {
+        @apply text-3xl font-medium text-foreground;
+        font-family: var(--font-display);
+    }
+
+    .glossary-prose {
+        @apply max-w-2xl space-y-5 text-foreground;
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+    /* ── Breadcrumb + byline ────────────────────────────────────── */
+    .glossary-breadcrumb {
+        @apply font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+    .glossary-breadcrumb-link {
+        @apply hover:text-foreground;
+    }
+    .glossary-breadcrumb-separator {
+        @apply mx-2;
+    }
+    .glossary-breadcrumb-current {
+        @apply text-foreground;
+    }
+
+    .glossary-byline {
+        @apply border-y border-border py-4;
+    }
+    .glossary-byline-name {
+        @apply text-sm text-foreground;
+    }
+    .glossary-byline-bio {
+        @apply mt-1 max-w-2xl text-sm text-foreground-muted;
+    }
+    .glossary-byline-meta {
+        @apply mt-2 font-mono text-[11px] uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .glossary-lead {
+        @apply max-w-2xl text-lg leading-relaxed text-foreground-muted;
+    }
+
+    /* ── Primary CTA + button arrow ─────────────────────────────── */
+    .glossary-primary-cta {
+        @apply px-7;
+    }
+    .glossary-cta-arrow {
+        @apply ml-2 font-mono text-xs opacity-70;
+    }
+
+    .glossary-cta-row {
+        @apply flex flex-col gap-4 sm:flex-row sm:items-center;
+    }
+
+    .glossary-cta-card {
+        @apply border-y border-border py-8;
+    }
+    .glossary-cta-card-grid {
+        @apply grid gap-6 md:grid-cols-[1.4fr_1fr] md:items-center;
+    }
+    .glossary-cta-card-body {
+        @apply mt-2 max-w-xl text-base text-foreground-muted;
+    }
+    .glossary-cta-card-actions {
+        @apply flex md:justify-end;
+    }
+
+    .glossary-cta-footer {
+        @apply mt-16 border-t border-border pt-10;
+    }
+    .glossary-cta-footer-heading {
+        @apply mt-3 max-w-xl text-2xl font-medium text-foreground;
+        font-family: var(--font-display);
+    }
+
+    /* ── FAQ details items ──────────────────────────────────────── */
+    .glossary-faq-item {
+        @apply border-b border-border py-4;
+    }
+    .glossary-faq-summary {
+        @apply cursor-pointer text-lg font-medium text-foreground;
+        font-family: var(--font-display);
+    }
+    .glossary-faq-body {
+        @apply mt-3 text-foreground-muted;
+    }
+
+    /* ── Related-reading list ───────────────────────────────────── */
+    .glossary-related-list {
+        @apply list-disc space-y-2 pl-6;
+    }
+    .glossary-related-link {
+        @apply text-primary underline-offset-4 hover:underline;
+    }
+
+    /* ── Matcher root ───────────────────────────────────────────── */
+    .glossary-matcher {
+        @apply space-y-6;
+    }
+    .glossary-matcher-panel {
+        @apply border border-border bg-card p-4 md:p-6;
+    }
+
+    /* Mobile tabs */
+    .glossary-matcher-tabs {
+        @apply mb-4 flex gap-2 md:hidden;
+    }
+    .glossary-matcher-tab {
+        @apply flex-1 border px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] border-border text-foreground-muted;
+    }
+    .glossary-matcher-tab-active {
+        @apply border-primary bg-primary text-primary-foreground;
+    }
+
+    /* Textareas grid */
+    .glossary-matcher-grid {
+        @apply grid gap-4 md:grid-cols-3;
+    }
+    .glossary-matcher-field {
+        @apply flex flex-col;
+    }
+    .glossary-matcher-field-hidden {
+        @apply hidden md:flex;
+    }
+    .glossary-matcher-field-header {
+        @apply mb-2 flex items-center justify-between;
+    }
+    .glossary-matcher-field-label {
+        @apply font-mono text-[11px] uppercase tracking-[0.18em] text-primary;
+    }
+    .glossary-matcher-textarea {
+        @apply h-64 w-full resize-y border border-border bg-background p-3 font-mono leading-relaxed text-foreground;
+        font-size: 12px;
+    }
+    .glossary-matcher-hint {
+        @apply mt-1 font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-subtle;
+    }
+
+    /* Controls row */
+    .glossary-matcher-controls {
+        @apply mt-6 flex flex-wrap items-center gap-4 border-t border-border pt-4;
+    }
+    .glossary-matcher-tolerance-label {
+        @apply flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-foreground-muted;
+    }
+    .glossary-matcher-tolerance-select {
+        @apply border border-border bg-background px-2 py-1 text-sm text-foreground;
+    }
+    .glossary-matcher-actions {
+        @apply ml-auto flex gap-3;
+    }
+
+    /* CSV upload row */
+    .glossary-matcher-upload-row {
+        @apply mt-4 grid gap-3 border-t border-border pt-4 md:grid-cols-3;
+    }
+    .glossary-matcher-upload-cell {
+        @apply flex cursor-pointer flex-col gap-1 border border-dashed border-border bg-background p-3 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-subtle hover:border-primary/50;
+    }
+    .glossary-matcher-upload-input {
+        @apply hidden;
+    }
+
+    /* Results panel */
+    .glossary-matcher-results {
+        @apply border border-border bg-card;
+    }
+    .glossary-matcher-results-empty {
+        @apply border border-border bg-card/40 p-6;
+    }
+    .glossary-matcher-results-empty-text {
+        @apply font-mono text-xs uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .glossary-matcher-count-strip {
+        @apply border-b border-border bg-card/60 px-4 py-3;
+    }
+    .glossary-matcher-count-row {
+        @apply flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-[0.18em];
+    }
+    .glossary-matcher-count-cell {
+        @apply text-foreground;
+    }
+    .glossary-matcher-count-strong-primary {
+        @apply text-primary;
+    }
+    .glossary-matcher-count-strong-accent {
+        @apply text-accent;
+    }
+    .glossary-matcher-count-total {
+        @apply ml-auto text-foreground-subtle;
+    }
+
+    /* Filter chips */
+    .glossary-matcher-filters {
+        @apply flex flex-wrap gap-2 border-b border-border bg-card/40 px-4 py-3;
+    }
+    .glossary-matcher-filter-chip {
+        @apply border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] border-border text-foreground-muted hover:border-primary/50;
+    }
+    .glossary-matcher-filter-chip-active {
+        @apply border-primary bg-primary text-primary-foreground;
+    }
+
+    /* Results table */
+    .glossary-matcher-table-wrap {
+        @apply overflow-x-auto;
+    }
+    .glossary-matcher-table {
+        @apply w-full text-sm;
+    }
+    .glossary-matcher-table-head-row {
+        @apply border-b border-border bg-card/40;
+    }
+    .glossary-matcher-table-head {
+        @apply px-4 py-2 text-left font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-muted;
+    }
+    .glossary-matcher-table-row {
+        @apply border-b border-border/60;
+    }
+    .glossary-matcher-table-cell-mono {
+        @apply px-4 py-2 font-mono text-xs text-foreground;
+    }
+    .glossary-matcher-table-cell-status {
+        @apply px-4 py-2;
+    }
+    .glossary-matcher-table-cell-reason {
+        @apply px-4 py-2 text-sm text-foreground-muted;
+    }
+
+    /* Status badges */
+    .glossary-matcher-status-badge {
+        @apply inline-block border px-2 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em];
+    }
+    .glossary-matcher-status-matched {
+        @apply border-primary/40 bg-primary/10 text-primary;
+    }
+    .glossary-matcher-status-variance {
+        @apply border-accent/40 bg-accent/10 text-accent;
+    }
+    .glossary-matcher-status-missing {
+        @apply border-red-500/40 bg-red-500/10 text-red-600;
+    }
+    .glossary-matcher-status-duplicate {
+        @apply border-red-500/40 bg-red-500/10 text-red-600;
+    }
+
+    /* Privacy callout */
+    .glossary-privacy-callout {
+        @apply border-l-[3px] border-primary bg-card/40 p-4 text-sm leading-relaxed text-foreground-muted;
+    }
+    .glossary-privacy-callout-strong {
+        @apply text-foreground;
+    }
+    .glossary-privacy-callout-secondary {
+        @apply mt-2;
+    }
+
+    /* Secondary CTA form */
+    .glossary-secondary-cta {
+        @apply border border-border bg-card/40 p-6;
+    }
+    .glossary-secondary-cta-sent {
+        @apply border border-primary/40 bg-primary/5 p-6;
+    }
+    .glossary-secondary-cta-sent-eyebrow {
+        @apply font-mono text-xs uppercase tracking-[0.18em] text-primary;
+    }
+    .glossary-secondary-cta-sent-body {
+        @apply mt-2 text-sm text-foreground;
+    }
+    .glossary-secondary-cta-header {
+        @apply mb-3 flex items-center gap-3;
+    }
+    .glossary-secondary-cta-lead {
+        @apply text-foreground;
+    }
+    .glossary-secondary-cta-supporting {
+        @apply mt-2 max-w-2xl text-sm text-foreground-muted;
+    }
+    .glossary-secondary-cta-email-grid {
+        @apply mt-5 grid gap-3 md:grid-cols-2;
+    }
+    .glossary-secondary-cta-field {
+        @apply flex flex-col gap-1;
+    }
+    .glossary-secondary-cta-field-label {
+        @apply font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-muted;
+    }
+    .glossary-secondary-cta-input {
+        @apply border border-border bg-background px-3 py-2 text-sm text-foreground;
+    }
+    .glossary-secondary-cta-file-grid {
+        @apply mt-3 grid gap-3 md:grid-cols-3;
+    }
+    .glossary-secondary-cta-file-cell {
+        @apply flex cursor-pointer flex-col items-center gap-1 border border-dashed border-border bg-background p-3 text-center font-mono text-[10px] uppercase tracking-[0.16em] text-foreground-subtle hover:border-primary/50;
+    }
+    .glossary-secondary-cta-actions {
+        @apply mt-5 flex items-center gap-4;
+    }
+    .glossary-secondary-cta-error {
+        @apply text-sm text-red-600;
+    }
 }
