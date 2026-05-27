@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import ExceptionAutomationHome from "@/components/exception-automation-home";
 
 export const metadata: Metadata = {
-    title: "Finance Exception Automation Systems — Invaritech",
+    title: "Invaritech: Workflow Automation for Document-Heavy Operations",
     description:
-        "Invaritech builds AI-powered automation systems for finance and operations teams buried in invoices, documents, approvals, and manual exception checks. Move faster without adding headcount.",
+        "Invaritech builds workflow automation systems for document-heavy operations, starting with finance exception automation. Catch duplicate invoices, vendor-detail changes, approval gaps, and payment-control risks before they become rework, leakage, or another hire.",
     alternates: {
         canonical: "https://www.invaritech.ai/",
     },

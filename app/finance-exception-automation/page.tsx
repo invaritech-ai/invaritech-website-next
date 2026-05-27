@@ -14,14 +14,14 @@ import { Colophon } from "@/components/home/colophon";
 import { UtmCaptureClient } from "@/components/home/_shared/utm-capture-client";
 
 export const metadata: Metadata = {
-    title: "Finance Exception Automation — Move Faster Without Adding AP Headcount | Invaritech",
+    title: "Finance Exception Automation for Growing Teams: Invaritech",
     description:
-        "Invaritech builds AI-powered finance exception systems that catch invoice mismatches, duplicate bills, vendor-detail changes, and approval gaps before payment release. Fixed-scope builds for AP teams.",
+        "Move faster without adding headcount. Invaritech builds finance exception systems for AP teams: duplicate invoice detection, vendor change control, approval gap detection, three-way matching, and AP exception dashboards.",
     alternates: {
         canonical: "https://www.invaritech.ai/finance-exception-automation/",
     },
     openGraph: {
-        title: "Finance Exception Automation — Invaritech",
+        title: "Finance Exception Automation for Growing Teams — Invaritech",
         description:
             "AI-powered finance exception systems for AP teams: duplicate invoice detection, vendor change control, approval gap detection, three-way matching, and AP exception dashboard.",
         type: "website",
