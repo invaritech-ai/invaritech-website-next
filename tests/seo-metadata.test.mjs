@@ -134,7 +134,7 @@ describe("SEO metadata", () => {
         const footerSource = read("components/footer.tsx");
         assert.match(footerSource, /\{\s*title:\s*"Finance Automation",\s*href:\s*"\/finance-exception-automation\/"/);
 
-        assert.match(read("app/contact/page.tsx"), /"Book a Finance Workflow Audit"/);
+        assert.match(read("app/contact/page.tsx"), /"Book a Finance Exception Audit Call"/);
 
         for (const path of [
             "components/resource-library-client.tsx",

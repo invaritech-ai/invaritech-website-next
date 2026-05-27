@@ -71,7 +71,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                                 <div className="site-eyebrow-line" />
                                 <p className="site-eyebrow-text">
                                     {auditRequested
-                                        ? "Book a Finance Workflow Audit"
+                                        ? "Free for qualified companies. Paid $1k later."
                                         : scanRequested
                                           ? "Free AP Controls Scan"
                                           : "Get In Touch"}
@@ -79,7 +79,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                             </div>
                             <h1 className="site-h2" data-reveal="block">
                                 {auditRequested
-                                    ? "Book a finance workflow audit."
+                                    ? "Book a Finance Exception Audit Call"
                                     : scanRequested
                                       ? "Request a free AP controls scan."
                                       : "Book an AP payment controls scoping call."}
@@ -87,7 +87,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                         </div>
                         <p className="site-lead" data-reveal="block">
                             {auditRequested
-                                ? "Tell us about the finance workflow you want to inspect. We will review one workflow, identify the highest-value exception to automate first, and send back a fixed-scope build estimate."
+                                ? "Tell us about the finance workflow you want to inspect. We will map it, name the highest-value exception to automate first, and send back a fixed-scope build estimate. 30-minute findings call included."
                                 : scanRequested
                                   ? "Send a 90-day Xero or MYOB export. We will run five checks and return a 2-page findings report within 48 hours."
                                   : "Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the fastest path to a working control."}
