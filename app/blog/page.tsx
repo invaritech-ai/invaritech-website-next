@@ -6,28 +6,28 @@ import Image from "next/image";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Accounts Payable Controls & Finance Automation Blog",
+    title: "Finance Controls and Automation Blog",
     description:
-        "Practical guides for AP controls, invoice approval workflows, duplicate payment prevention, and finance automation for Australian mid-market teams.",
+        "Practical guides for finance controls, invoice approval workflows, duplicate payment prevention, month-end visibility, and workflow automation.",
     openGraph: {
-        title: "Accounts Payable Controls & Finance Automation Blog",
+        title: "Finance Controls and Automation Blog",
         description:
-            "Practical guides for AP controls, invoice approval workflows, duplicate payment prevention, and finance automation for Australian mid-market teams.",
+            "Practical guides for finance controls, invoice approval workflows, duplicate payment prevention, month-end visibility, and workflow automation.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH Blog - Accounts Payable Automation Guides",
+                alt: "INVARITECH Blog - Finance Controls and Automation Guides",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Operations & Compliance Automation Guides",
+        title: "Finance Controls and Automation Blog",
         description:
-            "Practical guides for AP controls, invoice approval workflows, duplicate payment prevention, and finance automation for Australian mid-market teams.",
+            "Practical guides for finance controls, invoice approval workflows, duplicate payment prevention, month-end visibility, and workflow automation.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -71,10 +71,10 @@ export default function BlogsPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Accounts Payable Automation Blog</p>
+                                <p className="site-eyebrow-text">Finance Controls Blog</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical guides for accounts payable automation.
+                                Practical guides for finance controls and automation.
                             </h1>
                         </div>
                         <div data-reveal="block">
@@ -105,10 +105,10 @@ export default function BlogsPage() {
                             <p className="mt-2 text-muted-foreground">Send one invoice approval workflow, supplier reconciliation issue, or duplicate payment example.</p>
                         </div>
                         <Link
-                            href="/contact?audit=1&src=blog"
+                            href="/contact/?diagnostic=1"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            Book a Finance Exception Audit Call <ArrowRight className="ml-2 size-4" />
+                            Book Workflow Diagnostic <ArrowRight className="ml-2 size-4" />
                         </Link>
                     </div>
 

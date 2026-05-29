@@ -9,20 +9,20 @@ const ContactSection = dynamic(() => import("@/components/contact"), {
 });
 
 export const metadata: Metadata = {
-    title: "Book an AP Payment Controls Scoping Call",
+    title: "Book a Finance Workflow Diagnostic",
     description:
-        "Book a 30-minute AP payment controls scoping call. We map your invoice approval workflow, duplicate payment risks, and the fastest path to a working control.",
+        "Book a finance workflow diagnostic. We map one finance or regulated operations workflow, identify control gaps, and recommend the smallest useful build scope.",
     openGraph: {
-        title: "Book an AP Payment Controls Scoping Call | INVARITECH",
-        description: "Book a 30-minute scoping call to map your invoice approval workflow, duplicate payment risks, and the fastest path to a working control.",
+        title: "Book a Finance Workflow Diagnostic | INVARITECH",
+        description: "Map one finance or regulated operations workflow, identify control gaps, and recommend the smallest useful build scope.",
         url: "https://www.invaritech.ai/contact/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH - Book a Meeting" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Book an AP Payment Controls Scoping Call | INVARITECH",
-        description: "Tell us your invoice approval workflow and payment risks. We'll scope the fastest path to a working control.",
+        title: "Book a Finance Workflow Diagnostic | INVARITECH",
+        description: "Bring one finance or regulated operations workflow. We'll map the process, control gaps, and smallest useful build scope.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -38,6 +38,7 @@ type ContactPageProps = {
     searchParams?: Promise<{
         scan?: string | string[];
         audit?: string | string[];
+        diagnostic?: string | string[];
     }>;
 };
 
@@ -46,7 +47,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
     const scanValue = Array.isArray(params?.scan) ? params?.scan[0] : params?.scan;
     const scanRequested = scanValue === "1";
     const auditValue = Array.isArray(params?.audit) ? params?.audit[0] : params?.audit;
-    const auditRequested = auditValue === "1";
+    const diagnosticValue = Array.isArray(params?.diagnostic) ? params?.diagnostic[0] : params?.diagnostic;
+    const diagnosticRequested = diagnosticValue === "1" || auditValue === "1";
 
     return (
         <main className="site-page relative overflow-hidden">
@@ -70,27 +72,27 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
                                 <p className="site-eyebrow-text">
-                                    {auditRequested
-                                        ? "Free for qualified companies. Paid $1k later."
+                                    {diagnosticRequested
+                                        ? "Finance Workflow Diagnostic"
                                         : scanRequested
-                                          ? "Free AP Controls Scan"
+                                          ? "Free Workflow Controls Scan"
                                           : "Get In Touch"}
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                {auditRequested
-                                    ? "Book a Finance Exception Audit Call"
+                                {diagnosticRequested
+                                    ? "Book a Finance Workflow Diagnostic."
                                     : scanRequested
-                                      ? "Request a free AP controls scan."
-                                      : "Book an AP payment controls scoping call."}
+                                      ? "Request a free workflow controls scan."
+                                      : "Book a finance workflow scoping call."}
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            {auditRequested
-                                ? "Tell us about the finance workflow you want to inspect. We will map it, name the highest-value exception to automate first, and send back a fixed-scope build estimate. 30-minute findings call included."
+                            {diagnosticRequested
+                                ? "Bring one finance or regulated operations workflow. We map the current process, identify the control gaps, assess automation fit, and recommend the smallest useful build scope."
                                 : scanRequested
-                                  ? "Send a 90-day Xero or MYOB export. We will run five checks and return a 2-page findings report within 48 hours."
-                                  : "Bring one invoice approval workflow, duplicate payment risk, or supplier exception process. We will scope the fastest path to a working control."}
+                                  ? "Send a recent workflow export or evidence sample. We will run focused checks and return a short findings report within 48 hours."
+                                  : "Bring one finance or regulated operations workflow, exception process, or evidence gap. We will scope the fastest path to a working control."}
                         </p>
                     </div>
                 </div>
@@ -99,7 +101,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             {/* Contact form */}
             <div className="site-container relative z-10 pb-20">
                 <div className="bg-card border border-border p-8 md:p-12">
-                    <ContactSection scanRequested={scanRequested} />
+                    <ContactSection scanRequested={scanRequested} diagnosticRequested={diagnosticRequested} />
                 </div>
             </div>
 

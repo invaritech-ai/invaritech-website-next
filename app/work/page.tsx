@@ -4,24 +4,27 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
+import { primaryDiagnosticCta } from "@/lib/site-content/brand";
+import { proofAssets } from "@/lib/site-content/proof";
+import type { ProofAsset } from "@/lib/site-content/types";
 
 export const metadata: Metadata = {
-    title: "Payment Controls Work & Proof",
+    title: "Governed Workflow Infrastructure Proof",
     description:
-        "Delivered proof from regulated workflow work, plus AP payment controls for invoice approvals, duplicate payment checks, and auditable exception handling.",
+        "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
     openGraph: {
-        title: "Payment Controls Work & Delivered Proof | INVARITECH",
+        title: "Governed Workflow Infrastructure Proof | INVARITECH",
         description:
-            "Delivered proof from regulated workflow work, plus AP payment controls for invoice approvals, duplicate payment checks, and auditable exception handling.",
+            "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Payment Controls Proof" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Governed Workflow Proof" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Payment Controls Work & Delivered Proof | INVARITECH",
+        title: "Governed Workflow Infrastructure Proof | INVARITECH",
         description:
-            "Delivered proof from regulated workflow work, plus AP payment controls for invoice approvals, duplicate payment checks, and auditable exception handling.",
+            "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -29,18 +32,75 @@ export const metadata: Metadata = {
     },
 };
 
-const projects = [
-    {
-        id: "eudr",
-        title: "EUDR Compliance Bridge",
-        category: "International Proof Case",
-        description: "A Python FastAPI bridge enabling a French operator to submit thousands of EUDR Due Diligence Statements via a simple REST API.",
-        tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
-        image: "/eudr-preview.webp",
-        link: "/work/eudr-compliance-bridge/",
-        metric: "Thousands of submissions in minutes",
-    },
-];
+function getProofAsset(id: string) {
+    const asset = proofAssets.find((item) => item.id === id);
+
+    if (!asset) {
+        throw new Error(`Missing proof asset: ${id}`);
+    }
+
+    return asset;
+}
+
+const featuredProof = getProofAsset("eudr-compliance-bridge");
+const supportingProofAssets = proofAssets.filter((asset) => asset.id !== featuredProof.id);
+
+const proofTypeLabels: Record<ProofAsset["type"], string> = {
+    "case-study": "Case study",
+    demo: "Working demo",
+    tool: "Tool proof",
+    placeholder: "Future proof",
+};
+
+function ProofCard({ asset, index }: { asset: ProofAsset; index: number }) {
+    const card = (
+        <article className="group/card h-full border border-border bg-card/70 p-6 transition-colors duration-300 hover:border-primary/40 hover:bg-secondary/30">
+            <div className="mb-8 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-mono text-primary/50">
+                        {(index + 1).toString().padStart(2, "0")}
+                    </span>
+                    <div className="h-[1px] w-6 bg-primary/30" />
+                    <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                        {proofTypeLabels[asset.type]}
+                    </span>
+                </div>
+                {asset.href ? (
+                    <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 group-hover/card:text-primary" />
+                ) : null}
+            </div>
+            <h3 className="font-editorial text-3xl font-semibold leading-tight tracking-tight text-foreground">
+                {asset.title}
+            </h3>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                {asset.body}
+            </p>
+            <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-foreground/80">
+                {asset.proves}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+                {asset.tags.map((tag) => (
+                    <span
+                        key={tag}
+                        className="border border-border bg-background/40 px-2 py-1 text-[10px] font-mono lowercase text-muted-foreground"
+                    >
+                        #{tag}
+                    </span>
+                ))}
+            </div>
+        </article>
+    );
+
+    if (!asset.href) {
+        return card;
+    }
+
+    return (
+        <Link href={asset.href} className="block h-full">
+            {card}
+        </Link>
+    );
+}
 
 export default function WorkPage() {
     return (
@@ -66,94 +126,108 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Payment controls and delivered proof</p>
+                                <p className="site-eyebrow-text">Governed workflow proof</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Proof we can deliver strict workflow controls.
+                                Proof we can build governed workflow infrastructure.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We build invoice approval controls, duplicate payment checks, supplier exception routing, and audit evidence for finance teams. The EUDR bridge below is the proof point: strict, regulated workflow work delivered end to end.
+                            Our work spans regulated submissions, finance exception logic, document extraction, and control-rule tools. The common thread is the same: messy workflow in, governed control layer out.
                         </p>
                     </div>
                 </div>
             </section>
 
-            {/* Projects */}
+            {/* Proof */}
             <div className="relative z-10 site-container pb-20">
-                <div className="space-y-32">
-                    {projects.map((project, index) => (
-                        <div key={project.id} className="group relative">
-                            <div className="grid md:grid-cols-2 gap-12 items-center">
-                                {/* Image */}
-                                <div className={`aspect-[4/3] relative overflow-hidden border border-border group/card ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                                    {/* Scan overlay on hover */}
-                                    <div className="absolute inset-0 z-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-700 pointer-events-none">
-                                        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-transparent h-1/2 animate-scan" />
-                                    </div>
+                <div className="group relative mb-24">
+                    <div className="grid gap-12 md:grid-cols-2 md:items-center">
+                        <Link
+                            href={featuredProof.href ?? "/work/eudr-compliance-bridge/"}
+                            className="aspect-[4/3] relative overflow-hidden border border-border group/card"
+                        >
+                            <div className="absolute inset-0 z-10 opacity-0 transition-opacity duration-700 pointer-events-none group-hover/card:opacity-100">
+                                <div className="absolute inset-0 h-1/2 bg-gradient-to-b from-primary/10 via-transparent to-transparent animate-scan" />
+                            </div>
 
-                                    {project.image ? (
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, 50vw"
-                                            className="object-cover transition-all duration-700 group-hover:scale-105 grayscale group-hover:grayscale-0"
-                                        />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 font-bold text-3xl bg-card">
-                                            {project.title}
-                                        </div>
-                                    )}
+                            <Image
+                                src="/eudr-preview.webp"
+                                alt={featuredProof.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                            />
 
-                                    <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-700" />
-                                </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-60 transition-opacity duration-700 group-hover:opacity-20" />
+                        </Link>
 
-                                {/* Content */}
-                                <div className="space-y-8 p-4 md:p-0">
-                                    <div className="flex items-center gap-3">
-                                        <span className="text-[11px] font-mono text-primary/50">{(index + 1).toString().padStart(2, "0")}</span>
-                                        <div className="h-[1px] w-6 bg-primary/30" />
-                                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
-                                            {project.category}
+                        <div className="space-y-8 p-4 md:p-0">
+                            <div className="flex flex-wrap items-center gap-3">
+                                <span className="text-[11px] font-mono text-primary/50">01</span>
+                                <div className="h-[1px] w-6 bg-primary/30" />
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                                    RegOps proof case
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-mono tracking-wider text-primary">
+                                    <div className="h-1 w-1 rounded-full bg-primary" />
+                                    Deterministic control layer
+                                </span>
+                            </div>
+
+                            <h2 className="font-editorial text-4xl font-semibold leading-tight tracking-tight transition-colors group-hover:text-primary md:text-6xl">
+                                {featuredProof.title}
+                            </h2>
+
+                            <p className="text-lg font-light leading-relaxed text-muted-foreground">
+                                {featuredProof.body}
+                            </p>
+                            <p className="border-l-2 border-primary/30 pl-6 text-base leading-relaxed text-foreground/80">
+                                {featuredProof.proves}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2">
+                                {featuredProof.tags.map((tag) => (
+                                    <span key={tag} className="border border-border bg-card px-2 py-1 text-[10px] font-mono lowercase text-muted-foreground">
+                                        #{tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="pt-4">
+                                <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
+                                    <Link href={featuredProof.href ?? "/work/eudr-compliance-bridge/"} className="flex items-center gap-3">
+                                        <span className="text-sm font-semibold uppercase tracking-widest">
+                                            View RegOps Case
                                         </span>
-                                        {project.metric && (
-                                            <span className="inline-flex items-center gap-1.5 px-2 py-0.5 border border-primary/25 bg-primary/[0.06] text-primary text-[10px] font-mono tracking-wider">
-                                                <div className="w-1 h-1 bg-primary rounded-full" />
-                                                {project.metric}
-                                            </span>
-                                        )}
-                                    </div>
-
-                                    <h2 className="font-editorial text-4xl md:text-6xl font-semibold leading-tight tracking-tight group-hover:text-primary transition-colors">
-                                        {project.title}
-                                    </h2>
-
-                                    <p className="text-lg text-muted-foreground leading-relaxed font-light">
-                                        {project.description}
-                                    </p>
-
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tags.map((tag) => (
-                                            <span key={tag} className="text-[10px] font-mono text-muted-foreground border border-border px-2 py-1 lowercase bg-card">
-                                                #{tag}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    <div className="pt-4">
-                                        <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
-                                            <Link href={project.link} className="flex items-center gap-3">
-                                                <span className="text-sm font-semibold uppercase tracking-widest">
-                                                    {project.metric === "Live Site" ? "View Site" : "View Case"}
-                                                </span>
-                                                <ArrowUpRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                </div>
+                                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                                    </Link>
+                                </Button>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <div className="mb-16 flex flex-col gap-4 border-t border-border pt-16 md:flex-row md:items-end md:justify-between">
+                    <div>
+                        <div className="mb-4 flex items-center gap-3">
+                            <div className="h-[1px] w-8 bg-primary/40" />
+                            <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                                More proof cards
+                            </span>
+                        </div>
+                        <h2 className="font-editorial text-4xl font-semibold tracking-tight md:text-5xl">
+                            Same pattern, different workflow surfaces.
+                        </h2>
+                    </div>
+                    <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+                        These cards show the operating logic behind the work: exception handling, structured intake, rule definition, and evidence-aware workflow design.
+                    </p>
+                </div>
+
+                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                    {supportingProofAssets.map((asset, index) => (
+                        <ProofCard key={asset.id} asset={asset} index={index + 1} />
                     ))}
                 </div>
 
@@ -165,14 +239,14 @@ export default function WorkPage() {
                         <div className="h-[1px] w-8 bg-primary/40" />
                     </div>
                     <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight mb-8 max-w-3xl mx-auto">
-                        Have an AP controls problem we should look at?
+                        Have a workflow control problem we should look at?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                        Bring one invoice approval workflow, supplier reconciliation issue, or duplicate payment risk. We will run the first checks and tell you where the control risk sits.
+                        Bring one regulated submission, finance exception, document intake, or approval workflow. We will map the control gaps and define the smallest governed layer worth building.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
-                        <Link href="/contact?audit=1&src=work">
-                            Book a Finance Exception Audit Call
+                        <Link href={primaryDiagnosticCta.href}>
+                            {primaryDiagnosticCta.label}
                         </Link>
                     </Button>
                 </div>

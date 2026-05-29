@@ -18,7 +18,6 @@ import {
     ArrowRight,
     Globe2,
 } from "lucide-react";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 interface FormData {
     name: string;
@@ -37,9 +36,10 @@ interface FormState {
 
 interface ContactSectionProps {
     scanRequested?: boolean;
+    diagnosticRequested?: boolean;
 }
 
-export default function ContactSection({ scanRequested = false }: ContactSectionProps) {
+export default function ContactSection({ scanRequested = false, diagnosticRequested = false }: ContactSectionProps) {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -152,9 +152,9 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                                 <CheckCircle2 className="h-12 w-12 text-primary" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 text-foreground">
+                        <h2 className="text-2xl font-bold mb-4 text-foreground">
                             Message Sent.
-                        </h3>
+                        </h2>
                         <p className="text-muted-foreground mb-8 text-lg">
                             We&apos;ve received your message and will get back to you shortly.
                         </p>
@@ -186,12 +186,13 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                                    Why work with Invaritech on AP payment controls?
+                                    Why work with Invaritech on governed workflow automation?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    Invaritech scopes, builds, and supports invoice approval controls,
-                                    duplicate payment checks, and payment fraud controls. A founder stays
-                                    accountable from scoping through delivery.
+                                    Invaritech scopes, builds, and supports workflow controls,
+                                    exception routing, reporting bridges, and evidence capture for
+                                    finance and regulated operations. A founder stays accountable
+                                    from scoping through delivery.
                                 </p>
                             </div>
 
@@ -202,32 +203,34 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                                     </div>
                                     <div>
                                         <h3 className="font-medium mb-1 text-foreground">
-                                            {scanRequested ? "Request the Scan" : "Book a Meeting"}
+                                            {diagnosticRequested
+                                                ? "Book the Diagnostic"
+                                                : scanRequested
+                                                  ? "Request the Scan"
+                                                  : "Book a Diagnostic"}
                                         </h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            {scanRequested
-                                                ? "Use the form to start the free AP controls scan. We will confirm the export, NDA, and next step before asking for data."
-                                                : "Skip the email loop and bring one real accounts payable workflow problem to a focused scoping session."}
+                                            {diagnosticRequested
+                                                ? "Use the form to bring one finance or regulated operations workflow to a focused diagnostic."
+                                                : scanRequested
+                                                  ? "Use the form to start the free workflow controls scan. We will confirm the export, NDA, and next step before asking for data."
+                                                  : "Skip the email loop and bring one real finance or regulated operations workflow to a focused diagnostic."}
                                         </p>
                                         <Button
                                             asChild
                                             variant="default"
                                             className="group rounded-none"
                                         >
-                                            {scanRequested ? (
+                                            {diagnosticRequested || scanRequested ? (
                                                 <Link href="#contact-form">
                                                     Use the Form
                                                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                                 </Link>
                                             ) : (
-                                                <a
-                                                    href={BOOK_MEETING_URL}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                >
-                                                    {BOOK_MEETING_CTA}
+                                                <Link href="/contact/?diagnostic=1">
+                                                    Book Workflow Diagnostic
                                                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                                </a>
+                                                </Link>
                                             )}
                                         </Button>
                                     </div>
@@ -259,12 +262,18 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                         <Card className="rounded-none border border-border bg-card  shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
                                 <h3 className="text-xl font-semibold mb-2 text-foreground">
-                                    {scanRequested ? "Request the free AP controls scan" : "Send us a message"}
+                                    {diagnosticRequested
+                                        ? "Book the finance workflow diagnostic"
+                                        : scanRequested
+                                          ? "Request the free workflow controls scan"
+                                          : "Tell us about your workflow"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    {scanRequested
-                                        ? "Tell us which accounting system you use and the best way to handle the NDA before you send your export."
-                                        : "Tell us which invoice approval workflow, supplier reconciliation, or payment risk process needs attention."}
+                                    {diagnosticRequested
+                                        ? "Tell us which finance or regulated operations workflow you want to map first."
+                                        : scanRequested
+                                          ? "Tell us which system you use and the best way to handle the NDA before you send your export."
+                                          : "Tell us which workflow, exception path, reporting bridge, or evidence gap needs attention."}
                                 </p>
                             </div>
 
@@ -317,7 +326,7 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                                             type="text"
                                             id="country"
                                             name="country"
-                                            placeholder="Australia"
+                                            placeholder="Singapore"
                                             defaultValue={formData.country}
                                             onChange={handleInputChange}
                                             required
@@ -341,14 +350,14 @@ export default function ContactSection({ scanRequested = false }: ContactSection
 
                                 <div className="space-y-2">
                                     <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                                        What payment control needs attention? *
+                                        Which workflow needs attention? *
                                     </Label>
                                     <Textarea
                                         id="message"
                                         name="message"
                                         placeholder={scanRequested
-                                            ? "Example: I want the free AP controls scan. We use Xero and can provide a 90-day export after NDA."
-                                            : "Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."}
+                                            ? "Example: I want the free workflow controls scan. We use NetSuite and can provide a recent export after NDA."
+                                            : "Example: month-end exception handling, reporting bridge, approval evidence, or regulated submission workflow."}
                                         defaultValue={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}
@@ -365,20 +374,26 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                                 />
 
                                 {formState.error && (
-                                    <div className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2">
+                                    <div
+                                        role="alert"
+                                        aria-live="polite"
+                                        className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2"
+                                    >
                                         <span className="font-mono font-medium">ERR:</span> {formState.error}
                                     </div>
                                 )}
 
                                 <Button
                                     type="submit"
-                                    disabled={formState.isSubmitting || !turnstileToken}
+                                    disabled={formState.isSubmitting}
                                     className="w-full rounded-none"
                                     size="lg"
                                 >
                                     {formState.isSubmitting
                                         ? "Sending..."
-                                        : scanRequested ? "Request AP Controls Scan" : "Send Message"}
+                                        : diagnosticRequested
+                                          ? "Request Workflow Diagnostic"
+                                          : scanRequested ? "Request Workflow Controls Scan" : "Send Message"}
                                 </Button>
                             </form>
                         </Card>
@@ -392,13 +407,13 @@ export default function ContactSection({ scanRequested = false }: ContactSection
                                 <Globe2 className="h-5 w-5 text-primary" />
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold mb-2">Remote delivery, Australian focus</h3>
+                                <h3 className="text-lg font-semibold mb-2">Remote delivery, founder-led support</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                                    We&apos;re based in Asia and deliver remotely. No Sydney office.
-                                    That&apos;s what keeps our prices lower than a local firm.
-                                    Every engagement is handled directly by a founder, over video
-                                    call and async communication, with full documentation and audit
-                                    trails throughout.
+                                    We&apos;re based in Asia and deliver remotely for teams that need
+                                    governed workflow systems around the tools they already use.
+                                    Every engagement is handled directly by a founder over video
+                                    call and async communication, with full documentation and
+                                    evidence trails throughout.
                                 </p>
                                 <a
                                     href="mailto:hello@invaritech.ai"

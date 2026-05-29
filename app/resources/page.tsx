@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "AP Automation Resources & Templates",
+    title: "Finance Controls Tools and Resources",
     description:
-        "Practical accounts payable automation resources, including invoice approval workflow guides, duplicate payment prevention checklists, supplier statement reconciliation support, and freight invoice audit tools.",
+        "Free tools, rule tables, checklists, and guides for finance controls, approval evidence, exception routing, duplicate payment risk, and month-end visibility.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Accounts Payable Automation Resources — INVARITECH",
+        title: "Finance Controls Tools and Resources - INVARITECH",
         description:
-            "Rule tables, guides, and checklists for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and freight invoice audit controls.",
+            "Free tools, rule tables, checklists, and guides for finance controls, approval evidence, exception routing, duplicate payment risk, and month-end visibility.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Accounts Payable Automation Resources",
+                alt: "Finance Controls Tools and Resources",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Accounts Payable Automation Resources — INVARITECH",
+        title: "Finance Controls Tools and Resources - INVARITECH",
         description:
-            "Rule tables, guides, and checklists for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and freight invoice audit.",
+            "Free tools, rule tables, checklists, and guides for finance controls, approval evidence, exception routing, duplicate payment risk, and month-end visibility.",
         images: ["/og-image.png"],
     },
 };

@@ -4,16 +4,16 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { primaryDiagnosticCta } from "@/lib/site-content/brand";
 
 export const metadata: Metadata = {
-    title: "EUDR Compliance Bridge Case Study",
+    title: "EUDR RegOps Bridge Case Study",
     description:
-        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries. Proof of disciplined regulated workflow delivery.",
+        "RegOps Bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
     openGraph: {
-        title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
+        title: "EUDR RegOps Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries. Proof of disciplined regulated workflow delivery.",
+            "RegOps Bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
+        title: "EUDR RegOps Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators with validation, audit logs, and controlled retries.",
+            "RegOps Bridge proof for high-volume, audit-ready EUDR submissions with deterministic validation and retry-safe processing.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -61,7 +61,7 @@ export default function EudrCaseStudyPage() {
 
                     <div className="flex flex-col gap-2 mb-8">
                          <span className="font-mono text-primary text-sm tracking-widest uppercase">
-                            Automation & Compliance
+                            RegOps proof case
                         </span>
                         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mix-blend-difference mb-6">
                             <TextEffect per="char" preset="fade">
@@ -69,17 +69,16 @@ export default function EudrCaseStudyPage() {
                             </TextEffect>
                         </h1>
                         <h2 className="text-2xl md:text-4xl font-light text-muted-foreground max-w-3xl">
-                             100,000+ Submissions <span className="text-foreground">Per Month</span>.
-                             <br/>
-                             Zero Manual Data Entry.
+                             RegOps Bridge for high-volume, audit-ready regulatory submissions.
                         </h2>
                     </div>
 
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl border-l-2 border-primary/30 pl-6 mt-12">
+                        The EUDR bridge proves Invaritech can build deterministic workflow infrastructure for regulated operations: structured validation, API bridges, submission evidence, and retry-safe processing.{" "}
                         A French operator preparing for EU Deforestation
                         Regulation (EUDR) enforcement needed the capacity to
                         process up to <span className="text-foreground font-medium">100,000 Due Diligence Statements (DDS)</span>{" "}
-                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blog/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered a backend infrastructure built for high-volume regulatory submission automation.
+                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blog/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered backend infrastructure built for high-volume regulatory submissions.
                     </p>
                 </div>
 
@@ -124,7 +123,7 @@ export default function EudrCaseStudyPage() {
 
                     <div className="mb-16 max-w-3xl">
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
+                            In practice, this is RegOps backend development: deterministic workflow infrastructure for bursty submission volume, strict regulator interfaces, and defensible evidence trails. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
                             <Link href="/glossary/three-way-match/" className="site-link">
                                 three-way match glossary entry
                             </Link>
@@ -137,7 +136,7 @@ export default function EudrCaseStudyPage() {
                         <div className="grid gap-12 md:grid-cols-2 items-center">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                    Deterministic API & Validation
+                                    Structured Validation & API Bridges
                                 </h3>
                                 <div className="space-y-6 text-muted-foreground">
                                     <p>
@@ -183,11 +182,11 @@ export default function EudrCaseStudyPage() {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                    Audit Log & Operator Dashboard
+                                    Submission Evidence & Operator Dashboard
                                 </h3>
                                 <div className="space-y-6 text-muted-foreground">
                                     <p>
-                                        We eliminated portal navigation time by maintaining an internal dashboard. Operators search and segment DDS by status, date, and commodity instantly.
+                                        We eliminated portal navigation time by maintaining an internal dashboard and submission evidence trail. Operators search and segment DDS by status, date, and commodity instantly.
                                     </p>
                                     <div className="p-6 border border-border bg-card">
                                         <p className="font-mono text-xs uppercase tracking-widest text-primary mb-2">Lifecycle Tracking</p>
@@ -214,7 +213,7 @@ export default function EudrCaseStudyPage() {
                         <div className="grid gap-12 md:grid-cols-2 items-center">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                    State-Aware Retry Logic
+                                    Retry-Safe Processing
                                 </h3>
                                 <div className="space-y-6 text-muted-foreground">
                                     <p>
@@ -315,21 +314,19 @@ export default function EudrCaseStudyPage() {
                         NEED THIS LEVEL OF <span className="text-primary">CONTROL</span>?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-                        For EUDR volume, we can scope deterministic submission control. For AP controls, start with one invoice approval, supplier reconciliation, or duplicate payment problem.
+                        For EUDR volume, we can scope deterministic submission control. For finance or regulated operations, start with one submission, approval, reconciliation, or evidence workflow.
                     </p>
                     <div className="flex justify-center">
-                        <MagneticButton className="px-12 py-6 text-xl">
-                            <Link
-                                href="/contact?audit=1&src=work-eudr"
-                                className="flex items-center gap-3"
-                            >
-                                Book a Finance Exception Audit Call <ArrowRight className="w-6 h-6" />
-                            </Link>
-                        </MagneticButton>
+                        <Link
+                            href={primaryDiagnosticCta.href}
+                            className="inline-flex min-h-14 items-center justify-center gap-3 border border-primary/20 bg-background/50 px-12 py-4 text-xl font-medium transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                        >
+                            {primaryDiagnosticCta.label} <ArrowRight className="w-6 h-6" />
+                        </Link>
                     </div>
                     <div className="mt-12 text-sm text-muted-foreground max-w-lg mx-auto">
                         <p>
-                            For teams that need this level of control in a finance-ops workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or request the free AP controls scan.
+                            For teams that need this level of control in a finance or RegOps workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or request the workflow diagnostic.
                         </p>
                     </div>
                 </section>

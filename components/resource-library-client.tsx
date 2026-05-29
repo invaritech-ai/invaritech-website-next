@@ -17,18 +17,18 @@ import RuleTablePreview from "@/components/rule-table-preview";
 const resourceNotes = [
     {
         icon: ListChecks,
-        title: "Invoice approval checks",
-        body: "Ordered checks for catching invoice exceptions before payment release.",
+        title: "Approval evidence",
+        body: "Evidence fields for decisions, timestamps, owners, and approval notes.",
     },
     {
         icon: ShieldCheck,
-        title: "Fraud evidence standard",
-        body: "What evidence to attach for vendor bank detail changes and high-risk approvals.",
+        title: "Exception routing",
+        body: "Routing logic for mismatches, payment changes, and release blockers.",
     },
     {
         icon: FileSpreadsheet,
-        title: "Exception queue design",
-        body: "Owner, status, SLA, approval note, and audit trail fields in one queue.",
+        title: "Month-end visibility",
+        body: "Queue structure for surfacing unresolved control work before close.",
     },
 ];
 
@@ -51,38 +51,39 @@ export default function ResourceLibraryClient() {
                             <div className="mb-8 flex items-center gap-3" data-reveal="block">
                                 <div className="h-px w-8 bg-primary/60" />
                                 <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                    Accounts Payable Automation Resources
+                                    Finance Controls Resource Library
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical resources for invoice approval workflow and AP automation.
+                                Tools and resources for finance controls, exceptions, and evidence.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Rule tables, checklists, and guides for teams reducing duplicate payments,
-                            improving supplier statement reconciliation, and preventing payment diversion fraud.
+                            Free tools, rule tables, checklists, and guides that show how we think
+                            about approval evidence, exception routing, duplicate payment risk, and
+                            month-end visibility.
                         </p>
                     </div>
                 </div>
             </section>
 
             {/* ── Featured Asset Panel ──────────────────────────────── */}
-            <section className="border-y border-border bg-card py-16 md:py-24">
+            <section id="tools" className="scroll-mt-24 border-y border-border bg-card py-16 md:py-24">
                 <div className="site-container">
                     <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
                         {/* Left: copy + resource notes */}
                         <div data-reveal="block">
                             <div className="mb-8 inline-flex items-center gap-3 border border-primary/30 bg-primary/[0.05] px-4 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-primary">
                                 <FileSpreadsheet className="size-4" aria-hidden="true" />
-                                Featured resource
+                                Free control tool
                             </div>
                             <h2 className="site-h2">
                                 Invoice Approval Workflow & Supplier Payment Controls Rule Table
                             </h2>
                             <p className="site-lead mt-6">
-                                An interactive table for mapping invoice approval workflow steps,
-                                supplier payment controls, exception routing, and payment approval checks
-                                before payment is released.
+                                An interactive rule table for mapping approval evidence, exception
+                                routing, duplicate payment risk, and payment-release checks before
+                                month-end problems become harder to trace.
                             </p>
                             <div className="mt-10 grid gap-[1px] bg-border sm:grid-cols-3">
                                 {resourceNotes.map((note) => (
@@ -97,8 +98,9 @@ export default function ResourceLibraryClient() {
                                 ))}
                             </div>
                             <p className="mt-8 text-sm leading-relaxed text-foreground-subtle">
-                                Use it as a starting point for reviewing the checks, owners, evidence,
-                                and audit trail your team needs before payment release.
+                                Use it as a starting point for reviewing the checks, owners,
+                                evidence, exception paths, and audit trail your team needs before
+                                payment release.
                             </p>
                         </div>
 
@@ -119,18 +121,26 @@ export default function ResourceLibraryClient() {
             </section>
 
             {/* ── Library Index ─────────────────────────────────────── */}
-            <section className="site-section">
+            <section id="guides" className="site-section scroll-mt-24">
                 <div className="site-container">
-                    <div className="mb-10 flex items-center gap-3" data-reveal="block">
-                        <div className="h-px w-8 bg-primary/60" />
-                        <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                            Resource Library
+                    <div className="mb-10 grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-end" data-reveal="block">
+                        <div>
+                            <div className="mb-8 flex items-center gap-3">
+                                <div className="h-px w-8 bg-primary/60" />
+                                <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                                    Guides and Checklists
+                                </p>
+                            </div>
+                            <h2 className="site-h2">Resource library</h2>
+                        </div>
+                        <p className="site-body text-foreground-subtle">
+                            Open tools, practical guides, checklists, and templates for teams
+                            tightening controls around finance operations, exceptions, and evidence.
                         </p>
                     </div>
 
                     {/* Filter tabs */}
                     <div
-                        role="tablist"
                         aria-label="Filter resources by category"
                         className="mb-8 flex flex-wrap gap-2 border-b border-border pb-6"
                         data-reveal="block"
@@ -138,8 +148,7 @@ export default function ResourceLibraryClient() {
                         {CATEGORY_KEYS.map((key) => (
                             <button
                                 key={key}
-                                role="tab"
-                                aria-selected={activeCategory === key}
+                                aria-pressed={activeCategory === key}
                                 onClick={() => setActiveCategory(key)}
                                 className={[
                                     "px-4 py-2 text-[11px] font-mono uppercase tracking-[0.18em] transition-colors",
@@ -175,18 +184,18 @@ export default function ResourceLibraryClient() {
                         data-reveal="block"
                     >
                         <div>
-                            <h2 className="site-h3">Have a live exception problem?</h2>
+                            <h2 className="site-h3">Have a live finance control problem?</h2>
                             <p className="site-body mt-3">
-                                Bring one real invoice approval workflow, supplier statement
-                                reconciliation issue, or duplicate payment example. We will run the
-                                first checks and tell you where the control risk sits.
+                                Bring one approval workflow, exception queue, reconciliation issue,
+                                or duplicate payment example. We will map the current process and
+                                identify the smallest useful automation scope.
                             </p>
                         </div>
                         <Link
-                            href="/contact?audit=1&src=resources"
+                            href="/contact/?diagnostic=1"
                             className="site-button gap-2"
                         >
-                            Book a Finance Exception Audit Call
+                            Book Workflow Diagnostic
                             <ArrowRight className="size-4" aria-hidden="true" />
                         </Link>
                     </div>
