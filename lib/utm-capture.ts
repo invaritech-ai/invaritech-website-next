@@ -2,8 +2,9 @@
 
 import { useEffect } from "react";
 
-const SESSION_SRC_KEY = "invaritech.utm.src";
-const SESSION_CAMPAIGN_KEY = "invaritech.utm.campaign";
+export const SESSION_SRC_KEY = "invaritech.utm.src";
+export const SESSION_CAMPAIGN_KEY = "invaritech.utm.campaign";
+export const UTM_CAPTURE_EVENT = "invaritech:utm-capture";
 
 export type UtmParams = {
     src?: string;
@@ -35,8 +36,18 @@ export function useUtmCapture(): void {
         if (typeof window === "undefined") return;
         try {
             const params = parseUtmParams(window.location.pathname + window.location.search);
-            if (params.src) window.sessionStorage.setItem(SESSION_SRC_KEY, params.src);
-            if (params.campaign) window.sessionStorage.setItem(SESSION_CAMPAIGN_KEY, params.campaign);
+            let wroteParams = false;
+            if (params.src) {
+                window.sessionStorage.setItem(SESSION_SRC_KEY, params.src);
+                wroteParams = true;
+            }
+            if (params.campaign) {
+                window.sessionStorage.setItem(SESSION_CAMPAIGN_KEY, params.campaign);
+                wroteParams = true;
+            }
+            if (wroteParams) {
+                window.dispatchEvent(new Event(UTM_CAPTURE_EVENT));
+            }
         } catch {
             // sessionStorage unavailable; ignore.
         }

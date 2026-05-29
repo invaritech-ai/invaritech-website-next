@@ -1,25 +1,12 @@
 import Link from "next/link";
 
 import { Logo, LogoIcon } from "@/components/logo";
-
-const companyLinks = [
-    { title: "Home", href: "/" },
-    { title: "Finance Automation", href: "/finance-exception-automation/" },
-    { title: "Demo", href: "/glossary/three-way-match/" },
-    { title: "Resources", href: "/resources/" },
-    { title: "Blog", href: "/blog/" },
-    { title: "Work", href: "/work/" },
-    { title: "About", href: "/about/" },
-    { title: "Contact", href: "/contact/" },
-];
-
-const financeLinks = [
-    { title: "Finance Exception Automation", href: "/finance-exception-automation/" },
-    { title: "Three-Way Matching", href: "/glossary/three-way-match/" },
-    { title: "Invoice Extractor", href: "/resources/invoice-extractor/" },
-    { title: "Cost to Close Calculator", href: "/resources/cost-to-close-calculator/" },
-    { title: "Payment Control Rules", href: "/resources/supplier-payment-control-rule-table/" },
-];
+import { brandPositioning } from "@/lib/site-content/brand";
+import {
+    footerCompanyLinks,
+    footerFinanceLinks,
+    footerProofLinks,
+} from "@/lib/site-content/navigation";
 
 const legalLinks = [
     { title: "Privacy Policy", href: "/privacy/" },
@@ -66,6 +53,27 @@ function FooterLink({ href, title }: { href: string; title: string }) {
     );
 }
 
+function FooterColumn({
+    title,
+    links,
+}: {
+    title: string;
+    links: { label?: string; title?: string; href: string }[];
+}) {
+    return (
+        <nav aria-label={`${title} navigation`}>
+            <h2 className="site-footer-heading">{title}</h2>
+            <ul className="site-footer-link-list">
+                {links.map((link) => (
+                    <li key={link.href}>
+                        <FooterLink href={link.href} title={link.label ?? link.title ?? ""} />
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
+
 export default function FooterSection() {
     const currentYear = new Intl.DateTimeFormat("en", {
         year: "numeric",
@@ -87,48 +95,17 @@ export default function FooterSection() {
                             </span>
                             <span className="site-footer-logo-copy">
                                 <Logo className="site-footer-logo-text" />
-                                <span className="site-logo-strapline">Payment Controls</span>
+                                <span className="site-logo-strapline">Control Layer Automation</span>
                             </span>
                         </Link>
 
-                        <p className="site-footer-text">
-                            Founder-led payment control design for finance teams that need cleaner approvals,
-                            fewer manual exceptions, and less payment leakage without changing systems.
-                        </p>
+                        <p className="site-footer-text">{brandPositioning.footer}</p>
                     </div>
 
-                    <nav aria-label="Footer navigation">
-                        <h2 className="site-footer-heading">Company</h2>
-                        <ul className="site-footer-link-list">
-                            {companyLinks.map((link) => (
-                                <li key={link.title}>
-                                    <FooterLink href={link.href} title={link.title} />
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-
-                    <nav aria-label="Finance Automation navigation">
-                        <h2 className="site-footer-heading">Finance Automation</h2>
-                        <ul className="site-footer-link-list">
-                            {financeLinks.map((link) => (
-                                <li key={link.title}>
-                                    <FooterLink href={link.href} title={link.title} />
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-
-                    <nav aria-label="Legal navigation">
-                        <h2 className="site-footer-heading">Legal</h2>
-                        <ul className="site-footer-link-list">
-                            {legalLinks.map((link) => (
-                                <li key={link.title}>
-                                    <FooterLink href={link.href} title={link.title} />
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                    <FooterColumn title="Company" links={footerCompanyLinks} />
+                    <FooterColumn title="Finance Automation" links={footerFinanceLinks} />
+                    <FooterColumn title="Proof" links={footerProofLinks} />
+                    <FooterColumn title="Legal" links={legalLinks} />
 
                     <div>
                         <h2 className="site-footer-heading">Connect</h2>
@@ -151,7 +128,7 @@ export default function FooterSection() {
 
                 <div className="site-footer-bottom">
                     <p>&copy; {currentYear} INVARITECH. All rights reserved.</p>
-                    <p>Asia-based delivery. Founder-led. Dedicated team per client.</p>
+                    <p>Asia-based delivery. Founder-led. Built around existing systems.</p>
                 </div>
             </div>
         </footer>

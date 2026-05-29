@@ -55,23 +55,23 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default: "Payment Control Design for Australian Finance Teams | INVARITECH",
+        default: "Finance Operations and RegOps Automation | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "Founder-led payment control design for Australian finance teams. Reduce manual exceptions, tighten approvals, and reduce dollar leakage without changing systems.",
+        "Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around the systems they already use.",
     keywords: [
         "INVARITECH",
-        "payment control design",
+        "finance operations automation",
+        "RegOps automation",
         "finance operations",
         "accounts payable controls",
         "invoice exception management",
         "supplier payment controls",
-        "freight invoice variance",
         "payment approval workflow",
+        "reporting bridge",
         "audit trail automation",
-        "Australian finance teams",
-        "finance ops exceptions",
+        "finance exception automation",
     ],
     authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
@@ -98,26 +98,26 @@ export const metadata: Metadata = {
     },
     openGraph: {
         type: "website",
-        locale: "en_AU",
+        locale: "en",
         url: "https://www.invaritech.ai",
-        title: "Payment Control Design for Australian Finance Teams | INVARITECH",
+        title: "Finance Operations and RegOps Automation | INVARITECH",
         description:
-            "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
+            "Finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around the systems they already use.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Payment Control Design for Australian Finance Teams | INVARITECH",
+                alt: "Finance Operations and RegOps Automation | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Payment Control Design for Australian Finance Teams | INVARITECH",
+        title: "Finance Operations and RegOps Automation | INVARITECH",
         description:
-            "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
+            "Finance operations and RegOps automation for teams worldwide around the systems they already use.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },
@@ -138,7 +138,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en-AU" suppressHydrationWarning className="light">
+        <html lang="en" suppressHydrationWarning className="light">
             <head>
                 <meta
                     name="facebook-domain-verification"

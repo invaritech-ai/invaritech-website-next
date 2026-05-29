@@ -1,5 +1,5 @@
 /**
- * Build an audit CTA href from a base path and optional params.
+ * Build a diagnostic CTA href from a base path and optional params.
  * Pure function — extracted from audit-cta.tsx so it can be tested without
  * requiring a .tsx loader in node:test.
  */

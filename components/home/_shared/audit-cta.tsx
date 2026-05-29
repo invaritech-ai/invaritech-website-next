@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 import { trackSiteEvent } from "@/lib/analytics/site-events";
+import {
+    SESSION_CAMPAIGN_KEY,
+    SESSION_SRC_KEY,
+    UTM_CAPTURE_EVENT,
+} from "@/lib/utm-capture";
 import { appendAuditCtaParams } from "./audit-cta-href";
 
 type Location = "hero" | "mid" | "footer" | "nav" | "card";
@@ -22,11 +27,29 @@ type Props = {
     className?: string;
 };
 
-const DEFAULT_LABEL = "Book a Finance Exception Audit Call";
-const DEFAULT_HREF = "/contact?audit=1";
+const DEFAULT_LABEL = "Book Workflow Diagnostic";
+const DEFAULT_HREF = "/contact/?diagnostic=1";
 
-const SESSION_SRC_KEY = "invaritech.utm.src";
-const SESSION_CAMPAIGN_KEY = "invaritech.utm.campaign";
+function subscribeSessionStorage(callback: () => void) {
+    if (typeof window === "undefined") return () => {};
+    const timeoutId = window.setTimeout(callback, 0);
+    window.addEventListener("storage", callback);
+    window.addEventListener(UTM_CAPTURE_EVENT, callback);
+    return () => {
+        window.clearTimeout(timeoutId);
+        window.removeEventListener("storage", callback);
+        window.removeEventListener(UTM_CAPTURE_EVENT, callback);
+    };
+}
+
+function readSessionValue(key: string) {
+    if (typeof window === "undefined") return undefined;
+    try {
+        return window.sessionStorage.getItem(key) ?? undefined;
+    } catch {
+        return undefined;
+    }
+}
 
 export function AuditCTA({
     location,
@@ -37,20 +60,16 @@ export function AuditCTA({
     campaign,
     className = "",
 }: Props) {
-    // Read sessionStorage on mount so SSR-rendered href doesn't differ on first
-    // paint, and we get hydration without warnings.
-    const [storedSrc, setStoredSrc] = useState<string | undefined>(undefined);
-    const [storedCampaign, setStoredCampaign] = useState<string | undefined>(undefined);
-
-    useEffect(() => {
-        if (typeof window === "undefined") return;
-        try {
-            setStoredSrc(window.sessionStorage.getItem(SESSION_SRC_KEY) ?? undefined);
-            setStoredCampaign(window.sessionStorage.getItem(SESSION_CAMPAIGN_KEY) ?? undefined);
-        } catch {
-            // sessionStorage unavailable; ignore.
-        }
-    }, []);
+    const storedSrc = useSyncExternalStore(
+        subscribeSessionStorage,
+        () => readSessionValue(SESSION_SRC_KEY),
+        () => undefined,
+    );
+    const storedCampaign = useSyncExternalStore(
+        subscribeSessionStorage,
+        () => readSessionValue(SESSION_CAMPAIGN_KEY),
+        () => undefined,
+    );
 
     const effectiveSrc = src ?? storedSrc;
     const effectiveCampaign = campaign ?? storedCampaign;

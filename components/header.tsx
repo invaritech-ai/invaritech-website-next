@@ -6,31 +6,89 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 
 import { LogoIcon } from "@/components/logo";
+import { primaryDiagnosticCta } from "@/lib/site-content/brand";
+import { primaryNavigation } from "@/lib/site-content/navigation";
 import { cn } from "@/lib/utils";
 
-const menuItems = [
-    { name: "Finance Automation", href: "/finance-exception-automation", id: "01" },
-    { name: "Demo", href: "/glossary/three-way-match/", id: "02" },
-    { name: "Systems", href: "/finance-exception-automation#systems", id: "03" },
-    { name: "How It Works", href: "/finance-exception-automation#how", id: "04" },
-    { name: "Resources", href: "/resources/", id: "05" },
-    { name: "Book Audit", href: "/contact?audit=1", id: "06" },
-];
+const menuItems = primaryNavigation.map((item, index) => ({
+    ...item,
+    id: String(index + 1).padStart(2, "0"),
+}));
+
+const ctaLink = {
+    label: primaryDiagnosticCta.label,
+    href: primaryDiagnosticCta.href,
+    id: String(menuItems.length + 1).padStart(2, "0"),
+};
 
 function isExternalLink(href: string) {
     return href.startsWith("http");
 }
 
-function isActivePath(pathname: string, href: string) {
-    if (isExternalLink(href)) return false;
-    const hrefBase = href.split("#")[0].split("?")[0];
-    return pathname === hrefBase || (hrefBase !== "/" && pathname.startsWith(hrefBase));
+function normalizePath(path: string) {
+    if (path === "/") return path;
+    return path.replace(/\/$/, "");
+}
+
+function getActiveNavigationHref(pathname: string, currentHash: string) {
+    const currentPath = normalizePath(pathname);
+    const candidates = menuItems
+        .filter((item) => !isExternalLink(item.href))
+        .map((item) => {
+            const [hrefWithoutQuery, hash] = item.href.split("#");
+            const hrefBase = normalizePath(hrefWithoutQuery.split("?")[0]);
+            const matchesHash = hash ? currentHash === `#${hash}` : true;
+            const matchesPath =
+                currentPath === hrefBase ||
+                (hrefBase !== "/" && currentPath.startsWith(`${hrefBase}/`));
+
+            if (!matchesPath || !matchesHash) return null;
+
+            return {
+                href: item.href,
+                exact: currentPath === hrefBase,
+                score: hrefBase.length + (hash ? 1000 : 0),
+            };
+        })
+        .filter((candidate): candidate is { href: string; exact: boolean; score: number } =>
+            Boolean(candidate),
+        )
+        .sort((a, b) => {
+            if (a.exact !== b.exact) return a.exact ? -1 : 1;
+            return b.score - a.score;
+        });
+
+    return candidates[0]?.href;
+}
+
+function isActivePath(activeHref: string | undefined, href: string) {
+    if (!activeHref) return false;
+    const [hrefWithoutQuery, hash] = href.split("#");
+    const [activeWithoutQuery, activeHash] = activeHref.split("#");
+    return (
+        normalizePath(hrefWithoutQuery.split("?")[0]) ===
+            normalizePath(activeWithoutQuery.split("?")[0]) &&
+        (hash ?? "") === (activeHash ?? "")
+    );
 }
 
 export const HeroHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [currentHash, setCurrentHash] = useState("");
     const pathname = usePathname();
     const mobileMenuId = useId();
+    const activeHref = getActiveNavigationHref(pathname, currentHash);
+
+    useEffect(() => {
+        function updateHash() {
+            setCurrentHash(window.location.hash);
+        }
+
+        updateHash();
+        window.addEventListener("hashchange", updateHash);
+
+        return () => window.removeEventListener("hashchange", updateHash);
+    }, [pathname]);
 
     useEffect(() => {
         if (!isOpen) {
@@ -54,9 +112,7 @@ export const HeroHeader = () => {
         };
     }, [isOpen]);
 
-    const primaryLinks = menuItems.slice(0, -1);
-    const ctaLink = menuItems[menuItems.length - 1];
-    const ctaIsExternal = isExternalLink(ctaLink.href);
+    const mobileItems = [...menuItems, ctaLink];
 
     return (
         <header className="site-shell-header">
@@ -69,31 +125,30 @@ export const HeroHeader = () => {
                         <span className="site-shell-brand-name" translate="no">
                             INVARITECH
                         </span>
-                        <span className="site-shell-brand-line">Payment Controls</span>
+                        <span className="site-shell-brand-line">Control Layer Automation</span>
                     </span>
                 </Link>
 
                 <nav className="site-shell-nav" aria-label="Primary navigation">
-                    {primaryLinks.map((item) => (
-                        <Link
-                            key={item.name}
-                            href={item.href}
-                            className={cn(
-                                "site-shell-nav-link",
-                                isActivePath(pathname, item.href) && "site-shell-nav-link-active",
-                            )}
-                            aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
-                        >
-                            {item.name}
-                        </Link>
-                    ))}
-                    <Link
-                        href={ctaLink.href}
-                        target={ctaIsExternal ? "_blank" : undefined}
-                        rel={ctaIsExternal ? "noopener noreferrer" : undefined}
-                        className="site-shell-nav-cta"
-                    >
-                        {ctaLink.name}
+                    {menuItems.map((item) => {
+                        const active = isActivePath(activeHref, item.href);
+
+                        return (
+                            <Link
+                                key={item.label}
+                                href={item.href}
+                                className={cn(
+                                    "site-shell-nav-link",
+                                    active && "site-shell-nav-link-active",
+                                )}
+                                aria-current={active ? "page" : undefined}
+                            >
+                                {item.label}
+                            </Link>
+                        );
+                    })}
+                    <Link href={ctaLink.href} className="site-shell-nav-cta">
+                        {ctaLink.label}
                     </Link>
                 </nav>
 
@@ -126,16 +181,13 @@ export const HeroHeader = () => {
             {isOpen ? (
                 <div id={mobileMenuId} className="site-shell-mobile-panel">
                     <nav className="site-shell-mobile-nav" aria-label="Mobile navigation">
-                        {menuItems.map((item) => {
-                            const active = isActivePath(pathname, item.href);
-                            const external = isExternalLink(item.href);
+                        {mobileItems.map((item) => {
+                            const active = isActivePath(activeHref, item.href);
 
                             return (
                                 <Link
-                                    key={item.name}
+                                    key={item.label}
                                     href={item.href}
-                                    target={external ? "_blank" : undefined}
-                                    rel={external ? "noopener noreferrer" : undefined}
                                     onClick={() => setIsOpen(false)}
                                     className={cn(
                                         "site-shell-mobile-link group",
@@ -144,16 +196,16 @@ export const HeroHeader = () => {
                                     aria-current={active ? "page" : undefined}
                                 >
                                     <span className="site-shell-mobile-index">{item.id}</span>
-                                    <span className="site-shell-mobile-title">{item.name}</span>
+                                    <span className="site-shell-mobile-title">{item.label}</span>
                                     <ArrowUpRight className="site-shell-mobile-arrow" aria-hidden="true" />
                                 </Link>
                             );
                         })}
                     </nav>
                     <div className="site-shell-mobile-footer">
-                        Asia-based AP payment controls
+                        Asia-based. Globally delivered.
                         <br />
-                        Founder-led. Dedicated team per client.
+                        Founder-led. Built around your current stack.
                     </div>
                 </div>
             ) : null}
