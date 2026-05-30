@@ -8,7 +8,7 @@ export const pageMetadata = {
         canonical: "/",
     },
     financeExceptionAutomation: {
-        title: "Finance Exception Automation | INVARITECH",
+        title: "Finance Exception Automation",
         description:
             "Build governed finance workflows for payment controls, approval gaps, supplier changes, reconciliations, and the evidence trail around your current systems.",
         canonical: "/finance-exception-automation/",

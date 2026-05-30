@@ -214,7 +214,6 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* Ambient background */}
                 <div className="absolute inset-0 pointer-events-none z-0">
                     <div className="absolute top-0 left-0 w-full h-full opacity-[0.012]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
-                    <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[120px]" />
                 </div>
 
                 <article className="relative z-10 pt-32 pb-24 px-6 md:px-0">

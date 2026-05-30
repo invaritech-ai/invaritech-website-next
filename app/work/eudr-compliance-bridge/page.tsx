@@ -53,12 +53,6 @@ export default function EudrCaseStudyPage() {
 
                 {/* Hero Section */}
                 <div className="relative mb-32">
-                    <div className="absolute top-0 left-0 -z-10 opacity-20 select-none pointer-events-none">
-                        <span className="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-muted-foreground whitespace-nowrap blur-3xl">
-                            COMPLIANCE
-                        </span>
-                    </div>
-
                     <div className="flex flex-col gap-2 mb-8">
                          <span className="font-mono text-primary text-sm tracking-widest uppercase">
                             RegOps proof case

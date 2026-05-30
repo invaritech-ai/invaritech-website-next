@@ -105,18 +105,8 @@ function ProofCard({ asset, index }: { asset: ProofAsset; index: number }) {
 export default function WorkPage() {
     return (
         <main className="site-page relative overflow-hidden selection:bg-primary/20 selection:text-primary">
-            {/* Ambient background */}
             <div className="absolute inset-0 pointer-events-none z-0">
                 <div className="site-page-grid" />
-                <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.04] rounded-full blur-[120px]" />
-                <div className="absolute bottom-1/3 -right-32 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-[120px]" />
-            </div>
-
-            {/* Ghost word */}
-            <div className="absolute top-40 -right-20 select-none pointer-events-none opacity-[0.02] whitespace-nowrap z-0 overflow-hidden">
-                <span className="font-editorial text-[25rem] font-bold tracking-tighter uppercase text-foreground">
-                    PROOF
-                </span>
             </div>
 
             {/* Hero */}

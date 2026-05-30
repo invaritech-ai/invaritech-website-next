@@ -3,23 +3,20 @@
 import { useEffect, useState } from "react";
 
 export function LiveOpsStrip() {
-    const [now, setNow] = useState<Date | null>(null);
+    const [now, setNow] = useState(() => new Date());
 
     useEffect(() => {
-        setNow(new Date());
         const t = setInterval(() => setNow(new Date()), 1000);
         return () => clearInterval(t);
     }, []);
 
-    const time = now
-        ? now.toLocaleTimeString("en-GB", {
-              hour: "2-digit",
-              minute: "2-digit",
-              second: "2-digit",
-              hour12: false,
-              timeZone: "UTC",
-          })
-        : "—— ——";
+    const time = now.toLocaleTimeString("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+        timeZone: "UTC",
+    });
 
     return (
         <div className="live-strip">
