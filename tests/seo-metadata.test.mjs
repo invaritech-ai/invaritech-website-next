@@ -74,29 +74,33 @@ describe("SEO metadata", () => {
         assert.match(source, /url:\s*`\$\{baseUrl\}\/logo-image\.png`/);
     });
 
-    it("keeps broad blog index metadata aligned to finance operations and compliance", () => {
+    it("keeps broad blog index metadata aligned to finance controls and automation", () => {
         const source = read("app/blog/page.tsx");
-        assert.match(source, /title:\s*"Accounts Payable Controls & Finance Automation Blog"/);
-        assert.match(source, /AP controls, invoice approval workflows, duplicate payment prevention, and finance automation/);
-        assert.match(source, /Finance Operations & Compliance Automation Guides/);
+        assert.match(source, /title:\s*"Finance Controls and Automation Blog"/);
+        assert.match(source, /finance controls, invoice approval workflows, duplicate payment prevention, month-end visibility, and workflow automation/);
+        assert.match(source, /Practical guides for finance controls and automation\./);
+        assert.match(source, /href="\/contact\/\?diagnostic=1"/);
+        assert.match(source, /Book Workflow Diagnostic/);
     });
 
-    it("uses shortened page titles for launch-critical pages", () => {
+    it("uses strategic page titles for launch-critical pages", () => {
         const expectedTitles = new Map([
-            ["app/resources/page.tsx", "AP Automation Resources & Templates"],
-            ["app/work/page.tsx", "Payment Controls Work & Proof"],
-            ["app/about/page.tsx", "About INVARITECH | Payment Controls for Australian Finance Teams"],
-            ["app/work/eudr-compliance-bridge/page.tsx", "EUDR Compliance Bridge Case Study"],
-            ["app/resources/invoice-extractor/page.tsx", "Invoice Data Extractor for AP Teams"],
-            ["app/resources/cost-to-close-calculator/page.tsx", "Month-End Close Cost Calculator"],
+            ["app/layout.tsx", /default:\s*"Finance Operations and RegOps Automation \| INVARITECH"/],
+            ["app/work/page.tsx", /title:\s*"Finance Operations and RegOps Automation Work"/],
+            ["app/about/page.tsx", /title:\s*\{\s*absolute:\s*"About INVARITECH \| Finance Operations and RegOps Automation"\s*\}/],
+            ["app/contact/page.tsx", /title:\s*"Book a Finance Workflow Diagnostic"/],
+            ["app/resources/page.tsx", /title:\s*"Finance Controls Tools and Resources"/],
+            ["app/work/eudr-compliance-bridge/page.tsx", /title:\s*"EUDR RegOps Bridge Case Study"/],
+            ["app/resources/invoice-extractor/page.tsx", /title:\s*"Invoice Data Extractor for AP Teams"/],
+            ["app/resources/cost-to-close-calculator/page.tsx", /title:\s*"Month-End Close Cost Calculator"/],
         ]);
 
-        for (const [path, title] of expectedTitles) {
-            assert.match(read(path), new RegExp(`title:\\s*"${title}"`), path);
+        for (const [path, pattern] of expectedTitles) {
+            assert.match(read(path), pattern, path);
         }
     });
 
-    it("marks the interactive resource page noindex and keeps AU locale signals", () => {
+    it("marks the interactive resource page noindex and keeps global locale signals", () => {
         const interactiveSource = read(
             "app/resources/supplier-payment-control-rule-table/interactive/page.tsx"
         );
@@ -105,15 +109,42 @@ describe("SEO metadata", () => {
         assert.match(interactiveSource, /robots:\s*\{\s*index:\s*false,\s*follow:\s*true\s*\}/);
 
         const layoutSource = read("app/layout.tsx");
-        assert.match(layoutSource, /locale:\s*"en_AU"/);
-        assert.match(layoutSource, /<html lang="en-AU"/);
+        assert.match(layoutSource, /locale:\s*"en"/);
+        assert.match(layoutSource, /<html lang="en"/);
+        assert.doesNotMatch(layoutSource, /en_AU|en-AU/);
     });
 
-    it("keeps homepage structured data fresh and lead-gen tools prioritized in sitemap", () => {
+    it("keeps structured data aligned to global finance operations and RegOps automation", () => {
+        const structuredDataSource = read("app/structured-data.ts");
         assert.match(
-            read("app/structured-data.ts"),
+            structuredDataSource,
             /HOMEPAGE_LAST_MODIFIED = "2026-05-15T00:00:00.000Z"/
         );
+        assert.match(
+            structuredDataSource,
+            /Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around existing systems\./
+        );
+        assert.match(
+            structuredDataSource,
+            /logo:\s*\{[\s\S]*?url:\s*"https:\/\/www\.invaritech\.ai\/logo-image\.png",[\s\S]*?width:\s*516,[\s\S]*?height:\s*516,[\s\S]*?\}/
+        );
+        assert.match(
+            structuredDataSource,
+            /image:\s*\{[\s\S]*?url:\s*"https:\/\/www\.invaritech\.ai\/logo-image\.png",[\s\S]*?width:\s*516,[\s\S]*?height:\s*516,[\s\S]*?\}/
+        );
+        assert.match(
+            structuredDataSource,
+            /primaryImageOfPage:\s*\{[\s\S]*?url:\s*"https:\/\/www\.invaritech\.ai\/og-image\.png",[\s\S]*?width:\s*1376,[\s\S]*?height:\s*768,[\s\S]*?\}/
+        );
+        assert.match(structuredDataSource, /Finance Operations and RegOps Automation \| INVARITECH/);
+        assert.match(structuredDataSource, /Finance Operations Automation/);
+        assert.match(structuredDataSource, /RegOps Automation/);
+        assert.match(structuredDataSource, /name:\s*"Worldwide"/);
+        assert.match(structuredDataSource, /name:\s*"APAC"/);
+        assert.doesNotMatch(structuredDataSource, /Australian Finance Teams|Country",\s*name:\s*"Australia"/);
+    });
+
+    it("keeps finance tools prioritized in sitemap", () => {
 
         const sitemapSource = read("app/sitemap.ts");
         assert.match(
@@ -126,25 +157,49 @@ describe("SEO metadata", () => {
         );
     });
 
-    it("surfaces Finance Automation and the audit CTA in primary discovery paths", () => {
+    it("keeps the web app manifest aligned to the pivot", () => {
+        const manifestSource = read("app/manifest.ts");
+        assert.match(manifestSource, /name:\s*"INVARITECH Finance Operations Automation"/);
+        assert.match(manifestSource, /short_name:\s*"INVARITECH"/);
+        assert.match(
+            manifestSource,
+            /Finance operations and RegOps automation around the systems teams already use\./
+        );
+        assert.doesNotMatch(manifestSource, /AP Payment Controls|Australia/);
+    });
+
+    it("surfaces Finance Automation and the diagnostic CTA in primary discovery paths", () => {
         const headerSource = read("components/header.tsx");
-        assert.match(headerSource, /\{\s*name:\s*"Finance Automation",\s*href:\s*"\/finance-exception-automation"/);
-        assert.match(headerSource, /\{\s*name:\s*"Book Audit",\s*href:\s*"\/contact\?audit=1"/);
+        assert.match(headerSource, /primaryDiagnosticCta/);
+
+        const brandSource = read("lib/site-content/brand.ts");
+        assert.match(brandSource, /label:\s*"Book Workflow Diagnostic"/);
+        assert.match(brandSource, /href:\s*"\/contact\/\?diagnostic=1"/);
 
         const footerSource = read("components/footer.tsx");
-        assert.match(footerSource, /\{\s*title:\s*"Finance Automation",\s*href:\s*"\/finance-exception-automation\/"/);
+        assert.match(footerSource, /footerFinanceLinks/);
 
-        assert.match(read("app/contact/page.tsx"), /"Book a Finance Exception Audit Call"/);
+        assert.match(read("app/contact/page.tsx"), /"Book a Finance Workflow Diagnostic"/);
 
         for (const path of [
             "components/resource-library-client.tsx",
             "app/blog/page.tsx",
-            "app/blog/[slug]/page.tsx",
             "app/work/page.tsx",
             "app/work/eudr-compliance-bridge/page.tsx",
         ]) {
             const source = read(path);
-            assert.match(source, /href="\/contact\?audit=1/, path);
+            assert.match(source, /\/contact\/\?diagnostic=1|primaryDiagnosticCta\.href/, path);
         }
+    });
+
+    it("uses the diagnostic CTA on blog article pages", () => {
+        const source = read("app/blog/[slug]/page.tsx");
+        assert.match(source, /Book Workflow Diagnostic/);
+        assert.match(source, /href="\/contact\/\?diagnostic=1&src=blog"/);
+        assert.match(source, /image:\s*\{\s*"@type":\s*"ImageObject",\s*url:\s*imageUrl\s*\}/);
+        assert.match(source, /logo:\s*\{\s*"@type":\s*"ImageObject",\s*url:\s*`\$\{baseUrl\}\/logo-image\.png`,\s*width:\s*516,\s*height:\s*516\s*\}/);
+        assert.doesNotMatch(source, /image:\s*\{[\s\S]*?width:\s*1200,\s*height:\s*630/);
+        assert.doesNotMatch(source, /Book a Finance Exception Audit/);
+        assert.doesNotMatch(source, /\/contact\?audit=1/);
     });
 });

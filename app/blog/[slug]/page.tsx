@@ -84,14 +84,14 @@ function generateArticleSchema(post: {
         "@type": "BlogPosting",
         headline: post.title,
         description: post.excerpt,
-        image: { "@type": "ImageObject", url: imageUrl, width: 1200, height: 630 },
+        image: { "@type": "ImageObject", url: imageUrl },
         datePublished: post.publishedAt,
         dateModified: post.dateModified ?? post.publishedAt,
         author: { "@type": "Person", name: post.author.name, jobTitle: post.author.role },
         publisher: {
             "@type": "Organization",
             name: "INVARITECH",
-            logo: { "@type": "ImageObject", url: `${baseUrl}/logo-image.png`, width: 512, height: 512 },
+            logo: { "@type": "ImageObject", url: `${baseUrl}/logo-image.png`, width: 516, height: 516 },
         },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         url,
@@ -329,22 +329,22 @@ export default async function BlogPostPage({ params }: Props) {
                         <section className="mt-16 pt-16 border-t border-border text-center">
                             <div className="flex items-center justify-center gap-3 mb-8">
                                 <div className="h-[1px] w-8 bg-primary/40" />
-                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Book a Finance Exception Audit Call</span>
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Book Workflow Diagnostic</span>
                                 <div className="h-[1px] w-8 bg-primary/40" />
                             </div>
                             <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
-                                Want us to check one live AP control risk?
+                                Want us to map one live finance workflow?
                             </h2>
                             <p className="text-lg text-foreground-muted mb-12 max-w-2xl mx-auto">
-                                Send one invoice approval workflow, supplier reconciliation issue, or duplicate payment example. We will run the first checks and return a short findings report.
+                                Bring one finance or regulated operations workflow. We will map the current process, identify the control gaps, and recommend the smallest useful build scope.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
                                     <Link
-                                        href="/contact?audit=1&src=blog"
+                                        href="/contact/?diagnostic=1&src=blog"
                                         className="flex items-center gap-3"
                                     >
-                                        Book a Finance Exception Audit Call <ArrowRight className="w-5 h-5" />
+                                        Book Workflow Diagnostic <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 </Button>
                                 <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">

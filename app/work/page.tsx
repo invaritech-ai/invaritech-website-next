@@ -9,7 +9,7 @@ import { proofAssets } from "@/lib/site-content/proof";
 import type { ProofAsset } from "@/lib/site-content/types";
 
 export const metadata: Metadata = {
-    title: "Governed Workflow Infrastructure Proof",
+    title: "Finance Operations and RegOps Automation Work",
     description:
         "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
     openGraph: {

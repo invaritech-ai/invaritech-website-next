@@ -1,5 +1,13 @@
 const HOMEPAGE_LAST_MODIFIED = "2026-05-15T00:00:00.000Z";
 
+const SERVICE_DESCRIPTION =
+    "Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around existing systems.";
+
+const AREA_SERVED = [
+    { "@type": "Place", name: "Worldwide" },
+    { "@type": "AdministrativeArea", name: "APAC" },
+];
+
 export const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -7,31 +15,27 @@ export const structuredData = {
             "@type": "Organization",
             "@id": "https://www.invaritech.ai/#organization",
             name: "INVARITECH",
-            alternateName: "INVARITECH Payment Control Design",
-            description:
-                "INVARITECH designs, builds, and maintains payment controls for finance teams that need fewer manual exceptions, cleaner approvals, and less payment leakage without changing systems.",
+            alternateName: "INVARITECH Finance Operations Automation",
+            description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai",
             logo: {
                 "@type": "ImageObject",
                 url: "https://www.invaritech.ai/logo-image.png",
-                width: 512,
-                height: 512,
+                width: 516,
+                height: 516,
             },
             image: {
                 "@type": "ImageObject",
                 url: "https://www.invaritech.ai/logo-image.png",
-                width: 1200,
-                height: 630,
+                width: 516,
+                height: 516,
             },
             contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "sales",
                 email: "hello@invaritech.ai",
                 availableLanguage: ["English"],
-                areaServed: [
-                    { "@type": "Country", name: "Australia" },
-                    { "@type": "Place", name: "APAC" },
-                ],
+                areaServed: AREA_SERVED,
             },
             sameAs: [
                 "https://x.com/invaritechai",
@@ -41,21 +45,23 @@ export const structuredData = {
             foundingDate: "2025",
             industry: "Technology",
             knowsAbout: [
-                "Payment Control Design",
+                "Finance Operations Automation",
+                "RegOps Automation",
                 "Accounts Payable Controls",
                 "Invoice Exception Management",
-                "Supplier Payment Verification",
-                "Audit Trail Design",
-                "Finance Operations",
+                "Payment Controls",
+                "Exception Workflows",
+                "Reporting Bridges",
+                "Audit-Ready Internal Tools",
+                "Existing Systems Integration",
             ],
         },
         {
             "@type": "WebSite",
             "@id": "https://www.invaritech.ai/#website",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Payment Control Design for Finance Teams",
-            description:
-                "Founder-led payment control design for finance teams that need fewer manual exceptions, cleaner approvals, and less payment leakage without changing systems.",
+            name: "Finance Operations and RegOps Automation | INVARITECH",
+            description: SERVICE_DESCRIPTION,
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
@@ -64,9 +70,8 @@ export const structuredData = {
             "@type": "WebPage",
             "@id": "https://www.invaritech.ai/#webpage",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Payment Control Design for Australian Finance Teams",
-            description:
-                "We help finance teams reduce manual exception chasing, tighten approvals, and reduce dollar leakage across the systems they already use.",
+            name: "Finance Operations and RegOps Automation | INVARITECH",
+            description: SERVICE_DESCRIPTION,
             isPartOf: {
                 "@id": "https://www.invaritech.ai/#website",
             },
@@ -76,51 +81,38 @@ export const structuredData = {
             primaryImageOfPage: {
                 "@type": "ImageObject",
                 url: "https://www.invaritech.ai/og-image.png",
-                width: 1200,
-                height: 630,
+                width: 1376,
+                height: 768,
             },
             datePublished: "2024-01-01",
             dateModified: HOMEPAGE_LAST_MODIFIED,
         },
         {
             "@type": "Service",
-            name: "Fixed-Scope Payment Control Sprint",
-            description:
-                "INVARITECH designs and builds one payment-control workflow with agreed acceptance criteria, exception routing, approval evidence, audit trails, and ongoing managed support.",
+            name: "Finance Operations and RegOps Automation",
+            description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai/",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Payment Control Design",
-            areaServed: [
-                    { "@type": "Country", name: "Australia" },
-                    { "@type": "Place", name: "APAC" },
-                ],
+            serviceType: "Finance Operations Automation",
+            areaServed: AREA_SERVED,
             audience: {
                 "@type": "BusinessAudience",
-                audienceType: "AP Manager, Financial Controller, Finance Operations, Shared Services",
-            },
-            offers: {
-                "@type": "AggregateOffer",
-                priceCurrency: "AUD",
-                lowPrice: "10000",
-                highPrice: "15000",
-                offerCount: "1",
+                audienceType:
+                    "Finance Operations, Financial Controllers, AP Managers, Shared Services, Compliance Operations, RegOps Teams",
             },
         },
         {
             "@type": "Service",
-            name: "Managed Finance Workflow Support",
+            name: "Managed Finance and RegOps Workflow Support",
             description:
-                "Ongoing support for live finance controls, including rule updates, exception queue tuning, monitoring, audit-log maintenance, and small changes that keep the agreed objective working.",
+                "Ongoing support for live finance operations and RegOps workflows, including rule updates, exception queue tuning, reporting bridge maintenance, audit evidence checks, and small changes around existing systems.",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Managed Payment Control Support",
-            areaServed: [
-                    { "@type": "Country", name: "Australia" },
-                    { "@type": "Place", name: "APAC" },
-                ],
+            serviceType: "RegOps Automation",
+            areaServed: AREA_SERVED,
         },
     ],
 };
