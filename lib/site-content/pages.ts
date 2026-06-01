@@ -4,7 +4,7 @@ export const pageMetadata = {
     home: {
         title: "Finance Operations and RegOps Automation | INVARITECH",
         description:
-            "Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around the systems they already use.",
+            "Finance operations and RegOps automation built around the tools you already use: payment controls, exception workflows, and reporting bridges.",
         canonical: "/",
     },
     financeExceptionAutomation: {
@@ -16,13 +16,13 @@ export const pageMetadata = {
     work: {
         title: "Proof Library | INVARITECH",
         description:
-            "Explore shipped systems, demos, tools, and case studies that show how Invaritech builds governed control layers for finance operations and RegOps work.",
+            "Explore shipped systems, demos, tools, and case studies that show how Invaritech builds checked, audit-ready workflows for finance operations and RegOps work.",
         canonical: "/work/",
     },
     eudrComplianceBridge: {
         title: "EUDR RegOps Bridge Case Study | INVARITECH",
         description:
-            "See how a deterministic reporting bridge can turn regulated evidence collection into a governed workflow with traceable submissions.",
+            "See how a reliable reporting bridge turns regulated evidence collection into a checkable workflow with traceable submissions.",
         canonical: "/work/eudr-compliance-bridge/",
     },
     resources: {

@@ -59,7 +59,7 @@ export const metadata: Metadata = {
         template: "%s | INVARITECH",
     },
     description:
-        "Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around the systems they already use.",
+        "Finance operations and RegOps automation built around the tools you already use: payment controls, exception workflows, and reporting bridges.",
     keywords: [
         "INVARITECH",
         "finance operations automation",
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
         url: "https://www.invaritech.ai",
         title: "Finance Operations and RegOps Automation | INVARITECH",
         description:
-            "Finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around the systems they already use.",
+            "Finance operations and RegOps automation built around the tools you already use: payment controls, exception workflows, and reporting bridges.",
         siteName: "INVARITECH",
         images: [
             {
@@ -128,7 +128,7 @@ export const metadata: Metadata = {
     icons: {
         icon: "/favicon.ico",
         shortcut: "/favicon.ico",
-        apple: "/favicon.ico",
+        apple: "/icon-192.png",
     },
 };
 
