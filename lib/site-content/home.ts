@@ -43,7 +43,7 @@ type HomePageContent = {
 export const homePageContent = {
     hero: {
         eyebrow: brandPositioning.short,
-        title: "We build the control layer between your finance systems, approvals, evidence, and exceptions.",
+        title: "We automate the finance checks your team still does by hand.",
         body: brandPositioning.controlLayerDefinition,
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
@@ -53,8 +53,8 @@ export const homePageContent = {
     problem: {
         header: {
             eyebrow: "The work between systems",
-            title: "Finance and regulated operations often break in the handoffs.",
-            body: "The ledger, inbox, spreadsheet, approval tool, and reporting pack may all be necessary. The risk appears in the gaps between them.",
+            title: "Your tools work. The handoffs between them don't.",
+            body: "Your ledger, inbox, spreadsheets, and approval tools all do their job. The risk lives in the gaps between them.",
         },
         points: [
             {
@@ -70,7 +70,7 @@ export const homePageContent = {
             {
                 id: "reporting-bridges-fragile",
                 title: "Reporting bridges become fragile",
-                body: "Recurring reports rely on copied data, undocumented formulas, and last-minute fixes instead of governed workflow.",
+                body: "Recurring reports lean on copied data, undocumented formulas, and last-minute fixes. Nothing you can audit later.",
             },
         ],
     },
@@ -80,18 +80,18 @@ export const homePageContent = {
             items: ["Finance systems", "Approval tools", "Spreadsheets", "Inboxes", "Evidence folders"],
         },
         controlLayer: {
-            title: "Control layer",
+            title: "Checks we add",
             items: ["Rules", "Exceptions", "Approvals", "Evidence", "Audit trail"],
         },
         governedOutcome: {
-            title: "Governed outcome",
+            title: "What you get",
             items: ["Cleaner releases", "Traceable reviews", "Defensible reporting", "Reusable workflows"],
         },
     },
     method: {
         header: {
             eyebrow: "Method",
-            title: "One workflow first. Fixed scope. Managed support when it matters.",
+            title: "One workflow first. Fixed scope. We stay after launch.",
             body: "The practical path is to choose one painful workflow, define the control logic, build around the systems already in place, and keep the result maintained.",
         },
         steps: [
@@ -107,14 +107,14 @@ export const homePageContent = {
             },
             {
                 id: "ship-governed-automation",
-                title: "Ship governed automation",
-                body: "Build the workflow layer, prove it against real cases, and hand over a runbook the team can operate.",
+                title: "Ship it and hand it over",
+                body: "Build the workflow, prove it against real cases, and hand over a runbook the team can operate.",
             },
         ],
     },
     finalCta: {
-        title: "Start with a Finance Workflow Diagnostic.",
-        body: "Bring one workflow that is slow, risky, or hard to audit. Leave with the control gaps, build scope, and practical next step.",
+        title: "Bring us one messy workflow.",
+        body: "Pick one that is slow, risky, or hard to audit. Leave with the gaps, a build scope, and a clear next step.",
         cta: primaryDiagnosticCta,
     },
 } satisfies HomePageContent;

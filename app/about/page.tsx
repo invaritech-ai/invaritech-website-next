@@ -62,7 +62,7 @@ export default function AboutPage() {
                                 <p className="site-eyebrow-text">A small team. Serious work.</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Asia-based, founder-led automation for finance and regulated operations.
+                                Founder-led finance automation. Built in Asia, delivered worldwide.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
@@ -146,7 +146,7 @@ export default function AboutPage() {
             <section className="border-y border-border bg-card py-16 md:py-24">
                 <div className="mx-auto max-w-7xl px-6">
                     <p className="mb-5 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">The people</p>
-                    <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Direct principal involvement</h2>
+                    <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">You work with founders, not account managers</h2>
                     <div className="mt-12 grid gap-12 lg:grid-cols-3">
                         <FounderCard
                             name="Aditi Garg"

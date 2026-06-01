@@ -78,7 +78,7 @@ export default function ResourceLibraryClient() {
                                 Free control tool
                             </div>
                             <h2 className="site-h2">
-                                Invoice Approval Workflow & Supplier Payment Controls Rule Table
+                                Map your payment controls in one table.
                             </h2>
                             <p className="site-lead mt-6">
                                 An interactive rule table for mapping approval evidence, exception

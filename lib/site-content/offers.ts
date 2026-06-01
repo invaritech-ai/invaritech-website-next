@@ -31,7 +31,7 @@ export const buildOffers = [
         title: "Finance Control Sprint",
         audience: "Finance teams that need one exception-heavy workflow made governed, visible, and repeatable.",
         promise:
-            "Turn a narrow payment, reconciliation, or approval process into a governed workflow with rules, owners, and evidence.",
+            "Turn a narrow payment, reconciliation, or approval process into a workflow with clear rules, owners, and evidence.",
         includes: [
             "Fixed-scope workflow build",
             "Rule table and exception queue",
@@ -44,7 +44,7 @@ export const buildOffers = [
         title: "Finance Ops Automation Build",
         audience: "Operators who need a broader automation layer across finance systems, inboxes, spreadsheets, and approval tools.",
         promise:
-            "Build the durable control layer that keeps finance operations moving without forcing a system replacement.",
+            "Build the automation that keeps finance operations moving, without forcing a system replacement.",
         includes: [
             "Multi-step workflow automation",
             "System and spreadsheet integrations",
@@ -100,7 +100,7 @@ export const offerStages = [
     {
         id: "build",
         title: "Build",
-        body: "Ship the control layer in fixed scopes, from finance exception workflows to regulated reporting bridges.",
+        body: "Ship in fixed scopes, from finance exception workflows to regulated reporting bridges.",
         offers: buildOffers,
     },
     {

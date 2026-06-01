@@ -73,12 +73,12 @@ const financeProofAssetIds = new Set([
 export const financePageContent = {
     hero: {
         eyebrow: "Finance exception automation",
-        title: "Finance exception automation and payment controls around your current stack.",
-        body: "We help finance and accounts payable teams catch duplicate bills, supplier-detail changes, approval gaps, invoice mismatches, and payment release risks without forcing a system replacement.",
+        title: "Stop bad payments before they leave the business.",
+        body: "We help finance and AP teams catch the risky payments: duplicate bills, changed bank details, missing approvals, and invoice mismatches. All without replacing the software you run on.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
         trustLine:
-            "Core: exception automation and payment controls. Expansion: broader finance operations workflows.",
+            "We start with payment controls and exception checks, then expand into broader finance operations once that works.",
     },
     hierarchy: [
         {
@@ -95,8 +95,8 @@ export const financePageContent = {
     pains: {
         header: {
             eyebrow: "Pain patterns",
-            title: "The payment risk usually sits around the accounting system.",
-            body: "These are the exception patterns we make visible, routed, and recorded before they become leakage or rework.",
+            title: "The risk isn't in the ledger. It's around it.",
+            body: "These are the patterns we catch, route, and record before they turn into lost money or rework.",
         },
         cards: [
             {
@@ -121,7 +121,7 @@ export const financePageContent = {
             },
             {
                 id: "payment-release-audit-trail",
-                title: "Payment release decisions without a clear audit trail",
+                title: "Payment releases with no audit trail",
                 body: "Record who reviewed the exception, what changed, what evidence was used, and why release was approved.",
             },
         ],
@@ -129,8 +129,8 @@ export const financePageContent = {
     currentStack: {
         header: {
             eyebrow: "Current stack",
-            title: "Built around Xero, QuickBooks, NetSuite, spreadsheets, inboxes, and approval tools.",
-            body: "The accounting system stores the transaction. Your team still handles the exceptions around it. Invaritech builds the workflow layer that checks, routes, and records those exceptions before they become leakage or rework.",
+            title: "Works with the tools you already run.",
+            body: "Your accounting system stores the transaction. Your team still handles the mess around it. We add the workflow that checks, routes, and records those exceptions before they cost you.",
         },
         currentStack: {
             title: "Current stack",
@@ -142,7 +142,7 @@ export const financePageContent = {
             ],
         },
         controlLayer: {
-            title: "Exception and control layer",
+            title: "Checks we add",
             items: [
                 "Duplicate bill checks",
                 "Supplier-detail change review",
@@ -151,7 +151,7 @@ export const financePageContent = {
             ],
         },
         outcomes: {
-            title: "Finance operations workflow",
+            title: "What you get",
             items: [
                 "Clear release decisions",
                 "Traceable audit trail",
@@ -163,8 +163,8 @@ export const financePageContent = {
     offers: {
         header: {
             eyebrow: "Focused offers",
-            title: "Diagnose the workflow, build the control, support the automation.",
-            body: "The finance page stays focused on exception automation and payment controls first, with broader finance operations builds only after the control logic is clear.",
+            title: "Diagnose. Build. Support.",
+            body: "We start with exception automation and payment controls. Broader finance builds come once the checks are clear.",
         },
         stages: [
             {
@@ -190,20 +190,20 @@ export const financePageContent = {
     proof: {
         header: {
             eyebrow: "Proof",
-            title: "Finance controls work best when the rule, evidence, and decision stay together.",
-            body: "These assets show the same operating pattern in smaller forms: structured invoice data, three-way mismatch logic, and payment control rules.",
+            title: "Every check leaves a trail you can defend.",
+            body: "These tools show the same pattern in smaller pieces: structured invoice data, three-way match logic, and payment control rules.",
         },
         assets: proofAssets.filter((asset) => financeProofAssetIds.has(asset.id)),
         eudrNote: {
             title: "Lower-page proof note: EUDR bridge",
-            body: "The EUDR bridge shows the same delivery discipline applied to regulated submissions: structured validation, review evidence, API bridge behavior, and retry-safe processing.",
+            body: "The EUDR bridge applies the same discipline to regulated submissions: structured validation, review evidence, API bridges, and retry-safe processing.",
             href: "/work/eudr-compliance-bridge/",
             ctaLabel: "View RegOps proof",
         },
     },
     finalCta: {
-        title: "Start with a Finance Workflow Diagnostic.",
-        body: "Bring one finance workflow where exceptions, approvals, supplier changes, or release decisions are creating risk. We will map the current process and recommend the smallest useful build scope.",
+        title: "Bring us one finance workflow.",
+        body: "Pick one where exceptions, approvals, supplier changes, or release decisions are creating risk. We will map the current process and recommend the smallest useful build scope.",
         cta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
     },

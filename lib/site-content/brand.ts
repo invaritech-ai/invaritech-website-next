@@ -9,12 +9,12 @@ export const siteConfig = {
 
 export const brandPositioning = {
     short: "Finance operations and RegOps automation for teams worldwide.",
-    sharp: "We build the control layer between your finance systems, approvals, evidence, and exceptions.",
+    sharp: "We automate the finance checks your team still does by hand.",
     controlLayerDefinition:
-        "The control layer is the workflow, rules, evidence, approvals, and exception handling that sits around the systems you already use.",
+        "We build the checks, approvals, and audit trail around the tools you already use. No rip and replace.",
     trustLine: "Asia-based. Globally delivered. Founder-led. Built around your existing systems.",
     footer:
-        "Invaritech builds governed finance operations and RegOps automation around the systems teams already use.",
+        "Invaritech builds finance operations and RegOps automation around the tools teams already use.",
 };
 
 export const primaryDiagnosticCta = {
@@ -37,14 +37,14 @@ export const primaryTrustStrip = [
 ] satisfies string[];
 
 export const approvedTerms = [
-    "control layer",
+    "payment controls",
     "exceptions",
     "approvals",
-    "evidence",
+    "approval evidence",
     "audit trail",
     "reconciliation",
     "reporting bridge",
-    "governed workflow",
+    "duplicate payments",
     "current stack",
     "fixed scope",
     "managed support",
@@ -59,4 +59,6 @@ export const bannedTerms = [
     "cutting-edge",
     "Australia-first",
     "Australian finance teams",
+    "control layer",
+    "governed workflow",
 ] satisfies string[];

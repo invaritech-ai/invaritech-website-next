@@ -64,9 +64,9 @@ export default function Home() {
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
-                            eyebrow: "Control layer",
-                            title: "Current stack in. Governed workflow out.",
-                            body: "We do not ask teams to rip out the software they already use. We build the workflow layer that checks exceptions, records evidence, and routes decisions around it.",
+                            eyebrow: "How it works",
+                            title: "Keep your tools. Lose the manual checking.",
+                            body: "We don't ask you to rip out the software you already use. We add the workflow around it that checks exceptions, records evidence, and routes decisions.",
                         }}
                     />
                 </div>
@@ -101,8 +101,8 @@ export default function Home() {
                     <SectionHeader
                         content={{
                             eyebrow: "Proof",
-                            title: "RegOps proves the operating discipline. Finance is the commercial focus.",
-                            body: "The EUDR bridge shows regulated workflow infrastructure. The finance tools show the same control logic applied to exceptions, evidence, and payment risk.",
+                            title: "Proof, not promises.",
+                            body: "The EUDR bridge handles regulated submissions at volume. The finance tools apply the same checks to invoices, approvals, and payments.",
                         }}
                     />
                 </div>
@@ -114,8 +114,8 @@ export default function Home() {
                     <SectionHeader
                         content={{
                             eyebrow: "Tools and resources",
-                            title: "Free tools that show how we think about controls.",
-                            body: "These are proof assets and practical starting points. The future tools stay visible as placeholders until we ship them.",
+                            title: "Free tools you can use today.",
+                            body: "These are proof assets and practical starting points. The tools we haven't shipped yet stay visible as placeholders.",
                         }}
                     />
                 </div>

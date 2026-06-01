@@ -119,11 +119,11 @@ export default function WorkPage() {
                                 <p className="site-eyebrow-text">Governed workflow proof</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Proof we can build governed workflow infrastructure.
+                                Real systems we&apos;ve shipped.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Our work spans regulated submissions, finance exception logic, document extraction, and control-rule tools. The common thread is the same: messy workflow in, governed control layer out.
+                            Our work spans regulated submissions, finance exception logic, document extraction, and control-rule tools. The thread is the same: messy process in, clean and checkable workflow out.
                         </p>
                     </div>
                 </div>
@@ -207,7 +207,7 @@ export default function WorkPage() {
                             </span>
                         </div>
                         <h2 className="font-editorial text-4xl font-semibold tracking-tight md:text-5xl">
-                            Same pattern, different workflow surfaces.
+                            Same pattern, different problems.
                         </h2>
                     </div>
                     <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
