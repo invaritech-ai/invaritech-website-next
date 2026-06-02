@@ -51,5 +51,3 @@ export function SiteHero({ content, className }: SiteHeroProps) {
         </section>
     );
 }
-
-export default SiteHero;

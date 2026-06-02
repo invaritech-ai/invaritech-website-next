@@ -2,7 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { CTA, OfferCard } from "@/lib/site-content/types";
 
-export type OfferStage = {
+type OfferStage = {
     id: string;
     title: string;
     body: string;
@@ -87,6 +87,16 @@ export function OfferLadder({ stages, className }: OfferLadderProps) {
                                         ) : null}
                                     </article>
                                 ))}
+                                {Array.from({
+                                    length:
+                                        (3 - (stage.offers.length % 3)) % 3,
+                                }).map((_, fillerIndex) => (
+                                    <div
+                                        key={`offer-filler-${fillerIndex}`}
+                                        aria-hidden
+                                        className="hidden bg-background md:block"
+                                    />
+                                ))}
                             </div>
                         </section>
                     ))}
@@ -95,5 +105,3 @@ export function OfferLadder({ stages, className }: OfferLadderProps) {
         </section>
     );
 }
-
-export default OfferLadder;

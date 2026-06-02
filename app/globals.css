@@ -486,41 +486,6 @@ textarea {
         letter-spacing: -0.035em;
     }
 
-    /* Inline word wrapper — "systems" lives here */
-    .site-h1-systems-wrap {
-        position: relative;
-        display: inline-block;
-        white-space: nowrap;
-    }
-
-    /* Semantic text: visible on mobile/tablet, transparent on desktop (scramble overlays it) */
-    .site-h1-systems-text {
-        color: inherit;
-    }
-
-    .site-h1-scramble-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: none;
-        pointer-events: none;
-        white-space: nowrap;
-    }
-
-    /* Re-enable hover on the scramble itself inside the overlay */
-    .site-h1-scramble-overlay .systems-scramble {
-        pointer-events: auto;
-    }
-
-    @media (min-width: 64rem) {
-        .site-h1-systems-text {
-            color: transparent;
-        }
-        .site-h1-scramble-overlay {
-            display: inline-flex;
-        }
-    }
-
     @media (max-width: 40rem) {
         .site-home-hero-copy .site-h1 {
             font-size: clamp(3rem, 14.5vw, 3.8rem);
@@ -1582,16 +1547,6 @@ textarea {
         @apply flex flex-col items-start justify-between gap-4 border border-border bg-primary/[0.04] p-6 sm:flex-row sm:items-center;
     }
 
-    /* ── Route Line ─────────────────────────────────────────── */
-    .route-line-wrap {
-        padding: 0.75rem 0.25rem 0.25rem;
-    }
-
-    .route-line-svg {
-        width: 100%;
-        overflow: visible;
-    }
-
     /* ── Hero: two-column on desktop ────────────────────────── */
     .site-home-hero-artefact {
         display: flex;
@@ -1630,87 +1585,6 @@ textarea {
             margin-left: 0;
             margin-right: 0;
             text-align: left;
-        }
-    }
-
-    /* ── Systems Scramble: underline + label ────────────────── */
-    .systems-scramble {
-        position: relative;
-    }
-
-    .systems-scramble-underline-dot {
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        right: 0;
-        height: 0;
-        border-bottom: 1px dotted color-mix(in oklch, var(--primary) 32%, transparent);
-        transition: opacity 0.25s;
-        pointer-events: none;
-    }
-
-    .systems-scramble:hover .systems-scramble-underline-dot {
-        opacity: 0;
-    }
-
-    .systems-scramble-underline-solid {
-        position: absolute;
-        bottom: -3px;
-        left: 0;
-        right: 0;
-        height: 0;
-        border-bottom: 1.5px solid var(--primary);
-        opacity: 0;
-        transition: opacity 0.25s;
-        pointer-events: none;
-    }
-
-    .systems-scramble:hover .systems-scramble-underline-solid {
-        opacity: 1;
-    }
-
-    .systems-scramble-circle {
-        position: absolute;
-        top: -10px;
-        left: -14px;
-        width: calc(100% + 28px);
-        height: calc(100% + 20px);
-        pointer-events: none;
-        overflow: visible;
-    }
-
-    @media (max-width: 40rem) {
-        .systems-scramble-circle {
-            display: none;
-        }
-    }
-
-    .systems-scramble-label {
-        position: absolute;
-        top: calc(100% + 14px);
-        left: 0;
-        font-family: var(--font-mono);
-        font-size: 0.5rem;
-        letter-spacing: 0.1em;
-        text-transform: lowercase;
-        color: var(--foreground-subtle);
-        opacity: 0.4;
-        white-space: nowrap;
-        transition: opacity 0.25s, color 0.25s;
-        pointer-events: none;
-        line-height: 1;
-    }
-
-    .systems-scramble:hover .systems-scramble-label {
-        opacity: 1;
-        color: var(--primary);
-    }
-
-    @media (max-width: 63.99rem) {
-        .systems-scramble-underline-dot,
-        .systems-scramble-underline-solid,
-        .systems-scramble-label {
-            display: none;
         }
     }
 

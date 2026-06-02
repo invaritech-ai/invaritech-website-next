@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
+  <title id="title">Invaritech Finance and RegOps Automations black logo</title>
+  <desc id="desc">Black horizontal Invaritech logo for Finance and RegOps Automations.</desc>
+  <g transform="translate(16 14) scale(.36)">
+    <g transform="matrix(1.4439428,0,0,1.5916977,-101.32912,-163.33277)">
+      <g fill="#1F1F1F" transform="translate(25.682848,67.106796)">
+        <circle cx="79.805824" cy="273.68933" r="34" />
+        <ellipse cx="363.36703" cy="120.00544" rx="34" ry="29.835999" />
+      </g>
+      <g fill="none" stroke="#1F1F1F" stroke-linecap="round">
+        <path d="m 98.200648,288.76699 c 0,-177.39513 199.463312,-195.45164 255.715202,-138.34304" stroke-width="15.1181" />
+        <path d="M 117.22913,289.77087 C 164.94626,195.23334 235.73224,169.91436 346.88737,168.02524" stroke-width="15.1181" />
+        <path d="m 397.82524,229.71068 c 0,177.39513 -199.46332,195.45164 -255.71521,138.34304" stroke-width="15.1181" />
+        <path d="M 380.02653,230.98964 C 332.30939,325.52717 261.52341,350.84615 150.36828,352.73527" stroke-width="15.1181" />
+      </g>
+    </g>
+  </g>
+  <text x="226" y="96" fill="#1F1F1F" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="58" font-weight="600" letter-spacing="15">INVARITECH</text>
+  <text x="228" y="160" fill="#1F1F1F" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="22" font-weight="500" letter-spacing="3.6">FINANCE &amp; REGOPS AUTOMATIONS</text>
+</svg>

@@ -230,10 +230,6 @@ export const controlRules: ControlRule[] = [
   },
 ];
 
-export const controlRuleIndustries = Array.from(
-  new Set(controlRules.flatMap((rule) => rule.industries))
-).sort();
-
 export const controlTypes = [
   { value: "callback", label: "Callback" },
   { value: "match", label: "Match" },

@@ -50,5 +50,3 @@ export function DiagnosticCTA({
         </section>
     );
 }
-
-export default DiagnosticCTA;

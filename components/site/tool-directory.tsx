@@ -51,10 +51,17 @@ export function ToolDirectory({ tools, className }: ToolDirectoryProps) {
                             <ToolCardView key={tool.id} tool={tool} />
                         ),
                     )}
+                    {Array.from({ length: (3 - (tools.length % 3)) % 3 }).map(
+                        (_, fillerIndex) => (
+                            <div
+                                key={`tool-filler-${fillerIndex}`}
+                                aria-hidden
+                                className="hidden bg-background md:block"
+                            />
+                        ),
+                    )}
                 </div>
             </div>
         </section>
     );
 }
-
-export default ToolDirectory;

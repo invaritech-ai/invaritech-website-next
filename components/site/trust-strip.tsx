@@ -19,10 +19,17 @@ export function TrustStrip({ items, className }: TrustStripProps) {
                             <p className="site-meta">{item}</p>
                         </div>
                     ))}
+                    {Array.from({ length: (3 - (items.length % 3)) % 3 }).map(
+                        (_, fillerIndex) => (
+                            <div
+                                key={`trust-filler-${fillerIndex}`}
+                                aria-hidden
+                                className="hidden bg-background md:block"
+                            />
+                        ),
+                    )}
                 </div>
             </div>
         </section>
     );
 }
-
-export default TrustStrip;

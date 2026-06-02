@@ -69,6 +69,16 @@ export default function FinanceExceptionAutomationPage() {
                                 <p className="site-body mt-4">{card.body}</p>
                             </article>
                         ))}
+                        {Array.from({
+                            length:
+                                (3 - (financePageContent.pains.cards.length % 3)) % 3,
+                        }).map((_, fillerIndex) => (
+                            <div
+                                key={`pain-filler-${fillerIndex}`}
+                                aria-hidden
+                                className="hidden bg-background md:block"
+                            />
+                        ))}
                     </div>
                 </div>
             </section>

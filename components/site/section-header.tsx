@@ -33,5 +33,3 @@ export function SectionHeader({
         </header>
     );
 }
-
-export default SectionHeader;

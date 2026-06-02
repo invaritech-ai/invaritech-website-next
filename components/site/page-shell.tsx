@@ -9,5 +9,3 @@ type PageShellProps = {
 export function PageShell({ children, className }: PageShellProps) {
     return <main className={cn("site-page", className)}>{children}</main>;
 }
-
-export default PageShell;

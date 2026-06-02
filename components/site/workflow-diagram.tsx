@@ -71,5 +71,3 @@ export function WorkflowDiagram({
         </section>
     );
 }
-
-export default WorkflowDiagram;

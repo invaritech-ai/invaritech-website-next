@@ -1,30 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { parseUtmParams } from "./utm-params";
 
 export const SESSION_SRC_KEY = "invaritech.utm.src";
 export const SESSION_CAMPAIGN_KEY = "invaritech.utm.campaign";
 export const UTM_CAPTURE_EVENT = "invaritech:utm-capture";
-
-export type UtmParams = {
-    src?: string;
-    campaign?: string;
-};
-
-/**
- * Parse src/campaign params from a URL or path+search string. Pure function,
- * testable.
- */
-export function parseUtmParams(urlOrPath: string): UtmParams {
-    // URL constructor needs a base for relative paths; use a placeholder.
-    const url = new URL(urlOrPath, "https://placeholder.local");
-    const out: UtmParams = {};
-    const src = url.searchParams.get("src");
-    const campaign = url.searchParams.get("campaign");
-    if (src && src.length > 0) out.src = src;
-    if (campaign && campaign.length > 0) out.campaign = campaign;
-    return out;
-}
 
 /**
  * Client-side hook: on mount, reads ?src and ?campaign from the current URL

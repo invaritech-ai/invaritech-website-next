@@ -52,10 +52,17 @@ export function ProofGrid({ assets, className }: ProofGridProps) {
                             <ProofCard key={asset.id} asset={asset} />
                         ),
                     )}
+                    {Array.from({ length: (3 - (assets.length % 3)) % 3 }).map(
+                        (_, fillerIndex) => (
+                            <div
+                                key={`proof-filler-${fillerIndex}`}
+                                aria-hidden
+                                className="hidden bg-background md:block"
+                            />
+                        ),
+                    )}
                 </div>
             </div>
         </section>
     );
 }
-
-export default ProofGrid;

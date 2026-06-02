@@ -3,7 +3,7 @@ type WithPo = { poNumber: string; [key: string]: unknown };
 /**
  * Normalize a PO number for joins: lowercase, whitespace-stripped.
  */
-export function normalizePo(raw: string): string {
+function normalizePo(raw: string): string {
     return raw.trim().toLowerCase();
 }
 
@@ -11,7 +11,7 @@ export function normalizePo(raw: string): string {
  * Build a map of normalized PO -> single row, OR array of rows when duplicates exist.
  * Returning an array on duplicates lets callers detect duplicate invoices without a second pass.
  */
-export function joinByPo<T extends WithPo>(rows: T[]): Map<string, T | T[]> {
+function joinByPo<T extends WithPo>(rows: T[]): Map<string, T | T[]> {
     const map = new Map<string, T | T[]>();
     for (const row of rows) {
         const key = normalizePo(row.poNumber);
@@ -34,7 +34,7 @@ const FLOAT_EPSILON = 0.01;
  * Whether |a-b| is within max(percent% of larger, $50).
  * Percent is in the 0..100 range, not 0..1.
  */
-export function isAmountWithinTolerance(
+function isAmountWithinTolerance(
     a: number,
     b: number,
     tolerancePercent: number
@@ -60,7 +60,7 @@ function tokenize(s: string): Set<string> {
 /**
  * Jaccard similarity between two token sets: |A ∩ B| / |A ∪ B|.
  */
-export function jaccardTokenOverlap(a: string, b: string): number {
+function jaccardTokenOverlap(a: string, b: string): number {
     const aSet = tokenize(a);
     const bSet = tokenize(b);
     if (aSet.size === 0 && bSet.size === 0) return 1;

@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
-import { parseUtmParams } from "../lib/utm-capture.ts";
+import { parseUtmParams } from "../lib/utm-params.ts";
 
 describe("parseUtmParams", () => {
     it("returns empty object when no params present", () => {

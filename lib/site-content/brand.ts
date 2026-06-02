@@ -35,30 +35,3 @@ export const primaryTrustStrip = [
     "Founder-led",
     "Built around your existing systems",
 ] satisfies string[];
-
-export const approvedTerms = [
-    "payment controls",
-    "exceptions",
-    "approvals",
-    "approval evidence",
-    "audit trail",
-    "reconciliation",
-    "reporting bridge",
-    "duplicate payments",
-    "current stack",
-    "fixed scope",
-    "managed support",
-] satisfies string[];
-
-export const bannedTerms = [
-    "AI transformation",
-    "automate anything",
-    "future of automation",
-    "generic custom software",
-    "world-class",
-    "cutting-edge",
-    "Australia-first",
-    "Australian finance teams",
-    "control layer",
-    "governed workflow",
-] satisfies string[];

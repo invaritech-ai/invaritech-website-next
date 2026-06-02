@@ -8,7 +8,7 @@ type OfferStage = {
     offers: OfferCard[];
 };
 
-export const diagnosticOffers = [
+const diagnosticOffers = [
     {
         id: "finance-workflow-diagnostic",
         title: "Finance Workflow Diagnostic",
@@ -25,7 +25,7 @@ export const diagnosticOffers = [
     },
 ] satisfies OfferCard[];
 
-export const buildOffers = [
+const buildOffers = [
     {
         id: "finance-control-sprint",
         title: "Finance Control Sprint",
@@ -67,7 +67,7 @@ export const buildOffers = [
     },
 ] satisfies OfferCard[];
 
-export const supportOffers = [
+const supportOffers = [
     {
         id: "managed-automation-support",
         title: "Managed Automation Support",

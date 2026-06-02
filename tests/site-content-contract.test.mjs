@@ -16,30 +16,18 @@ const contentFiles = [
     "lib/site-content/home.ts",
 ];
 
-const bannedTermsDeclarationPattern =
-    /export const bannedTerms = \[(?<items>[\s\S]*?)\]\s+satisfies string\[\];/;
-
-const getBannedTerms = () => {
-    const brand = read("lib/site-content/brand.ts");
-    const match = brand.match(bannedTermsDeclarationPattern);
-    assert.ok(match?.groups?.items, "brand.ts should export bannedTerms");
-    assert.doesNotMatch(match[0], /\.join\s*\(/, "bannedTerms should use plain literal strings");
-
-    const terms = [...match.groups.items.matchAll(/"([^"]+)"/g)].map(([, term]) => term);
-    assert.ok(terms.length > 0, "bannedTerms should include plain literal strings");
-
-    return terms;
-};
-
-const stripBannedTermsDeclaration = (file, source) => {
-    if (file !== "lib/site-content/brand.ts") {
-        return source;
-    }
-
-    const stripped = source.replace(bannedTermsDeclarationPattern, "");
-    assert.notEqual(stripped, source, "brand.ts should contain a bannedTerms declaration");
-    return stripped;
-};
+const bannedTerms = [
+    "AI transformation",
+    "automate anything",
+    "future of automation",
+    "generic custom software",
+    "world-class",
+    "cutting-edge",
+    "Australia-first",
+    "Australian finance teams",
+    "control layer",
+    "governed workflow",
+];
 
 const escapeRegExp = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
@@ -74,10 +62,10 @@ describe("site content registry", () => {
 
     it("keeps banned legacy positioning out of strategic content", () => {
         const combined = contentFiles
-            .map((file) => stripBannedTermsDeclaration(file, read(file)))
+            .map((file) => read(file))
             .join("\n");
 
-        for (const banned of getBannedTerms()) {
+        for (const banned of bannedTerms) {
             assert.doesNotMatch(combined, new RegExp(escapeRegExp(banned), "i"), banned);
         }
     });

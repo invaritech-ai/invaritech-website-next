@@ -65,12 +65,6 @@ const fadeIn = (frame: number, start: number, dur = 18) =>
         extrapolateRight: "clamp",
     });
 
-const fadeOut = (frame: number, start: number, dur = 18) =>
-    interpolate(frame, [start, start + dur], [1, 0], {
-        extrapolateLeft: "clamp",
-        extrapolateRight: "clamp",
-    });
-
 // ─── Component ──────────────────────────────────────────────────────
 export const HeroVariance: React.FC = () => {
     const frame = useCurrentFrame();

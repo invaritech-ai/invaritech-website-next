@@ -1,4 +1,4 @@
-export const DEFAULT_APOLLO_INBOUND_APP_ID = "6a02957afcc7ee0019235ec4";
+const DEFAULT_APOLLO_INBOUND_APP_ID = "6a02957afcc7ee0019235ec4";
 
 interface ApolloInboundScriptOptions {
     formSelector: string;
