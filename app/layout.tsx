@@ -227,8 +227,12 @@ export default function RootLayout({
                     `}
                 </Script>
 
-                <Analytics />
-                <SpeedInsights />
+                {process.env.NODE_ENV === "production" ? (
+                    <>
+                        <Analytics />
+                        <SpeedInsights />
+                    </>
+                ) : null}
             </body>
         </html>
     );

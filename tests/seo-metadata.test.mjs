@@ -134,7 +134,7 @@ describe("SEO metadata", () => {
         );
         assert.match(
             structuredDataSource,
-            /primaryImageOfPage:\s*\{[\s\S]*?url:\s*"https:\/\/www\.invaritech\.ai\/og-image\.png",[\s\S]*?width:\s*1376,[\s\S]*?height:\s*768,[\s\S]*?\}/
+            /primaryImageOfPage:\s*\{[\s\S]*?url:\s*"https:\/\/www\.invaritech\.ai\/og-image\.png",[\s\S]*?width:\s*1200,[\s\S]*?height:\s*630,[\s\S]*?\}/
         );
         assert.match(structuredDataSource, /Finance Ops and RegOps Automation \| INVARITECH/);
         assert.match(structuredDataSource, /Finance Operations Automation/);

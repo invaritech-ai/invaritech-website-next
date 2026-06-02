@@ -83,8 +83,8 @@ export const structuredData = {
             primaryImageOfPage: {
                 "@type": "ImageObject",
                 url: "https://www.invaritech.ai/og-image.png",
-                width: 1376,
-                height: 768,
+                width: 1200,
+                height: 630,
             },
             datePublished: "2024-01-01",
             dateModified: HOMEPAGE_LAST_MODIFIED,

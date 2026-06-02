@@ -27,6 +27,8 @@ export const metadata: Metadata = {
         title: meta.title,
         description: meta.description,
         type: "website",
+        locale: siteConfig.locale,
+        siteName: siteConfig.name,
         url: `${siteConfig.siteUrl}${meta.canonical}`,
         images: [
             {
@@ -51,7 +53,7 @@ export default function Home() {
                         {homePageContent.pillars.cards.map((pillar) => (
                             <article key={pillar.id} className="site-card">
                                 <p className="site-meta">{pillar.eyebrow}</p>
-                                <h2 className="site-h3 mt-5">{pillar.title}</h2>
+                                <h3 className="site-h3 mt-5">{pillar.title}</h3>
                                 <p className="site-body mt-4">{pillar.body}</p>
                                 <div className="mt-7 grid gap-[1px] bg-border">
                                     {pillar.proof.map((item) => (
