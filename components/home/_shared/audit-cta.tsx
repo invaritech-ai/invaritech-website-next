@@ -27,7 +27,7 @@ type Props = {
     className?: string;
 };
 
-const DEFAULT_LABEL = "Book Workflow Diagnostic";
+const DEFAULT_LABEL = "Share a Workflow";
 const DEFAULT_HREF = "/contact/?diagnostic=1";
 
 function subscribeSessionStorage(callback: () => void) {

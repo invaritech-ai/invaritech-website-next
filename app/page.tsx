@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
+import { AvailableWorkGrid } from "@/components/site/available-work-grid";
 import { DiagnosticCTA } from "@/components/site/diagnostic-cta";
 import { OfferLadder } from "@/components/site/offer-ladder";
 import { PageShell } from "@/components/site/page-shell";
-import { ProofGrid } from "@/components/site/proof-grid";
 import { SectionHeader } from "@/components/site/section-header";
 import { SiteHero } from "@/components/site/site-hero";
-import { ToolDirectory } from "@/components/site/tool-directory";
-import { TrustStrip } from "@/components/site/trust-strip";
 import { WorkflowDiagram } from "@/components/site/workflow-diagram";
 import { homePageContent } from "@/lib/site-content/home";
 import { offerStages } from "@/lib/site-content/offers";
@@ -44,7 +43,31 @@ export default function Home() {
     return (
         <PageShell>
             <SiteHero content={homePageContent.hero} className="site-section-hero site-home-hero" />
-            <TrustStrip items={homePageContent.trustStrip} className="border-t border-border bg-card/40" />
+
+            <section className="site-section border-t border-border">
+                <div className="site-container">
+                    <SectionHeader content={homePageContent.pillars.header} />
+                    <div className="mt-10 grid gap-5 md:grid-cols-2">
+                        {homePageContent.pillars.cards.map((pillar) => (
+                            <article key={pillar.id} className="site-card">
+                                <p className="site-meta">{pillar.eyebrow}</p>
+                                <h2 className="site-h3 mt-5">{pillar.title}</h2>
+                                <p className="site-body mt-4">{pillar.body}</p>
+                                <div className="mt-7 grid gap-[1px] bg-border">
+                                    {pillar.proof.map((item) => (
+                                        <p key={item} className="bg-background px-4 py-3 text-sm text-foreground-muted">
+                                            {item}
+                                        </p>
+                                    ))}
+                                </div>
+                                <Link href={pillar.href} className="site-button-secondary mt-7">
+                                    {pillar.ctaLabel}
+                                </Link>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
             <section className="site-section border-t border-border">
                 <div className="site-container">
@@ -96,30 +119,21 @@ export default function Home() {
                 <OfferLadder stages={offerStages} className="pt-10" />
             </section>
 
-            <section className="border-t border-border bg-card/40">
+            <section className="border-t border-border bg-card/40" id="tools">
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
-                            eyebrow: "Proof",
-                            title: "Proof, not promises.",
-                            body: "The EUDR bridge handles regulated submissions at volume. The finance tools apply the same checks to invoices, approvals, and payments.",
+                            eyebrow: "Proof and tools",
+                            title: "Proof and tools you can open today.",
+                            body: "Start with live assets: the RegOps bridge case study, AP matching demo, invoice extraction, payment-control rules, and close-cost calculator.",
                         }}
                     />
                 </div>
-                <ProofGrid assets={proofAssets} className="pt-10" />
-            </section>
-
-            <section className="border-t border-border" id="tools">
-                <div className="site-container pt-12 md:pt-16 lg:pt-20">
-                    <SectionHeader
-                        content={{
-                            eyebrow: "Tools and resources",
-                            title: "Free tools you can use today.",
-                            body: "These are proof assets and practical starting points. The tools we haven't shipped yet stay visible as placeholders.",
-                        }}
-                    />
-                </div>
-                <ToolDirectory tools={tools} className="pt-10" />
+                <AvailableWorkGrid
+                    proofAssets={proofAssets}
+                    tools={tools}
+                    className="pt-10"
+                />
             </section>
 
             <section className="site-section border-t border-border bg-card/40">

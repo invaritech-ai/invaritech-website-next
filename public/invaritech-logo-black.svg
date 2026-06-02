@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220" role="img" aria-labelledby="title desc">
-  <title id="title">Invaritech Finance and RegOps Automations black logo</title>
-  <desc id="desc">Black horizontal Invaritech logo for Finance and RegOps Automations.</desc>
+  <title id="title">Invaritech Finance Ops and RegOps Automations black logo</title>
+  <desc id="desc">Black horizontal Invaritech logo for Finance Ops and RegOps Automations.</desc>
   <g transform="translate(16 14) scale(.36)">
     <g transform="matrix(1.4439428,0,0,1.5916977,-101.32912,-163.33277)">
       <g fill="#1F1F1F" transform="translate(25.682848,67.106796)">
@@ -16,5 +16,5 @@
     </g>
   </g>
   <text x="226" y="96" fill="#1F1F1F" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="58" font-weight="600" letter-spacing="15">INVARITECH</text>
-  <text x="228" y="160" fill="#1F1F1F" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="22" font-weight="500" letter-spacing="3.6">FINANCE &amp; REGOPS AUTOMATIONS</text>
+  <text x="228" y="160" fill="#1F1F1F" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="22" font-weight="500" letter-spacing="3.6">FINANCE OPS &amp; REGOPS AUTOMATIONS</text>
 </svg>

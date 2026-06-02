@@ -167,7 +167,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                 })
                             }
                             variant="outline"
-                            className="w-full sm:w-auto rounded-none border-border"
+                            className="w-full sm:w-auto border-border"
                         >
                             Send Another Message
                         </Button>
@@ -219,7 +219,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                         <Button
                                             asChild
                                             variant="default"
-                                            className="group rounded-none"
+                                            className="group"
                                         >
                                             {diagnosticRequested || scanRequested ? (
                                                 <Link href="#contact-form">
@@ -228,7 +228,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                                 </Link>
                                             ) : (
                                                 <Link href="/contact/?diagnostic=1">
-                                                    Book Workflow Diagnostic
+                                                    Share a Workflow
                                                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                                 </Link>
                                             )}
@@ -386,7 +386,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                 <Button
                                     type="submit"
                                     disabled={formState.isSubmitting}
-                                    className="w-full rounded-none"
+                                    className="w-full"
                                     size="lg"
                                 >
                                     {formState.isSubmitting

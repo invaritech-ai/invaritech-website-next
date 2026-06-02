@@ -55,15 +55,17 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default: "Finance Operations and RegOps Automation | INVARITECH",
+        default: "Finance Ops and RegOps Automation | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "Finance operations and RegOps automation built around the tools you already use: payment controls, exception workflows, and reporting bridges.",
+        "Automation for Finance Ops and RegOps teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.",
     keywords: [
         "INVARITECH",
         "finance operations automation",
+        "Finance Ops automation",
         "RegOps automation",
+        "regulatory operations automation",
         "finance operations",
         "accounts payable controls",
         "invoice exception management",
@@ -100,24 +102,24 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en",
         url: "https://www.invaritech.ai",
-        title: "Finance Operations and RegOps Automation | INVARITECH",
+        title: "Finance Ops and RegOps Automation | INVARITECH",
         description:
-            "Finance operations and RegOps automation built around the tools you already use: payment controls, exception workflows, and reporting bridges.",
+            "Automation for Finance Ops and RegOps teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Finance Operations and RegOps Automation | INVARITECH",
+                alt: "Finance Ops and RegOps Automation | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Operations and RegOps Automation | INVARITECH",
+        title: "Finance Ops and RegOps Automation | INVARITECH",
         description:
-            "Finance operations and RegOps automation for teams worldwide around the systems they already use.",
+            "Automation for Finance Ops and RegOps teams worldwide around the systems they already use.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },
@@ -126,7 +128,10 @@ export const metadata: Metadata = {
     classification: "Business",
     referrer: "origin-when-cross-origin",
     icons: {
-        icon: "/favicon.ico",
+        icon: [
+            { url: "/invaritech-icon.svg", type: "image/svg+xml" },
+            { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+        ],
         shortcut: "/favicon.ico",
         apple: "/icon-192.png",
     },

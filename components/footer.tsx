@@ -56,12 +56,14 @@ function FooterLink({ href, title }: { href: string; title: string }) {
 function FooterColumn({
     title,
     links,
+    className,
 }: {
     title: string;
     links: { label?: string; title?: string; href: string }[];
+    className?: string;
 }) {
     return (
-        <nav aria-label={`${title} navigation`}>
+        <nav aria-label={`${title} navigation`} className={className}>
             <h2 className="site-footer-heading">{title}</h2>
             <ul className="site-footer-link-list">
                 {links.map((link) => (
@@ -95,33 +97,40 @@ export default function FooterSection() {
                             </span>
                             <span className="site-footer-logo-copy">
                                 <Logo className="site-footer-logo-text" />
-                                <span className="site-logo-strapline">Finance & RegOps Automation</span>
+                                <span className="site-logo-strapline">Finance Ops & RegOps Automations</span>
                             </span>
                         </Link>
 
                         <p className="site-footer-text">{brandPositioning.footer}</p>
                     </div>
 
-                    <FooterColumn title="Company" links={footerCompanyLinks} />
-                    <FooterColumn title="Finance Automation" links={footerFinanceLinks} />
-                    <FooterColumn title="Proof" links={footerProofLinks} />
-                    <FooterColumn title="Legal" links={legalLinks} />
+                    <FooterColumn
+                        title="Company"
+                        links={footerCompanyLinks}
+                        className="site-footer-company-column"
+                    />
+                    <FooterColumn title="Finance Ops" links={footerFinanceLinks} />
+                    <FooterColumn title="RegOps & Proof" links={footerProofLinks} />
 
-                    <div>
-                        <h2 className="site-footer-heading">Connect</h2>
-                        <div className="site-footer-social-row">
-                            {socialLinks.map((link) => (
-                                <Link
-                                    key={link.title}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="site-footer-social-link"
-                                    aria-label={link.title}
-                                >
-                                    {link.icon}
-                                </Link>
-                            ))}
+                    <div className="site-footer-utility-column">
+                        <FooterColumn title="Legal" links={legalLinks} />
+
+                        <div>
+                            <h2 className="site-footer-heading">Connect</h2>
+                            <div className="site-footer-social-row">
+                                {socialLinks.map((link) => (
+                                    <Link
+                                        key={link.title}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="site-footer-social-link"
+                                        aria-label={link.title}
+                                    >
+                                        {link.icon}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>

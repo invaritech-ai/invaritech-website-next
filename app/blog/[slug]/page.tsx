@@ -328,7 +328,7 @@ export default async function BlogPostPage({ params }: Props) {
                         <section className="mt-16 pt-16 border-t border-border text-center">
                             <div className="flex items-center justify-center gap-3 mb-8">
                                 <div className="h-[1px] w-8 bg-primary/40" />
-                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Book Workflow Diagnostic</span>
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Share a Workflow</span>
                                 <div className="h-[1px] w-8 bg-primary/40" />
                             </div>
                             <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
@@ -338,15 +338,15 @@ export default async function BlogPostPage({ params }: Props) {
                                 Bring one finance or regulated operations workflow. We will map the current process, find where controls are missing, and recommend the smallest useful build scope.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
+                                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
                                     <Link
                                         href="/contact/?diagnostic=1&src=blog"
                                         className="flex items-center gap-3"
                                     >
-                                        Book Workflow Diagnostic <ArrowRight className="w-5 h-5" />
+                                        Share a Workflow <ArrowRight className="w-5 h-5" />
                                     </Link>
                                 </Button>
-                                <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
+                                <Button asChild variant="outline" size="lg" className="border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
                                     <Link href="/work/">Explore Work</Link>
                                 </Button>
                             </div>

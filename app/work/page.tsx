@@ -9,22 +9,22 @@ import { proofAssets } from "@/lib/site-content/proof";
 import type { ProofAsset } from "@/lib/site-content/types";
 
 export const metadata: Metadata = {
-    title: "Finance Operations and RegOps Automation Work",
+    title: "Finance Ops and RegOps Automation Work",
     description:
-        "Proof that Invaritech builds finance and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+        "Proof that Invaritech builds Finance Ops and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
     openGraph: {
-        title: "Finance Operations and RegOps Automation Work | INVARITECH",
+        title: "Finance Ops and RegOps Automation Work | INVARITECH",
         description:
-            "Proof that Invaritech builds finance and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+            "Proof that Invaritech builds Finance Ops and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Finance and RegOps Automation" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Operations and RegOps Automation Work | INVARITECH",
+        title: "Finance Ops and RegOps Automation Work | INVARITECH",
         description:
-            "Proof that Invaritech builds finance and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+            "Proof that Invaritech builds Finance Ops and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -44,12 +44,13 @@ function getProofAsset(id: string) {
 
 const featuredProof = getProofAsset("eudr-compliance-bridge");
 const supportingProofAssets = proofAssets.filter((asset) => asset.id !== featuredProof.id);
+const financeProofAssets = supportingProofAssets.filter((asset) => asset.pillar === "finance-ops");
+const regopsProofAssets = supportingProofAssets.filter((asset) => asset.pillar === "regops");
 
 const proofTypeLabels: Record<ProofAsset["type"], string> = {
     "case-study": "Case study",
     demo: "Working demo",
     tool: "Tool proof",
-    placeholder: "Future proof",
 };
 
 function ProofCard({ asset, index }: { asset: ProofAsset; index: number }) {
@@ -103,6 +104,23 @@ function ProofCard({ asset, index }: { asset: ProofAsset; index: number }) {
 }
 
 export default function WorkPage() {
+    const proofSections = [
+        {
+            id: "finance-ops-proof",
+            eyebrow: "Finance Ops proof",
+            title: "Finance workflows, tools, and demos.",
+            body: "Invoice intake, AP matching, payment control rules, and future Xero AP proof will live here.",
+            assets: financeProofAssets,
+        },
+        {
+            id: "regops-proof",
+            eyebrow: "RegOps proof",
+            title: "Regulated workflow proof.",
+            body: "The RegOps library is smaller today. It stays anchored in EUDR and evidence-heavy workflow delivery.",
+            assets: regopsProofAssets,
+        },
+    ];
+
     return (
         <main className="site-page relative overflow-hidden selection:bg-primary/20 selection:text-primary">
             <div className="absolute inset-0 pointer-events-none z-0">
@@ -116,14 +134,14 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Finance & RegOps proof</p>
+                                <p className="site-eyebrow-text">Finance Ops and RegOps proof</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
                                 Real systems we&apos;ve shipped.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. The thread is the same: messy process in, clean and checkable workflow out.
+                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. Finance Ops and RegOps are separate pillars. The delivery discipline is shared.
                         </p>
                     </div>
                 </div>
@@ -185,7 +203,7 @@ export default function WorkPage() {
                             </div>
 
                             <div className="pt-4">
-                                <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
+                                <Button asChild variant="outline" size="lg" className="border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
                                     <Link href={featuredProof.href ?? "/work/eudr-compliance-bridge/"} className="flex items-center gap-3">
                                         <span className="text-sm font-semibold uppercase tracking-widest">
                                             View RegOps Case
@@ -198,26 +216,36 @@ export default function WorkPage() {
                     </div>
                 </div>
 
-                <div className="mb-16 flex flex-col gap-4 border-t border-border pt-16 md:flex-row md:items-end md:justify-between">
-                    <div>
-                        <div className="mb-4 flex items-center gap-3">
-                            <div className="h-[1px] w-8 bg-primary/40" />
-                            <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
-                                More proof cards
-                            </span>
-                        </div>
-                        <h2 className="font-editorial text-4xl font-semibold tracking-tight md:text-5xl">
-                            Same pattern, different problems.
-                        </h2>
-                    </div>
-                    <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
-                        These cards show the operating logic behind the work: exception handling, structured intake, rule definition, and evidence-aware workflow design.
-                    </p>
-                </div>
+                <div className="space-y-20">
+                    {proofSections.map((section, sectionIndex) => (
+                        <section key={section.id} id={section.id} className="scroll-mt-24">
+                            <div className="mb-16 flex flex-col gap-4 border-t border-border pt-16 md:flex-row md:items-end md:justify-between">
+                                <div>
+                                    <div className="mb-4 flex items-center gap-3">
+                                        <div className="h-[1px] w-8 bg-primary/40" />
+                                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                                            {section.eyebrow}
+                                        </span>
+                                    </div>
+                                    <h2 className="font-editorial text-4xl font-semibold tracking-tight md:text-5xl">
+                                        {section.title}
+                                    </h2>
+                                </div>
+                                <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+                                    {section.body}
+                                </p>
+                            </div>
 
-                <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                    {supportingProofAssets.map((asset, index) => (
-                        <ProofCard key={asset.id} asset={asset} index={index + 1} />
+                            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                                {section.assets.map((asset, index) => (
+                                    <ProofCard
+                                        key={asset.id}
+                                        asset={asset}
+                                        index={sectionIndex * 10 + index + 1}
+                                    />
+                                ))}
+                            </div>
+                        </section>
                     ))}
                 </div>
 
@@ -234,7 +262,7 @@ export default function WorkPage() {
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
                         Bring one regulated submission, finance exception, document intake, or approval workflow. We will map where controls are missing and define the smallest useful build.
                     </p>
-                    <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
+                    <Button asChild size="lg" className="bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
                         <Link href={primaryDiagnosticCta.href}>
                             {primaryDiagnosticCta.label}
                         </Link>

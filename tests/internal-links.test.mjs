@@ -102,13 +102,24 @@ describe("internal page links", () => {
     });
 });
 
-describe("money page is linked", () => {
-    it("at least one file references /finance-exception-automation", () => {
+describe("pillar money pages are linked", () => {
+    it("references both Finance Ops and RegOps pillar pages", () => {
         const files = sourceRoots.flatMap((root) => walkFiles(root));
         const tsFiles = files.filter((p) => sourceExtensions.has(extensionOf(p)));
-        const matchCount = tsFiles.filter((p) =>
-            readFileSync(p, "utf-8").includes("/finance-exception-automation")
+        const financeMatchCount = tsFiles.filter((p) =>
+            readFileSync(p, "utf-8").includes("/finance-operations-automation")
         ).length;
-        assert.ok(matchCount >= 3, `Expected /finance-exception-automation in 3+ files; found ${matchCount}`);
+        const regopsMatchCount = tsFiles.filter((p) =>
+            readFileSync(p, "utf-8").includes("/regulatory-operations-automation")
+        ).length;
+
+        assert.ok(
+            financeMatchCount >= 3,
+            `Expected /finance-operations-automation in 3+ files; found ${financeMatchCount}`
+        );
+        assert.ok(
+            regopsMatchCount >= 3,
+            `Expected /regulatory-operations-automation in 3+ files; found ${regopsMatchCount}`
+        );
     });
 });

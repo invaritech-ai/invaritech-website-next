@@ -30,14 +30,15 @@ export const LogoIcon = ({
 }) => {
     return (
         <Image
-            src="/logo-image.png"
+            src="/invaritech-icon.svg"
             alt="Invaritech Icon"
-            width={32}
-            height={32}
+            width={512}
+            height={512}
             className={cn(
                 "size-8",
                 className
             )}
+            unoptimized
         />
     );
 };

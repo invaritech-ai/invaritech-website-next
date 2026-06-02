@@ -1,8 +1,6 @@
 import {
     brandPositioning,
     primaryDiagnosticCta,
-    primaryTrustStrip,
-    secondaryWorkCta,
 } from "./brand";
 import type { HeroContent, SectionHeaderContent } from "./types";
 
@@ -17,9 +15,22 @@ type MethodStepContent = {
     body: string;
 };
 
+type PillarCardContent = {
+    id: string;
+    eyebrow: string;
+    title: string;
+    body: string;
+    href: string;
+    ctaLabel: string;
+    proof: string[];
+};
+
 type HomePageContent = {
     hero: HeroContent;
-    trustStrip: string[];
+    pillars: {
+        header: SectionHeaderContent;
+        cards: PillarCardContent[];
+    };
     problem: {
         header: SectionHeaderContent;
         points: MethodStepContent[];
@@ -43,34 +54,72 @@ type HomePageContent = {
 export const homePageContent = {
     hero: {
         eyebrow: brandPositioning.short,
-        title: "We automate the finance checks your team still does by hand.",
-        body: brandPositioning.controlLayerDefinition,
+        title: "Automation for finance and regulated operations that still run on manual checks.",
+        body: "We build around messy documents, approvals, exceptions, and evidence trails. Your current systems stay in place.",
         primaryCta: primaryDiagnosticCta,
-        secondaryCta: secondaryWorkCta,
+        secondaryCta: {
+            label: "View Proof",
+            href: "/work/",
+            variant: "secondary",
+        },
         trustLine: brandPositioning.trustLine,
     },
-    trustStrip: primaryTrustStrip,
+    pillars: {
+        header: {
+            eyebrow: "Two operating pillars",
+            title: "Choose the workflow family first.",
+            body: "Finance Ops is the active publishing focus. RegOps is the older proven capability. Both depend on the same discipline: checks, evidence, review paths, and maintained systems.",
+        },
+        cards: [
+            {
+                id: "finance-ops",
+                eyebrow: "Finance Ops",
+                title: "Finance operations automation",
+                body: "For accounts payable, invoice approval, Xero-heavy workflows, duplicate payment risk, payment controls, month-end close, and cash visibility.",
+                href: "/finance-operations-automation/",
+                ctaLabel: "Explore Finance Ops",
+                proof: [
+                    "Xero AP automation direction",
+                    "Invoice approval workflows",
+                    "Payment control resources",
+                ],
+            },
+            {
+                id: "regops",
+                eyebrow: "RegOps",
+                title: "Regulatory operations automation",
+                body: "For regulated submissions, evidence intake, review checkpoints, reporting bridges, and audit trails in document-heavy compliance work.",
+                href: "/regulatory-operations-automation/",
+                ctaLabel: "Explore RegOps",
+                proof: [
+                    "EUDR bridge proof",
+                    "Compliance automation writing",
+                    "Evidence-heavy workflows",
+                ],
+            },
+        ],
+    },
     problem: {
         header: {
             eyebrow: "The work between systems",
-            title: "Your tools work. The handoffs between them don't.",
-            body: "Your ledger, inbox, spreadsheets, and approval tools all do their job. The risk lives in the gaps between them.",
+            title: "Your tools work. The handoffs between them still need owners.",
+            body: "Finance and regulated teams already have systems. The slow work usually sits between them: copied reports, email approvals, document evidence, and exceptions someone has to remember.",
         },
         points: [
             {
                 id: "exceptions-hidden",
                 title: "Exceptions hide in manual review",
-                body: "Payment holds, PO mismatches, supplier changes, and missing evidence often depend on people remembering the right check.",
+                body: "Payment holds, PO mismatches, supplier changes, submission errors, and missing evidence often depend on people remembering the right check.",
             },
             {
                 id: "approvals-fragmented",
                 title: "Approvals lose their context",
-                body: "Review steps happen across email, spreadsheets, and finance systems, making it hard to reconstruct who approved what and why.",
+                body: "Review steps happen across email, spreadsheets, finance systems, and portals, making it hard to reconstruct who approved what and why.",
             },
             {
                 id: "reporting-bridges-fragile",
                 title: "Reporting bridges become fragile",
-                body: "Recurring reports lean on copied data, undocumented formulas, and last-minute fixes. Nothing you can audit later.",
+                body: "Recurring reports lean on copied data, undocumented formulas, and last-minute fixes. The evidence is hard to defend later.",
             },
         ],
     },
@@ -114,7 +163,7 @@ export const homePageContent = {
     },
     finalCta: {
         title: "Bring us one messy workflow.",
-        body: "Pick one that is slow, risky, or hard to audit. Leave with the gaps, a build scope, and a clear next step.",
+        body: "Pick one that is slow, risky, or hard to audit. We will map the gaps and tell you what a useful first system would need to prove.",
         cta: primaryDiagnosticCta,
     },
 } satisfies HomePageContent;

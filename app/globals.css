@@ -61,6 +61,7 @@
     --font-mono: var(--font-label);
 
     --radius: 0.125rem;
+    --button-radius: 0.25rem;
 }
 
 .dark {
@@ -234,7 +235,7 @@ textarea {
     }
 
     .site-section-hero {
-        @apply pt-20 pb-14 md:pt-28 md:pb-20;
+        @apply pt-28 pb-14 md:pb-20;
     }
 
     .site-section-muted {
@@ -350,6 +351,78 @@ textarea {
         text-wrap: pretty;
     }
 
+    .offer-ladder-ledger {
+        @apply border-y border-border;
+    }
+
+    .offer-ladder-stage {
+        @apply grid gap-8 border-b border-border py-9 last:border-b-0 md:py-10 lg:grid-cols-[14rem_1fr] lg:gap-12;
+    }
+
+    .offer-ladder-stage-head {
+        @apply max-w-xl lg:max-w-none;
+    }
+
+    .offer-ladder-offers {
+        @apply grid gap-[1px] bg-border;
+    }
+
+    .offer-ladder-offers-many {
+        @apply md:grid-cols-3;
+    }
+
+    .offer-ladder-offer {
+        @apply grid gap-7 bg-background p-6 transition-colors hover:bg-card md:p-7;
+    }
+
+    .offer-ladder-offer-wide {
+        @apply md:grid-cols-[1fr_0.9fr] md:gap-10 md:items-start;
+    }
+
+    .offer-ladder-offer-title {
+        @apply mt-5 text-2xl font-semibold leading-tight text-foreground md:text-2xl;
+        font-family: var(--font-display);
+        text-wrap: balance;
+    }
+
+    .offer-ladder-offer-detail {
+        @apply flex flex-col items-start;
+    }
+
+    .offer-ladder-offer-list {
+        @apply w-full border-t border-border;
+    }
+
+    .offer-ladder-offer-list li {
+        @apply border-b border-border py-3 text-sm leading-relaxed text-foreground-muted md:text-base;
+        text-wrap: pretty;
+    }
+
+    .available-work-grid {
+        @apply grid gap-[1px] bg-border md:grid-cols-2 xl:grid-cols-6;
+    }
+
+    .available-work-item {
+        @apply block bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+    }
+
+    .available-work-item-wide {
+        @apply xl:col-span-3;
+    }
+
+    .available-work-item-third {
+        @apply xl:col-span-2;
+    }
+
+    .available-work-card {
+        @apply h-full bg-background p-6 transition-colors hover:bg-card md:p-7;
+    }
+
+    .available-work-status,
+    .available-work-tag {
+        @apply border border-border px-2 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-foreground-subtle;
+    }
+
     .site-icon {
         @apply mb-6 size-5 text-primary;
     }
@@ -364,14 +437,21 @@ textarea {
 
     .site-button {
         @apply inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+        border-radius: var(--button-radius);
     }
 
     .site-button-secondary {
         @apply inline-flex min-h-12 items-center justify-center border border-border bg-transparent px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50;
+        border-radius: var(--button-radius);
     }
 
     .site-button-icon {
         @apply ml-2 size-4;
+    }
+
+    .site-filter-button {
+        @apply px-4 py-2 text-[11px] font-mono uppercase tracking-[0.18em] transition-colors;
+        border-radius: var(--button-radius);
     }
 
     .site-link {
@@ -685,7 +765,7 @@ textarea {
     }
 
     .site-shell-brand-mark {
-        @apply flex size-10 shrink-0 items-center justify-center border border-border bg-card transition-[border-color,background-color] duration-200 group-hover:border-primary/40 group-hover:bg-background;
+        @apply flex size-10 shrink-0 items-center justify-center transition-opacity duration-200 group-hover:opacity-80;
     }
 
     .site-shell-brand-icon {
@@ -701,7 +781,7 @@ textarea {
     }
 
     .site-shell-brand-line {
-        @apply mt-1 block text-[10px] font-mono uppercase tracking-[0.2em] text-foreground-subtle;
+        @apply mt-1 block text-[9px] font-mono uppercase tracking-[0.18em] text-primary;
     }
 
     .site-shell-nav {
@@ -718,10 +798,12 @@ textarea {
 
     .site-shell-nav-cta {
         @apply ml-2 inline-flex min-h-10 items-center bg-foreground px-4 text-sm font-semibold text-background transition-[background-color,color] duration-200 hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+        border-radius: var(--button-radius);
     }
 
     .site-shell-menu-button {
         @apply pointer-events-auto inline-flex min-h-11 items-center gap-3 border border-border bg-card px-4 text-sm font-semibold text-foreground transition-[border-color,background-color,color] duration-200 hover:border-primary/40 hover:bg-background focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden;
+        border-radius: var(--button-radius);
     }
 
     .site-shell-menu-icon {
@@ -783,11 +865,11 @@ textarea {
     }
 
     .site-footer {
-        @apply relative overflow-hidden border-t border-border bg-card py-16 md:py-20;
+        @apply relative overflow-hidden border-t border-border bg-card py-8 md:py-10;
     }
 
     .site-footer-watermark {
-        @apply pointer-events-none absolute -bottom-10 left-1/2 select-none -translate-x-1/2 whitespace-nowrap text-[8rem] font-bold uppercase leading-none tracking-tighter text-foreground opacity-[0.025] md:text-[14rem] lg:text-[18rem];
+        @apply pointer-events-none absolute -bottom-8 left-1/2 select-none -translate-x-1/2 whitespace-nowrap text-[6rem] font-bold uppercase leading-none tracking-tighter text-foreground opacity-[0.018] md:text-[10rem] lg:text-[13rem];
         font-family: var(--font-display);
     }
 
@@ -796,23 +878,23 @@ textarea {
     }
 
     .site-footer-grid {
-        @apply grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr];
+        @apply grid grid-cols-2 gap-x-6 gap-y-6 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_0.9fr_0.85fr_0.7fr] lg:items-start;
     }
 
     .site-footer-brand {
-        @apply flex max-w-sm flex-col items-start gap-6;
+        @apply col-span-2 flex max-w-sm flex-col items-start gap-4 md:col-span-1;
     }
 
     .site-footer-logo-row {
-        @apply inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+        @apply inline-flex items-center gap-2 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     }
 
     .site-footer-logo-mark {
-        @apply flex size-11 items-center justify-center border border-border bg-background;
+        @apply flex size-9 items-center justify-center;
     }
 
     .site-footer-logo-icon {
-        @apply size-8;
+        @apply size-7;
     }
 
     .site-footer-logo-copy {
@@ -820,40 +902,48 @@ textarea {
     }
 
     .site-footer-logo-text {
-        @apply h-7 w-auto;
+        @apply h-6 w-auto;
     }
 
     .site-footer-text {
-        @apply text-sm leading-relaxed text-foreground-muted;
+        @apply max-w-xs text-sm leading-snug text-foreground-muted;
         text-wrap: pretty;
     }
 
     .site-footer-heading {
-        @apply mb-4 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+        @apply mb-2 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle md:mb-3;
     }
 
     .site-footer-link-list {
-        @apply space-y-2;
+        @apply space-y-1;
+    }
+
+    .site-footer-company-column .site-footer-link-list {
+        @apply lg:grid lg:grid-cols-2 lg:gap-x-5 lg:gap-y-1 lg:space-y-0;
+    }
+
+    .site-footer-utility-column {
+        @apply flex flex-col gap-4 md:gap-5;
     }
 
     .site-footer-link {
-        @apply inline-flex min-h-10 items-center text-sm text-foreground-muted transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+        @apply inline-flex min-h-6 items-center text-xs leading-tight text-foreground-muted transition-colors duration-200 hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:min-h-7 md:text-sm;
     }
 
     .site-footer-social-row {
-        @apply flex gap-3;
+        @apply flex gap-2;
     }
 
     .site-footer-social-link {
-        @apply inline-flex size-10 items-center justify-center border border-border text-foreground-muted transition-[border-color,background-color,color] duration-200 hover:border-primary/40 hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+        @apply inline-flex size-8 items-center justify-center border border-border text-foreground-muted transition-[border-color,background-color,color] duration-200 hover:border-primary/40 hover:bg-background hover:text-foreground focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
     }
 
     .site-footer-social-icon {
-        @apply size-5;
+        @apply size-4;
     }
 
     .site-footer-bottom {
-        @apply mt-14 flex flex-col gap-3 border-t border-border pt-6 text-[11px] font-mono uppercase leading-relaxed tracking-[0.16em] text-foreground-subtle md:flex-row md:items-center md:justify-between;
+        @apply mt-7 flex flex-col gap-2 border-t border-border pt-4 text-[10px] font-mono uppercase leading-snug tracking-[0.14em] text-foreground-subtle md:flex-row md:items-center md:justify-between;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1274,6 +1364,7 @@ textarea {
 
     .tool-button-primary {
         @apply inline-flex min-h-12 w-full items-center justify-center gap-2 bg-primary px-6 text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-colors hover:bg-foreground hover:text-background disabled:pointer-events-none disabled:opacity-50;
+        border-radius: var(--button-radius);
     }
 
     .tool-button-fit {
@@ -1282,10 +1373,12 @@ textarea {
 
     .tool-button-ghost {
         @apply inline-flex min-h-11 items-center justify-center gap-2 border border-border px-4 text-xs font-mono uppercase tracking-[0.14em] text-foreground-muted transition-colors hover:bg-card hover:text-foreground disabled:pointer-events-none disabled:opacity-50;
+        border-radius: var(--button-radius);
     }
 
     .tool-button-subtle {
         @apply inline-flex min-h-11 items-center justify-center gap-2 px-4 text-xs font-mono uppercase tracking-[0.14em] text-foreground-subtle transition-colors hover:text-foreground disabled:pointer-events-none disabled:opacity-50;
+        border-radius: var(--button-radius);
     }
 
     .tool-segmented {
@@ -2820,6 +2913,7 @@ textarea {
     }
     .glossary-matcher-tab {
         @apply flex-1 border px-3 py-2 font-mono text-[11px] uppercase tracking-[0.18em] border-border text-foreground-muted;
+        border-radius: var(--button-radius);
     }
     .glossary-matcher-tab-active {
         @apply border-primary bg-primary text-primary-foreground;
@@ -2913,6 +3007,7 @@ textarea {
     }
     .glossary-matcher-filter-chip {
         @apply border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] border-border text-foreground-muted hover:border-primary/50;
+        border-radius: var(--button-radius);
     }
     .glossary-matcher-filter-chip-active {
         @apply border-primary bg-primary text-primary-foreground;

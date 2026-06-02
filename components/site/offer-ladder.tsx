@@ -28,74 +28,75 @@ export function OfferLadder({ stages, className }: OfferLadderProps) {
     return (
         <section className={cn("site-section", className)}>
             <div className="site-container">
-                <div className="space-y-14">
+                <div className="offer-ladder-ledger">
                     {stages.map((stage, index) => (
                         <section
                             key={stage.id}
-                            className="border-t border-border pt-8"
+                            className="offer-ladder-stage"
                         >
-                            <div className="max-w-3xl">
+                            <div className="offer-ladder-stage-head">
                                 <p className="site-meta">
                                     {String(index + 1).padStart(2, "0")}
                                 </p>
-                                <h3 className="site-h3 mt-5">
-                                    {stage.title}
-                                </h3>
-                                <p className="site-body mt-4">{stage.body}</p>
+                                <h3 className="site-h3 mt-4">{stage.title}</h3>
+                                <p className="site-body mt-4 text-base md:text-base">
+                                    {stage.body}
+                                </p>
                             </div>
-                            <div className="site-grid-three mt-8">
+                            <div
+                                className={cn(
+                                    "offer-ladder-offers",
+                                    stage.offers.length > 1 &&
+                                        "offer-ladder-offers-many",
+                                )}
+                            >
                                 {stage.offers.map((offer) => (
                                     <article
                                         key={offer.id}
-                                        className="site-card"
+                                        className={cn(
+                                            "offer-ladder-offer",
+                                            stage.offers.length === 1 &&
+                                                "offer-ladder-offer-wide",
+                                        )}
                                     >
-                                        <p className="site-meta">
-                                            {offer.audience}
-                                        </p>
-                                        <h4 className="site-h3 mt-4 text-2xl md:text-2xl">
-                                            {offer.title}
-                                        </h4>
-                                        <p className="site-body mt-4">
-                                            {offer.promise}
-                                        </p>
-                                        {offer.includes.length > 0 ? (
-                                            <ul className="mt-6 space-y-3">
-                                                {offer.includes.map(
-                                                    (item) => (
-                                                        <li
-                                                            key={item}
-                                                            className="site-body text-base md:text-base"
-                                                        >
-                                                            {item}
-                                                        </li>
-                                                    ),
-                                                )}
-                                            </ul>
-                                        ) : null}
-                                        {offer.cta ? (
-                                            <Link
-                                                href={offer.cta.href}
-                                                className={cn(
-                                                    ctaClassName(
-                                                        offer.cta.variant,
-                                                    ),
-                                                    "mt-7",
-                                                )}
-                                            >
-                                                {offer.cta.label}
-                                            </Link>
-                                        ) : null}
+                                        <div>
+                                            <p className="site-meta">
+                                                {offer.audience}
+                                            </p>
+                                            <h4 className="offer-ladder-offer-title">
+                                                {offer.title}
+                                            </h4>
+                                            <p className="site-body mt-4 text-base md:text-base">
+                                                {offer.promise}
+                                            </p>
+                                        </div>
+                                        <div className="offer-ladder-offer-detail">
+                                            {offer.includes.length > 0 ? (
+                                                <ul className="offer-ladder-offer-list">
+                                                    {offer.includes.map(
+                                                        (item) => (
+                                                            <li key={item}>
+                                                                {item}
+                                                            </li>
+                                                        ),
+                                                    )}
+                                                </ul>
+                                            ) : null}
+                                            {offer.cta ? (
+                                                <Link
+                                                    href={offer.cta.href}
+                                                    className={cn(
+                                                        ctaClassName(
+                                                            offer.cta.variant,
+                                                        ),
+                                                        "mt-7",
+                                                    )}
+                                                >
+                                                    {offer.cta.label}
+                                                </Link>
+                                            ) : null}
+                                        </div>
                                     </article>
-                                ))}
-                                {Array.from({
-                                    length:
-                                        (3 - (stage.offers.length % 3)) % 3,
-                                }).map((_, fillerIndex) => (
-                                    <div
-                                        key={`offer-filler-${fillerIndex}`}
-                                        aria-hidden
-                                        className="hidden bg-background md:block"
-                                    />
                                 ))}
                             </div>
                         </section>

@@ -83,7 +83,7 @@ export default function ThreeWayMatchPage() {
                     {/* Eyebrow + H1 */}
                     <div className="glossary-eyebrow mb-6">
                         <div className="glossary-eyebrow-bar" />
-                        <p className="glossary-eyebrow-label">Finance Automation Guide · Reference</p>
+                        <p className="glossary-eyebrow-label">Finance Ops Guide · Reference</p>
                     </div>
 
                     <h1 className="doc-hero-headline max-w-3xl">
@@ -93,7 +93,7 @@ export default function ThreeWayMatchPage() {
                     <p className="glossary-lead mt-8">
                         Three-way matching checks that an invoice, its purchase order, and the
                         goods receipt note all line up before a payment is released. It is the
-                        backbone control most AP teams run by hand and the highest-leverage
+                        backbone control most AP teams run by hand and the highest-value
                         workflow to automate. This page explains what it actually checks, what
                         breaks at scale, and what an agentic exception-routing system catches
                         that manual review misses.
@@ -285,11 +285,11 @@ export default function ThreeWayMatchPage() {
                             <div className="glossary-cta-card-grid">
                                 <div>
                                     <p className="glossary-eyebrow-label">
-                                        Book a free Finance Exception Audit
+                                        Share one AP workflow
                                     </p>
                                     <p className="glossary-cta-card-body">
-                                        We review your full AP workflow and recommend the smallest useful
-                                        first system. Free during launch for selected finance teams.
+                                        We review one AP workflow and recommend the smallest useful
+                                        first system to prove.
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
@@ -467,11 +467,11 @@ export default function ThreeWayMatchPage() {
                                         Ready to automate three-way matching?
                                     </p>
                                     <h3 className="glossary-cta-footer-heading">
-                                        Book a free Finance Exception Audit.
+                                        Share one AP workflow.
                                     </h3>
                                     <p className="glossary-cta-card-body mt-3">
-                                        We review your full AP workflow and recommend the smallest useful
-                                        first system. Free during launch.
+                                        We review one AP workflow and recommend the smallest useful
+                                        first system to prove.
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">

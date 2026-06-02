@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "Finance Controls Tools and Resources",
+    title: "Finance Ops and RegOps Tools and Resources",
     description:
-        "Free tools, rule tables, checklists, and guides for finance controls, approval evidence, exception routing, duplicate payment risk, and month-end visibility.",
+        "Free tools, rule tables, checklists, guides, and proof notes for Finance Ops and RegOps workflows, exceptions, approval evidence, and audit trails.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Finance Controls Tools and Resources - INVARITECH",
+        title: "Finance Ops and RegOps Tools and Resources - INVARITECH",
         description:
-            "Free tools, rule tables, checklists, and guides for finance controls, approval evidence, exception routing, duplicate payment risk, and month-end visibility.",
+            "Free tools, rule tables, checklists, guides, and proof notes for Finance Ops and RegOps workflows, exceptions, approval evidence, and audit trails.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Finance Controls Tools and Resources",
+                alt: "Finance Ops and RegOps Tools and Resources",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Controls Tools and Resources - INVARITECH",
+        title: "Finance Ops and RegOps Tools and Resources - INVARITECH",
         description:
-            "Free tools, rule tables, checklists, and guides for finance controls, approval evidence, exception routing, duplicate payment risk, and month-end visibility.",
+            "Free tools, rule tables, checklists, guides, and proof notes for Finance Ops and RegOps workflows, exceptions, approval evidence, and audit trails.",
         images: ["/og-image.png"],
     },
 };

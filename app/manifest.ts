@@ -4,9 +4,9 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "INVARITECH Finance Operations Automation",
+        name: "INVARITECH Finance Ops and RegOps Automation",
         short_name: "INVARITECH",
-        description: "Finance operations and RegOps automation around the systems teams already use.",
+        description: "Finance Ops and RegOps automation around the systems teams already use.",
         start_url: "/",
         display: "standalone",
         background_color: "#000000",
@@ -36,7 +36,7 @@ export default function manifest(): MetadataRoute.Manifest {
                 sizes: "1280x720",
                 type: "image/png",
                 form_factor: "wide",
-                label: "INVARITECH Finance Operations Automation Homepage",
+                label: "INVARITECH Finance Ops and RegOps Automation Homepage",
             },
         ],
     };

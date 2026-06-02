@@ -141,7 +141,7 @@ export function ControlFilterSidebar({
       {hasActiveFilters && (
         <button
           onClick={onClearAll}
-          className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-primary/30 bg-primary/5 rounded hover:bg-primary/10 transition-colors text-sm text-primary"
+          className="w-full flex items-center justify-center gap-2 px-4 py-2 border border-primary/30 bg-primary/5 rounded-[var(--button-radius)] hover:bg-primary/10 transition-colors text-sm text-primary"
         >
           <X className="w-4 h-4" />
           Clear all filters

@@ -5,19 +5,19 @@ import { parseUtmParams } from "../lib/utm-params.ts";
 
 describe("parseUtmParams", () => {
     it("returns empty object when no params present", () => {
-        assert.deepEqual(parseUtmParams("/finance-exception-automation"), {});
+        assert.deepEqual(parseUtmParams("/finance-operations-automation"), {});
     });
 
     it("extracts src param", () => {
         assert.deepEqual(
-            parseUtmParams("/finance-exception-automation?src=cold-email"),
+            parseUtmParams("/finance-operations-automation?src=cold-email"),
             { src: "cold-email" }
         );
     });
 
     it("extracts campaign param", () => {
         assert.deepEqual(
-            parseUtmParams("/finance-exception-automation?campaign=q4"),
+            parseUtmParams("/finance-operations-automation?campaign=q4"),
             { campaign: "q4" }
         );
     });

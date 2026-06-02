@@ -218,7 +218,7 @@ export default function Artistic404() {
                         asChild 
                         variant="ghost" 
                         size="lg" 
-                        className="rounded-none border border-white/20 bg-white/10 hover:bg-primary hover:border-primary hover:scale-105 hover:tracking-widest text-white transition-all duration-500 ease-out group"
+                        className="border border-white/20 bg-white/10 hover:bg-primary hover:border-primary hover:scale-105 hover:tracking-widest text-white transition-all duration-500 ease-out group"
                     >
                         <Link href="/">
                             <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-2 transition-transform" />

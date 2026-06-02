@@ -8,7 +8,10 @@ import {
     getAllResources,
     CATEGORY_LABELS,
     CATEGORY_KEYS,
+    PILLAR_LABELS,
+    PILLAR_KEYS,
     type CategoryKey,
+    type PillarKey,
 } from "@/lib/resources";
 import ResourceCard from "@/components/resource-card";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
@@ -33,13 +36,17 @@ const resourceNotes = [
 ];
 
 export default function ResourceLibraryClient() {
+    const [activePillar, setActivePillar] = useState<PillarKey>("all");
     const [activeCategory, setActiveCategory] = useState<CategoryKey>("all");
     const allResources = getAllResources();
 
-    const filtered =
-        activeCategory === "all"
-            ? allResources
-            : allResources.filter((r) => r.category === activeCategory);
+    const filtered = allResources.filter((resource) => {
+        const matchesPillar =
+            activePillar === "all" || resource.pillar === activePillar;
+        const matchesCategory =
+            activeCategory === "all" || resource.category === activeCategory;
+        return matchesPillar && matchesCategory;
+    });
 
     return (
         <main className="site-page" id="main-content" tabIndex={-1}>
@@ -51,17 +58,17 @@ export default function ResourceLibraryClient() {
                             <div className="mb-8 flex items-center gap-3" data-reveal="block">
                                 <div className="h-px w-8 bg-primary/60" />
                                 <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                    Finance Controls Resource Library
+                                    Finance Ops and RegOps Resource Library
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Tools and resources for finance controls, exceptions, and evidence.
+                                Tools and resources for Finance Ops, RegOps, exceptions, and evidence.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Free tools, rule tables, checklists, and guides that show how we think
-                            about approval evidence, exception routing, duplicate payment risk, and
-                            month-end visibility.
+                            Free tools, rule tables, checklists, guides, and proof notes. Finance Ops
+                            has more active resources today. RegOps will grow from shipped proof and
+                            technical writing.
                         </p>
                     </div>
                 </div>
@@ -135,8 +142,31 @@ export default function ResourceLibraryClient() {
                         </div>
                         <p className="site-body text-foreground-subtle">
                             Open tools, practical guides, checklists, and templates for teams
-                            tightening controls around finance operations, exceptions, and evidence.
+                            tightening workflows around finance operations, regulatory operations,
+                            exceptions, and evidence.
                         </p>
+                    </div>
+
+                    <div
+                        aria-label="Filter resources by pillar"
+                        className="mb-4 flex flex-wrap gap-2"
+                        data-reveal="block"
+                    >
+                        {PILLAR_KEYS.map((key) => (
+                            <button
+                                key={key}
+                                aria-pressed={activePillar === key}
+                                onClick={() => setActivePillar(key)}
+                                className={[
+                                    "site-filter-button",
+                                    activePillar === key
+                                        ? "border border-primary bg-primary text-primary-foreground"
+                                        : "border border-border bg-transparent text-foreground-subtle hover:border-primary/40 hover:text-foreground",
+                                ].join(" ")}
+                            >
+                                {PILLAR_LABELS[key]}
+                            </button>
+                        ))}
                     </div>
 
                     {/* Filter tabs */}
@@ -151,7 +181,7 @@ export default function ResourceLibraryClient() {
                                 aria-pressed={activeCategory === key}
                                 onClick={() => setActiveCategory(key)}
                                 className={[
-                                    "px-4 py-2 text-[11px] font-mono uppercase tracking-[0.18em] transition-colors",
+                                    "site-filter-button",
                                     activeCategory === key
                                         ? "border border-primary bg-primary text-primary-foreground"
                                         : "border border-border bg-transparent text-foreground-subtle hover:border-primary/40 hover:text-foreground",
@@ -195,7 +225,7 @@ export default function ResourceLibraryClient() {
                             href="/contact/?diagnostic=1"
                             className="site-button gap-2"
                         >
-                            Book Workflow Diagnostic
+                            Share a Workflow
                             <ArrowRight className="size-4" aria-hidden="true" />
                         </Link>
                     </div>

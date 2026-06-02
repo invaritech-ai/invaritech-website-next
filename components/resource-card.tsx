@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Clock } from "lucide-react";
-import type { Resource, ResourceCategory } from "@/lib/resources";
+import type { Resource, ResourceCategory, ResourcePillar } from "@/lib/resources";
 
 const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
     "rule-table": "Rule Table",
@@ -9,6 +9,11 @@ const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
     calculator: "Calculator",
     template: "Template",
     tool: "Tool",
+};
+
+const PILLAR_DISPLAY: Record<ResourcePillar, string> = {
+    "finance-ops": "Finance Ops",
+    regops: "RegOps",
 };
 
 export default function ResourceCard({ resource }: { resource: Resource }) {
@@ -39,6 +44,9 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
             <div className="flex flex-wrap items-center gap-2">
                 <span className="border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-primary">
                     {CATEGORY_DISPLAY[resource.category]}
+                </span>
+                <span className="border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
+                    {PILLAR_DISPLAY[resource.pillar]}
                 </span>
                 {isComingSoon && (
                     <span className="flex items-center gap-1 border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">

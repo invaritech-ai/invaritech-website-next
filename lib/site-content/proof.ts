@@ -3,6 +3,7 @@ import type { ProofAsset } from "./types";
 export const proofAssets = [
     {
         id: "eudr-compliance-bridge",
+        pillar: "regops",
         type: "case-study",
         title: "EUDR RegOps Bridge",
         body: "A regulated operations bridge for turning document collection, supplier evidence, and submission prep into a deterministic workflow.",
@@ -13,6 +14,7 @@ export const proofAssets = [
     },
     {
         id: "three-way-matcher",
+        pillar: "finance-ops",
         type: "demo",
         title: "Three-Way Matcher",
         body: "A working AP exception demo that compares purchase orders, goods receipts, and supplier invoices to show mismatch logic clearly.",
@@ -23,6 +25,7 @@ export const proofAssets = [
     },
     {
         id: "invoice-extractor",
+        pillar: "finance-ops",
         type: "tool",
         title: "Invoice Extractor",
         body: "A live extraction tool that turns invoice files into structured fields for review, routing, and downstream finance workflows.",
@@ -33,6 +36,7 @@ export const proofAssets = [
     },
     {
         id: "supplier-payment-control-rule-table",
+        pillar: "finance-ops",
         type: "tool",
         title: "Supplier Payment Control Rule Table",
         body: "A rule table for common supplier payment risks, mapped to control checks, review owners, and evidence requirements.",
@@ -40,23 +44,5 @@ export const proofAssets = [
             "Payment control rules can be defined in plain language before they become workflow automation.",
         href: "/resources/supplier-payment-control-rule-table/",
         tags: ["payment controls", "rules", "evidence"],
-    },
-    {
-        id: "finance-case-placeholder",
-        type: "placeholder",
-        title: "Finance Control Build",
-        body: "A future proof entry for a finance workflow build that shows before-and-after exception handling, approvals, and audit trail.",
-        proves:
-            "The proof library will grow around shipped finance operations systems, not generic claims.",
-        tags: ["finance operations", "workflow", "case study"],
-    },
-    {
-        id: "regops-case-placeholder",
-        type: "placeholder",
-        title: "RegOps Workflow Build",
-        body: "A future proof entry for regulated operations work that connects evidence intake, review checkpoints, and recurring reporting.",
-        proves:
-            "RegOps proof will stay tied to deterministic workflow infrastructure and defensible evidence handling.",
-        tags: ["RegOps", "evidence", "workflow"],
     },
 ] satisfies ProofAsset[];

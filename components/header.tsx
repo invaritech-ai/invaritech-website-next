@@ -125,7 +125,7 @@ export const HeroHeader = () => {
                         <span className="site-shell-brand-name" translate="no">
                             INVARITECH
                         </span>
-                        <span className="site-shell-brand-line">Finance & RegOps Automation</span>
+                        <span className="site-shell-brand-line">FINANCE OPS & REGOPS AUTOMATIONS</span>
                     </span>
                 </Link>
 
@@ -205,7 +205,7 @@ export const HeroHeader = () => {
                     <div className="site-shell-mobile-footer">
                         Asia-based. Globally delivered.
                         <br />
-                        Founder-led. Built around your current stack.
+                        Founder-led. Built around your existing systems.
                     </div>
                 </div>
             ) : null}

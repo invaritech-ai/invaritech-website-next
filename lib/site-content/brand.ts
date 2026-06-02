@@ -8,17 +8,17 @@ export const siteConfig = {
 };
 
 export const brandPositioning = {
-    short: "Finance operations and RegOps automation for teams worldwide.",
-    sharp: "We automate the finance checks your team still does by hand.",
+    short: "Finance Ops and RegOps automation for document-heavy teams.",
+    sharp: "We build automation for the finance and regulated work that still runs on manual checks.",
     controlLayerDefinition:
-        "We build the checks, approvals, and audit trail around the tools you already use. No rip and replace.",
+        "We build the checks, approvals, and evidence trails around the tools you already use. No rip and replace.",
     trustLine: "Asia-based. Globally delivered. Founder-led. Built around your existing systems.",
     footer:
-        "Invaritech builds finance operations and RegOps automation around the tools teams already use.",
+        "Invaritech builds Finance Ops and RegOps automation around the tools teams already use.",
 };
 
 export const primaryDiagnosticCta = {
-    label: "Book Workflow Diagnostic",
+    label: "Share a Workflow",
     href: "/contact/?diagnostic=1",
     variant: "primary",
 } satisfies CTA;
@@ -28,10 +28,3 @@ export const secondaryWorkCta = {
     href: "/work/",
     variant: "secondary",
 } satisfies CTA;
-
-export const primaryTrustStrip = [
-    "Asia-based",
-    "Globally delivered",
-    "Founder-led",
-    "Built around your existing systems",
-] satisfies string[];

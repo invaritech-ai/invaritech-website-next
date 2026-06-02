@@ -6,10 +6,12 @@ export type ResourceCategory =
     | "template"
     | "tool";
 
+export type ResourcePillar = "finance-ops" | "regops";
 export type ResourceAccess = "open" | "coming-soon";
 
 export interface Resource {
     slug: string;
+    pillar: ResourcePillar;
     title: string;
     excerpt: string;
     category: ResourceCategory;
@@ -42,9 +44,20 @@ export const CATEGORY_KEYS = [
 
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
+export const PILLAR_LABELS: Record<ResourcePillar | "all", string> = {
+    all: "All Pillars",
+    "finance-ops": "Finance Ops",
+    regops: "RegOps",
+};
+
+export const PILLAR_KEYS = ["all", "finance-ops", "regops"] as const;
+
+export type PillarKey = (typeof PILLAR_KEYS)[number];
+
 const resources: Resource[] = [
     {
         slug: "supplier-payment-control-rule-table",
+        pillar: "finance-ops",
         title: "Invoice Approval Workflow & Supplier Payment Controls Rule Table",
         excerpt:
             "An interactive rule table for mapping invoice approval workflow checks, payment-change controls, exception routing, and approval evidence before payment release.",
@@ -57,6 +70,7 @@ const resources: Resource[] = [
     },
     {
         slug: "changed-bank-detail-verification-checklist",
+        pillar: "finance-ops",
         title: "Changed Bank Detail Verification Checklist",
         excerpt:
             "Step-by-step supplier bank detail verification checks to prevent payment diversion fraud before any payment is authorised.",
@@ -67,6 +81,7 @@ const resources: Resource[] = [
     },
     {
         slug: "freight-invoice-variance-rule-table",
+        pillar: "finance-ops",
         title: "Freight Invoice Variance Rule Table",
         excerpt:
             "Freight invoice audit controls for catching carrier surcharge overcharges, rate-card mismatches, and duplicate invoice variants before release.",
@@ -77,6 +92,7 @@ const resources: Resource[] = [
     },
     {
         slug: "po-invoice-receipt-mismatch-guide",
+        pillar: "finance-ops",
         title: "PO / Invoice / Receipt Mismatch Guide",
         excerpt:
             "A practical guide to three-way match exceptions in accounts payable automation: what causes them, how to classify them, and how to route them for approval.",
@@ -87,6 +103,7 @@ const resources: Resource[] = [
     },
     {
         slug: "exception-queue-template",
+        pillar: "finance-ops",
         title: "Exception Queue Template",
         excerpt:
             "Owner, status, SLA, approval note, and audit trail fields: a ready-to-use queue structure for invoice exception management in accounts payable workflow automation.",
@@ -97,6 +114,7 @@ const resources: Resource[] = [
     },
     {
         slug: "invoice-processing-automation",
+        pillar: "finance-ops",
         title: "Invoice Processing Automation Guide",
         excerpt:
             "A practical guide to automated invoice processing for accounts payable teams: invoice OCR, data extraction, validation rules, exception routing, approval workflow controls, and audit trails.",
@@ -108,6 +126,7 @@ const resources: Resource[] = [
     },
     {
         slug: "invoice-extractor",
+        pillar: "finance-ops",
         title: "Invoice Data Extractor",
         excerpt:
             "Upload any PDF, JPG, or PNG invoice. AI extracts supplier name, line items, totals, and tax into a clean CSV for accounts payable automation workflows. Free, no signup required.",
@@ -119,6 +138,7 @@ const resources: Resource[] = [
     },
     {
         slug: "cost-to-close-calculator",
+        pillar: "finance-ops",
         title: "Cost-to-Close Calculator",
         excerpt:
             "Three inputs. See how much your month-end close cycle costs annually and what automation saves. No signup required.",
@@ -130,6 +150,7 @@ const resources: Resource[] = [
     },
     {
         slug: "payment-release-audit-trail-checklist",
+        pillar: "finance-ops",
         title: "Payment Release Audit Trail Checklist",
         excerpt:
             "Verification checklist for ensuring the payment approval process records owner, timestamp, evidence reference, and approval notes for every release.",
@@ -137,6 +158,18 @@ const resources: Resource[] = [
         industry: "All industries",
         format: "PDF checklist",
         access: "coming-soon",
+    },
+    {
+        slug: "eudr-regops-bridge-case-note",
+        pillar: "regops",
+        title: "EUDR RegOps Bridge Case Note",
+        excerpt:
+            "A proof note for regulated operations automation: evidence intake, structured validation, submission bridges, retry handling, and audit-ready status tracking.",
+        category: "guide",
+        industry: "Regulated operations",
+        format: "Case note",
+        access: "open",
+        subpageHref: "/work/eudr-compliance-bridge/",
     },
 ];
 

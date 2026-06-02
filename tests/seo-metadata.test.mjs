@@ -74,22 +74,22 @@ describe("SEO metadata", () => {
         assert.match(source, /url:\s*`\$\{baseUrl\}\/logo-image\.png`/);
     });
 
-    it("keeps broad blog index metadata aligned to finance controls and automation", () => {
+    it("keeps broad blog index metadata aligned to Finance Ops and RegOps automation", () => {
         const source = read("app/blog/page.tsx");
-        assert.match(source, /title:\s*"Finance Controls and Automation Blog"/);
-        assert.match(source, /finance controls, invoice approval workflows, duplicate payment prevention, month-end visibility, and workflow automation/);
-        assert.match(source, /Practical guides for finance controls and automation\./);
+        assert.match(source, /title:\s*"Finance Ops and RegOps Automation Blog"/);
+        assert.match(source, /Practical guides for Finance Ops and RegOps automation: accounts payable workflows, compliance evidence, regulated submissions, and workflow design\./);
+        assert.match(source, /Practical writing for Finance Ops and RegOps automation\./);
         assert.match(source, /href="\/contact\/\?diagnostic=1"/);
-        assert.match(source, /Book Workflow Diagnostic/);
+        assert.match(source, /Share a Workflow/);
     });
 
     it("uses strategic page titles for launch-critical pages", () => {
         const expectedTitles = new Map([
-            ["app/layout.tsx", /default:\s*"Finance Operations and RegOps Automation \| INVARITECH"/],
-            ["app/work/page.tsx", /title:\s*"Finance Operations and RegOps Automation Work"/],
-            ["app/about/page.tsx", /title:\s*\{\s*absolute:\s*"About INVARITECH \| Finance Operations and RegOps Automation"\s*\}/],
+            ["app/layout.tsx", /default:\s*"Finance Ops and RegOps Automation \| INVARITECH"/],
+            ["app/work/page.tsx", /title:\s*"Finance Ops and RegOps Automation Work"/],
+            ["app/about/page.tsx", /title:\s*\{\s*absolute:\s*"About INVARITECH \| Finance Ops and RegOps Automation"\s*\}/],
             ["app/contact/page.tsx", /title:\s*"Book a Finance Workflow Diagnostic"/],
-            ["app/resources/page.tsx", /title:\s*"Finance Controls Tools and Resources"/],
+            ["app/resources/page.tsx", /title:\s*"Finance Ops and RegOps Tools and Resources"/],
             ["app/work/eudr-compliance-bridge/page.tsx", /title:\s*"EUDR RegOps Bridge Case Study"/],
             ["app/resources/invoice-extractor/page.tsx", /title:\s*"Invoice Data Extractor for AP Teams"/],
             ["app/resources/cost-to-close-calculator/page.tsx", /title:\s*"Month-End Close Cost Calculator"/],
@@ -122,7 +122,7 @@ describe("SEO metadata", () => {
         );
         assert.match(
             structuredDataSource,
-            /Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around existing systems\./
+            /Invaritech builds Finance Ops and RegOps automation for teams handling messy documents, approvals, exceptions, and evidence trails around existing systems\./
         );
         assert.match(
             structuredDataSource,
@@ -136,7 +136,7 @@ describe("SEO metadata", () => {
             structuredDataSource,
             /primaryImageOfPage:\s*\{[\s\S]*?url:\s*"https:\/\/www\.invaritech\.ai\/og-image\.png",[\s\S]*?width:\s*1376,[\s\S]*?height:\s*768,[\s\S]*?\}/
         );
-        assert.match(structuredDataSource, /Finance Operations and RegOps Automation \| INVARITECH/);
+        assert.match(structuredDataSource, /Finance Ops and RegOps Automation \| INVARITECH/);
         assert.match(structuredDataSource, /Finance Operations Automation/);
         assert.match(structuredDataSource, /RegOps Automation/);
         assert.match(structuredDataSource, /name:\s*"Worldwide"/);
@@ -159,25 +159,26 @@ describe("SEO metadata", () => {
 
     it("keeps the web app manifest aligned to the pivot", () => {
         const manifestSource = read("app/manifest.ts");
-        assert.match(manifestSource, /name:\s*"INVARITECH Finance Operations Automation"/);
+        assert.match(manifestSource, /name:\s*"INVARITECH Finance Ops and RegOps Automation"/);
         assert.match(manifestSource, /short_name:\s*"INVARITECH"/);
         assert.match(
             manifestSource,
-            /Finance operations and RegOps automation around the systems teams already use\./
+            /Finance Ops and RegOps automation around the systems teams already use\./
         );
         assert.doesNotMatch(manifestSource, /AP Payment Controls|Australia/);
     });
 
-    it("surfaces Finance Automation and the diagnostic CTA in primary discovery paths", () => {
+    it("surfaces the pillar navigation and primary CTA in discovery paths", () => {
         const headerSource = read("components/header.tsx");
         assert.match(headerSource, /primaryDiagnosticCta/);
 
         const brandSource = read("lib/site-content/brand.ts");
-        assert.match(brandSource, /label:\s*"Book Workflow Diagnostic"/);
+        assert.match(brandSource, /label:\s*"Share a Workflow"/);
         assert.match(brandSource, /href:\s*"\/contact\/\?diagnostic=1"/);
 
         const footerSource = read("components/footer.tsx");
         assert.match(footerSource, /footerFinanceLinks/);
+        assert.match(footerSource, /footerProofLinks/);
 
         assert.match(read("app/contact/page.tsx"), /"Book a Finance Workflow Diagnostic"/);
 
@@ -194,7 +195,7 @@ describe("SEO metadata", () => {
 
     it("uses the diagnostic CTA on blog article pages", () => {
         const source = read("app/blog/[slug]/page.tsx");
-        assert.match(source, /Book Workflow Diagnostic/);
+        assert.match(source, /Share a Workflow/);
         assert.match(source, /href="\/contact\/\?diagnostic=1&src=blog"/);
         assert.match(source, /image:\s*\{\s*"@type":\s*"ImageObject",\s*url:\s*imageUrl\s*\}/);
         assert.match(source, /logo:\s*\{\s*"@type":\s*"ImageObject",\s*url:\s*`\$\{baseUrl\}\/logo-image\.png`,\s*width:\s*516,\s*height:\s*516\s*\}/);

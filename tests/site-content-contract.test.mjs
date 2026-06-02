@@ -14,6 +14,7 @@ const contentFiles = [
     "lib/site-content/proof.ts",
     "lib/site-content/tools.ts",
     "lib/site-content/home.ts",
+    "lib/site-content/regops.ts",
 ];
 
 const bannedTerms = [
@@ -56,7 +57,8 @@ describe("site content registry", () => {
         assert.match(brand, /siteUrl:\s*"https:\/\/www\.invaritech\.ai"/);
 
         const pages = read("lib/site-content/pages.ts");
-        assert.match(pages, /canonical:\s*"\/finance-exception-automation\/"/);
+        assert.match(pages, /canonical:\s*"\/finance-operations-automation\/"/);
+        assert.match(pages, /canonical:\s*"\/regulatory-operations-automation\/"/);
         assert.doesNotMatch(pages, /canonical:\s*"https:\/\/www\.invaritech\.ai/);
     });
 
@@ -72,7 +74,7 @@ describe("site content registry", () => {
 
     it("keeps the approved diagnostic CTA centralized", () => {
         const brand = read("lib/site-content/brand.ts");
-        assert.match(brand, /Book Workflow Diagnostic/);
+        assert.match(brand, /Share a Workflow/);
         assert.match(brand, /\/contact\/\?diagnostic=1/);
     });
 });

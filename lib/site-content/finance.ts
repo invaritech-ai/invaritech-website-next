@@ -72,33 +72,38 @@ const financeProofAssetIds = new Set([
 
 export const financePageContent = {
     hero: {
-        eyebrow: "Finance exception automation",
-        title: "Stop bad payments before they leave the business.",
-        body: "We help finance and AP teams catch the risky payments: duplicate bills, changed bank details, missing approvals, and invoice mismatches. All without replacing the software you run on.",
+        eyebrow: "Finance operations automation",
+        title: "Make finance teams faster before adding more AP headcount.",
+        body: "We build automation around Xero-heavy accounts payable, invoice approvals, duplicate payment risk, payment controls, month-end close, and cash visibility. Your accounting judgment stays with the team.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
         trustLine:
-            "We start with payment controls and exception checks, then expand into broader finance operations once that works.",
+            "Current publishing focus: Xero accounts payable automation and high-volume AP exception work.",
     },
     hierarchy: [
         {
             id: "core",
-            title: "Core",
-            body: "Exception automation and payment controls for the checks that happen before money leaves the business.",
+            title: "Active wedge",
+            body: "Xero and accounts payable workflows where finance teams need better exception review without making every accountant a software power user.",
         },
         {
             id: "expansion",
             title: "Expansion",
-            body: "Broader finance operations workflows once the first set of controls is stable and useful.",
+            body: "Month-end visibility, cash forecasting, reporting bridges, and payment-control workflows once the first AP system proves value.",
         },
     ],
     pains: {
         header: {
-            eyebrow: "Pain patterns",
-            title: "The risk isn't in the ledger. It's around it.",
-            body: "These are the patterns we catch, route, and record before they turn into lost money or rework.",
+            eyebrow: "Finance Ops patterns",
+            title: "The work is not only in the ledger. It is around it.",
+            body: "These are the patterns we study, explain, and eventually automate for teams with enough volume to justify maintained systems.",
         },
         cards: [
+            {
+                id: "xero-ap-volume",
+                title: "High-volume Xero AP",
+                body: "Help accountants review repeated AP exceptions without spending their day inside reports, exports, and payment-run prep.",
+            },
             {
                 id: "duplicate-supplier-bills",
                 title: "Duplicate supplier bills",
@@ -124,13 +129,18 @@ export const financePageContent = {
                 title: "Payment releases with no audit trail",
                 body: "Record who reviewed the exception, what changed, what evidence was used, and why release was approved.",
             },
+            {
+                id: "month-end-visibility",
+                title: "Month-end visibility",
+                body: "Surface unresolved checks, missing inputs, and last-minute reporting issues before close work becomes a spreadsheet chase.",
+            },
         ],
     },
     currentStack: {
         header: {
             eyebrow: "Current stack",
             title: "Works with the tools you already run.",
-            body: "Your accounting system stores the transaction. Your team still handles the mess around it. We add the workflow that checks, routes, and records those exceptions before they cost you.",
+            body: "Your accounting system stores the transaction. Your team still handles the mess around it. We add the workflow that checks, routes, and records the review work.",
         },
         currentStack: {
             title: "Current stack",
@@ -144,6 +154,7 @@ export const financePageContent = {
         controlLayer: {
             title: "Checks we add",
             items: [
+                "Xero AP report review",
                 "Duplicate bill checks",
                 "Supplier-detail change review",
                 "Approval evidence capture",
@@ -153,6 +164,7 @@ export const financePageContent = {
         outcomes: {
             title: "What you get",
             items: [
+                "More accountant capacity",
                 "Clear release decisions",
                 "Traceable audit trail",
                 "Fewer manual follow-ups",
@@ -162,27 +174,27 @@ export const financePageContent = {
     },
     offers: {
         header: {
-            eyebrow: "Focused offers",
-            title: "Diagnose. Build. Support.",
-            body: "We start with exception automation and payment controls. Broader finance builds come once the checks are clear.",
+            eyebrow: "Finance Ops ladder",
+            title: "Publish useful guides. Validate the wedge. Build the paid system later.",
+            body: "The first job is TOFU: high-quality explanations and free assets. Paid deployment comes when a company needs its own rules, approvals, and support model.",
         },
         stages: [
             {
                 id: "diagnose",
-                title: "Diagnose",
-                body: "Map one exception-heavy workflow and decide what should be checked, routed, and recorded.",
+                title: "Explain",
+                body: "Create durable guides and resources for Xero AP, invoice approvals, payment controls, and month-end work.",
                 offers: [financePageOffers[0]],
             },
             {
                 id: "build",
-                title: "Build",
-                body: "Ship finance controls around your systems without replacing the stack.",
+                title: "Validate",
+                body: "Use search, page behavior, and build-interest forms to learn which finance workflows deserve product depth.",
                 offers: [financePageOffers[1], financePageOffers[2]],
             },
             {
                 id: "support",
-                title: "Support",
-                body: "Keep the automation useful as suppliers, approval rules, and finance workflows change.",
+                title: "Deploy",
+                body: "Paid work starts when the team needs company-specific exception logic, monitored workflows, and tight support.",
                 offers: [financePageOffers[3]],
             },
         ],
@@ -190,8 +202,8 @@ export const financePageContent = {
     proof: {
         header: {
             eyebrow: "Proof",
-            title: "Every check leaves a trail you can defend.",
-            body: "These tools show the same pattern in smaller pieces: structured invoice data, three-way match logic, and payment control rules.",
+            title: "Finance Ops proof starts with useful free assets.",
+            body: "The current library is heavier on finance operations because that is where new tools, guides, and Xero/AP content will grow first.",
         },
         assets: proofAssets.filter((asset) => financeProofAssetIds.has(asset.id)),
         eudrNote: {
@@ -203,7 +215,7 @@ export const financePageContent = {
     },
     finalCta: {
         title: "Bring us one finance workflow.",
-        body: "Pick one where exceptions, approvals, supplier changes, or release decisions are creating risk. We will map the current process and recommend the smallest useful build scope.",
+        body: "Pick one where Xero AP, approvals, supplier changes, month-end work, or release decisions are creating drag. We will map what a useful system would need to prove.",
         cta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
     },

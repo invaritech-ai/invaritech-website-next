@@ -4,6 +4,8 @@ export type CTA = {
     variant?: "primary" | "secondary" | "text";
 };
 
+export type SitePillar = "finance-ops" | "regops";
+
 export type HeroContent = {
     eyebrow: string;
     title: string;
@@ -24,7 +26,8 @@ export type OfferCard = {
 
 export type ProofAsset = {
     id: string;
-    type: "case-study" | "demo" | "tool" | "placeholder";
+    pillar: SitePillar;
+    type: "case-study" | "demo" | "tool";
     title: string;
     body: string;
     proves: string;
@@ -38,7 +41,7 @@ export type ToolCard = {
     body: string;
     status: "live" | "coming-soon";
     href?: string;
-    category: "extractor" | "calculator" | "rule-table" | "checker";
+    category: "matcher" | "extractor" | "calculator" | "rule-table" | "checker";
 };
 
 export type PageMetadata = {

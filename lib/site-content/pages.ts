@@ -2,21 +2,27 @@ import type { PageMetadata } from "./types";
 
 export const pageMetadata = {
     home: {
-        title: "Finance Operations and RegOps Automation | INVARITECH",
+        title: "Finance Ops and RegOps Automation | INVARITECH",
         description:
-            "Finance operations and RegOps automation built around the tools you already use: payment controls, exception workflows, and reporting bridges.",
+            "Automation for Finance Ops and RegOps teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.",
         canonical: "/",
     },
-    financeExceptionAutomation: {
-        title: "Finance Exception Automation",
+    financeOperationsAutomation: {
+        title: "Finance Operations Automation",
         description:
-            "Build finance workflows for payment controls, approval gaps, supplier changes, reconciliations, and the evidence trail around your current systems.",
-        canonical: "/finance-exception-automation/",
+            "Finance operations automation for accounts payable, payment controls, invoice approval workflows, month-end visibility, and Xero-heavy teams.",
+        canonical: "/finance-operations-automation/",
+    },
+    regulatoryOperationsAutomation: {
+        title: "Regulatory Operations Automation",
+        description:
+            "RegOps automation for regulated submissions, evidence intake, review checkpoints, reporting bridges, and audit-ready operational workflows.",
+        canonical: "/regulatory-operations-automation/",
     },
     work: {
         title: "Proof Library | INVARITECH",
         description:
-            "Explore shipped systems, demos, tools, and case studies that show how Invaritech builds checked, audit-ready workflows for finance operations and RegOps work.",
+            "Explore Finance Ops and RegOps proof: shipped systems, demos, tools, and case studies for checkable workflows and evidence-heavy operations.",
         canonical: "/work/",
     },
     eudrComplianceBridge: {
@@ -28,7 +34,7 @@ export const pageMetadata = {
     resources: {
         title: "Tools and Resources | INVARITECH",
         description:
-            "Free tools and guides for finance controls, exceptions, reconciliation, reporting bridges, and audit-ready evidence workflows.",
+            "Free Finance Ops and RegOps tools, guides, rule tables, checklists, and templates for exception handling, evidence, and workflow automation.",
         canonical: "/resources/",
     },
     about: {
@@ -44,7 +50,7 @@ export const pageMetadata = {
         canonical: "/contact/",
     },
     blog: {
-        title: "Finance Operations and RegOps Guides | INVARITECH",
+        title: "Finance Ops and RegOps Guides | INVARITECH",
         description:
             "Guides on payment controls, exception workflows, reporting bridges, evidence trails, and workflow automation for operational teams.",
         canonical: "/blog/",

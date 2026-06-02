@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site-content/brand";
 import { financePageContent } from "@/lib/site-content/finance";
 import { pageMetadata } from "@/lib/site-content/pages";
 
-const meta = pageMetadata.financeExceptionAutomation;
+const meta = pageMetadata.financeOperationsAutomation;
 
 export const metadata: Metadata = {
     title: meta.title,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         url: `${siteConfig.siteUrl}${meta.canonical}`,
         images: [
             {
-                url: siteConfig.defaultOgImage,
+                url: "/finance-exception-automation.webp",
                 width: 1200,
                 height: 630,
                 alt: meta.title,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     },
 };
 
-export default function FinanceExceptionAutomationPage() {
+export default function FinanceOperationsAutomationPage() {
     return (
         <PageShell>
             <UtmCaptureClient />

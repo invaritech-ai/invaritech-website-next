@@ -1,7 +1,7 @@
 const HOMEPAGE_LAST_MODIFIED = "2026-05-15T00:00:00.000Z";
 
 const SERVICE_DESCRIPTION =
-    "Invaritech builds finance operations and RegOps automation for teams worldwide: payment controls, exception workflows, reporting bridges, and audit-ready internal tools around existing systems.";
+    "Invaritech builds Finance Ops and RegOps automation for teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.";
 
 const AREA_SERVED = [
     { "@type": "Place", name: "Worldwide" },
@@ -15,7 +15,7 @@ export const structuredData = {
             "@type": "Organization",
             "@id": "https://www.invaritech.ai/#organization",
             name: "INVARITECH",
-            alternateName: "INVARITECH Finance Operations Automation",
+            alternateName: "INVARITECH Finance Ops and RegOps Automation",
             description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai",
             logo: {
@@ -46,7 +46,9 @@ export const structuredData = {
             industry: "Technology",
             knowsAbout: [
                 "Finance Operations Automation",
+                "Finance Ops Automation",
                 "RegOps Automation",
+                "Regulatory Operations Automation",
                 "Accounts Payable Controls",
                 "Invoice Exception Management",
                 "Payment Controls",
@@ -60,7 +62,7 @@ export const structuredData = {
             "@type": "WebSite",
             "@id": "https://www.invaritech.ai/#website",
             url: "https://www.invaritech.ai",
-            name: "Finance Operations and RegOps Automation | INVARITECH",
+            name: "Finance Ops and RegOps Automation | INVARITECH",
             description: SERVICE_DESCRIPTION,
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
@@ -70,7 +72,7 @@ export const structuredData = {
             "@type": "WebPage",
             "@id": "https://www.invaritech.ai/#webpage",
             url: "https://www.invaritech.ai",
-            name: "Finance Operations and RegOps Automation | INVARITECH",
+            name: "Finance Ops and RegOps Automation | INVARITECH",
             description: SERVICE_DESCRIPTION,
             isPartOf: {
                 "@id": "https://www.invaritech.ai/#website",
@@ -89,7 +91,7 @@ export const structuredData = {
         },
         {
             "@type": "Service",
-            name: "Finance Operations and RegOps Automation",
+            name: "Finance Ops and RegOps Automation",
             description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai/",
             provider: {
