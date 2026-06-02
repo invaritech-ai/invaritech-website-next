@@ -125,7 +125,7 @@ export const HeroHeader = () => {
                         <span className="site-shell-brand-name" translate="no">
                             INVARITECH
                         </span>
-                        <span className="site-shell-brand-line">Control Layer Automation</span>
+                        <span className="site-shell-brand-line">Finance & RegOps Automation</span>
                     </span>
                 </Link>
 

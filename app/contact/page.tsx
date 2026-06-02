@@ -11,10 +11,10 @@ const ContactSection = dynamic(() => import("@/components/contact"), {
 export const metadata: Metadata = {
     title: "Book a Finance Workflow Diagnostic",
     description:
-        "Book a finance workflow diagnostic. We map one finance or regulated operations workflow, identify control gaps, and recommend the smallest useful build scope.",
+        "Book a finance workflow diagnostic. We map one finance or regulated operations workflow, find where controls are missing, and recommend the smallest useful build scope.",
     openGraph: {
         title: "Book a Finance Workflow Diagnostic | INVARITECH",
-        description: "Map one finance or regulated operations workflow, identify control gaps, and recommend the smallest useful build scope.",
+        description: "Map one finance or regulated operations workflow, find where controls are missing, and recommend the smallest useful build scope.",
         url: "https://www.invaritech.ai/contact/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH - Book a Meeting" }],
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Book a Finance Workflow Diagnostic | INVARITECH",
-        description: "Bring one finance or regulated operations workflow. We'll map the process, control gaps, and smallest useful build scope.",
+        description: "Bring one finance or regulated operations workflow. We'll map the process, the gaps in your controls, and the smallest useful build scope.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -86,7 +86,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                         </div>
                         <p className="site-lead" data-reveal="block">
                             {diagnosticRequested
-                                ? "Bring one finance or regulated operations workflow. We map the current process, identify the control gaps, assess automation fit, and recommend the smallest useful build scope."
+                                ? "Bring one finance or regulated operations workflow. We map the current process, find where controls are missing, assess automation fit, and recommend the smallest useful build scope."
                                 : scanRequested
                                   ? "Send a recent workflow export or evidence sample. We will run focused checks and return a short findings report within 48 hours."
                                   : "Bring one finance or regulated operations workflow, exception process, or evidence gap. We will scope the fastest path to a working control."}

@@ -335,7 +335,7 @@ export default async function BlogPostPage({ params }: Props) {
                                 Want us to map one live finance workflow?
                             </h2>
                             <p className="text-lg text-foreground-muted mb-12 max-w-2xl mx-auto">
-                                Bring one finance or regulated operations workflow. We will map the current process, identify the control gaps, and recommend the smallest useful build scope.
+                                Bring one finance or regulated operations workflow. We will map the current process, find where controls are missing, and recommend the smallest useful build scope.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
                                 <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">

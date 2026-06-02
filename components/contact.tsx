@@ -186,7 +186,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                                    Why work with Invaritech on governed workflow automation?
+                                    Why work with Invaritech on finance workflow automation?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
                                     Invaritech scopes, builds, and supports workflow controls,
@@ -410,7 +410,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                 <h3 className="text-lg font-semibold mb-2">Remote delivery, founder-led support</h3>
                                 <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
                                     We&apos;re based in Asia and deliver remotely for teams that need
-                                    governed workflow systems around the tools they already use.
+                                    finance and compliance workflows around the tools they already use.
                                     Every engagement is handled directly by a founder over video
                                     call and async communication, with full documentation and
                                     evidence trails throughout.

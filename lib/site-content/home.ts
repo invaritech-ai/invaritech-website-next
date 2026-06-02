@@ -92,7 +92,7 @@ export const homePageContent = {
         header: {
             eyebrow: "Method",
             title: "One workflow first. Fixed scope. We stay after launch.",
-            body: "The practical path is to choose one painful workflow, define the control logic, build around the systems already in place, and keep the result maintained.",
+            body: "The practical path is to choose one painful workflow, write the control rules, build around the systems already in place, and keep the result maintained.",
         },
         steps: [
             {
@@ -102,7 +102,7 @@ export const homePageContent = {
             },
             {
                 id: "define-control-logic",
-                title: "Define the control logic",
+                title: "Write the control rules",
                 body: "Turn risks into plain-language rules, owners, review checkpoints, and acceptance criteria.",
             },
             {

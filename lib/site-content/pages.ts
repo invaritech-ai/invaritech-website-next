@@ -10,7 +10,7 @@ export const pageMetadata = {
     financeExceptionAutomation: {
         title: "Finance Exception Automation",
         description:
-            "Build governed finance workflows for payment controls, approval gaps, supplier changes, reconciliations, and the evidence trail around your current systems.",
+            "Build finance workflows for payment controls, approval gaps, supplier changes, reconciliations, and the evidence trail around your current systems.",
         canonical: "/finance-exception-automation/",
     },
     work: {
@@ -40,13 +40,13 @@ export const pageMetadata = {
     contact: {
         title: "Book a Finance Workflow Diagnostic | INVARITECH",
         description:
-            "Book a diagnostic to map one finance or regulated operations workflow, identify control gaps, and define a fixed-scope automation path.",
+            "Book a diagnostic to map one finance or regulated operations workflow, find where controls are missing, and define a fixed-scope automation path.",
         canonical: "/contact/",
     },
     blog: {
         title: "Finance Operations and RegOps Guides | INVARITECH",
         description:
-            "Guides on payment controls, exception workflows, reporting bridges, evidence trails, and governed automation for operational teams.",
+            "Guides on payment controls, exception workflows, reporting bridges, evidence trails, and workflow automation for operational teams.",
         canonical: "/blog/",
     },
 } satisfies Record<string, PageMetadata>;

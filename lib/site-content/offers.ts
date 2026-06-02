@@ -14,11 +14,11 @@ export const diagnosticOffers = [
         title: "Finance Workflow Diagnostic",
         audience: "Teams with a finance or regulated operations workflow that keeps escaping the systems they already pay for.",
         promise:
-            "Map one workflow, isolate the control gaps, and leave with a practical automation path before anyone commits to a build.",
+            "Map one workflow, find where controls are missing, and leave with a practical automation path before anyone commits to a build.",
         includes: [
             "Workflow and system map",
             "Exception and evidence inventory",
-            "Control gaps and approval risks",
+            "Missing controls and approval risks",
             "Recommended first build scope",
         ],
         cta: primaryDiagnosticCta,
@@ -29,7 +29,7 @@ export const buildOffers = [
     {
         id: "finance-control-sprint",
         title: "Finance Control Sprint",
-        audience: "Finance teams that need one exception-heavy workflow made governed, visible, and repeatable.",
+        audience: "Finance teams that need one exception-heavy workflow made checkable, visible, and repeatable.",
         promise:
             "Turn a narrow payment, reconciliation, or approval process into a workflow with clear rules, owners, and evidence.",
         includes: [

@@ -95,7 +95,7 @@ export default function FooterSection() {
                             </span>
                             <span className="site-footer-logo-copy">
                                 <Logo className="site-footer-logo-text" />
-                                <span className="site-logo-strapline">Control Layer Automation</span>
+                                <span className="site-logo-strapline">Finance & RegOps Automation</span>
                             </span>
                         </Link>
 

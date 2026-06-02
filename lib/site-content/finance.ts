@@ -89,7 +89,7 @@ export const financePageContent = {
         {
             id: "expansion",
             title: "Expansion",
-            body: "Broader finance operations workflows once the first control layer is stable and useful.",
+            body: "Broader finance operations workflows once the first set of controls is stable and useful.",
         },
     ],
     pains: {
@@ -156,7 +156,7 @@ export const financePageContent = {
                 "Clear release decisions",
                 "Traceable audit trail",
                 "Fewer manual follow-ups",
-                "Reusable control logic",
+                "Reusable control rules",
             ],
         },
     },
@@ -176,7 +176,7 @@ export const financePageContent = {
             {
                 id: "build",
                 title: "Build",
-                body: "Ship the finance control layer around your systems without replacing the stack.",
+                body: "Ship finance controls around your systems without replacing the stack.",
                 offers: [financePageOffers[1], financePageOffers[2]],
             },
             {

@@ -9,14 +9,14 @@ import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 export const metadata: Metadata = {
     title: { absolute: "About INVARITECH | Finance Operations and RegOps Automation" },
     description:
-        "A founder-led team building governed workflow systems for finance and regulated operations with fixed scope, written acceptance criteria, and managed support.",
+        "A founder-led team building finance and regulated operations workflow systems with fixed scope, written acceptance criteria, and managed support.",
     openGraph: {
         title: "About INVARITECH | Finance Operations and RegOps Automation",
         description:
             "A founder-led team with a Goldman Sachs reconciliation track record. Fixed-scope workflow systems for finance and regulated operations.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1376, height: 768, alt: "About INVARITECH - Governed Workflow Automation" }],
+        images: [{ url: "/og-image.png", width: 1376, height: 768, alt: "About INVARITECH - Finance and RegOps Automation" }],
     },
     twitter: {
         card: "summary_large_image",
@@ -66,7 +66,7 @@ export default function AboutPage() {
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We build governed workflow systems around the tools teams already use. One workflow first. Fixed scope. Written acceptance criteria. Managed support after delivery.
+                            We build finance and compliance workflows around the tools teams already use. One workflow first. Fixed scope. Written acceptance criteria. Managed support after delivery.
                         </p>
                     </div>
                 </div>

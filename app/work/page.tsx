@@ -11,20 +11,20 @@ import type { ProofAsset } from "@/lib/site-content/types";
 export const metadata: Metadata = {
     title: "Finance Operations and RegOps Automation Work",
     description:
-        "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
+        "Proof that Invaritech builds finance and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
     openGraph: {
-        title: "Governed Workflow Infrastructure Proof | INVARITECH",
+        title: "Finance Operations and RegOps Automation Work | INVARITECH",
         description:
-            "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
+            "Proof that Invaritech builds finance and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Governed Workflow Proof" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Finance and RegOps Automation" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Governed Workflow Infrastructure Proof | INVARITECH",
+        title: "Finance Operations and RegOps Automation Work | INVARITECH",
         description:
-            "Proof that Invaritech builds governed workflow infrastructure across regulated submissions, finance exception logic, document extraction, and control-rule tools.",
+            "Proof that Invaritech builds finance and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -116,14 +116,14 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Governed workflow proof</p>
+                                <p className="site-eyebrow-text">Finance & RegOps proof</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
                                 Real systems we&apos;ve shipped.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Our work spans regulated submissions, finance exception logic, document extraction, and control-rule tools. The thread is the same: messy process in, clean and checkable workflow out.
+                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. The thread is the same: messy process in, clean and checkable workflow out.
                         </p>
                     </div>
                 </div>
@@ -161,7 +161,7 @@ export default function WorkPage() {
                                 </span>
                                 <span className="inline-flex items-center gap-1.5 border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-mono tracking-wider text-primary">
                                     <div className="h-1 w-1 rounded-full bg-primary" />
-                                    Deterministic control layer
+                                    Deterministic controls
                                 </span>
                             </div>
 
@@ -232,7 +232,7 @@ export default function WorkPage() {
                         Have a workflow control problem we should look at?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
-                        Bring one regulated submission, finance exception, document intake, or approval workflow. We will map the control gaps and define the smallest governed layer worth building.
+                        Bring one regulated submission, finance exception, document intake, or approval workflow. We will map where controls are missing and define the smallest useful build.
                     </p>
                     <Button asChild size="lg" className="rounded-none bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
                         <Link href={primaryDiagnosticCta.href}>

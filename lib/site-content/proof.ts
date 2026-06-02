@@ -37,7 +37,7 @@ export const proofAssets = [
         title: "Supplier Payment Control Rule Table",
         body: "A rule table for common supplier payment risks, mapped to control checks, review owners, and evidence requirements.",
         proves:
-            "Payment control logic can be defined in plain language before it becomes workflow automation.",
+            "Payment control rules can be defined in plain language before they become workflow automation.",
         href: "/resources/supplier-payment-control-rule-table/",
         tags: ["payment controls", "rules", "evidence"],
     },
