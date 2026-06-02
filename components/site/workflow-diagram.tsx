@@ -2,6 +2,7 @@
 
 import {
     Fragment,
+    type PointerEvent,
     useCallback,
     useEffect,
     useRef,
@@ -193,6 +194,27 @@ export function WorkflowDiagram({
     const [geo, setGeo] = useState<Geometry | null>(null);
     const [inView, setInView] = useState(false);
 
+    const updatePointerGlow = useCallback(
+        (event: PointerEvent<HTMLElement>) => {
+            if (event.pointerType === "touch") return;
+            const rect = event.currentTarget.getBoundingClientRect();
+            event.currentTarget.style.setProperty(
+                "--workflow-glow-x",
+                `${event.clientX - rect.left}px`,
+            );
+            event.currentTarget.style.setProperty(
+                "--workflow-glow-y",
+                `${event.clientY - rect.top}px`,
+            );
+        },
+        [],
+    );
+
+    const resetPointerGlow = useCallback((event: PointerEvent<HTMLElement>) => {
+        event.currentTarget.style.removeProperty("--workflow-glow-x");
+        event.currentTarget.style.removeProperty("--workflow-glow-y");
+    }, []);
+
     const columns = [
         {
             id: "current-stack",
@@ -252,13 +274,14 @@ export function WorkflowDiagram({
     // Measure on mount, on resize, and once more after the reveal settles.
     useEffect(() => {
         if (reduce) return;
-        measure();
+        const initialMeasure = window.requestAnimationFrame(measure);
         const root = rootRef.current;
         const ro = new ResizeObserver(() => measure());
         if (root) ro.observe(root);
         window.addEventListener("resize", measure);
         const settle = window.setTimeout(measure, 1200);
         return () => {
+            window.cancelAnimationFrame(initialMeasure);
             ro.disconnect();
             window.removeEventListener("resize", measure);
             window.clearTimeout(settle);
@@ -382,13 +405,20 @@ export function WorkflowDiagram({
                                         delay: index * 0.12,
                                         ease: [0.22, 1, 0.36, 1],
                                     }}
+                                    onPointerEnter={updatePointerGlow}
+                                    onPointerMove={updatePointerGlow}
+                                    onPointerLeave={resetPointerGlow}
                                     className={cn(
-                                        "site-card relative flex-1 border border-border transition-colors hover:border-accent/50",
+                                        "site-card workflow-glass-card relative flex-1 border border-border transition-colors hover:border-accent/50",
                                         column.emphasis
                                             ? "border-accent/30"
                                             : undefined,
                                     )}
                                 >
+                                    <span
+                                        aria-hidden
+                                        className="workflow-glass-light"
+                                    />
                                     {column.emphasis ? (
                                         <span
                                             aria-hidden

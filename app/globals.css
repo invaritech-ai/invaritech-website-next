@@ -739,6 +739,54 @@ textarea {
         @apply bg-card p-6 text-left;
     }
 
+    .workflow-glass-card {
+        isolation: isolate;
+        overflow: hidden;
+    }
+
+    .workflow-glass-light {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0;
+        background:
+            radial-gradient(
+                8rem circle at var(--workflow-glow-x, 50%) var(--workflow-glow-y, 50%),
+                rgba(245, 158, 11, 0.32),
+                rgba(217, 119, 6, 0.16) 32%,
+                rgba(146, 64, 14, 0.06) 57%,
+                transparent 76%
+            ),
+            radial-gradient(
+                18rem circle at var(--workflow-glow-x, 50%) var(--workflow-glow-y, 50%),
+                rgba(245, 158, 11, 0.1),
+                rgba(180, 83, 9, 0.04) 44%,
+                transparent 74%
+            );
+        filter: blur(16px) saturate(1.05);
+        transform: translateZ(0);
+        transition: opacity 170ms ease;
+        mix-blend-mode: normal;
+    }
+
+    .workflow-glass-card > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .workflow-glass-card:hover .workflow-glass-light {
+            opacity: 0.92;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .workflow-glass-light {
+            transition: none;
+        }
+    }
+
     .site-menu-link {
         @apply relative flex min-h-12 w-full items-center justify-between border-b border-border/60 px-4 py-3 transition-colors duration-300 hover:border-primary/40 focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:px-6 md:py-5;
     }
