@@ -210,11 +210,6 @@ export function WorkflowDiagram({
         [],
     );
 
-    const resetPointerGlow = useCallback((event: PointerEvent<HTMLElement>) => {
-        event.currentTarget.style.removeProperty("--workflow-glow-x");
-        event.currentTarget.style.removeProperty("--workflow-glow-y");
-    }, []);
-
     const columns = [
         {
             id: "current-stack",
@@ -407,7 +402,6 @@ export function WorkflowDiagram({
                                     }}
                                     onPointerEnter={updatePointerGlow}
                                     onPointerMove={updatePointerGlow}
-                                    onPointerLeave={resetPointerGlow}
                                     className={cn(
                                         "site-card workflow-glass-card relative flex-1 border border-border transition-colors hover:border-accent/50",
                                         column.emphasis

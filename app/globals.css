@@ -770,7 +770,7 @@ textarea {
         mix-blend-mode: normal;
     }
 
-    .workflow-glass-card > * {
+    .workflow-glass-card > :not(.workflow-glass-light) {
         position: relative;
         z-index: 1;
     }
