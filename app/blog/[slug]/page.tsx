@@ -308,7 +308,7 @@ export default async function BlogPostPage({ params }: Props) {
                                                 alt={post.title}
                                                 width={1200}
                                                 height={630}
-                                                className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
+                                                className="w-full h-auto grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-[1.02]"
                                                 priority
                                             />
                                             <div className="absolute bottom-4 right-4 font-mono text-[10px] text-foreground-subtle tracking-widest bg-background/80 px-2 py-0.5">

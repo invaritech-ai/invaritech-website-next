@@ -91,7 +91,7 @@ export function SupplierPaymentControlTool() {
         </div>
 
         {/* Table */}
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-3 min-w-0">
           <ControlRuleTable rules={filteredRules} />
         </div>
       </div>
