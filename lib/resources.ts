@@ -46,8 +46,8 @@ export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 export const PILLAR_LABELS: Record<ResourcePillar | "all", string> = {
     all: "All Pillars",
-    "finance-ops": "Finance Ops",
-    regops: "RegOps",
+    "finance-ops": "Finance Automation",
+    regops: "Compliance Automation",
 };
 
 export const PILLAR_KEYS = ["all", "finance-ops", "regops"] as const;
@@ -162,9 +162,9 @@ const resources: Resource[] = [
     {
         slug: "eudr-regops-bridge-case-note",
         pillar: "regops",
-        title: "EUDR RegOps Bridge Case Note",
+        title: "EUDR Compliance Bridge Case Note",
         excerpt:
-            "A proof note for regulated operations automation: evidence intake, structured validation, submission bridges, retry handling, and audit-ready status tracking.",
+            "A proof note for compliance automation: evidence intake, structured validation, submission bridges, retry handling, and audit-ready status tracking.",
         category: "guide",
         industry: "Regulated operations",
         format: "Case note",

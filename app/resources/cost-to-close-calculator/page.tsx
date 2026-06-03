@@ -31,7 +31,7 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Month-End Close Cost Calculator — INVARITECH",
+                alt: "Month-End Close Cost Calculator | INVARITECH",
             },
         ],
     },

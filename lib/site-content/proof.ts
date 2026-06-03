@@ -5,12 +5,12 @@ export const proofAssets = [
         id: "eudr-compliance-bridge",
         pillar: "regops",
         type: "case-study",
-        title: "EUDR RegOps Bridge",
-        body: "A regulated operations bridge for turning document collection, supplier evidence, and submission prep into a deterministic workflow.",
+        title: "EUDR Compliance Bridge",
+        body: "A compliance automation bridge for turning document collection, supplier evidence, and submission prep into a deterministic workflow.",
         proves:
             "Invaritech can build audit-ready workflow infrastructure for regulated operations where traceability matters.",
         href: "/work/eudr-compliance-bridge/",
-        tags: ["RegOps", "evidence", "reporting bridge"],
+        tags: ["compliance automation", "evidence", "reporting bridge"],
     },
     {
         id: "three-way-matcher",

@@ -54,8 +54,8 @@ type HomePageContent = {
 export const homePageContent = {
     hero: {
         eyebrow: brandPositioning.short,
-        title: "Automation for finance and regulated operations that still run on manual checks.",
-        body: "We build around messy documents, approvals, exceptions, and evidence trails. Your current systems stay in place.",
+        title: "Finance automation and compliance automation for teams still running on manual checks.",
+        body: "We build around messy invoices, approvals, exceptions, and audit trails: invoice approval, month-end close, evidence intake. Your finance and compliance systems stay in place.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: {
             label: "View Proof",
@@ -68,16 +68,16 @@ export const homePageContent = {
         header: {
             eyebrow: "Two operating pillars",
             title: "Choose the workflow family first.",
-            body: "Finance Ops is the active publishing focus. RegOps is the older proven capability. Both depend on the same discipline: checks, evidence, review paths, and maintained systems.",
+            body: "Finance automation is the active focus. Compliance automation is the older, proven capability. Both run on the same discipline: checks, evidence, review paths, and maintained systems.",
         },
         cards: [
             {
                 id: "finance-ops",
-                eyebrow: "Finance Ops",
-                title: "Finance operations automation",
-                body: "For accounts payable, invoice approval, Xero-heavy workflows, duplicate payment risk, payment controls, month-end close, and cash visibility.",
+                eyebrow: "Finance automation",
+                title: "Finance automation",
+                body: "For accounts payable, invoice approval workflows, Xero AP automation, duplicate payment risk, payment controls, month-end close, and cash visibility.",
                 href: "/finance-operations-automation/",
-                ctaLabel: "Explore Finance Ops",
+                ctaLabel: "Explore Finance Automation",
                 proof: [
                     "Xero AP automation direction",
                     "Invoice approval workflows",
@@ -86,11 +86,11 @@ export const homePageContent = {
             },
             {
                 id: "regops",
-                eyebrow: "RegOps",
-                title: "Regulatory operations automation",
-                body: "For regulated submissions, evidence intake, review checkpoints, reporting bridges, and audit trails in document-heavy compliance work.",
+                eyebrow: "Compliance automation",
+                title: "Compliance automation",
+                body: "For regulatory compliance submissions, evidence intake, review checkpoints, reporting bridges, and audit trails in document-heavy compliance work.",
                 href: "/regulatory-operations-automation/",
-                ctaLabel: "Explore RegOps",
+                ctaLabel: "Explore Compliance Automation",
                 proof: [
                     "EUDR bridge proof",
                     "Compliance automation writing",

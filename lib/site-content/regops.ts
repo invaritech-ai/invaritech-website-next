@@ -33,29 +33,29 @@ type RegOpsPageContent = {
 
 export const regopsPageContent = {
     hero: {
-        eyebrow: "Regulatory operations automation",
-        title: "Automation for regulated work that depends on evidence, submissions, and review trails.",
-        body: "RegOps is the older proven capability inside Invaritech. We build systems for document intake, validation, regulated submissions, evidence capture, and retry-safe reporting workflows.",
+        eyebrow: "Compliance automation",
+        title: "Compliance automation for regulated work that runs on evidence, submissions, and review trails.",
+        body: "Compliance automation is the older, proven capability inside Invaritech. We build systems for document intake, validation, regulated submissions, evidence capture, and retry-safe reporting workflows.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
         trustLine:
-            "The RegOps library is smaller today. The proof is anchored in shipped EUDR workflow infrastructure.",
+            "The compliance automation library is smaller today. The proof is anchored in shipped EUDR workflow infrastructure.",
     },
     status: [
         {
             id: "proof-first",
             title: "Proof-first pillar",
-            body: "RegOps is represented through case notes and technical writing from shipped regulated workflows, not a large free-resource library yet.",
+            body: "Compliance automation is represented through case notes and technical writing from shipped regulated workflows, not a large free-resource library yet.",
         },
         {
             id: "finance-heavy-library",
             title: "Finance library is larger",
-            body: "The current resource library is heavier on Finance Ops because that is where new tools and guides are being published first.",
+            body: "The current resource library is heavier on finance automation because that is where new tools and guides are being published first.",
         },
     ],
     problems: {
         header: {
-            eyebrow: "RegOps patterns",
+            eyebrow: "Compliance automation patterns",
             title: "Manual compliance breaks when volume, evidence, and regulator interfaces collide.",
             body: "The pain is not only regulation. It is the operational work around regulation: documents, schemas, approvals, retries, status tracking, and proof.",
         },
@@ -90,7 +90,7 @@ export const regopsPageContent = {
     operatingModel: {
         header: {
             eyebrow: "Operating model",
-            title: "RegOps systems need deterministic checks before automation depth.",
+            title: "Compliance automation needs deterministic checks before automation depth.",
             body: "We start by naming the evidence, actors, validation rules, status paths, and failure modes. Then we build the workflow around the existing systems.",
         },
         cards: [
@@ -113,9 +113,9 @@ export const regopsPageContent = {
     },
     proof: {
         header: {
-            eyebrow: "RegOps proof",
+            eyebrow: "Compliance automation proof",
             title: "The proof starts with EUDR.",
-            body: "The EUDR bridge shows the RegOps pattern at real volume: structured validation, API bridges, submission evidence, and retry-safe processing.",
+            body: "The EUDR bridge shows the compliance automation pattern at real volume: structured validation, API bridges, submission evidence, and retry-safe processing.",
         },
         assets: proofAssets.filter((asset) => asset.pillar === "regops"),
     },

@@ -6,28 +6,28 @@ import Image from "next/image";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Finance Ops and RegOps Automation Blog",
+    title: "Finance & Compliance Automation Guides",
     description:
-        "Practical guides for Finance Ops and RegOps automation: accounts payable workflows, compliance evidence, regulated submissions, and workflow design.",
+        "Practical guides for finance and compliance automation: accounts payable, invoice approval, compliance evidence, regulated submissions, and workflow design.",
     openGraph: {
-        title: "Finance Ops and RegOps Automation Blog",
+        title: "Finance & Compliance Automation Guides",
         description:
-            "Practical guides for Finance Ops and RegOps automation: accounts payable workflows, compliance evidence, regulated submissions, and workflow design.",
+            "Practical guides for finance and compliance automation: accounts payable, invoice approval, compliance evidence, regulated submissions, and workflow design.",
         url: "https://www.invaritech.ai/blog/",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH Blog - Finance Ops and RegOps Automation Guides",
+                alt: "INVARITECH Blog - Finance & Compliance Automation Guides",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Ops and RegOps Automation Blog",
+        title: "Finance & Compliance Automation Guides",
         description:
-            "Practical guides for Finance Ops and RegOps automation: accounts payable workflows, compliance evidence, regulated submissions, and workflow design.",
+            "Practical guides for finance and compliance automation: accounts payable, invoice approval, compliance evidence, regulated submissions, and workflow design.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -50,7 +50,7 @@ function estimateReadingTime(content: string): number {
     return Math.ceil(wordCount / wordsPerMinute);
 }
 
-const pillars = ["Finance Ops", "RegOps"];
+const pillars = ["Finance Automation", "Compliance Automation"];
 
 function BlogCard({
     post,
@@ -90,7 +90,7 @@ function BlogCard({
                 <div className="flex-1 flex flex-col">
                     <div className="mb-4 flex flex-wrap gap-2">
                         <span className="text-[10px] font-mono uppercase tracking-wider text-primary">
-                            #{post.articleSection === "Finance Operations" ? "FinanceOps" : "RegOps"}
+                            #{post.articleSection === "Finance Operations" ? "FinanceAutomation" : "ComplianceAutomation"}
                         </span>
                         {post.tags.slice(0, 1).map((tag) => (
                             <span
@@ -131,15 +131,15 @@ export default function BlogsPage() {
     const sections = [
         {
             id: "finance-ops",
-            eyebrow: "Finance Ops",
-            title: "Finance operations writing",
+            eyebrow: "Finance Automation",
+            title: "Finance automation writing",
             body: "Accounts payable, invoice controls, month-end close, cash visibility, and automation decisions for finance teams.",
             posts: financePosts,
         },
         {
             id: "regops",
-            eyebrow: "RegOps",
-            title: "Regulatory operations writing",
+            eyebrow: "Compliance Automation",
+            title: "Compliance automation writing",
             body: "Compliance automation, EUDR workflows, evidence handling, regulated submissions, and operational scale.",
             posts: regopsPosts,
         },
@@ -158,15 +158,15 @@ export default function BlogsPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Finance Ops and RegOps Blog</p>
+                                <p className="site-eyebrow-text">Finance & Compliance Automation Blog</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical writing for Finance Ops and RegOps automation.
+                                Practical writing for finance and compliance automation.
                             </h1>
                         </div>
                         <div data-reveal="block">
                             <p className="site-lead">
-                                Finance Ops is where we are publishing more tools and guides today. RegOps stays visible through the older proof base and compliance automation writing.
+                                Finance automation is where we publish most tools and guides today. Compliance automation stays visible through the older proof base and writing.
                             </p>
                             <div className="mt-6 flex flex-wrap gap-2">
                                 {pillars.map((category) => (

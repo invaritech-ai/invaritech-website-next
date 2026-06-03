@@ -7,13 +7,13 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { primaryDiagnosticCta } from "@/lib/site-content/brand";
 
 export const metadata: Metadata = {
-    title: "EUDR RegOps Bridge Case Study",
+    title: "EUDR Compliance Bridge Case Study",
     description:
-        "RegOps Bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
+        "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
     openGraph: {
-        title: "EUDR RegOps Bridge | Regulated Workflow Infrastructure | INVARITECH",
+        title: "EUDR Compliance Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "RegOps Bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
+            "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "EUDR RegOps Bridge | Regulated Workflow Infrastructure | INVARITECH",
+        title: "EUDR Compliance Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "RegOps Bridge proof for high-volume, audit-ready EUDR submissions with deterministic validation and retry-safe processing.",
+            "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic validation and retry-safe processing.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -55,7 +55,7 @@ export default function EudrCaseStudyPage() {
                 <div className="relative mb-32">
                     <div className="flex flex-col gap-2 mb-8">
                          <span className="font-mono text-primary text-sm tracking-widest uppercase">
-                            RegOps proof case
+                            Compliance automation proof case
                         </span>
                         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mix-blend-difference mb-6">
                             <TextEffect per="char" preset="fade">
@@ -63,7 +63,7 @@ export default function EudrCaseStudyPage() {
                             </TextEffect>
                         </h1>
                         <h2 className="text-2xl md:text-4xl font-light text-muted-foreground max-w-3xl">
-                             RegOps Bridge for high-volume, audit-ready regulatory submissions.
+                             Compliance bridge for high-volume, audit-ready regulatory submissions.
                         </h2>
                     </div>
 
@@ -117,7 +117,7 @@ export default function EudrCaseStudyPage() {
 
                     <div className="mb-16 max-w-3xl">
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            In practice, this is RegOps backend development: deterministic workflow infrastructure for bursty submission volume, strict regulator interfaces, and defensible evidence trails. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
+                            In practice, this is compliance automation backend development: deterministic workflow infrastructure for bursty submission volume, strict regulator interfaces, and defensible evidence trails. The same design discipline carries into finance automation whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
                             <Link href="/glossary/three-way-match/" className="site-link">
                                 three-way match glossary entry
                             </Link>
@@ -320,7 +320,7 @@ export default function EudrCaseStudyPage() {
                     </div>
                     <div className="mt-12 text-sm text-muted-foreground max-w-lg mx-auto">
                         <p>
-                            For teams that need this level of control in a finance or RegOps workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or request the workflow diagnostic.
+                            For teams that need this level of control in a finance or compliance workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or request the workflow diagnostic.
                         </p>
                     </div>
                 </section>

@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import Script from "next/script";
 import "./globals.css";
-import "@fontsource-variable/source-sans-3";
 import { LenisScroll } from "@/components/ui/LenisScroll";
 import { HeroHeader } from "@/components/header";
 import SiteSpotlight from "@/components/hero-spotlight";
@@ -41,6 +40,34 @@ const geistMono = localFont({
     fallback: ["monospace"],
 });
 
+const sourceSans = localFont({
+    src: [
+        {
+            path: "./fonts/SourceSans3-Latin-Variable.woff2",
+            weight: "200 900",
+            style: "normal",
+        },
+    ],
+    variable: "--font-source-sans",
+    display: "swap",
+    preload: true,
+    fallback: ["system-ui", "arial"],
+});
+
+const sourceSerif = localFont({
+    src: [
+        {
+            path: "./fonts/SourceSerif4-Latin-Variable.woff2",
+            weight: "200 900",
+            style: "normal",
+        },
+    ],
+    variable: "--font-source-serif",
+    display: "swap",
+    preload: true,
+    fallback: ["Georgia", "Cambria", "Times New Roman"],
+});
+
 const metadataVerification: Metadata["verification"] = {
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
         ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
@@ -55,25 +82,25 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default: "Finance Ops and RegOps Automation | INVARITECH",
+        default: "Finance Automation & Compliance Automation | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "Automation for Finance Ops and RegOps teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.",
+        "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
     keywords: [
         "INVARITECH",
-        "finance operations automation",
-        "Finance Ops automation",
-        "RegOps automation",
-        "regulatory operations automation",
-        "finance operations",
-        "accounts payable controls",
-        "invoice exception management",
-        "supplier payment controls",
-        "payment approval workflow",
-        "reporting bridge",
-        "audit trail automation",
-        "finance exception automation",
+        "finance automation",
+        "compliance automation",
+        "invoice automation",
+        "accounts payable automation",
+        "invoice approval software",
+        "invoice approval workflow",
+        "invoice processing automation",
+        "compliance automation software",
+        "financial close automation",
+        "Xero AP automation",
+        "regulatory compliance automation",
+        "audit trail software",
     ],
     authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
@@ -102,24 +129,24 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en",
         url: "https://www.invaritech.ai",
-        title: "Finance Ops and RegOps Automation | INVARITECH",
+        title: "Finance Automation & Compliance Automation | INVARITECH",
         description:
-            "Automation for Finance Ops and RegOps teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.",
+            "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Finance Ops and RegOps Automation | INVARITECH",
+                alt: "Finance Automation & Compliance Automation | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Ops and RegOps Automation | INVARITECH",
+        title: "Finance Automation & Compliance Automation | INVARITECH",
         description:
-            "Automation for Finance Ops and RegOps teams worldwide around the systems they already use.",
+            "Finance automation and compliance automation for document-heavy teams, built around the systems they already use.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },
@@ -193,7 +220,7 @@ export default function RootLayout({
                 </Script>
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+                className={`${sourceSans.variable} ${sourceSerif.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
             >
                 <ThemeProvider
                     attribute="class"

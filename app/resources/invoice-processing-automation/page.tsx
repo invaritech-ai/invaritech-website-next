@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/resources/invoice-processing-automation/",
     },
     openGraph: {
-        title: "Invoice Processing Automation Guide — INVARITECH",
+        title: "Invoice Processing Automation Guide | INVARITECH",
         description:
             "A practical guide to automated invoice processing for accounts payable: OCR, extraction, validation, exception routing, approvals, and audit trails.",
         url: "https://www.invaritech.ai/resources/invoice-processing-automation/",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Invoice Processing Automation Guide — INVARITECH",
+        title: "Invoice Processing Automation Guide | INVARITECH",
         description:
             "Automated invoice processing for AP teams: OCR, extraction, validation, approvals, exceptions, audit trails.",
         images: ["/og-image.png"],

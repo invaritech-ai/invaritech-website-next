@@ -72,8 +72,8 @@ const financeProofAssetIds = new Set([
 
 export const financePageContent = {
     hero: {
-        eyebrow: "Finance operations automation",
-        title: "Make finance teams faster before adding more AP headcount.",
+        eyebrow: "Finance automation",
+        title: "Finance automation that makes teams faster before adding more AP headcount.",
         body: "We build automation around Xero-heavy accounts payable, invoice approvals, duplicate payment risk, payment controls, month-end close, and cash visibility. Your accounting judgment stays with the team.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
@@ -94,7 +94,7 @@ export const financePageContent = {
     ],
     pains: {
         header: {
-            eyebrow: "Finance Ops patterns",
+            eyebrow: "Finance automation patterns",
             title: "The work is not only in the ledger. It is around it.",
             body: "These are the patterns we study, explain, and eventually automate for teams with enough volume to justify maintained systems.",
         },
@@ -174,7 +174,7 @@ export const financePageContent = {
     },
     offers: {
         header: {
-            eyebrow: "Finance Ops ladder",
+            eyebrow: "Finance automation ladder",
             title: "Publish useful guides. Validate the wedge. Build the paid system later.",
             body: "The first job is TOFU: high-quality explanations and free assets. Paid deployment comes when a company needs its own rules, approvals, and support model.",
         },
@@ -202,15 +202,15 @@ export const financePageContent = {
     proof: {
         header: {
             eyebrow: "Proof",
-            title: "Finance Ops proof starts with useful free assets.",
-            body: "The current library is heavier on finance operations because that is where new tools, guides, and Xero/AP content will grow first.",
+            title: "Finance automation proof starts with useful free assets.",
+            body: "The current library is heavier on finance automation because that is where new tools, guides, and Xero/AP content will grow first.",
         },
         assets: proofAssets.filter((asset) => financeProofAssetIds.has(asset.id)),
         eudrNote: {
             title: "Lower-page proof note: EUDR bridge",
             body: "The EUDR bridge applies the same discipline to regulated submissions: structured validation, review evidence, API bridges, and retry-safe processing.",
             href: "/work/eudr-compliance-bridge/",
-            ctaLabel: "View RegOps proof",
+            ctaLabel: "View compliance automation proof",
         },
     },
     finalCta: {

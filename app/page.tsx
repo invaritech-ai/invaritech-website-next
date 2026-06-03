@@ -6,7 +6,7 @@ import { DiagnosticCTA } from "@/components/site/diagnostic-cta";
 import { OfferLadder } from "@/components/site/offer-ladder";
 import { PageShell } from "@/components/site/page-shell";
 import { SectionHeader } from "@/components/site/section-header";
-import { SiteHero } from "@/components/site/site-hero";
+import { HomeHero } from "@/components/site/home-hero";
 import { WorkflowDiagram } from "@/components/site/workflow-diagram";
 import { homePageContent } from "@/lib/site-content/home";
 import { offerStages } from "@/lib/site-content/offers";
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 export default function Home() {
     return (
         <PageShell>
-            <SiteHero content={homePageContent.hero} className="site-section-hero site-home-hero" />
+            <HomeHero content={homePageContent.hero} className="site-section-hero site-home-hero" />
 
             <section className="site-section border-t border-border">
                 <div className="site-container">
@@ -127,7 +127,7 @@ export default function Home() {
                         content={{
                             eyebrow: "Proof and tools",
                             title: "Proof and tools you can open today.",
-                            body: "Start with live assets: the RegOps bridge case study, AP matching demo, invoice extraction, payment-control rules, and close-cost calculator.",
+                            body: "Start with live assets: the compliance bridge case study, AP matching demo, invoice extraction, payment-control rules, and close-cost calculator.",
                         }}
                     />
                 </div>

@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "Finance Ops and RegOps Tools and Resources",
+    title: "Free Finance & Compliance Automation Tools",
     description:
-        "Free tools, rule tables, checklists, guides, and proof notes for Finance Ops and RegOps workflows, exceptions, approval evidence, and audit trails.",
+        "Free finance and compliance automation tools, rule tables, checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Finance Ops and RegOps Tools and Resources - INVARITECH",
+        title: "Free Finance & Compliance Automation Tools - INVARITECH",
         description:
-            "Free tools, rule tables, checklists, guides, and proof notes for Finance Ops and RegOps workflows, exceptions, approval evidence, and audit trails.",
+            "Free finance and compliance automation tools, rule tables, checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Finance Ops and RegOps Tools and Resources",
+                alt: "Free Finance & Compliance Automation Tools",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Ops and RegOps Tools and Resources - INVARITECH",
+        title: "Free Finance & Compliance Automation Tools - INVARITECH",
         description:
-            "Free tools, rule tables, checklists, guides, and proof notes for Finance Ops and RegOps workflows, exceptions, approval evidence, and audit trails.",
+            "Free finance and compliance automation tools, rule tables, checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
         images: ["/og-image.png"],
     },
 };

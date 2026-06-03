@@ -83,7 +83,7 @@ export default function ThreeWayMatchPage() {
                     {/* Eyebrow + H1 */}
                     <div className="glossary-eyebrow mb-6">
                         <div className="glossary-eyebrow-bar" />
-                        <p className="glossary-eyebrow-label">Finance Ops Guide · Reference</p>
+                        <p className="glossary-eyebrow-label">Finance Automation Guide · Reference</p>
                     </div>
 
                     <h1 className="doc-hero-headline max-w-3xl">

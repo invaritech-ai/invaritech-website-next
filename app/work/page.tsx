@@ -9,22 +9,22 @@ import { proofAssets } from "@/lib/site-content/proof";
 import type { ProofAsset } from "@/lib/site-content/types";
 
 export const metadata: Metadata = {
-    title: "Finance Ops and RegOps Automation Work",
+    title: "Finance & Compliance Automation Case Studies",
     description:
-        "Proof that Invaritech builds Finance Ops and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+        "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
     openGraph: {
-        title: "Finance Ops and RegOps Automation Work | INVARITECH",
+        title: "Finance & Compliance Automation Case Studies | INVARITECH",
         description:
-            "Proof that Invaritech builds Finance Ops and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+            "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Finance and RegOps Automation" }],
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Finance & Compliance Automation" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Finance Ops and RegOps Automation Work | INVARITECH",
+        title: "Finance & Compliance Automation Case Studies | INVARITECH",
         description:
-            "Proof that Invaritech builds Finance Ops and RegOps automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+            "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -107,16 +107,16 @@ export default function WorkPage() {
     const proofSections = [
         {
             id: "finance-ops-proof",
-            eyebrow: "Finance Ops proof",
+            eyebrow: "Finance automation proof",
             title: "Finance workflows, tools, and demos.",
             body: "Invoice intake, AP matching, payment control rules, and future Xero AP proof will live here.",
             assets: financeProofAssets,
         },
         {
             id: "regops-proof",
-            eyebrow: "RegOps proof",
+            eyebrow: "Compliance automation proof",
             title: "Regulated workflow proof.",
-            body: "The RegOps library is smaller today. It stays anchored in EUDR and evidence-heavy workflow delivery.",
+            body: "The compliance automation library is smaller today. It stays anchored in EUDR and evidence-heavy workflow delivery.",
             assets: regopsProofAssets,
         },
     ];
@@ -134,14 +134,14 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Finance Ops and RegOps proof</p>
+                                <p className="site-eyebrow-text">Finance & Compliance Automation proof</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
                                 Real systems we&apos;ve shipped.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. Finance Ops and RegOps are separate pillars. The delivery discipline is shared.
+                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. Finance automation and compliance automation are separate pillars. The delivery discipline is shared.
                         </p>
                     </div>
                 </div>
@@ -175,7 +175,7 @@ export default function WorkPage() {
                                 <span className="text-[11px] font-mono text-primary/50">01</span>
                                 <div className="h-[1px] w-6 bg-primary/30" />
                                 <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
-                                    RegOps proof case
+                                    Compliance automation proof case
                                 </span>
                                 <span className="inline-flex items-center gap-1.5 border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-mono tracking-wider text-primary">
                                     <div className="h-1 w-1 rounded-full bg-primary" />
@@ -206,7 +206,7 @@ export default function WorkPage() {
                                 <Button asChild variant="outline" size="lg" className="border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
                                     <Link href={featuredProof.href ?? "/work/eudr-compliance-bridge/"} className="flex items-center gap-3">
                                         <span className="text-sm font-semibold uppercase tracking-widest">
-                                            View RegOps Case
+                                            View Compliance Case
                                         </span>
                                         <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                     </Link>

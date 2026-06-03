@@ -7,20 +7,20 @@ import { Metadata } from "next";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: { absolute: "About INVARITECH | Finance Ops and RegOps Automation" },
+    title: { absolute: "About INVARITECH | Finance & Compliance Automation" },
     description:
-        "A founder-led team building finance and regulated operations workflow systems with fixed scope, written acceptance criteria, and managed support.",
+        "A founder-led team building finance and compliance automation with fixed scope, written acceptance criteria, and managed support.",
     openGraph: {
-        title: "About INVARITECH | Finance Ops and RegOps Automation",
+        title: "About INVARITECH | Finance & Compliance Automation",
         description:
-            "A founder-led team with a Goldman Sachs reconciliation track record. Fixed-scope workflow systems for finance and regulated operations.",
+            "A founder-led team with a Goldman Sachs reconciliation track record. Fixed-scope automation for finance and compliance teams.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1376, height: 768, alt: "About INVARITECH - Finance and RegOps Automation" }],
+        images: [{ url: "/og-image.png", width: 1376, height: 768, alt: "About INVARITECH - Finance & Compliance Automation" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "About INVARITECH | Finance Ops and RegOps Automation",
+        title: "About INVARITECH | Finance & Compliance Automation",
         description:
             "Founder-led workflow automation with measurable acceptance criteria and ongoing managed support.",
         images: ["/og-image.png"],

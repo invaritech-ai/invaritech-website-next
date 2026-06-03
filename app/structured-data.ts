@@ -1,7 +1,7 @@
 const HOMEPAGE_LAST_MODIFIED = "2026-05-15T00:00:00.000Z";
 
 const SERVICE_DESCRIPTION =
-    "Invaritech builds Finance Ops and RegOps automation for teams handling messy documents, approvals, exceptions, and evidence trails around existing systems.";
+    "Invaritech builds finance automation and compliance automation for teams handling messy invoices, approvals, exceptions, and audit trails around existing systems.";
 
 const AREA_SERVED = [
     { "@type": "Place", name: "Worldwide" },
@@ -15,7 +15,7 @@ export const structuredData = {
             "@type": "Organization",
             "@id": "https://www.invaritech.ai/#organization",
             name: "INVARITECH",
-            alternateName: "INVARITECH Finance Ops and RegOps Automation",
+            alternateName: "INVARITECH Finance Automation & Compliance Automation",
             description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai",
             logo: {
@@ -45,16 +45,16 @@ export const structuredData = {
             foundingDate: "2025",
             industry: "Technology",
             knowsAbout: [
-                "Finance Operations Automation",
-                "Finance Ops Automation",
-                "RegOps Automation",
-                "Regulatory Operations Automation",
-                "Accounts Payable Controls",
-                "Invoice Exception Management",
-                "Payment Controls",
-                "Exception Workflows",
+                "Finance Automation",
+                "Compliance Automation",
+                "Invoice Automation",
+                "Accounts Payable Automation",
+                "Invoice Approval Workflow",
+                "Invoice Processing Automation",
+                "Financial Close Automation",
+                "Regulatory Compliance Automation",
+                "Audit Trail Software",
                 "Reporting Bridges",
-                "Audit-Ready Internal Tools",
                 "Existing Systems Integration",
             ],
         },
@@ -62,7 +62,7 @@ export const structuredData = {
             "@type": "WebSite",
             "@id": "https://www.invaritech.ai/#website",
             url: "https://www.invaritech.ai",
-            name: "Finance Ops and RegOps Automation | INVARITECH",
+            name: "Finance Automation & Compliance Automation | INVARITECH",
             description: SERVICE_DESCRIPTION,
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
@@ -72,7 +72,7 @@ export const structuredData = {
             "@type": "WebPage",
             "@id": "https://www.invaritech.ai/#webpage",
             url: "https://www.invaritech.ai",
-            name: "Finance Ops and RegOps Automation | INVARITECH",
+            name: "Finance Automation & Compliance Automation | INVARITECH",
             description: SERVICE_DESCRIPTION,
             isPartOf: {
                 "@id": "https://www.invaritech.ai/#website",
@@ -91,29 +91,29 @@ export const structuredData = {
         },
         {
             "@type": "Service",
-            name: "Finance Ops and RegOps Automation",
+            name: "Finance Automation & Compliance Automation",
             description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai/",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Finance Operations Automation",
+            serviceType: "Finance Automation",
             areaServed: AREA_SERVED,
             audience: {
                 "@type": "BusinessAudience",
                 audienceType:
-                    "Finance Operations, Financial Controllers, AP Managers, Shared Services, Compliance Operations, RegOps Teams",
+                    "Finance Operations, Financial Controllers, AP Managers, Shared Services, Compliance Operations, Regulatory Compliance Teams",
             },
         },
         {
             "@type": "Service",
-            name: "Managed Finance and RegOps Workflow Support",
+            name: "Managed Finance & Compliance Automation Support",
             description:
-                "Ongoing support for live finance operations and RegOps workflows, including rule updates, exception queue tuning, reporting bridge maintenance, audit evidence checks, and small changes around existing systems.",
+                "Ongoing support for live finance and compliance automation workflows, including rule updates, exception queue tuning, reporting bridge maintenance, audit evidence checks, and small changes around existing systems.",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "RegOps Automation",
+            serviceType: "Compliance Automation",
             areaServed: AREA_SERVED,
         },
     ],

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
             "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
     },
     openGraph: {
-        title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
+        title: "Supplier Payment Control Rule Table for AP Teams | INVARITECH",
         description:
             "Interactive rule table for mapping supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
         url: "https://www.invaritech.ai/resources/supplier-payment-control-rule-table/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Supplier Payment Control Rule Table for AP Teams — INVARITECH",
+        title: "Supplier Payment Control Rule Table for AP Teams | INVARITECH",
         description:
             "Map supplier payment controls, payment approval checks, invoice exceptions, routing, evidence, and audit trails.",
         images: ["/og-image.png"],

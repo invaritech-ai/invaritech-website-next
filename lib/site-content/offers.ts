@@ -41,10 +41,10 @@ const buildOffers = [
     },
     {
         id: "finance-ops-automation-build",
-        title: "Finance Ops Automation Build",
+        title: "Finance Automation Build",
         audience: "Operators who need a broader automation layer across finance systems, inboxes, spreadsheets, and approval tools.",
         promise:
-            "Build the automation that keeps finance operations moving, without forcing a system replacement.",
+            "Build the automation that keeps finance teams moving, without forcing a system replacement.",
         includes: [
             "Multi-step workflow automation",
             "System and spreadsheet integrations",
@@ -54,7 +54,7 @@ const buildOffers = [
     },
     {
         id: "regops-bridge",
-        title: "RegOps Bridge",
+        title: "Compliance Bridge",
         audience: "Teams managing regulated evidence, submissions, client reporting, or recurring compliance operations.",
         promise:
             "Convert document-heavy regulated work into deterministic workflow infrastructure with traceable evidence and review steps.",
