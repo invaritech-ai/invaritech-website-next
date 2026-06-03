@@ -1,8 +1,40 @@
-import { Metadata } from "next";
-import Link from "next/link";
+# Invoice Processing Automation Operating Manual Implementation Plan
 
-import { ToolPageShell } from "@/components/tools/ToolPageShell";
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+**Goal:** Turn `/resources/invoice-processing-automation/` into a high-ranking AP operating manual for non-technical AP operators, controllers, and finance teams evaluating invoice processing automation.
+
+**Architecture:** Keep the page as a single Next.js route using the existing `ToolPageShell`. Replace generic guide sections with compact operating-manual sections, inline artifact examples, stronger SEO metadata, and practical internal links to the finance automation cluster.
+
+**Tech Stack:** Next.js App Router, React 19, TypeScript, Tailwind CSS utility classes, existing site components.
+
+---
+
+## File Structure
+
+- Modify: `app/resources/invoice-processing-automation/page.tsx`
+  - Update metadata and FAQ copy.
+  - Add local content arrays for workflow steps, artifact examples, software evaluation rows, ERP boundary points, and failure modes.
+  - Replace the page body with AP operating-manual sections.
+  - Keep `BreadcrumbList`, `WebPage`, and `FAQPage` structured data.
+
+- Do not modify: `components/tools/ToolPageShell.tsx`
+  - The existing shell is sufficient for this page.
+  - It already handles breadcrumbs, hero rendering, JSON-LD injection, and footer context.
+
+- Do not modify: `app/resources/invoice-extractor/page.tsx`, `app/resources/supplier-payment-control-rule-table/page.tsx`, `app/glossary/three-way-match/page.tsx`, or blog posts in this plan.
+  - This plan only rewrites the destination page under review.
+
+## Task 1: Update Metadata And FAQ Targets
+
+**Files:**
+- Modify: `app/resources/invoice-processing-automation/page.tsx`
+
+- [ ] **Step 1: Update the metadata object**
+
+Replace the existing `metadata` export with:
+
+```tsx
 export const metadata: Metadata = {
     title: "Invoice Processing Automation: AP Workflow, OCR & Controls",
     description:
@@ -48,7 +80,13 @@ export const metadata: Metadata = {
         images: ["/og-image.png"],
     },
 };
+```
 
+- [ ] **Step 2: Replace the FAQ items**
+
+Replace the existing `faqItems` array with:
+
+```tsx
 const faqItems = [
     {
         question: "What is invoice processing automation?",
@@ -81,57 +119,37 @@ const faqItems = [
             "At minimum: an invoice field list, validation rule table, exception-state list, approval evidence requirements, posting or export boundaries, and an audit-trail event list.",
     },
 ];
+```
 
-const BASE = "https://www.invaritech.ai";
+- [ ] **Step 3: Update the WebPage JSON-LD description**
 
-const jsonLd = [
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: [
-            { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-            { "@type": "ListItem", position: 2, name: "Resources", item: `${BASE}/resources/` },
-            {
-                "@type": "ListItem",
-                position: 3,
-                name: "Invoice Processing Automation",
-                item: `${BASE}/resources/invoice-processing-automation/`,
-            },
-        ],
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        name: "Invoice Processing Automation: AP Workflow, OCR & Controls",
-        description:
-            "An AP operating manual for invoice processing automation: OCR, extraction, validation rules, exception routing, approval workflow, posting boundaries, and audit trails.",
-        url: `${BASE}/resources/invoice-processing-automation/`,
-        inLanguage: "en-AU",
-        isPartOf: {
-            "@type": "WebSite",
-            name: "INVARITECH",
-            url: BASE,
-        },
-        publisher: {
-            "@type": "Organization",
-            name: "INVARITECH",
-            url: BASE,
-        },
-    },
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqItems.map((item) => ({
-            "@type": "Question",
-            name: item.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: item.answer,
-            },
-        })),
-    },
-];
+Inside the `jsonLd` array, update the `WebPage.description` string to:
 
+```tsx
+description:
+    "An AP operating manual for invoice processing automation: OCR, extraction, validation rules, exception routing, approval workflow, posting boundaries, and audit trails.",
+```
+
+- [ ] **Step 4: Run lint for early syntax feedback**
+
+Run:
+
+```bash
+pnpm lint
+```
+
+Expected: PASS. If it fails, fix only syntax, import, or formatting issues introduced in this task.
+
+## Task 2: Add Operating-Manual Content Arrays
+
+**Files:**
+- Modify: `app/resources/invoice-processing-automation/page.tsx`
+
+- [ ] **Step 1: Replace the workflow data**
+
+Replace the existing `workflowSteps` array with:
+
+```tsx
 const workflowSteps = [
     {
         title: "Invoice received",
@@ -162,7 +180,13 @@ const workflowSteps = [
         body: "Keep the event history: uploaded, extracted, checked, exception raised, routed, approved, held, corrected, posted, exported, or released for payment.",
     },
 ];
+```
 
+- [ ] **Step 2: Add the helper arrays below `workflowSteps`**
+
+Add this code immediately after `workflowSteps`:
+
+```tsx
 const pageHelps = [
     "Explain the AP workflow to decision makers without turning it into a software pitch.",
     "Separate invoice OCR from full invoice processing automation.",
@@ -297,9 +321,28 @@ const failureModes = [
         body: "The system finds issues, but AP still needs a cadence, owner, and release decision.",
     },
 ];
+```
 
-export default function InvoiceProcessingAutomationPage() {
-    return (
+- [ ] **Step 3: Run lint for data-shape errors**
+
+Run:
+
+```bash
+pnpm lint
+```
+
+Expected: PASS.
+
+## Task 3: Rewrite Hero Props And Intro Panel
+
+**Files:**
+- Modify: `app/resources/invoice-processing-automation/page.tsx`
+
+- [ ] **Step 1: Update `ToolPageShell` props**
+
+Inside `InvoiceProcessingAutomationPage`, replace the current `ToolPageShell` opening props with:
+
+```tsx
         <ToolPageShell
             breadcrumb="Invoice Processing Automation"
             eyebrow="AP Operating Manual"
@@ -314,6 +357,13 @@ export default function InvoiceProcessingAutomationPage() {
                 label: "Use the free invoice extractor",
             }}
         >
+```
+
+- [ ] **Step 2: Replace the first content section**
+
+Replace the first `<section className="border border-border bg-card p-7">...</section>` with:
+
+```tsx
             <section className="border border-border bg-card p-7">
                 <p className="site-meta text-primary">Who this is for</p>
                 <h2 className="site-h3 mt-4">
@@ -344,7 +394,28 @@ export default function InvoiceProcessingAutomationPage() {
                     </Link>
                 </div>
             </section>
+```
 
+- [ ] **Step 3: Run lint**
+
+Run:
+
+```bash
+pnpm lint
+```
+
+Expected: PASS.
+
+## Task 4: Replace Definition, Workflow, And Artifact Sections
+
+**Files:**
+- Modify: `app/resources/invoice-processing-automation/page.tsx`
+
+- [ ] **Step 1: Replace the current Definition section**
+
+Replace the section headed `What invoice processing automation actually means.` with:
+
+```tsx
             <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
                     Definition
@@ -362,7 +433,13 @@ export default function InvoiceProcessingAutomationPage() {
                     tax and total validation, approval evidence, exception routing, and audit trail.
                 </p>
             </section>
+```
 
+- [ ] **Step 2: Replace the current Workflow section**
+
+Replace the section headed `A practical automated invoice processing workflow.` with:
+
+```tsx
             <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
                     Workflow Model
@@ -393,7 +470,13 @@ export default function InvoiceProcessingAutomationPage() {
                     ))}
                 </div>
             </section>
+```
 
+- [ ] **Step 3: Insert the Artifact Examples section after Workflow**
+
+Add this section immediately after the workflow section:
+
+```tsx
             <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
                     Operating Artifacts
@@ -423,7 +506,28 @@ export default function InvoiceProcessingAutomationPage() {
                     ))}
                 </div>
             </section>
+```
 
+- [ ] **Step 4: Run lint**
+
+Run:
+
+```bash
+pnpm lint
+```
+
+Expected: PASS.
+
+## Task 5: Add Software, ERP Boundary, Failure, And Starting-Point Sections
+
+**Files:**
+- Modify: `app/resources/invoice-processing-automation/page.tsx`
+
+- [ ] **Step 1: Replace the current Controls section**
+
+Replace the section headed `The checks that make invoice automation posting-safe.` with:
+
+```tsx
             <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
                     Software Evaluation
@@ -499,9 +603,7 @@ export default function InvoiceProcessingAutomationPage() {
 
             <section className="mt-14 border border-border bg-card p-7">
                 <p className="site-meta text-primary">Free starting point</p>
-                <h2 className="site-h3 mt-4">
-                    Test the intake step before you redesign the workflow.
-                </h2>
+                <h2 className="site-h3 mt-4">Test the intake step before you redesign the workflow.</h2>
                 <p className="site-body mt-4">
                     Run one real invoice through the free invoice extractor. Then use the supplier
                     payment rule table to map the checks, exception owners, and evidence AP needs
@@ -525,23 +627,126 @@ export default function InvoiceProcessingAutomationPage() {
                     </Link>
                 </div>
             </section>
+```
 
-            <section className="mt-14 pt-12">
-                <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                    FAQ
-                </p>
-                <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
-                    Invoice processing automation questions
-                </h2>
-                <div className="mt-8">
-                    {faqItems.map((item) => (
-                        <div key={item.question} className="py-6">
-                            <h3 className="text-lg font-semibold text-foreground">{item.question}</h3>
-                            <p className="site-body mt-2">{item.answer}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
-        </ToolPageShell>
-    );
-}
+- [ ] **Step 2: Keep the FAQ section**
+
+Keep the existing FAQ section structure after the new starting-point section. Its content will now come from the updated `faqItems` array in Task 1.
+
+- [ ] **Step 3: Run lint**
+
+Run:
+
+```bash
+pnpm lint
+```
+
+Expected: PASS.
+
+## Task 6: Verify SEO, Links, Build, And Rendering
+
+**Files:**
+- Verify: `app/resources/invoice-processing-automation/page.tsx`
+
+- [ ] **Step 1: Run production build**
+
+Run:
+
+```bash
+npm run build
+```
+
+Expected: PASS. The route list should include `/resources/invoice-processing-automation`.
+
+- [ ] **Step 2: Start or reuse local dev server**
+
+If no local server is running, run:
+
+```bash
+npm run dev -- --port 3000
+```
+
+Expected: local server starts and serves `http://localhost:3000`.
+
+- [ ] **Step 3: Check route HTML contains target metadata**
+
+Run:
+
+```bash
+curl -sS http://127.0.0.1:3000/resources/invoice-processing-automation/ > /tmp/invoice-processing-automation.html
+```
+
+Then run:
+
+```bash
+rg -n "Invoice Processing Automation: AP Workflow, OCR & Controls|invoice processing automation|FAQPage|BreadcrumbList|/finance-automation/|/resources/invoice-extractor/|/resources/supplier-payment-control-rule-table/|/glossary/three-way-match/" /tmp/invoice-processing-automation.html
+```
+
+Expected: matches for the title, target keyword, `FAQPage`, `BreadcrumbList`, and internal links.
+
+- [ ] **Step 4: Browser visual check**
+
+Open:
+
+```text
+http://localhost:3000/resources/invoice-processing-automation/
+```
+
+Expected desktop result:
+
+- Hero reads as an AP operating manual.
+- The page includes compact operating artifacts.
+- No horizontal divider-heavy blog layout.
+- Internal links are visible and useful.
+- Chat widget does not block critical CTA text at normal desktop viewport.
+
+Expected mobile result:
+
+- No horizontal overflow.
+- Tables and grids stack cleanly.
+- Artifact lists remain readable.
+- Sticky nav and chat widget do not obscure the first CTA.
+
+- [ ] **Step 5: Check for banned or internal language**
+
+Run:
+
+```bash
+rg -n "pillar|wedge|asset|deployment threshold|coming soon|publish useful guides|validate the wedge|build the paid system later" app/resources/invoice-processing-automation/page.tsx
+```
+
+Expected: no matches.
+
+- [ ] **Step 6: Commit the implementation**
+
+Before committing, inspect the diff:
+
+```bash
+git diff -- app/resources/invoice-processing-automation/page.tsx
+```
+
+Stage only this implementation file:
+
+```bash
+git add app/resources/invoice-processing-automation/page.tsx
+```
+
+Commit:
+
+```bash
+git commit -m "feat: turn invoice processing guide into AP operating manual"
+```
+
+Expected: commit succeeds with only the invoice-processing page staged for this task.
+
+## Self-Review Checklist
+
+- The primary keyword `invoice processing automation` appears in title, H1, intro, and body without stuffing.
+- The page is for non-technical AP operators/controllers, not developers.
+- The page includes inline artifacts but does not become a technical implementation spec.
+- The page mentions what Invaritech would help map or build through operating artifacts, not unsupported product claims.
+- The page links to the finance automation pillar, invoice extractor, supplier payment control rule table, three-way match, and invoice extraction architecture where natural.
+- The page keeps `BreadcrumbList`, `WebPage`, and `FAQPage` structured data.
+- The page does not use generic filler such as “streamline,” “optimize,” or “innovative” without concrete workflow meaning.
+- No placeholder resources, coming-soon items, fake screenshots, or invented metrics are added.
+

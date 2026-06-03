@@ -259,6 +259,13 @@ export default function InvoiceExtractorPage() {
                             evidence after invoice parsing, start with the supplier payment control
                             rule table.
                         </p>
+                        <p className="site-body mt-3">
+                            For the broader operating model, use the{" "}
+                            <Link href="/finance-automation/" className="text-primary underline-offset-4 hover:underline">
+                                finance automation
+                            </Link>{" "}
+                            pillar page.
+                        </p>
                     </div>
                     <Link
                         href="/resources/supplier-payment-control-rule-table/interactive/"

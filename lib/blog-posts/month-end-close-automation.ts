@@ -225,7 +225,7 @@ Month-end close automation is not about making accountants work faster at the sa
 
 It is about moving repetitive work into a controlled system so the team can spend more time on review, analysis, and decisions.
 
-If you want to scope the right first step, use the [Cost-to-Close Calculator](/resources/cost-to-close-calculator/) to baseline your manual tax, then [book a scoping call](/contact/). If your close pain is tied to upstream invoice handling, start with [invoice data extraction](/blog/ai-invoice-data-extraction/) before expanding the close layer.
+If you want to scope the right first step, use the [Cost-to-Close Calculator](/resources/cost-to-close-calculator/) to baseline your manual tax, then use the [finance automation](/finance-automation/) pillar to place close work next to invoice exceptions, approval evidence, and payment controls. If your close pain is tied to upstream invoice handling, start with [invoice data extraction](/blog/ai-invoice-data-extraction/) before expanding the close layer.
     `,
     author: {
         name: "Avishek Majumder",

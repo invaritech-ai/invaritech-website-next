@@ -7,11 +7,11 @@ export const pageMetadata = {
             "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
         canonical: "/",
     },
-    financeOperationsAutomation: {
+    financeAutomation: {
         title: "Finance Automation for AP, Approvals & Close | INVARITECH",
         description:
             "Finance automation for accounts payable, invoice approval, and month-end close. We add the controls and audit trails around Xero, without ripping out your stack.",
-        canonical: "/finance-operations-automation/",
+        canonical: "/finance-automation/",
     },
     regulatoryOperationsAutomation: {
         title: "Compliance Automation for Regulated Teams | INVARITECH",

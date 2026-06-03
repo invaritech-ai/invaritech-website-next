@@ -247,7 +247,7 @@ Small business automation is not about replacing people. It is about protecting 
 
 Automate repeatable finance and ops friction. Keep humans on judgment-heavy work. Use simple ROI math. Expand only when pilot metrics prove improvement.
 
-If you want help choosing the first wedge, [book a scoping call](/contact/). If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
+If finance is the first wedge, use the [finance automation for AP teams](/finance-automation/) pillar to choose between invoice intake, approval checks, payment controls, close work, and cash visibility. If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
     `,
     author: {
         name: "Avishek Majumder",

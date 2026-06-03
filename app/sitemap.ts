@@ -24,7 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1.0,
         },
         {
-            url: `${baseUrl}/finance-operations-automation/`,
+            url: `${baseUrl}/finance-automation/`,
             changeFrequency: "weekly",
             priority: 0.95,
         },

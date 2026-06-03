@@ -1,7 +1,7 @@
 import type { NavigationItem } from "./types";
 
 export const primaryNavigation = [
-    { label: "Finance", href: "/finance-operations-automation/" },
+    { label: "Finance", href: "/finance-automation/" },
     { label: "Compliance", href: "/regulatory-operations-automation/" },
     { label: "Resources", href: "/resources/" },
     { label: "Blog", href: "/blog/" },
@@ -11,7 +11,7 @@ export const primaryNavigation = [
 
 export const footerCompanyLinks = [
     { label: "Home", href: "/" },
-    { label: "Finance", href: "/finance-operations-automation/" },
+    { label: "Finance", href: "/finance-automation/" },
     { label: "Compliance", href: "/regulatory-operations-automation/" },
     { label: "Work", href: "/work/" },
     { label: "Resources", href: "/resources/" },
@@ -21,7 +21,7 @@ export const footerCompanyLinks = [
 ] satisfies NavigationItem[];
 
 export const footerFinanceLinks = [
-    { label: "Finance Automation Hub", href: "/finance-operations-automation/" },
+    { label: "Finance Automation Hub", href: "/finance-automation/" },
     { label: "Payment Control Rules", href: "/resources/supplier-payment-control-rule-table/" },
     { label: "Invoice Extractor", href: "/resources/invoice-extractor/" },
     { label: "Cost-to-Close Calculator", href: "/resources/cost-to-close-calculator/" },

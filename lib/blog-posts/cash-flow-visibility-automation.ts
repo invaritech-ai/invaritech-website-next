@@ -315,7 +315,7 @@ Cash flow visibility automation is a finance operating discipline, not a dashboa
 
 When data ingestion, normalization, forecasting logic, and control ownership are aligned, teams can maintain a live 13 week planning view with less manual effort and higher confidence.
 
-If you want to map this for your stack, [book a scoping call](/contact/). Start with one entity, one forecast horizon, one controlled rollout.
+If you want to map this for your stack, use the [finance automation](/finance-automation/) pillar to connect cash visibility with AP controls, invoice exceptions, and close follow-up. Start with one entity, one forecast horizon, one controlled rollout.
     `,
     author: {
         name: "Avishek Majumder",

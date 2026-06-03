@@ -1,11 +1,7 @@
 import { primaryDiagnosticCta, secondaryWorkCta } from "./brand";
-import { financePageOffers } from "./offers";
-import { proofAssets } from "./proof";
 import type {
     CTA,
     HeroContent,
-    OfferCard,
-    ProofAsset,
     SectionHeaderContent,
 } from "./types";
 
@@ -20,23 +16,36 @@ type WorkflowColumn = {
     items: string[];
 };
 
-type OfferStageContent = {
+type FinanceDefinitionPoint = {
     id: string;
     title: string;
     body: string;
-    offers: OfferCard[];
 };
 
-type ProofNote = {
+type FinanceClusterLink = {
+    label: string;
+    href: string;
+    body: string;
+};
+
+type FinanceClusterGroup = {
+    id: string;
     title: string;
     body: string;
-    href: string;
-    ctaLabel: string;
+    links: FinanceClusterLink[];
 };
 
 type FinancePageContent = {
     hero: HeroContent;
     hierarchy: FinancePainCard[];
+    definition: {
+        header: SectionHeaderContent;
+        points: FinanceDefinitionPoint[];
+    };
+    startingPoints: {
+        header: SectionHeaderContent;
+        groups: FinanceClusterGroup[];
+    };
     pains: {
         header: SectionHeaderContent;
         cards: FinancePainCard[];
@@ -47,14 +56,10 @@ type FinancePageContent = {
         controlLayer: WorkflowColumn;
         outcomes: WorkflowColumn;
     };
-    offers: {
+    paidDeployment: {
         header: SectionHeaderContent;
-        stages: OfferStageContent[];
-    };
-    proof: {
-        header: SectionHeaderContent;
-        assets: ProofAsset[];
-        eudrNote: ProofNote;
+        free: FinanceDefinitionPoint[];
+        paid: FinanceDefinitionPoint[];
     };
     finalCta: {
         title: string;
@@ -64,83 +69,193 @@ type FinancePageContent = {
     };
 };
 
-const financeProofAssetIds = new Set([
-    "three-way-matcher",
-    "invoice-extractor",
-    "supplier-payment-control-rule-table",
-]);
-
 export const financePageContent = {
     hero: {
-        eyebrow: "Finance automation",
-        title: "Finance automation that makes teams faster before adding more AP headcount.",
-        body: "We build automation around Xero-heavy accounts payable, invoice approvals, duplicate payment risk, payment controls, month-end close, and cash visibility. Your accounting judgment stays with the team.",
+        eyebrow: "Finance Automation",
+        title: "Finance automation for AP teams still stuck in manual checks.",
+        body: "We add the workflow around Xero, invoices, approvals, payment controls, and month-end work. Your accounting system stays in place. Your accountants keep the judgment. The manual checking becomes visible, routed, and repeatable.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
         trustLine:
-            "Current publishing focus: Xero accounts payable automation and high-volume AP exception work.",
+            "Built for document-heavy finance work: invoice exceptions, approval evidence, duplicate payment risk, and close follow-ups.",
     },
     hierarchy: [
         {
             id: "core",
-            title: "Active wedge",
-            body: "Xero and accounts payable workflows where finance teams need better exception review without making every accountant a software power user.",
+            title: "Start with AP exceptions",
+            body: "Most finance automation should start where invoices already break: duplicate bills, missing approvals, supplier detail changes, PO mismatches, and payment holds. We map the checks before we automate anything.",
         },
         {
             id: "expansion",
-            title: "Expansion",
-            body: "Month-end visibility, cash forecasting, reporting bridges, and payment-control workflows once the first AP system proves value.",
+            title: "Expand after the rules are proven",
+            body: "Once the AP workflow is stable, the same checked workflow can support month-end close, cash visibility, reporting bridges, and payment release reviews. The accounting system stays the source of truth.",
         },
     ],
+    definition: {
+        header: {
+            eyebrow: "Definition",
+            title: "Finance automation puts checks around the accounting system.",
+            body: "The accounting system records approved transactions. The manual work usually happens before and around that record: invoice intake, checks, approvals, evidence, payment holds, and follow-up. Good finance automation makes that work visible without taking accounting judgment away from the team.",
+        },
+        points: [
+            {
+                id: "not-erp-replacement",
+                title: "Not ERP replacement",
+                body: "Xero, QuickBooks, NetSuite, or your ERP stays the system of record. The automation layer handles the work that happens before and around posting.",
+            },
+            {
+                id: "not-accounting-judgment-replacement",
+                title: "Not accounting judgment replacement",
+                body: "Accountants still decide exceptions. The system makes the evidence, route, owner, and release decision visible.",
+            },
+            {
+                id: "not-just-ocr",
+                title: "Not just OCR",
+                body: "Invoice OCR is intake. Useful finance automation also checks rules, routes exceptions, captures approvals, and records the audit trail.",
+            },
+        ],
+    },
+    startingPoints: {
+        header: {
+            eyebrow: "Start Here",
+            title: "Choose the finance automation problem you are trying to solve.",
+            body: "Each path points to a live tool, guide, rule table, or article. Start with the part of accounts payable or close work that is causing the most manual review.",
+        },
+        groups: [
+            {
+                id: "learn",
+                title: "Understand invoice automation",
+                body: "For teams defining automated invoice processing or accounts payable automation.",
+                links: [
+                    {
+                        label: "automated invoice processing guide",
+                        href: "/resources/invoice-processing-automation/",
+                        body: "OCR, extraction, validation rules, exception routing, invoice approval workflow, and audit trails.",
+                    },
+                    {
+                        label: "invoice data extraction architecture",
+                        href: "/blog/ai-invoice-data-extraction/",
+                        body: "How invoice files become structured data before AP controls take over.",
+                    },
+                    {
+                        label: "build vs buy automation framework",
+                        href: "/blog/building-vs-buying-custom-automation/",
+                        body: "When off-the-shelf software works, and when custom automation is rational.",
+                    },
+                ],
+            },
+            {
+                id: "use-tool",
+                title: "Test a narrow workflow",
+                body: "Use a small tool before connecting anything to Xero or another accounting system.",
+                links: [
+                    {
+                        label: "free invoice extractor",
+                        href: "/resources/invoice-extractor/",
+                        body: "Upload a PDF, JPG, or PNG invoice and export structured CSV output for AP review.",
+                    },
+                    {
+                        label: "month-end close cost calculator",
+                        href: "/resources/cost-to-close-calculator/",
+                        body: "Estimate what a manual close cycle costs before redesigning the workflow.",
+                    },
+                    {
+                        label: "three-way match exceptions",
+                        href: "/glossary/three-way-match/",
+                        body: "Use the matcher and guide to see where PO, receipt, and invoice records break.",
+                    },
+                ],
+            },
+            {
+                id: "check-controls",
+                title: "Check controls",
+                body: "Review the checks that should happen before invoice approval or payment release.",
+                links: [
+                    {
+                        label: "supplier payment control rule table",
+                        href: "/resources/supplier-payment-control-rule-table/",
+                        body: "Plain-language control rules for supplier changes, approval gaps, and payment release risk.",
+                    },
+                    {
+                        label: "interactive supplier payment rule table",
+                        href: "/resources/supplier-payment-control-rule-table/interactive/",
+                        body: "Filter AP controls by trigger, owner, evidence, and release decision.",
+                    },
+                    {
+                        label: "invoice approval workflow",
+                        href: "/resources/invoice-processing-automation/",
+                        body: "Where approvals sit in an automated invoice processing workflow.",
+                    },
+                ],
+            },
+            {
+                id: "evaluate",
+                title: "Decide what should be automated",
+                body: "Use these when the question moves from learning to prioritising a real build.",
+                links: [
+                    {
+                        label: "month-end close automation",
+                        href: "/blog/month-end-close-automation/",
+                        body: "How close work breaks when evidence, ownership, and timing are not visible.",
+                    },
+                    {
+                        label: "cash-flow visibility automation",
+                        href: "/blog/cash-flow-visibility-automation/",
+                        body: "Where recurring forecast work depends on reports, workbooks, and manual refreshes.",
+                    },
+                    {
+                        label: "small business finance automation",
+                        href: "/blog/why-small-businesses-need-automation/",
+                        body: "A broader finance and operations playbook for founders and lean teams.",
+                    },
+                ],
+            },
+        ],
+    },
     pains: {
         header: {
-            eyebrow: "Finance automation patterns",
-            title: "The work is not only in the ledger. It is around it.",
-            body: "These are the patterns we study, explain, and eventually automate for teams with enough volume to justify maintained systems.",
+            eyebrow: "Accounts Payable Automation Patterns",
+            title: "Finance automation should start where invoices break.",
+            body: "If one of these issues is the bottleneck, start there. These are the places where invoice automation, approval workflows, exception management, and payment controls usually become practical.",
         },
         cards: [
             {
                 id: "xero-ap-volume",
-                title: "High-volume Xero AP",
-                body: "Help accountants review repeated AP exceptions without spending their day inside reports, exports, and payment-run prep.",
+                title: "Xero AP exception review",
+                body: "For Xero-heavy teams that still review bills through exports, reports, inboxes, and payment-run prep.",
             },
             {
-                id: "duplicate-supplier-bills",
-                title: "Duplicate supplier bills",
-                body: "Flag repeated supplier, amount, date, PO, or invoice references before a second payment run.",
+                id: "invoice-approval-workflow",
+                title: "Invoice approval workflow",
+                body: "Capture who approved the invoice, what evidence they used, and which approval gaps need review before payment.",
             },
             {
-                id: "supplier-bank-detail-changes",
-                title: "Supplier bank-detail changes",
-                body: "Route changed payment details through defined checks with owner, evidence, and release decision captured.",
+                id: "invoice-exception-management",
+                title: "Invoice exception management",
+                body: "Route missing POs, coding questions, tax issues, amount mismatches, and unresolved supplier questions to the right owner.",
             },
             {
-                id: "missing-approval-evidence",
-                title: "Missing approval evidence",
-                body: "Find invoices or releases that have approval gaps, unclear authority, or missing support.",
+                id: "duplicate-invoice-detection",
+                title: "Duplicate invoice detection",
+                body: "Check supplier, invoice number, amount, date, PO, and line-item patterns before a second payment leaves the business.",
             },
             {
-                id: "po-invoice-receipt-mismatches",
-                title: "PO, invoice, and receipt mismatches",
-                body: "Compare the records finance needs for three-way review and surface the mismatch reason clearly.",
+                id: "three-way-match-exceptions",
+                title: "Three-way match exceptions",
+                body: "Compare PO, invoice, and receipt records. Surface the mismatch reason clearly instead of burying it in spreadsheet review.",
             },
             {
-                id: "payment-release-audit-trail",
-                title: "Payment releases with no audit trail",
-                body: "Record who reviewed the exception, what changed, what evidence was used, and why release was approved.",
-            },
-            {
-                id: "month-end-visibility",
-                title: "Month-end visibility",
-                body: "Surface unresolved checks, missing inputs, and last-minute reporting issues before close work becomes a spreadsheet chase.",
+                id: "payment-controls-release-evidence",
+                title: "Payment controls and release evidence",
+                body: "Hold payment until supplier changes, approvals, exception notes, and release decisions are recorded.",
             },
         ],
     },
     currentStack: {
         header: {
-            eyebrow: "Current stack",
-            title: "Works with the tools you already run.",
-            body: "Your accounting system stores the transaction. Your team still handles the mess around it. We add the workflow that checks, routes, and records the review work.",
+            eyebrow: "Workflow Model",
+            title: "Keep the accounting system. Put the checks around it.",
+            body: "The pattern is simple: keep the current stack, make the checks explicit, and record the decision trail. That is the model behind invoice automation, payment controls, and month-end follow-up.",
         },
         currentStack: {
             title: "Current stack",
@@ -172,50 +287,50 @@ export const financePageContent = {
             ],
         },
     },
-    offers: {
+    paidDeployment: {
         header: {
-            eyebrow: "Finance automation ladder",
-            title: "Publish useful guides. Validate the wedge. Build the paid system later.",
-            body: "The first job is TOFU: high-quality explanations and free assets. Paid deployment comes when a company needs its own rules, approvals, and support model.",
+            eyebrow: "When To Bring Us In",
+            title: "Use the free tools until the rules depend on your company.",
+            body: "Most teams should not buy custom automation because a page says so. A company-specific build starts to make sense when the workflow depends on your chart of accounts, suppliers, approval rules, evidence standards, tenant data, and support expectations.",
         },
-        stages: [
+        free: [
             {
-                id: "diagnose",
-                title: "Explain",
-                body: "Create durable guides and resources for Xero AP, invoice approvals, payment controls, and month-end work.",
-                offers: [financePageOffers[0]],
+                id: "free-csv-tools",
+                title: "CSV and document tools",
+                body: "Use uploaded files to test invoice extraction, matching logic, control rules, and close cost before connecting a live accounting tenant.",
             },
             {
-                id: "build",
-                title: "Validate",
-                body: "Use search, page behavior, and build-interest forms to learn which finance workflows deserve product depth.",
-                offers: [financePageOffers[1], financePageOffers[2]],
+                id: "free-guides",
+                title: "Guides and rule tables",
+                body: "Use the guides to understand common AP automation patterns before designing rules for one company.",
             },
             {
-                id: "support",
-                title: "Deploy",
-                body: "Paid work starts when the team needs company-specific exception logic, monitored workflows, and tight support.",
-                offers: [financePageOffers[3]],
+                id: "free-checks",
+                title: "Generic control checks",
+                body: "Use common rules for duplicate invoice detection, invoice approval workflow gaps, supplier changes, and payment controls.",
+            },
+        ],
+        paid: [
+            {
+                id: "tenant-connection",
+                title: "Real tenant connection",
+                body: "Bring us in when the workflow needs to connect to a real Xero or accounting environment, not only uploaded files.",
+            },
+            {
+                id: "custom-rules",
+                title: "Company-specific exception logic",
+                body: "The valuable work is encoding your approval rules, supplier patterns, chart of accounts, evidence needs, and payment release controls.",
+            },
+            {
+                id: "managed-support",
+                title: "Monitoring, SLA, and support",
+                body: "A live workflow needs exception monitoring, rule updates, small improvements, and support when vendors, systems, or reporting requirements change.",
             },
         ],
     },
-    proof: {
-        header: {
-            eyebrow: "Proof",
-            title: "Finance automation proof starts with useful free assets.",
-            body: "The current library is heavier on finance automation because that is where new tools, guides, and Xero/AP content will grow first.",
-        },
-        assets: proofAssets.filter((asset) => financeProofAssetIds.has(asset.id)),
-        eudrNote: {
-            title: "Lower-page proof note: EUDR bridge",
-            body: "The EUDR bridge applies the same discipline to regulated submissions: structured validation, review evidence, API bridges, and retry-safe processing.",
-            href: "/work/eudr-compliance-bridge/",
-            ctaLabel: "View compliance automation proof",
-        },
-    },
     finalCta: {
-        title: "Bring us one finance workflow.",
-        body: "Pick one where Xero AP, approvals, supplier changes, month-end work, or release decisions are creating drag. We will map what a useful system would need to prove.",
+        title: "Share one AP workflow.",
+        body: "Send one workflow where invoices, approvals, supplier changes, payment release, or close follow-up still depends on manual checking. We will map the controls and decide whether a free tool is enough or a company-specific build is worth discussing.",
         cta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
     },

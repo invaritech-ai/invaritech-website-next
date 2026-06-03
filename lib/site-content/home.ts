@@ -76,7 +76,7 @@ export const homePageContent = {
                 eyebrow: "Finance automation",
                 title: "Finance automation",
                 body: "For accounts payable, invoice approval workflows, Xero AP automation, duplicate payment risk, payment controls, month-end close, and cash visibility.",
-                href: "/finance-operations-automation/",
+                href: "/finance-automation/",
                 ctaLabel: "Explore Finance Automation",
                 proof: [
                     "Xero AP automation direction",

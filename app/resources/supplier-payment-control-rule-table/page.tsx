@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Script from "next/script";
 import ResourceRuleTableClient from "@/components/resource-rule-table-client";
 
@@ -84,6 +85,24 @@ export default function RuleTablePage() {
                 />
             ))}
             <ResourceRuleTableClient />
+            <section className="border-t border-border bg-background px-6 py-12">
+                <div className="site-container">
+                    <div className="grid gap-5 border border-border bg-card p-6 md:grid-cols-[1fr_auto] md:items-center">
+                        <div>
+                            <p className="site-meta text-primary">Finance automation context</p>
+                            <h2 className="site-h3 mt-4">Use payment controls inside the larger AP workflow.</h2>
+                            <p className="site-body mt-3 max-w-3xl">
+                                Supplier payment controls are one part of accounts payable automation.
+                                The broader finance automation model covers invoice intake, exception
+                                routing, approval evidence, payment release, and close follow-up.
+                            </p>
+                        </div>
+                        <Link href="/finance-automation/" className="site-button-secondary">
+                            View the finance automation pillar
+                        </Link>
+                    </div>
+                </div>
+            </section>
         </>
     );
 }

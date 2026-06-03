@@ -262,7 +262,7 @@ Invoice data extraction is not a cosmetic automation feature. It is the data fou
 
 If extraction quality is weak, the entire AP workflow inherits noise. If extraction quality is controlled with deterministic validation, exception routing, and auditable integration, teams can realistically compress close cycles, reduce manual handling, and increase decision confidence.
 
-Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, the next step is implementation design and control mapping. If you want help scoping that path, **[book a scoping call](/contact/)**.
+Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, use the [finance automation for AP teams](/finance-automation/) pillar to map the control layer around extraction, approval, exception routing, and payment release. If you want help scoping that path, **[book a scoping call](/contact/)**.
 Treat the first pilot as measurement infrastructure, not a one-off experiment.
 `,
 };

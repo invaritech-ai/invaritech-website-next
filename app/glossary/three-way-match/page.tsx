@@ -442,6 +442,11 @@ export default function ThreeWayMatchPage() {
                         <GlossaryProse>
                             <ul className="glossary-related-list">
                                 <li>
+                                    <Link href="/finance-automation/" className="glossary-related-link">
+                                        Finance automation for AP teams: the full control-layer model
+                                    </Link>
+                                </li>
+                                <li>
                                     <Link href="/work#document-matching" className="glossary-related-link">
                                         Invoice and Document Matching System: services overview
                                     </Link>
