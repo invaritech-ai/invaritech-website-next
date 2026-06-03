@@ -91,7 +91,11 @@ export default function FooterSection() {
             <div className="site-footer-container">
                 <div className="site-footer-grid">
                     <div className="site-footer-brand">
-                        <Link href="/" aria-label="INVARITECH home" className="site-footer-logo-row">
+                        <Link
+                            href="/"
+                            aria-label="INVARITECH Finance Ops & RegOps Automations home"
+                            className="site-footer-logo-row"
+                        >
                             <span className="site-footer-logo-mark" aria-hidden="true">
                                 <LogoIcon className="site-footer-logo-icon" />
                             </span>

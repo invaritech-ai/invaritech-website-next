@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "@fontsource-variable/source-serif-4";
-@import "@fontsource-variable/source-sans-3";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -52,9 +50,9 @@
     --sidebar-border: #E2E4DE;
     --sidebar-ring: #0F5132;
 
-    --font-body: "Source Sans 3 Variable", ui-sans-serif, sans-serif, system-ui;
+    --font-body: var(--font-source-sans), ui-sans-serif, sans-serif, system-ui;
     --packet-bg: #EEEDE8;
-    --font-display: "Source Serif 4 Variable", Georgia, Cambria, "Times New Roman", serif;
+    --font-display: var(--font-source-serif), Georgia, Cambria, "Times New Roman", serif;
     --font-label: var(--font-geist-mono), "IBM Plex Mono", monospace;
     --font-sans: var(--font-body);
     --font-serif: var(--font-display);
@@ -583,6 +581,36 @@ textarea {
 
     .site-home-hero-copy .site-button-row-center {
         margin-top: 2.5rem;
+    }
+
+    .hero-magnetic {
+        transition: transform 160ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .hero-rise {
+            animation: hero-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        .hero-rise-1 {
+            animation-delay: 70ms;
+        }
+        .hero-rise-2 {
+            animation-delay: 140ms;
+        }
+        .hero-rise-3 {
+            animation-delay: 210ms;
+        }
+    }
+
+    @keyframes hero-rise {
+        from {
+            opacity: 0;
+            transform: translateY(6px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .site-home-proof {
