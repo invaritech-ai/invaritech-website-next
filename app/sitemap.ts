@@ -44,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/resources/supplier-payment-control-rule-table/`,
+            url: `${baseUrl}/resources/accounts-payable-controls/`,
             changeFrequency: "monthly" as const,
             priority: 0.8,
         },

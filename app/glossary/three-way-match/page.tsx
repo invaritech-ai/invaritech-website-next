@@ -457,8 +457,8 @@ export default function ThreeWayMatchPage() {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/resources/supplier-payment-control-rule-table" className="glossary-related-link">
-                                        Supplier Payment Control Rule Table: interactive rule reference
+                                    <Link href="/resources/accounts-payable-controls/" className="glossary-related-link">
+                                        Accounts Payable Controls Checklist: payment-release and approval checks
                                     </Link>
                                 </li>
                             </ul>

@@ -34,7 +34,7 @@ export const pageMetadata = {
     resources: {
         title: "Free Finance & Compliance Automation Tools | INVARITECH",
         description:
-            "Free finance and compliance automation tools, guides, rule tables, checklists, and templates for exception handling, evidence, and workflow automation.",
+            "Free finance and compliance automation tools, guides, AP control checklists, and templates for exception handling, evidence, and workflow automation.",
         canonical: "/resources/",
     },
     about: {

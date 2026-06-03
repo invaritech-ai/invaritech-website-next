@@ -66,7 +66,7 @@ export default function ResourceLibraryClient() {
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Free tools, rule tables, checklists, guides, and proof notes. Finance Ops
+                            Free tools, AP control checklists, guides, and proof notes. Finance Ops
                             has more active resources today. RegOps will grow from shipped proof and
                             technical writing.
                         </p>
@@ -85,12 +85,12 @@ export default function ResourceLibraryClient() {
                                 Free control tool
                             </div>
                             <h2 className="site-h2">
-                                Map your payment controls in one table.
+                                Check your AP controls before payment release.
                             </h2>
                             <p className="site-lead mt-6">
-                                An interactive rule table for mapping approval evidence, exception
-                                routing, duplicate payment risk, and payment-release checks before
-                                month-end problems become harder to trace.
+                                Use the AP controls checklist to decide which approval checks,
+                                evidence requirements, owner lanes, and release decisions apply
+                                before month-end problems become harder to trace.
                             </p>
                             <div className="mt-10 grid gap-[1px] bg-border sm:grid-cols-3">
                                 {resourceNotes.map((note) => (
@@ -115,10 +115,10 @@ export default function ResourceLibraryClient() {
                         <RuleTablePreview
                             footer={
                                 <Link
-                                    href="/resources/supplier-payment-control-rule-table/interactive/"
+                                    href="/resources/accounts-payable-controls/"
                                     className="site-button gap-2"
                                 >
-                                    Open Rule Table
+                                    Open AP Controls Checklist
                                     <ArrowRight className="size-4" aria-hidden="true" />
                                 </Link>
                             }

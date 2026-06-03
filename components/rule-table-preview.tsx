@@ -45,23 +45,26 @@ export default function RuleTablePreview({ footer }: RuleTablePreviewProps) {
         <div
             className="exception-packet"
             role="region"
-            aria-label="Rule table preview"
+            aria-label="Accounts payable controls preview"
             data-reveal="block"
         >
             <div className="exception-packet-bar" aria-hidden="true" />
             <div className="exception-packet-inner">
-                <p className="exception-packet-eyebrow">Rule Table — Preview</p>
+                <p className="exception-packet-eyebrow">AP Controls — Preview</p>
                 <div className="exception-packet-header">
                     <span
                         className="control-stamp control-stamp-resolved"
-                        aria-label="Open resource"
+                        aria-label="Live checklist"
                     >
-                        Open
+                        Live
                     </span>
                 </div>
-                <p className="exception-packet-section-label">Sample control rules</p>
+                <p className="exception-packet-section-label">Sample AP controls</p>
                 <div className="exception-packet-desktop">
-                    <table className="exception-packet-table" aria-label="Rule table preview">
+                    <table
+                        className="exception-packet-table"
+                        aria-label="Accounts payable controls preview"
+                    >
                         <thead>
                             <tr className="exception-packet-table-head">
                                 <th scope="col">Exception condition</th>
@@ -85,7 +88,7 @@ export default function RuleTablePreview({ footer }: RuleTablePreviewProps) {
                     </table>
                 </div>
                 <p className="mt-3 font-mono text-[10px] tracking-[0.1em] text-foreground-subtle">
-                    5 of 18 rows shown — open the full interactive table
+                    5 of 18 rows shown — open the full AP controls checklist
                 </p>
                 {footer && <div className="mt-6">{footer}</div>}
             </div>

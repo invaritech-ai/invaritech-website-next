@@ -5,14 +5,14 @@ import ResourceLibraryClient from "@/components/resource-library-client";
 export const metadata: Metadata = {
     title: "Free Finance & Compliance Automation Tools",
     description:
-        "Free finance and compliance automation tools, rule tables, checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
+        "Free finance and compliance automation tools, AP control checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
         title: "Free Finance & Compliance Automation Tools - INVARITECH",
         description:
-            "Free finance and compliance automation tools, rule tables, checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
+            "Free finance and compliance automation tools, AP control checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Free Finance & Compliance Automation Tools - INVARITECH",
         description:
-            "Free finance and compliance automation tools, rule tables, checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
+            "Free finance and compliance automation tools, AP control checklists, guides, and proof notes for invoice approval, exceptions, evidence, and audit trails.",
         images: ["/og-image.png"],
     },
 };

@@ -23,7 +23,7 @@ const painCardLinks: Record<string, string> = {
     "invoice-exception-management": "/resources/invoice-processing-automation/",
     "duplicate-invoice-detection": "/blog/ai-invoice-data-extraction/",
     "three-way-match-exceptions": "/glossary/three-way-match/",
-    "payment-controls-release-evidence": "/resources/supplier-payment-control-rule-table/",
+    "payment-controls-release-evidence": "/resources/accounts-payable-controls/?scenario=payment-release-review",
 };
 
 const financeAutomationStructuredData = [
@@ -392,7 +392,7 @@ export default function FinanceAutomationPage() {
                             Use the free invoice extractor
                         </Link>
                         <Link
-                            href="/resources/supplier-payment-control-rule-table/"
+                            href="/resources/accounts-payable-controls/"
                             className="site-button-secondary"
                         >
                             Check AP controls first

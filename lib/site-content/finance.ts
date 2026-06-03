@@ -119,7 +119,7 @@ export const financePageContent = {
         header: {
             eyebrow: "Start Here",
             title: "Choose the finance automation problem you are trying to solve.",
-            body: "Each path points to a live tool, guide, rule table, or article. Start with the part of accounts payable or close work that is causing the most manual review.",
+            body: "Each path points to a live tool, checklist, guide, or article. Start with the part of accounts payable or close work that is causing the most manual review.",
         },
         groups: [
             {
@@ -172,14 +172,9 @@ export const financePageContent = {
                 body: "Review the checks that should happen before invoice approval or payment release.",
                 links: [
                     {
-                        label: "supplier payment control rule table",
-                        href: "/resources/supplier-payment-control-rule-table/",
-                        body: "Plain-language control rules for supplier changes, approval gaps, and payment release risk.",
-                    },
-                    {
-                        label: "interactive supplier payment rule table",
-                        href: "/resources/supplier-payment-control-rule-table/interactive/",
-                        body: "Filter AP controls by trigger, owner, evidence, and release decision.",
+                        label: "accounts payable controls checklist",
+                        href: "/resources/accounts-payable-controls/",
+                        body: "Interactive AP controls checklist for supplier changes, approval gaps, evidence requirements, and payment release decisions.",
                     },
                     {
                         label: "invoice approval workflow",
@@ -301,7 +296,7 @@ export const financePageContent = {
             },
             {
                 id: "free-guides",
-                title: "Guides and rule tables",
+                title: "Guides and checklists",
                 body: "Use the guides to understand common AP automation patterns before designing rules for one company.",
             },
             {

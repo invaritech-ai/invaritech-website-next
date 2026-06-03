@@ -22,7 +22,7 @@ export const footerCompanyLinks = [
 
 export const footerFinanceLinks = [
     { label: "Finance Automation Hub", href: "/finance-automation/" },
-    { label: "Payment Control Rules", href: "/resources/supplier-payment-control-rule-table/" },
+    { label: "AP Controls Checklist", href: "/resources/accounts-payable-controls/" },
     { label: "Invoice Extractor", href: "/resources/invoice-extractor/" },
     { label: "Cost-to-Close Calculator", href: "/resources/cost-to-close-calculator/" },
     { label: "Three-Way Matcher", href: "/glossary/three-way-match/" },

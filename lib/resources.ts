@@ -56,17 +56,17 @@ export type PillarKey = (typeof PILLAR_KEYS)[number];
 
 const resources: Resource[] = [
     {
-        slug: "supplier-payment-control-rule-table",
+        slug: "accounts-payable-controls",
         pillar: "finance-ops",
-        title: "Invoice Approval Workflow & Supplier Payment Controls Rule Table",
+        title: "Accounts Payable Controls Checklist",
         excerpt:
-            "An interactive rule table for mapping invoice approval workflow checks, payment-change controls, exception routing, and approval evidence before payment release.",
-        category: "rule-table",
+            "Interactive AP controls checklist for invoice approval workflow, payment controls, approval evidence, and payment-release decisions.",
+        category: "checklist",
         industry: "All industries",
-        format: "Interactive web table",
+        format: "Interactive web checklist",
         access: "open",
         featured: true,
-        subpageHref: "/resources/supplier-payment-control-rule-table/interactive/",
+        subpageHref: "/resources/accounts-payable-controls/",
     },
     {
         slug: "changed-bank-detail-verification-checklist",

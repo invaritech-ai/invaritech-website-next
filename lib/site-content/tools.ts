@@ -26,11 +26,11 @@ export const tools = [
         category: "calculator",
     },
     {
-        id: "supplier-payment-control-rule-table",
-        title: "Supplier Payment Control Rule Table",
-        body: "Use a plain-language rule table to map payment risks to checks, owners, evidence, and escalation paths.",
+        id: "accounts-payable-controls",
+        title: "AP Controls Checklist",
+        body: "Decide which checks, owners, evidence, and release decisions AP needs before approving or paying a supplier invoice.",
         status: "live",
-        href: "/resources/supplier-payment-control-rule-table/",
-        category: "rule-table",
+        href: "/resources/accounts-payable-controls/",
+        category: "checker",
     },
 ] satisfies ToolCard[];

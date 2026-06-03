@@ -522,59 +522,94 @@ export function InvoiceExtractor() {
                             </div>
                         )}
 
-                        {/* Email capture */}
-                        <div className="tool-email-panel">
-                            {emailSubmitted ? (
-                                <p className="tool-status-success">
-                                    ✓ SENT — CHECK YOUR INBOX
-                                </p>
-                            ) : (
-                                <>
-                                    <p className="tool-label">
-                                        EMAIL ME THE CSV RESULTS
+                        <div className="tool-result-highlight">
+                            <div className="tool-state-stack">
+                                <div>
+                                    <p className="tool-label tool-label-primary">
+                                        TAKE THE RESULT WITH YOU
                                     </p>
-                                    <div className="tool-inline-form">
-                                        <input
-                                            type="email"
-                                            value={emailValue}
-                                            onChange={(e) => setEmailValue(e.target.value)}
-                                            onKeyDown={(e) => e.key === "Enter" && handleEmailCapture()}
-                                            placeholder="you@company.com"
-                                            className="site-input"
-                                        />
-                                        <button
-                                            onClick={handleEmailCapture}
-                                            disabled={emailSubmitting || !emailValue.trim()}
-                                            className="tool-button-ghost"
-                                        >
-                                            {emailSubmitting ? "..." : "SEND"}
-                                        </button>
-                                    </div>
-                                    <p className="tool-small">
-                                        By submitting you agree to our{" "}
-                                        <a href="/privacy/" className="site-link">Privacy Policy</a>.
-                                        No spam.
+                                    <p className="tool-copy mt-3">
+                                        Download the CSV now, or email yourself the extracted
+                                        summary and the AP controls checklist used after invoice
+                                        intake.
                                     </p>
-                                </>
-                            )}
+                                </div>
+
+                                <div className="tool-action-row border-t-0 pt-0">
+                                    <button
+                                        onClick={() => downloadCSV("items_csv")}
+                                        className="tool-button-ghost"
+                                    >
+                                        <Download className="tool-icon-xs" />
+                                        ITEMS CSV
+                                    </button>
+                                    <button
+                                        onClick={() => downloadCSV("summary_csv")}
+                                        className="tool-button-ghost"
+                                    >
+                                        <Download className="tool-icon-xs" />
+                                        SUMMARY CSV
+                                    </button>
+                                </div>
+
+                                <div className="tool-divider">
+                                    {emailSubmitted ? (
+                                        <div className="tool-state-stack">
+                                            <p className="tool-status-success">
+                                                SENT — CHECK YOUR INBOX FOR THE RESULT AND AP
+                                                CONTROLS CHECKLIST
+                                            </p>
+                                            <p className="tool-small">
+                                                You can still download the CSV directly here if you
+                                                want to keep working now.
+                                            </p>
+                                        </div>
+                                    ) : (
+                                        <div className="tool-state-stack">
+                                            <div>
+                                                <p className="tool-label">
+                                                    EMAIL ME THIS RESULT
+                                                </p>
+                                                <p className="tool-small tool-small-spaced-lg">
+                                                    We will send the extracted summary, CSV access,
+                                                    and the AP controls checklist. No signup wall.
+                                                </p>
+                                            </div>
+                                            <div className="tool-inline-form">
+                                                <input
+                                                    type="email"
+                                                    value={emailValue}
+                                                    onChange={(e) => setEmailValue(e.target.value)}
+                                                    onKeyDown={(e) =>
+                                                        e.key === "Enter" && handleEmailCapture()
+                                                    }
+                                                    placeholder="you@company.com"
+                                                    className="site-input"
+                                                />
+                                                <button
+                                                    onClick={handleEmailCapture}
+                                                    disabled={
+                                                        emailSubmitting || !emailValue.trim()
+                                                    }
+                                                    className="tool-button-ghost"
+                                                >
+                                                    {emailSubmitting ? "..." : "SEND TO INBOX"}
+                                                </button>
+                                            </div>
+                                            <p className="tool-small">
+                                                By submitting you agree to our{" "}
+                                                <a href="/privacy/" className="site-link">
+                                                    Privacy Policy
+                                                </a>
+                                                . No spam.
+                                            </p>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
                         </div>
 
-                        {/* Download + reset */}
                         <div className="tool-action-row">
-                            <button
-                                onClick={() => downloadCSV("items_csv")}
-                                className="tool-button-ghost"
-                            >
-                                <Download className="tool-icon-xs" />
-                                ITEMS CSV
-                            </button>
-                            <button
-                                onClick={() => downloadCSV("summary_csv")}
-                                className="tool-button-ghost"
-                            >
-                                <Download className="tool-icon-xs" />
-                                SUMMARY CSV
-                            </button>
                             <button
                                 onClick={reset}
                                 className="tool-button-subtle tool-action-spacer"

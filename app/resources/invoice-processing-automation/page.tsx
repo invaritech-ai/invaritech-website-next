@@ -504,7 +504,7 @@ export default function InvoiceProcessingAutomationPage() {
                 </h2>
                 <p className="site-body mt-4">
                     Run one real invoice through the free invoice extractor. Then use the supplier
-                    payment rule table to map the checks, exception owners, and evidence AP needs
+                    AP controls checklist to map the checks, exception owners, and evidence AP needs
                     before approval or payment release.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
@@ -512,7 +512,7 @@ export default function InvoiceProcessingAutomationPage() {
                         Use the Free Invoice Extractor
                     </Link>
                     <Link
-                        href="/resources/supplier-payment-control-rule-table/"
+                        href="/resources/accounts-payable-controls/"
                         className="site-button bg-transparent text-foreground hover:bg-card"
                     >
                         Map AP Controls

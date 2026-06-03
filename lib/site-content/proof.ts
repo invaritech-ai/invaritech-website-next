@@ -35,14 +35,14 @@ export const proofAssets = [
         tags: ["invoice intake", "extractor", "review"],
     },
     {
-        id: "supplier-payment-control-rule-table",
+        id: "accounts-payable-controls",
         pillar: "finance-ops",
         type: "tool",
-        title: "Supplier Payment Control Rule Table",
-        body: "A rule table for common supplier payment risks, mapped to control checks, review owners, and evidence requirements.",
+        title: "Accounts Payable Controls Checklist",
+        body: "A live AP controls checklist for deciding the checks, review owners, evidence requirements, and release posture around supplier invoices and payments.",
         proves:
             "Payment control rules can be defined in plain language before they become workflow automation.",
-        href: "/resources/supplier-payment-control-rule-table/",
-        tags: ["payment controls", "rules", "evidence"],
+        href: "/resources/accounts-payable-controls/",
+        tags: ["payment controls", "AP controls", "evidence"],
     },
 ] satisfies ProofAsset[];
