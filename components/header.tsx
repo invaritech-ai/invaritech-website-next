@@ -117,11 +117,7 @@ export const HeroHeader = () => {
     return (
         <header className="site-shell-header">
             <div className="site-shell-header-inner">
-                <Link
-                    href="/"
-                    className="site-shell-brand group"
-                    aria-label="INVARITECH Finance Ops & RegOps Automations home"
-                >
+                <Link href="/" className="site-shell-brand group" aria-label="INVARITECH home">
                     <span className="site-shell-brand-mark" aria-hidden="true">
                         <LogoIcon className="site-shell-brand-icon" />
                     </span>
