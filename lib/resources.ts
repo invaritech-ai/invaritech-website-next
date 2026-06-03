@@ -45,7 +45,7 @@ export const CATEGORY_KEYS = [
 export type CategoryKey = (typeof CATEGORY_KEYS)[number];
 
 export const PILLAR_LABELS: Record<ResourcePillar | "all", string> = {
-    all: "All Pillars",
+    all: "All",
     "finance-ops": "Finance Automation",
     regops: "Compliance Automation",
 };
@@ -78,6 +78,18 @@ const resources: Resource[] = [
         industry: "All industries",
         format: "PDF checklist",
         access: "coming-soon",
+    },
+    {
+        slug: "three-way-match",
+        pillar: "finance-ops",
+        title: "Three-Way Match Tool",
+        excerpt:
+            "Check PO, invoice, and receipt fields before approval. Use the interactive matcher and glossary to classify three-way match exceptions.",
+        category: "tool",
+        industry: "Manufacturing / Distribution",
+        format: "Interactive web tool",
+        access: "open",
+        subpageHref: "/glossary/three-way-match/",
     },
     {
         slug: "freight-invoice-variance-rule-table",
@@ -174,3 +186,6 @@ const resources: Resource[] = [
 ];
 
 export const getAllResources = (): Resource[] => resources;
+
+export const getOpenResources = (): Resource[] =>
+    resources.filter((resource) => resource.access === "open");

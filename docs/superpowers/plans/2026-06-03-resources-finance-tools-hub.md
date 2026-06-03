@@ -44,7 +44,7 @@ Use:
 
 ```ts
 title: "Free Finance Automation Tools for AP Controls and Invoice Workflows"
-description: "Free finance automation tools for AP teams: invoice extraction, AP controls, invoice processing automation, and month-end close cost analysis."
+description: "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis."
 ```
 
 - [ ] **Step 2: Add page schema**
@@ -66,6 +66,7 @@ Create a problem-based path section:
 
 - Extract invoice data
 - Check AP controls
+- Check three-way match exceptions
 - Understand invoice processing automation
 - Quantify close drag
 
@@ -105,6 +106,7 @@ Confirm visible links point to existing routes:
 - `/finance-automation/`
 - `/resources/invoice-extractor/`
 - `/resources/accounts-payable-controls/`
+- `/glossary/three-way-match/`
 - `/resources/invoice-processing-automation/`
 - `/resources/cost-to-close-calculator/`
 - `/work/eudr-compliance-bridge/`

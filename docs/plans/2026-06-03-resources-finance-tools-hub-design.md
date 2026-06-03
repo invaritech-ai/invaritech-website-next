@@ -21,7 +21,7 @@ Use the title and H1 to make the page immediately useful:
 - Title: `Free Finance Automation Tools for AP Controls and Invoice Workflows`
 - H1: `Free finance automation tools for AP teams`
 
-The page should present available resources only. Remove public placeholder language, coming-soon cards, and internal phrases such as "pillar", "RegOps will grow", "proof notes", or "resource library" as the main promise.
+The page should present available resources only, including the live three-way match tool. Remove public placeholder language, coming-soon cards, and internal phrases such as "pillar", "RegOps will grow", "proof notes", or "resource library" as the main promise.
 
 ## Structure
 
@@ -43,7 +43,7 @@ Use dense link panels, problem-based rows, and compact resource cards. Avoid dec
 - No fake metrics.
 - No internal strategy language.
 - No unsupported Xero-agent claims.
-- Use natural anchors to `/finance-automation/`, `/resources/invoice-extractor/`, `/resources/accounts-payable-controls/`, `/resources/invoice-processing-automation/`, `/resources/cost-to-close-calculator/`, and `/work/eudr-compliance-bridge/`.
+- Use natural anchors to `/finance-automation/`, `/resources/invoice-extractor/`, `/resources/accounts-payable-controls/`, `/glossary/three-way-match/`, `/resources/invoice-processing-automation/`, `/resources/cost-to-close-calculator/`, and `/work/eudr-compliance-bridge/`.
 
 ## Verification
 
