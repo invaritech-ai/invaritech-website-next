@@ -296,12 +296,22 @@ const nextConfig: NextConfig = {
             // ── Careers ───────────────────────────────────────────────────
             {
                 source: "/careers/full-stack-developer",
-                destination: "/careers/",
+                destination: "/",
                 statusCode: 301,
             },
             {
                 source: "/careers/full-stack-developer/",
-                destination: "/careers/",
+                destination: "/",
+                statusCode: 301,
+            },
+            {
+                source: "/careers",
+                destination: "/",
+                statusCode: 301,
+            },
+            {
+                source: "/careers/",
+                destination: "/",
                 statusCode: 301,
             },
 

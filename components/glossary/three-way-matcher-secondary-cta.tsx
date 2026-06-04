@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { trackSiteEvent } from "@/lib/analytics/site-events";
+import { appendAttributionToFormData } from "@/lib/attribution";
 
 export function ThreeWayMatcherSecondaryCTA() {
     const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
@@ -14,6 +15,7 @@ export function ThreeWayMatcherSecondaryCTA() {
 
         const form = e.currentTarget;
         const data = new FormData(form);
+        appendAttributionToFormData(data);
 
         const hasInvoice = (data.get("invoiceCsv") as File | null)?.size ?? 0;
         const hasPo = (data.get("poCsv") as File | null)?.size ?? 0;
@@ -50,8 +52,9 @@ export function ThreeWayMatcherSecondaryCTA() {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="glossary-secondary-cta">
-            <div className="glossary-secondary-cta-header">
+            <form onSubmit={handleSubmit} className="glossary-secondary-cta">
+                <input type="hidden" name="source" value="glossary/three-way-match" />
+                <div className="glossary-secondary-cta-header">
                 <div className="glossary-eyebrow-bar" />
                 <p className="glossary-eyebrow-label-sm">Run on your real export</p>
             </div>
