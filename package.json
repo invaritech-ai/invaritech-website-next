@@ -2,6 +2,7 @@
     "name": "invaritech-visionary-launch",
     "version": "0.1.0",
     "private": true,
+    "packageManager": "pnpm@10.15.0",
     "scripts": {
         "dev": "next dev --turbopack",
         "build": "next build",
@@ -14,8 +15,6 @@
         "render:hero:poster": "remotion still HeroVariance public/hero/hero-poster.jpg --frame=235 --image-format=jpeg --jpeg-quality=88"
     },
     "dependencies": {
-        "@fontsource-variable/source-sans-3": "^5.2.9",
-        "@fontsource-variable/source-serif-4": "^5.2.9",
         "@gsap/react": "^2.1.2",
         "@marsidev/react-turnstile": "^1.5.2",
         "@radix-ui/react-avatar": "^1.1.11",
