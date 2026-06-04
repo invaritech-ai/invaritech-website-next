@@ -177,7 +177,7 @@ If your workflow is integration-heavy and regulator-facing, treat it as infrastr
 - **[RegOps strategy](/blog/regops-strategy/)**
 - **[Finance Ops Sprint](/contact/)** (30 days)
 
-Build one controlled wedge first, then expand.
+Build one controlled workflow first, then expand.
     `,
     author: {
         name: "Avishek Majumder",

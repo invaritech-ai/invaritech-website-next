@@ -9,66 +9,66 @@ const nextConfig: NextConfig = {
             {
                 source: "/blogs/building-vs-buying-automation-software",
                 destination: "/blog/building-vs-buying-custom-automation/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/blogs/building-vs-buying-automation-software/",
                 destination: "/blog/building-vs-buying-custom-automation/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/blogs/compliance-automation-for-small-teams",
                 destination: "/blog/compliance-automation-done-right/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/blogs/compliance-automation-for-small-teams/",
                 destination: "/blog/compliance-automation-done-right/",
-                permanent: true,
+                statusCode: 301,
             },
             // Old /blogs/:slug → /blog/:slug/
             {
                 source: "/blogs/:slug",
                 destination: "/blog/:slug/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/blogs/:slug/",
                 destination: "/blog/:slug/",
-                permanent: true,
+                statusCode: 301,
             },
             // Old /blogs/ index → /blog/
             {
                 source: "/blogs",
                 destination: "/blog/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/blogs/",
                 destination: "/blog/",
-                permanent: true,
+                statusCode: 301,
             },
 
             // ── Work / Portfolio ──────────────────────────────────────────
             {
                 source: "/use-cases",
                 destination: "/work/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/use-cases/",
                 destination: "/work/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/portfolio",
                 destination: "/work/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/portfolio/",
                 destination: "/work/",
-                permanent: true,
+                statusCode: 301,
             },
 
             // ── Tools → Resources ─────────────────────────────────────────
@@ -76,86 +76,128 @@ const nextConfig: NextConfig = {
             {
                 source: "/tools/invoice-extractor",
                 destination: "/resources/invoice-extractor/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/invoice-extractor/",
                 destination: "/resources/invoice-extractor/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/cost-to-close-calculator",
                 destination: "/resources/cost-to-close-calculator/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/cost-to-close-calculator/",
                 destination: "/resources/cost-to-close-calculator/",
-                permanent: true,
+                statusCode: 301,
             },
             // Retired tools → resources index
             {
                 source: "/tools/assessment",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/assessment/",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/burn-rate-calculator",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/burn-rate-calculator/",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             // Old geo pages → homepage
             {
                 source: "/tools/invoice-processing-automation-hong-kong",
                 destination: "/resources/invoice-processing-automation/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/invoice-processing-automation-hong-kong/",
                 destination: "/resources/invoice-processing-automation/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/invoice-processing-automation-singapore",
                 destination: "/resources/invoice-processing-automation/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/invoice-processing-automation-singapore/",
                 destination: "/resources/invoice-processing-automation/",
-                permanent: true,
+                statusCode: 301,
             },
             // /assessment/ redirect page → resources
             {
                 source: "/assessment",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/assessment/",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             // Tools index → resources
             {
                 source: "/tools",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/tools/",
                 destination: "/resources/",
-                permanent: true,
+                statusCode: 301,
+            },
+
+            // ── Finance / resource URL migrations ───────────────────────────
+            {
+                source: "/finance-operations-automation",
+                destination: "/finance-automation/",
+                statusCode: 301,
+            },
+            {
+                source: "/finance-operations-automation/",
+                destination: "/finance-automation/",
+                statusCode: 301,
+            },
+            {
+                source: "/finance-exception-automation",
+                destination: "/finance-automation/",
+                statusCode: 301,
+            },
+            {
+                source: "/finance-exception-automation/",
+                destination: "/finance-automation/",
+                statusCode: 301,
+            },
+            {
+                source: "/resources/supplier-payment-control-rule-table",
+                destination: "/resources/accounts-payable-controls/",
+                statusCode: 301,
+            },
+            {
+                source: "/resources/supplier-payment-control-rule-table/",
+                destination: "/resources/accounts-payable-controls/",
+                statusCode: 301,
+            },
+            {
+                source: "/resources/supplier-payment-control-rule-table/interactive",
+                destination: "/resources/accounts-payable-controls/",
+                statusCode: 301,
+            },
+            {
+                source: "/resources/supplier-payment-control-rule-table/interactive/",
+                destination: "/resources/accounts-payable-controls/",
+                statusCode: 301,
             },
 
             // ── Services (removed) → Homepage ─────────────────────────────
@@ -163,104 +205,104 @@ const nextConfig: NextConfig = {
             {
                 source: "/services/compliance-bridge",
                 destination: "/work/eudr-compliance-bridge/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/services/compliance-bridge/",
                 destination: "/work/eudr-compliance-bridge/",
-                permanent: true,
+                statusCode: 301,
             },
             // All other /services/* → homepage
             {
                 source: "/services/:path*",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/solutions",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/solutions/",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
 
             // ── Old sprint / campaign pages (removed) → Homepage ──────────
             {
                 source: "/weekend-suite",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/weekend-suite/",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/ai-automation-sprint",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/ai-automation-sprint/",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/ops-efficiency-sprint",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/ops-efficiency-sprint/",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/results",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/results/",
                 destination: "/",
-                permanent: true,
+                statusCode: 301,
             },
 
             // ── Legal ─────────────────────────────────────────────────────
             {
                 source: "/terms-of-service",
                 destination: "/terms/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/terms-of-service/",
                 destination: "/terms/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/privacy-policy",
                 destination: "/privacy/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/privacy-policy/",
                 destination: "/privacy/",
-                permanent: true,
+                statusCode: 301,
             },
 
             // ── Careers ───────────────────────────────────────────────────
             {
                 source: "/careers/full-stack-developer",
                 destination: "/careers/",
-                permanent: true,
+                statusCode: 301,
             },
             {
                 source: "/careers/full-stack-developer/",
                 destination: "/careers/",
-                permanent: true,
+                statusCode: 301,
             },
 
 

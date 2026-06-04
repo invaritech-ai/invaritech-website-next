@@ -21,7 +21,7 @@ export const footerCompanyLinks = [
 ] satisfies NavigationItem[];
 
 export const footerFinanceLinks = [
-    { label: "Finance Automation Hub", href: "/finance-automation/" },
+    { label: "Finance Automation", href: "/finance-automation/" },
     { label: "AP Controls Checklist", href: "/resources/accounts-payable-controls/" },
     { label: "Invoice Extractor", href: "/resources/invoice-extractor/" },
     { label: "Cost-to-Close Calculator", href: "/resources/cost-to-close-calculator/" },
@@ -29,8 +29,8 @@ export const footerFinanceLinks = [
 ] satisfies NavigationItem[];
 
 export const footerProofLinks = [
-    { label: "Compliance Automation Hub", href: "/regulatory-operations-automation/" },
+    { label: "Compliance Automation", href: "/regulatory-operations-automation/" },
     { label: "EUDR Compliance Bridge", href: "/work/eudr-compliance-bridge/" },
-    { label: "Proof Library", href: "/work/" },
+    { label: "Case Studies", href: "/work/" },
     { label: "Tools", href: "/resources/#tools" },
 ] satisfies NavigationItem[];

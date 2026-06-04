@@ -35,22 +35,22 @@ export const regopsPageContent = {
     hero: {
         eyebrow: "Compliance automation",
         title: "Compliance automation for regulated work that runs on evidence, submissions, and review trails.",
-        body: "Compliance automation is the older, proven capability inside Invaritech. We build systems for document intake, validation, regulated submissions, evidence capture, and retry-safe reporting workflows.",
+        body: "We build systems for document intake, validation, regulated submissions, evidence capture, and retry-safe reporting workflows. The work stays defensible because every check, handoff, and submission state is visible.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: secondaryWorkCta,
         trustLine:
-            "The compliance automation library is smaller today. The proof is anchored in shipped EUDR workflow infrastructure.",
+            "Shown through shipped EUDR workflow infrastructure: structured validation, submission state, and evidence trails.",
     },
     status: [
         {
-            id: "proof-first",
-            title: "Proof-first pillar",
-            body: "Compliance automation is represented through case notes and technical writing from shipped regulated workflows, not a large free-resource library yet.",
+            id: "submission-control",
+            title: "Control before submission",
+            body: "Regulated work needs required-field checks, evidence references, status tracking, and review ownership before anything reaches an external system.",
         },
         {
-            id: "finance-heavy-library",
-            title: "Finance library is larger",
-            body: "The current resource library is heavier on finance automation because that is where new tools and guides are being published first.",
+            id: "traceable-output",
+            title: "Traceable output",
+            body: "The goal is not just faster filing. It is a workflow where operators can reconstruct the input, validation result, submission attempt, response, and final decision.",
         },
     ],
     problems: {

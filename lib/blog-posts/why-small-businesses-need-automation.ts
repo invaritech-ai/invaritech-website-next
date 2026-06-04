@@ -166,7 +166,7 @@ If you are not sure where to start, use this sequence.
 4. **Baseline KPIs.** Capture current cycle time, touches, and exception rate.
 5. **Decide scale vs stop.** If pilot metrics improve, expand. If not, fix process design first.
 
-Most teams fail by trying to automate everything at once. One controlled wedge usually beats broad transformation plans.
+Most teams fail by trying to automate everything at once. One controlled workflow usually beats broad transformation plans.
 
 ## Common Failure Modes in Early Automation
 
@@ -212,7 +212,7 @@ For Australia-based operators, the path is usually:
 4. improve cash visibility and forecast reliability
 5. expand controls to adjacent workflows
 
-You do not need to execute this as a major transformation project. A narrow, controlled first wedge is enough to create momentum and measurable ROI.
+You do not need to execute this as a major transformation project. A narrow, controlled first workflow is enough to create momentum and measurable ROI.
 
 ## When Not to Automate Yet
 
@@ -247,7 +247,7 @@ Small business automation is not about replacing people. It is about protecting 
 
 Automate repeatable finance and ops friction. Keep humans on judgment-heavy work. Use simple ROI math. Expand only when pilot metrics prove improvement.
 
-If finance is the first wedge, use the [finance automation for AP teams](/finance-automation/) pillar to choose between invoice intake, approval checks, payment controls, close work, and cash visibility. If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
+If finance is the first workflow family, use [finance automation for AP teams](/finance-automation/) to choose between invoice intake, approval checks, payment controls, close work, and cash visibility. If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
     `,
     author: {
         name: "Avishek Majumder",

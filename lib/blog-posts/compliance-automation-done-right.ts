@@ -129,7 +129,7 @@ For teams unsure whether their compliance workflow justifies custom infrastructu
 
 - **[Contact](/contact/)** (map your workflow gaps with the engineering team)
 - **[Book a Workflow Review](/contact/)** (quantified diagnostic, diagnose first)
-- **[Finance Ops Sprint](/contact/)** (ship a wedge in 30 days)
+- **[Finance Ops Sprint](/contact/)** (ship a controlled workflow in 30 days)
 - **[EUDR Compliance Bridge](/work/eudr-compliance-bridge/)** (integrate at depth for a real regulated workflow)
 
 Use controlled and measurable execution with explicit governance boundaries.

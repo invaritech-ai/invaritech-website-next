@@ -109,14 +109,14 @@ export default function WorkPage() {
             id: "finance-ops-proof",
             eyebrow: "Finance automation proof",
             title: "Finance workflows, tools, and demos.",
-            body: "Invoice intake, AP matching, payment control rules, and future Xero AP proof will live here.",
+            body: "Invoice intake, AP matching, and payment control tools show how finance exception logic becomes checkable before payment release.",
             assets: financeProofAssets,
         },
         {
             id: "regops-proof",
             eyebrow: "Compliance automation proof",
             title: "Regulated workflow proof.",
-            body: "The compliance automation library is smaller today. It stays anchored in EUDR and evidence-heavy workflow delivery.",
+            body: "EUDR work shows the regulated workflow pattern: evidence intake, validation, submission state, retry handling, and audit-ready records.",
             assets: regopsProofAssets,
         },
     ];
@@ -141,7 +141,7 @@ export default function WorkPage() {
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. Finance automation and compliance automation are separate pillars. The delivery discipline is shared.
+                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. Finance automation and compliance automation solve different problems, but the delivery discipline is shared.
                         </p>
                     </div>
                 </div>

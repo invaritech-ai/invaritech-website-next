@@ -52,7 +52,7 @@ If your source data is spread across disconnected systems, inconsistently struct
 
 Operational leverage only appears after the data contract is defined. In most finance and ops contexts, that is a week of architecture work — not a six-month governance project.
 
-If accounts payable invoice throughput is the bottleneck, this is where an [invoice data extraction architecture](/blog/ai-invoice-data-extraction/) usually becomes the first practical wedge. Controlled intake quality is the foundation both paths depend on.
+If accounts payable invoice throughput is the bottleneck, this is where an [invoice data extraction architecture](/blog/ai-invoice-data-extraction/) usually becomes the first practical automation target. Controlled intake quality is the foundation both paths depend on.
 
 ## Build Only When the Numbers Support It
 
@@ -140,7 +140,7 @@ If you are evaluating whether a workflow justifies custom infrastructure, start 
 
 Map the manual steps, error rates, and time cost. If the delta is material, the build case becomes clear. If it is not, buying is probably correct.
 
-For accounts payable and finance workflows, start with the [finance automation](/finance-automation/) pillar before committing to either path. It maps the common free assets, AP controls, and paid deployment threshold.
+For accounts payable and finance workflows, start with the [finance automation](/finance-automation/) model before committing to either path. It maps the common free assets, AP controls, and paid deployment threshold.
 
 [Book a scoping call](/contact/) to map your workflow before committing to either path.
     `,

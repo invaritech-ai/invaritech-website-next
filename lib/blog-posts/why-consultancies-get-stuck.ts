@@ -6,7 +6,7 @@ export const whyConsultanciesGetStuck: BlogPost = {
     seoTitle: "Why Compliance Consultancies Get Stuck",
     articleSection: "Regulatory Compliance",
     excerpt:
-        "Manual compliance work often scales with fragility, not headcount. This post explains why hiring alone fails, what RegOps changes, and how to start with a measurable automation wedge.",
+        "Manual compliance work often scales with fragility, not headcount. This post explains why hiring alone fails, what RegOps changes, and how to start with a measurable workflow.",
     content: `
 ## The Hidden Cost of Manual Compliance Work
 

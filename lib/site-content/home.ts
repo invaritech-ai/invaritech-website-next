@@ -66,9 +66,9 @@ export const homePageContent = {
     },
     pillars: {
         header: {
-            eyebrow: "Two operating pillars",
+            eyebrow: "Two workflow families",
             title: "Choose the workflow family first.",
-            body: "Finance automation is the active focus. Compliance automation is the older, proven capability. Both run on the same discipline: checks, evidence, review paths, and maintained systems.",
+            body: "Finance automation covers AP, approvals, payment controls, close work, and cash visibility. Compliance automation covers regulated submissions, evidence intake, review checkpoints, and audit trails. Both depend on the same discipline: checks, evidence, review paths, and maintained systems.",
         },
         cards: [
             {

@@ -176,7 +176,7 @@ Core formula:
 - annual savings = current cost - future cost
 - payback period = implementation cost / monthly savings
 
-This is also where broader finance priorities matter. If you need context on operational bottlenecks across AP, close, and controls, start from the **[homepage](/)** and map where your highest-value wedge is.
+This is also where broader finance priorities matter. If you need context on operational bottlenecks across AP, close, and controls, start from the **[finance automation guide](/finance-automation/)** and map the highest-value workflow to automate first.
 
 If downstream reporting lag is your immediate pain point, this [cash flow visibility automation guide](/blog/cash-flow-visibility-automation/) shows how to convert cleaner AP data into a reliable 13 week planning cadence.
 
@@ -262,7 +262,7 @@ Invoice data extraction is not a cosmetic automation feature. It is the data fou
 
 If extraction quality is weak, the entire AP workflow inherits noise. If extraction quality is controlled with deterministic validation, exception routing, and auditable integration, teams can realistically compress close cycles, reduce manual handling, and increase decision confidence.
 
-Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, use the [finance automation for AP teams](/finance-automation/) pillar to map the control layer around extraction, approval, exception routing, and payment release. If you want help scoping that path, **[book a scoping call](/contact/)**.
+Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, use [finance automation for AP teams](/finance-automation/) to map the control layer around extraction, approval, exception routing, and payment release. If you want help scoping that path, **[book a scoping call](/contact/)**.
 Treat the first pilot as measurement infrastructure, not a one-off experiment.
 `,
 };

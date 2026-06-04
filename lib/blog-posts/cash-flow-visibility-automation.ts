@@ -273,7 +273,7 @@ These thresholds reduce ambiguity during high-pressure periods (month-end, quart
 
 For founder-led or lean finance teams, sequencing matters. If team capacity is limited, automate the highest-friction repeatable workflow first, then expand.
 
-This [small business automation playbook](/blog/why-small-businesses-need-automation/) outlines how to choose that first wedge without overbuilding.
+This [small business automation playbook](/blog/why-small-businesses-need-automation/) outlines how to choose the first workflow without overbuilding.
 
 ## Common Questions
 
@@ -315,7 +315,7 @@ Cash flow visibility automation is a finance operating discipline, not a dashboa
 
 When data ingestion, normalization, forecasting logic, and control ownership are aligned, teams can maintain a live 13 week planning view with less manual effort and higher confidence.
 
-If you want to map this for your stack, use the [finance automation](/finance-automation/) pillar to connect cash visibility with AP controls, invoice exceptions, and close follow-up. Start with one entity, one forecast horizon, one controlled rollout.
+If you want to map this for your stack, use [finance automation](/finance-automation/) to connect cash visibility with AP controls, invoice exceptions, and close follow-up. Start with one entity, one forecast horizon, one controlled rollout.
     `,
     author: {
         name: "Avishek Majumder",

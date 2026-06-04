@@ -7,6 +7,7 @@ import {
     FileSearch,
     FileText,
     ListChecks,
+    ShieldCheck,
 } from "lucide-react";
 
 import { getOpenResources } from "@/lib/resources";
@@ -80,6 +81,21 @@ const clusterLinks = [
         body: "Use this when the blocker is a PO, invoice, receipt, quantity, price, or evidence mismatch.",
         href: "/glossary/three-way-match/",
         cta: "Open matcher",
+    },
+];
+
+const complianceProofPoints = [
+    {
+        label: "Intake",
+        body: "Supplier evidence, commodity records, and submission inputs are collected before the regulated filing step.",
+    },
+    {
+        label: "Validation",
+        body: "Schema, geo-data, and required evidence checks happen before anything is sent to the external system.",
+    },
+    {
+        label: "Submission evidence",
+        body: "Statuses, retries, references, and operator actions stay traceable after the bridge runs.",
     },
 ];
 
@@ -244,19 +260,84 @@ export default function ResourceLibraryClient() {
                                 <h2 className="site-h3">A shipped compliance bridge example.</h2>
                             </div>
                             <p className="site-body text-foreground-subtle">
-                                The finance automation library is the active toolset. This
-                                compliance example stays here as evidence of the same operating
-                                model: intake, validation, retry handling, status tracking, and
+                                Most tools here support AP and finance work. This compliance
+                                example shows the same operating model in regulated submissions:
+                                intake, validation, retry handling, status tracking, and
                                 audit-ready evidence.
                             </p>
                         </div>
-                        <div className="grid gap-[1px] bg-border md:grid-cols-2 lg:grid-cols-3" data-reveal="stagger">
-                            {complianceResources.map((resource) => (
-                                <div key={resource.slug} data-reveal-child>
-                                    <ResourceCard resource={resource} />
+                        {complianceResources.length === 1 ? (
+                            <Link
+                                href={complianceResources[0].subpageHref ?? "/work/eudr-compliance-bridge/"}
+                                className="group grid overflow-hidden border border-border bg-background transition-colors hover:bg-background-soft lg:grid-cols-[0.82fr_1.18fr]"
+                                data-reveal="block"
+                                aria-label={`Read guide: ${complianceResources[0].title}`}
+                            >
+                                <article className="flex flex-col gap-6 p-6 md:p-8">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        <span className="border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-primary">
+                                            Guide
+                                        </span>
+                                        <span className="border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
+                                            Compliance automation
+                                        </span>
+                                    </div>
+
+                                    <div>
+                                        <h3 className="site-card-title text-3xl md:text-4xl">
+                                            {complianceResources[0].title}
+                                        </h3>
+                                        <p className="site-card-body mt-4 max-w-xl">
+                                            {complianceResources[0].excerpt}
+                                        </p>
+                                    </div>
+
+                                    <dl className="mt-auto grid grid-cols-[5.5rem_1fr] gap-x-4 gap-y-2 border-t border-border pt-5">
+                                        <dt className="site-meta">Industry</dt>
+                                        <dd className="text-sm text-foreground-muted">
+                                            {complianceResources[0].industry}
+                                        </dd>
+                                        <dt className="site-meta">Format</dt>
+                                        <dd className="text-sm text-foreground-muted">
+                                            {complianceResources[0].format}
+                                        </dd>
+                                    </dl>
+
+                                    <span className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-primary transition-colors group-hover:text-foreground">
+                                        Read guide
+                                        <ArrowRight className="size-3" aria-hidden="true" />
+                                    </span>
+                                </article>
+
+                                <div className="border-t border-border bg-card lg:border-l lg:border-t-0">
+                                    <div className="grid h-full">
+                                        {complianceProofPoints.map((point, index) => (
+                                            <div
+                                                key={point.label}
+                                                className={[
+                                                    "grid gap-4 p-6 md:grid-cols-[9rem_1fr] md:p-8",
+                                                    index > 0 ? "border-t border-border" : "",
+                                                ].join(" ")}
+                                            >
+                                                <div className="flex items-center gap-3 text-[11px] font-mono uppercase tracking-[0.18em] text-primary">
+                                                    <ShieldCheck className="size-4" aria-hidden="true" />
+                                                    {point.label}
+                                                </div>
+                                                <p className="site-card-body">{point.body}</p>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            ))}
-                        </div>
+                            </Link>
+                        ) : (
+                            <div className="grid gap-[1px] bg-border md:grid-cols-2 lg:grid-cols-3" data-reveal="stagger">
+                                {complianceResources.map((resource) => (
+                                    <div key={resource.slug} data-reveal-child>
+                                        <ResourceCard resource={resource} />
+                                    </div>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </section>
             )}

@@ -95,13 +95,13 @@ export default function CostToCloseCalculatorPage() {
                         <p className="site-meta text-primary">Finance automation context</p>
                         <h2 className="site-h3 mt-4">Close cost is one signal, not the whole automation case.</h2>
                         <p className="site-body mt-3 max-w-3xl">
-                            Use the broader finance automation pillar to connect month-end close
+                            Use the broader finance automation model to connect month-end close
                             work with invoice exceptions, approval evidence, payment controls, and
                             accounting-system handoffs.
                         </p>
                     </div>
                     <Link href="/finance-automation/" className="site-button-secondary">
-                        View the finance automation pillar
+                        View the finance automation model
                     </Link>
                 </div>
             </section>

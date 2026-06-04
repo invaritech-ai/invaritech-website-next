@@ -166,7 +166,7 @@ export default function BlogsPage() {
                         </div>
                         <div data-reveal="block">
                             <p className="site-lead">
-                                Finance automation is where we publish most tools and guides today. Compliance automation stays visible through the older proof base and writing.
+                                Read practical guides on AP controls, invoice workflows, month-end close, cash visibility, compliance evidence, and regulated submissions.
                             </p>
                             <div className="mt-6 flex flex-wrap gap-2">
                                 {pillars.map((category) => (

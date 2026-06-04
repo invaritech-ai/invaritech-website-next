@@ -176,7 +176,7 @@ const resources: Resource[] = [
         pillar: "regops",
         title: "EUDR Compliance Bridge Case Note",
         excerpt:
-            "A proof note for compliance automation: evidence intake, structured validation, submission bridges, retry handling, and audit-ready status tracking.",
+            "A compliance automation case note: evidence intake, structured validation, submission bridges, retry handling, and audit-ready status tracking.",
         category: "guide",
         industry: "Regulated operations",
         format: "Case note",
