@@ -33,7 +33,7 @@ export const Chatbot = () => {
     const bubbleSize = mobileMode ? 60 : 80;
     const bubbleRight = mobileMode ? 12 : 20;
     const bubbleBottom = mobileMode ? 12 : 20;
-    const chatWindowOffset = bubbleBottom + bubbleSize + 10;
+    const chatWindowOffset = mobileMode ? 0 : bubbleBottom + bubbleSize + 10;
     const chatWindowHeight = mobileMode ? 500 : 550;
     const chatWindowWidth = mobileMode ? 360 : 400;
 
@@ -209,12 +209,31 @@ export const Chatbot = () => {
                     /* Mobile Responsiveness */
                     @media (max-width: 640px) {
                         div.fixed {
-                            width: min(92vw, 360px) !important;
-                            right: 12px !important;
-                            bottom: calc(env(safe-area-inset-bottom, 0px) + ${chatWindowOffset}px) !important;
+                            top: 0 !important;
+                            left: 0 !important;
+                            right: 0 !important;
+                            bottom: 0 !important;
+                            width: 100vw !important;
+                            height: 100dvh !important;
+                            max-width: 100vw !important;
+                            max-height: 100dvh !important;
+                            transform: none !important;
+                            border-radius: 0 !important;
+                            z-index: 99999 !important;
                         }
                         .chatbot-container {
-                            max-height: min(68dvh, 500px) !important;
+                            width: 100vw !important;
+                            height: 100dvh !important;
+                            max-width: 100vw !important;
+                            max-height: 100dvh !important;
+                            min-height: 100dvh !important;
+                            border-radius: 0 !important;
+                        }
+                        div.fixed[style*="width"] {
+                            width: 100vw !important;
+                        }
+                        div.fixed[style*="height"] {
+                            height: 100dvh !important;
                         }
                     }
 
