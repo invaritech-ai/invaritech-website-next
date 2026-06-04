@@ -14,6 +14,8 @@ EUDR headlines move around. Guidance updates. Deadline language changes. The ope
 
 Once you model EUDR for what it is, the broader lesson is obvious: regulatory work is a system, not a filing exercise. Manual handling can survive low volume. It falls apart when volume, audit pressure, and exception handling all rise at once.
 
+My view: EUDR is useful to study even if the deadline changes, because the operating shape is permanent. Regulated teams will keep needing evidence intake, deterministic validation, lifecycle state, and audit trails. The specific regulation may shift. The workflow problem does not.
+
 That is true for EUDR, but it is also true for any regulator-facing workflow where you have to prove what was submitted, when it was submitted, why it was accepted, and what changed later.
 
 For EU-based exporters, importers, and compliance teams operating across borders, the same pattern shows up in different forms. The regulation changes. The need for evidence, traceability, and controlled workflows does not.
@@ -231,7 +233,7 @@ If EUDR is material to your operations, treat it as part of a broader regulatory
         role: "Co-founder and CEO",
     },
     publishedAt: "2025-12-03T10:00:00Z",
-    dateModified: "2026-05-15T10:00:00Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: [
         "EUDR",
         "Compliance",

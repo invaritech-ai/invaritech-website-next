@@ -14,6 +14,8 @@ Cash numbers are often technically correct and operationally late. By the time a
 
 That lag reduces decision quality on hiring, payment timing, credit controls, and growth planning. This is where cash flow visibility automation matters: not as dashboard cosmetics, but as infrastructure that keeps cash position and projection data current enough to act on.
 
+My view: most cash visibility projects start too late in the chain. A dashboard cannot rescue stale AP data, late AR updates, or close inputs that only become clean after month-end. The first question is not "which chart should we build?" It is "which upstream finance workflow is making the forecast untrustworthy?"
+
 In Australia and globally, this challenge is common across SMB and mid-market teams that run multi-account operations with mixed systems.
 
 ## Questions Finance Teams Are Actually Asking
@@ -40,7 +42,7 @@ It combines three capabilities:
 
 The objective is simple: reduce reporting lag and improve confidence in a rolling 13 week forecast.
 
-If you need broader context on automation priorities across finance workflows, start from the [homepage](/).
+If you need broader context on automation priorities across finance workflows, start from the [finance automation guide](/finance-automation/).
 
 ## Why Spreadsheet-Only Cash Reporting Breaks at Scale
 
@@ -96,7 +98,7 @@ A common mistake is treating bank integration as all-or-nothing API automation.
 
 In practice, access patterns vary by institution, account setup, and approved data-sharing workflow. Open Banking can help in some contexts, but architecture should not assume universal direct API availability.
 
-A robust approach is:
+A durable approach is:
 
 - use approved API/Open Banking connections where available
 - maintain secure file-ingestion capability as baseline
@@ -322,7 +324,7 @@ If you want to map this for your stack, use [finance automation](/finance-automa
         role: "Co-founder and CEO",
     },
     publishedAt: "2026-03-04T08:00:00Z",
-    dateModified: "2026-05-15T12:00:00Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: [
         "cash flow visibility automation",
         "13 week cash flow forecast",

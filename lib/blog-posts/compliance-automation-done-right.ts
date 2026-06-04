@@ -14,6 +14,8 @@ Organizations evaluating compliance automation software are usually trying to fi
 
 Most vendors promise speed through AI. Few explain how their systems behave under audit. In regulated or audit-sensitive environments, that difference determines whether automation reduces risk or compounds it.
 
+My view: AI is useful in compliance only when it knows its job. It can read, classify, draft, and flag. It should not silently decide, submit, or mutate regulator-facing records. The system needs a deterministic spine, even when AI helps at the edges.
+
 If you want the operating model behind the technical choice, read [RegOps strategy](/blog/regops-strategy/). If you want the integration layer, read [Anatomy of a RegOps Bridge](/blog/regops-technical/).
 
 ---
@@ -127,10 +129,8 @@ Not every workflow justifies a full infrastructure build. The disciplined approa
 
 For teams unsure whether their compliance workflow justifies custom infrastructure, the first step is structured evaluation:
 
-- **[Contact](/contact/)** (map your workflow gaps with the engineering team)
-- **[Book a Workflow Review](/contact/)** (quantified diagnostic, diagnose first)
-- **[Finance Ops Sprint](/contact/)** (ship a controlled workflow in 30 days)
-- **[EUDR Compliance Bridge](/work/eudr-compliance-bridge/)** (integrate at depth for a real regulated workflow)
+- **[Contact](/contact/)** (map one workflow with the engineering team)
+- **[EUDR Compliance Bridge](/work/eudr-compliance-bridge/)** (see a real regulated workflow pattern)
 
 Use controlled and measurable execution with explicit governance boundaries.
 
@@ -147,7 +147,7 @@ Deterministic logic, transparent audit trails, and controlled failure handling a
         role: "Co-founder and CEO",
     },
     publishedAt: "2025-10-30T10:00:00Z",
-    dateModified: "2026-05-15T10:00:00Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: ["ComplianceAutomation", "RegOps", "Compliance", "Automation", "Auditing", "Risk", "Regulatory operations"],
     coverImage: "/blog/compliance-done-right.webp",
 };

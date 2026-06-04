@@ -12,7 +12,7 @@ export const aiInvoiceDataExtraction: BlogPost = {
         role: "Co-founder and CEO",
     },
     publishedAt: "2026-03-02T08:00:00.000Z",
-    dateModified: "2026-05-14T12:00:00.000Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     coverImage: "/images/HiddenTimeTax.webp",
     tags: [
         "invoice data extraction",
@@ -31,6 +31,8 @@ Most finance teams lose more time to invoice rework than they realize. Late clos
 That is true in Australia and globally. Invoices arrive through email, supplier portals, shared drives, and scans from regional branches. If intake quality is inconsistent, every downstream step becomes rework: finance teams spend days fixing fields, resolving exceptions, and validating totals that should have been verified on arrival.
 
 This is why invoice data extraction sits at the front of serious accounts payable automation. Not as a shiny AI layer, but as a deterministic data pipeline with explicit controls.
+
+My view: invoice extraction should be easy to try and hard to over-trust. I am happy to make a simple extractor free because every AP team should be able to see what structured invoice data looks like. The paid value starts later, when extraction connects to company-specific exception rules, approval logic, supplier history, and the accounting system.
 
 ## What Accounts Payable Automation Actually Means
 
@@ -69,6 +71,8 @@ A production-grade extraction workflow should do four things before any posting 
 This is where teams shift from "document handling" to controlled operations design.
 
 If you want to test this on your own documents, use the **[Invoice Extractor](/resources/invoice-extractor/)** and inspect the structured output against your current manual process.
+
+Do not judge the tool only by whether it reads one invoice correctly. Judge whether the output gives AP a cleaner starting point for duplicate checks, approval routing, three-way match review, and payment release decisions.
 
 ## Deterministic Architecture for Invoice Processing Automation
 
@@ -196,7 +200,7 @@ If your team cannot complete these seven steps clearly, pause implementation and
 
 ## Control Matrix Teams Usually Miss
 
-A control matrix is not a compliance artifact. It is the governance layer that turns invoice processing into an engineerable, auditable workflow — the difference between AP that passes an audit and AP that creates one.
+A control matrix is not a compliance artifact. It is the governance layer that turns invoice processing into an engineerable, auditable workflow. It is the difference between AP that passes an audit and AP that creates one.
 
 Most pilot projects focus on extraction accuracy and ignore control design. That is a mistake. In production AP, a control matrix matters as much as model quality.
 
