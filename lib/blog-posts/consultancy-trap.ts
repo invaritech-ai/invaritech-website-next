@@ -20,6 +20,8 @@ The firm depends on experienced consultants who remember portal quirks, filing e
 
 If one person leaving breaks you, you do not have a business. You have dependency.
 
+Our view: the best consultants should not spend their week proving that a spreadsheet, portal, and inbox agree with each other. That work should be systemized. Their time should go into judgment, client advice, exception handling, and risk interpretation.
+
 For Australian firms working across finance, environment, and compliance delivery, this is the point where growth starts to feel heavier instead of more profitable.
 
 ---
@@ -116,7 +118,7 @@ You shift humans toward exception handling and advisory work.
 
 This is RegOps: operational infrastructure that supports revenue expansion without increasing fragility.
 
-In practice, the delivery side breaks into two tracks. The [workflow automation layer](/work/) handles repeatable pipeline logic — intake, routing, status transitions, scheduled jobs. The [integration layer](/work/eudr-compliance-bridge/) handles the connections between your intake channels, approval workflows, and submission targets. Both sit over your existing systems without displacing them.
+In practice, the delivery side breaks into two tracks. The [workflow automation layer](/work/) handles repeatable pipeline logic: intake, routing, status transitions, scheduled jobs. The [integration layer](/work/eudr-compliance-bridge/) handles the connections between your intake channels, approval workflows, and submission targets. Both sit over your existing systems without displacing them.
 
 If you want the architecture pattern behind this shift, see **[Anatomy of a RegOps Bridge](/blog/regops-technical/)**.
 If you want the operating model, read **[RegOps strategy](/blog/regops-strategy/)**.
@@ -160,11 +162,7 @@ Before hiring again, quantify hours spent on repeatable workflow steps, rework f
 
 If that mapping is difficult, treat that as a diagnostic signal.
 
-Start with:
-
-- **[Contact](/contact/)** (map your workflow gaps)
-- **[Book a Workflow Review](/contact/)**
-- **[Finance Ops Sprint](/contact/)** (30 days)
+Start with **[Contact](/contact/)** and map the workflow that creates the most repeated rework.
 
 This approach does not replace consultants. It protects growth capacity by reducing workflow fragility.
     `,
@@ -173,7 +171,7 @@ This approach does not replace consultants. It protects growth capacity by reduc
         role: "Founder and Director",
     },
     publishedAt: "2025-11-20T10:00:00Z",
-    dateModified: "2026-05-15T10:00:00Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: ["ConsultancyGrowth", "RegOps", "Scalability", "ESG", "Automation", "Regulatory operations"],
     coverImage: "/blog/consultancy-trap.webp",
 };

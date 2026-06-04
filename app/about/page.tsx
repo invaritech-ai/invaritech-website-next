@@ -1,28 +1,28 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ArrowRight, ClipboardCheck, Handshake, PenTool, ShieldCheck } from "lucide-react";
-import { BOOK_MEETING_URL, RULE_TABLE_CTA } from "@/lib/marketing";
+import { BOOK_MEETING_URL } from "@/lib/marketing";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "Founder-Led AP Automation Team",
+    title: { absolute: "About INVARITECH | Finance & Compliance Automation" },
     description:
-        "INVARITECH works with one client at a time to design and deliver accounts payable automation, invoice approval workflow controls, and auditable finance operations.",
+        "A founder-led team building finance and compliance automation with fixed scope, written acceptance criteria, and managed support.",
     openGraph: {
-        title: "About INVARITECH | Founder-Led Accounts Payable Automation",
+        title: "About INVARITECH | Finance & Compliance Automation",
         description:
-            "Founder-led accounts payable automation for finance teams. Fixed scope, measurable acceptance criteria, and ongoing managed support.",
+            "A founder-led team with a Goldman Sachs reconciliation track record. Fixed-scope automation for finance and compliance teams.",
         url: "https://www.invaritech.ai/about/",
         type: "website",
-        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "About INVARITECH - Founder-Led Accounts Payable Automation" }],
+        images: [{ url: "/og-image.png", width: 1376, height: 768, alt: "About INVARITECH - Finance & Compliance Automation" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "About INVARITECH | Founder-Led Accounts Payable Automation",
+        title: "About INVARITECH | Finance & Compliance Automation",
         description:
-            "One client at a time. Fixed-scope accounts payable automation with measurable acceptance criteria and ongoing managed support.",
+            "Founder-led workflow automation with measurable acceptance criteria and ongoing managed support.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -59,14 +59,14 @@ export default function AboutPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Founder-led service model</p>
+                                <p className="site-eyebrow-text">A small team. Serious work.</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical accounts payable automation, led by the people who scope it.
+                                Founder-led finance automation. Built in Asia, delivered worldwide.
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            We help finance teams strengthen invoice approvals, duplicate payment checks, and supplier payment controls around the systems they already use.
+                            We build finance and compliance workflows around the tools teams already use. One workflow first. Fixed scope. Written acceptance criteria. Managed support after delivery.
                         </p>
                     </div>
                 </div>
@@ -77,10 +77,10 @@ export default function AboutPage() {
                     <div>
                         <p className="mb-5 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">How we work</p>
                         <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">
-                            Fixed scope. Measurable outcomes. Managed after delivery.
+                            Fixed scope. Written outcomes. Managed after delivery.
                         </h2>
                         <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                            We start with one workflow, one owner, and clear acceptance criteria. Then we build the control around the systems your finance team already uses.
+                            We start with one workflow, one owner, and acceptance criteria both parties sign off on before work begins. Then we build the control around the systems your finance team already uses.
                         </p>
                     </div>
 
@@ -102,10 +102,12 @@ export default function AboutPage() {
                 <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
                     <div className="relative border border-primary/20 bg-primary/[0.04] p-8 md:p-10">
                         <blockquote className="font-editorial text-3xl font-semibold leading-tight text-foreground md:text-4xl">
-                            &ldquo;The people who scope your invoice approval workflow stay close to the build.&rdquo;
+                            &ldquo;We earn trust through the work, not the introduction.&rdquo;
                         </blockquote>
                         <p className="mt-6 text-muted-foreground leading-relaxed">
-                            That continuity matters when work touches payment approvals, supplier bank detail changes, audit evidence, and daily finance operations.
+                            A founder stays close to the workflow from scoping through support.
+                            We keep scope narrow, criteria written, and delivery accountable to
+                            the control outcome.
                         </p>
                         <div className="mt-8 flex items-center gap-4">
                             <Avatar className="h-12 w-12 border border-primary/30">
@@ -124,10 +126,17 @@ export default function AboutPage() {
                         <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Why this model exists</h2>
                         <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
                             <p>
-                                Accounts payable automation is not only a software problem. The work also depends on which invoice exceptions should block payment, what evidence matters, who owns each approval, and how the final decision can be reviewed later.
+                                Finance and regulated operations problems are not only software
+                                problems. They depend on which exceptions should block action,
+                                what evidence matters,
+                                who owns each approval, and how the final decision can be
+                                reconstructed six months later.
                             </p>
                             <p>
-                                We keep each engagement narrow so one workflow objective can be owned properly. After the first control is live, managed support helps it keep working as rules, vendors, teams, and edge cases change.
+                                We keep each engagement narrow so one workflow can be owned
+                                properly. After the first control is live, managed support
+                                keeps it working as rules, vendors, teams, and edge cases
+                                change over time.
                             </p>
                         </div>
                     </div>
@@ -137,26 +146,26 @@ export default function AboutPage() {
             <section className="border-y border-border bg-card py-16 md:py-24">
                 <div className="mx-auto max-w-7xl px-6">
                     <p className="mb-5 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">The people</p>
-                    <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Direct principal involvement</h2>
+                    <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">You work with founders, not account managers</h2>
                     <div className="mt-12 grid gap-12 lg:grid-cols-3">
                         <FounderCard
                             name="Aditi Garg"
                             role="Director & Founder"
                             image="/aditi-1.webp"
-                            bio="Operations leader with experience at Goldman Sachs, Uber, and BMW. Helps teams turn fragmented workflows into clearer, more governed operating processes."
+                            bio="Built reconciliation and payment control systems used by Goldman Sachs. Delivered operational programs for Uber and BMW. At Invaritech, she scopes every engagement and stays close to delivery."
                         />
                         <FounderCard
                             name="Abhishek Agarwal"
                             role="Co-founder"
                             image="/abhishek.webp"
-                            bio="Founder of Codeacious Tech. Leads hands-on delivery for enterprise and e-commerce systems, including architecture programs tied to $80M+ in validated value."
+                            bio="Founder of Codeacious Tech. Delivered enterprise systems across finance, retail, and regulated industries, including architecture programs tied to A$80M+ in client outcomes."
                         />
                         {SHOW_AVISHEK && (
                             <FounderCard
                                 name="Avishek Majumder"
                                 role="Co-founder & CEO"
                                 image="/avishek.webp"
-                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for regulated and compliance-heavy environments."
+                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for compliance-heavy environments. Specialises in anomaly detection and predictive systems."
                             />
                         )}
                     </div>
@@ -166,21 +175,22 @@ export default function AboutPage() {
             <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
                 <div className="grid gap-8 border-y border-border py-10 md:grid-cols-[1fr_auto] md:items-center">
                     <div>
-                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real accounts payable bottleneck.</h2>
+                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real finance workflow.</h2>
                         <p className="mt-3 text-muted-foreground">
-                            View the rule table first, or book a call if you already know which invoice approval workflow or supplier exception needs attention.
+                            Book the diagnostic if you already know which workflow needs attention.
                         </p>
                     </div>
                     <div className="flex flex-col gap-3 sm:flex-row">
                         <Link
-                            href="/resources/supplier-payment-control-rule-table/interactive/"
+                            href="/contact/?diagnostic=1&src=about"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            {RULE_TABLE_CTA} <ArrowRight className="ml-2 size-4" />
+                            Book a Finance Workflow Diagnostic <ArrowRight className="ml-2 size-4" />
                         </Link>
                         <Link
                             href={BOOK_MEETING_URL}
                             target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-flex min-h-12 items-center justify-center border border-border px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
                             Book a Scoping Call

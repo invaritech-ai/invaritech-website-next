@@ -16,12 +16,8 @@ import {
     Mail,
     CheckCircle2,
     ArrowRight,
-    MapPin,
-    PhoneCall,
-    Building2,
     Globe2,
 } from "lucide-react";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 
 interface FormData {
     name: string;
@@ -38,64 +34,12 @@ interface FormState {
     error: string | null;
 }
 
-interface OfficeLocation {
-    region: string;
-    address: string[];
-    phone?: string;
-    phoneHref?: string;
-    email?: string;
+interface ContactSectionProps {
+    scanRequested?: boolean;
+    diagnosticRequested?: boolean;
 }
 
-const OFFICE_LOCATIONS: OfficeLocation[] = [
-    {
-        region: "Hong Kong",
-        address: [
-            "15/F, 69 Jervois Street",
-            "Sheung Wan",
-            "Hong Kong Island",
-        ],
-        phone: "+852 5744 5060",
-        phoneHref: "+85257445060",
-        email: "hello@invaritech.ai",
-    },
-    {
-        region: "US California",
-        address: ["34786 Blackstone Way,", "California 94555"],
-        phone: "+1 (408) 821-8283",
-        phoneHref: "+14088218283",
-        email: "hello@codeacious.tech",
-    },
-    {
-        region: "US Dover",
-        address: ["8 The Green STE A,", "Dover, DE 19901"],
-        phone: "+1 (408) 821-8283",
-        phoneHref: "+14088218283",
-        email: "hello@codeacious.tech",
-    },
-    {
-        region: "India",
-        address: [
-            "AltF CoWorking Space, Sector 142,",
-            "Noida, Uttar Pradesh 201304",
-        ],
-        phone: "+91 94100 60107",
-        phoneHref: "+919410060107",
-        email: "hello@codeacious.tech",
-    },
-    {
-        region: "Malaysia",
-        address: [
-            "6, Danau Desa Business Center,",
-            "Jalan 4/109F, Taman Danau Desa,",
-            "58100 Kuala Lumpur",
-        ],
-        phone: "+603 7972 5186",
-        phoneHref: "+60379725186",
-        email: "info@crestsolution.com.my",
-    },
-];
-
-export default function ContactSection() {
+export default function ContactSection({ scanRequested = false, diagnosticRequested = false }: ContactSectionProps) {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -208,9 +152,9 @@ export default function ContactSection() {
                                 <CheckCircle2 className="h-12 w-12 text-primary" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 text-foreground">
+                        <h2 className="text-2xl font-bold mb-4 text-foreground">
                             Message Sent.
-                        </h3>
+                        </h2>
                         <p className="text-muted-foreground mb-8 text-lg">
                             We&apos;ve received your message and will get back to you shortly.
                         </p>
@@ -223,7 +167,7 @@ export default function ContactSection() {
                                 })
                             }
                             variant="outline"
-                            className="w-full sm:w-auto rounded-none border-border"
+                            className="w-full sm:w-auto border-border"
                         >
                             Send Another Message
                         </Button>
@@ -242,13 +186,13 @@ export default function ContactSection() {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-2xl font-semibold mb-4 text-foreground">
-                                    Why partner with Invaritech for accounts payable automation?
+                                    Why work with Invaritech on finance workflow automation?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    Invaritech leads architecture, delivery, and accountability for
-                                    invoice approval workflow automation, duplicate payment prevention,
-                                    and payment fraud controls. Our partner engineering network extends
-                                    execution capacity, but you always have one accountable owner.
+                                    Invaritech scopes, builds, and supports workflow controls,
+                                    exception routing, reporting bridges, and evidence capture for
+                                    finance and regulated operations. A founder stays accountable
+                                    from scoping through delivery.
                                 </p>
                             </div>
 
@@ -258,25 +202,36 @@ export default function ContactSection() {
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1 text-foreground">Book a Meeting</h3>
+                                        <h3 className="font-medium mb-1 text-foreground">
+                                            {diagnosticRequested
+                                                ? "Book the Diagnostic"
+                                                : scanRequested
+                                                  ? "Request the Scan"
+                                                  : "Book a Diagnostic"}
+                                        </h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Skip the email loop and bring one
-                                            real accounts payable workflow
-                                            problem to a focused scoping session.
+                                            {diagnosticRequested
+                                                ? "Use the form to bring one finance or regulated operations workflow to a focused diagnostic."
+                                                : scanRequested
+                                                  ? "Use the form to start the free workflow controls scan. We will confirm the export, NDA, and next step before asking for data."
+                                                  : "Skip the email loop and bring one real finance or regulated operations workflow to a focused diagnostic."}
                                         </p>
                                         <Button
                                             asChild
                                             variant="default"
-                                            className="group rounded-none"
+                                            className="group"
                                         >
-                                            <a
-                                                href={BOOK_MEETING_URL}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                {BOOK_MEETING_CTA}
-                                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                            </a>
+                                            {diagnosticRequested || scanRequested ? (
+                                                <Link href="#contact-form">
+                                                    Use the Form
+                                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </Link>
+                                            ) : (
+                                                <Link href="/contact/?diagnostic=1">
+                                                    Share a Workflow
+                                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </Link>
+                                            )}
                                         </Button>
                                     </div>
                                 </div>
@@ -307,10 +262,18 @@ export default function ContactSection() {
                         <Card className="rounded-none border border-border bg-card  shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
                                 <h3 className="text-xl font-semibold mb-2 text-foreground">
-                                    Send us a message
+                                    {diagnosticRequested
+                                        ? "Book the finance workflow diagnostic"
+                                        : scanRequested
+                                          ? "Request the free workflow controls scan"
+                                          : "Tell us about your workflow"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Tell us which invoice approval workflow, supplier reconciliation, or payment risk process needs attention.
+                                    {diagnosticRequested
+                                        ? "Tell us which finance or regulated operations workflow you want to map first."
+                                        : scanRequested
+                                          ? "Tell us which system you use and the best way to handle the NDA before you send your export."
+                                          : "Tell us which workflow, exception path, reporting bridge, or evidence gap needs attention."}
                                 </p>
                             </div>
 
@@ -363,7 +326,7 @@ export default function ContactSection() {
                                             type="text"
                                             id="country"
                                             name="country"
-                                            placeholder="United States"
+                                            placeholder="Singapore"
                                             defaultValue={formData.country}
                                             onChange={handleInputChange}
                                             required
@@ -387,12 +350,14 @@ export default function ContactSection() {
 
                                 <div className="space-y-2">
                                     <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                                        What would you like to automate or build? *
+                                        Which workflow needs attention? *
                                     </Label>
                                     <Textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Example: duplicate payment prevention, supplier statement reconciliation, or vendor bank detail verification workflow."
+                                        placeholder={scanRequested
+                                            ? "Example: I want the free workflow controls scan. We use NetSuite and can provide a recent export after NDA."
+                                            : "Example: month-end exception handling, reporting bridge, approval evidence, or regulated submission workflow."}
                                         defaultValue={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}
@@ -409,20 +374,26 @@ export default function ContactSection() {
                                 />
 
                                 {formState.error && (
-                                    <div className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2">
+                                    <div
+                                        role="alert"
+                                        aria-live="polite"
+                                        className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2"
+                                    >
                                         <span className="font-mono font-medium">ERR:</span> {formState.error}
                                     </div>
                                 )}
 
                                 <Button
                                     type="submit"
-                                    disabled={formState.isSubmitting || !turnstileToken}
-                                    className="w-full rounded-none"
+                                    disabled={formState.isSubmitting}
+                                    className="w-full"
                                     size="lg"
                                 >
                                     {formState.isSubmitting
                                         ? "Sending..."
-                                        : "Send Message"}
+                                        : diagnosticRequested
+                                          ? "Request Workflow Diagnostic"
+                                          : scanRequested ? "Request Workflow Controls Scan" : "Send Message"}
                                 </Button>
                             </form>
                         </Card>
@@ -430,86 +401,28 @@ export default function ContactSection() {
                 </div>
 
                 <div className="mt-16 lg:mt-20">
-                    <div className="relative overflow-hidden rounded-none border border-border/70 bg-gradient-to-br from-card via-card/90 to-primary/5 p-6 sm:p-8 md:p-10">
-                        <div
-                            aria-hidden
-                            className="pointer-events-none absolute -right-20 -top-20 h-52 w-52 rounded-none bg-primary/20 blur-3xl"
-                        />
-                        <div
-                            aria-hidden
-                            className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-none bg-secondary/20 blur-3xl"
-                        />
-
-                        <div className="relative mb-8 sm:mb-10">
-                            <div className="mb-3 inline-flex items-center gap-2 rounded-none border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-                                <Globe2 className="h-3.5 w-3.5" />
-                                Invaritech-Led Delivery Network
+                    <div className="relative overflow-hidden border border-border/70 bg-card p-6 sm:p-8 md:p-10">
+                        <div className="flex items-start gap-4">
+                            <div className="mt-1 shrink-0 rounded-none bg-primary/10 border border-border p-2">
+                                <Globe2 className="h-5 w-5 text-primary" />
                             </div>
-                            <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
-                                Global Office Addresses
-                            </h3>
-                            <p className="max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-                                Invaritech remains the primary commercial and
-                                delivery lead. These offices represent partner
-                                companies in our operating network across APAC
-                                and North America.
-                            </p>
-                        </div>
-
-                        <div className="relative grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
-                            {OFFICE_LOCATIONS.map((office) => (
-                                <article
-                                    key={office.region}
-                                    className="group relative overflow-hidden rounded-none border border-border/70 bg-background/75 p-5 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2">Remote delivery, founder-led support</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                                    We&apos;re based in Asia and deliver remotely for teams that need
+                                    finance and compliance workflows around the tools they already use.
+                                    Every engagement is handled directly by a founder over video
+                                    call and async communication, with full documentation and
+                                    evidence trails throughout.
+                                </p>
+                                <a
+                                    href="mailto:hello@invaritech.ai"
+                                    className="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:underline font-mono"
                                 >
-                                    <div
-                                        aria-hidden
-                                        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(46,143,123,0.18),transparent_45%)]"
-                                    />
-                                    <div className="relative">
-                                        <div className="mb-4 flex items-center gap-2">
-                                            <div className="rounded-none bg-primary/10 p-2">
-                                                <Building2 className="h-4 w-4 text-primary" />
-                                            </div>
-                                            <h4 className="text-lg font-semibold">
-                                                {office.region}
-                                            </h4>
-                                        </div>
-
-                                        <div className="mb-4 flex items-start gap-2.5">
-                                            <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary/80" />
-                                            <address className="not-italic text-sm leading-relaxed text-foreground/85">
-                                                {office.address.map((line) => (
-                                                    <div key={line}>{line}</div>
-                                                ))}
-                                            </address>
-                                        </div>
-
-                                        {(office.phone || office.email) && (
-                                            <div className="space-y-2 border-t border-border/60 pt-3 text-sm">
-                                                {office.phone && (
-                                                    <a
-                                                        href={`tel:${office.phoneHref ?? office.phone}`}
-                                                        className="flex items-center gap-2 text-primary hover:underline"
-                                                    >
-                                                        <PhoneCall className="h-3.5 w-3.5" />
-                                                        {office.phone}
-                                                    </a>
-                                                )}
-                                                {office.email && (
-                                                    <a
-                                                        href={`mailto:${office.email}`}
-                                                        className="flex items-center gap-2 text-primary hover:underline break-all"
-                                                    >
-                                                        <Mail className="h-3.5 w-3.5" />
-                                                        {office.email}
-                                                    </a>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                </article>
-                            ))}
+                                    <Mail className="h-3.5 w-3.5" />
+                                    hello@invaritech.ai
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

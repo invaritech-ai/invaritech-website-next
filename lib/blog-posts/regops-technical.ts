@@ -16,6 +16,8 @@ In regulated workflows, the hard part is not collecting forms. The hard part is 
 
 A RegOps Bridge is the layer that makes that possible.
 
+My view: a bridge is valuable because it is boring in the right places. It should preserve the tools a team already trusts, then make the handoffs between them explicit, logged, and repeatable. The bridge should not become another place where hidden logic accumulates.
+
 ## Integration Over Replatforming
 
 Most regulatory teams do not need new platforms. They need controlled integration.
@@ -175,16 +177,16 @@ If your workflow is integration-heavy and regulator-facing, treat it as infrastr
 - **[EUDR Compliance Bridge](/work/eudr-compliance-bridge/)**
 - **[Compliance Automation Done Right](/blog/compliance-automation-done-right/)**
 - **[RegOps strategy](/blog/regops-strategy/)**
-- **[Finance Ops Sprint](/contact/)** (30 days)
+- **[Contact](/contact/)**
 
-Build one controlled wedge first, then expand.
+Build one controlled workflow first, then expand.
     `,
     author: {
         name: "Avishek Majumder",
         role: "Co-founder and CEO",
     },
     publishedAt: "2025-11-10T10:00:00Z",
-    dateModified: "2026-05-15T10:00:00Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: ["RegTech", "API", "Integration", "WorkflowAutomation", "EUDR", "RegOps", "Regulatory operations", "ComplianceAutomation"],
     coverImage: "/blog/regops-technical.webp",
 };

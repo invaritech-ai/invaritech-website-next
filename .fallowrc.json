@@ -1,4 +1,7 @@
 {
+    "entry": [
+        "remotion/index.ts"
+    ],
     "ignoreDependencyOverrides": [
         { "package": "solid-js" },
         { "package": "seroval" },

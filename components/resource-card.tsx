@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, Clock } from "lucide-react";
-import type { Resource, ResourceCategory } from "@/lib/resources";
+import { ArrowRight } from "lucide-react";
+import type { Resource, ResourceCategory, ResourcePillar } from "@/lib/resources";
 
 const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
     "rule-table": "Rule Table",
@@ -11,8 +11,12 @@ const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
     tool: "Tool",
 };
 
+const PILLAR_DISPLAY: Record<ResourcePillar, string> = {
+    "finance-ops": "Finance Automation",
+    regops: "Compliance Automation",
+};
+
 export default function ResourceCard({ resource }: { resource: Resource }) {
-    const isComingSoon = resource.access === "coming-soon";
     const ctaLabel =
         resource.category === "tool"
             ? resource.slug === "cost-to-close-calculator"
@@ -22,17 +26,13 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
               ? "View Rule Table"
               : resource.category === "guide"
                 ? "Read Guide"
-                : `View ${CATEGORY_DISPLAY[resource.category]}`;
+                : resource.category === "checklist"
+                  ? "Open Checklist"
+                  : `View ${CATEGORY_DISPLAY[resource.category]}`;
 
     return (
         <article
-            style={isComingSoon ? { opacity: 0.6 } : undefined}
-            className={[
-                "flex h-full flex-col gap-5 bg-background p-6",
-                isComingSoon
-                    ? "cursor-default"
-                    : "transition-colors hover:bg-card",
-            ].join(" ")}
+            className="flex h-full flex-col gap-5 bg-background p-6 transition-colors hover:bg-card"
             aria-label={resource.title}
         >
             {/* Badges */}
@@ -40,12 +40,9 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <span className="border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-primary">
                     {CATEGORY_DISPLAY[resource.category]}
                 </span>
-                {isComingSoon && (
-                    <span className="flex items-center gap-1 border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
-                        <Clock className="size-3" aria-hidden="true" />
-                        Coming Soon
-                    </span>
-                )}
+                <span className="border border-border px-2 py-0.5 text-[10px] font-mono uppercase tracking-[0.18em] text-foreground-subtle">
+                    {PILLAR_DISPLAY[resource.pillar]}
+                </span>
             </div>
 
             {/* Title + excerpt */}
@@ -67,7 +64,7 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
             </dl>
 
             {/* CTA — only for available resources with a subpage */}
-            {!isComingSoon && resource.subpageHref && (
+            {resource.subpageHref && (
                 <Link
                     href={resource.subpageHref}
                     className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-primary transition-colors hover:text-foreground"

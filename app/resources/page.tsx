@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "AP Automation Resources & Templates",
+    title: "Free Finance Automation Tools for AP Controls and Invoice Workflows",
     description:
-        "Practical accounts payable automation resources, including invoice approval workflow guides, duplicate payment prevention checklists, supplier statement reconciliation support, and freight invoice audit tools.",
+        "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Accounts Payable Automation Resources — INVARITECH",
+        title: "Free Finance Automation Tools for AP Controls and Invoice Workflows - INVARITECH",
         description:
-            "Rule tables, guides, and checklists for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and freight invoice audit controls.",
+            "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Accounts Payable Automation Resources",
+                alt: "Free Finance Automation Tools",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Accounts Payable Automation Resources — INVARITECH",
+        title: "Free Finance Automation Tools for AP Controls and Invoice Workflows - INVARITECH",
         description:
-            "Rule tables, guides, and checklists for invoice approval workflow, duplicate payment prevention, supplier statement reconciliation, and freight invoice audit.",
+            "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
         images: ["/og-image.png"],
     },
 };
@@ -49,6 +49,27 @@ const breadcrumbSchema = {
     ],
 };
 
+const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Free Finance Automation Tools for AP Controls and Invoice Workflows",
+    description:
+        "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
+    url: `${BASE}/resources/`,
+    isPartOf: {
+        "@type": "WebSite",
+        name: "INVARITECH",
+        url: BASE,
+    },
+    about: [
+        "finance automation tools",
+        "accounts payable controls",
+        "three-way match",
+        "invoice processing automation",
+        "invoice automation tools",
+    ],
+};
+
 export default function ResourcesPage() {
     return (
         <>
@@ -57,6 +78,13 @@ export default function ResourcesPage() {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(breadcrumbSchema),
+                }}
+            />
+            <Script
+                id="resources-webpage-schema"
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(webpageSchema),
                 }}
             />
             <ResourceLibraryClient />

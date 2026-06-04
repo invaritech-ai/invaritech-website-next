@@ -4,7 +4,6 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
 import Script from "next/script";
 import "./globals.css";
-import "@fontsource-variable/source-sans-3";
 import { LenisScroll } from "@/components/ui/LenisScroll";
 import { HeroHeader } from "@/components/header";
 import SiteSpotlight from "@/components/hero-spotlight";
@@ -41,6 +40,34 @@ const geistMono = localFont({
     fallback: ["monospace"],
 });
 
+const sourceSans = localFont({
+    src: [
+        {
+            path: "./fonts/SourceSans3-Latin-Variable.woff2",
+            weight: "200 900",
+            style: "normal",
+        },
+    ],
+    variable: "--font-source-sans",
+    display: "swap",
+    preload: true,
+    fallback: ["system-ui", "arial"],
+});
+
+const sourceSerif = localFont({
+    src: [
+        {
+            path: "./fonts/SourceSerif4-Latin-Variable.woff2",
+            weight: "200 900",
+            style: "normal",
+        },
+    ],
+    variable: "--font-source-serif",
+    display: "swap",
+    preload: true,
+    fallback: ["Georgia", "Cambria", "Times New Roman"],
+});
+
 const metadataVerification: Metadata["verification"] = {
     ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
         ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
@@ -55,23 +82,25 @@ const metadataVerification: Metadata["verification"] = {
 
 export const metadata: Metadata = {
     title: {
-        default: "Payment Control Design for Australian Finance Teams | INVARITECH",
+        default: "Finance Automation & Compliance Automation | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "Founder-led payment control design for Australian finance teams. Reduce manual exceptions, tighten approvals, and reduce dollar leakage without changing systems.",
+        "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
     keywords: [
         "INVARITECH",
-        "payment control design",
-        "finance operations",
-        "accounts payable controls",
-        "invoice exception management",
-        "supplier payment controls",
-        "freight invoice variance",
-        "payment approval workflow",
-        "audit trail automation",
-        "Australian finance teams",
-        "finance ops exceptions",
+        "finance automation",
+        "compliance automation",
+        "invoice automation",
+        "accounts payable automation",
+        "invoice approval software",
+        "invoice approval workflow",
+        "invoice processing automation",
+        "compliance automation software",
+        "financial close automation",
+        "Xero AP automation",
+        "regulatory compliance automation",
+        "audit trail software",
     ],
     authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
@@ -98,26 +127,26 @@ export const metadata: Metadata = {
     },
     openGraph: {
         type: "website",
-        locale: "en_AU",
+        locale: "en",
         url: "https://www.invaritech.ai",
-        title: "Payment Control Design for Australian Finance Teams | INVARITECH",
+        title: "Finance Automation & Compliance Automation | INVARITECH",
         description:
-            "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
+            "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
         siteName: "INVARITECH",
         images: [
             {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Payment Control Design for Australian Finance Teams | INVARITECH",
+                alt: "Finance Automation & Compliance Automation | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Payment Control Design for Australian Finance Teams | INVARITECH",
+        title: "Finance Automation & Compliance Automation | INVARITECH",
         description:
-            "Founder-led payment control design for Australian finance teams reducing invoice exceptions, approval gaps, and payment leakage without changing systems.",
+            "Finance automation and compliance automation for document-heavy teams, built around the systems they already use.",
         images: ["/og-image.png"],
         site: "@invaritechai",
     },
@@ -126,9 +155,12 @@ export const metadata: Metadata = {
     classification: "Business",
     referrer: "origin-when-cross-origin",
     icons: {
-        icon: "/favicon.ico",
+        icon: [
+            { url: "/invaritech-icon.svg", type: "image/svg+xml" },
+            { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+        ],
         shortcut: "/favicon.ico",
-        apple: "/favicon.ico",
+        apple: "/icon-192.png",
     },
 };
 
@@ -138,7 +170,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en-AU" suppressHydrationWarning className="light">
+        <html lang="en" suppressHydrationWarning className="light">
             <head>
                 <meta
                     name="facebook-domain-verification"
@@ -188,7 +220,7 @@ export default function RootLayout({
                 </Script>
             </head>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
+                className={`${sourceSans.variable} ${sourceSerif.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
             >
                 <ThemeProvider
                     attribute="class"
@@ -222,8 +254,12 @@ export default function RootLayout({
                     `}
                 </Script>
 
-                <Analytics />
-                <SpeedInsights />
+                {process.env.NODE_ENV === "production" ? (
+                    <>
+                        <Analytics />
+                        <SpeedInsights />
+                    </>
+                ) : null}
             </body>
         </html>
     );

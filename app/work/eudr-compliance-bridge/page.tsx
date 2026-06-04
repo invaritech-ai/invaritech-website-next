@@ -1,20 +1,19 @@
 import { ArrowLeft, ArrowRight, CheckCircle2, ShieldCheck, Zap, Database, Globe } from "lucide-react";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import { PageLayout } from "@/components/page-layout";
 import { TextEffect } from "@/components/ui/text-effect";
-import { MagneticButton } from "@/components/ui/MagneticButton";
+import { primaryDiagnosticCta } from "@/lib/site-content/brand";
 
 export const metadata: Metadata = {
     title: "EUDR Compliance Bridge Case Study",
     description:
-        "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
+        "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
     openGraph: {
-        title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
+        title: "EUDR Compliance Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators. API integration, validation, audit logs, and controlled retries — proof of disciplined regulated workflow delivery.",
+            "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -27,9 +26,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "EUDR Compliance Bridge | Regulated Workflow Automation | INVARITECH",
+        title: "EUDR Compliance Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "EUDR compliance automation for high-volume commodity operators with validation, audit logs, and controlled retries.",
+            "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic validation and retry-safe processing.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -54,15 +53,9 @@ export default function EudrCaseStudyPage() {
 
                 {/* Hero Section */}
                 <div className="relative mb-32">
-                    <div className="absolute top-0 left-0 -z-10 opacity-20 select-none pointer-events-none">
-                        <span className="text-[12rem] md:text-[20rem] font-bold leading-none tracking-tighter text-muted-foreground whitespace-nowrap blur-3xl">
-                            COMPLIANCE
-                        </span>
-                    </div>
-
                     <div className="flex flex-col gap-2 mb-8">
                          <span className="font-mono text-primary text-sm tracking-widest uppercase">
-                            Automation & Compliance
+                            Compliance automation proof case
                         </span>
                         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mix-blend-difference mb-6">
                             <TextEffect per="char" preset="fade">
@@ -70,17 +63,16 @@ export default function EudrCaseStudyPage() {
                             </TextEffect>
                         </h1>
                         <h2 className="text-2xl md:text-4xl font-light text-muted-foreground max-w-3xl">
-                             100,000+ Submissions <span className="text-foreground">Per Month</span>.
-                             <br/>
-                             Zero Manual Data Entry.
+                             Compliance bridge for high-volume, audit-ready regulatory submissions.
                         </h2>
                     </div>
 
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl border-l-2 border-primary/30 pl-6 mt-12">
+                        The EUDR bridge proves Invaritech can build deterministic workflow infrastructure for regulated operations: structured validation, API bridges, submission evidence, and retry-safe processing.{" "}
                         A French operator preparing for EU Deforestation
                         Regulation (EUDR) enforcement needed the capacity to
                         process up to <span className="text-foreground font-medium">100,000 Due Diligence Statements (DDS)</span>{" "}
-                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blog/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered a backend infrastructure built for high-volume regulatory submission automation.
+                        per month. Manual submission was operationally unstable at that volume (read <Link href="/blog/why-manual-eudr-compliance-fails/" className="text-primary underline hover:text-primary/80">why manual compliance fails here</Link>). We engineered backend infrastructure built for high-volume regulatory submissions.
                     </p>
                 </div>
 
@@ -88,7 +80,7 @@ export default function EudrCaseStudyPage() {
                 <section className="mb-32">
                     <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Business Constraints</h2>
-                        <span className="font-mono text-xs text-muted-foreground hidden md:block">01 — CHALLENGE</span>
+                        <span className="font-mono text-xs text-muted-foreground hidden md:block">01: CHALLENGE</span>
                     </div>
                     
                     <div className="grid gap-6 md:grid-cols-3">
@@ -120,12 +112,16 @@ export default function EudrCaseStudyPage() {
                 <section className="mb-32">
                      <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">Solution Overview</h2>
-                        <span className="font-mono text-xs text-muted-foreground hidden md:block">02 — ARCHITECTURE</span>
+                        <span className="font-mono text-xs text-muted-foreground hidden md:block">02: ARCHITECTURE</span>
                     </div>
 
                     <div className="mb-16 max-w-3xl">
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            In practice, this is RegTech backend development: a deterministic EUDR DDS submission system designed for bursty volume. The same design discipline carries into finance operations whenever approvals, exception routing, and auditability matter more than presentation layers.
+                            In practice, this is compliance automation backend development: deterministic workflow infrastructure for bursty submission volume, strict regulator interfaces, and defensible evidence trails. The same design discipline carries into finance automation whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
+                            <Link href="/glossary/three-way-match/" className="site-link">
+                                three-way match glossary entry
+                            </Link>
+                            .
                         </p>
                     </div>
 
@@ -134,7 +130,7 @@ export default function EudrCaseStudyPage() {
                         <div className="grid gap-12 md:grid-cols-2 items-center">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                    Deterministic API & Validation
+                                    Structured Validation & API Bridges
                                 </h3>
                                 <div className="space-y-6 text-muted-foreground">
                                     <p>
@@ -180,11 +176,11 @@ export default function EudrCaseStudyPage() {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                    Audit Log & Operator Dashboard
+                                    Submission Evidence & Operator Dashboard
                                 </h3>
                                 <div className="space-y-6 text-muted-foreground">
                                     <p>
-                                        We eliminated portal navigation time by maintaining an internal dashboard. Operators search and segment DDS by status, date, and commodity instantly.
+                                        We eliminated portal navigation time by maintaining an internal dashboard and submission evidence trail. Operators search and segment DDS by status, date, and commodity instantly.
                                     </p>
                                     <div className="p-6 border border-border bg-card">
                                         <p className="font-mono text-xs uppercase tracking-widest text-primary mb-2">Lifecycle Tracking</p>
@@ -211,7 +207,7 @@ export default function EudrCaseStudyPage() {
                         <div className="grid gap-12 md:grid-cols-2 items-center">
                             <div>
                                 <h3 className="text-2xl font-bold mb-6 text-foreground">
-                                    State-Aware Retry Logic
+                                    Retry-Safe Processing
                                 </h3>
                                 <div className="space-y-6 text-muted-foreground">
                                     <p>
@@ -264,12 +260,12 @@ export default function EudrCaseStudyPage() {
                 <section className="mb-32">
                     <div className="flex items-end justify-between mb-12 border-b border-border pb-4">
                         <h2 className="text-3xl font-bold tracking-tight">The Impact</h2>
-                         <span className="font-mono text-xs text-muted-foreground hidden md:block">03 — RESULTS</span>
+                         <span className="font-mono text-xs text-muted-foreground hidden md:block">03: RESULTS</span>
                     </div>
                     <div className="grid gap-px bg-border border border-border sm:grid-cols-2 lg:grid-cols-4 overflow-hidden">
                         {[
                             { label: "Capacity", value: "100k+", desc: "Submissions/mo supported without new staff." },
-                            { label: "Risk", value: "-99%", desc: "Reduction in manual entry error exposure." },
+                            { label: "Risk", value: "-99%", desc: "Manual entry errors." },
                             { label: "Visibility", value: "100%", desc: "Instant search & audit for every submission." },
                             { label: "Control", value: "Full", desc: "Traceable state transitions & logs." }
                         ].map((stat, i) => (
@@ -299,8 +295,8 @@ export default function EudrCaseStudyPage() {
                                 <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Hardening & Deploy</p>
                             </div>
                             <div>
-                                <div className="text-3xl font-bold text-primary mb-1">$11,000 USD</div>
-                                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Total Investment</p>
+                                <div className="text-3xl font-bold text-primary mb-1">Fixed Scope</div>
+                                <p className="text-xs font-mono text-muted-foreground uppercase tracking-wider">Priced Separately</p>
                             </div>
                         </div>
                      </div>
@@ -309,26 +305,22 @@ export default function EudrCaseStudyPage() {
                 {/* CTA */}
                 <section className="text-center pt-24 border-t border-border">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-6 max-w-3xl mx-auto">
-                        EXPECTING <span className="text-primary">EUDR VOLUME</span>?
+                        NEED THIS LEVEL OF <span className="text-primary">CONTROL</span>?
                     </h2>
                     <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-                        If you anticipate high DDS throughput, you need deterministic submission control. The first step is a structured infrastructure diagnostic.
+                        For EUDR volume, we can scope deterministic submission control. For finance or regulated operations, start with one submission, approval, reconciliation, or evidence workflow.
                     </p>
                     <div className="flex justify-center">
-                        <MagneticButton className="px-12 py-6 text-xl">
-                            <a
-                                href={BOOK_MEETING_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-3"
-                            >
-                                {BOOK_MEETING_CTA} <ArrowRight className="w-6 h-6" />
-                            </a>
-                        </MagneticButton>
+                        <Link
+                            href={primaryDiagnosticCta.href}
+                            className="inline-flex min-h-14 items-center justify-center gap-3 border border-primary/20 bg-background/50 px-12 py-4 text-xl font-medium transition-colors hover:border-primary hover:bg-primary/10 hover:text-primary focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                        >
+                            {primaryDiagnosticCta.label} <ArrowRight className="w-6 h-6" />
+                        </Link>
                     </div>
                     <div className="mt-12 text-sm text-muted-foreground max-w-lg mx-auto">
                         <p>
-                            For teams that need this level of control in a finance-ops workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or book a scoping call.
+                            For teams that need this level of control in a finance or compliance workflow, start with the <Link href="/work/" className="underline hover:text-foreground text-primary/80">Work page</Link> or request the workflow diagnostic.
                         </p>
                     </div>
                 </section>

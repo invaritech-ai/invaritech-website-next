@@ -14,6 +14,8 @@ A founder can tolerate manual work at low volume. But once workflow volume compo
 
 This article is a practical guide for deciding where automation actually belongs, where hiring still makes sense, and how to avoid both over-engineering and under-investing.
 
+My view: small businesses should not buy automation because it sounds modern. They should automate only when the same finance or operations task keeps returning with the same rules, the same errors, and the same owner frustration. That is when software can replace extra headcount without pretending to replace judgment.
+
 ## The Real Bottleneck Is Not Talent, It Is Throughput
 
 Founders often frame the problem as headcount: "we just need one more person." Sometimes that is true. Often it is a patch.
@@ -154,7 +156,7 @@ Examples:
 - weekly report formatting: low impact + high repeatability
 - one-off compliance clarification: low impact + low repeatability
 
-This keeps spending tied to operational leverage rather than tool excitement.
+This keeps spending tied to operating advantage rather than tool excitement.
 
 ## A 30-Day Founder Action Plan
 
@@ -166,7 +168,7 @@ If you are not sure where to start, use this sequence.
 4. **Baseline KPIs.** Capture current cycle time, touches, and exception rate.
 5. **Decide scale vs stop.** If pilot metrics improve, expand. If not, fix process design first.
 
-Most teams fail by trying to automate everything at once. One controlled wedge usually beats broad transformation plans.
+Most teams fail by trying to automate everything at once. One controlled workflow usually beats broad transformation plans.
 
 ## Common Failure Modes in Early Automation
 
@@ -212,7 +214,7 @@ For Australia-based operators, the path is usually:
 4. improve cash visibility and forecast reliability
 5. expand controls to adjacent workflows
 
-You do not need to execute this as a major transformation project. A narrow, controlled first wedge is enough to create momentum and measurable ROI.
+You do not need to execute this as a major transformation project. A narrow, controlled first workflow is enough to create momentum and measurable ROI.
 
 ## When Not to Automate Yet
 
@@ -247,14 +249,14 @@ Small business automation is not about replacing people. It is about protecting 
 
 Automate repeatable finance and ops friction. Keep humans on judgment-heavy work. Use simple ROI math. Expand only when pilot metrics prove improvement.
 
-If you want help choosing the first wedge, [book a scoping call](/contact/). If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
+If finance is the first workflow family, use [finance automation for AP teams](/finance-automation/) to choose between invoice intake, approval checks, payment controls, close work, and cash visibility. If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
     `,
     author: {
         name: "Avishek Majumder",
         role: "Co-founder and CEO",
     },
     publishedAt: "2026-03-05T08:00:00Z",
-    dateModified: "2026-05-14T12:00:00Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: [
         "small business automation",
         "accounts payable automation",

@@ -82,15 +82,44 @@ describe("internal page links", () => {
     it("point directly to existing local pages without redirect-only paths", () => {
         const failures = [];
 
+        function normalize(path) {
+            if (path === "/") return path;
+            return path.replace(/\/$/, "");
+        }
+
+        const normalizedRoutes = new Set([...appRoutes].map(normalize));
+
         for (const file of sourceFiles) {
             for (const rawLink of extractInternalLinks(file)) {
-                const target = stripHashAndQuery(rawLink);
-                if (!appRoutes.has(target)) {
+                const target = normalize(stripHashAndQuery(rawLink));
+                if (!normalizedRoutes.has(target)) {
                     failures.push(`${file}: ${rawLink}`);
                 }
             }
         }
 
         assert.deepEqual(failures, []);
+    });
+});
+
+describe("pillar money pages are linked", () => {
+    it("references both Finance Ops and RegOps pillar pages", () => {
+        const files = sourceRoots.flatMap((root) => walkFiles(root));
+        const tsFiles = files.filter((p) => sourceExtensions.has(extensionOf(p)));
+        const financeMatchCount = tsFiles.filter((p) =>
+            readFileSync(p, "utf-8").includes("/finance-operations-automation")
+        ).length;
+        const regopsMatchCount = tsFiles.filter((p) =>
+            readFileSync(p, "utf-8").includes("/regulatory-operations-automation")
+        ).length;
+
+        assert.ok(
+            financeMatchCount >= 3,
+            `Expected /finance-operations-automation in 3+ files; found ${financeMatchCount}`
+        );
+        assert.ok(
+            regopsMatchCount >= 3,
+            `Expected /regulatory-operations-automation in 3+ files; found ${regopsMatchCount}`
+        );
     });
 });

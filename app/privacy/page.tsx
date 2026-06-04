@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
     title: "Privacy Policy",
     description:
-        "Privacy Policy for INVARITECH. How we collect, use, and protect your data when using our automation services and AI systems.",
+        "Privacy Policy for INVARITECH. How we collect, use, and protect your data when using our services.",
     openGraph: {
         title: "Privacy Policy | INVARITECH",
         description:
@@ -26,11 +26,11 @@ export default function PrivacyPage() {
         <LegalPage
             titleLine1="Privacy &"
             titleLine2="Data"
-            subtitle="How we secure, process, and protect information within our automation ecosystem."
+            subtitle="How we secure, process, and protect information within our services."
         >
             <LegalSection number="01" heading="Overview">
                 <p className="text-muted-foreground leading-relaxed">
-                    At INVARITECH, we take data privacy seriously. This policy describes how we collect, use, and share your personal information when you visit our website, use our services, or interact with our AI systems. We are aligned with GDPR principles and industry standard security practices.
+                    At INVARITECH, we take data privacy seriously. This policy describes how we collect, use, and share your personal information when you visit our website or use our services. We are aligned with GDPR principles and industry standard security practices.
                 </p>
             </LegalSection>
 
@@ -43,7 +43,7 @@ export default function PrivacyPage() {
                 <LegalBulletList items={[
                     "Identifiable Information: Name, email address, company name, and phone number when you request a consultation or use our contact forms.",
                     "Usage Data: Information about how you access and use our website, including device information, IP address, and browser type.",
-                    "Communication Data: Records of your interactions with our team and our AI chatbot ('Iris').",
+                    "Communication Data: Records of your interactions with our team, including contact form submissions and project messages.",
                 ]} />
             </LegalSection>
 
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
                     We strictly use your data for the following purposes:
                 </p>
                 <LegalBulletList items={[
-                    "To provide, maintain, and improve our automation services.",
+                    "To provide, maintain, and improve our services.",
                     "To communicate with you about projects, updates, and responding to your inquiries.",
                     "To analyze usage trends and optimize our website performance.",
                     "To comply with legal obligations and enforce our terms.",

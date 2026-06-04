@@ -14,6 +14,8 @@ Most automation decisions fail before any code is written, not because of engine
 
 Build vs buy is not a technology debate. It is a capital allocation decision. If a workflow does not materially affect revenue, margin, or operational risk exposure, it should not be automated yet.
 
+My bias is simple: buy the system of record, build the control layer when your workflow is specific. I would not rebuild Xero, NetSuite, MYOB, or D365. I would build around them when AP exceptions, approval evidence, supplier controls, or reporting bridges no longer fit a generic product.
+
 In finance and operations, that test filters quickly. Invoice exception handling, supplier payment controls, month-end close, and cash visibility are not generic workflows. They carry audit risk, cash risk, and control risk. The tooling decision matters.
 
 ## The Default Path: Buy Software
@@ -38,9 +40,9 @@ SaaS becomes inefficient when the workflow is:
 - deeply integrated across multiple systems (ERP, bank, payroll, approval chains)
 - subject to audit or regulatory scrutiny
 - margin-sensitive enough that error rates create material exposure
-- specific to how your team operates — not a generic process model
+- specific to how your team operates, not a generic process model
 
-At that point, you are not buying convenience. You are outsourcing operational leverage to a product that was not built for your exact requirements.
+At that point, you are not buying convenience. You are outsourcing operating advantage to a product that was not built for your exact requirements.
 
 Australian finance teams working across Xero, MYOB, NetSuite, D365, and mixed bank exports often hit this wall. The vendor tool handles the clean path. Your actual process includes exceptions, multi-format file intake, reconciliation edge cases, and approval chains that do not fit a standard module.
 
@@ -50,9 +52,9 @@ Before the build vs buy question, there is a data readiness question.
 
 If your source data is spread across disconnected systems, inconsistently structured, missing validation logic, or inaccessible without manual extraction, neither path works cleanly. The SaaS tool ingests inconsistent inputs. The custom layer has nothing reliable to route.
 
-Operational leverage only appears after the data contract is defined. In most finance and ops contexts, that is a week of architecture work — not a six-month governance project.
+Operating advantage only appears after the data contract is defined. In most finance and ops contexts, that is a week of architecture work, not a six-month governance project.
 
-If accounts payable invoice throughput is the bottleneck, this is where an [invoice data extraction architecture](/blog/ai-invoice-data-extraction/) usually becomes the first practical wedge. Controlled intake quality is the foundation both paths depend on.
+If accounts payable invoice throughput is the bottleneck, this is where an [invoice data extraction architecture](/blog/ai-invoice-data-extraction/) usually becomes the first practical automation target. Controlled intake quality is the foundation both paths depend on.
 
 ## Build Only When the Numbers Support It
 
@@ -66,7 +68,7 @@ Before deciding to build, quantify the workflow economics:
 
 If you cannot calculate the delta, defer build decisions until you can. Automation without a measurable objective is difficult to justify and harder to govern once shipped.
 
-A useful baseline is the [Cost-to-Close Calculator](/resources/cost-to-close-calculator/) — it helps quantify the manual time-tax before committing to a build path.
+A useful baseline is the [Cost-to-Close Calculator](/resources/cost-to-close-calculator/). It helps quantify the manual time-tax before committing to a build path.
 
 ## When Custom Automation Becomes Rational
 
@@ -78,7 +80,7 @@ Custom automation makes sense when most of the following apply:
 - manual handling introduces material audit, cash, or reputational exposure
 - the process directly affects close quality, cash visibility, or payment controls
 
-In those cases, a focused automation layer often outperforms a broad SaaS platform. For founders and small teams, the same logic applies earlier than most expect — [why small businesses hit the automation breaking point](/blog/why-small-businesses-need-automation/) explains where the pressure concentrates first.
+In those cases, a focused automation layer often outperforms a broad SaaS platform. For founders and small teams, the same logic applies earlier than most expect. [Why small businesses hit the automation breaking point](/blog/why-small-businesses-need-automation/) explains where the pressure concentrates first.
 
 This is not a statement that SaaS is wrong. It reflects that your specific workflow may not fit a generic product's assumptions.
 
@@ -112,7 +114,7 @@ Building early without clear constraints adds avoidable complexity and ongoing m
 
 ## Example: Regulated and High-Volume Workflows
 
-In regulated environments — submission pipelines, compliance workflows, audit-sensitive reporting — the build case tightens further. These workflows need strict schema handling, lifecycle state management, deterministic validation, and complete audit trails. That is not a feature toggle inside a generic platform.
+In regulated environments, submission pipelines, compliance workflows, and audit-sensitive reporting tighten the build case further. These workflows need strict schema handling, lifecycle state management, deterministic validation, and complete audit trails. That is not a feature toggle inside a generic platform.
 
 If you want the failure mode at scale, see [why manual compliance fails at volume](/blog/why-manual-eudr-compliance-fails/) or the [EUDR compliance bridge case study](/work/eudr-compliance-bridge/).
 
@@ -132,13 +134,15 @@ It depends on scope and design quality. A narrow, well-scoped automation layer w
 
 ### Do we need to replace our ERP to benefit from custom automation?
 
-No. Most custom automation in finance adds a controlled layer over existing systems — ingestion, normalization, validation, routing, and exception management — without displacing the ERP or accounting tool as the system of record.
+No. Most custom automation in finance adds a controlled layer over existing systems: ingestion, normalization, validation, routing, and exception management. It does this without displacing the ERP or accounting tool as the system of record.
 
 ## Next Step
 
 If you are evaluating whether a workflow justifies custom infrastructure, start with workflow economics before architecture decisions.
 
 Map the manual steps, error rates, and time cost. If the delta is material, the build case becomes clear. If it is not, buying is probably correct.
+
+For accounts payable and finance workflows, start with the [finance automation](/finance-automation/) model before committing to either path. It maps the common free assets, AP controls, and paid deployment threshold.
 
 [Book a scoping call](/contact/) to map your workflow before committing to either path.
     `,
@@ -147,7 +151,7 @@ Map the manual steps, error rates, and time cost. If the delta is material, the 
         role: "Co-founder and CEO",
     },
     publishedAt: "2025-10-20T10:00:00Z",
-    dateModified: "2026-05-15T12:00:00.000Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     tags: ["finance automation", "build vs buy automation", "workflow automation", "accounts payable", "AP automation", "Australia"],
     coverImage: "/blog/buy-vs-build.webp",
 };

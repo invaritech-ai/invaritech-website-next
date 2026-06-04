@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { CostToCloseCalculator } from "@/components/tools/CostToCloseCalculator";
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Month-End Close Cost Calculator — INVARITECH",
+                alt: "Month-End Close Cost Calculator | INVARITECH",
             },
         ],
     },
@@ -88,6 +89,22 @@ export default function CostToCloseCalculatorPage() {
             }}
         >
             <CostToCloseCalculator />
+            <section className="mt-16 border-t border-border pt-12">
+                <div className="grid gap-5 border border-border bg-card p-6 md:grid-cols-[1fr_auto] md:items-center">
+                    <div>
+                        <p className="site-meta text-primary">Finance automation context</p>
+                        <h2 className="site-h3 mt-4">Close cost is one signal, not the whole automation case.</h2>
+                        <p className="site-body mt-3 max-w-3xl">
+                            Use the broader finance automation model to connect month-end close
+                            work with invoice exceptions, approval evidence, payment controls, and
+                            accounting-system handoffs.
+                        </p>
+                    </div>
+                    <Link href="/finance-automation/" className="site-button-secondary">
+                        View the finance automation model
+                    </Link>
+                </div>
+            </section>
         </ToolPageShell>
     );
 }

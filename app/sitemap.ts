@@ -24,6 +24,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1.0,
         },
         {
+            url: `${baseUrl}/finance-automation/`,
+            changeFrequency: "weekly",
+            priority: 0.95,
+        },
+        {
+            url: `${baseUrl}/regulatory-operations-automation/`,
+            changeFrequency: "weekly",
+            priority: 0.85,
+        },
+        {
             url: `${baseUrl}/about/`,
             changeFrequency: "monthly",
             priority: 0.8,
@@ -34,7 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/resources/supplier-payment-control-rule-table/`,
+            url: `${baseUrl}/resources/accounts-payable-controls/`,
             changeFrequency: "monthly" as const,
             priority: 0.8,
         },
@@ -60,6 +70,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
         {
             url: `${baseUrl}/work/eudr-compliance-bridge/`,
+            changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/glossary/three-way-match/`,
             changeFrequency: "monthly",
             priority: 0.7,
         },

@@ -12,7 +12,7 @@ export const aiInvoiceDataExtraction: BlogPost = {
         role: "Co-founder and CEO",
     },
     publishedAt: "2026-03-02T08:00:00.000Z",
-    dateModified: "2026-05-14T12:00:00.000Z",
+    dateModified: "2026-06-04T12:00:00.000Z",
     coverImage: "/images/HiddenTimeTax.webp",
     tags: [
         "invoice data extraction",
@@ -31,6 +31,8 @@ Most finance teams lose more time to invoice rework than they realize. Late clos
 That is true in Australia and globally. Invoices arrive through email, supplier portals, shared drives, and scans from regional branches. If intake quality is inconsistent, every downstream step becomes rework: finance teams spend days fixing fields, resolving exceptions, and validating totals that should have been verified on arrival.
 
 This is why invoice data extraction sits at the front of serious accounts payable automation. Not as a shiny AI layer, but as a deterministic data pipeline with explicit controls.
+
+My view: invoice extraction should be easy to try and hard to over-trust. I am happy to make a simple extractor free because every AP team should be able to see what structured invoice data looks like. The paid value starts later, when extraction connects to company-specific exception rules, approval logic, supplier history, and the accounting system.
 
 ## What Accounts Payable Automation Actually Means
 
@@ -69,6 +71,8 @@ A production-grade extraction workflow should do four things before any posting 
 This is where teams shift from "document handling" to controlled operations design.
 
 If you want to test this on your own documents, use the **[Invoice Extractor](/resources/invoice-extractor/)** and inspect the structured output against your current manual process.
+
+Do not judge the tool only by whether it reads one invoice correctly. Judge whether the output gives AP a cleaner starting point for duplicate checks, approval routing, three-way match review, and payment release decisions.
 
 ## Deterministic Architecture for Invoice Processing Automation
 
@@ -176,7 +180,7 @@ Core formula:
 - annual savings = current cost - future cost
 - payback period = implementation cost / monthly savings
 
-This is also where broader finance priorities matter. If you need context on operational bottlenecks across AP, close, and controls, start from the **[homepage](/)** and map where your highest-value wedge is.
+This is also where broader finance priorities matter. If you need context on operational bottlenecks across AP, close, and controls, start from the **[finance automation guide](/finance-automation/)** and map the highest-value workflow to automate first.
 
 If downstream reporting lag is your immediate pain point, this [cash flow visibility automation guide](/blog/cash-flow-visibility-automation/) shows how to convert cleaner AP data into a reliable 13 week planning cadence.
 
@@ -196,7 +200,7 @@ If your team cannot complete these seven steps clearly, pause implementation and
 
 ## Control Matrix Teams Usually Miss
 
-A control matrix is not a compliance artifact. It is the governance layer that turns invoice processing into an engineerable, auditable workflow — the difference between AP that passes an audit and AP that creates one.
+A control matrix is not a compliance artifact. It is the governance layer that turns invoice processing into an engineerable, auditable workflow. It is the difference between AP that passes an audit and AP that creates one.
 
 Most pilot projects focus on extraction accuracy and ignore control design. That is a mistake. In production AP, a control matrix matters as much as model quality.
 
@@ -262,7 +266,7 @@ Invoice data extraction is not a cosmetic automation feature. It is the data fou
 
 If extraction quality is weak, the entire AP workflow inherits noise. If extraction quality is controlled with deterministic validation, exception routing, and auditable integration, teams can realistically compress close cycles, reduce manual handling, and increase decision confidence.
 
-Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, the next step is implementation design and control mapping. If you want help scoping that path, **[book a scoping call](/contact/)**.
+Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, use [finance automation for AP teams](/finance-automation/) to map the control layer around extraction, approval, exception routing, and payment release. If you want help scoping that path, **[book a scoping call](/contact/)**.
 Treat the first pilot as measurement infrastructure, not a one-off experiment.
 `,
 };

@@ -8,7 +8,6 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Script from "next/script";
 import { Button } from "@/components/ui/button";
-import { BOOK_MEETING_URL } from "@/lib/marketing";
 
 type Props = {
     params: Promise<{ slug: string }>;
@@ -85,14 +84,14 @@ function generateArticleSchema(post: {
         "@type": "BlogPosting",
         headline: post.title,
         description: post.excerpt,
-        image: { "@type": "ImageObject", url: imageUrl, width: 1200, height: 630 },
+        image: { "@type": "ImageObject", url: imageUrl },
         datePublished: post.publishedAt,
         dateModified: post.dateModified ?? post.publishedAt,
         author: { "@type": "Person", name: post.author.name, jobTitle: post.author.role },
         publisher: {
             "@type": "Organization",
             name: "INVARITECH",
-            logo: { "@type": "ImageObject", url: `${baseUrl}/logo-image.png`, width: 512, height: 512 },
+            logo: { "@type": "ImageObject", url: `${baseUrl}/logo-image.png`, width: 516, height: 516 },
         },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         url,
@@ -215,7 +214,6 @@ export default async function BlogPostPage({ params }: Props) {
                 {/* Ambient background */}
                 <div className="absolute inset-0 pointer-events-none z-0">
                     <div className="absolute top-0 left-0 w-full h-full opacity-[0.012]" style={{ backgroundImage: "linear-gradient(to right, #1A1A1A 1px, transparent 1px), linear-gradient(to bottom, #1A1A1A 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
-                    <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-primary/[0.03] rounded-full blur-[120px]" />
                 </div>
 
                 <article className="relative z-10 pt-32 pb-24 px-6 md:px-0">
@@ -275,7 +273,7 @@ export default async function BlogPostPage({ params }: Props) {
                             </div>
                         </header>
 
-                        {/* Parchment reading card */}
+                        {/* Reading card */}
                         <div className="bg-card border border-border/60 p-8 md:p-14 mb-16">
                             <div className="relative flex gap-8 md:gap-12">
                                 {/* Marginalia track */}
@@ -310,7 +308,7 @@ export default async function BlogPostPage({ params }: Props) {
                                                 alt={post.title}
                                                 width={1200}
                                                 height={630}
-                                                className="w-full h-auto transition-transform duration-1000 group-hover:scale-[1.02]"
+                                                className="w-full h-auto grayscale transition-all duration-1000 group-hover:grayscale-0 group-hover:scale-[1.02]"
                                                 priority
                                             />
                                             <div className="absolute bottom-4 right-4 font-mono text-[10px] text-foreground-subtle tracking-widest bg-background/80 px-2 py-0.5">
@@ -330,27 +328,25 @@ export default async function BlogPostPage({ params }: Props) {
                         <section className="mt-16 pt-16 border-t border-border text-center">
                             <div className="flex items-center justify-center gap-3 mb-8">
                                 <div className="h-[1px] w-8 bg-primary/40" />
-                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Start Your Sprint</span>
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Share a Workflow</span>
                                 <div className="h-[1px] w-8 bg-primary/40" />
                             </div>
                             <h2 className="font-editorial text-3xl md:text-5xl font-semibold tracking-tight mb-6 max-w-3xl mx-auto text-foreground">
-                                READY TO <span className="text-primary">AUTOMATE</span>?
+                                Want us to map one live finance workflow?
                             </h2>
                             <p className="text-lg text-foreground-muted mb-12 max-w-2xl mx-auto">
-                                Schedule a 30-minute call to scope your biggest bottleneck. No pitch — just engineering strategy.
+                                Bring one finance or regulated operations workflow. We will map the current process, find where controls are missing, and recommend the smallest useful build scope.
                             </p>
                             <div className="flex flex-col sm:flex-row justify-center gap-4">
-                                <Button asChild size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
-                                    <a
-                                        href={BOOK_MEETING_URL}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
+                                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-foreground hover:text-background font-semibold h-13 px-8">
+                                    <Link
+                                        href="/contact/?diagnostic=1&src=blog"
                                         className="flex items-center gap-3"
                                     >
-                                        Book a Scoping Call <ArrowRight className="w-5 h-5" />
-                                    </a>
+                                        Share a Workflow <ArrowRight className="w-5 h-5" />
+                                    </Link>
                                 </Button>
-                                <Button asChild variant="outline" size="lg" className="rounded-none border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
+                                <Button asChild variant="outline" size="lg" className="border-border bg-transparent hover:bg-foreground hover:text-background h-13 px-8">
                                     <Link href="/work/">Explore Work</Link>
                                 </Button>
                             </div>

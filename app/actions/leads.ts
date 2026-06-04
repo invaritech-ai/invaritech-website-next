@@ -108,24 +108,3 @@ export async function submitContactLead(formData: FormData): Promise<ActionResul
         role: "", industry: "", main_control_problem: "",
     }, "submitContactLead");
 }
-
-export async function submitResourceLead(formData: FormData): Promise<ActionResult> {
-    const email               = String(formData.get("email")               ?? "").trim();
-    const company             = String(formData.get("company")             ?? "").trim();
-    const role                = String(formData.get("job_title")           ?? "").trim();
-    const industry            = String(formData.get("industry")            ?? "").trim();
-    const main_control_problem = String(formData.get("main_control_problem") ?? "").trim();
-    const source              = String(formData.get("source")              ?? "resource").trim();
-    const token               = String(formData.get("cf_turnstile_token") ?? "").trim();
-
-    if (!email)                return { success: false, error: "Email is required" };
-    if (!EMAIL_RE.test(email)) return { success: false, error: "Please enter a valid email address" };
-    if (!company)              return { success: false, error: "Company is required" };
-    if (!role)                 return { success: false, error: "Role is required" };
-
-    return verifyAndAppend(token, formData, {
-        form_type: "resource",
-        source, email, company, role, industry, main_control_problem,
-        name: "", phone: "", country: "", message: "",
-    }, "submitResourceLead");
-}

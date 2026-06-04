@@ -4,34 +4,31 @@ import Link from "next/link";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 
 export const metadata: Metadata = {
-    title: "Invoice Processing Automation Guide",
+    title: "Invoice Processing Automation: AP Workflow, OCR & Controls",
     description:
-        "A practical guide to automated invoice processing for accounts payable: invoice OCR, data extraction, validation rules, exception routing, and approval workflow controls.",
+        "Learn how invoice processing automation should work: OCR, invoice data extraction, AP checks, approval workflows, exception routing, and audit trails.",
     keywords: [
         "invoice processing automation",
         "automated invoice processing",
-        "invoice processing workflow",
-        "automate invoice processing",
-        "invoice workflow automation",
-        "accounts payable invoice processing",
-        "AP invoice processing automation",
-        "invoice approval workflow",
-        "invoice OCR",
-        "invoice data extraction",
-        "invoice capture",
         "invoice automation",
         "invoice processing software",
+        "invoice processing automation software",
+        "automated invoice processing software",
+        "invoice approval workflow",
         "invoice exception management",
-        "three way match exceptions",
         "accounts payable automation",
+        "accounts payable invoice processing",
+        "invoice OCR",
+        "invoice data extraction",
+        "three way match exceptions",
     ],
     alternates: {
         canonical: "https://www.invaritech.ai/resources/invoice-processing-automation/",
     },
     openGraph: {
-        title: "Invoice Processing Automation Guide — INVARITECH",
+        title: "Invoice Processing Automation: AP Workflow, OCR & Controls",
         description:
-            "A practical guide to automated invoice processing for accounts payable: OCR, extraction, validation, exception routing, approvals, and audit trails.",
+            "An AP operating manual for invoice automation: intake, OCR, validation checks, exception routing, approval evidence, posting boundaries, and audit trails.",
         url: "https://www.invaritech.ai/resources/invoice-processing-automation/",
         type: "website",
         images: [
@@ -39,15 +36,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Invoice Processing Automation Guide",
+                alt: "Invoice Processing Automation Operating Manual",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Invoice Processing Automation Guide — INVARITECH",
+        title: "Invoice Processing Automation: AP Workflow, OCR & Controls",
         description:
-            "Automated invoice processing for AP teams: OCR, extraction, validation, approvals, exceptions, audit trails.",
+            "A practical AP operating manual for OCR, validation checks, approvals, exceptions, and audit trails.",
         images: ["/og-image.png"],
     },
 };
@@ -56,27 +53,32 @@ const faqItems = [
     {
         question: "What is invoice processing automation?",
         answer:
-            "Invoice processing automation is the end-to-end workflow that turns incoming invoices into posting-ready, approved records with fewer manual touches. In practice it combines invoice OCR and data extraction with validation rules, exception routing, approval workflow, and an audit trail before any ERP write or payment release.",
+            "Invoice processing automation is the workflow that moves an invoice from receipt to approved, posting-ready data with fewer manual checks. It includes invoice OCR, data extraction, validation rules, exception routing, approval evidence, posting or export, and an audit trail.",
     },
     {
         question: "Is invoice OCR the same as invoice processing automation?",
         answer:
-            "No. Invoice OCR (and invoice data extraction) are the intake step. Automation only becomes real when extracted data flows into deterministic checks (duplicates, arithmetic, supplier validation), a queue for exceptions, and an approval workflow with evidence and audit logging.",
+            "No. Invoice OCR is the intake step. Full invoice processing automation also checks the extracted data, flags exceptions, routes work to the right owner, records approval evidence, and prevents unreviewed invoices from being posted or paid.",
     },
     {
-        question: "What should be automated first in an AP invoice processing workflow?",
+        question: "What should AP teams automate first?",
         answer:
-            "Start with intake and extraction, then add deterministic validation rules and a basic exception queue. Approval routing comes next. Trying to automate approvals without stable invoice data and clear exception ownership usually creates more rework, not less.",
+            "Start with invoice intake and the checks that cause the most repeated review: duplicate invoice risk, supplier mismatch, PO or receipt mismatch, tax and total errors, missing approval evidence, and changed payment details.",
     },
     {
-        question: "How do teams prevent duplicate invoices in automated invoice processing?",
+        question: "What should invoice processing software handle?",
         answer:
-            "Use a deterministic duplicate detection check based on supplier identity + invoice number + date window, plus a secondary fuzzy match using amount and line-item similarity. Route potential duplicates into an exception queue with an owner and resolution notes, rather than allowing silent posting.",
+            "Useful invoice processing software should capture invoice fields, validate them against AP rules, separate clean invoices from exceptions, route exceptions to owners, record approval evidence, and export or post only after the right checks have passed.",
     },
     {
-        question: "Do you need to replace your ERP to automate invoice processing?",
+        question: "Do you need to replace Xero, QuickBooks, NetSuite, or your ERP?",
         answer:
-            "Usually no. Most teams keep their ERP and add a bridge layer that maps extracted invoice data into an ERP-ready schema, runs pre-write validations, and logs every state transition. This reduces replatforming risk while still tightening controls and throughput.",
+            "Usually no. The accounting system should remain the system of record. Invoice processing automation normally sits around it, handling intake, checks, exceptions, approvals, and evidence before posting or export.",
+    },
+    {
+        question: "What artifacts should an AP automation project leave behind?",
+        answer:
+            "At minimum: an invoice field list, validation rule table, exception-state list, approval evidence requirements, posting or export boundaries, and an audit-trail event list.",
     },
 ];
 
@@ -100,9 +102,9 @@ const jsonLd = [
     {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: "Invoice Processing Automation Guide",
+        name: "Invoice Processing Automation: AP Workflow, OCR & Controls",
         description:
-            "A practical guide to automated invoice processing for accounts payable: OCR, extraction, validation rules, exception routing, approval workflow, and audit trails.",
+            "An AP operating manual for invoice processing automation: OCR, extraction, validation rules, exception routing, approval workflow, posting boundaries, and audit trails.",
         url: `${BASE}/resources/invoice-processing-automation/`,
         inLanguage: "en-AU",
         isPartOf: {
@@ -132,28 +134,167 @@ const jsonLd = [
 
 const workflowSteps = [
     {
-        title: "Ingest invoices",
-        body: "Collect invoices from email, supplier portals, and scans. Assign a document ID and record source metadata so every invoice has a traceable origin.",
+        title: "Invoice received",
+        body: "Capture where the invoice came from: email inbox, supplier portal, upload, scan, or forwarded file. Give it a document ID before anyone starts checking it.",
     },
     {
-        title: "Extract invoice data (OCR)",
-        body: "Convert PDFs and images into structured fields: supplier name, invoice number, dates, currency, tax, totals, and line items. Capture confidence so low-quality cases can be routed, not guessed.",
+        title: "Data extracted",
+        body: "Read supplier name, invoice number, dates, currency, tax, totals, PO number, line items, payment terms, and visible bank details into structured fields.",
     },
     {
-        title: "Validate deterministically",
-        body: "Run rules that should never be a judgment call: arithmetic checks, mandatory fields, supplier lookup, invoice-number uniqueness, PO matching constraints, and tolerance rules.",
+        title: "Checks run",
+        body: "Run the checks AP already performs manually: duplicate risk, supplier match, PO or receipt match, tax math, total math, tolerance variance, and approval evidence.",
     },
     {
-        title: "Route exceptions",
-        body: "When a rule fails, do not silently proceed. Route to an exception queue with an owner, SLA, reason code, and evidence. This is where control quality is set.",
+        title: "Exceptions routed",
+        body: "Move failed checks into named exception states with an owner, reason, and expected next action. Do not let unclear invoices sit in a shared inbox.",
     },
     {
-        title: "Run approvals with evidence",
-        body: "High-confidence invoices flow through the invoice approval workflow. Approvals should capture who approved, when, and what evidence was used (emails, PDFs, receipts, PODs, PO/GRN).",
+        title: "Approval evidence captured",
+        body: "Record who approved, what they reviewed, when they approved it, and which note, file, or email supports the decision.",
     },
     {
-        title: "Sync + audit trail",
-        body: "Post only approved invoices into the ERP/accounting system through a controlled interface. Log every state transition (ingested → extracted → validated → approved → posted) for audit and reconciliation.",
+        title: "Posted or exported",
+        body: "Only clean, approved invoices should move into Xero, QuickBooks, NetSuite, an ERP, or an export file. Held invoices should stay visible until resolved.",
+    },
+    {
+        title: "Audit trail retained",
+        body: "Keep the event history: uploaded, extracted, checked, exception raised, routed, approved, held, corrected, posted, exported, or released for payment.",
+    },
+];
+
+const pageHelps = [
+    "Explain the AP workflow to decision makers without turning it into a software pitch.",
+    "Separate invoice OCR from full invoice processing automation.",
+    "Identify checks that should happen before an invoice is approved, posted, or paid.",
+    "Name the operating artifacts a useful AP automation project should leave behind.",
+];
+
+const artifactGroups = [
+    {
+        title: "Fields to capture",
+        body: "The invoice fields AP needs before checks can be trusted.",
+        items: [
+            "Supplier name",
+            "Invoice number",
+            "Invoice date",
+            "Due date",
+            "Currency",
+            "Subtotal",
+            "Tax",
+            "Total",
+            "PO number",
+            "Line items",
+            "Payment terms",
+            "Bank details when present",
+        ],
+    },
+    {
+        title: "Checks before approval",
+        body: "The checks that decide whether the invoice can move forward.",
+        items: [
+            "Duplicate invoice risk",
+            "Supplier or vendor match",
+            "Invoice-number uniqueness",
+            "Subtotal, tax, and total math",
+            "PO match",
+            "Receipt match",
+            "Tolerance variance",
+            "Missing approval evidence",
+            "Changed supplier payment details",
+        ],
+    },
+    {
+        title: "Exception states",
+        body: "The named reasons an invoice should stop for review.",
+        items: [
+            "Missing PO",
+            "Missing receipt",
+            "Supplier mismatch",
+            "Amount variance",
+            "Duplicate risk",
+            "Invalid tax or math",
+            "Changed bank details",
+            "Unclear approver",
+            "Hold for manual review",
+        ],
+    },
+    {
+        title: "Approval evidence",
+        body: "The evidence needed to defend a release decision later.",
+        items: [
+            "Approver",
+            "Timestamp",
+            "Reviewed document",
+            "Reason for approval or hold",
+            "Exception resolution note",
+            "Supporting email, file, or comment",
+        ],
+    },
+    {
+        title: "Audit trail events",
+        body: "The state changes the workflow should retain.",
+        items: [
+            "Uploaded",
+            "Extracted",
+            "Validated",
+            "Exception raised",
+            "Routed",
+            "Approved",
+            "Held",
+            "Corrected",
+            "Posted or exported",
+            "Released for payment",
+        ],
+    },
+];
+
+const softwareRows = [
+    {
+        weak: "Only extracts invoice text",
+        strong: "Extracts fields and then validates them against AP rules.",
+    },
+    {
+        weak: "Exports a spreadsheet for someone else to review",
+        strong: "Separates clean invoices from exceptions before export or posting.",
+    },
+    {
+        weak: "Routes approvals without context",
+        strong: "Routes exceptions with owner, reason, evidence, and resolution notes.",
+    },
+    {
+        weak: "Treats every supplier invoice the same",
+        strong: "Handles supplier, PO, receipt, tax, tolerance, and payment-detail checks.",
+    },
+    {
+        weak: "Shows status but not history",
+        strong: "Keeps an audit trail of each check, decision, hold, correction, and release.",
+    },
+];
+
+const erpBoundaries = [
+    "Keep Xero, QuickBooks, NetSuite, or your ERP as the system of record.",
+    "Run intake, checks, exception routing, and approval evidence before posting or export.",
+    "Post only approved invoices; keep held invoices visible until the exception is resolved.",
+    "Treat automation as the AP control workflow around the accounting system, not a replacement for accounting judgment.",
+];
+
+const failureModes = [
+    {
+        title: "OCR without controls",
+        body: "The invoice is easier to read, but AP still has to decide whether it is valid.",
+    },
+    {
+        title: "Approval routing without owners",
+        body: "The invoice moves around, but nobody is clearly responsible for resolving the exception.",
+    },
+    {
+        title: "Exports without audit trail",
+        body: "The data leaves the workflow, but the reason for approval or hold is hard to defend later.",
+    },
+    {
+        title: "Exception queues nobody reviews",
+        body: "The system finds issues, but AP still needs a cadence, owner, and release decision.",
     },
 ];
 
@@ -161,47 +302,50 @@ export default function InvoiceProcessingAutomationPage() {
     return (
         <ToolPageShell
             breadcrumb="Invoice Processing Automation"
-            eyebrow="Guide"
-            titleParts={["Invoice Processing", "Automation"]}
-            description="Automated invoice processing is not only OCR. It is extraction + deterministic validations + exception routing + invoice approval workflow controls + audit trail, all connected to the systems your team already uses."
+            eyebrow="AP Operating Manual"
+            titleParts={["Invoice Processing Automation:", "An AP Operating Manual"]}
+            description="Invoice automation is not only OCR. It is the AP workflow that captures invoice data, checks it, routes exceptions, records approval evidence, and keeps an audit trail before anything is posted or paid."
             maxWidth="4xl"
             jsonLd={jsonLd}
             footerLabel="Start with the intake layer"
-            footerText="If you are evaluating invoice processing software, start by testing real documents. Use the free invoice extractor to convert invoices into CSV, then map what validations and exception routing your AP workflow needs next."
+            footerText="If you are evaluating invoice processing automation, test the intake step first. Use the free invoice extractor on a real invoice, then map which checks, exceptions, and approval evidence your AP workflow needs next."
             footerLink={{
                 href: "/resources/invoice-extractor/",
                 label: "Use the free invoice extractor",
             }}
         >
             <section className="border border-border bg-card p-7">
-                <h2 className="site-h3">Skip the generic vendor pitch</h2>
-                <p className="site-body mt-3">
-                    Most teams searching for invoice processing automation want the same outcome:
-                    stop rekeying invoices, reduce exceptions, and tighten approval controls without
-                    replatforming the ERP.
-                </p>
+                <p className="site-meta text-primary">Who this is for</p>
+                <h2 className="site-h3 mt-4">
+                    For AP teams that feel the manual checking every day.
+                </h2>
                 <p className="site-body mt-4">
-                    The practical way to evaluate is to treat invoice processing as a workflow
-                    design problem. Extraction quality matters, but control design (validation rules,
-                    exception ownership, and audit trails) is what prevents month-end chaos.
+                    Use this page when invoices still move through inboxes, exports, portals,
+                    spreadsheets, and approval threads before anyone can trust them. It is written
+                    for the AP operator, senior accountant, controller, or finance ops person who
+                    needs a clear model to show decision makers.
                 </p>
-                <div className="mt-6 grid gap-3 md:grid-cols-2">
-                    <Link
-                        href="/resources/invoice-extractor/"
-                        className="site-button justify-center"
-                    >
-                        Try the Free Invoice Extractor
+                <div className="mt-7 grid gap-[1px] bg-border sm:grid-cols-2">
+                    {pageHelps.map((item) => (
+                        <div key={item} className="bg-background p-5 text-sm text-foreground-muted">
+                            {item}
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-7 flex flex-wrap gap-3">
+                    <Link href="/resources/invoice-extractor/" className="site-button">
+                        Use the Free Invoice Extractor
                     </Link>
                     <Link
-                        href="/blog/ai-invoice-data-extraction/"
-                        className="site-button justify-center bg-transparent text-foreground hover:bg-card"
+                        href="/finance-automation/"
+                        className="site-button bg-transparent text-foreground hover:bg-card"
                     >
-                        Read the Architecture Guide
+                        View the Finance Automation Model
                     </Link>
                 </div>
             </section>
 
-            <section className="mt-14">
+            <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
                     Definition
                 </p>
@@ -209,93 +353,187 @@ export default function InvoiceProcessingAutomationPage() {
                     What invoice processing automation actually means.
                 </h2>
                 <p className="site-body mt-6 max-w-3xl">
-                    Invoice processing automation is the workflow that takes an inbound supplier
-                    invoice (PDF, scan, or image), extracts the fields you need, validates them with
-                    deterministic checks, routes exceptions to the right owner, and runs approvals
-                    before anything is posted or paid.
+                    Invoice processing automation is the controlled AP workflow between receiving an
+                    invoice and allowing it to be posted, exported, or released for payment.
                 </p>
                 <p className="site-body mt-4 max-w-3xl">
-                    In other words: invoice OCR is necessary, but it is not sufficient. Indexable
-                    keywords like &ldquo;automated invoice processing&rdquo; and &ldquo;invoice
-                    processing software&rdquo; usually map to the same buying intent: a safer,
-                    faster accounts payable invoice processing workflow with fewer manual touches.
+                    OCR and invoice data extraction are only the intake layer. The real work is the
+                    checking that follows: duplicate risk, supplier match, PO or receipt mismatch,
+                    tax and total validation, approval evidence, exception routing, and audit trail.
                 </p>
             </section>
 
-            <section className="mt-14 border-t border-border pt-12">
+            <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                    Workflow
+                    Workflow Model
                 </p>
                 <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
-                    A practical automated invoice processing workflow.
+                    The AP workflow model.
                 </h2>
-                <div className="mt-8 grid gap-[1px] bg-border md:grid-cols-2">
-                    {workflowSteps.map((step) => (
-                        <article key={step.title} className="bg-background p-6">
-                            <h3 className="site-card-title">{step.title}</h3>
-                            <p className="site-card-body mt-3">{step.body}</p>
+                <p className="site-body mt-6 max-w-3xl">
+                    A useful automated invoice processing workflow should make each state visible.
+                    The goal is not to move invoices faster at any cost. The goal is to know which
+                    invoices are clean, which ones are exceptions, who owns the next step, and what
+                    evidence supports the release decision.
+                </p>
+                <div className="mt-8 grid gap-[1px] bg-border">
+                    {workflowSteps.map((step, index) => (
+                        <article
+                            key={step.title}
+                            className="grid gap-5 bg-background p-6 sm:grid-cols-[4rem_1fr]"
+                        >
+                            <p className="site-meta text-primary">
+                                {String(index + 1).padStart(2, "0")}
+                            </p>
+                            <div>
+                                <h3 className="site-card-title">{step.title}</h3>
+                                <p className="site-card-body mt-3">{step.body}</p>
+                            </div>
                         </article>
                     ))}
                 </div>
-                <p className="site-body mt-8 max-w-3xl">
-                    If you only do OCR and export a spreadsheet, you still have the hard part ahead:
-                    duplicate invoice detection, three-way match exceptions, approval routing, and
-                    evidence capture. That is why invoice processing automation succeeds only when
-                    the downstream controls are explicit.
-                </p>
             </section>
 
-            <section className="mt-14 border-t border-border pt-12">
+            <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                    Controls
+                    Operating Artifacts
                 </p>
                 <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
-                    The checks that make invoice automation posting-safe.
+                    The artifacts a good AP automation project should leave behind.
                 </h2>
                 <p className="site-body mt-6 max-w-3xl">
-                    The goal is not &ldquo;extract fields&rdquo;. The goal is &ldquo;post only what
-                    is validated and approved&rdquo;. A minimal control set for accounts payable
-                    invoice processing usually includes:
+                    You do not need a technical spec to start. You need a practical operating model
+                    AP can inspect: the fields, checks, exception states, approval evidence, and
+                    audit events that make the workflow defensible.
                 </p>
-                <div className="mt-8 grid gap-[1px] bg-border sm:grid-cols-2">
-                    {[
-                        "Subtotal + tax = total",
-                        "Line quantity × unit price = line total",
-                        "Supplier exists (or is routed for onboarding)",
-                        "Invoice number uniqueness by supplier + period",
-                        "Duplicate invoice variants flagged (fuzzy match)",
-                        "PO / invoice / receipt mismatch classification",
-                        "Tolerance rules for price and quantity variance",
-                        "Evidence required for high-risk approvals",
-                    ].map((item) => (
-                        <div key={item} className="bg-background p-5 text-sm text-foreground-muted">
+                <div className="mt-8 grid gap-[1px] bg-border md:grid-cols-2">
+                    {artifactGroups.map((group) => (
+                        <article key={group.title} className="bg-background p-6">
+                            <h3 className="site-card-title">{group.title}</h3>
+                            <p className="site-card-body mt-3">{group.body}</p>
+                            <ul className="mt-5 grid gap-2 text-sm text-foreground-muted">
+                                {group.items.map((item) => (
+                                    <li key={item} className="flex gap-2">
+                                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/70" />
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section className="mt-14 pt-12">
+                <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                    Software Evaluation
+                </p>
+                <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
+                    What invoice processing software should handle.
+                </h2>
+                <p className="site-body mt-6 max-w-3xl">
+                    If you are comparing invoice processing software, do not stop at OCR accuracy.
+                    The important question is whether the workflow helps AP decide what can move
+                    forward and what needs review.
+                </p>
+                <div className="mt-8 grid gap-[1px] bg-border">
+                    <div className="hidden bg-card p-4 text-xs font-mono uppercase tracking-[0.18em] text-foreground-subtle sm:grid sm:grid-cols-2">
+                        <span>Weak version</span>
+                        <span>Useful version</span>
+                    </div>
+                    {softwareRows.map((row) => (
+                        <article key={row.weak} className="grid gap-[1px] bg-border sm:grid-cols-2">
+                            <div className="bg-background p-5 text-foreground-muted">
+                                {row.weak}
+                            </div>
+                            <div className="bg-background p-5 font-medium text-foreground">
+                                {row.strong}
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section className="mt-14 pt-12">
+                <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                    Accounting System Boundary
+                </p>
+                <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
+                    Where Xero or your ERP fits.
+                </h2>
+                <p className="site-body mt-6 max-w-3xl">
+                    Most AP teams do not need to replace the accounting system to improve invoice
+                    processing. They need the checks around the system to become visible, repeatable,
+                    and easier to defend.
+                </p>
+                <div className="mt-8 grid gap-[1px] bg-border">
+                    {erpBoundaries.map((item) => (
+                        <div key={item} className="bg-background p-5 text-foreground-muted">
                             {item}
                         </div>
                     ))}
                 </div>
-                <div className="mt-8 border border-border bg-card p-6">
-                    <h3 className="site-h3">Need a control mapping table?</h3>
-                    <p className="site-body mt-3">
-                        Use the rule table to map your invoice approval workflow checks, exception
-                        routing owners, evidence requirements, and audit notes in one place.
-                    </p>
+            </section>
+
+            <section className="mt-14 pt-12">
+                <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
+                    Failure Modes
+                </p>
+                <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
+                    Why invoice automation projects fail.
+                </h2>
+                <p className="site-body mt-6 max-w-3xl">
+                    Most failures are not caused by OCR alone. They happen when the workflow does
+                    not define ownership, exceptions, evidence, and posting boundaries clearly
+                    enough for AP to trust the result.
+                </p>
+                <div className="mt-8 grid gap-[1px] bg-border md:grid-cols-2">
+                    {failureModes.map((mode) => (
+                        <article key={mode.title} className="bg-background p-6">
+                            <h3 className="site-card-title">{mode.title}</h3>
+                            <p className="site-card-body mt-3">{mode.body}</p>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            <section className="mt-14 border border-border bg-card p-7">
+                <p className="site-meta text-primary">Free starting point</p>
+                <h2 className="site-h3 mt-4">
+                    Test the intake step before you redesign the workflow.
+                </h2>
+                <p className="site-body mt-4">
+                    Run one real invoice through the free invoice extractor. Then use the supplier
+                    AP controls checklist to map the checks, exception owners, and evidence AP needs
+                    before approval or payment release.
+                </p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                    <Link href="/resources/invoice-extractor/" className="site-button">
+                        Use the Free Invoice Extractor
+                    </Link>
                     <Link
-                        href="/resources/supplier-payment-control-rule-table/interactive/"
-                        className="mt-6 inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
+                        href="/resources/accounts-payable-controls/"
+                        className="site-button bg-transparent text-foreground hover:bg-card"
                     >
-                        Open the Rule Table
+                        Map AP Controls
+                    </Link>
+                    <Link
+                        href="/glossary/three-way-match/"
+                        className="site-button bg-transparent text-foreground hover:bg-card"
+                    >
+                        Review Three-Way Match
                     </Link>
                 </div>
             </section>
 
-            <section className="mt-14 border-t border-border pt-12">
+            <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
                     FAQ
                 </p>
                 <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
                     Invoice processing automation questions
                 </h2>
-                <div className="mt-8 divide-y divide-border border-y border-border">
+                <div className="mt-8">
                     {faqItems.map((item) => (
                         <div key={item.question} className="py-6">
                             <h3 className="text-lg font-semibold text-foreground">{item.question}</h3>
@@ -307,4 +545,3 @@ export default function InvoiceProcessingAutomationPage() {
         </ToolPageShell>
     );
 }
-

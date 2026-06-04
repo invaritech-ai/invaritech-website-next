@@ -1,17 +1,12 @@
 import Link from "next/link";
 
 import { Logo, LogoIcon } from "@/components/logo";
-import { BOOK_MEETING_CTA, BOOK_MEETING_URL } from "@/lib/marketing";
-
-const navigationLinks = [
-    { title: "Home", href: "/" },
-    { title: "Resources", href: "/resources/" },
-    { title: "Blog", href: "/blog/" },
-    { title: "Work", href: "/work/" },
-    { title: "About", href: "/about/" },
-    { title: "Contact", href: "/contact/" },
-    { title: BOOK_MEETING_CTA, href: BOOK_MEETING_URL },
-];
+import { brandPositioning } from "@/lib/site-content/brand";
+import {
+    footerCompanyLinks,
+    footerFinanceLinks,
+    footerProofLinks,
+} from "@/lib/site-content/navigation";
 
 const legalLinks = [
     { title: "Privacy Policy", href: "/privacy/" },
@@ -58,6 +53,29 @@ function FooterLink({ href, title }: { href: string; title: string }) {
     );
 }
 
+function FooterColumn({
+    title,
+    links,
+    className,
+}: {
+    title: string;
+    links: { label?: string; title?: string; href: string }[];
+    className?: string;
+}) {
+    return (
+        <nav aria-label={`${title} navigation`} className={className}>
+            <h2 className="site-footer-heading">{title}</h2>
+            <ul className="site-footer-link-list">
+                {links.map((link) => (
+                    <li key={link.href}>
+                        <FooterLink href={link.href} title={link.label ?? link.title ?? ""} />
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
+
 export default function FooterSection() {
     const currentYear = new Intl.DateTimeFormat("en", {
         year: "numeric",
@@ -79,60 +97,47 @@ export default function FooterSection() {
                             </span>
                             <span className="site-footer-logo-copy">
                                 <Logo className="site-footer-logo-text" />
-                                <span className="site-logo-strapline">Payment Controls</span>
+                                <span className="site-logo-strapline">Finance Ops & RegOps Automations</span>
                             </span>
                         </Link>
 
-                        <p className="site-footer-text">
-                            Founder-led payment control design for finance teams that need cleaner approvals,
-                            fewer manual exceptions, and less leakage without changing systems.
-                        </p>
+                        <p className="site-footer-text">{brandPositioning.footer}</p>
                     </div>
 
-                    <nav aria-label="Footer navigation">
-                        <h2 className="site-footer-heading">Navigation</h2>
-                        <ul className="site-footer-link-list">
-                            {navigationLinks.map((link) => (
-                                <li key={link.title}>
-                                    <FooterLink href={link.href} title={link.title} />
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                    <FooterColumn
+                        title="Company"
+                        links={footerCompanyLinks}
+                        className="site-footer-company-column"
+                    />
+                    <FooterColumn title="Finance Ops" links={footerFinanceLinks} />
+                    <FooterColumn title="RegOps & Proof" links={footerProofLinks} />
 
-                    <nav aria-label="Legal navigation">
-                        <h2 className="site-footer-heading">Legal</h2>
-                        <ul className="site-footer-link-list">
-                            {legalLinks.map((link) => (
-                                <li key={link.title}>
-                                    <FooterLink href={link.href} title={link.title} />
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
+                    <div className="site-footer-utility-column">
+                        <FooterColumn title="Legal" links={legalLinks} />
 
-                    <div>
-                        <h2 className="site-footer-heading">Connect</h2>
-                        <div className="site-footer-social-row">
-                            {socialLinks.map((link) => (
-                                <Link
-                                    key={link.title}
-                                    href={link.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="site-footer-social-link"
-                                    aria-label={link.title}
-                                >
-                                    {link.icon}
-                                </Link>
-                            ))}
+                        <div>
+                            <h2 className="site-footer-heading">Connect</h2>
+                            <div className="site-footer-social-row">
+                                {socialLinks.map((link) => (
+                                    <Link
+                                        key={link.title}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="site-footer-social-link"
+                                        aria-label={link.title}
+                                    >
+                                        {link.icon}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className="site-footer-bottom">
                     <p>&copy; {currentYear} INVARITECH. All rights reserved.</p>
-                    <p>Australia-first. Founder-led. One client at a time.</p>
+                    <p>Asia-based delivery. Founder-led. Built around existing systems.</p>
                 </div>
             </div>
         </footer>
