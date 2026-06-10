@@ -4,6 +4,10 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { Upload, FileText, Download, RotateCcw, AlertCircle, CheckCircle2 } from "lucide-react";
 import { InvoiceData, Job } from "@/lib/invoice-extractor-types";
 import { cn } from "@/lib/utils";
+import {
+    compressImageForUpload,
+    shouldCompressImage,
+} from "./image-upload-compression";
 
 type Phase = "idle" | "uploading" | "polling" | "completed" | "failed";
 
@@ -75,7 +79,7 @@ export function InvoiceExtractor() {
         if (!ALLOWED_TYPES.includes(f.type)) {
             return "Unsupported file type. Please upload a PDF, JPG, or PNG.";
         }
-        if (f.size > MAX_FILE_SIZE) {
+        if (f.size > MAX_FILE_SIZE && !shouldCompressImage(f)) {
             return "File too large. Maximum size is 10 MB.";
         }
         return null;
@@ -195,13 +199,27 @@ export function InvoiceExtractor() {
         };
     }, [phase, jobId, fetchResult]);
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (!file) return;
         setPhase("uploading");
         setUploadProgress(0);
 
+        const uploadFile = await compressImageForUpload(file);
+        if (uploadFile.size > MAX_FILE_SIZE) {
+            setError({
+                code: "file_too_large",
+                message: "File is still larger than 10 MB after compression. Please upload a smaller invoice image.",
+            });
+            setPhase("failed");
+            return;
+        }
+
+        if (uploadFile !== file) {
+            setFile(uploadFile);
+        }
+
         const formData = new FormData();
-        formData.append("file", file);
+        formData.append("file", uploadFile);
 
         // Pass UTM params from the page URL to the backend for attribution tracking.
         const urlParams = new URLSearchParams(window.location.search);
@@ -234,7 +252,10 @@ export function InvoiceExtractor() {
                     setPhase("polling");
                 }
             } catch {
-                setError({ code: "parse_error", message: "Unexpected response from server." });
+                setError({
+                    code: "parse_error",
+                    message: xhr.responseText?.trim() || "Unexpected response from server.",
+                });
                 setPhase("failed");
             }
         };
