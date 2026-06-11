@@ -12,7 +12,7 @@ export const brandPositioning = {
     sharp: "We build automation for the finance and regulated work that still runs on manual checks.",
     controlLayerDefinition:
         "We build the checks, approvals, and evidence trails around the tools you already use. No rip and replace.",
-    trustLine: "Asia-based. Globally delivered. Founder-led. Built around your existing systems.",
+    trustLine: "Our EUDR compliance bridge supports 100k+ submissions a month. Founder-led. Built around your existing systems.",
     footer:
         "Invaritech builds finance automation and compliance automation around the tools teams already use.",
 };

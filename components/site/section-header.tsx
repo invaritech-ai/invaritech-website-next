@@ -6,6 +6,8 @@ type SectionHeaderProps = {
     align?: "left" | "center";
     className?: string;
     headingId?: string;
+    /** Opt into the GSAP scroll reveal where HomepageScrollAnimations is mounted. */
+    reveal?: boolean;
 };
 
 export function SectionHeader({
@@ -13,9 +15,11 @@ export function SectionHeader({
     align = "left",
     className,
     headingId,
+    reveal,
 }: SectionHeaderProps) {
     return (
         <header
+            data-reveal={reveal ? "block" : undefined}
             className={cn(
                 align === "center"
                     ? "site-header-center"

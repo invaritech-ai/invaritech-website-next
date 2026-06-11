@@ -37,6 +37,138 @@ function itemKey(item: { id: string; href?: string }) {
     return item.href ?? item.id;
 }
 
+/**
+ * Static, illustrative micro-previews so each card shows what the asset
+ * looks like instead of describing it. Pure markup; hidden from screen
+ * readers because the data is illustrative. Stats on the case-study card
+ * mirror the published numbers on /work/eudr-compliance-bridge/.
+ */
+function WorkPreview({ id }: { id: string }) {
+    switch (id) {
+        case "eudr-compliance-bridge":
+            return (
+                <div className="work-preview-stats mt-6" aria-hidden="true">
+                    <div className="work-preview-stat">
+                        <p className="work-preview-stat-value">100k+</p>
+                        <p className="work-preview-stat-label">
+                            Submissions/mo
+                        </p>
+                    </div>
+                    <div className="work-preview-stat">
+                        <p className="work-preview-stat-value">-99%</p>
+                        <p className="work-preview-stat-label">
+                            Entry errors
+                        </p>
+                    </div>
+                    <div className="work-preview-stat">
+                        <p className="work-preview-stat-value">100%</p>
+                        <p className="work-preview-stat-label">
+                            Traceable
+                        </p>
+                    </div>
+                </div>
+            );
+        case "three-way-matcher":
+            return (
+                <div className="work-preview" aria-hidden="true">
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">Quantity</span>
+                        <span className="work-preview-value work-preview-ok">
+                            Match
+                        </span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">Unit price</span>
+                        <span className="work-preview-value work-preview-flag">
+                            +5.0% vs PO
+                        </span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">Tax code</span>
+                        <span className="work-preview-value work-preview-ok">
+                            Match
+                        </span>
+                    </div>
+                </div>
+            );
+        case "invoice-extractor":
+            return (
+                <div className="work-preview" aria-hidden="true">
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">Supplier</span>
+                        <span className="work-preview-value">
+                            Meridian Packaging Co.
+                        </span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">Invoice no</span>
+                        <span className="work-preview-value">INV-2381</span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">Amount</span>
+                        <span className="work-preview-value">$9,384.00</span>
+                    </div>
+                </div>
+            );
+        case "cost-to-close-calculator":
+            return (
+                <div className="work-preview" aria-hidden="true">
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">
+                            Close length
+                        </span>
+                        <span className="work-preview-value">8 days</span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">
+                            Manual checks
+                        </span>
+                        <span className="work-preview-value">41 hrs/mo</span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">
+                            Hidden cost
+                        </span>
+                        <span className="work-preview-value work-preview-flag">
+                            $4,700/mo
+                        </span>
+                    </div>
+                </div>
+            );
+        case "accounts-payable-controls":
+            return (
+                <div className="work-preview" aria-hidden="true">
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">
+                            Duplicate check
+                        </span>
+                        <span className="work-preview-value work-preview-ok">
+                            Required
+                        </span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">
+                            PO match before release
+                        </span>
+                        <span className="work-preview-value work-preview-ok">
+                            Required
+                        </span>
+                    </div>
+                    <div className="work-preview-row">
+                        <span className="work-preview-label">
+                            Approval owner
+                        </span>
+                        <span className="work-preview-value work-preview-ok">
+                            Named
+                        </span>
+                    </div>
+                </div>
+            );
+        default:
+            return null;
+    }
+}
+
 function buildItems(proofAssets: ProofAsset[], tools: ToolCard[]) {
     const liveTools = tools.filter(
         (tool): tool is ToolCard & { href: string } =>
@@ -99,11 +231,12 @@ export function AvailableWorkGrid({
     return (
         <section className={cn("site-section", className)}>
             <div className="site-container">
-                <div className="available-work-grid">
+                <div className="available-work-grid" data-reveal="stagger">
                     {items.map((item, index) => (
                         <Link
                             key={item.id}
                             href={item.href}
+                            data-reveal-child
                             className={cn(
                                 "available-work-item",
                                 index < 2
@@ -125,6 +258,7 @@ export function AvailableWorkGrid({
                                         {item.detail}
                                     </p>
                                 ) : null}
+                                <WorkPreview id={item.id} />
                                 <div className="mt-6 flex flex-wrap gap-2">
                                     {item.tags.map((tag) => (
                                         <span

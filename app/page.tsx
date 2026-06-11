@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 import { AvailableWorkGrid } from "@/components/site/available-work-grid";
 import { DiagnosticCTA } from "@/components/site/diagnostic-cta";
 import { OfferLadder } from "@/components/site/offer-ladder";
@@ -48,10 +49,10 @@ export default function Home() {
 
             <section className="site-section border-t border-border">
                 <div className="site-container">
-                    <SectionHeader content={homePageContent.pillars.header} />
-                    <div className="mt-10 grid gap-5 md:grid-cols-2">
+                    <SectionHeader content={homePageContent.pillars.header} reveal />
+                    <div className="mt-10 grid gap-5 md:grid-cols-2" data-reveal="stagger">
                         {homePageContent.pillars.cards.map((pillar) => (
-                            <article key={pillar.id} className="site-card">
+                            <article key={pillar.id} className="site-card" data-reveal-child>
                                 <p className="site-meta">{pillar.eyebrow}</p>
                                 <h3 className="site-h3 mt-5">{pillar.title}</h3>
                                 <p className="site-body mt-4">{pillar.body}</p>
@@ -73,10 +74,10 @@ export default function Home() {
 
             <section className="site-section border-t border-border">
                 <div className="site-container">
-                    <SectionHeader content={homePageContent.problem.header} />
-                    <div className="site-grid-three mt-10">
+                    <SectionHeader content={homePageContent.problem.header} reveal />
+                    <div className="site-grid-three mt-10" data-reveal="stagger">
                         {homePageContent.problem.points.map((point) => (
-                            <article key={point.id} className="site-card">
+                            <article key={point.id} className="site-card" data-reveal-child>
                                 <h3 className="site-h3">{point.title}</h3>
                                 <p className="site-body mt-4">{point.body}</p>
                             </article>
@@ -93,6 +94,7 @@ export default function Home() {
                             title: "Keep your tools. Lose the manual checking.",
                             body: "We don't ask you to rip out the software you already use. We add the workflow around it that checks exceptions, records evidence, and routes decisions.",
                         }}
+                        reveal
                     />
                 </div>
                 <WorkflowDiagram
@@ -116,6 +118,7 @@ export default function Home() {
                             title: "Diagnose. Build. Support.",
                             body: "The service ladder is deliberately narrow at the start. One workflow first, then a fixed-scope build, then managed support when the workflow is live.",
                         }}
+                        reveal
                     />
                 </div>
                 <OfferLadder stages={offerStages} className="pt-10" />
@@ -129,6 +132,7 @@ export default function Home() {
                             title: "Proof and tools you can open today.",
                             body: "Start with live assets: the compliance bridge case study, AP matching demo, invoice extraction, payment-control rules, and close-cost calculator.",
                         }}
+                        reveal
                     />
                 </div>
                 <AvailableWorkGrid
@@ -140,10 +144,10 @@ export default function Home() {
 
             <section className="site-section border-t border-border bg-card/40">
                 <div className="site-container">
-                    <SectionHeader content={homePageContent.method.header} />
-                    <div className="site-grid-three mt-10">
+                    <SectionHeader content={homePageContent.method.header} reveal />
+                    <div className="site-grid-three mt-10" data-reveal="stagger">
                         {homePageContent.method.steps.map((step) => (
-                            <article key={step.id} className="site-card">
+                            <article key={step.id} className="site-card" data-reveal-child>
                                 <h3 className="site-h3">{step.title}</h3>
                                 <p className="site-body mt-4">{step.body}</p>
                             </article>
@@ -158,6 +162,8 @@ export default function Home() {
                 cta={homePageContent.finalCta.cta}
                 className="border-t border-border"
             />
+
+            <HomepageScrollAnimations />
         </PageShell>
     );
 }

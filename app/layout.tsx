@@ -170,7 +170,11 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning className="light">
+        <html
+            lang="en"
+            suppressHydrationWarning
+            className={`light ${sourceSans.variable} ${sourceSerif.variable} ${geistSans.variable} ${geistMono.variable}`}
+        >
             <head>
                 <meta
                     name="facebook-domain-verification"
@@ -219,9 +223,7 @@ export default function RootLayout({
   document.head.appendChild(o)}initApollo();`}
                 </Script>
             </head>
-            <body
-                className={`${sourceSans.variable} ${sourceSerif.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground overflow-x-hidden`}
-            >
+            <body className="antialiased bg-background text-foreground overflow-x-hidden">
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="light"

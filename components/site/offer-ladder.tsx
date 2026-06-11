@@ -33,6 +33,7 @@ export function OfferLadder({ stages, className }: OfferLadderProps) {
                         <section
                             key={stage.id}
                             className="offer-ladder-stage"
+                            data-reveal="block"
                         >
                             <div className="offer-ladder-stage-head">
                                 <p className="site-meta">

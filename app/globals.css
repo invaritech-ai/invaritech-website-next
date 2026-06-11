@@ -421,6 +421,48 @@ textarea {
         @apply border border-border px-2 py-1 text-[10px] font-mono uppercase tracking-[0.16em] text-foreground-subtle;
     }
 
+    /* Small static previews inside available-work cards. */
+    .work-preview {
+        @apply mt-6 border border-border bg-card/60 p-4;
+    }
+
+    .work-preview-row {
+        @apply flex items-baseline justify-between gap-3 border-b border-border/70 py-1.5 last:border-b-0;
+    }
+
+    .work-preview-label {
+        @apply text-[10px] font-mono uppercase tracking-[0.14em] text-foreground-subtle;
+    }
+
+    .work-preview-value {
+        @apply font-mono text-[11px] text-foreground;
+    }
+
+    .work-preview-flag {
+        @apply font-semibold text-accent;
+    }
+
+    .work-preview-ok {
+        @apply text-primary;
+    }
+
+    .work-preview-stats {
+        @apply grid grid-cols-3 gap-[1px] border border-border bg-border;
+    }
+
+    .work-preview-stat {
+        @apply bg-background p-3;
+    }
+
+    .work-preview-stat-value {
+        @apply text-lg font-semibold tracking-tight text-primary tabular-nums;
+        font-family: var(--font-display);
+    }
+
+    .work-preview-stat-label {
+        @apply mt-1 text-[9px] font-mono uppercase tracking-[0.12em] text-foreground-subtle;
+    }
+
     .site-icon {
         @apply mb-6 size-5 text-primary;
     }
@@ -599,6 +641,9 @@ textarea {
         }
         .hero-rise-3 {
             animation-delay: 210ms;
+        }
+        .hero-rise-4 {
+            animation-delay: 280ms;
         }
     }
 
@@ -1213,6 +1258,85 @@ textarea {
 
     .control-stamp-verified {
         color: var(--chart-3);
+    }
+
+    .control-stamp-released {
+        color: var(--primary);
+    }
+
+    .control-stamp-flagged {
+        color: var(--accent);
+    }
+
+    /* ── Hero Exception Queue ───────────────────────────────── */
+    .hero-queue {
+        @apply relative mx-auto mt-14 w-full max-w-2xl border border-border bg-card/70 text-left shadow-sm;
+    }
+
+    .hero-queue-head {
+        @apply flex items-center justify-between gap-4 border-b border-border px-4 py-2.5 sm:px-5;
+    }
+
+    .hero-queue-label {
+        @apply text-[9px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+    }
+
+    .hero-queue-row {
+        @apply grid grid-cols-[1fr_auto_auto] items-center gap-3 border-b border-border/70 px-4 py-2.5 sm:px-5;
+    }
+
+    .hero-queue-id {
+        @apply font-mono text-[11px] text-foreground;
+    }
+
+    .hero-queue-supplier {
+        @apply hidden text-foreground-subtle sm:inline;
+    }
+
+    .hero-queue-amount {
+        @apply font-mono text-[11px] tabular-nums text-foreground-muted;
+    }
+
+    .hero-queue-held {
+        @apply relative px-4 py-3.5 sm:px-5;
+        background: color-mix(in oklch, var(--accent) 5%, transparent);
+    }
+
+    .hero-queue-bar {
+        @apply absolute inset-y-0 left-0 w-[3px] bg-accent;
+    }
+
+    .hero-queue-held-top {
+        @apply grid grid-cols-[1fr_auto_auto] items-center gap-3;
+    }
+
+    .hero-queue-reason {
+        @apply mt-2 font-mono text-[10px] leading-relaxed text-accent;
+    }
+
+    .hero-queue-audit {
+        @apply mt-1 font-mono text-[10px] leading-relaxed text-foreground-subtle;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .hero-queue-stamp {
+            animation: stamp-in 0.4s cubic-bezier(0.2, 1.4, 0.4, 1) 1.05s both;
+        }
+    }
+
+    @keyframes stamp-in {
+        0% {
+            opacity: 0;
+            transform: rotate(5deg) scale(1.7);
+        }
+        70% {
+            opacity: 1;
+            transform: rotate(-3deg) scale(0.94);
+        }
+        100% {
+            opacity: 1;
+            transform: rotate(-2deg) scale(1);
+        }
     }
 
     /* ── Tool Surfaces ─────────────────────────────────────── */

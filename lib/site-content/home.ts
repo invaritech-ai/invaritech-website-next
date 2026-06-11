@@ -53,7 +53,7 @@ type HomePageContent = {
 
 export const homePageContent = {
     hero: {
-        eyebrow: brandPositioning.short,
+        eyebrow: "We build the checks your tools skip",
         title: "Finance automation and compliance automation for teams still running on manual checks.",
         body: "We build around messy invoices, approvals, exceptions, and audit trails: invoice approval, month-end close, evidence intake. Your finance and compliance systems stay in place.",
         primaryCta: primaryDiagnosticCta,
@@ -73,7 +73,7 @@ export const homePageContent = {
         cards: [
             {
                 id: "finance-ops",
-                eyebrow: "Finance automation",
+                eyebrow: "For AP, close, and cash teams",
                 title: "Finance automation",
                 body: "For accounts payable, invoice approval workflows, Xero AP automation, duplicate payment risk, payment controls, month-end close, and cash visibility.",
                 href: "/finance-automation/",
@@ -86,7 +86,7 @@ export const homePageContent = {
             },
             {
                 id: "regops",
-                eyebrow: "Compliance automation",
+                eyebrow: "For compliance and reporting teams",
                 title: "Compliance automation",
                 body: "For regulatory compliance submissions, evidence intake, review checkpoints, reporting bridges, and audit trails in document-heavy compliance work.",
                 href: "/regulatory-operations-automation/",

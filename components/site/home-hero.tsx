@@ -8,6 +8,7 @@ import {
 } from "react";
 import { useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { ExceptionQueue } from "@/components/site/exception-queue";
 import type { CTA, HeroContent } from "@/lib/site-content/types";
 
 type HomeHeroProps = {
@@ -79,9 +80,9 @@ export function HomeHero({ content, className }: HomeHeroProps) {
         <section className={cn("site-section", className)}>
             <div className="site-container relative z-10">
                 <div className="mx-auto max-w-5xl text-center">
-                    <p className="site-meta hero-rise">{content.eyebrow}</p>
+                    <p className="site-kicker hero-rise">{content.eyebrow}</p>
                     {/* H1 is the LCP element: rendered at full opacity, never animated. */}
-                    <h1 className="site-h2 mt-5">{content.title}</h1>
+                    <h1 className="site-h2">{content.title}</h1>
                     <p className="site-lead mx-auto mt-6 max-w-3xl hero-rise hero-rise-1">
                         {content.body}
                     </p>
@@ -98,8 +99,9 @@ export function HomeHero({ content, className }: HomeHeroProps) {
                             </Link>
                         ) : null}
                     </div>
+                    <ExceptionQueue />
                     {content.trustLine ? (
-                        <p className="site-meta mx-auto mt-8 max-w-3xl hero-rise hero-rise-3">
+                        <p className="site-meta mx-auto mt-8 max-w-3xl hero-rise hero-rise-4">
                             {content.trustLine}
                         </p>
                     ) : null}

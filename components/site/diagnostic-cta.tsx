@@ -27,7 +27,10 @@ export function DiagnosticCTA({
     return (
         <section className={cn("site-section", className)}>
             <div className="site-container">
-                <div className="site-card grid gap-8 md:grid-cols-[1fr_auto] md:items-center">
+                <div
+                    className="site-card grid gap-8 md:grid-cols-[1fr_auto] md:items-center"
+                    data-reveal="block"
+                >
                     <div>
                         <h2 className="site-h2">{title}</h2>
                         <p className="site-body mt-5 max-w-3xl">{body}</p>
