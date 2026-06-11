@@ -6,6 +6,7 @@ import { AvailableWorkGrid } from "@/components/site/available-work-grid";
 import { DiagnosticCTA } from "@/components/site/diagnostic-cta";
 import { OfferLadder } from "@/components/site/offer-ladder";
 import { PageShell } from "@/components/site/page-shell";
+import { RuleGlint } from "@/components/site/rule-glint";
 import { SectionHeader } from "@/components/site/section-header";
 import { HomeHero } from "@/components/site/home-hero";
 import { WorkflowDiagram } from "@/components/site/workflow-diagram";
@@ -47,7 +48,8 @@ export default function Home() {
         <PageShell>
             <HomeHero content={homePageContent.hero} className="site-section-hero site-home-hero" />
 
-            <section className="site-section border-t border-border">
+            <section className="site-section relative border-t border-border">
+                <RuleGlint />
                 <div className="site-container">
                     <SectionHeader content={homePageContent.pillars.header} reveal />
                     <div className="mt-10 grid gap-5 md:grid-cols-2" data-reveal="stagger">
@@ -72,7 +74,8 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="site-section border-t border-border">
+            <section className="site-section relative border-t border-border">
+                <RuleGlint />
                 <div className="site-container">
                     <SectionHeader content={homePageContent.problem.header} reveal />
                     <div className="site-grid-three mt-10" data-reveal="stagger">
@@ -86,7 +89,8 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="border-t border-border bg-card/40">
+            <section className="relative border-t border-border bg-card/40">
+                <RuleGlint />
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
@@ -110,7 +114,8 @@ export default function Home() {
                 />
             </section>
 
-            <section className="border-t border-border">
+            <section className="relative border-t border-border">
+                <RuleGlint />
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
@@ -124,7 +129,8 @@ export default function Home() {
                 <OfferLadder stages={offerStages} className="pt-10" />
             </section>
 
-            <section className="border-t border-border bg-card/40" id="tools">
+            <section className="relative border-t border-border bg-card/40" id="tools">
+                <RuleGlint />
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
@@ -142,7 +148,8 @@ export default function Home() {
                 />
             </section>
 
-            <section className="site-section border-t border-border bg-card/40">
+            <section className="site-section relative border-t border-border bg-card/40">
+                <RuleGlint />
                 <div className="site-container">
                     <SectionHeader content={homePageContent.method.header} reveal />
                     <div className="site-grid-three mt-10" data-reveal="stagger">

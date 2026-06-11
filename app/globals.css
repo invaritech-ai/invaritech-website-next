@@ -317,7 +317,7 @@ textarea {
     }
 
     .site-meta {
-        @apply text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle;
+        @apply text-[11px] font-mono uppercase tracking-[0.18em] text-foreground-subtle transition-colors duration-300;
     }
 
     .site-grid {
@@ -333,7 +333,87 @@ textarea {
     }
 
     .site-card {
-        @apply bg-background p-6 transition-colors hover:bg-card md:p-7;
+        @apply relative bg-background p-6 transition-colors hover:bg-card md:p-7;
+    }
+
+    /* ── Ledger inspection hover ────────────────────────────────
+       A hairline rules itself down the card's left edge on hover and
+       the eyebrow tints primary — the row under review. Transform and
+       color only; guarded for touch and reduced motion. */
+    .site-card::after,
+    .available-work-card::after,
+    .offer-ladder-offer::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary);
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        pointer-events: none;
+    }
+
+    .available-work-card,
+    .offer-ladder-offer {
+        position: relative;
+    }
+
+    /* Workflow cards keep their amber glass light instead. */
+    .workflow-glass-card::after {
+        content: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+        .site-card:hover::after,
+        .available-work-card:hover::after,
+        .offer-ladder-offer:hover::after {
+            transform: scaleY(1);
+        }
+
+        .site-card:hover > .site-meta,
+        .available-work-card:hover .site-meta,
+        .offer-ladder-offer:hover > div > .site-meta {
+            color: var(--primary);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .site-card::after,
+        .available-work-card::after,
+        .offer-ladder-offer::after {
+            transition-duration: 1ms;
+        }
+    }
+
+    /* ── Rule glint (scroll-scrubbed divider sweep) ─────────── */
+    .rule-glint-track {
+        position: absolute;
+        top: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    .rule-glint {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 9rem;
+        transform: translateX(-10rem);
+        background: linear-gradient(
+            90deg,
+            transparent,
+            color-mix(in oklch, var(--primary) 45%, transparent) 40%,
+            color-mix(in oklch, var(--primary) 80%, transparent) 55%,
+            transparent
+        );
+        box-shadow: 0 0 8px color-mix(in oklch, var(--primary) 30%, transparent);
     }
 
     .site-card-muted {

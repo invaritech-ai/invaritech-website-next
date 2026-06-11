@@ -41,6 +41,29 @@ export default function HomepageScrollAnimations() {
             );
         });
 
+        // Rule glints — a soft light sweeps along a section's top rule,
+        // scrubbed to scroll so it tracks the reader in both directions.
+        gsap.utils.toArray<HTMLElement>("[data-glint]").forEach((glint) => {
+            const track = glint.parentElement;
+            const section = track?.closest("section");
+            if (!track || !section) return;
+            gsap.fromTo(
+                glint,
+                { x: -160 },
+                {
+                    x: () => track.offsetWidth + 160,
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 92%",
+                        end: "top 28%",
+                        scrub: 0.6,
+                        invalidateOnRefresh: true,
+                    },
+                },
+            );
+        });
+
         // Stagger reveals — children fan in sequentially
         gsap.utils.toArray<HTMLElement>("[data-reveal='stagger']").forEach((container) => {
             const children = container.querySelectorAll<HTMLElement>("[data-reveal-child]");
