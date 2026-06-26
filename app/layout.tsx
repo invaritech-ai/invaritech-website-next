@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { structuredData } from "./structured-data";
-import { faqSchema } from "@/lib/faq-schema";
 import Script from "next/script";
 import "./globals.css";
+import { LenisScroll } from "@/components/ui/LenisScroll";
+import { HeroHeader } from "@/components/header";
+import { PromoBar } from "@/components/promo-bar";
+import SiteSpotlight from "@/components/hero-spotlight";
+import FooterSection from "@/components/footer";
+import { Chatbot } from "@/components/chatbot";
+import { AttributionCapture } from "@/components/attribution-capture";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const geistSans = localFont({
     src: [
@@ -33,35 +41,67 @@ const geistMono = localFont({
     fallback: ["monospace"],
 });
 
+const sourceSans = localFont({
+    src: [
+        {
+            path: "./fonts/SourceSans3-Latin-Variable.woff2",
+            weight: "200 900",
+            style: "normal",
+        },
+    ],
+    variable: "--font-source-sans",
+    display: "swap",
+    preload: true,
+    fallback: ["system-ui", "arial"],
+});
+
+const sourceSerif = localFont({
+    src: [
+        {
+            path: "./fonts/SourceSerif4-Latin-Variable.woff2",
+            weight: "200 900",
+            style: "normal",
+        },
+    ],
+    variable: "--font-source-serif",
+    display: "swap",
+    preload: true,
+    fallback: ["Georgia", "Cambria", "Times New Roman"],
+});
+
+const metadataVerification: Metadata["verification"] = {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+        ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+        : {}),
+    ...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION
+        ? { yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION }
+        : {}),
+    ...(process.env.NEXT_PUBLIC_YAHOO_VERIFICATION
+        ? { yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION }
+        : {}),
+};
+
 export const metadata: Metadata = {
     title: {
-        default:
-            "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
+        default: "Finance Automation & Compliance Automation | INVARITECH",
         template: "%s | INVARITECH",
     },
     description:
-        "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+        "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
     keywords: [
         "INVARITECH",
-        "business automation",
-        "workflow automation",
+        "finance automation",
         "compliance automation",
-        "back-office systems",
-        "data pipelines",
-        "API integration",
-        "freelancer tools",
-        "agency management",
-        "custom automation",
-        "small business software",
-        "process automation",
-        "compliance bridge",
-        "weekendsuite",
-        "backend development",
-        "AI automation",
-        "custom software",
-        "database design",
-        "web development",
-        "digital transformation",
+        "invoice automation",
+        "accounts payable automation",
+        "invoice approval software",
+        "invoice approval workflow",
+        "invoice processing automation",
+        "compliance automation software",
+        "financial close automation",
+        "Xero AP automation",
+        "regulatory compliance automation",
+        "audit trail software",
     ],
     authors: [{ name: "INVARITECH", url: "https://www.invaritech.ai" }],
     creator: "INVARITECH",
@@ -88,51 +128,42 @@ export const metadata: Metadata = {
     },
     openGraph: {
         type: "website",
-        locale: "en_US",
+        locale: "en",
         url: "https://www.invaritech.ai",
-        title: "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
+        title: "Finance Automation & Compliance Automation | INVARITECH",
         description:
-            "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+            "Finance automation and compliance automation for document-heavy teams: invoice approval, accounts payable, month-end close, evidence, and audit trails around your existing systems.",
         siteName: "INVARITECH",
         images: [
             {
-                url: "/og-image.webp",
+                url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "INVARITECH - Automation & Back-Office Systems",
-                type: "image/webp",
+                alt: "Finance Automation & Compliance Automation | INVARITECH",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "INVARITECH - Automation & Back-Office Systems",
+        title: "Finance Automation & Compliance Automation | INVARITECH",
         description:
-            "Custom automation for small service businesses. Compliance bridges, data pipelines, and admin suites. Stop losing time between your tools.",
-        images: ["/og-image.webp"],
-        creator: "@invaritechai",
+            "Finance automation and compliance automation for document-heavy teams, built around the systems they already use.",
+        images: ["/og-image.png"],
         site: "@invaritechai",
     },
-    verification: {
-        google: "your-google-verification-code",
-        yandex: "your-yandex-verification-code",
-        yahoo: "your-yahoo-verification-code",
-    },
+    verification: metadataVerification,
     category: "technology",
     classification: "Business",
     referrer: "origin-when-cross-origin",
     icons: {
-        icon: "/favicon.ico",
+        icon: [
+            { url: "/invaritech-icon.svg", type: "image/svg+xml" },
+            { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+        ],
         shortcut: "/favicon.ico",
-        apple: "/favicon.ico",
+        apple: "/icon-192.png",
     },
 };
-
-import { HeroHeader } from "@/components/header";
-import FooterSection from "@/components/footer";
-import { Chatbot } from "@/components/chatbot";
-
-// ... imports ...
 
 export default function RootLayout({
     children,
@@ -140,63 +171,80 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html
+            lang="en"
+            suppressHydrationWarning
+            className={`light ${sourceSans.variable} ${sourceSerif.variable} ${geistSans.variable} ${geistMono.variable}`}
+        >
             <head>
-                {/* Resource hints for external domains */}
+                <meta
+                    name="facebook-domain-verification"
+                    content="40eogslk5htol3s1lsoqadxgh2h657"
+                />
+                {/* Non-standard but requested by some validators/tools */}
+                <meta
+                    property="og:logo"
+                    content="https://www.invaritech.ai/logo-image.png"
+                />
+                {/* Explicit absolute OG image hints for stricter scrapers */}
+                <meta
+                    property="og:image:secure_url"
+                    content="https://www.invaritech.ai/og-image.png"
+                />
+                <meta property="og:image:type" content="image/png" />
                 <link rel="preconnect" href="https://www.google.com" />
                 <link
                     rel="preconnect"
                     href="https://www.googletagmanager.com"
                 />
                 <link rel="dns-prefetch" href="https://analytics.ahrefs.com" />
-                <link rel="dns-prefetch" href="https://r2.leadsy.ai" />
+                <link rel="dns-prefetch" href="https://assets.apollo.io" />
 
-                {/* Structured data - inline scripts are fine, they don't block */}
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify(structuredData),
                     }}
                 />
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify(faqSchema),
-                    }}
+                <Script
+                    src="https://analytics.ahrefs.com/analytics.js"
+                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
+                    strategy="lazyOnload"
                 />
-                {/* <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{
-                        __html: JSON.stringify({
-                            "@context": "https://schema.org",
-                            "@type": "Organization",
-                            name: "INVARITECH",
-                            url: "https://www.invaritech.ai",
-                            logo: "https://www.invaritech.ai/logo-image.png",
-                            sameAs: [
-                                "https://linkedin.com/company/invaritechai",
-                                "https://x.com/invaritechai",
-                            ],
-                        }),
-                    }}
-                /> */}
+                <Script
+                    src="https://r2.leadsy.ai/tag.js"
+                    data-pid="1rQPfvIzStzrxlsWj"
+                    data-version="062024"
+                    strategy="lazyOnload"
+                />
+                <Script id="apollo-website-tracker" strategy="afterInteractive">
+                    {`function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+  o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+  o.onload=function(){window.trackingFunctions.onLoad({appId:"69ae995320f12f0015033d60"})},
+  document.head.appendChild(o)}initApollo();`}
+                </Script>
             </head>
-            <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-            >
+            <body className="antialiased bg-background text-foreground overflow-x-hidden">
                 <ThemeProvider
                     attribute="class"
-                    defaultTheme="system"
-                    enableSystem
+                    defaultTheme="light"
+                    enableSystem={false}
                     disableTransitionOnChange
                 >
-                    <HeroHeader />
-                    {children}
-                    <FooterSection />
-                    <Chatbot />
+                    <LenisScroll>
+                        <div className="fixed inset-0 z-[-1] pointer-events-none grain-overlay opacity-30" />
+                        <SiteSpotlight />
+                        <div className="relative z-10">
+                            <PromoBar />
+                            <HeroHeader />
+                            {children}
+                            <FooterSection />
+                        </div>
+                        <Chatbot />
+                        <AttributionCapture />
+                    </LenisScroll>
                 </ThemeProvider>
 
-                {/* Third-party scripts with optimized loading strategies */}
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-JJPJBB10G7"
                     strategy="afterInteractive"
@@ -210,19 +258,12 @@ export default function RootLayout({
                     `}
                 </Script>
 
-                <Script
-                    src="https://analytics.ahrefs.com/analytics.js"
-                    data-key="A6OV+c4YNtaqQiY6VZk1eg"
-                    strategy="lazyOnload"
-                />
-
-                <Script
-                    id="vtag-ai-js"
-                    src="https://r2.leadsy.ai/tag.js"
-                    data-pid="1rQPfvIzStzrxlsWj"
-                    data-version="062024"
-                    strategy="lazyOnload"
-                />
+                {process.env.NODE_ENV === "production" ? (
+                    <>
+                        <Analytics />
+                        <SpeedInsights />
+                    </>
+                ) : null}
             </body>
         </html>
     );

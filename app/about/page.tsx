@@ -1,334 +1,225 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Separator } from "@/components/ui/separator";
-import { ArrowRight, Network, PenTool } from "lucide-react";
+import { ArrowRight, ClipboardCheck, Handshake, PenTool, ShieldCheck } from "lucide-react";
+import { BOOK_MEETING_URL } from "@/lib/marketing";
 import Image from "next/image";
-import { ReactNode } from "react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 import { Metadata } from "next";
-import { PageLayout } from "@/components/page-layout";
-import { TextEffect } from "@/components/ui/text-effect";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
 export const metadata: Metadata = {
-    title: "About Us - The Studio Model",
+    title: { absolute: "About INVARITECH | Finance & Compliance Automation" },
     description:
-        "INVARITECH is a boutique automation studio. We design and build custom systems that help small teams stop losing time between their tools.",
+        "A founder-led team building finance and compliance automation with fixed scope, written acceptance criteria, and managed support.",
     openGraph: {
-        title: "About INVARITECH - Boutique Automation Studio",
+        title: "About INVARITECH | Finance & Compliance Automation",
         description:
-            "Small by design, expert by trade. We build automation systems for regulated firms and freelancers. No body shops, no bloat.",
+            "A founder-led team with a Goldman Sachs reconciliation track record. Fixed-scope automation for finance and compliance teams.",
         url: "https://www.invaritech.ai/about/",
-        images: [
-            {
-                url: "/og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "About INVARITECH - Boutique Automation Studio",
-                type: "image/webp",
-            },
-        ],
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1376, height: 768, alt: "About INVARITECH - Finance & Compliance Automation" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "About INVARITECH | Finance & Compliance Automation",
+        description:
+            "Founder-led workflow automation with measurable acceptance criteria and ongoing managed support.",
+        images: ["/og-image.png"],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/about/",
     },
 };
 
-const SHOW_AVISHEK = false;
+const SHOW_AVISHEK = true;
+
+const standards = [
+    {
+        icon: ClipboardCheck,
+        title: "Clear objective first",
+        body: "Before build starts, we agree the workflow, the control outcome, and how success will be checked.",
+    },
+    {
+        icon: ShieldCheck,
+        title: "Clear delivery responsibility",
+        body: "If an agreed workflow does not behave as specified, we stay with it until the agreed control works as intended.",
+    },
+    {
+        icon: Handshake,
+        title: "Scope stays transparent",
+        body: "If a new feature or exception family appears, we separate it from the original objective so timelines and tradeoffs stay clear.",
+    },
+];
 
 export default function AboutPage() {
     return (
-        <PageLayout maxWidth="6xl">
-            {/* Hero */}
-            <div className="mb-16 max-w-3xl">
-                <Badge variant="secondary" className="mb-6">
-                    Our Philosophy
-                </Badge>
-                <TextEffect
-                    per="word"
-                    as="h1"
-                    preset="fade"
-                    className="text-4xl font-bold tracking-tight sm:text-6xl mb-6"
-                >
-                    Small by Design. Expert by Trade.
-                </TextEffect>
-                <TextEffect
-                    per="line"
-                    as="p"
-                    preset="fade"
-                    delay={0.3}
-                    className="text-xl md:text-2xl font-medium text-foreground/80 mb-6 leading-relaxed"
-                >
-                    We are not a traditional agency. We are a boutique
-                    automation studio.
-                </TextEffect>
-                <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                    Modern businesses don&apos;t need armies of junior staff.
-                    They need smart systems and expert architects who can
-                    design, implement, and continuously improve those systems.
-                </p>
-                <p className="text-lg text-muted-foreground leading-relaxed">
-                    We build those systems.
-                </p>
-            </div>
-
-            {/* The Vision */}
-            <div className="grid gap-12 md:grid-cols-2 mb-32 items-center">
-                <div>
-                    <h2 className="text-3xl font-bold mb-6">Why We Exist</h2>
-                    <div className="space-y-4 text-lg text-muted-foreground">
-                        <p>
-                            The &quot;digital transformation&quot; industry is
-                            broken. It sells bloat, complexity, and multi-year
-                            roadmaps to companies that mostly just want to work
-                            faster, with fewer errors and less chaos.
-                        </p>
-                        <p>
-                            We built Invaritech to prove that a small, focused
-                            team armed with the right automation tools can
-                            outmaneuver a giant corporation.
-                        </p>
-                        <p>
-                            Our mission is to give regulated firms and
-                            freelancers the same operational superpowers that
-                            tech giants have, without the headcount,
-                            bureaucracy, or fragile one-off hacks.
-                        </p>
-                    </div>
-                </div>
-                <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12">
-                    <blockquote className="text-xl font-medium italic mb-6">
-                        &quot;Automation doesn&apos;t just save time. It frees
-                        human expertise from boring admin so it can be used
-                        where it actually moves the needle.&quot;
-                    </blockquote>
-                    <div className="flex items-center gap-4">
-                        <Avatar className="h-16 w-16">
-                            <AvatarImage
-                                src="/aditi.webp"
-                                alt="Aditi Garg"
-                                className="object-cover object-top"
-                            />
-                            <AvatarFallback className="text-primary bg-primary-foreground">
-                                AG
-                            </AvatarFallback>
-                        </Avatar>
+        <main className="site-page">
+            <section className="site-section-hero">
+                <div className="site-container">
+                    <div className="site-split">
                         <div>
-                            <div className="font-semibold text-primary-foreground">
-                                Aditi Garg
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">A small team. Serious work.</p>
                             </div>
-                            <div className="text-sm text-primary-foreground/80">
-                                Director & Founder
-                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Founder-led finance automation. Built in Asia, delivered worldwide.
+                            </h1>
                         </div>
+                        <p className="site-lead" data-reveal="block">
+                            We build finance and compliance workflows around the tools teams already use. One workflow first. Fixed scope. Written acceptance criteria. Managed support after delivery.
+                        </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            {/* The Model */}
-            <div className="mb-32">
-                <div className="mb-16 max-w-3xl">
-                    <h2 className="text-3xl font-bold mb-4">
-                        How We Work: The Studio Model
-                    </h2>
-                    <p className="text-muted-foreground leading-relaxed">
-                        We reject the &quot;body shop&quot; agency model. No
-                        anonymous teams. No endless hand-offs. No slideware that
-                        never ships. Instead, we operate as a high-precision
-                        studio.
-                    </p>
-                </div>
-
-                <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-5xl divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16 md:grid-cols-2 md:divide-x md:divide-y-0">
-                    <div className="group p-6 md:p-8">
-                        <CardHeader className="pb-3 p-0">
-                            <CardDecorator>
-                                <PenTool className="size-6" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium text-xl">
-                                The Architects
-                            </h3>
-                            <p className="text-sm text-muted-foreground mt-2">
-                                You work directly with the principals.
-                            </p>
-                        </CardHeader>
-
-                        <CardContent className="pb-6 p-0 mt-6">
-                            <p className="text-muted-foreground mb-6">
-                                We (the founders) architect every solution,
-                                define the strategy, and own the outcome. There
-                                are no &quot;account managers&quot; buffering
-                                communication or diluting decisions.
-                            </p>
-                            <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
-                                <li className="flex gap-3">
-                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                    We map your real-world processes and
-                                    constraints
-                                </li>
-                                <li className="flex gap-3">
-                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                    We design the automation architecture and
-                                    control layers
-                                </li>
-                                <li className="flex gap-3">
-                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                    We stay involved until it works in
-                                    production and your team actually uses it
-                                </li>
-                            </ul>
-                        </CardContent>
+            <section className="border-y border-border bg-card py-16 md:py-24">
+                <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr]">
+                    <div>
+                        <p className="mb-5 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">How we work</p>
+                        <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">
+                            Fixed scope. Written outcomes. Managed after delivery.
+                        </h2>
+                        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+                            We start with one workflow, one owner, and acceptance criteria both parties sign off on before work begins. Then we build the control around the systems your finance team already uses.
+                        </p>
                     </div>
 
-                    <div className="group p-6 md:p-8">
-                        <CardHeader className="pb-3 p-0">
-                            <CardDecorator>
-                                <Network className="size-6" aria-hidden />
-                            </CardDecorator>
-
-                            <h3 className="mt-6 font-medium text-xl">
-                                The Network
-                            </h3>
-                            <p className="text-sm text-muted-foreground mt-2">
-                                For execution, we draw on a curated private
-                                network of elite specialists.
-                            </p>
-                        </CardHeader>
-
-                        <CardContent className="pb-6 p-0 mt-6">
-                            <p className="text-muted-foreground mb-6">
-                                Developers, designers, and compliance experts
-                                we’ve vetted over years of projects. You get
-                                big-firm capability, without big-firm overhead:
-                            </p>
-                            <ul className="text-left space-y-3 text-sm text-muted-foreground max-w-sm mx-auto">
-                                <li className="flex gap-3">
-                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                    The right specialist for each component
-                                </li>
-                                <li className="flex gap-3">
-                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                    Senior oversight on every decision
-                                </li>
-                                <li className="flex gap-3">
-                                    <div className="mt-1 size-1.5 rounded-full bg-primary shrink-0" />
-                                    Clear, accountable ownership end-to-end
-                                </li>
-                            </ul>
-                        </CardContent>
-                    </div>
-                </Card>
-            </div>
-
-            <Separator className="my-24" />
-
-            {/* Leadership */}
-            <div className="mb-24">
-                <div className="mb-16 max-w-3xl">
-                    <h2 className="text-3xl font-bold mb-4">The Team</h2>
-                </div>
-
-                <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
-                    {/* Aditi Card */}
-                    <Card className="overflow-hidden bg-transparent border-none shadow-none">
-                        <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
-                            <Image
-                                src="/aditi.webp"
-                                alt="Aditi Garg - Director & Founder"
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 768px) 100vw, 50vw"
-                                priority
-                            />
-                        </div>
-                        <CardContent className="p-0">
-                            <h3 className="text-2xl font-bold mb-1">
-                                Aditi Garg
-                            </h3>
-                            <div className="text-primary font-medium mb-4">
-                                Director & Founder
-                            </div>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Aditi is a solutions and customer success leader
-                                who has helped organisations like Goldman Sachs,
-                                Uber, BMW and Citi Bank get real value from
-                                complex platforms. As VP of Central Support at
-                                Trilogy Ltd and Director at Invaritech, she
-                                specialises in turning messy support operations
-                                into measurable, automated, high-NPS
-                                experiences.
-                            </p>
-                        </CardContent>
-                    </Card>
-
-                    {/* Avishek Card */}
-                    {SHOW_AVISHEK && (
-                        <Card className="overflow-hidden bg-transparent border-none shadow-none">
-                            <div className="aspect-[3/4] bg-zinc-200 dark:bg-zinc-800 relative rounded-2xl overflow-hidden mb-6">
-                                <Image
-                                    src="/avishek.webp"
-                                    alt="Avishek Majumder - CEO & Co-founder"
-                                    fill
-                                    className="object-cover"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                    priority
-                                />
-                            </div>
-                            <CardContent className="p-0">
-                                <h3 className="text-2xl font-bold mb-1">
-                                    Avishek Majumder
-                                </h3>
-                                <div className="text-primary font-medium mb-4">
-                                    CEO & Co-founder
+                    <div className="grid gap-[1px] bg-border">
+                        {standards.map((standard) => (
+                            <div key={standard.title} className="grid gap-5 bg-background p-6 sm:grid-cols-[3rem_1fr]">
+                                <standard.icon className="size-6 text-primary" />
+                                <div>
+                                    <h3 className="text-xl font-semibold">{standard.title}</h3>
+                                    <p className="mt-2 text-muted-foreground leading-relaxed">{standard.body}</p>
                                 </div>
-                                <p className="text-muted-foreground leading-relaxed">
-                                    Avishek is a data engineer and scientist who
-                                    has spent his career building and deploying
-                                    predictive systems in regulated, high-stakes
-                                    environments across energy and finance. At
-                                    Invaritech, he designs the automation
-                                    architectures that let lean teams operate
-                                    with enterprise-grade reliability.
-                                </p>
-                            </CardContent>
-                        </Card>
-                    )}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </section>
 
-            {/* CTA */}
-            <div className="max-w-3xl">
-                <h2 className="text-3xl font-bold mb-6">Ready to Build?</h2>
-                <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                    If you&apos;re a regulated firm or independent expert who&apos;s
-                    outgrown spreadsheets, manual checklists, and duct-taped
-                    tools, we should talk.
-                </p>
-                <p className="text-lg font-medium text-foreground mb-8 leading-relaxed">
-                    Let&apos;s design the system that makes your operations feel
-                    inevitable, not improvisational.
-                </p>
-                <Button asChild size="lg" className="rounded-xl px-8 text-base">
-                    <a
-                        href="https://calendly.com/hello-invaritech/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Work with us <ArrowRight className="ml-2 size-4" />
-                    </a>
-                </Button>
-            </div>
-        </PageLayout>
+            <section className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+                <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+                    <div className="relative border border-primary/20 bg-primary/[0.04] p-8 md:p-10">
+                        <blockquote className="font-editorial text-3xl font-semibold leading-tight text-foreground md:text-4xl">
+                            &ldquo;We earn trust through the work, not the introduction.&rdquo;
+                        </blockquote>
+                        <p className="mt-6 text-muted-foreground leading-relaxed">
+                            A founder stays close to the workflow from scoping through support.
+                            We keep scope narrow, criteria written, and delivery accountable to
+                            the control outcome.
+                        </p>
+                        <div className="mt-8 flex items-center gap-4">
+                            <Avatar className="h-12 w-12 border border-primary/30">
+                                <AvatarImage src="/aditi-1.webp" className="object-cover" />
+                                <AvatarFallback>AG</AvatarFallback>
+                            </Avatar>
+                            <div>
+                                <div className="font-semibold text-primary">Aditi Garg</div>
+                                <div className="text-xs uppercase tracking-widest text-muted-foreground">Director & Founder</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <PenTool className="mb-6 size-7 text-primary" />
+                        <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">Why this model exists</h2>
+                        <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted-foreground">
+                            <p>
+                                Finance and regulated operations problems are not only software
+                                problems. They depend on which exceptions should block action,
+                                what evidence matters,
+                                who owns each approval, and how the final decision can be
+                                reconstructed six months later.
+                            </p>
+                            <p>
+                                We keep each engagement narrow so one workflow can be owned
+                                properly. After the first control is live, managed support
+                                keeps it working as rules, vendors, teams, and edge cases
+                                change over time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section className="border-y border-border bg-card py-16 md:py-24">
+                <div className="mx-auto max-w-7xl px-6">
+                    <p className="mb-5 text-[11px] font-mono uppercase tracking-[0.22em] text-primary">The people</p>
+                    <h2 className="font-editorial text-4xl font-semibold leading-tight md:text-6xl">You work with founders, not account managers</h2>
+                    <div className="mt-12 grid gap-12 lg:grid-cols-3">
+                        <FounderCard
+                            name="Aditi Garg"
+                            role="Director & Founder"
+                            image="/aditi-1.webp"
+                            bio="Built reconciliation and payment control systems used by Goldman Sachs. Delivered operational programs for Uber and BMW. At Invaritech, she scopes every engagement and stays close to delivery."
+                        />
+                        <FounderCard
+                            name="Abhishek Agarwal"
+                            role="Co-founder"
+                            image="/abhishek.webp"
+                            bio="Founder of Codeacious Tech. Delivered enterprise systems across finance, retail, and regulated industries, including architecture programs tied to A$80M+ in client outcomes."
+                        />
+                        {SHOW_AVISHEK && (
+                            <FounderCard
+                                name="Avishek Majumder"
+                                role="Co-founder & CEO"
+                                image="/avishek.webp"
+                                bio="Data engineer and applied scientist. Builds production pipelines and decision-support systems for compliance-heavy environments. Specialises in anomaly detection and predictive systems."
+                            />
+                        )}
+                    </div>
+                </div>
+            </section>
+
+            <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+                <div className="grid gap-8 border-y border-border py-10 md:grid-cols-[1fr_auto] md:items-center">
+                    <div>
+                        <h2 className="font-editorial text-3xl font-semibold md:text-5xl">Start with one real finance workflow.</h2>
+                        <p className="mt-3 text-muted-foreground">
+                            Book the diagnostic if you already know which workflow needs attention.
+                        </p>
+                    </div>
+                    <div className="flex flex-col gap-3 sm:flex-row">
+                        <Link
+                            href="/contact/?diagnostic=1&src=about"
+                            className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
+                        >
+                            Book a Finance Workflow Diagnostic <ArrowRight className="ml-2 size-4" />
+                        </Link>
+                        <Link
+                            href={BOOK_MEETING_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex min-h-12 items-center justify-center border border-border px-6 font-semibold text-foreground transition-colors hover:bg-foreground hover:text-background"
+                        >
+                            Book a Scoping Call
+                        </Link>
+                    </div>
+                </div>
+            </section>
+
+            <HomepageScrollAnimations />
+        </main>
     );
 }
 
-const CardDecorator = ({ children }: { children: ReactNode }) => (
-    <div className="relative mx-auto size-16 flex items-center justify-center">
-        <div className="bg-muted/50 rounded-xl p-3 shadow-sm group-hover:shadow-md transition-all duration-200 group-hover:scale-105">
-            <div className="text-foreground/70 group-hover:text-foreground transition-colors duration-200">
-                {children}
+function FounderCard({ name, role, image, bio }: { name: string; role: string; image: string; bio: string }) {
+    return (
+        <div className="group relative">
+            <div className="relative mb-6 aspect-[3/4] overflow-hidden border border-border bg-background grayscale transition-all duration-700 group-hover:grayscale-0">
+                <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+            </div>
+            <div className="space-y-2">
+                <div className="text-xs font-mono uppercase tracking-widest text-primary">{role}</div>
+                <h3 className="font-editorial text-2xl font-semibold">{name}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{bio}</p>
             </div>
         </div>
-    </div>
-);
+    );
+}

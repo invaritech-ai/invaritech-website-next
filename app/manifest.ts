@@ -4,10 +4,9 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "INVARITECH - Premium Digital Solutions & AI-Powered Development",
+        name: "INVARITECH Finance & Compliance Automation",
         short_name: "INVARITECH",
-        description:
-            "INVARITECH crafts precision-engineered digital solutions, luxury-grade experiences, and scalable systems. Expert backend development, AI automation, and e-commerce solutions.",
+        description: "Finance automation and compliance automation around the systems teams already use.",
         start_url: "/",
         display: "standalone",
         background_color: "#000000",
@@ -19,13 +18,13 @@ export default function manifest(): MetadataRoute.Manifest {
         categories: ["business", "productivity", "technology"],
         icons: [
             {
-                src: "/logo-image.png",
+                src: "/icon-192.png",
                 sizes: "192x192",
                 type: "image/png",
                 purpose: "any",
             },
             {
-                src: "/logo-image.png",
+                src: "/icon-512.png",
                 sizes: "512x512",
                 type: "image/png",
                 purpose: "any",
@@ -33,11 +32,11 @@ export default function manifest(): MetadataRoute.Manifest {
         ],
         screenshots: [
             {
-                src: "/logo.png",
+                src: "/manifest-screenshot-1280x720.png",
                 sizes: "1280x720",
                 type: "image/png",
                 form_factor: "wide",
-                label: "INVARITECH Homepage",
+                label: "INVARITECH Finance & Compliance Automation Homepage",
             },
         ],
     };

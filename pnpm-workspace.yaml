@@ -1,0 +1,18 @@
+# Supply chain security — https://pnpm.io/supply-chain-security
+
+# Explicit allow-list for lifecycle scripts (postinstall/install/preinstall).
+# All packages not listed here are blocked from running scripts.
+allowBuilds:
+  "@tailwindcss/oxide": true  # Tailwind v4 Rust native binary
+  esbuild: true               # Downloads platform binary
+  sharp: true                 # Downloads/builds native image binary
+  unrs-resolver: true         # NAPI native binary check (ESLint resolver)
+
+# Block transitive dependencies from resolving via git repos or raw tarballs.
+# All transitive deps must come from the npm registry.
+# Delay installation of newly published packages to allow time for malware detection.
+# Prevent installing packages whose trust level has been downgraded vs prior releases.
+pnpm:
+  blockExoticSubdeps: true
+  minimumReleaseAge: "3 days"
+  trustPolicy: no-downgrade

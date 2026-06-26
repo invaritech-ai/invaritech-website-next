@@ -1,0 +1,21 @@
+type SiteEventName =
+    | "glossary_tool_run"
+    | "glossary_tool_tolerance_change"
+    | "glossary_tool_csv_upload"
+    | "glossary_secondary_cta_submit"
+    | "glossary_filter_chip_click"
+    | "cta_click";
+
+type SiteEventProps = Record<string, string | number | boolean>;
+
+declare global {
+    interface Window {
+        gtag?: (command: "event", eventName: string, params?: SiteEventProps) => void;
+    }
+}
+
+export function trackSiteEvent(name: SiteEventName, props: SiteEventProps = {}): void {
+    if (typeof window === "undefined") return;
+    if (typeof window.gtag !== "function") return;
+    window.gtag("event", name, props);
+}

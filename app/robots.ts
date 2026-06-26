@@ -8,27 +8,12 @@ export default function robots(): MetadataRoute.Robots {
             {
                 userAgent: "*",
                 allow: "/",
-                disallow: [
-                    "/private/",
-                    "/admin/",
-                    "/api/",
-                    "/_next/",
-                    "/dist/",
-                    "/*.json$",
-                    "/google-apps-script/",
-                ],
-                crawlDelay: 1,
+                disallow: ["/private/", "/admin/", "/api/", "/google-apps-script/"],
             },
             {
-                userAgent: "Googlebot",
+                userAgent: "GPTBot",
                 allow: "/",
-                disallow: ["/private/", "/admin/", "/api/"],
-            },
-            {
-                userAgent: "Bingbot",
-                allow: "/",
-                disallow: ["/private/", "/admin/", "/api/"],
-            },
+            }
         ],
         sitemap: "https://www.invaritech.ai/sitemap.xml",
         host: "https://www.invaritech.ai",

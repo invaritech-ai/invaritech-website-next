@@ -1,109 +1,144 @@
-import { Logo, LogoIcon } from "@/components/logo";
 import Link from "next/link";
 
-const links = [
+import { Logo, LogoIcon } from "@/components/logo";
+import { brandPositioning } from "@/lib/site-content/brand";
+import {
+    footerCompanyLinks,
+    footerFinanceLinks,
+    footerProofLinks,
+} from "@/lib/site-content/navigation";
+
+const legalLinks = [
+    { title: "Privacy Policy", href: "/privacy/" },
+    { title: "Terms of Service", href: "/terms/" },
+];
+
+const socialLinks = [
     {
-        title: "Home",
-        href: "/",
+        title: "X",
+        href: "https://x.com/invaritechai",
+        icon: (
+            <svg className="site-footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+        ),
     },
     {
-        title: "About",
-        href: "/about/",
-    },
-    {
-        title: "Services",
-        href: "/services/",
-    },
-    {
-        title: "Work",
-        href: "/work/",
-    },
-    {
-        title: "Blogs",
-        href: "/blogs/",
-    },
-    {
-        title: "Careers",
-        href: "/careers/",
-    },
-    {
-        title: "Contact",
-        href: "/contact/",
+        title: "LinkedIn",
+        href: "https://linkedin.com/company/invaritechai",
+        icon: (
+            <svg className="site-footer-social-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451c.98 0 1.771-.773 1.771-1.729V1.729C24 .774 23.205 0 22.225 0z" />
+            </svg>
+        ),
     },
 ];
 
-export default function FooterSection() {
-    return (
-        <footer className="py-16 md:py-32">
-            <div className="mx-auto max-w-5xl px-6">
-                <Link
-                    href="/"
-                    aria-label="go home"
-                    className="mx-auto block size-fit"
-                >
-                    <div className="flex flex-col items-center gap-2">
-                        <LogoIcon className="size-20" />
-                        <Logo />
-                    </div>
-                </Link>
+function isExternalLink(href: string) {
+    return href.startsWith("http");
+}
 
-                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
-                    {links.map((link, index) => (
-                        <Link
-                            key={index}
-                            href={link.href}
-                            className="text-muted-foreground hover:text-primary block duration-150"
-                        >
-                            <span>{link.title}</span>
+function FooterLink({ href, title }: { href: string; title: string }) {
+    const external = isExternalLink(href);
+
+    return (
+        <Link
+            href={href}
+            target={external ? "_blank" : undefined}
+            rel={external ? "noopener noreferrer" : undefined}
+            className="site-footer-link"
+        >
+            {title}
+        </Link>
+    );
+}
+
+function FooterColumn({
+    title,
+    links,
+    className,
+}: {
+    title: string;
+    links: { label?: string; title?: string; href: string }[];
+    className?: string;
+}) {
+    return (
+        <nav aria-label={`${title} navigation`} className={className}>
+            <h2 className="site-footer-heading">{title}</h2>
+            <ul className="site-footer-link-list">
+                {links.map((link) => (
+                    <li key={link.href}>
+                        <FooterLink href={link.href} title={link.label ?? link.title ?? ""} />
+                    </li>
+                ))}
+            </ul>
+        </nav>
+    );
+}
+
+export default function FooterSection() {
+    const currentYear = new Intl.DateTimeFormat("en", {
+        year: "numeric",
+        timeZone: "UTC",
+    }).format(new Date());
+
+    return (
+        <footer className="site-footer">
+            <div className="site-footer-watermark" aria-hidden="true">
+                INVARITECH
+            </div>
+
+            <div className="site-footer-container">
+                <div className="site-footer-grid">
+                    <div className="site-footer-brand">
+                        <Link href="/" aria-label="INVARITECH home" className="site-footer-logo-row">
+                            <span className="site-footer-logo-mark" aria-hidden="true">
+                                <LogoIcon className="site-footer-logo-icon" />
+                            </span>
+                            <span className="site-footer-logo-copy">
+                                <Logo className="site-footer-logo-text" />
+                                <span className="site-logo-strapline">Finance Ops & RegOps Automations</span>
+                            </span>
                         </Link>
-                    ))}
+
+                        <p className="site-footer-text">{brandPositioning.footer}</p>
+                    </div>
+
+                    <FooterColumn
+                        title="Company"
+                        links={footerCompanyLinks}
+                        className="site-footer-company-column"
+                    />
+                    <FooterColumn title="Finance Ops" links={footerFinanceLinks} />
+                    <FooterColumn title="RegOps & Proof" links={footerProofLinks} />
+
+                    <div className="site-footer-utility-column">
+                        <FooterColumn title="Legal" links={legalLinks} />
+
+                        <div>
+                            <h2 className="site-footer-heading">Connect</h2>
+                            <div className="site-footer-social-row">
+                                {socialLinks.map((link) => (
+                                    <Link
+                                        key={link.title}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="site-footer-social-link"
+                                        aria-label={link.title}
+                                    >
+                                        {link.icon}
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
-                    <Link
-                        href="https://x.com/invaritechai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="X/Twitter"
-                        className="text-muted-foreground hover:text-primary block"
-                    >
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M10.488 14.651L15.25 21h7l-7.858-10.478L20.93 3h-2.65l-5.117 5.886L8.75 3h-7l7.51 10.015L2.32 21h2.65zM16.25 19L5.75 5h2l10.5 14z"
-                            ></path>
-                        </svg>
-                    </Link>
-                    <Link
-                        href="https://linkedin.com/company/invaritechai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        className="text-muted-foreground hover:text-primary block"
-                    >
-                        <svg
-                            className="size-6"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="1em"
-                            height="1em"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                fill="currentColor"
-                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
-                            ></path>
-                        </svg>
-                    </Link>
+
+                <div className="site-footer-bottom">
+                    <p>&copy; {currentYear} INVARITECH. All rights reserved.</p>
+                    <p>Asia-based delivery. Founder-led. Built around existing systems.</p>
                 </div>
-                <span className="text-muted-foreground block text-center text-sm">
-                    {" "}
-                    © {new Date().getFullYear()} Invaritech, All rights reserved
-                </span>
             </div>
         </footer>
     );

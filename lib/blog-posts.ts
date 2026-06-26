@@ -1,61 +1,44 @@
-// Import all blog posts
-import { post as whyConsultanciesGetStuck } from "./blog-posts/why-consultancies-get-stuck";
-import { post as complianceAutomationDoneRight } from "./blog-posts/compliance-automation-done-right";
-import { post as buildingVsBuyingCustomAutomation } from "./blog-posts/building-vs-buying-custom-automation";
-import { post as whyManualEudrComplianceFails } from "./blog-posts/why-manual-eudr-compliance-fails";
-import { post as regopsTechnical } from "./blog-posts/regops-technical";
-import { post as regopsStrategy } from "./blog-posts/regops-strategy";
-import { post as consultancyTrap } from "./blog-posts/consultancy-trap";
+import type { BlogPost, BlogPostMetadata } from "./blog-posts-types";
+import { whyConsultanciesGetStuck } from "./blog-posts/why-consultancies-get-stuck";
+import { complianceAutomation } from "./blog-posts/compliance-automation-done-right";
+import { buildingVsBuying } from "./blog-posts/building-vs-buying-custom-automation";
+import { whyManualEudrFails } from "./blog-posts/why-manual-eudr-compliance-fails";
+import { regopsTechnical } from "./blog-posts/regops-technical";
+import { regopsStrategy } from "./blog-posts/regops-strategy";
+import { consultancyTrap } from "./blog-posts/consultancy-trap";
+import { monthEndClose } from "./blog-posts/month-end-close-automation";
+import { aiInvoiceDataExtraction } from "./blog-posts/ai-invoice-data-extraction";
+import { cashFlowVisibility } from "./blog-posts/cash-flow-visibility-automation";
+import { whySmallBusinesses } from "./blog-posts/why-small-businesses-need-automation";
 
-export interface BlogPost {
-    slug: string;
-    title: string;
-    excerpt: string;
-    content: string;
-    author: {
-        name: string;
-        role: string;
-    };
-    publishedAt: string; // ISO date string
-    tags: string[];
-    coverImage?: string;
-}
+export type { BlogPost, BlogPostMetadata };
 
-export interface BlogPostMetadata {
-    slug: string;
-    title: string;
-    excerpt: string;
-    content: string;
-    author: {
-        name: string;
-        role: string;
-    };
-    publishedAt: string;
-    tags: string[];
-    coverImage?: string;
-}
-
-// Aggregate all blog posts
-export const blogPosts: BlogPost[] = [
+const blogPosts: BlogPost[] = [
     whyConsultanciesGetStuck,
-    complianceAutomationDoneRight,
-    buildingVsBuyingCustomAutomation,
-    whyManualEudrComplianceFails,
+    complianceAutomation,
+    buildingVsBuying,
+    whyManualEudrFails,
     regopsTechnical,
     regopsStrategy,
     consultancyTrap,
+    monthEndClose,
+    aiInvoiceDataExtraction,
+    cashFlowVisibility,
+    whySmallBusinesses,
 ];
 
-// Helper functions
 export function getAllPosts(): BlogPostMetadata[] {
     return blogPosts
         .map((post) => ({
             slug: post.slug,
             title: post.title,
+            seoTitle: post.seoTitle,
+            articleSection: post.articleSection,
             excerpt: post.excerpt,
             content: post.content,
             author: post.author,
             publishedAt: post.publishedAt,
+            dateModified: post.dateModified,
             tags: post.tags,
             coverImage: post.coverImage,
         }))

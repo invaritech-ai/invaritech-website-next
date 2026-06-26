@@ -1,285 +1,276 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import { PageLayout } from "@/components/page-layout";
+import { Button } from "@/components/ui/button";
+import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
+import { primaryDiagnosticCta } from "@/lib/site-content/brand";
+import { proofAssets } from "@/lib/site-content/proof";
+import type { ProofAsset } from "@/lib/site-content/types";
 
 export const metadata: Metadata = {
-    title: "Our Work - Automation Projects",
+    title: "Finance & Compliance Automation Case Studies",
     description:
-        "See how INVARITECH builds compliance bridges, data pipelines, and custom automation for small service businesses. Real projects, real results.",
+        "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
     openGraph: {
-        title: "Our Work - Automation Projects & Case Studies",
+        title: "Finance & Compliance Automation Case Studies | INVARITECH",
         description:
-            "Compliance bridges, data pipelines, and custom automation. See how we help small service businesses stop losing time between their tools.",
+            "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         url: "https://www.invaritech.ai/work/",
-        images: [
-            {
-                url: "/og-image.webp",
-                width: 1200,
-                height: 630,
-                alt: "Our Work - Automation Projects & Case Studies",
-                type: "image/webp",
-            },
-        ],
+        type: "website",
+        images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Finance & Compliance Automation" }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Finance & Compliance Automation Case Studies | INVARITECH",
+        description:
+            "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+        images: ["/og-image.png"],
     },
     alternates: {
         canonical: "https://www.invaritech.ai/work/",
     },
 };
 
-const projects = [
-    {
-        id: "eudr",
-        title: "EUDR Compliance Bridge",
-        category: "Automation & Compliance",
-        description: (
-            <>
-                We built a <strong>Python FastAPI bridge and database</strong>{" "}
-                around a SOAP-based EU backend so a{" "}
-                <strong>small French operator</strong> could{" "}
-                <strong>
-                    submit thousands of EUDR Due Diligence Statements
-                </strong>{" "}
-                through a simple <strong>REST API and dashboard</strong>.
-                Includes a retry queue and monitoring.
-            </>
-        ),
-        tags: ["Python", "FastAPI", "PostgreSQL", "SOAP"],
-        image: "/eudr-preview.webp",
-        link: "/work/eudr-compliance-bridge/",
-    },
-    {
-        id: "charity",
-        title: "China Coast Community Website Redesign",
-        category: "Web & Automation",
-        description: (
-            <>
-                We redesigned a{" "}
-                <strong>small charity&apos;s website and donation flow</strong>{" "}
-                to make it{" "}
-                <strong>
-                    easier for donors to give and for staff to maintain content
-                </strong>
-                . The new flow is{" "}
-                <strong>
-                    simpler, faster, and connects directly to their CRM
-                </strong>
-                .
-            </>
-        ),
-        tags: ["Next.js", "Stripe", "CMS Integration"],
-        image: "/ccc-isometric.webp",
-        link: "", // Project ongoing - link will be added when live
-        ongoing: true,
-    },
-    {
-        id: "custom",
-        title: "Your Custom Solution",
-        category: "Consulting & Development",
-        description: (
-            <>
-                We help you identify the single biggest bottleneck costing you
-                100+ hours a month. Then, we deliver a custom automation
-                solution within 6 weeks to give those hours back to your
-                business.{" "}
-                <Link
-                    href="/blogs/building-vs-buying-custom-automation/"
-                    className="underline hover:text-foreground"
-                >
-                    Learn when custom automation makes sense
-                </Link>{" "}
-                or{" "}
-                <Link
-                    href="/blogs/why-consultancies-get-stuck/"
-                    className="underline hover:text-foreground"
-                >
-                    see why hiring more people doesn&apos;t fix the problem
-                </Link>
-                .
-            </>
-        ),
-        tags: ["Analysis", "Strategy", "Custom Build"],
-        image: "/work/custom-full.jpg", // Placeholder
-        link: "https://calendly.com/hello-invaritech/30min",
-        buttonText: "Talk to Us",
-        secondaryLink: {
-            text: "Learn more",
-            href: "/services/compliance-bridge/",
-        },
-    },
-];
+function getProofAsset(id: string) {
+    const asset = proofAssets.find((item) => item.id === id);
 
-export default function WorkPage() {
-    return (
-        <PageLayout
-            maxWidth="6xl"
-            header={{
-                title: "Our Work",
-                description:
-                    "A few examples of the kind of systems we build. Most of our work is behind the scenes, connecting existing tools into reliable workflows.",
-            }}
-        >
-            <div className="space-y-16">
-                {projects.map((project) => (
-                    <div
-                        key={project.id}
-                        id={project.id}
-                        className="scroll-mt-32"
-                    >
-                        <Card className="overflow-hidden border-none shadow-none bg-transparent">
-                            <div className="grid gap-8 md:grid-cols-2 lg:gap-12 items-start">
-                                <div className="aspect-video relative rounded-2xl overflow-hidden bg-muted border shadow-sm group">
-                                    {project.image &&
-                                    !project.image.includes("custom-full") ? (
-                                        <Image
-                                            src={project.image}
-                                            alt={project.title}
-                                            fill
-                                            className="object-cover"
-                                        />
-                                    ) : (
-                                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/20 font-bold text-3xl">
-                                            {project.title}
-                                        </div>
-                                    )}
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
-                                </div>
+    if (!asset) {
+        throw new Error(`Missing proof asset: ${id}`);
+    }
 
-                                <div className="flex flex-col h-full justify-center">
-                                    <div className="mb-4">
-                                        <Badge
-                                            variant="secondary"
-                                            className="mb-4"
-                                        >
-                                            {project.category}
-                                        </Badge>
-                                        <h2 className="text-3xl font-bold mb-4">
-                                            {project.title}
-                                        </h2>
-                                        <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                                            {project.description}
-                                        </p>
-                                    </div>
+    return asset;
+}
 
-                                    <div className="flex flex-wrap gap-2 mb-8">
-                                        {project.tags.map((tag) => (
-                                            <Badge key={tag} variant="outline">
-                                                {tag}
-                                            </Badge>
-                                        ))}
-                                    </div>
+const featuredProof = getProofAsset("eudr-compliance-bridge");
+const supportingProofAssets = proofAssets.filter((asset) => asset.id !== featuredProof.id);
+const financeProofAssets = supportingProofAssets.filter((asset) => asset.pillar === "finance-ops");
+const regopsProofAssets = supportingProofAssets.filter((asset) => asset.pillar === "regops");
 
-                                    <div className="flex gap-4">
-                                        <ButtonLink
-                                            href={project.link}
-                                            disabled={project.ongoing}
-                                        >
-                                            {project.buttonText ||
-                                                (project.ongoing
-                                                    ? "Visit Site (Ongoing)"
-                                                    : "Read Details")}
-                                            {!project.ongoing && (
-                                                <ArrowRight className="ml-2 size-4" />
-                                            )}
-                                        </ButtonLink>
-                                        {project.secondaryLink && (
-                                            <ButtonLink
-                                                href={
-                                                    project.secondaryLink.href
-                                                }
-                                                variant="outline"
-                                            >
-                                                {project.secondaryLink.text}
-                                            </ButtonLink>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </Card>
-                        {/* Divider */}
-                        <div className="mt-16 h-px w-full bg-border/50" />
-                    </div>
-                ))}
+const proofTypeLabels: Record<ProofAsset["type"], string> = {
+    "case-study": "Case study",
+    demo: "Working demo",
+    tool: "Tool proof",
+};
 
-                {/* Labs Section for WeekendSuite */}
-                <div id="weekend" className="scroll-mt-32">
-                    <div className="rounded-2xl bg-muted/30 p-8 md:p-12 border border-border/50">
-                        <div className="max-w-3xl">
-                            <Badge
-                                variant="outline"
-                                className="mb-4 bg-background"
-                            >
-                                Invaritech Labs
-                            </Badge>
-                            <h2 className="text-3xl font-bold mb-4">
-                                WeekendSuite
-                            </h2>
-                            <p className="text-xl text-muted-foreground mb-8">
-                                WeekendSuite is our in-house product: a
-                                weekend-sized admin suite for freelancers and
-                                tiny agencies. It handles the messy middle from
-                                lead → proposal → contract → onboarding →
-                                invoice.
-                            </p>
-                            <ButtonLink href="/weekend-suite/">
-                                Learn more & join the waitlist{" "}
-                                <ArrowRight className="ml-2 size-4" />
-                            </ButtonLink>
-                        </div>
-                    </div>
+function ProofCard({ asset, index }: { asset: ProofAsset; index: number }) {
+    const card = (
+        <article className="group/card h-full border border-border bg-card/70 p-6 transition-colors duration-300 hover:border-primary/40 hover:bg-secondary/30">
+            <div className="mb-8 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                    <span className="text-[11px] font-mono text-primary/50">
+                        {(index + 1).toString().padStart(2, "0")}
+                    </span>
+                    <div className="h-[1px] w-6 bg-primary/30" />
+                    <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                        {proofTypeLabels[asset.type]}
+                    </span>
                 </div>
+                {asset.href ? (
+                    <ArrowUpRight className="size-4 text-muted-foreground transition-transform group-hover/card:translate-x-0.5 group-hover/card:-translate-y-0.5 group-hover/card:text-primary" />
+                ) : null}
             </div>
-        </PageLayout>
+            <h3 className="font-editorial text-3xl font-semibold leading-tight tracking-tight text-foreground">
+                {asset.title}
+            </h3>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                {asset.body}
+            </p>
+            <p className="mt-6 border-t border-border pt-5 text-sm leading-relaxed text-foreground/80">
+                {asset.proves}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2">
+                {asset.tags.map((tag) => (
+                    <span
+                        key={tag}
+                        className="border border-border bg-background/40 px-2 py-1 text-[10px] font-mono lowercase text-muted-foreground"
+                    >
+                        #{tag}
+                    </span>
+                ))}
+            </div>
+        </article>
+    );
+
+    if (!asset.href) {
+        return card;
+    }
+
+    return (
+        <Link href={asset.href} className="block h-full">
+            {card}
+        </Link>
     );
 }
 
-function ButtonLink({
-    href,
-    children,
-    disabled,
-    variant,
-}: {
-    href: string;
-    children: React.ReactNode;
-    disabled?: boolean;
-    variant?: "default" | "outline";
-}) {
-    if (disabled) {
-        return (
-            <div className="inline-flex h-10 items-center justify-center rounded-md bg-muted px-8 text-sm font-medium text-muted-foreground shadow-none cursor-not-allowed opacity-70">
-                {children}
-            </div>
-        );
-    }
-    const isExternal = href.startsWith("http");
-    const baseClassName =
-        "inline-flex h-10 items-center justify-center rounded-md px-8 text-sm font-medium shadow transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50";
-    const variantStyles =
-        variant === "outline"
-            ? "border border-input bg-background hover:bg-accent hover:text-accent-foreground"
-            : "bg-primary text-primary-foreground hover:bg-primary/90";
-
-    const className = `${baseClassName} ${variantStyles}`;
-
-    if (isExternal) {
-        return (
-            <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={className}
-            >
-                {children}
-            </a>
-        );
-    }
+export default function WorkPage() {
+    const proofSections = [
+        {
+            id: "finance-ops-proof",
+            eyebrow: "Finance automation proof",
+            title: "Finance workflows, tools, and demos.",
+            body: "Invoice intake, AP matching, and payment control tools show how finance exception logic becomes checkable before payment release.",
+            assets: financeProofAssets,
+        },
+        {
+            id: "regops-proof",
+            eyebrow: "Compliance automation proof",
+            title: "Regulated workflow proof.",
+            body: "EUDR work shows the regulated workflow pattern: evidence intake, validation, submission state, retry handling, and audit-ready records.",
+            assets: regopsProofAssets,
+        },
+    ];
 
     return (
-        <Link href={href} className={className}>
-            {children}
-        </Link>
+        <main className="site-page relative overflow-hidden selection:bg-primary/20 selection:text-primary">
+            <div className="absolute inset-0 pointer-events-none z-0">
+                <div className="site-page-grid" />
+            </div>
+
+            {/* Hero */}
+            <section className="site-section-hero relative z-10">
+                <div className="site-container">
+                    <div className="site-split">
+                        <div>
+                            <div className="site-eyebrow" data-reveal="block">
+                                <div className="site-eyebrow-line" />
+                                <p className="site-eyebrow-text">Finance & Compliance Automation proof</p>
+                            </div>
+                            <h1 className="site-h2" data-reveal="block">
+                                Real systems we&apos;ve shipped.
+                            </h1>
+                        </div>
+                        <p className="site-lead" data-reveal="block">
+                            Our work spans regulated submissions, finance exception logic, document extraction, and rule-based control tools. Finance automation and compliance automation solve different problems, but the delivery discipline is shared.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Proof */}
+            <div className="relative z-10 site-container pb-20">
+                <div className="group relative mb-24">
+                    <div className="grid gap-12 md:grid-cols-2 md:items-center">
+                        <Link
+                            href={featuredProof.href ?? "/work/eudr-compliance-bridge/"}
+                            className="aspect-[4/3] relative overflow-hidden border border-border group/card"
+                        >
+                            <div className="absolute inset-0 z-10 opacity-0 transition-opacity duration-700 pointer-events-none group-hover/card:opacity-100">
+                                <div className="absolute inset-0 h-1/2 bg-gradient-to-b from-primary/10 via-transparent to-transparent animate-scan" />
+                            </div>
+
+                            <Image
+                                src="/eudr-preview.webp"
+                                alt={featuredProof.title}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                            />
+
+                            <div className="absolute inset-0 bg-gradient-to-t from-foreground/20 via-transparent to-transparent opacity-60 transition-opacity duration-700 group-hover:opacity-20" />
+                        </Link>
+
+                        <div className="space-y-8 p-4 md:p-0">
+                            <div className="flex flex-wrap items-center gap-3">
+                                <span className="text-[11px] font-mono text-primary/50">01</span>
+                                <div className="h-[1px] w-6 bg-primary/30" />
+                                <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                                    Compliance automation proof case
+                                </span>
+                                <span className="inline-flex items-center gap-1.5 border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-mono tracking-wider text-primary">
+                                    <div className="h-1 w-1 rounded-full bg-primary" />
+                                    Deterministic controls
+                                </span>
+                            </div>
+
+                            <h2 className="font-editorial text-4xl font-semibold leading-tight tracking-tight transition-colors group-hover:text-primary md:text-6xl">
+                                {featuredProof.title}
+                            </h2>
+
+                            <p className="text-lg font-light leading-relaxed text-muted-foreground">
+                                {featuredProof.body}
+                            </p>
+                            <p className="border-l-2 border-primary/30 pl-6 text-base leading-relaxed text-foreground/80">
+                                {featuredProof.proves}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2">
+                                {featuredProof.tags.map((tag) => (
+                                    <span key={tag} className="border border-border bg-card px-2 py-1 text-[10px] font-mono lowercase text-muted-foreground">
+                                        #{tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="pt-4">
+                                <Button asChild variant="outline" size="lg" className="border-border bg-transparent text-foreground hover:bg-foreground hover:text-background transition-all group/btn">
+                                    <Link href={featuredProof.href ?? "/work/eudr-compliance-bridge/"} className="flex items-center gap-3">
+                                        <span className="text-sm font-semibold uppercase tracking-widest">
+                                            View Compliance Case
+                                        </span>
+                                        <ArrowUpRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                                    </Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="space-y-20">
+                    {proofSections.map((section, sectionIndex) => (
+                        <section key={section.id} id={section.id} className="scroll-mt-24">
+                            <div className="mb-16 flex flex-col gap-4 border-t border-border pt-16 md:flex-row md:items-end md:justify-between">
+                                <div>
+                                    <div className="mb-4 flex items-center gap-3">
+                                        <div className="h-[1px] w-8 bg-primary/40" />
+                                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
+                                            {section.eyebrow}
+                                        </span>
+                                    </div>
+                                    <h2 className="font-editorial text-4xl font-semibold tracking-tight md:text-5xl">
+                                        {section.title}
+                                    </h2>
+                                </div>
+                                <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+                                    {section.body}
+                                </p>
+                            </div>
+
+                            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                                {section.assets.map((asset, index) => (
+                                    <ProofCard
+                                        key={asset.id}
+                                        asset={asset}
+                                        index={sectionIndex * 10 + index + 1}
+                                    />
+                                ))}
+                            </div>
+                        </section>
+                    ))}
+                </div>
+
+                {/* CTA */}
+                <div className="mt-40 border-t border-border pt-24 text-center">
+                    <div className="flex items-center justify-center gap-3 mb-8">
+                        <div className="h-[1px] w-8 bg-primary/40" />
+                        <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">Start With One Control</span>
+                        <div className="h-[1px] w-8 bg-primary/40" />
+                    </div>
+                    <h2 className="font-editorial text-4xl md:text-6xl font-semibold tracking-tight mb-8 max-w-3xl mx-auto">
+                        Have a workflow control problem we should look at?
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
+                        Bring one regulated submission, finance exception, document intake, or approval workflow. We will map where controls are missing and define the smallest useful build.
+                    </p>
+                    <Button asChild size="lg" className="bg-primary text-white hover:bg-foreground font-semibold h-14 px-10">
+                        <Link href={primaryDiagnosticCta.href}>
+                            {primaryDiagnosticCta.label}
+                        </Link>
+                    </Button>
+                </div>
+            </div>
+
+            <HomepageScrollAnimations />
+        </main>
     );
 }

@@ -1,3 +1,13 @@
+const HOMEPAGE_LAST_MODIFIED = "2026-05-15T00:00:00.000Z";
+
+const SERVICE_DESCRIPTION =
+    "Invaritech builds finance automation and compliance automation for teams handling messy invoices, approvals, exceptions, and audit trails around existing systems.";
+
+const AREA_SERVED = [
+    { "@type": "Place", name: "Worldwide" },
+    { "@type": "AdministrativeArea", name: "APAC" },
+];
+
 export const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -5,80 +15,65 @@ export const structuredData = {
             "@type": "Organization",
             "@id": "https://www.invaritech.ai/#organization",
             name: "INVARITECH",
-            alternateName: "INVARITECH Automation Studio",
-            description:
-                "INVARITECH is a boutique automation studio. We design and build custom automation for small service businesses. From compliance bridges and data pipelines to admin suites for freelancers and agencies.",
+            alternateName: "INVARITECH Finance Automation & Compliance Automation",
+            description: SERVICE_DESCRIPTION,
             url: "https://www.invaritech.ai",
             logo: {
                 "@type": "ImageObject",
                 url: "https://www.invaritech.ai/logo-image.png",
-                width: 512,
-                height: 512,
+                width: 516,
+                height: 516,
             },
             image: {
                 "@type": "ImageObject",
                 url: "https://www.invaritech.ai/logo-image.png",
-                width: 1200,
-                height: 630,
+                width: 516,
+                height: 516,
             },
             contactPoint: {
                 "@type": "ContactPoint",
-                contactType: "customer service",
+                contactType: "sales",
                 email: "hello@invaritech.ai",
                 availableLanguage: ["English"],
-                areaServed: "Worldwide",
+                areaServed: AREA_SERVED,
             },
             sameAs: [
                 "https://x.com/invaritechai",
                 "https://linkedin.com/company/invaritechai",
                 "https://github.com/invaritech-ai",
             ],
-            address: {
-                "@type": "PostalAddress",
-                addressCountry: "US",
-            },
             foundingDate: "2025",
-            numberOfEmployees: "1-10",
             industry: "Technology",
             knowsAbout: [
-                "Business Automation",
-                "Workflow Automation",
+                "Finance Automation",
                 "Compliance Automation",
-                "Back-Office Systems",
-                "Data Pipelines",
-                "API Integration",
-                "Compliance Bridges",
-                "Admin Suites",
-                "Process Automation",
+                "Invoice Automation",
+                "Accounts Payable Automation",
+                "Invoice Approval Workflow",
+                "Invoice Processing Automation",
+                "Financial Close Automation",
+                "Regulatory Compliance Automation",
+                "Audit Trail Software",
+                "Reporting Bridges",
+                "Existing Systems Integration",
             ],
         },
         {
             "@type": "WebSite",
             "@id": "https://www.invaritech.ai/#website",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Automation & Back-Office Systems",
-            description:
-                "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+            name: "Finance Automation & Compliance Automation | INVARITECH",
+            description: SERVICE_DESCRIPTION,
             publisher: {
                 "@id": "https://www.invaritech.ai/#organization",
-            },
-            potentialAction: {
-                "@type": "SearchAction",
-                target: {
-                    "@type": "EntryPoint",
-                    urlTemplate:
-                        "https://www.invaritech.ai/search?q={search_term_string}",
-                },
-                "query-input": "required name=search_term_string",
             },
         },
         {
             "@type": "WebPage",
             "@id": "https://www.invaritech.ai/#webpage",
             url: "https://www.invaritech.ai",
-            name: "INVARITECH - Automation & Back-Office Systems for Small Service Businesses",
-            description:
-                "INVARITECH builds custom automation for small service businesses. From compliance bridges and data pipelines to admin suites. Stop losing time between tools.",
+            name: "Finance Automation & Compliance Automation | INVARITECH",
+            description: SERVICE_DESCRIPTION,
             isPartOf: {
                 "@id": "https://www.invaritech.ai/#website",
             },
@@ -87,53 +82,39 @@ export const structuredData = {
             },
             primaryImageOfPage: {
                 "@type": "ImageObject",
-                url: "https://www.invaritech.ai/logo-image.png",
+                url: "https://www.invaritech.ai/og-image.png",
                 width: 1200,
                 height: 630,
             },
             datePublished: "2024-01-01",
-            dateModified: new Date().toISOString(),
+            dateModified: HOMEPAGE_LAST_MODIFIED,
         },
         {
             "@type": "Service",
-            name: "Compliance Workflow Bridge",
-            description:
-                "We turn your most painful compliance/reporting workflow into one auditable, automated pipeline in 6 weeks. Using tools you already have, we replace manual chaos with a single, reliable flow.",
+            name: "Finance Automation & Compliance Automation",
+            description: SERVICE_DESCRIPTION,
+            url: "https://www.invaritech.ai/",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Automation & Compliance",
-            areaServed: "Worldwide",
+            serviceType: "Finance Automation",
+            areaServed: AREA_SERVED,
             audience: {
-                "@type": "Audience",
-                audienceType: "Regulated B2B Service Firms",
+                "@type": "BusinessAudience",
+                audienceType:
+                    "Finance Operations, Financial Controllers, AP Managers, Shared Services, Compliance Operations, Regulatory Compliance Teams",
             },
         },
         {
             "@type": "Service",
-            name: "WeekendSuite",
+            name: "Managed Finance & Compliance Automation Support",
             description:
-                "A simple admin suite for freelancers and tiny agencies. Turns every new inquiry into a same-day proposal, signed contract, and first invoice. Set up a professional client flow in a single weekend.",
+                "Ongoing support for live finance and compliance automation workflows, including rule updates, exception queue tuning, reporting bridge maintenance, audit evidence checks, and small changes around existing systems.",
             provider: {
                 "@id": "https://www.invaritech.ai/#organization",
             },
-            serviceType: "Admin Suite & Automation",
-            areaServed: "Worldwide",
-            audience: {
-                "@type": "Audience",
-                audienceType: "Freelancers & Small Agencies",
-            },
-        },
-        {
-            "@type": "Service",
-            name: "Custom Automation",
-            description:
-                "Custom automation solutions for small service businesses. We help identify bottlenecks and deliver automation solutions within 6 weeks to give hours back to your business.",
-            provider: {
-                "@id": "https://www.invaritech.ai/#organization",
-            },
-            serviceType: "Business Automation",
-            areaServed: "Worldwide",
+            serviceType: "Compliance Automation",
+            areaServed: AREA_SERVED,
         },
     ],
 };

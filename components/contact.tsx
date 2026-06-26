@@ -1,14 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
-import { useRecaptcha } from "@/hooks/useRecaptcha";
-import { Calendar, Mail, CheckCircle2, ArrowRight } from "lucide-react";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
+import { TurnstileWidget } from "@/components/turnstile-widget";
+import { submitContactLead } from "@/app/actions/leads";
+import { appendAttributionToFormData } from "@/lib/attribution";
+import {
+    Calendar,
+    Mail,
+    CheckCircle2,
+    ArrowRight,
+    Globe2,
+} from "lucide-react";
 
 interface FormData {
     name: string;
@@ -25,7 +34,12 @@ interface FormState {
     error: string | null;
 }
 
-export default function ContactSection() {
+interface ContactSectionProps {
+    scanRequested?: boolean;
+    diagnosticRequested?: boolean;
+}
+
+export default function ContactSection({ scanRequested = false, diagnosticRequested = false }: ContactSectionProps) {
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -41,133 +55,108 @@ export default function ContactSection() {
         error: null,
     });
 
-    // Initialize reCAPTCHA
-    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-    const { executeRecaptcha } = useRecaptcha({
-        siteKey: recaptchaSiteKey || "",
-        action: "contact_form_submit",
-    });
+    const [turnstileToken, setTurnstileToken] = useState<string>("");
+    const turnstileRef = useRef<TurnstileInstance>(null);
 
     const handleInputChange = (
         e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
     ) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({
-            ...prev,
-            [name]: value,
-        }));
+        setFormData((prev) => ({ ...prev, [name]: value }));
     };
 
-    const validateForm = (): boolean => {
-        if (!formData.name.trim()) {
+    const validateForm = (values: FormData): boolean => {
+        if (!values.name.trim()) {
             setFormState((prev) => ({ ...prev, error: "Name is required" }));
             return false;
         }
-        if (!formData.email.trim()) {
+        if (!values.email.trim()) {
             setFormState((prev) => ({ ...prev, error: "Email is required" }));
             return false;
         }
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(formData.email)) {
+        if (!emailRegex.test(values.email)) {
             setFormState((prev) => ({
                 ...prev,
                 error: "Please enter a valid email address",
             }));
             return false;
         }
-        if (!formData.country.trim()) {
+        if (!values.country.trim()) {
             setFormState((prev) => ({ ...prev, error: "Country is required" }));
             return false;
         }
-        if (!formData.message.trim()) {
+        if (!values.message.trim()) {
             setFormState((prev) => ({ ...prev, error: "Message is required" }));
+            return false;
+        }
+        if (!turnstileToken) {
+            setFormState((prev) => ({ ...prev, error: "Please complete the verification" }));
             return false;
         }
         return true;
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const rawForm = new FormData(e.currentTarget);
+        const submittedForm: FormData = {
+            name: String(rawForm.get("name") || formData.name),
+            email: String(rawForm.get("email") || formData.email),
+            phone: String(rawForm.get("phone") || formData.phone),
+            country: String(rawForm.get("country") || formData.country),
+            company: String(rawForm.get("company") || formData.company),
+            message: String(rawForm.get("message") || formData.message),
+        };
 
-        if (!validateForm()) {
-            return;
-        }
+        setFormData(submittedForm);
+        if (!validateForm(submittedForm)) return;
 
         setFormState({ isSubmitting: true, isSuccess: false, error: null });
 
-        try {
-            const apiUrl =
-                process.env.NEXT_PUBLIC_API_URL ||
-                "https://your-api-domain.vercel.app";
+        const fd = new FormData();
+        fd.set("name", submittedForm.name);
+        fd.set("email", submittedForm.email);
+        fd.set("phone", submittedForm.phone);
+        fd.set("country", submittedForm.country);
+        fd.set("company", submittedForm.company);
+        fd.set("message", submittedForm.message);
+        fd.set("cf_turnstile_token", turnstileToken);
 
-            // Execute reCAPTCHA
-            let recaptchaToken = null;
-            if (recaptchaSiteKey) {
-                recaptchaToken = await executeRecaptcha();
-                if (!recaptchaToken) {
-                    throw new Error("reCAPTCHA verification failed");
-                }
-            }
+        appendAttributionToFormData(fd);
 
-            const response = await fetch(`${apiUrl}/api/contact`, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    source: "Contact Form",
-                    recaptchaToken,
-                }),
-            });
+        const result = await submitContactLead(fd);
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error || "Failed to submit form");
-            }
-
-            const result = await response.json();
-            if (!result.success) {
-                throw new Error(result.error || "Failed to submit form");
-            }
-
-            setFormState({ isSubmitting: false, isSuccess: true, error: null });
-            setFormData({
-                name: "",
-                email: "",
-                phone: "",
-                country: "",
-                company: "",
-                message: "",
-            });
-        } catch (error) {
-            console.error("Form submission error:", error);
+        if (!result.success) {
+            turnstileRef.current?.reset();
+            setTurnstileToken("");
             setFormState({
                 isSubmitting: false,
                 isSuccess: false,
-                error:
-                    error instanceof Error
-                        ? error.message
-                        : "An unexpected error occurred",
+                error: result.error ?? "Failed to submit form",
             });
+            return;
         }
+
+        setFormState({ isSubmitting: false, isSuccess: true, error: null });
+        setFormData({ name: "", email: "", phone: "", country: "", company: "", message: "" });
     };
 
     if (formState.isSuccess) {
         return (
             <section className="py-12 md:py-24">
                 <div className="mx-auto max-w-7xl px-4 lg:px-8">
-                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center border-none shadow-2xl bg-background/50 backdrop-blur-sm">
+                    <Card className="mx-auto max-w-lg p-8 sm:p-16 text-center rounded-none border border-border bg-card  shadow-none">
                         <div className="flex justify-center mb-6">
-                            <div className="rounded-full bg-green-100 p-3 dark:bg-green-900/30">
-                                <CheckCircle2 className="h-12 w-12 text-green-600 dark:text-green-400" />
+                            <div className="bg-primary/10 p-3 border border-primary/20">
+                                <CheckCircle2 className="h-12 w-12 text-primary" />
                             </div>
                         </div>
-                        <h3 className="text-2xl font-bold mb-4">
-                            Message Sent!
-                        </h3>
+                        <h2 className="text-2xl font-bold mb-4 text-foreground">
+                            Message Sent.
+                        </h2>
                         <p className="text-muted-foreground mb-8 text-lg">
-                            Thanks for reaching out. We&apos;ve received your message and will get back to you shortly.
+                            We&apos;ve received your message and will get back to you shortly.
                         </p>
                         <Button
                             onClick={() =>
@@ -178,7 +167,7 @@ export default function ContactSection() {
                                 })
                             }
                             variant="outline"
-                            className="w-full sm:w-auto"
+                            className="w-full sm:w-auto border-border"
                         >
                             Send Another Message
                         </Button>
@@ -196,53 +185,69 @@ export default function ContactSection() {
                     <div className="flex flex-col justify-between space-y-12">
                         <div className="space-y-8">
                             <div>
-                                <h2 className="text-2xl font-semibold mb-4">
-                                    Why partner with Invaritech?
+                                <h2 className="text-2xl font-semibold mb-4 text-foreground">
+                                    Why work with Invaritech on finance workflow automation?
                                 </h2>
                                 <p className="text-muted-foreground text-lg leading-relaxed">
-                                    We&apos;re not just a dev shop. We&apos;re a strategic partner that helps you navigate complex technical challenges. From compliance bridges to data pipelines, we build the infrastructure that powers your business.
+                                    Invaritech scopes, builds, and supports workflow controls,
+                                    exception routing, reporting bridges, and evidence capture for
+                                    finance and regulated operations. A founder stays accountable
+                                    from scoping through delivery.
                                 </p>
                             </div>
 
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="mt-1 rounded-lg bg-primary/10 p-2">
+                                    <div className="mt-1 bg-primary/10 border border-border p-2">
                                         <Calendar className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1">Book a Consultation</h3>
+                                        <h3 className="font-medium mb-1 text-foreground">
+                                            {diagnosticRequested
+                                                ? "Book the Diagnostic"
+                                                : scanRequested
+                                                  ? "Request the Scan"
+                                                  : "Book a Diagnostic"}
+                                        </h3>
                                         <p className="text-sm text-muted-foreground mb-3">
-                                            Skip the email tag. Schedule a 30-minute call directly with our team.
+                                            {diagnosticRequested
+                                                ? "Use the form to bring one finance or regulated operations workflow to a focused diagnostic."
+                                                : scanRequested
+                                                  ? "Use the form to start the free workflow controls scan. We will confirm the export, NDA, and next step before asking for data."
+                                                  : "Skip the email loop and bring one real finance or regulated operations workflow to a focused diagnostic."}
                                         </p>
                                         <Button
                                             asChild
                                             variant="default"
                                             className="group"
                                         >
-                                            <a
-                                                href="https://calendly.com/hello-invaritech/30min"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                Schedule on Calendly
-                                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                            </a>
+                                            {diagnosticRequested || scanRequested ? (
+                                                <Link href="#contact-form">
+                                                    Use the Form
+                                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </Link>
+                                            ) : (
+                                                <Link href="/contact/?diagnostic=1">
+                                                    Share a Workflow
+                                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                                </Link>
+                                            )}
                                         </Button>
                                     </div>
                                 </div>
 
                                 <div className="flex items-start gap-4">
-                                    <div className="mt-1 rounded-lg bg-primary/10 p-2">
+                                    <div className="mt-1 bg-primary/10 border border-border p-2">
                                         <Mail className="h-5 w-5 text-primary" />
                                     </div>
                                     <div>
-                                        <h3 className="font-medium mb-1">Email Us</h3>
+                                        <h3 className="font-medium mb-1 text-foreground">Email Us</h3>
                                         <p className="text-sm text-muted-foreground mb-3">
                                             Prefer to write it down? Send us an email and we&apos;ll respond within 24 hours.
                                         </p>
                                         <Link
                                             href="mailto:hello@invaritech.ai"
-                                            className="text-primary hover:underline font-medium"
+                                            className="text-primary hover:underline font-medium font-mono text-sm"
                                         >
                                             hello@invaritech.ai
                                         </Link>
@@ -254,107 +259,127 @@ export default function ContactSection() {
 
                     {/* Right Column - Form */}
                     <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-2xl blur-3xl opacity-20 -z-10" />
-                        <Card className="border-none shadow-xl bg-background/80 backdrop-blur-sm p-6 sm:p-8 md:p-10">
+                        <Card className="rounded-none border border-border bg-card  shadow-none p-6 sm:p-8 md:p-10">
                             <div className="mb-8">
-                                <h3 className="text-xl font-semibold mb-2">
-                                    Send us a message
+                                <h3 className="text-xl font-semibold mb-2 text-foreground">
+                                    {diagnosticRequested
+                                        ? "Book the finance workflow diagnostic"
+                                        : scanRequested
+                                          ? "Request the free workflow controls scan"
+                                          : "Tell us about your workflow"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    Tell us a bit about your project and we&apos;ll be in touch.
+                                    {diagnosticRequested
+                                        ? "Tell us which finance or regulated operations workflow you want to map first."
+                                        : scanRequested
+                                          ? "Tell us which system you use and the best way to handle the NDA before you send your export."
+                                          : "Tell us which workflow, exception path, reporting bridge, or evidence gap needs attention."}
                                 </p>
                             </div>
 
-                            <form onSubmit={handleSubmit} className="space-y-5">
+                            <form id="contact-form" onSubmit={handleSubmit} className="space-y-5">
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="name">Full name *</Label>
-                                        <Input
-                                            type="text"
-                                            id="name"
-                                            name="name"
-                                            placeholder="John Doe"
-                                            value={formData.name}
-                                            onChange={handleInputChange}
-                                            required
-                                            className="bg-background/50"
-                                        />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <Label htmlFor="email">Email *</Label>
+                                        <Label htmlFor="email" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Email *</Label>
                                         <Input
                                             type="email"
                                             id="email"
                                             name="email"
                                             placeholder="john@company.com"
-                                            value={formData.email}
+                                            defaultValue={formData.email}
                                             onChange={handleInputChange}
                                             required
-                                            className="bg-background/50"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="name" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Full name *</Label>
+                                        <Input
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            placeholder="John Doe"
+                                            defaultValue={formData.name}
+                                            onChange={handleInputChange}
+                                            required
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="grid sm:grid-cols-2 gap-5">
                                     <div className="space-y-2">
-                                        <Label htmlFor="phone">Phone</Label>
+                                        <Label htmlFor="phone" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Phone</Label>
                                         <Input
                                             type="tel"
                                             id="phone"
                                             name="phone"
                                             placeholder="+1 (555) 000-0000"
-                                            value={formData.phone}
+                                            defaultValue={formData.phone}
                                             onChange={handleInputChange}
-                                            className="bg-background/50"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="country">Country *</Label>
+                                        <Label htmlFor="country" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Country *</Label>
                                         <Input
                                             type="text"
                                             id="country"
                                             name="country"
-                                            placeholder="United States"
-                                            value={formData.country}
+                                            placeholder="Singapore"
+                                            defaultValue={formData.country}
                                             onChange={handleInputChange}
                                             required
-                                            className="bg-background/50"
+                                            className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="company">Company / Website</Label>
+                                    <Label htmlFor="company" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Company / Website</Label>
                                     <Input
                                         type="text"
                                         id="company"
                                         name="company"
                                         placeholder="acme.com"
-                                        value={formData.company}
+                                        defaultValue={formData.company}
                                         onChange={handleInputChange}
-                                        className="bg-background/50"
+                                        className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground"
                                     />
                                 </div>
 
                                 <div className="space-y-2">
-                                    <Label htmlFor="message">
-                                        What would you like to automate or build? *
+                                    <Label htmlFor="message" className="text-xs font-mono uppercase tracking-widest text-muted-foreground">
+                                        Which workflow needs attention? *
                                     </Label>
                                     <Textarea
                                         id="message"
                                         name="message"
-                                        placeholder="Tell us about your project goals, timeline, and requirements..."
-                                        value={formData.message}
+                                        placeholder={scanRequested
+                                            ? "Example: I want the free workflow controls scan. We use NetSuite and can provide a recent export after NDA."
+                                            : "Example: month-end exception handling, reporting bridge, approval evidence, or regulated submission workflow."}
+                                        defaultValue={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}
                                         required
-                                        className="bg-background/50 resize-none"
+                                        className="rounded-none bg-background border-border font-mono text-foreground placeholder:text-muted-foreground resize-none"
                                     />
                                 </div>
 
+                                <TurnstileWidget
+                                    ref={turnstileRef}
+                                    onSuccess={setTurnstileToken}
+                                    onError={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                                    onExpire={() => { turnstileRef.current?.reset(); setTurnstileToken(""); }}
+                                />
+
                                 {formState.error && (
-                                    <div className="rounded-md bg-destructive/10 p-3 text-sm text-destructive flex items-center gap-2">
-                                        <span className="font-medium">Error:</span> {formState.error}
+                                    <div
+                                        role="alert"
+                                        aria-live="polite"
+                                        className="rounded-none border-l-2 border-destructive bg-destructive/10 pl-3 py-2 text-sm text-destructive flex items-center gap-2"
+                                    >
+                                        <span className="font-mono font-medium">ERR:</span> {formState.error}
                                     </div>
                                 )}
 
@@ -366,10 +391,39 @@ export default function ContactSection() {
                                 >
                                     {formState.isSubmitting
                                         ? "Sending..."
-                                        : "Send Message"}
+                                        : diagnosticRequested
+                                          ? "Request Workflow Diagnostic"
+                                          : scanRequested ? "Request Workflow Controls Scan" : "Send Message"}
                                 </Button>
                             </form>
                         </Card>
+                    </div>
+                </div>
+
+                <div className="mt-16 lg:mt-20">
+                    <div className="relative overflow-hidden border border-border/70 bg-card p-6 sm:p-8 md:p-10">
+                        <div className="flex items-start gap-4">
+                            <div className="mt-1 shrink-0 rounded-none bg-primary/10 border border-border p-2">
+                                <Globe2 className="h-5 w-5 text-primary" />
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-semibold mb-2">Remote delivery, founder-led support</h3>
+                                <p className="text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                                    We&apos;re based in Asia and deliver remotely for teams that need
+                                    finance and compliance workflows around the tools they already use.
+                                    Every engagement is handled directly by a founder over video
+                                    call and async communication, with full documentation and
+                                    evidence trails throughout.
+                                </p>
+                                <a
+                                    href="mailto:hello@invaritech.ai"
+                                    className="mt-4 inline-flex items-center gap-2 text-sm text-primary hover:underline font-mono"
+                                >
+                                    <Mail className="h-3.5 w-3.5" />
+                                    hello@invaritech.ai
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

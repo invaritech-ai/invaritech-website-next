@@ -1,109 +1,214 @@
 "use client";
+
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { Logo, LogoIcon } from "@/components/logo";
-import { Menu, X } from "lucide-react";
-import { ModeToggle } from "@/components/mode-toggle";
-import React from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useId, useState } from "react";
+
+import { LogoIcon } from "@/components/logo";
+import { primaryDiagnosticCta } from "@/lib/site-content/brand";
+import { primaryNavigation } from "@/lib/site-content/navigation";
 import { cn } from "@/lib/utils";
 
-const menuItems = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about/" },
-    { name: "Services", href: "/services/" },
-    { name: "Work", href: "/work/" },
-    { name: "Blogs", href: "/blogs/" },
-    { name: "Contact", href: "/contact/" },
-];
+const menuItems = primaryNavigation.map((item, index) => ({
+    ...item,
+    id: String(index + 1).padStart(2, "0"),
+}));
+
+const ctaLink = {
+    label: primaryDiagnosticCta.label,
+    href: primaryDiagnosticCta.href,
+    id: String(menuItems.length + 1).padStart(2, "0"),
+};
+
+function isExternalLink(href: string) {
+    return href.startsWith("http");
+}
+
+function normalizePath(path: string) {
+    if (path === "/") return path;
+    return path.replace(/\/$/, "");
+}
+
+function getActiveNavigationHref(pathname: string, currentHash: string) {
+    const currentPath = normalizePath(pathname);
+    const candidates = menuItems
+        .filter((item) => !isExternalLink(item.href))
+        .map((item) => {
+            const [hrefWithoutQuery, hash] = item.href.split("#");
+            const hrefBase = normalizePath(hrefWithoutQuery.split("?")[0]);
+            const matchesHash = hash ? currentHash === `#${hash}` : true;
+            const matchesPath =
+                currentPath === hrefBase ||
+                (hrefBase !== "/" && currentPath.startsWith(`${hrefBase}/`));
+
+            if (!matchesPath || !matchesHash) return null;
+
+            return {
+                href: item.href,
+                exact: currentPath === hrefBase,
+                score: hrefBase.length + (hash ? 1000 : 0),
+            };
+        })
+        .filter((candidate): candidate is { href: string; exact: boolean; score: number } =>
+            Boolean(candidate),
+        )
+        .sort((a, b) => {
+            if (a.exact !== b.exact) return a.exact ? -1 : 1;
+            return b.score - a.score;
+        });
+
+    return candidates[0]?.href;
+}
+
+function isActivePath(activeHref: string | undefined, href: string) {
+    if (!activeHref) return false;
+    const [hrefWithoutQuery, hash] = href.split("#");
+    const [activeWithoutQuery, activeHash] = activeHref.split("#");
+    return (
+        normalizePath(hrefWithoutQuery.split("?")[0]) ===
+            normalizePath(activeWithoutQuery.split("?")[0]) &&
+        (hash ?? "") === (activeHash ?? "")
+    );
+}
 
 export const HeroHeader = () => {
-    const [menuState, setMenuState] = React.useState(false);
-    const [isScrolled, setIsScrolled] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [currentHash, setCurrentHash] = useState("");
+    const pathname = usePathname();
+    const mobileMenuId = useId();
+    const activeHref = getActiveNavigationHref(pathname, currentHash);
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+    useEffect(() => {
+        function updateHash() {
+            setCurrentHash(window.location.hash);
+        }
+
+        updateHash();
+        window.addEventListener("hashchange", updateHash);
+
+        return () => window.removeEventListener("hashchange", updateHash);
+    }, [pathname]);
+
+    useEffect(() => {
+        if (!isOpen) {
+            document.body.style.overflow = "";
+            return;
+        }
+
+        document.body.style.overflow = "hidden";
+
+        function closeOnEscape(event: KeyboardEvent) {
+            if (event.key === "Escape") {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("keydown", closeOnEscape);
+
+        return () => {
+            document.body.style.overflow = "";
+            document.removeEventListener("keydown", closeOnEscape);
         };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isOpen]);
+
+    const mobileItems = [...menuItems, ctaLink];
+
     return (
-        <header>
-            <nav
-                data-state={menuState && "active"}
-                className="fixed z-50 w-full px-2"
-            >
-                <div
-                    className={cn(
-                        "mx-auto max-w-6xl px-6 transition-all duration-300 lg:px-12",
-                        isScrolled &&
-                            "bg-background/80 border border-border/50 backdrop-blur-xl rounded-2xl shadow-lg"
-                    )}
-                >
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-                        <div className="flex w-full justify-between lg:w-auto">
+        <header className="site-shell-header">
+            <div className="site-shell-header-inner">
+                <Link href="/" className="site-shell-brand group" aria-label="INVARITECH home">
+                    <span className="site-shell-brand-mark" aria-hidden="true">
+                        <LogoIcon className="site-shell-brand-icon" />
+                    </span>
+                    <span className="site-shell-brand-copy">
+                        <span className="site-shell-brand-name" translate="no">
+                            INVARITECH
+                        </span>
+                        <span className="site-shell-brand-line">FINANCE OPS & REGOPS AUTOMATIONS</span>
+                    </span>
+                </Link>
+
+                <nav className="site-shell-nav" aria-label="Primary navigation">
+                    {menuItems.map((item) => {
+                        const active = isActivePath(activeHref, item.href);
+
+                        return (
                             <Link
-                                href="/"
-                                aria-label="home"
-                                className="flex items-center space-x-2"
+                                key={item.label}
+                                href={item.href}
+                                className={cn(
+                                    "site-shell-nav-link",
+                                    active && "site-shell-nav-link-active",
+                                )}
+                                aria-current={active ? "page" : undefined}
                             >
-                                <LogoIcon className="size-10" />
-                                <Logo />
+                                {item.label}
                             </Link>
+                        );
+                    })}
+                    <Link href={ctaLink.href} className="site-shell-nav-cta">
+                        {ctaLink.label}
+                    </Link>
+                </nav>
 
-                            <button
-                                onClick={() => setMenuState(!menuState)}
-                                aria-label={
-                                    menuState == true
-                                        ? "Close Menu"
-                                        : "Open Menu"
-                                }
-                                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
-                            >
-                                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-                            </button>
-                        </div>
+                <button
+                    type="button"
+                    className="site-shell-menu-button"
+                    aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={isOpen}
+                    aria-controls={mobileMenuId}
+                    onClick={() => setIsOpen((current) => !current)}
+                >
+                    Menu
+                    <span className="site-shell-menu-icon" aria-hidden="true">
+                        <span
+                            className={cn(
+                                "site-shell-menu-line site-shell-menu-line-first",
+                                isOpen && "site-shell-menu-line-first-open",
+                            )}
+                        />
+                        <span
+                            className={cn(
+                                "site-shell-menu-line site-shell-menu-line-second",
+                                isOpen && "site-shell-menu-line-second-open",
+                            )}
+                        />
+                    </span>
+                </button>
+            </div>
 
-                        <div className="absolute inset-0 m-auto hidden size-fit lg:block">
-                            <ul className="flex gap-8 text-sm">
-                                {menuItems.map((item, index) => (
-                                    <li key={index}>
-                                        <Link
-                                            href={item.href}
-                                            className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                                        >
-                                            <span>{item.name}</span>
-                                        </Link>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
+            {isOpen ? (
+                <div id={mobileMenuId} className="site-shell-mobile-panel">
+                    <nav className="site-shell-mobile-nav" aria-label="Mobile navigation">
+                        {mobileItems.map((item) => {
+                            const active = isActivePath(activeHref, item.href);
 
-                        <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent z-50">
-                            <div className="lg:hidden">
-                                <ul className="space-y-6 text-base">
-                                    {menuItems.map((item, index) => (
-                                        <li key={index}>
-                                            <Link
-                                                href={item.href}
-                                                onClick={() =>
-                                                    setMenuState(false)
-                                                }
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                                            >
-                                                <span>{item.name}</span>
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                                <ModeToggle />
-                            </div>
-                        </div>
+                            return (
+                                <Link
+                                    key={item.label}
+                                    href={item.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className={cn(
+                                        "site-shell-mobile-link group",
+                                        active && "site-shell-mobile-link-active",
+                                    )}
+                                    aria-current={active ? "page" : undefined}
+                                >
+                                    <span className="site-shell-mobile-index">{item.id}</span>
+                                    <span className="site-shell-mobile-title">{item.label}</span>
+                                    <ArrowUpRight className="site-shell-mobile-arrow" aria-hidden="true" />
+                                </Link>
+                            );
+                        })}
+                    </nav>
+                    <div className="site-shell-mobile-footer">
+                        Asia-based. Globally delivered.
+                        <br />
+                        Founder-led. Built around your existing systems.
                     </div>
                 </div>
-            </nav>
+            ) : null}
         </header>
     );
 };
