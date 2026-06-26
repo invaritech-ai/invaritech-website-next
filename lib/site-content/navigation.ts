@@ -3,6 +3,10 @@ import type { NavigationItem } from "./types";
 export const primaryNavigation = [
     { label: "Finance", href: "/finance-automation/" },
     { label: "Compliance", href: "/regulatory-operations-automation/" },
+    {
+        label: "Claims Desk",
+        href: "https://claims-desk.invaritech.ai/?utm_source=invaritech&utm_medium=nav&utm_campaign=claims-desk",
+    },
     { label: "Resources", href: "/resources/" },
     { label: "Blog", href: "/blog/" },
     { label: "Work", href: "/work/" },

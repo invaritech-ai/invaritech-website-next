@@ -97,6 +97,19 @@ export const homePageContent = {
                     "Evidence-heavy workflows",
                 ],
             },
+            {
+                id: "claims-desk",
+                eyebrow: "For FMCG suppliers",
+                title: "Claims Desk",
+                body: "Supply supermarkets? Retailer deductions and trade claims pile up faster than your team can check them. Claims Desk tears down a batch of your claims and shows what looks recoverable. The teardown is free.",
+                href: "https://claims-desk.invaritech.ai/?utm_source=invaritech&utm_medium=card&utm_campaign=claims-desk",
+                ctaLabel: "Get a free teardown",
+                proof: [
+                    "Built for FMCG suppliers",
+                    "Retailer deductions and claims",
+                    "Free claims teardown",
+                ],
+            },
         ],
     },
     problem: {

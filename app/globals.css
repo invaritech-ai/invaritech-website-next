@@ -159,12 +159,13 @@
 }
 
 html {
-    scroll-padding-top: 6rem;
+    scroll-padding-top: calc(6rem + var(--promo-bar-h, 0px));
 }
 
 body {
     cursor: default;
     overflow-x: hidden;
+    padding-top: var(--promo-bar-h, 0px);
     font-size: 1.0625rem;
     font-family: var(--font-body);
     background: var(--background);
@@ -181,7 +182,7 @@ textarea {
 }
 
 :target {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: calc(6rem + var(--promo-bar-h, 0px));
 }
 
 .text-balance {
@@ -954,7 +955,32 @@ textarea {
 
     .site-shell-header {
         @apply fixed inset-x-0 top-0 z-[100] pointer-events-none;
-        padding-top: max(1rem, env(safe-area-inset-top));
+        padding-top: calc(var(--promo-bar-h, 0px) + max(1rem, env(safe-area-inset-top)));
+    }
+
+    .promo-bar {
+        @apply fixed inset-x-0 top-0 z-[140] flex h-10 items-center justify-center gap-3 bg-primary px-10 text-primary-foreground;
+    }
+
+    .promo-bar-link {
+        @apply pointer-events-auto inline-flex max-w-full items-center gap-2 truncate text-[0.8rem] font-medium tracking-wide;
+        font-family: var(--font-label);
+    }
+
+    .promo-bar-link:hover .promo-bar-arrow {
+        @apply translate-x-1;
+    }
+
+    .promo-bar-tag {
+        @apply hidden shrink-0 items-center bg-accent px-1.5 py-0.5 text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-accent-foreground sm:inline-flex;
+    }
+
+    .promo-bar-arrow {
+        @apply transition-transform duration-200;
+    }
+
+    .promo-bar-dismiss {
+        @apply pointer-events-auto absolute right-2 inline-flex size-7 items-center justify-center text-primary-foreground/70 transition-colors hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground/50;
     }
 
     .site-shell-header-inner {

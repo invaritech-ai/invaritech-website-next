@@ -6,6 +6,7 @@ import Script from "next/script";
 import "./globals.css";
 import { LenisScroll } from "@/components/ui/LenisScroll";
 import { HeroHeader } from "@/components/header";
+import { PromoBar } from "@/components/promo-bar";
 import SiteSpotlight from "@/components/hero-spotlight";
 import FooterSection from "@/components/footer";
 import { Chatbot } from "@/components/chatbot";
@@ -234,6 +235,7 @@ export default function RootLayout({
                         <div className="fixed inset-0 z-[-1] pointer-events-none grain-overlay opacity-30" />
                         <SiteSpotlight />
                         <div className="relative z-10">
+                            <PromoBar />
                             <HeroHeader />
                             {children}
                             <FooterSection />
