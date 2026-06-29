@@ -57,6 +57,7 @@ export function InvoiceExtractor() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    const selectionTokenRef = useRef(0);
     const pollRunning = useRef(false);
 
     const reset = () => {
@@ -87,7 +88,9 @@ export function InvoiceExtractor() {
     };
 
     const handleFileSelect = async (f: File) => {
+        const selectionToken = ++selectionTokenRef.current;
         const err = await validateFile(f);
+        if (selectionToken !== selectionTokenRef.current) return;
         if (err) {
             setClientError(err);
             setFile(null);

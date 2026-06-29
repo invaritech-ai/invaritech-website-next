@@ -170,6 +170,10 @@ describe("SEO metadata", () => {
         assert.match(pageSource, /https:\/\/claims-desk\.invaritech\.ai\/\?utm_source=invaritech&utm_medium=resource&utm_campaign=claims-checklist/);
         assert.match(resourcesSource, /slug:\s*"supermarket-claim-types-worth-checking"/);
         assert.match(
+            resourcesSource,
+            /slug:\s*"supermarket-claim-types-worth-checking",[\s\S]*?href:\s*"\/resources\/supermarket-claim-types-worth-checking\/"/
+        );
+        assert.match(
             sitemapSource,
             /url: `\$\{baseUrl\}\/resources\/supermarket-claim-types-worth-checking\/`,[\s\S]*?priority: 0\.75/
         );

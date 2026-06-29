@@ -44,7 +44,10 @@ export function appendAttributionToFormData(fd: FormData): void {
 }
 
 export function extractAttributionFromFormData(fd: FormData): AttributionData {
-    const s = (key: string) => String(fd.get(key) ?? "");
+    const s = (key: string) => {
+        const value = fd.get(key);
+        return typeof value === "string" ? value : "";
+    };
 
     return {
         submit_page_url: s("submit_page_url"),
