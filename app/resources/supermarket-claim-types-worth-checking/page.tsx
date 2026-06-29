@@ -3,12 +3,15 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
+import { buildClaimsDeskUrl } from "@/lib/claims/claims-desk-cta";
 
 const BASE = "https://www.invaritech.ai";
 const PAGE_PATH = "/resources/supermarket-claim-types-worth-checking/";
 const PAGE_URL = `${BASE}${PAGE_PATH}`;
-const CLAIMS_DESK_URL =
-    "https://claims-desk.invaritech.ai/?utm_source=invaritech&utm_medium=resource&utm_campaign=claims-checklist";
+const CLAIMS_DESK_URL = buildClaimsDeskUrl({
+    medium: "claims-checklist",
+    content: "page-cta",
+});
 
 const description =
     "A public checklist for Australian FMCG suppliers: 20 supermarket claim types to check before deductions, short-pays, debit notes, or portal claims age out.";
@@ -46,7 +49,7 @@ type ClaimRow = {
     claim: string;
     check: string;
     evidence: string;
-    flag?: "Red flag" | "Code-conditional";
+    flag?: "Red flag" | "Code risk";
 };
 
 const claimRows: ClaimRow[] = [
@@ -72,7 +75,7 @@ const claimRows: ClaimRow[] = [
     },
     {
         claim: "Wastage charge",
-        flag: "Code-conditional",
+        flag: "Code risk",
         check: "Chargeable only if expressly agreed in the supply agreement, reasonable in amount, with a stated calculation method, and the retailer took steps to reduce the cost.",
         evidence: "Supply agreement wastage clause, claim basis, calculation, batch or lot evidence",
     },
@@ -124,7 +127,7 @@ const claimRows: ClaimRow[] = [
     },
     {
         claim: "Listing, ranging or new-line fee",
-        flag: "Code-conditional",
+        flag: "Code risk",
         check: "Payments for shelf space or positioning need express written agreement and a reasonable amount.",
         evidence: "Trading terms, listing or ranging agreement, SKU evidence, claim note",
     },
@@ -242,11 +245,11 @@ export default function SupermarketClaimTypesPage() {
             breadcrumb="Supermarket Claim Types"
             eyebrow="FMCG Claims Checklist"
             titleParts={["20 Supermarket Claim Types", "Worth Checking Before They Age Out"]}
-            description="Use this against one recent remittance advice, debit note, or portal claim. The goal is simple: decide which claims are supported, missing proof, worth querying, or Code-sensitive."
+            description="Use this against one recent remittance advice, debit note, or portal claim. The goal is simple: decide which claims are supportable, missing proof, worth challenging, or Code risk."
             maxWidth="4xl"
             jsonLd={jsonLd}
             footerLabel="Want a second set of eyes?"
-            footerText="Claims Desk reviews one redacted remittance and marks each line as supportable, missing proof, or worth challenging. Evidence checklist only. Not legal advice."
+            footerText="Claims Desk reviews one redacted remittance and marks each line as supportable, missing proof, worth challenging, or Code risk. Evidence checklist only. Not legal advice."
             footerLink={{
                 href: CLAIMS_DESK_URL,
                 label: "Get a free claims teardown",
@@ -291,7 +294,7 @@ export default function SupermarketClaimTypesPage() {
                 </h2>
                 <p className="site-body mt-5 max-w-3xl">
                     Pull the evidence first. Then decide whether the line is supportable, missing
-                    proof, worth querying, or sensitive under the Code.
+                    proof, worth challenging, or Code risk.
                 </p>
                 <p className="mt-5 text-xs font-mono uppercase tracking-[0.16em] text-foreground-subtle sm:hidden">
                     Scroll table sideways
@@ -391,7 +394,7 @@ export default function SupermarketClaimTypesPage() {
                 <h2 className="site-h3 mt-4">Send one redacted remittance.</h2>
                 <p className="site-body mt-4 max-w-3xl">
                     We mark each line as supportable, missing proof, worth challenging, or
-                    Code-sensitive. You get a one-page evidence teardown back.
+                    Code risk. You get a one-page evidence teardown back.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                     <Link href={CLAIMS_DESK_URL} className="site-button gap-2">
