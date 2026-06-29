@@ -83,13 +83,6 @@ const supportOffers = [
     },
 ] satisfies OfferCard[];
 
-export const financePageOffers = [
-    ...diagnosticOffers,
-    buildOffers[0],
-    buildOffers[1],
-    supportOffers[0],
-] satisfies OfferCard[];
-
 export const offerStages = [
     {
         id: "diagnose",

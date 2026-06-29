@@ -56,3 +56,15 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 export function getAllSlugs(): string[] {
     return blogPosts.map((post) => post.slug);
 }
+
+export function formatBlogDate(dateString: string): string {
+    return new Date(dateString).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    });
+}
+
+export function estimateReadingTime(content: string): number {
+    return Math.ceil(content.split(/\s+/).length / 200);
+}

@@ -1,5 +1,10 @@
 import { Metadata } from "next";
-import { getPostBySlug, getAllSlugs } from "@/lib/blog-posts";
+import {
+    estimateReadingTime,
+    formatBlogDate,
+    getAllSlugs,
+    getPostBySlug,
+} from "@/lib/blog-posts";
 import { notFound } from "next/navigation";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -51,15 +56,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             canonical: `https://www.invaritech.ai/blog/${post.slug}/`,
         },
     };
-}
-
-function formatDate(dateString: string): string {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
-}
-
-function estimateReadingTime(content: string): number {
-    return Math.ceil(content.split(/\s+/).length / 200);
 }
 
 function generateArticleSchema(post: {
@@ -229,7 +225,7 @@ export default async function BlogPostPage({ params }: Props) {
                                 <div className="flex gap-6">
                                     <span className="flex items-center gap-2">
                                         <Calendar className="size-3" />
-                                        {formatDate(post.publishedAt)}
+                                        {formatBlogDate(post.publishedAt)}
                                     </span>
                                     <span className="flex items-center gap-2">
                                         <Clock className="size-3" />
