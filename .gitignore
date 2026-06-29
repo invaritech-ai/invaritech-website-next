@@ -67,3 +67,6 @@ artifacts
 
 # Local git worktrees
 /.worktrees/
+
+# Superpowers workflow scratch files
+/.superpowers/
