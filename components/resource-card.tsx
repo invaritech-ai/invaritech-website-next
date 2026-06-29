@@ -1,34 +1,28 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import type { Resource, ResourceCategory, ResourcePillar } from "@/lib/resources";
+import type { Resource } from "@/lib/resources";
 
-const CATEGORY_DISPLAY: Record<ResourceCategory, string> = {
-    "rule-table": "Rule Table",
+const CATEGORY_DISPLAY: Record<Resource["category"], string> = {
+    calculator: "Calculator",
     checklist: "Checklist",
     guide: "Guide",
-    calculator: "Calculator",
-    template: "Template",
     tool: "Tool",
 };
 
-const PILLAR_DISPLAY: Record<ResourcePillar, string> = {
+const PILLAR_DISPLAY: Record<Resource["pillar"], string> = {
     "finance-ops": "Finance Automation",
     regops: "Compliance Automation",
 };
 
+const CTA_DISPLAY: Record<Resource["category"], string> = {
+    calculator: "Open Calculator",
+    checklist: "Open Checklist",
+    guide: "Read Guide",
+    tool: "Open Tool",
+};
+
 export default function ResourceCard({ resource }: { resource: Resource }) {
-    const ctaLabel =
-        resource.category === "tool"
-            ? resource.slug === "cost-to-close-calculator"
-                ? "Open Calculator"
-                : "Open Tool"
-            : resource.category === "rule-table"
-              ? "View Rule Table"
-              : resource.category === "guide"
-                ? "Read Guide"
-                : resource.category === "checklist"
-                  ? "Open Checklist"
-                  : `View ${CATEGORY_DISPLAY[resource.category]}`;
+    const ctaLabel = CTA_DISPLAY[resource.category];
 
     return (
         <article
@@ -51,11 +45,10 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 <p className="site-card-body mt-2">{resource.excerpt}</p>
             </div>
 
-            {/* Metadata */}
             <dl className="mt-auto grid grid-cols-[5rem_1fr] gap-x-3 gap-y-1.5 border-t border-border pt-4">
                 <dt className="site-meta">Industry</dt>
                 <dd className="text-xs text-foreground-muted">
-                    {resource.industry ?? "—"}
+                    {resource.industry}
                 </dd>
                 <dt className="site-meta">Format</dt>
                 <dd className="text-xs text-foreground-muted">
@@ -63,17 +56,14 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
                 </dd>
             </dl>
 
-            {/* CTA — only for available resources with a subpage */}
-            {resource.subpageHref && (
-                <Link
-                    href={resource.subpageHref}
-                    className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-primary transition-colors hover:text-foreground"
-                    aria-label={`${ctaLabel}: ${resource.title}`}
-                >
-                    {ctaLabel}
-                    <ArrowRight className="size-3" aria-hidden="true" />
-                </Link>
-            )}
+            <Link
+                href={resource.href}
+                className="inline-flex items-center gap-2 text-[11px] font-mono uppercase tracking-[0.16em] text-primary transition-colors hover:text-foreground"
+                aria-label={`${ctaLabel}: ${resource.title}`}
+            >
+                {ctaLabel}
+                <ArrowRight className="size-3" aria-hidden="true" />
+            </Link>
         </article>
     );
 }

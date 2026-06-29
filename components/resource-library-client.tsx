@@ -10,7 +10,7 @@ import {
     ShieldCheck,
 } from "lucide-react";
 
-import { getOpenResources } from "@/lib/resources";
+import { resources } from "@/lib/resources";
 import ResourceCard from "@/components/resource-card";
 import HomepageScrollAnimations from "@/components/homepage-scroll-animations";
 
@@ -100,11 +100,10 @@ const complianceProofPoints = [
 ];
 
 export default function ResourceLibraryClient() {
-    const openResources = getOpenResources();
-    const financeResources = openResources.filter(
+    const financeResources = resources.filter(
         (resource) => resource.pillar === "finance-ops",
     );
-    const complianceResources = openResources.filter(
+    const complianceResources = resources.filter(
         (resource) => resource.pillar === "regops",
     );
 
@@ -268,7 +267,7 @@ export default function ResourceLibraryClient() {
                         </div>
                         {complianceResources.length === 1 ? (
                             <Link
-                                href={complianceResources[0].subpageHref ?? "/work/eudr-compliance-bridge/"}
+                                href={complianceResources[0].href}
                                 className="group grid overflow-hidden border border-border bg-background transition-colors hover:bg-background-soft lg:grid-cols-[0.82fr_1.18fr]"
                                 data-reveal="block"
                                 aria-label={`Read guide: ${complianceResources[0].title}`}
