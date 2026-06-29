@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { countPdfPages, SINGLE_PAGE_PDF_ERROR } from "@/lib/invoice-pdf-page-limit";
 
 const ALLOWED_MIME_TYPES = ["application/pdf", "image/jpeg", "image/jpg", "image/png"];
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
@@ -37,6 +38,10 @@ export async function POST(request: NextRequest) {
         // fail to close a multipart stream correctly when forwarding a File object
         // from request.formData() directly, causing UND_ERR_SOCKET on the backend.
         const fileBuffer = await file.arrayBuffer();
+        if (file.type === "application/pdf" && countPdfPages(fileBuffer) > 1) {
+            return NextResponse.json({ error: SINGLE_PAGE_PDF_ERROR }, { status: 400 });
+        }
+
         const blob = new Blob([fileBuffer], { type: file.type });
         const backendForm = new FormData();
         backendForm.append("file", blob, file.name);

@@ -8,6 +8,7 @@ import {
     compressImageForUpload,
     shouldCompressImage,
 } from "./image-upload-compression";
+import { validateSinglePagePdf } from "@/lib/invoice-pdf-page-limit";
 
 type Phase = "idle" | "uploading" | "polling" | "completed" | "failed";
 
@@ -75,18 +76,18 @@ export function InvoiceExtractor() {
         if (fileInputRef.current) fileInputRef.current.value = "";
     };
 
-    const validateFile = (f: File): string | null => {
+    const validateFile = async (f: File): Promise<string | null> => {
         if (!ALLOWED_TYPES.includes(f.type)) {
             return "Unsupported file type. Please upload a PDF, JPG, or PNG.";
         }
         if (f.size > MAX_FILE_SIZE && !shouldCompressImage(f)) {
             return "File too large. Maximum size is 10 MB.";
         }
-        return null;
+        return validateSinglePagePdf(f);
     };
 
-    const handleFileSelect = (f: File) => {
-        const err = validateFile(f);
+    const handleFileSelect = async (f: File) => {
+        const err = await validateFile(f);
         if (err) {
             setClientError(err);
             setFile(null);
@@ -100,7 +101,7 @@ export function InvoiceExtractor() {
         e.preventDefault();
         setIsDragging(false);
         const dropped = e.dataTransfer.files[0];
-        if (dropped) handleFileSelect(dropped);
+        if (dropped) void handleFileSelect(dropped);
     };
 
     const fetchResult = useCallback(async (id: string) => {
@@ -339,7 +340,7 @@ export function InvoiceExtractor() {
                                 className="hidden"
                                 onChange={(e) => {
                                     const f = e.target.files?.[0];
-                                    if (f) handleFileSelect(f);
+                                    if (f) void handleFileSelect(f);
                                 }}
                             />
 
@@ -358,7 +359,7 @@ export function InvoiceExtractor() {
                                         DROP FILE HERE OR CLICK TO BROWSE
                                     </p>
                                     <p className="tool-dropzone-note">
-                                        ACCEPTED: PDF / JPG / PNG — MAX 10 MB
+                                        SINGLE-PAGE PDF / JPG / PNG — MAX 10 MB
                                     </p>
                                 </div>
                             )}
@@ -370,6 +371,23 @@ export function InvoiceExtractor() {
                                 {clientError}
                             </p>
                         )}
+
+                        <div className="border border-border bg-background p-4">
+                            <p className="tool-label">DATA HANDLING</p>
+                            <p className="tool-small mt-2">
+                                This free OCR tool extracts one invoice page at a time. Multi-page
+                                PDFs are rejected in your browser when detectable, before upload.
+                                Uploaded invoices are encrypted in transit and at rest, processed
+                                to generate the CSV output, and automatically deleted within 48
+                                hours. The extractor may use service and model providers needed
+                                to process the file. Upload only files you are authorised to
+                                process, and redact anything unnecessary before testing. See our{" "}
+                                <a href="/privacy/" className="site-link">
+                                    Privacy Policy
+                                </a>
+                                .
+                            </p>
+                        </div>
 
                         {/* Extract button */}
                         {file && (

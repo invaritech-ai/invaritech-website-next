@@ -59,12 +59,20 @@ export default function TermsPage() {
 
             <LegalSection number="04" heading="Privacy and Data">
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                    Your use of our services is also governed by our Privacy Policy. When you contact us or use our services:
+                    Your use of our services is also governed by our{" "}
+                    <a
+                        href="/privacy/"
+                        className="text-primary hover:text-foreground transition-colors border-b border-primary/50 hover:border-foreground"
+                    >
+                        Privacy Policy
+                    </a>
+                    . In short:
                 </p>
                 <LegalBulletList items={[
-                    "We may collect and store contact and project information to provide our services.",
-                    "We do not share your personal information with third parties without your consent, except as required by law.",
-                    "You are responsible for not sharing sensitive or confidential information unless an agreed process is in place.",
+                    "We collect the minimum information needed to provide the requested website, tool, diagnostic, or project workflow.",
+                    "We do not sell or rent personal information.",
+                    "We share data only with service and model providers needed to operate the workflow, with your consent, or where required by law.",
+                    "You should not submit sensitive or confidential files unless the relevant tool notice or an agreed project process covers that submission.",
                 ]} />
             </LegalSection>
 
