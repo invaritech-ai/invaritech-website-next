@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { appendLeadRow, type LeadRow } from "@/lib/sheets";
+import { appendLeadRow } from "@/lib/sheets";
+import { extractAttributionFromFormData } from "@/lib/attribution";
 
 export const runtime = "nodejs";
 
@@ -26,34 +27,6 @@ function formatBytes(bytes: number): string {
 function describeFile(label: string, file: File | null): string {
     if (!file) return `${label}: not attached`;
     return `${label}: ${file.name} (${formatBytes(file.size)}, ${file.type || "type unknown"})`;
-}
-
-function extractAttribution(formData: FormData): LeadRow["attribution"] {
-    const s = (key: string) => String(formData.get(key) ?? "");
-
-    return {
-        submit_page_url: s("submit_page_url"),
-        submit_page_path: s("submit_page_path"),
-        submit_page_title: s("submit_page_title"),
-        referrer: s("referrer"),
-        landing_page_url: s("landing_page_url"),
-        landing_page_path: s("landing_page_path"),
-        utm_source: s("utm_source"),
-        utm_medium: s("utm_medium"),
-        utm_campaign: s("utm_campaign"),
-        utm_term: s("utm_term"),
-        utm_content: s("utm_content"),
-        utm_id: s("utm_id"),
-        utm_source_platform: s("utm_source_platform"),
-        utm_creative_format: s("utm_creative_format"),
-        utm_marketing_tactic: s("utm_marketing_tactic"),
-        gclid: s("gclid"),
-        gbraid: s("gbraid"),
-        wbraid: s("wbraid"),
-        fbclid: s("fbclid"),
-        msclkid: s("msclkid"),
-        li_fat_id: s("li_fat_id"),
-    };
 }
 
 export async function POST(request: Request) {
@@ -114,7 +87,7 @@ export async function POST(request: Request) {
             industry: "finance-automation",
             main_control_problem: "Three-way match analysis request",
             message,
-            attribution: extractAttribution(formData),
+            attribution: extractAttributionFromFormData(formData),
             turnstile_status: "not_applicable",
             turnstile_hostname: "",
         });

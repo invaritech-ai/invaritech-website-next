@@ -28,7 +28,6 @@ const proofTypeLabels: Record<ProofAsset["type"], string> = {
 const toolCategoryLabels: Record<ToolCard["category"], string> = {
     matcher: "Live tool",
     extractor: "Live tool",
-    "rule-table": "Rule table",
     calculator: "Calculator",
     checker: "Checker",
 };
@@ -43,6 +42,56 @@ function itemKey(item: { id: string; href?: string }) {
  * readers because the data is illustrative. Stats on the case-study card
  * mirror the published numbers on /work/eudr-compliance-bridge/.
  */
+type WorkPreviewRow = {
+    label: string;
+    value: string;
+    status?: "ok" | "flag";
+};
+
+const workPreviewRows: Record<string, WorkPreviewRow[]> = {
+    "three-way-matcher": [
+        { label: "Quantity", value: "Match", status: "ok" },
+        { label: "Unit price", value: "+5.0% vs PO", status: "flag" },
+        { label: "Tax code", value: "Match", status: "ok" },
+    ],
+    "invoice-extractor": [
+        { label: "Supplier", value: "Meridian Packaging Co." },
+        { label: "Invoice no", value: "INV-2381" },
+        { label: "Amount", value: "$9,384.00" },
+    ],
+    "cost-to-close-calculator": [
+        { label: "Close length", value: "8 days" },
+        { label: "Manual checks", value: "41 hrs/mo" },
+        { label: "Hidden cost", value: "$4,700/mo", status: "flag" },
+    ],
+    "accounts-payable-controls": [
+        { label: "Duplicate check", value: "Required", status: "ok" },
+        { label: "PO match before release", value: "Required", status: "ok" },
+        { label: "Approval owner", value: "Named", status: "ok" },
+    ],
+};
+
+function WorkPreviewRows({ rows }: { rows: WorkPreviewRow[] }) {
+    return (
+        <div className="work-preview" aria-hidden="true">
+            {rows.map((row) => (
+                <div key={row.label} className="work-preview-row">
+                    <span className="work-preview-label">{row.label}</span>
+                    <span
+                        className={cn(
+                            "work-preview-value",
+                            row.status === "ok" && "work-preview-ok",
+                            row.status === "flag" && "work-preview-flag",
+                        )}
+                    >
+                        {row.value}
+                    </span>
+                </div>
+            ))}
+        </div>
+    );
+}
+
 function WorkPreview({ id }: { id: string }) {
     switch (id) {
         case "eudr-compliance-bridge":
@@ -56,135 +105,35 @@ function WorkPreview({ id }: { id: string }) {
                     </div>
                     <div className="work-preview-stat">
                         <p className="work-preview-stat-value">-99%</p>
-                        <p className="work-preview-stat-label">
-                            Entry errors
-                        </p>
+                        <p className="work-preview-stat-label">Entry errors</p>
                     </div>
                     <div className="work-preview-stat">
                         <p className="work-preview-stat-value">100%</p>
-                        <p className="work-preview-stat-label">
-                            Traceable
-                        </p>
+                        <p className="work-preview-stat-label">Traceable</p>
                     </div>
                 </div>
             );
         case "three-way-matcher":
-            return (
-                <div className="work-preview" aria-hidden="true">
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">Quantity</span>
-                        <span className="work-preview-value work-preview-ok">
-                            Match
-                        </span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">Unit price</span>
-                        <span className="work-preview-value work-preview-flag">
-                            +5.0% vs PO
-                        </span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">Tax code</span>
-                        <span className="work-preview-value work-preview-ok">
-                            Match
-                        </span>
-                    </div>
-                </div>
-            );
         case "invoice-extractor":
-            return (
-                <div className="work-preview" aria-hidden="true">
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">Supplier</span>
-                        <span className="work-preview-value">
-                            Meridian Packaging Co.
-                        </span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">Invoice no</span>
-                        <span className="work-preview-value">INV-2381</span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">Amount</span>
-                        <span className="work-preview-value">$9,384.00</span>
-                    </div>
-                </div>
-            );
         case "cost-to-close-calculator":
-            return (
-                <div className="work-preview" aria-hidden="true">
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">
-                            Close length
-                        </span>
-                        <span className="work-preview-value">8 days</span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">
-                            Manual checks
-                        </span>
-                        <span className="work-preview-value">41 hrs/mo</span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">
-                            Hidden cost
-                        </span>
-                        <span className="work-preview-value work-preview-flag">
-                            $4,700/mo
-                        </span>
-                    </div>
-                </div>
-            );
         case "accounts-payable-controls":
-            return (
-                <div className="work-preview" aria-hidden="true">
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">
-                            Duplicate check
-                        </span>
-                        <span className="work-preview-value work-preview-ok">
-                            Required
-                        </span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">
-                            PO match before release
-                        </span>
-                        <span className="work-preview-value work-preview-ok">
-                            Required
-                        </span>
-                    </div>
-                    <div className="work-preview-row">
-                        <span className="work-preview-label">
-                            Approval owner
-                        </span>
-                        <span className="work-preview-value work-preview-ok">
-                            Named
-                        </span>
-                    </div>
-                </div>
-            );
+            return <WorkPreviewRows rows={workPreviewRows[id]} />;
         default:
             return null;
     }
 }
 
 function buildItems(proofAssets: ProofAsset[], tools: ToolCard[]) {
-    const liveTools = tools.filter(
-        (tool): tool is ToolCard & { href: string } =>
-            tool.status === "live" && Boolean(tool.href),
-    );
-    const liveToolKeys = new Set(liveTools.map(itemKey));
+    const toolKeys = new Set(tools.map(itemKey));
     const seen = new Set<string>();
 
     const proofItems = proofAssets
-        .filter(
-            (asset): asset is ProofAsset & { href: string } =>
-                Boolean(asset.href),
+        .filter((asset): asset is ProofAsset & { href: string } =>
+            Boolean(asset.href),
         )
         .filter(
             (asset) =>
-                asset.type === "case-study" || !liveToolKeys.has(itemKey(asset)),
+                asset.type === "case-study" || !toolKeys.has(itemKey(asset)),
         )
         .map<AvailableWorkItem>((asset) => ({
             id: asset.id,
@@ -196,7 +145,7 @@ function buildItems(proofAssets: ProofAsset[], tools: ToolCard[]) {
             tags: asset.tags,
         }));
 
-    const toolItems = liveTools.map<AvailableWorkItem>((tool) => ({
+    const toolItems = tools.map<AvailableWorkItem>((tool) => ({
         id: tool.id,
         href: tool.href,
         label: toolCategoryLabels[tool.category],

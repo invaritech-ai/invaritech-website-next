@@ -43,6 +43,37 @@ export function appendAttributionToFormData(fd: FormData): void {
     }
 }
 
+export function extractAttributionFromFormData(fd: FormData): AttributionData {
+    const s = (key: string) => {
+        const value = fd.get(key);
+        return typeof value === "string" ? value : "";
+    };
+
+    return {
+        submit_page_url: s("submit_page_url"),
+        submit_page_path: s("submit_page_path"),
+        submit_page_title: s("submit_page_title"),
+        referrer: s("referrer"),
+        landing_page_url: s("landing_page_url"),
+        landing_page_path: s("landing_page_path"),
+        utm_source: s("utm_source"),
+        utm_medium: s("utm_medium"),
+        utm_campaign: s("utm_campaign"),
+        utm_term: s("utm_term"),
+        utm_content: s("utm_content"),
+        utm_id: s("utm_id"),
+        utm_source_platform: s("utm_source_platform"),
+        utm_creative_format: s("utm_creative_format"),
+        utm_marketing_tactic: s("utm_marketing_tactic"),
+        gclid: s("gclid"),
+        gbraid: s("gbraid"),
+        wbraid: s("wbraid"),
+        fbclid: s("fbclid"),
+        msclkid: s("msclkid"),
+        li_fat_id: s("li_fat_id"),
+    };
+}
+
 function param(params: URLSearchParams, key: string): string {
     return params.get(key) ?? "";
 }

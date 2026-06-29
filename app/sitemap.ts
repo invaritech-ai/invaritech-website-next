@@ -49,6 +49,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/resources/supermarket-claim-types-worth-checking/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.75,
+        },
+        {
             url: `${baseUrl}/resources/invoice-extractor/`,
             changeFrequency: "monthly" as const,
             priority: 0.8,

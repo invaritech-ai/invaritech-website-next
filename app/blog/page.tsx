@@ -1,5 +1,9 @@
 import { Metadata } from "next";
-import { getAllPosts } from "@/lib/blog-posts";
+import {
+    estimateReadingTime,
+    formatBlogDate,
+    getAllPosts,
+} from "@/lib/blog-posts";
 import Link from "next/link";
 import { ArrowRight, MoveUpRight } from "lucide-react";
 import Image from "next/image";
@@ -34,21 +38,6 @@ export const metadata: Metadata = {
         canonical: "https://www.invaritech.ai/blog/",
     },
 };
-
-function formatDate(dateString: string): string {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-    });
-}
-
-function estimateReadingTime(content: string): number {
-    const wordsPerMinute = 200;
-    const wordCount = content.split(/\s+/).length;
-    return Math.ceil(wordCount / wordsPerMinute);
-}
 
 const pillars = ["Finance Automation", "Compliance Automation"];
 
@@ -112,7 +101,7 @@ function BlogCard({
 
                     <div className="flex items-center justify-between border-t border-border pt-4 mt-auto">
                         <span className="text-sm font-mono text-foreground-subtle">
-                            {formatDate(post.publishedAt)}
+                            {formatBlogDate(post.publishedAt)}
                         </span>
                         <div className="flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
                             READ <MoveUpRight className="size-4" />

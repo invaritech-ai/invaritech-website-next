@@ -52,9 +52,9 @@ export function ThreeWayMatcherSecondaryCTA() {
     }
 
     return (
-            <form onSubmit={handleSubmit} className="glossary-secondary-cta">
-                <input type="hidden" name="source" value="glossary/three-way-match" />
-                <div className="glossary-secondary-cta-header">
+        <form onSubmit={handleSubmit} className="glossary-secondary-cta">
+            <input type="hidden" name="source" value="glossary/three-way-match" />
+            <div className="glossary-secondary-cta-header">
                 <div className="glossary-eyebrow-bar" />
                 <p className="glossary-eyebrow-label-sm">Run on your real export</p>
             </div>
@@ -66,6 +66,15 @@ export function ThreeWayMatcherSecondaryCTA() {
                 server-side matcher with OCR, fuzzy vendor normalization, and agentic
                 exception routing, and send back a one-page exception report within 24
                 hours. No call required.
+            </p>
+            <p className="glossary-privacy-callout-secondary text-sm text-foreground-muted">
+                This form sends your email and attached CSVs to Invaritech for follow-up
+                analysis. Use the browser-only matcher above if you do not want files to
+                leave your device; redact sensitive fields before submitting. See our{" "}
+                <a href="/privacy/" className="site-link">
+                    Privacy Policy
+                </a>
+                .
             </p>
 
             <div className="glossary-secondary-cta-email-grid">

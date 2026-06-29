@@ -34,6 +34,24 @@ const APOLLO_CONTACT_SCRIPT = createApolloInboundScript({
     formSelector: "#contact-form",
 });
 
+const heroCopy = {
+    diagnostic: {
+        eyebrow: "Finance Workflow Diagnostic",
+        title: "Book a Finance Workflow Diagnostic.",
+        body: "Bring one finance or regulated operations workflow. We map the current process, find where controls are missing, assess automation fit, and recommend the smallest useful build scope.",
+    },
+    scan: {
+        eyebrow: "Free Workflow Controls Scan",
+        title: "Request a free workflow controls scan.",
+        body: "Send a recent workflow export or evidence sample. We will run focused checks and return a short findings report within 48 hours.",
+    },
+    default: {
+        eyebrow: "Get In Touch",
+        title: "Book a finance workflow scoping call.",
+        body: "Bring one finance or regulated operations workflow, exception process, or evidence gap. We will scope the fastest path to a working control.",
+    },
+} as const;
+
 type ContactPageProps = {
     searchParams?: Promise<{
         scan?: string | string[];
@@ -42,13 +60,18 @@ type ContactPageProps = {
     }>;
 };
 
+function firstParam(value: string | string[] | undefined) {
+    return Array.isArray(value) ? value[0] : value;
+}
+
 export default async function ContactPage({ searchParams }: ContactPageProps) {
     const params = await searchParams;
-    const scanValue = Array.isArray(params?.scan) ? params?.scan[0] : params?.scan;
-    const scanRequested = scanValue === "1";
-    const auditValue = Array.isArray(params?.audit) ? params?.audit[0] : params?.audit;
-    const diagnosticValue = Array.isArray(params?.diagnostic) ? params?.diagnostic[0] : params?.diagnostic;
+    const scanRequested = firstParam(params?.scan) === "1";
+    const auditValue = firstParam(params?.audit);
+    const diagnosticValue = firstParam(params?.diagnostic);
     const diagnosticRequested = diagnosticValue === "1" || auditValue === "1";
+    const heroMode = diagnosticRequested ? "diagnostic" : scanRequested ? "scan" : "default";
+    const hero = heroCopy[heroMode];
 
     return (
         <main className="site-page relative overflow-hidden">
@@ -69,27 +92,15 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
                                 <p className="site-eyebrow-text">
-                                    {diagnosticRequested
-                                        ? "Finance Workflow Diagnostic"
-                                        : scanRequested
-                                          ? "Free Workflow Controls Scan"
-                                          : "Get In Touch"}
+                                    {hero.eyebrow}
                                 </p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                {diagnosticRequested
-                                    ? "Book a Finance Workflow Diagnostic."
-                                    : scanRequested
-                                      ? "Request a free workflow controls scan."
-                                      : "Book a finance workflow scoping call."}
+                                {hero.title}
                             </h1>
                         </div>
                         <p className="site-lead" data-reveal="block">
-                            {diagnosticRequested
-                                ? "Bring one finance or regulated operations workflow. We map the current process, find where controls are missing, assess automation fit, and recommend the smallest useful build scope."
-                                : scanRequested
-                                  ? "Send a recent workflow export or evidence sample. We will run focused checks and return a short findings report within 48 hours."
-                                  : "Bring one finance or regulated operations workflow, exception process, or evidence gap. We will scope the fastest path to a working control."}
+                            {hero.body}
                         </p>
                     </div>
                 </div>

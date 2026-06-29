@@ -39,9 +39,8 @@ export type ToolCard = {
     id: string;
     title: string;
     body: string;
-    status: "live" | "coming-soon";
-    href?: string;
-    category: "matcher" | "extractor" | "calculator" | "rule-table" | "checker";
+    href: string;
+    category: "matcher" | "extractor" | "calculator" | "checker";
 };
 
 export type PageMetadata = {

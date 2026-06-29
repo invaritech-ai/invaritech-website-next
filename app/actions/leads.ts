@@ -2,7 +2,7 @@
 
 import { headers } from "next/headers";
 import { appendLeadRow, type LeadRow } from "@/lib/sheets";
-import type { AttributionData } from "@/lib/attribution";
+import { extractAttributionFromFormData } from "@/lib/attribution";
 
 interface ActionResult {
     success: boolean;
@@ -31,33 +31,6 @@ async function verifyTurnstile(token: string): Promise<{ success: boolean; hostn
     return { success: json.success === true, hostname: json.hostname ?? "" };
 }
 
-function extractAttribution(fd: FormData): AttributionData {
-    const s = (key: string) => String(fd.get(key) ?? "");
-    return {
-        submit_page_url: s("submit_page_url"),
-        submit_page_path: s("submit_page_path"),
-        submit_page_title: s("submit_page_title"),
-        referrer: s("referrer"),
-        landing_page_url: s("landing_page_url"),
-        landing_page_path: s("landing_page_path"),
-        utm_source: s("utm_source"),
-        utm_medium: s("utm_medium"),
-        utm_campaign: s("utm_campaign"),
-        utm_term: s("utm_term"),
-        utm_content: s("utm_content"),
-        utm_id: s("utm_id"),
-        utm_source_platform: s("utm_source_platform"),
-        utm_creative_format: s("utm_creative_format"),
-        utm_marketing_tactic: s("utm_marketing_tactic"),
-        gclid: s("gclid"),
-        gbraid: s("gbraid"),
-        wbraid: s("wbraid"),
-        fbclid: s("fbclid"),
-        msclkid: s("msclkid"),
-        li_fat_id: s("li_fat_id"),
-    };
-}
-
 type LeadFields = Omit<LeadRow, "attribution" | "turnstile_status" | "turnstile_hostname">;
 
 async function verifyAndAppend(
@@ -74,7 +47,7 @@ async function verifyAndAppend(
 
         await appendLeadRow({
             ...fields,
-            attribution: extractAttribution(formData),
+            attribution: extractAttributionFromFormData(formData),
             turnstile_status: "verified",
             turnstile_hostname: turnstile.hostname,
         });
