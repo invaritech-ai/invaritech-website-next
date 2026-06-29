@@ -16,7 +16,7 @@ export function PromoBar() {
     useEffect(() => {
         if (localStorage.getItem(STORAGE_KEY) === "1") return;
         document.documentElement.style.setProperty("--promo-bar-h", "2.5rem");
-        setVisible(true);
+        window.setTimeout(() => setVisible(true), 0);
     }, []);
 
     function dismiss() {

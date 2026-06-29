@@ -69,6 +69,18 @@ const resources: Resource[] = [
         subpageHref: "/resources/accounts-payable-controls/",
     },
     {
+        slug: "supermarket-claim-types-worth-checking",
+        pillar: "finance-ops",
+        title: "20 Supermarket Claim Types Worth Checking",
+        excerpt:
+            "A public checklist for Australian FMCG suppliers checking retailer deductions, short-pays, debit notes, promo claims, and duplicate credits before they age out.",
+        category: "checklist",
+        industry: "FMCG suppliers",
+        format: "Web checklist",
+        access: "open",
+        subpageHref: "/resources/supermarket-claim-types-worth-checking/",
+    },
+    {
         slug: "changed-bank-detail-verification-checklist",
         pillar: "finance-ops",
         title: "Changed Bank Detail Verification Checklist",

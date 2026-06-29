@@ -157,6 +157,24 @@ describe("SEO metadata", () => {
         );
     });
 
+    it("publishes the supermarket claims checklist as an indexable resource", () => {
+        const pageSource = read("app/resources/supermarket-claim-types-worth-checking/page.tsx");
+        const resourcesSource = read("lib/resources.ts");
+        const sitemapSource = read("app/sitemap.ts");
+
+        assert.match(
+            pageSource,
+            /canonical:\s*"https:\/\/www\.invaritech\.ai\/resources\/supermarket-claim-types-worth-checking\/"/
+        );
+        assert.match(pageSource, /robots:\s*\{\s*index:\s*true,\s*follow:\s*true\s*\}/);
+        assert.match(pageSource, /https:\/\/claims-desk\.invaritech\.ai\/\?utm_source=invaritech&utm_medium=resource&utm_campaign=claims-checklist/);
+        assert.match(resourcesSource, /slug:\s*"supermarket-claim-types-worth-checking"/);
+        assert.match(
+            sitemapSource,
+            /url: `\$\{baseUrl\}\/resources\/supermarket-claim-types-worth-checking\/`,[\s\S]*?priority: 0\.75/
+        );
+    });
+
     it("keeps the web app manifest aligned to the pivot", () => {
         const manifestSource = read("app/manifest.ts");
         assert.match(manifestSource, /name:\s*"INVARITECH Finance Ops and RegOps Automation"/);
