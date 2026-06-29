@@ -5,11 +5,15 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { trackSiteEvent } from "@/lib/analytics/site-events";
-import { buildClaimsDeskUrl } from "@/lib/claims/claims-desk-cta";
+import {
+    buildClaimsDeskUrl,
+    type ClaimsDeskCtaContent,
+    type ClaimsDeskCtaMedium,
+} from "@/lib/claims/claims-desk-cta";
 
 type Props = {
-    medium: string;
-    content: string;
+    medium: ClaimsDeskCtaMedium;
+    content: ClaimsDeskCtaContent;
     children?: ReactNode;
     className?: string;
 };

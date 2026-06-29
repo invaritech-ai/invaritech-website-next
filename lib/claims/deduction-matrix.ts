@@ -1,4 +1,5 @@
 import matrix from "./deduction-matrix.json" with { type: "json" };
+import type { ClaimSourceId } from "./claim-sources";
 import type { ClaimVerdict } from "./verdicts";
 
 export type DeadlineRule = {
@@ -16,6 +17,7 @@ export type DeductionType = {
     neutralQuery: string;
     deadlineHelper: string;
     deadlineRule?: DeadlineRule;
+    sourceIds?: ClaimSourceId[];
 };
 
 export const deductionTypes = matrix as DeductionType[];

@@ -37,7 +37,8 @@
     "shortEvidence": "Claim reason, possession point, supply agreement clause, retailer basis.",
     "codeCheck": "Code risk if the retailer is Code-covered and the loss is post-possession.",
     "neutralQuery": "Please identify the basis for charging this shrinkage amount to us, including the possession point and any clause relied on.",
-    "deadlineHelper": "Confirm whether the retailer is Code-covered and when possession passed."
+    "deadlineHelper": "Confirm whether the retailer is Code-covered and when possession passed.",
+    "sourceIds": ["accc-code-about", "accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "shortfall",
@@ -48,6 +49,7 @@
     "codeCheck": "Check the Code's 30-day cap on retailer-raised shortfall claims.",
     "neutralQuery": "Please provide the received-quantity evidence and the delivery date used for this shortfall claim.",
     "deadlineHelper": "The Code caps retailer-raised shortfall claims at no later than 30 days after delivery where the Code applies.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"],
     "deadlineRule": { "kind": "claimRaisedWithinDays", "days": 30 }
   },
   {
@@ -59,6 +61,7 @@
     "codeCheck": "Check the Code's 30-day cap on retailer-raised damage claims.",
     "neutralQuery": "Please provide the delivery date, claim date, and damage evidence used for this claim.",
     "deadlineHelper": "The Code caps retailer-raised damage claims at no later than 30 days after delivery where the Code applies.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"],
     "deadlineRule": { "kind": "claimRaisedWithinDays", "days": 30 }
   },
   {
@@ -69,7 +72,8 @@
     "shortEvidence": "Wastage clause, calculation method, actual cost basis, mitigation evidence.",
     "codeCheck": "Check express agreement, reasonable amount, stated calculation, and retailer cost mitigation.",
     "neutralQuery": "Please provide the agreed wastage clause, calculation method, actual cost basis, and steps taken to reduce the cost.",
-    "deadlineHelper": "Check the supply agreement and retailer portal claim window."
+    "deadlineHelper": "Check the supply agreement and retailer portal claim window.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "set-off",
@@ -79,7 +83,8 @@
     "shortEvidence": "Written consent or set-off clause, amount basis, debit note.",
     "codeCheck": "Check written consent, agreement basis, and reasonableness.",
     "neutralQuery": "Please provide the written consent or supply agreement basis relied on for this set-off, plus the amount calculation.",
-    "deadlineHelper": "Check the supply agreement, trading terms, and retailer portal claim window."
+    "deadlineHelper": "Check the supply agreement, trading terms, and retailer portal claim window.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "post-audit-claim",
@@ -89,7 +94,8 @@
     "shortEvidence": "Original PO, invoice, price list, promo agreement, prior remittance.",
     "codeCheck": "Check whether the set-off or charge basis is allowed by agreement and reasonable.",
     "neutralQuery": "Please provide the transaction trail and agreement basis used for this post-audit claim.",
-    "deadlineHelper": "Check the trading terms, supply agreement, and portal window for historic claims."
+    "deadlineHelper": "Check the trading terms, supply agreement, and portal window for historic claims.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "duplicate-already-credited",
@@ -119,7 +125,8 @@
     "shortEvidence": "Pallet transfer records, CHEP or Loscam statements, agreement, delivery docket.",
     "codeCheck": "Check agreed basis and amount reasonableness where the Code applies.",
     "neutralQuery": "Please provide the pallet or packaging transfer records and agreement basis used for this charge.",
-    "deadlineHelper": "Check the retailer portal claim window; some equipment windows are separate from trade deductions."
+    "deadlineHelper": "Check the retailer portal claim window; some equipment windows are separate from trade deductions.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "freight-transport-deduction",
@@ -129,7 +136,8 @@
     "shortEvidence": "Freight terms, carrier invoice, PO, delivery evidence.",
     "codeCheck": "Check agreed basis and amount reasonableness where the Code applies.",
     "neutralQuery": "Please provide the freight terms, carrier evidence, and calculation used for this deduction.",
-    "deadlineHelper": "Check the supply agreement and retailer portal claim window."
+    "deadlineHelper": "Check the supply agreement and retailer portal claim window.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "listing-ranging-fee",
@@ -139,7 +147,8 @@
     "shortEvidence": "Trading terms, listing or ranging agreement, SKU evidence, claim note.",
     "codeCheck": "Check express written agreement and reasonableness.",
     "neutralQuery": "Please provide the express written agreement and amount basis used for this listing or ranging charge.",
-    "deadlineHelper": "Check the supply agreement, trading terms, and retailer portal claim window."
+    "deadlineHelper": "Check the supply agreement, trading terms, and retailer portal claim window.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "retail-media-activity-charge",
@@ -149,7 +158,8 @@
     "shortEvidence": "Booking confirmation, activity proof, agreement, invoice or debit note.",
     "codeCheck": "Check express agreement, delivery proof, and amount basis.",
     "neutralQuery": "Please provide the booking confirmation, activity proof, and agreed amount basis for this activity charge.",
-    "deadlineHelper": "Check the campaign agreement and retailer portal claim window."
+    "deadlineHelper": "Check the campaign agreement and retailer portal claim window.",
+    "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"]
   },
   {
     "id": "asn-edi-barcode-compliance",
