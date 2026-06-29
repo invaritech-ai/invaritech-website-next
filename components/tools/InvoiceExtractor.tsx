@@ -572,8 +572,7 @@ export function InvoiceExtractor() {
                                     </p>
                                     <p className="tool-copy mt-3">
                                         Download the CSV now, or email yourself the extracted
-                                        summary and the AP controls checklist used after invoice
-                                        intake.
+                                        result and CSV access.
                                     </p>
                                 </div>
 
@@ -598,8 +597,7 @@ export function InvoiceExtractor() {
                                     {emailSubmitted ? (
                                         <div className="tool-state-stack">
                                             <p className="tool-status-success">
-                                                SENT — CHECK YOUR INBOX FOR THE RESULT AND AP
-                                                CONTROLS CHECKLIST
+                                                SENT — CHECK YOUR INBOX FOR THE RESULT
                                             </p>
                                             <p className="tool-small">
                                                 You can still download the CSV directly here if you
@@ -613,8 +611,8 @@ export function InvoiceExtractor() {
                                                     EMAIL ME THIS RESULT
                                                 </p>
                                                 <p className="tool-small tool-small-spaced-lg">
-                                                    We will send the extracted summary, CSV access,
-                                                    and the AP controls checklist. No signup wall.
+                                                    We will send the extracted result and CSV access.
+                                                    No signup wall.
                                                 </p>
                                             </div>
                                             <div className="tool-inline-form">
