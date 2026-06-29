@@ -49,7 +49,7 @@ type ClaimRow = {
     claim: string;
     check: string;
     evidence: string;
-    flag?: "Red flag" | "Code risk";
+    flag?: "Code risk";
 };
 
 const claimRows: ClaimRow[] = [
@@ -81,7 +81,7 @@ const claimRows: ClaimRow[] = [
     },
     {
         claim: "Shrinkage charge",
-        flag: "Red flag",
+        flag: "Code risk",
         check: "Under the Code a large grocery business cannot require a supplier to pay for shrinkage after the retailer takes possession.",
         evidence: "Claim reason code, supply agreement, remittance line",
     },

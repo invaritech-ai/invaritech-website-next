@@ -130,6 +130,7 @@ describe("Claims foundation", () => {
         for (const file of claimsSurfaceFiles) {
             const source = readFileSync(file, "utf8");
             assert.equal(source.includes("Code-conditional"), false, `${file} uses legacy Code-conditional copy`);
+            assert.equal(source.includes("Red flag"), false, `${file} uses non-canonical Red flag copy`);
             assert.equal(
                 source.includes("claims-desk.invaritech.ai"),
                 false,
