@@ -3,16 +3,16 @@ import Script from "next/script";
 import ResourceLibraryClient from "@/components/resource-library-client";
 
 export const metadata: Metadata = {
-    title: "Free Finance Automation Tools for AP Controls and Invoice Workflows",
+    title: "Tools and Resources for Operations Optimization",
     description:
-        "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
+        "Practical tools, checklists, calculators, and guides for supplier claims, finance operations, payment evidence, and compliance workflows.",
     alternates: {
         canonical: "https://www.invaritech.ai/resources/",
     },
     openGraph: {
-        title: "Free Finance Automation Tools for AP Controls and Invoice Workflows - INVARITECH",
+        title: "Tools and Resources for Ops Optimization - INVARITECH",
         description:
-            "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
+            "Practical tools, checklists, calculators, and guides for supplier claims, finance operations, payment evidence, and compliance workflows.",
         url: "https://www.invaritech.ai/resources/",
         type: "website",
         images: [
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
                 url: "/og-image.png",
                 width: 1200,
                 height: 630,
-                alt: "Free Finance Automation Tools",
+                alt: "Tools and Resources for Ops Optimization",
             },
         ],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Free Finance Automation Tools for AP Controls and Invoice Workflows - INVARITECH",
+        title: "Tools and Resources for Ops Optimization - INVARITECH",
         description:
-            "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
+            "Practical tools, checklists, calculators, and guides for supplier claims, finance operations, payment evidence, and compliance workflows.",
         images: ["/og-image.png"],
     },
 };
@@ -52,9 +52,9 @@ const breadcrumbSchema = {
 const webpageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Free Finance Automation Tools for AP Controls and Invoice Workflows",
+    name: "Tools and Resources for Ops Optimization",
     description:
-        "Free finance automation tools for AP teams: invoice extraction, AP controls, three-way match checks, invoice processing automation, and close cost analysis.",
+        "Practical tools, checklists, calculators, and guides for supplier claims, finance operations, payment evidence, and compliance workflows.",
     url: `${BASE}/resources/`,
     isPartOf: {
         "@type": "WebSite",
@@ -62,11 +62,12 @@ const webpageSchema = {
         url: BASE,
     },
     about: [
-        "finance automation tools",
+        "ops optimization tools",
+        "supplier claims",
         "accounts payable controls",
         "three-way match",
-        "invoice processing automation",
-        "invoice automation tools",
+        "payment evidence",
+        "compliance workflows",
     ],
 };
 
