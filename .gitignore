@@ -64,3 +64,6 @@ artifacts
 
 # AP scan sample data — local only
 /ap-scan-samples/
+
+# Local git worktrees
+/.worktrees/
