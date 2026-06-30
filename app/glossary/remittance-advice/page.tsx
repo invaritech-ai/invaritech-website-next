@@ -90,8 +90,8 @@ export default function RemittanceAdvicePage() {
                                 <div>
                                     <p className="site-meta text-primary">Definition</p>
                                     <p className="site-body mt-3">
-                                        It is not the payment itself. It is the notice that tells the
-                                        supplier how the payer says the payment was allocated.
+                                        A remittance advice shows how the payer allocated the payment.
+                                        It names the invoices paid, credits applied, and deductions taken.
                                     </p>
                                 </div>
                                 <div>
@@ -113,18 +113,16 @@ export default function RemittanceAdvicePage() {
                                 <div>
                                     <p className="site-meta text-primary">Is it proof of payment?</p>
                                     <p className="site-body mt-3">
-                                        Not on its own. It is evidence of the payer&apos;s stated
-                                        allocation, but bank settlement records are still the cleaner proof
-                                        that funds moved.
+                                        Treat it as allocation evidence. Use bank settlement records to
+                                        prove funds moved.
                                     </p>
                                 </div>
                                 <div>
                                     <p className="site-meta text-primary">Why supermarket suppliers care</p>
                                     <p className="site-body mt-3">
-                                        In grocery, the remittance advice is often where deductions first
-                                        become operationally real. It is the fastest way to see which
-                                        claims need proof, which ones look supportable, and which ones
-                                        might raise a Code question.
+                                        In grocery, deduction work usually starts in the remittance advice.
+                                        It shows which claims need proof, which lines look supportable, and
+                                        which lines may raise a Code question.
                                     </p>
                                 </div>
                             </div>
@@ -146,7 +144,7 @@ export default function RemittanceAdvicePage() {
                                     <p className="site-body">
                                         Claims Desk reviews one redacted remittance and marks each line as
                                         supportable, missing proof, worth challenging, or Code risk.
-                                        Evidence workflow only. Not legal advice.
+                                        Evidence review only. Not legal advice.
                                     </p>
                                     <ClaimsCTA
                                         medium="remittance-advice"

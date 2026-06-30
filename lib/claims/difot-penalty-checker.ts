@@ -96,6 +96,6 @@ export function evaluateDifotPenalty(input: DifotPenaltyInput): DifotPenaltyResu
         evidenceToRequest: ["supplier pass/fail basis"],
         neutralQuery,
         methodNote:
-            "The checker is an evidence model, not the retailer's official scorecard.",
+            "Use this as an evidence check, not as the retailer's official scorecard.",
     };
 }

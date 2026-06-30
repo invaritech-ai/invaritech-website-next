@@ -94,8 +94,8 @@ export default function SampleClaimsEvidencePackPage() {
 
                             <h1 className="site-h2">Sample claims evidence-pack teardown</h1>
                             <p className="site-lead mt-6 max-w-3xl">
-                                This page uses synthetic supplier and retailer data to show the shape of
-                                a line-by-line review before a deduction gets treated as settled.
+                                These examples use sample supplier and retailer data. They show how to
+                                review a deduction before treating it as settled.
                             </p>
                         </div>
 
@@ -137,11 +137,10 @@ export default function SampleClaimsEvidencePackPage() {
                                 </div>
                                 <h2 className="site-h3 mt-4">DIFOT penalty with a timing mismatch</h2>
                                 <p className="site-body mt-4">
-                                    Example: a retailer claims a late arrival against a booked
-                                    10:00 to 12:00 window, but the supplier packet has a dock timestamp at
-                                    10:41 and a scorecard note using gate-in time instead. That does not
-                                    close the issue by itself, but it shifts the line from assumed valid to
-                                    worth challenging.
+                                    A retailer claims late arrival against a booked 10:00 to 12:00 window.
+                                    The supplier packet has a dock timestamp at 10:41. The scorecard note
+                                    uses gate-in time instead. That mismatch is enough to ask which timing
+                                    rule drove the debit.
                                 </p>
                                 <ul className="site-body mt-5 list-disc space-y-2 pl-5">
                                     <li>Evidence packet: PO, ASN, booked slot confirmation, POD, dock log.</li>
@@ -164,10 +163,9 @@ export default function SampleClaimsEvidencePackPage() {
                                 </div>
                                 <h2 className="site-h3 mt-4">Promo scan deduction without the scan file</h2>
                                 <p className="site-body mt-4">
-                                    Example: the remittance shows a rebate amount and a campaign
-                                    code, but no scan extract by SKU, store group, or promo dates. At the
-                                    headline level that stays in missing proof until the volume basis
-                                    appears.
+                                    The remittance shows a rebate amount and a campaign code. The scan
+                                    extract is missing by SKU, store group, and promo dates. That line stays
+                                    in missing proof until the volume basis appears.
                                 </p>
                                 <div className="mt-5 border-l-2 border-primary/30 pl-4">
                                     <div className="flex flex-wrap items-center gap-3">
@@ -196,12 +194,10 @@ export default function SampleClaimsEvidencePackPage() {
                                 </div>
                                 <h2 className="site-h3 mt-4">Shrinkage charge after retailer possession</h2>
                                 <p className="site-body mt-4">
-                                    Example: the claim note describes store-level shrink after the
-                                    delivery was signed in. That creates a Code risk only if three
-                                    preconditions are true: the retailer is Code-covered, possession had
-                                    already passed to the retailer, and the loss being charged is a
-                                    post-possession shrinkage event rather than an in-transit or delivery
-                                    variance issue.
+                                    The claim note describes store-level shrink after signed delivery. That
+                                    creates Code risk only if three preconditions hold: the retailer is
+                                    Code-covered, possession had already passed, and the loss is
+                                    post-possession shrinkage rather than a delivery variance.
                                 </p>
                                 <ul className="site-body mt-5 list-disc space-y-2 pl-5">
                                     <li>Supplier-side check: where did possession pass?</li>
@@ -209,9 +205,8 @@ export default function SampleClaimsEvidencePackPage() {
                                     <li>Factual check: is the claimed loss really post-possession shrinkage?</li>
                                 </ul>
                                 <p className="mt-5 text-xs leading-relaxed text-foreground-subtle">
-                                    Source note: this example is framed against ACCC Food and Grocery Code
-                                    guidance and the current Code text. It is illustrative only and not legal
-                                    advice.
+                                    Source note: this example follows ACCC Food and Grocery Code guidance
+                                    and the current Code text. Illustrative only. Not legal advice.
                                 </p>
                                 <ClaimsCTA
                                     medium="sample-teardown"

@@ -86,9 +86,8 @@ export function DifotPenaltyChecker() {
                         <p className="site-meta text-primary">Evidence checker</p>
                         <h2 className="site-h3">Check the proof before you accept the deduction.</h2>
                         <p className="site-body">
-                            This is supplier-side triage. It does not calculate the retailer scorecard for
-                            you. It tells you whether the evidence stack is complete enough to accept, query,
-                            or challenge the line.
+                            Use this to test the proof behind one DIFOT line. No scorecard recalculation.
+                            Just the evidence gap before you accept, query, or challenge the deduction.
                         </p>
                     </div>
 
@@ -257,7 +256,7 @@ export function DifotPenaltyChecker() {
                                 <p className="site-body mt-3">
                                     Claims Desk reviews one redacted remittance and marks each line as
                                     supportable, missing proof, worth challenging, or Code risk. Evidence
-                                    workflow only. Not legal advice.
+                                    review only. Not legal advice.
                                 </p>
                                 <div className="mt-5">
                                     <ClaimsCTA medium="difot-calculator" content="result-cta" />

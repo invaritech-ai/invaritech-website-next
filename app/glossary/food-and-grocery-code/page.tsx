@@ -126,16 +126,16 @@ export default function FoodAndGroceryCodePage() {
                                     Metcash Food &amp; Grocery, and Woolworths Group.
                                 </p>
                                 <p className="site-body mt-4">
-                                    Costco matters as a coverage question, not an assumed inclusion. It is
-                                    not in the covered list above, so suppliers should confirm the latest
-                                    position before treating a Costco deduction as Code-governed.
+                                    Costco needs a separate coverage check. The list above does not include
+                                    Costco. Confirm the current position before treating a Costco deduction
+                                    as Code-governed.
                                 </p>
                             </article>
                             <article className="bg-card p-6 md:p-8">
                                 <p className="site-meta text-primary">What this page shows</p>
                                 <p className="site-body mt-4">
-                                    This page shows where the Code can make a deduction challengeable. It
-                                    is not legal advice.
+                                    Use this page to see where the Code can make a deduction challengeable.
+                                    Not legal advice.
                                 </p>
                             </article>
                         </section>
@@ -194,7 +194,7 @@ export default function FoodAndGroceryCodePage() {
                                 <p className="site-body mt-4">
                                     Claims Desk reviews one redacted remittance and highlights which
                                     lines look supportable, missing proof, worth challenging, or Code
-                                    risk. Evidence workflow only. Not legal advice.
+                                    risk. Evidence review only. Not legal advice.
                                 </p>
                                 <ClaimsCTA
                                     medium="food-grocery-code"

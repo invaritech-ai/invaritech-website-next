@@ -136,7 +136,7 @@ export default function DifotGlossaryPage() {
                                     <p className="site-body">
                                         Claims Desk can review one redacted remittance and tell you which
                                         lines look supportable, missing proof, worth challenging, or Code
-                                        risk. Evidence workflow only. Not legal advice.
+                                        risk. Evidence review only. Not legal advice.
                                     </p>
                                     <Link href={CLAIMS_DESK_URL} className="site-button mt-5">
                                         Send one redacted remittance

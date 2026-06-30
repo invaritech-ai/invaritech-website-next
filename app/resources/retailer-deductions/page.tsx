@@ -241,7 +241,7 @@ export default function RetailerDeductionsPage() {
                                 <h2 className="site-h3 mt-4">Send one redacted remittance.</h2>
                                 <p className="site-body mt-4 max-w-3xl">
                                     Claims Desk marks each line as supportable, missing proof, worth
-                                    challenging, or Code risk. Evidence workflow only. Not legal advice.
+                                    challenging, or Code risk. Evidence review only. Not legal advice.
                                 </p>
                             </div>
                             <ClaimsCTA

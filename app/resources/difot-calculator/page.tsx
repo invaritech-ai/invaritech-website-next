@@ -103,7 +103,7 @@ export default function DifotCalculatorPage() {
             maxWidth="4xl"
             jsonLd={jsonLd}
             footerLabel="Next layer"
-            footerText="This page is supplier-side evidence triage. It helps you decide whether to accept, query, or challenge a DIFOT line before it disappears into a remittance file. It is not legal advice."
+            footerText="Use this to decide whether to accept, query, or challenge a DIFOT line before it disappears into a remittance file. Evidence review only. Not legal advice."
             footerLink={{
                 href: CLAIMS_DESK_URL,
                 label: "Send one redacted remittance",
@@ -192,7 +192,7 @@ export default function DifotCalculatorPage() {
 
             <section className="mt-16 border-t border-border pt-12">
                 <p className="site-meta text-primary">Checker</p>
-                <h2 className="site-h3 mt-4">Run the supplier-side DIFOT evidence check</h2>
+                <h2 className="site-h3 mt-4">Run the DIFOT evidence check</h2>
                 <p className="site-body mt-3 max-w-3xl">
                     The checker below does one job: sort a DIFOT deduction into supportable, missing
                     proof, or worth challenging based on the evidence you actually have in hand.
