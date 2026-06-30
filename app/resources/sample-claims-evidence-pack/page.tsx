@@ -10,7 +10,7 @@ const BASE = "https://www.invaritech.ai";
 const PAGE_URL = "https://www.invaritech.ai/resources/sample-claims-evidence-pack/";
 
 const description =
-    "A synthetic teardown showing how one DIFOT line, one promo scan line, and one shrinkage line can be framed as evidence questions before a supplier accepts the deduction.";
+    "An illustrative teardown showing how one DIFOT line, one promo scan line, and one shrinkage line can be framed as evidence questions before a supplier accepts the deduction.";
 
 export const metadata: Metadata = {
     title: "Sample Claims Evidence-Pack Teardown",
@@ -119,7 +119,7 @@ export default function SampleClaimsEvidencePackPage() {
                         </div>
 
                         <section className="mt-14 border-t border-border pt-12">
-                            <p className="site-meta text-primary">Method</p>
+                            <p className="site-meta text-primary">How to read this</p>
                             <h2 className="site-h3 mt-4">What the teardown is actually doing</h2>
                             <p className="site-body mt-4 max-w-3xl">
                                 Each line starts with the retailer assertion, then checks the proof trail,

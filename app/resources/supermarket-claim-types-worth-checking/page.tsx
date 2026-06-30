@@ -187,7 +187,7 @@ const triageSteps = [
 const relatedPages = [
     {
         title: "Retailer deductions hub",
-        body: "Use the supplier-side center for the four verdict stamps, deduction families, and proof assets.",
+        body: "Use the main guide for the four verdict stamps, deduction families, and evidence checks.",
         href: "/resources/retailer-deductions/",
     },
     {
@@ -431,7 +431,7 @@ export default function SupermarketClaimTypesPage() {
 
             <section className="mt-14 border-t border-border pt-12">
                 <p className="site-meta text-primary">Next checks</p>
-                <h2 className="site-h3 mt-4">Route the line to the right proof page.</h2>
+                <h2 className="site-h3 mt-4">Route the line to the right guide or tool.</h2>
                 <div className="mt-8 grid gap-[1px] bg-border md:grid-cols-2 lg:grid-cols-3">
                     {relatedPages.map((page) => (
                         <Link

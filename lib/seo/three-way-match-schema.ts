@@ -19,7 +19,7 @@ export function buildArticleSchema({ lastUpdated }: { lastUpdated: string }) {
         "@type": "Article",
         headline: "Three-Way Match: Invoice, PO, and Goods Receipt Matching",
         description:
-            "How three-way matching works between invoice, purchase order, and goods receipt — what an agentic exception-routing system catches that manual review misses.",
+            "How three-way matching works between invoice, purchase order, and goods receipt, and what an agentic exception-routing system catches that manual review misses.",
         mainEntityOfPage: PAGE_URL,
         articleSection: "Resources",
         datePublished: lastUpdated,

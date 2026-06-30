@@ -15,10 +15,10 @@ export const resources: Resource[] = [
         pillar: "finance-ops",
         title: "Retailer Deductions: The Supplier's Guide",
         excerpt:
-            "Supplier-side hub for retailer deductions, evidence gaps, Code risk, and proof assets before accepting a short-pay.",
+            "Supplier-side guide for retailer deductions, evidence gaps, and Code risk before accepting a short-pay.",
         category: "guide",
         industry: "FMCG suppliers",
-        format: "Claims resource hub",
+        format: "Claims guide",
         href: "/resources/retailer-deductions/",
     },
     {
@@ -26,7 +26,7 @@ export const resources: Resource[] = [
         pillar: "finance-ops",
         title: "Sample Claims Evidence-Pack Teardown",
         excerpt:
-            "Synthetic DIFOT, promo scan, and shrinkage examples showing how a deduction is brought back to the evidence.",
+            "Illustrative DIFOT, promo scan, and shrinkage examples showing how a deduction is brought back to the evidence.",
         category: "guide",
         industry: "FMCG suppliers",
         format: "Worked example",

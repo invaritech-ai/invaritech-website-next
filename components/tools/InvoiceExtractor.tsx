@@ -26,7 +26,7 @@ const STEP_LABELS: Record<string, string> = {
 };
 
 function formatCurrency(value: number | null, currency: string | null): string {
-    if (value === null) return "—";
+    if (value === null) return "Not found";
     if (!currency) return value.toFixed(2);
     try {
         return new Intl.NumberFormat("en-US", {
@@ -178,7 +178,7 @@ export function InvoiceExtractor() {
                     if (job.step && STEP_LABELS[job.step]) {
                         setPollingLabel(STEP_LABELS[job.step]);
                     } else if (job.status === "queued") {
-                        setPollingLabel("QUEUED — AWAITING PROCESSOR");
+                        setPollingLabel("QUEUED: AWAITING PROCESSOR");
                     }
                 }
             } catch {
@@ -352,7 +352,7 @@ export function InvoiceExtractor() {
                                     <FileText className="tool-dropzone-icon" />
                                     <p className="tool-value">{file.name}</p>
                                     <p className="tool-small">
-                                        {(file.size / 1024).toFixed(0)} KB — click to change
+                                        {(file.size / 1024).toFixed(0)} KB - click to change
                                     </p>
                                 </div>
                             ) : (
@@ -362,7 +362,7 @@ export function InvoiceExtractor() {
                                         DROP FILE HERE OR CLICK TO BROWSE
                                     </p>
                                     <p className="tool-dropzone-note">
-                                        SINGLE-PAGE PDF / JPG / PNG — MAX 10 MB
+                                        SINGLE-PAGE PDF / JPG / PNG: MAX 10 MB
                                     </p>
                                 </div>
                             )}
@@ -548,7 +548,7 @@ export function InvoiceExtractor() {
                                                         )}
                                                     </td>
                                                     <td>
-                                                        {item.qty !== null ? `${item.qty}${item.unit ? ` ${item.unit}` : ""}` : "—"}
+                                                        {item.qty !== null ? `${item.qty}${item.unit ? ` ${item.unit}` : ""}` : "Not found"}
                                                     </td>
                                                     <td>
                                                         {formatCurrency(item.unit_price, result.currency)}
@@ -597,7 +597,7 @@ export function InvoiceExtractor() {
                                     {emailSubmitted ? (
                                         <div className="tool-state-stack">
                                             <p className="tool-status-success">
-                                                SENT — CHECK YOUR INBOX FOR THE RESULT
+                                                SENT: CHECK YOUR INBOX FOR THE RESULT
                                             </p>
                                             <p className="tool-small">
                                                 You can still download the CSV directly here if you
@@ -690,7 +690,7 @@ export function InvoiceExtractor() {
 
             {/* Rate limit note */}
             <p className="tool-small tool-small-center">
-                5 INVOICE EXTRACTIONS PER DAY — IP-BASED LIMIT
+                5 INVOICE EXTRACTIONS PER DAY: IP-BASED LIMIT
             </p>
         </div>
     );

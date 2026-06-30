@@ -12,7 +12,7 @@ const PAGE_PATH = "/resources/retailer-deductions/";
 const PAGE_URL = `${BASE}${PAGE_PATH}`;
 
 const description =
-    "A supplier-side guide to retailer deductions, evidence gaps, Code risk, and the proof assets FMCG suppliers can use before accepting a short-pay.";
+    "A supplier-side guide to retailer deductions, evidence gaps, and Code risk before accepting a short-pay.";
 
 export const metadata: Metadata = {
     title: "Retailer deductions: the supplier's guide",
@@ -68,7 +68,7 @@ const jsonLd = [
     },
 ];
 
-const proofAssets = [
+const resourceLinks = [
     {
         title: "Sample evidence-pack teardown",
         body: "See how one DIFOT line, one promo scan line, and one shrinkage line get brought back to the evidence.",
@@ -158,7 +158,7 @@ export default function RetailerDeductionsPage() {
                                 <div className="mb-6 flex items-center gap-3">
                                     <div className="h-px w-8 bg-primary/60" />
                                     <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                        Supplier Claims Hub
+                                        Supplier Claims Guide
                                     </p>
                                 </div>
                                 <h1 className="site-h2">Retailer deductions: the supplier&apos;s guide</h1>
@@ -219,10 +219,10 @@ export default function RetailerDeductionsPage() {
                         </section>
 
                         <section className="mt-14 border-t border-border pt-12">
-                            <p className="site-meta text-primary">Proof assets</p>
+                            <p className="site-meta text-primary">Guides and tools</p>
                             <h2 className="site-h3 mt-4">Use the page that matches the line in front of you.</h2>
                             <div className="mt-8 grid gap-[1px] bg-border md:grid-cols-2 lg:grid-cols-3">
-                                {proofAssets.map((asset) => (
+                                {resourceLinks.map((asset) => (
                                     <Link
                                         key={asset.href}
                                         href={asset.href}

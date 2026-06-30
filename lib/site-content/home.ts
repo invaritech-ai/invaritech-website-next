@@ -58,7 +58,7 @@ export const homePageContent = {
         body: "We map repeated spreadsheet, inbox, approval, evidence, and reporting work, then build only when the workflow belongs in a client project.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: {
-            label: "View Proof",
+            label: "View Work",
             href: "/work/",
             variant: "secondary",
         },
@@ -92,7 +92,7 @@ export const homePageContent = {
                 href: "/regulatory-operations-automation/",
                 ctaLabel: "Explore Compliance Automation",
                 proof: [
-                    "EUDR bridge proof",
+                    "EUDR bridge case study",
                     "Compliance operations guides",
                     "Evidence-heavy workflows",
                 ],

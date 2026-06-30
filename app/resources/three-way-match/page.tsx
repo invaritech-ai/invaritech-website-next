@@ -371,7 +371,7 @@ export default function ThreeWayMatchPage() {
                                 traffic.
                             </p>
                             <p>
-                                Adjacent proof for the kind of regulatory document workflows this style
+                                Related case study for the kind of regulatory document workflows this style
                                 of build handles: we shipped the EU TRACES platform integration for a
                                 client&apos;s sustainability compliance program. Public review from
                                 Matthew Baldwin:{" "}

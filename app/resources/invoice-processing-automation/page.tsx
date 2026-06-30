@@ -456,7 +456,7 @@ export default function InvoiceProcessingAutomationPage() {
 
             <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                    Accounting System Boundary
+                    Accounting system fit
                 </p>
                 <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
                     Where Xero or your ERP fits.

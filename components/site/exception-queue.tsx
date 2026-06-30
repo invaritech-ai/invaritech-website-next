@@ -9,7 +9,7 @@ export function ExceptionQueue() {
         <div className="hero-queue hero-rise hero-rise-3" aria-hidden="true">
             <div className="hero-queue-head">
                 <span className="hero-queue-label">
-                    AP invoice queue — 09:15
+                    AP invoice queue, 09:15
                 </span>
                 <span className="hero-queue-label">
                     3 invoices · 1 exception
@@ -57,7 +57,7 @@ export function ExceptionQueue() {
                     </span>
                 </div>
                 <p className="hero-queue-reason">
-                    Unit price +5.0% vs PO-1187 — rule PRC-02
+                    Unit price +5.0% vs PO-1187: rule PRC-02
                 </p>
                 <p className="hero-queue-audit">
                     Routed to AP review with evidence attached

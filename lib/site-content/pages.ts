@@ -20,9 +20,9 @@ export const pageMetadata = {
         canonical: "/regulatory-operations-automation/",
     },
     work: {
-        title: "Case Studies & Proof | INVARITECH",
+        title: "Case Studies & Tools | INVARITECH",
         description:
-            "Real finance and compliance automation proof: shipped systems, demos, tools, and case studies for checkable workflows and evidence-heavy operations.",
+            "Case studies and tools from shipped finance and compliance automation: systems, demos, and checkable workflows for evidence-heavy operations.",
         canonical: "/work/",
     },
     eudrComplianceBridge: {

@@ -11,11 +11,11 @@ import type { ProofAsset } from "@/lib/site-content/types";
 export const metadata: Metadata = {
     title: "Finance & Compliance Automation Case Studies",
     description:
-        "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+        "Case studies and tools showing shipped finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
     openGraph: {
         title: "Finance & Compliance Automation Case Studies | INVARITECH",
         description:
-            "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+            "Case studies and tools showing shipped finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         url: "https://www.invaritech.ai/work/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "INVARITECH Work - Finance & Compliance Automation" }],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Finance & Compliance Automation Case Studies | INVARITECH",
         description:
-            "Proof that Invaritech ships finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
+            "Case studies and tools showing shipped finance and compliance automation across regulated submissions, finance exception logic, document extraction, and rule-based control tools.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -50,7 +50,7 @@ const regopsProofAssets = supportingProofAssets.filter((asset) => asset.pillar =
 const proofTypeLabels: Record<ProofAsset["type"], string> = {
     "case-study": "Case study",
     demo: "Working demo",
-    tool: "Tool proof",
+    tool: "Tool",
 };
 
 function ProofCard({ asset, index }: { asset: ProofAsset; index: number }) {
@@ -107,15 +107,15 @@ export default function WorkPage() {
     const proofSections = [
         {
             id: "finance-ops-proof",
-            eyebrow: "Finance automation proof",
+            eyebrow: "Finance examples",
             title: "Finance workflows, tools, and demos.",
             body: "Invoice intake, AP matching, and payment control tools show how finance exception logic becomes checkable before payment release.",
             assets: financeProofAssets,
         },
         {
             id: "regops-proof",
-            eyebrow: "Compliance automation proof",
-            title: "Regulated workflow proof.",
+            eyebrow: "Compliance examples",
+            title: "Regulated workflow examples.",
             body: "EUDR work shows the regulated workflow pattern: evidence intake, validation, submission state, retry handling, and audit-ready records.",
             assets: regopsProofAssets,
         },
@@ -134,7 +134,7 @@ export default function WorkPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Finance & Compliance Automation proof</p>
+                                <p className="site-eyebrow-text">Finance & Compliance Automation work</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
                                 Real systems we&apos;ve shipped.
@@ -175,7 +175,7 @@ export default function WorkPage() {
                                 <span className="text-[11px] font-mono text-primary/50">01</span>
                                 <div className="h-[1px] w-6 bg-primary/30" />
                                 <span className="text-[11px] font-mono uppercase tracking-[0.22em] text-primary">
-                                    Compliance automation proof case
+                                    Compliance automation case
                                 </span>
                                 <span className="inline-flex items-center gap-1.5 border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-mono tracking-wider text-primary">
                                     <div className="h-1 w-1 rounded-full bg-primary" />
