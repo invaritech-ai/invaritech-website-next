@@ -107,7 +107,7 @@ describe("pillar money pages are linked", () => {
         const files = sourceRoots.flatMap((root) => walkFiles(root));
         const tsFiles = files.filter((p) => sourceExtensions.has(extensionOf(p)));
         const financeMatchCount = tsFiles.filter((p) =>
-            readFileSync(p, "utf-8").includes("/finance-operations-automation")
+            readFileSync(p, "utf-8").includes("/finance-automation")
         ).length;
         const regopsMatchCount = tsFiles.filter((p) =>
             readFileSync(p, "utf-8").includes("/regulatory-operations-automation")
@@ -115,7 +115,7 @@ describe("pillar money pages are linked", () => {
 
         assert.ok(
             financeMatchCount >= 3,
-            `Expected /finance-operations-automation in 3+ files; found ${financeMatchCount}`
+            `Expected /finance-automation in 3+ files; found ${financeMatchCount}`
         );
         assert.ok(
             regopsMatchCount >= 3,

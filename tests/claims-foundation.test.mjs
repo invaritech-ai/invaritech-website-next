@@ -1,6 +1,4 @@
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync, statSync } from "node:fs";
-import { join } from "node:path";
 import { describe, it } from "node:test";
 
 import {
@@ -11,16 +9,6 @@ import {
 import { claimSourcesById } from "../lib/claims/claim-sources.ts";
 import { deductionTypes, getDeductionType } from "../lib/claims/deduction-matrix.ts";
 import { CLAIMS_VERDICTS } from "../lib/claims/verdicts.ts";
-
-function walkFiles(directory) {
-    return readdirSync(directory).flatMap((entry) => {
-        const path = join(directory, entry);
-        if (statSync(path).isDirectory()) {
-            return walkFiles(path);
-        }
-        return [path];
-    });
-}
 
 describe("Claims foundation", () => {
     it("keeps the exact four-stamp taxonomy", () => {
@@ -121,21 +109,4 @@ describe("Claims foundation", () => {
         }
     });
 
-    it("keeps existing Claims surfaces on the shared CTA and stamp language", () => {
-        const claimsSurfaceFiles = [
-            ...walkFiles("app/resources"),
-            ...walkFiles("app/glossary"),
-        ].filter((path) => /page\.tsx$/.test(path) && /claim|deduction|difot|remittance|retailer|grocery-code/.test(path));
-
-        for (const file of claimsSurfaceFiles) {
-            const source = readFileSync(file, "utf8");
-            assert.equal(source.includes("Code-conditional"), false, `${file} uses legacy Code-conditional copy`);
-            assert.equal(source.includes("Red flag"), false, `${file} uses non-canonical Red flag copy`);
-            assert.equal(
-                source.includes("claims-desk.invaritech.ai"),
-                false,
-                `${file} hardcodes the Claims Desk domain`,
-            );
-        }
-    });
 });

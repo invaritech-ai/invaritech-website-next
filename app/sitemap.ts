@@ -49,6 +49,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/resources/retailer-deductions/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/resources/sample-claims-evidence-pack/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.75,
+        },
+        {
+            url: `${baseUrl}/resources/difot-calculator/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/resources/supermarket-claim-types-worth-checking/`,
             changeFrequency: "monthly" as const,
             priority: 0.75,
@@ -81,6 +96,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/glossary/three-way-match/`,
             changeFrequency: "monthly",
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/glossary/difot/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.75,
+        },
+        {
+            url: `${baseUrl}/glossary/remittance-advice/`,
+            changeFrequency: "monthly" as const,
+            priority: 0.75,
+        },
+        {
+            url: `${baseUrl}/glossary/food-and-grocery-code/`,
+            changeFrequency: "monthly" as const,
             priority: 0.7,
         },
         {

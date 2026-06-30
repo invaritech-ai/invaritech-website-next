@@ -11,6 +11,61 @@ export interface Resource {
 
 export const resources: Resource[] = [
     {
+        slug: "retailer-deductions",
+        pillar: "finance-ops",
+        title: "Retailer Deductions: The Supplier's Guide",
+        excerpt:
+            "Supplier-side hub for retailer deductions, evidence gaps, Code risk, and proof assets before accepting a short-pay.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Claims resource hub",
+        href: "/resources/retailer-deductions/",
+    },
+    {
+        slug: "sample-claims-evidence-pack",
+        pillar: "finance-ops",
+        title: "Sample Claims Evidence-Pack Teardown",
+        excerpt:
+            "Synthetic DIFOT, promo scan, and shrinkage examples showing how a deduction is brought back to the evidence.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Worked example",
+        href: "/resources/sample-claims-evidence-pack/",
+    },
+    {
+        slug: "difot-calculator",
+        pillar: "finance-ops",
+        title: "DIFOT Calculator and Penalty Checker",
+        excerpt:
+            "DIFOT meaning, formula, worked example, and a supplier-side penalty checker focused on evidence gaps.",
+        category: "calculator",
+        industry: "FMCG suppliers",
+        format: "Reference + live checker",
+        href: "/resources/difot-calculator/",
+    },
+    {
+        slug: "remittance-advice",
+        pillar: "finance-ops",
+        title: "Remittance Advice Guide and Deduction Worksheet",
+        excerpt:
+            "Plain-English remittance advice guide with a supermarket deduction triage worksheet for supplier-side line review.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Glossary guide + XLSX",
+        href: "/glossary/remittance-advice/",
+    },
+    {
+        slug: "food-and-grocery-code",
+        pillar: "finance-ops",
+        title: "Food and Grocery Code Deduction Explainer",
+        excerpt:
+            "Supplier-side summary of where Food and Grocery Code facts can change the posture of retailer deductions.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Glossary guide",
+        href: "/glossary/food-and-grocery-code/",
+    },
+    {
         slug: "accounts-payable-controls",
         pillar: "finance-ops",
         title: "Accounts Payable Controls Checklist",

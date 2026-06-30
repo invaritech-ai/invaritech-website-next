@@ -167,7 +167,9 @@ describe("SEO metadata", () => {
             /canonical:\s*"https:\/\/www\.invaritech\.ai\/resources\/supermarket-claim-types-worth-checking\/"/
         );
         assert.match(pageSource, /robots:\s*\{\s*index:\s*true,\s*follow:\s*true\s*\}/);
-        assert.match(pageSource, /https:\/\/claims-desk\.invaritech\.ai\/\?utm_source=invaritech&utm_medium=resource&utm_campaign=claims-checklist/);
+        assert.match(pageSource, /buildClaimsDeskUrl/);
+        assert.match(pageSource, /medium:\s*"claims-checklist"/);
+        assert.match(pageSource, /content:\s*"page-cta"/);
         assert.match(resourcesSource, /slug:\s*"supermarket-claim-types-worth-checking"/);
         assert.match(
             resourcesSource,

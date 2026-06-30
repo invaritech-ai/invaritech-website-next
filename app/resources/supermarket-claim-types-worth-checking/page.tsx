@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { VerdictStamp } from "@/components/claims/verdict-stamp";
 import { ToolPageShell } from "@/components/tools/ToolPageShell";
 import { buildClaimsDeskUrl } from "@/lib/claims/claims-desk-cta";
+import { CLAIMS_VERDICTS } from "@/lib/claims/verdicts";
 
 const BASE = "https://www.invaritech.ai";
 const PAGE_PATH = "/resources/supermarket-claim-types-worth-checking/";
@@ -182,6 +184,34 @@ const triageSteps = [
     },
 ];
 
+const relatedPages = [
+    {
+        title: "Retailer deductions hub",
+        body: "Use the supplier-side center for the four verdict stamps, deduction families, and proof assets.",
+        href: "/resources/retailer-deductions/",
+    },
+    {
+        title: "Sample evidence-pack teardown",
+        body: "See how a DIFOT line, promo scan line, and shrinkage line are reviewed against evidence.",
+        href: "/resources/sample-claims-evidence-pack/",
+    },
+    {
+        title: "DIFOT penalty checker",
+        body: "Run one DIFOT deduction through the evidence-state checker.",
+        href: "/resources/difot-calculator/",
+    },
+    {
+        title: "Remittance advice guide",
+        body: "Understand the document first, then triage the deduction lines inside it.",
+        href: "/glossary/remittance-advice/",
+    },
+    {
+        title: "Food and Grocery Code explainer",
+        body: "Check where Code facts can change the posture of a retailer deduction.",
+        href: "/glossary/food-and-grocery-code/",
+    },
+];
+
 const jsonLd = [
     {
         "@context": "https://schema.org",
@@ -283,6 +313,16 @@ export default function SupermarketClaimTypesPage() {
                         ))}
                     </ul>
                 </aside>
+            </section>
+
+            <section className="mt-14 pt-12">
+                <div className="grid gap-[1px] bg-border md:grid-cols-4">
+                    {CLAIMS_VERDICTS.map((verdict) => (
+                        <div key={verdict} className="bg-background p-5">
+                            <VerdictStamp verdict={verdict} />
+                        </div>
+                    ))}
+                </div>
             </section>
 
             <section className="mt-14 pt-12">
@@ -389,6 +429,23 @@ export default function SupermarketClaimTypesPage() {
                 </div>
             </section>
 
+            <section className="mt-14 border-t border-border pt-12">
+                <p className="site-meta text-primary">Next checks</p>
+                <h2 className="site-h3 mt-4">Route the line to the right proof page.</h2>
+                <div className="mt-8 grid gap-[1px] bg-border md:grid-cols-2 lg:grid-cols-3">
+                    {relatedPages.map((page) => (
+                        <Link
+                            key={page.href}
+                            href={page.href}
+                            className="group bg-background p-6 transition-colors hover:bg-card"
+                        >
+                            <h3 className="site-card-title group-hover:text-primary">{page.title}</h3>
+                            <p className="site-card-body mt-3">{page.body}</p>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
             <section className="mt-14 border border-border bg-card p-7">
                 <p className="site-meta text-primary">Claims Desk</p>
                 <h2 className="site-h3 mt-4">Send one redacted remittance.</h2>
@@ -402,10 +459,10 @@ export default function SupermarketClaimTypesPage() {
                         <ArrowRight className="size-4" aria-hidden="true" />
                     </Link>
                     <Link
-                        href="/resources/"
+                        href="/resources/retailer-deductions/"
                         className="site-button bg-transparent text-foreground hover:bg-background"
                     >
-                        View all resources
+                        Back to retailer deductions
                     </Link>
                 </div>
             </section>
