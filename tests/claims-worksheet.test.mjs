@@ -5,6 +5,19 @@ import { describe, it } from "node:test";
 
 const matrix = JSON.parse(readFileSync("lib/claims/deduction-matrix.json", "utf8"));
 
+function readWorksheetXml(entryName) {
+    return execFileSync(
+        "python3",
+        [
+            "-c",
+            "import sys, zipfile; print(zipfile.ZipFile(sys.argv[1]).read(sys.argv[2]).decode('utf-8'))",
+            "public/retailer-deduction-triage-worksheet.xlsx",
+            entryName,
+        ],
+        { encoding: "utf8" },
+    );
+}
+
 describe("Retailer Deduction Triage Worksheet", () => {
     it("has deadline rules for shortfall and damaged goods", () => {
         for (const id of ["shortfall", "damaged-goods"]) {
@@ -44,5 +57,16 @@ describe("Retailer Deduction Triage Worksheet", () => {
         const second = readFileSync("public/retailer-deduction-triage-worksheet.xlsx");
 
         assert.deepEqual(first, second);
+    });
+
+    it("sets worksheet dimensions to the actual used range", () => {
+        execFileSync("python3", ["scripts/generate-claims-worksheet.py"], { stdio: "pipe" });
+
+        assert.match(readWorksheetXml("xl/worksheets/sheet2.xml"), /<dimension ref="A1:O41"\/>/);
+        assert.match(
+            readWorksheetXml("xl/worksheets/sheet3.xml"),
+            new RegExp(`<dimension ref="A1:J${matrix.length + 1}"\\/>`),
+        );
+        assert.match(readWorksheetXml("xl/worksheets/sheet4.xml"), /<dimension ref="A1:B8"\/>/);
     });
 });

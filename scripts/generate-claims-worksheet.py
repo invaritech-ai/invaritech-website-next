@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -311,7 +312,7 @@ def worksheet_xml(rows: list[str], columns: list[tuple[int, int, int]], freeze_r
         f'<col min="{start}" max="{end}" width="{width}" customWidth="1"/>'
         for start, end, width in columns
     )
-    dimension_ref = f"A1:{max(cell_ref_from_row(row) for row in rows)}"
+    dimension_ref = f"A1:{max_cell_ref_from_rows(rows)}"
     return (
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
         '<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">'
@@ -331,6 +332,25 @@ def cell_ref_from_row(row_xml_text: str) -> str:
     start += len(marker)
     end = row_xml_text.find('"', start)
     return row_xml_text[start:end]
+
+
+def max_cell_ref_from_rows(rows: list[str]) -> str:
+    max_column = 1
+    max_row = 1
+
+    for row in rows:
+        for column_name, row_number in re.findall(r'<c r="([A-Z]+)([0-9]+)"', row):
+            max_column = max(max_column, column_index(column_name))
+            max_row = max(max_row, int(row_number))
+
+    return f"{excel_column_name(max_column)}{max_row}"
+
+
+def column_index(column_name: str) -> int:
+    index = 0
+    for character in column_name:
+        index = index * 26 + (ord(character) - 64)
+    return index
 
 
 def workbook_xml() -> str:

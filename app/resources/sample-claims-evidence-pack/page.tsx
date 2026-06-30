@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ClaimsCTA } from "@/components/claims/claims-cta";
 import { VerdictStamp } from "@/components/claims/verdict-stamp";
+import { CLAIM_SOURCES, type ClaimSource } from "@/lib/claims/claim-sources";
 
 const BASE = "https://www.invaritech.ai";
 const PAGE_URL = "https://www.invaritech.ai/resources/sample-claims-evidence-pack/";
@@ -55,6 +56,14 @@ const jsonLd = [
         description,
     },
 ];
+
+const sourceMap = new Map(CLAIM_SOURCES.map((source) => [source.id, source]));
+const acccAbout = sourceMap.get("accc-code-about");
+const acccRights = sourceMap.get("accc-code-rights-responsibilities");
+const legislation = sourceMap.get("food-grocery-code-legislation");
+const codeSources = [acccAbout, acccRights, legislation].filter(
+    (source): source is ClaimSource => Boolean(source),
+);
 
 export default function SampleClaimsEvidencePackPage() {
     return (
@@ -199,6 +208,11 @@ export default function SampleClaimsEvidencePackPage() {
                                     <li>Agreement check: is there a clause the retailer says it relies on?</li>
                                     <li>Factual check: is the claimed loss really post-possession shrinkage?</li>
                                 </ul>
+                                <p className="mt-5 text-xs leading-relaxed text-foreground-subtle">
+                                    Source note: this example is framed against ACCC Food and Grocery Code
+                                    guidance and the current Code text. It is illustrative only and not legal
+                                    advice.
+                                </p>
                                 <ClaimsCTA
                                     medium="sample-teardown"
                                     content="shrinkage-code-risk-example"
@@ -207,6 +221,21 @@ export default function SampleClaimsEvidencePackPage() {
                                     Send a similar shrinkage line
                                 </ClaimsCTA>
                             </article>
+                        </section>
+
+                        <section className="mt-12 border-t border-border pt-8">
+                            <p className="site-meta text-primary">Sources for Code example</p>
+                            <div className="mt-4 grid gap-3 text-sm text-foreground-subtle">
+                                {codeSources.map((source) => (
+                                    <Link
+                                        key={source.id}
+                                        href={source.url}
+                                        className="underline-offset-4 hover:text-primary hover:underline"
+                                    >
+                                        {source.authority}: {source.title}
+                                    </Link>
+                                ))}
+                            </div>
                         </section>
 
                         <div className="mt-12 border-t border-border pt-8">
