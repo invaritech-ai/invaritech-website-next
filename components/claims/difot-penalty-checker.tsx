@@ -226,12 +226,12 @@ export function DifotPenaltyChecker() {
                             </div>
 
                             <div>
-                                <h3 className="site-h3">Method note</h3>
+                                <h3 className="site-h3">Why this matters</h3>
                                 <p className="site-body mt-3">{result.methodNote}</p>
                             </div>
 
                             <div>
-                                <h3 className="site-h3">Neutral query to send back</h3>
+                                <h3 className="site-h3">Question to send back</h3>
                                 <p className="site-body mt-3">{result.neutralQuery}</p>
                             </div>
 

@@ -134,8 +134,9 @@ export default function RemittanceAdvicePage() {
                                     <p className="site-meta text-primary">Use next</p>
                                     <h2 className="site-h3 mt-4">Turn one remittance into a triage list</h2>
                                     <p className="site-body mt-3">
-                                        The worksheet keeps retailer lines, dates, amount, baseline
-                                        verdict, evidence ask, and neutral query together in one place.
+                                        The worksheet gives you one row per deduction: retailer, dates,
+                                        amount, a starting verdict, the evidence to ask for, and a question
+                                        to send.
                                     </p>
                                 </div>
 

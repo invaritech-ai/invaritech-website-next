@@ -207,7 +207,7 @@ const relatedPages = [
     },
     {
         title: "Food and Grocery Code explainer",
-        body: "Check where Code facts can change the posture of a retailer deduction.",
+        body: "Check where Code facts can make a deduction challengeable.",
         href: "/glossary/food-and-grocery-code/",
     },
 ];

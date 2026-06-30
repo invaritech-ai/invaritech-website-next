@@ -79,6 +79,16 @@ describe("Claims foundation", () => {
         assert.equal(getDeductionType("damaged-goods").deadlineRule?.days, 30);
     });
 
+    it("has visitor-facing copy for each deduction type", () => {
+        for (const deductionType of deductionTypes) {
+            assert.ok(deductionType.whatItIs, `${deductionType.id} needs whatItIs copy`);
+            assert.ok(
+                deductionType.whatItIs.length >= 40,
+                `${deductionType.id} whatItIs should explain the charge`,
+            );
+        }
+    });
+
     it("requires primary sources for Code-related deduction rows", () => {
         const codeRelatedIds = [
             "shrinkage",

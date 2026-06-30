@@ -59,7 +59,7 @@ export const resources: Resource[] = [
         pillar: "finance-ops",
         title: "Food and Grocery Code Deduction Explainer",
         excerpt:
-            "Supplier-side summary of where Food and Grocery Code facts can change the posture of retailer deductions.",
+            "Supplier-side summary of where Food and Grocery Code facts can make retailer deductions challengeable.",
         category: "guide",
         industry: "FMCG suppliers",
         format: "Glossary guide",

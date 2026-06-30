@@ -10,6 +10,7 @@ export type DeadlineRule = {
 export type DeductionType = {
     id: string;
     label: string;
+    whatItIs: string;
     family: string;
     defaultVerdict: ClaimVerdict;
     shortEvidence: string;

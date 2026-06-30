@@ -2,6 +2,7 @@
   {
     "id": "difot-penalty",
     "label": "DIFOT penalty",
+    "whatItIs": "A penalty for an order the retailer says was not delivered in full, on time, or both.",
     "family": "DIFOT / OTIF",
     "defaultVerdict": "missing proof",
     "shortEvidence": "PO, ASN, booked window, POD, dock timestamp, retailer scorecard.",
@@ -12,6 +13,7 @@
   {
     "id": "otif-penalty",
     "label": "OTIF penalty",
+    "whatItIs": "A penalty for an order the retailer says missed its on time in full target.",
     "family": "DIFOT / OTIF",
     "defaultVerdict": "missing proof",
     "shortEvidence": "PO, ASN, booked window, POD, dock timestamp, retailer scorecard.",
@@ -22,6 +24,7 @@
   {
     "id": "promo-scan-rebate",
     "label": "Promo scan / rebate",
+    "whatItIs": "A deduction tied to promotional sales volume, usually calculated from scan or sell-through data.",
     "family": "Promotion funding",
     "defaultVerdict": "missing proof",
     "shortEvidence": "Promo agreement, SKU scope, store/banner scope, scan report, rate, period.",
@@ -32,6 +35,7 @@
   {
     "id": "shrinkage",
     "label": "Shrinkage",
+    "whatItIs": "A charge for stock the retailer says went missing after it entered their network or store.",
     "family": "Code-sensitive claims",
     "defaultVerdict": "Code risk",
     "shortEvidence": "Claim reason, possession point, supply agreement clause, retailer basis.",
@@ -43,6 +47,7 @@
   {
     "id": "shortfall",
     "label": "Shortfall / short-delivery",
+    "whatItIs": "A claim that fewer units arrived than the supplier invoiced or shipped.",
     "family": "Delivery variance",
     "defaultVerdict": "missing proof",
     "shortEvidence": "POD, delivery docket, ASN, retailer received quantity, claim date.",
@@ -55,6 +60,7 @@
   {
     "id": "damaged-goods",
     "label": "Damaged goods",
+    "whatItIs": "A claim that goods arrived damaged, or were treated as damaged after delivery.",
     "family": "Delivery variance",
     "defaultVerdict": "missing proof",
     "shortEvidence": "POD condition notes, photos, carrier report, warehouse notes, claim date.",
@@ -67,6 +73,7 @@
   {
     "id": "wastage",
     "label": "Wastage",
+    "whatItIs": "A charge for product the retailer says became unsaleable or had to be written off.",
     "family": "Code-sensitive claims",
     "defaultVerdict": "Code risk",
     "shortEvidence": "Wastage clause, calculation method, actual cost basis, mitigation evidence.",
@@ -78,6 +85,7 @@
   {
     "id": "set-off",
     "label": "Set-off",
+    "whatItIs": "An amount the retailer deducts from money owed to you against another claim.",
     "family": "Code-sensitive claims",
     "defaultVerdict": "Code risk",
     "shortEvidence": "Written consent or set-off clause, amount basis, debit note.",
@@ -89,6 +97,7 @@
   {
     "id": "post-audit-claim",
     "label": "Post-audit claim",
+    "whatItIs": "A historic deduction raised after the original invoice, promo, or price period has passed.",
     "family": "Historic claims",
     "defaultVerdict": "missing proof",
     "shortEvidence": "Original PO, invoice, price list, promo agreement, prior remittance.",
@@ -100,6 +109,7 @@
   {
     "id": "duplicate-already-credited",
     "label": "Duplicate / already credited",
+    "whatItIs": "A line that may repeat a deduction, credit, or claim already processed.",
     "family": "Duplicate claims",
     "defaultVerdict": "worth challenging",
     "shortEvidence": "Prior remittance, debit note, credit note, claim ID, invoice history.",
@@ -110,6 +120,7 @@
   {
     "id": "overpricing-price-discrepancy",
     "label": "Overpricing / price discrepancy",
+    "whatItIs": "A price claim where the retailer says the invoice used the wrong agreed price.",
     "family": "Price variance",
     "defaultVerdict": "missing proof",
     "shortEvidence": "PO, agreed price list, invoice, effective-date evidence.",
@@ -120,6 +131,7 @@
   {
     "id": "pallet-packaging-charge",
     "label": "Pallet / packaging charge",
+    "whatItIs": "A charge for pallet, packaging, or handling costs tied to delivery movement.",
     "family": "Operational charges",
     "defaultVerdict": "missing proof",
     "shortEvidence": "Pallet transfer records, CHEP or Loscam statements, agreement, delivery docket.",
@@ -131,6 +143,7 @@
   {
     "id": "freight-transport-deduction",
     "label": "Freight / transport deduction",
+    "whatItIs": "A transport deduction tied to who should pay freight or how a shipment was moved.",
     "family": "Operational charges",
     "defaultVerdict": "missing proof",
     "shortEvidence": "Freight terms, carrier invoice, PO, delivery evidence.",
@@ -142,6 +155,7 @@
   {
     "id": "listing-ranging-fee",
     "label": "Listing / ranging fee",
+    "whatItIs": "A fee for listing, ranging, shelf space, or product positioning.",
     "family": "Trade spend",
     "defaultVerdict": "Code risk",
     "shortEvidence": "Trading terms, listing or ranging agreement, SKU evidence, claim note.",
@@ -153,6 +167,7 @@
   {
     "id": "retail-media-activity-charge",
     "label": "Retail media / activity charge",
+    "whatItIs": "A charge for retail media, display, campaign, or activity the supplier was expected to fund.",
     "family": "Trade spend",
     "defaultVerdict": "missing proof",
     "shortEvidence": "Booking confirmation, activity proof, agreement, invoice or debit note.",
@@ -164,6 +179,7 @@
   {
     "id": "asn-edi-barcode-compliance",
     "label": "ASN / EDI / barcode compliance charge",
+    "whatItIs": "A compliance charge for an ASN, EDI, barcode, label, or similar delivery-data error.",
     "family": "Compliance charges",
     "defaultVerdict": "missing proof",
     "shortEvidence": "ASN log, EDI acknowledgement, label proof, warehouse receipt.",

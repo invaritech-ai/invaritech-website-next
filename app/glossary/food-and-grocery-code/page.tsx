@@ -132,11 +132,10 @@ export default function FoodAndGroceryCodePage() {
                                 </p>
                             </article>
                             <article className="bg-card p-6 md:p-8">
-                                <p className="site-meta text-primary">What this page is doing</p>
+                                <p className="site-meta text-primary">What this page shows</p>
                                 <p className="site-body mt-4">
-                                    This is descriptive, not procedural. It narrows where the Code can
-                                    change the posture of a retailer deduction, so a supplier knows which
-                                    facts actually matter on the line.
+                                    This page shows where the Code can make a deduction challengeable. It
+                                    is not legal advice.
                                 </p>
                             </article>
                         </section>
@@ -150,7 +149,7 @@ export default function FoodAndGroceryCodePage() {
                                         <p className="site-meta text-primary">{check.title}</p>
                                         <p className="site-body mt-4">{check.body}</p>
                                         <div className="mt-5 border-t border-border pt-4">
-                                            <p className="site-meta text-primary">Neutral factual question</p>
+                                            <p className="site-meta text-primary">A question you could ask the retailer</p>
                                             <p className="site-body mt-3">{check.question}</p>
                                         </div>
                                     </article>
@@ -191,7 +190,7 @@ export default function FoodAndGroceryCodePage() {
 
                             <div className="border border-border bg-card p-6 md:p-8">
                                 <p className="site-meta text-primary">Claims Desk</p>
-                                <h2 className="site-h3 mt-4">Bring one deduction packet into focus</h2>
+                                <h2 className="site-h3 mt-4">Send one deduction and see what holds up</h2>
                                 <p className="site-body mt-4">
                                     Claims Desk reviews one redacted remittance and highlights which
                                     lines look supportable, missing proof, worth challenging, or Code

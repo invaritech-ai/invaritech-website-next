@@ -96,10 +96,23 @@ const proofAssets = [
     },
     {
         title: "Food and Grocery Code explainer",
-        body: "Supplier-side summary of where Code facts can change the posture of a retailer deduction.",
+        body: "Supplier-side summary of where Code facts can make a deduction challengeable.",
         href: "/glossary/food-and-grocery-code/",
     },
 ];
+
+const familyLabels: Record<string, string> = {
+    "DIFOT / OTIF": "Delivery score penalties",
+    "Delivery variance": "Delivery quantity and condition",
+    "Promotion funding": "Promotion and rebate claims",
+    "Code-sensitive claims": "Charges the Code may limit",
+    "Duplicate claims": "Duplicate or already-credited lines",
+    "Price variance": "Price and rate differences",
+    "Trade spend": "Trade spend and activity charges",
+    "Operational charges": "Freight, pallet, and handling charges",
+    "Compliance charges": "ASN, EDI, barcode, and label charges",
+    "Historic claims": "Historic and post-audit claims",
+};
 
 const familyOrder = [
     "DIFOT / OTIF",
@@ -180,19 +193,22 @@ export default function RetailerDeductionsPage() {
                                     <p className="site-meta text-primary">Deduction families</p>
                                     <h2 className="site-h3 mt-4">Start with the claim type, then ask for the proof.</h2>
                                     <p className="site-body mt-4">
-                                        The matrix below is the same source used by the worksheet. It is a
-                                        triage model, not a recovery promise and not legal advice.
+                                        These are the deduction types worth checking. Start with the type,
+                                        then pull the evidence. A triage guide, not a recovery promise.
                                     </p>
                                 </div>
                                 <div className="grid gap-[1px] bg-border md:grid-cols-2">
                                     {familyBlocks.map((block) => (
                                         <article key={block.family} className="bg-card p-5">
-                                            <p className="site-meta text-primary">{block.family}</p>
+                                            <p className="site-meta text-primary">{familyLabels[block.family]}</p>
                                             <ul className="mt-4 space-y-3 text-sm leading-relaxed text-foreground-muted">
                                                 {block.rows.map((row) => (
                                                     <li key={row.id}>
                                                         <span className="font-semibold text-foreground">{row.label}</span>
-                                                        <span className="block">{row.shortEvidence}</span>
+                                                        <span className="block">{row.whatItIs}</span>
+                                                        <span className="mt-1 block">
+                                                            Evidence to pull: {row.shortEvidence}
+                                                        </span>
                                                     </li>
                                                 ))}
                                             </ul>

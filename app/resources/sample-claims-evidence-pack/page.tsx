@@ -153,7 +153,7 @@ export default function SampleClaimsEvidencePackPage() {
                                     content="difot-example"
                                     className="site-button mt-6 gap-2"
                                 >
-                                    Send a similar DIFOT line
+                                    Send a remittance with a DIFOT penalty
                                 </ClaimsCTA>
                             </article>
 
@@ -185,7 +185,7 @@ export default function SampleClaimsEvidencePackPage() {
                                     content="promo-scan-example"
                                     className="site-button mt-6 gap-2"
                                 >
-                                    Send a similar promo scan line
+                                    Send a remittance with a promo scan deduction
                                 </ClaimsCTA>
                             </article>
 
@@ -218,7 +218,7 @@ export default function SampleClaimsEvidencePackPage() {
                                     content="shrinkage-code-risk-example"
                                     className="site-button mt-6 gap-2"
                                 >
-                                    Send a similar shrinkage line
+                                    Send a remittance with a shrinkage charge
                                 </ClaimsCTA>
                             </article>
                         </section>
