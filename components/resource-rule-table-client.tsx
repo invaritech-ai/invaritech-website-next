@@ -193,11 +193,11 @@ export default function ResourceRuleTableClient({ faqs }: { faqs: FaqItem[] }) {
                     <div className="grid gap-8 border-y border-border py-10 md:grid-cols-[1fr_auto] md:items-center">
                         <div>
                             <p className="site-meta text-primary">Next step</p>
-                            <h2 className="site-h3 mt-4">Share one AP workflow.</h2>
+                            <h2 className="site-h3 mt-4">Share one manual workflow.</h2>
                             <p className="site-body mt-3 max-w-3xl">
-                                Bring one real approval path, payment exception, or supplier-change
-                                process. We will tell you which controls should stay manual, which
-                                should become explicit checks, and which are worth automating.
+                                Bring one approval path, exception, or handoff that still runs
+                                manually. We will tell you which checks should stay manual, which
+                                should become explicit, and whether it is worth scoping.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-3">

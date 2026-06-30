@@ -249,7 +249,7 @@ Small business automation is not about replacing people. It is about protecting 
 
 Automate repeatable finance and ops friction. Keep humans on judgment-heavy work. Use simple ROI math. Expand only when pilot metrics prove improvement.
 
-If finance is the first workflow family, use [finance automation for AP teams](/finance-automation/) to choose between invoice intake, approval checks, payment controls, close work, and cash visibility. If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
+If finance is the first workflow family, use [workflow automation for manual finance work](/finance-automation/) to choose between invoice intake, approval checks, close work, reporting bridges, and cash visibility. If you want to test technical fit immediately, start with the [Invoice Extractor](/resources/invoice-extractor/).
     `,
     author: {
         name: "Avishek Majumder",

@@ -8,9 +8,9 @@ export const pageMetadata = {
         canonical: "/",
     },
     financeAutomation: {
-        title: "Finance Automation for AP, Approvals & Close | INVARITECH",
+        title: "Workflow Automation for Finance Operations | INVARITECH",
         description:
-            "Finance automation for accounts payable, invoice approval, and month-end close. We add the controls and audit trails around Xero, without ripping out your stack.",
+            "Ops automation for manual finance workflows: approvals, evidence, exceptions, reporting bridges, and close follow-up around the systems you already use.",
         canonical: "/finance-automation/",
     },
     regulatoryOperationsAutomation: {
@@ -34,7 +34,7 @@ export const pageMetadata = {
     resources: {
         title: "Free Finance & Compliance Automation Tools | INVARITECH",
         description:
-            "Free finance and compliance automation tools, guides, AP control checklists, and templates for exception handling, evidence, and workflow automation.",
+            "Free finance and compliance automation tools, guides, control checklists, and templates for exception handling, evidence, and workflow automation.",
         canonical: "/resources/",
     },
     about: {
@@ -44,9 +44,9 @@ export const pageMetadata = {
         canonical: "/about/",
     },
     contact: {
-        title: "Book a Finance Workflow Diagnostic | INVARITECH",
+        title: "Share a Manual Workflow | INVARITECH",
         description:
-            "Book a diagnostic to map one finance or regulated operations workflow, find where controls are missing, and define a fixed-scope automation path.",
+            "Share one manual workflow so we can map the handoffs, checks, evidence, and smallest useful next step.",
         canonical: "/contact/",
     },
     blog: {

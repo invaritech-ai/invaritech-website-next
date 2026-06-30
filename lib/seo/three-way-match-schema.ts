@@ -60,8 +60,8 @@ const FAQ_ENTRIES: { q: string; a: string }[] = [
         a: "Yes, and it is one of the highest-value catches. The PO number is the join key. Two invoices referencing the same PO are by definition candidate duplicates, regardless of whether the invoice numbers, dates, or amounts match.",
     },
     {
-        q: "How long does AP automation take to implement?",
-        a: "A fixed-scope three-way match system typically takes 4 to 8 weeks from kick-off to production. Most of the time goes to data plumbing (export format edge cases, document intake reliability, vendor master normalization), not to the matching logic itself.",
+        q: "When should three-way matching become a client project?",
+        a: "Use the matcher as a scoping input first. A client project starts to make sense when matching depends on real exports, approval paths, exception ownership, reporting handoffs, and support expectations.",
     },
     {
         q: "What about non-PO invoices?",

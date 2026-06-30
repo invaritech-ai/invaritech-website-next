@@ -4,7 +4,6 @@ import { useCallback, useRef, useState } from "react";
 
 import { ThreeWayMatcherInput } from "./three-way-matcher-input";
 import { ThreeWayMatcherResults, type FilterKey } from "./three-way-matcher-results";
-import { ThreeWayMatcherSecondaryCTA } from "./three-way-matcher-secondary-cta";
 import { runMatch } from "./three-way-matcher/match-engine";
 import {
     parseInvoiceRows,
@@ -112,8 +111,6 @@ export function ThreeWayMatcher() {
             />
 
             <ThreeWayMatcherResults results={results} onFilterChange={handleFilterChange} />
-
-            {results.length > 0 && <ThreeWayMatcherSecondaryCTA />}
 
             <PrivacyCallout />
         </div>

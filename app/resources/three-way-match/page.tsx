@@ -285,11 +285,11 @@ export default function ThreeWayMatchPage() {
                             <div className="glossary-cta-card-grid">
                                 <div>
                                     <p className="glossary-eyebrow-label">
-                                        Share one AP workflow
+                                        Share one manual workflow
                                     </p>
                                     <p className="glossary-cta-card-body">
-                                        We review one AP workflow and recommend the smallest useful
-                                        first system to prove.
+                                        We review one manual workflow and recommend the smallest
+                                        useful next step.
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
@@ -420,11 +420,11 @@ export default function ThreeWayMatchPage() {
                                 or amounts match. The matcher above demonstrates this with the
                                 DUPLICATE_INVOICE status.
                             </FaqItem>
-                            <FaqItem question="How long does AP automation take to implement?">
-                                A fixed-scope three-way match system from us takes 4 to 8 weeks from
-                                kick-off to production. Most of the time goes to data plumbing (export
-                                format edge cases, document intake reliability, vendor master
-                                normalization), not to the matching logic itself.
+                            <FaqItem question="When should this become a client project?">
+                                Treat three-way matching as a scoping input, not a packaged offer.
+                                If your matching process depends on real exports, approvals, exception
+                                ownership, and reporting handoffs, bring it as one manual workflow.
+                                We can decide whether it belongs in a client project.
                             </FaqItem>
                             <FaqItem question="What about non-PO invoices?">
                                 Non-PO invoices (subscriptions, utilities, professional services without
@@ -443,7 +443,7 @@ export default function ThreeWayMatchPage() {
                             <ul className="glossary-related-list">
                                 <li>
                                     <Link href="/finance-automation/" className="glossary-related-link">
-                                        Finance automation for AP teams: the full control-layer model
+                                        Workflow automation: the full control-layer model
                                     </Link>
                                 </li>
                                 <li>
@@ -469,14 +469,14 @@ export default function ThreeWayMatchPage() {
                             <div className="glossary-cta-card-grid">
                                 <div>
                                     <p className="glossary-eyebrow-label">
-                                        Ready to automate three-way matching?
+                                        Have a manual matching workflow worth fixing?
                                     </p>
                                     <h3 className="glossary-cta-footer-heading">
-                                        Share one AP workflow.
+                                        Share one manual workflow.
                                     </h3>
                                     <p className="glossary-cta-card-body mt-3">
-                                        We review one AP workflow and recommend the smallest useful
-                                        first system to prove.
+                                        We review one manual workflow and recommend the smallest
+                                        useful next step.
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">

@@ -192,8 +192,8 @@ const nextStepLinks = [
     },
     {
         label: "See the wider model",
-        title: "Finance automation for AP teams",
-        body: "Place invoice intake next to approval routing, exception handling, payment controls, and month-end follow-up.",
+        title: "Workflow automation for manual finance work",
+        body: "Place invoice intake next to approval routing, exception handling, release controls, and month-end follow-up.",
         href: "/finance-automation/",
         cta: "See how it fits",
     },

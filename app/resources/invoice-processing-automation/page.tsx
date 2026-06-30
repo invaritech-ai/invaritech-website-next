@@ -503,9 +503,9 @@ export default function InvoiceProcessingAutomationPage() {
                     Test the intake step before you redesign the workflow.
                 </h2>
                 <p className="site-body mt-4">
-                    Run one real invoice through the free invoice extractor. Then use the supplier
-                    AP controls checklist to map the checks, exception owners, and evidence AP needs
-                    before approval or payment release.
+                    Run one real invoice through the free invoice extractor. Then use the controls
+                    checklist to map the checks, exception owners, and evidence needed before
+                    approval or release.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                     <Link href="/resources/invoice-extractor/" className="site-button">
@@ -515,7 +515,7 @@ export default function InvoiceProcessingAutomationPage() {
                         href="/resources/accounts-payable-controls/"
                         className="site-button bg-transparent text-foreground hover:bg-card"
                     >
-                        Map AP Controls
+                        Map Controls
                     </Link>
                     <Link
                         href="/resources/three-way-match/"

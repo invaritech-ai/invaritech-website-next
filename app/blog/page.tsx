@@ -169,8 +169,8 @@ export default function BlogsPage() {
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-12 flex flex-col gap-5 border-y border-border py-7 md:flex-row md:items-center md:justify-between">
                         <div>
-                            <h2 className="font-editorial text-3xl font-semibold">Want us to check one live AP risk?</h2>
-                            <p className="mt-2 text-muted-foreground">Send one invoice approval workflow, supplier reconciliation issue, or duplicate payment example.</p>
+                            <h2 className="font-editorial text-3xl font-semibold">Have a manual workflow worth fixing?</h2>
+                            <p className="mt-2 text-muted-foreground">Send one approval path, reporting bridge, evidence gap, or repeated spreadsheet handoff.</p>
                         </div>
                         <Link
                             href="/contact/?diagnostic=1"

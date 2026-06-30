@@ -9,20 +9,20 @@ const ContactSection = dynamic(() => import("@/components/contact"), {
 });
 
 export const metadata: Metadata = {
-    title: "Book a Finance Workflow Diagnostic",
+    title: "Share a Manual Workflow",
     description:
-        "Book a finance workflow diagnostic. We map one finance or regulated operations workflow, find where controls are missing, and recommend the smallest useful build scope.",
+        "Share one manual workflow. We map the handoffs, checks, evidence, and smallest useful next step.",
     openGraph: {
-        title: "Book a Finance Workflow Diagnostic | INVARITECH",
-        description: "Map one finance or regulated operations workflow, find where controls are missing, and recommend the smallest useful build scope.",
+        title: "Share a Manual Workflow | INVARITECH",
+        description: "Map one manual workflow, find where handoffs break, and recommend the smallest useful next step.",
         url: "https://www.invaritech.ai/contact/",
         type: "website",
         images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Contact INVARITECH - Book a Meeting" }],
     },
     twitter: {
         card: "summary_large_image",
-        title: "Book a Finance Workflow Diagnostic | INVARITECH",
-        description: "Bring one finance or regulated operations workflow. We'll map the process, the gaps in your controls, and the smallest useful build scope.",
+        title: "Share a Manual Workflow | INVARITECH",
+        description: "Bring one manual workflow. We'll map the process, the gaps in your handoffs, and the smallest useful next step.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -36,9 +36,9 @@ const APOLLO_CONTACT_SCRIPT = createApolloInboundScript({
 
 const heroCopy = {
     diagnostic: {
-        eyebrow: "Finance Workflow Diagnostic",
-        title: "Book a Finance Workflow Diagnostic.",
-        body: "Bring one finance or regulated operations workflow. We map the current process, find where controls are missing, assess automation fit, and recommend the smallest useful build scope.",
+        eyebrow: "Manual Workflow Diagnostic",
+        title: "Share one manual workflow.",
+        body: "Bring one workflow that still runs through spreadsheets, inboxes, approvals, evidence files, or copied reports. We map the current process and recommend the smallest useful next step.",
     },
     scan: {
         eyebrow: "Free Workflow Controls Scan",
@@ -47,8 +47,8 @@ const heroCopy = {
     },
     default: {
         eyebrow: "Get In Touch",
-        title: "Book a finance workflow scoping call.",
-        body: "Bring one finance or regulated operations workflow, exception process, or evidence gap. We will scope the fastest path to a working control.",
+        title: "Share a manual workflow.",
+        body: "Bring one workflow, exception process, reporting bridge, or evidence gap. We will scope the fastest path to a useful next step.",
     },
 } as const;
 

@@ -2,7 +2,6 @@ type SiteEventName =
     | "glossary_tool_run"
     | "glossary_tool_tolerance_change"
     | "glossary_tool_csv_upload"
-    | "glossary_secondary_cta_submit"
     | "glossary_filter_chip_click"
     | "cta_click"
     | "claims_cta_click"

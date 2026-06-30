@@ -53,9 +53,9 @@ type HomePageContent = {
 
 export const homePageContent = {
     hero: {
-        eyebrow: "We build the checks your tools skip",
-        title: "Finance automation and compliance automation for teams still running on manual checks.",
-        body: "We build around messy invoices, approvals, exceptions, and audit trails: invoice approval, month-end close, evidence intake. Your finance and compliance systems stay in place.",
+        eyebrow: "Ops automation for manual workflows",
+        title: "We fix the manual work around the tools your team already uses.",
+        body: "We map repeated spreadsheet, inbox, approval, evidence, and reporting work, then build only when the workflow belongs in a client project.",
         primaryCta: primaryDiagnosticCta,
         secondaryCta: {
             label: "View Proof",
@@ -66,22 +66,22 @@ export const homePageContent = {
     },
     pillars: {
         header: {
-            eyebrow: "Two workflow families",
+            eyebrow: "Two project families",
             title: "Choose the workflow family first.",
-            body: "Finance automation covers AP, approvals, payment controls, close work, and cash visibility. Compliance automation covers regulated submissions, evidence intake, review checkpoints, and audit trails. Both depend on the same discipline: checks, evidence, review paths, and maintained systems.",
+            body: "Client projects usually start in finance operations or regulated operations. Both depend on the same discipline: checks, evidence, review paths, reporting handoffs, and maintained systems.",
         },
         cards: [
             {
                 id: "finance-ops",
-                eyebrow: "For AP, close, and cash teams",
-                title: "Finance automation",
-                body: "For accounts payable, invoice approval workflows, Xero AP automation, duplicate payment risk, payment controls, month-end close, and cash visibility.",
+                eyebrow: "For close, cash, and reporting teams",
+                title: "Manual finance workflows",
+                body: "For close work, reporting bridges, reconciliation, approvals, payment review, and finance handoffs that still depend on exports and follow-up.",
                 href: "/finance-automation/",
-                ctaLabel: "Explore Finance Automation",
+                ctaLabel: "Explore Workflow Automation",
                 proof: [
-                    "Xero AP automation direction",
-                    "Invoice approval workflows",
-                    "Payment control resources",
+                    "Reporting bridge direction",
+                    "Approval workflow resources",
+                    "Control checklist tools",
                 ],
             },
             {

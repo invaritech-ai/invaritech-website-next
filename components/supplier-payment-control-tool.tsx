@@ -617,7 +617,7 @@ export function SupplierPaymentControlTool() {
                             href="/contact/?diagnostic=1"
                             className="site-button inline-flex items-center gap-2"
                         >
-                            Share one AP workflow
+                            Share a Workflow
                             <ArrowRight className="size-4" aria-hidden="true" />
                         </Link>
                     </div>

@@ -32,7 +32,7 @@ That is true in Australia and globally. Invoices arrive through email, supplier 
 
 This is why invoice data extraction sits at the front of serious accounts payable automation. Not as a shiny AI layer, but as a deterministic data pipeline with explicit controls.
 
-My view: invoice extraction should be easy to try and hard to over-trust. I am happy to make a simple extractor free because every AP team should be able to see what structured invoice data looks like. The paid value starts later, when extraction connects to company-specific exception rules, approval logic, supplier history, and the accounting system.
+My view: invoice extraction should be easy to try and hard to over-trust. I am happy to make a simple extractor free because every AP team should be able to see what structured invoice data looks like. A client project starts later, when extraction connects to company-specific exception rules, approval logic, supplier history, and the accounting system.
 
 ## What Accounts Payable Automation Actually Means
 
@@ -266,7 +266,7 @@ Invoice data extraction is not a cosmetic automation feature. It is the data fou
 
 If extraction quality is weak, the entire AP workflow inherits noise. If extraction quality is controlled with deterministic validation, exception routing, and auditable integration, teams can realistically compress close cycles, reduce manual handling, and increase decision confidence.
 
-Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, use [finance automation for AP teams](/finance-automation/) to map the control layer around extraction, approval, exception routing, and payment release. If you want help scoping that path, **[book a scoping call](/contact/)**.
+Run one real document set through the **[Invoice Extractor](/resources/invoice-extractor/)**. If the output quality is usable, use [workflow automation for manual finance work](/finance-automation/) to map the control layer around extraction, approval, exception routing, and release. If the surrounding workflow is worth scoping, **[share it with us](/contact/?diagnostic=1)**.
 Treat the first pilot as measurement infrastructure, not a one-off experiment.
 `,
 };
