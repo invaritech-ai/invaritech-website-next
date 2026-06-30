@@ -101,7 +101,7 @@ export default function SampleClaimsEvidencePackPage() {
 
                         <div className="mt-10 grid gap-[1px] bg-border md:grid-cols-3">
                             <div className="bg-card p-5">
-                                <p className="site-meta text-primary">Synthetic data caveat</p>
+                                <p className="site-meta text-primary">Sample data</p>
                                 <p className="site-body mt-3">
                                     Names, claim IDs, dates, and amounts below are illustrative only.
                                 </p>
@@ -113,7 +113,7 @@ export default function SampleClaimsEvidencePackPage() {
                                 </p>
                             </div>
                             <div className="bg-card p-5">
-                                <p className="site-meta text-primary">Boundary</p>
+                                <p className="site-meta text-primary">Legal</p>
                                 <p className="site-body mt-3">Not legal advice.</p>
                             </div>
                         </div>
@@ -137,7 +137,7 @@ export default function SampleClaimsEvidencePackPage() {
                                 </div>
                                 <h2 className="site-h3 mt-4">DIFOT penalty with a timing mismatch</h2>
                                 <p className="site-body mt-4">
-                                    Synthetic line: a retailer claims a late arrival against a booked
+                                    Example: a retailer claims a late arrival against a booked
                                     10:00 to 12:00 window, but the supplier packet has a dock timestamp at
                                     10:41 and a scorecard note using gate-in time instead. That does not
                                     close the issue by itself, but it shifts the line from assumed valid to
@@ -146,7 +146,7 @@ export default function SampleClaimsEvidencePackPage() {
                                 <ul className="site-body mt-5 list-disc space-y-2 pl-5">
                                     <li>Evidence packet: PO, ASN, booked slot confirmation, POD, dock log.</li>
                                     <li>Gap: the retailer basis and the supplier basis do not match.</li>
-                                    <li>Neutral return question: which timestamp and booked-window rule drove the debit?</li>
+                                    <li>What to ask: which timestamp and booked-window rule drove the debit?</li>
                                 </ul>
                                 <ClaimsCTA
                                     medium="sample-teardown"
@@ -164,7 +164,7 @@ export default function SampleClaimsEvidencePackPage() {
                                 </div>
                                 <h2 className="site-h3 mt-4">Promo scan deduction without the scan file</h2>
                                 <p className="site-body mt-4">
-                                    Synthetic line: the remittance shows a rebate amount and a campaign
+                                    Example: the remittance shows a rebate amount and a campaign
                                     code, but no scan extract by SKU, store group, or promo dates. At the
                                     headline level that stays in missing proof until the volume basis
                                     appears.
@@ -196,7 +196,7 @@ export default function SampleClaimsEvidencePackPage() {
                                 </div>
                                 <h2 className="site-h3 mt-4">Shrinkage charge after retailer possession</h2>
                                 <p className="site-body mt-4">
-                                    Synthetic line: the claim note describes store-level shrink after the
+                                    Example: the claim note describes store-level shrink after the
                                     delivery was signed in. That creates a Code risk only if three
                                     preconditions are true: the retailer is Code-covered, possession had
                                     already passed to the retailer, and the loss being charged is a

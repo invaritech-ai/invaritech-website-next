@@ -221,7 +221,7 @@ export function DifotPenaltyChecker() {
                             </div>
 
                             <div>
-                                <h3 className="site-h3">Primary gap</h3>
+                                <h3 className="site-h3">What&apos;s missing</h3>
                                 <p className="site-body mt-3">{result.primaryGap}</p>
                             </div>
 
