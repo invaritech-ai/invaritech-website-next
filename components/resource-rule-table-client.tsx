@@ -53,7 +53,7 @@ const relatedLinks = [
         label: "Three-way match exceptions",
         title: "Check PO, receipt, and invoice mismatch logic",
         body: "Use this when the AP issue is not only approval evidence, but also whether the invoice matches the purchase order and goods receipt.",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
         cta: "Review the matcher",
     },
     {

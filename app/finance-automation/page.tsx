@@ -22,7 +22,7 @@ const painCardLinks: Record<string, string> = {
     "invoice-approval-workflow": "/resources/invoice-processing-automation/",
     "invoice-exception-management": "/resources/invoice-processing-automation/",
     "duplicate-invoice-detection": "/blog/ai-invoice-data-extraction/",
-    "three-way-match-exceptions": "/glossary/three-way-match/",
+    "three-way-match-exceptions": "/resources/three-way-match/",
     "payment-controls-release-evidence": "/resources/accounts-payable-controls/?scenario=payment-release-review",
 };
 

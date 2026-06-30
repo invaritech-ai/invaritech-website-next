@@ -518,7 +518,7 @@ export default function InvoiceProcessingAutomationPage() {
                         Map AP Controls
                     </Link>
                     <Link
-                        href="/glossary/three-way-match/"
+                        href="/resources/three-way-match/"
                         className="site-button bg-transparent text-foreground hover:bg-card"
                     >
                         Review Three-Way Match

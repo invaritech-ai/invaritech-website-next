@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     title: "Three-Way Match: Invoice, PO & Goods Receipt Matching | Invaritech",
     description:
         "How three-way matching works between invoice, purchase order, and goods receipt. An interactive matcher plus the seven canonical AP exceptions an agentic system catches.",
-    alternates: { canonical: "https://www.invaritech.ai/glossary/three-way-match/" },
+    alternates: { canonical: "https://www.invaritech.ai/resources/three-way-match/" },
     openGraph: {
         title: "Three-Way Match: Invoice, PO & Goods Receipt Matching",
         description: "Interactive matcher plus the seven canonical AP exceptions an agentic system catches.",
         type: "article",
-        url: "https://www.invaritech.ai/glossary/three-way-match/",
+        url: "https://www.invaritech.ai/resources/three-way-match/",
     },
 };
 
@@ -75,7 +75,7 @@ export default function ThreeWayMatchPage() {
                     <nav className="glossary-breadcrumb mb-6" aria-label="Breadcrumb">
                         <Link href="/" className="glossary-breadcrumb-link">Invaritech</Link>
                         <span className="glossary-breadcrumb-separator">/</span>
-                        <span>Glossary</span>
+                        <Link href="/resources/" className="glossary-breadcrumb-link">Resources</Link>
                         <span className="glossary-breadcrumb-separator">/</span>
                         <span className="glossary-breadcrumb-current">Three-Way Match</span>
                     </nav>
@@ -116,7 +116,7 @@ export default function ThreeWayMatchPage() {
 
                     {/* Primary CTA */}
                     <div className="glossary-cta-row mt-8">
-                        <AuditCTA location="hero" src="glossary-3wm" />
+                        <AuditCTA location="hero" src="resource-3wm" />
                         <a href="#matcher" className="site-button-secondary glossary-primary-cta">
                             Try the matcher below
                         </a>
@@ -293,7 +293,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <AuditCTA location="mid" src="glossary-3wm" />
+                                    <AuditCTA location="mid" src="resource-3wm" />
                                 </div>
                             </div>
                         </div>
@@ -480,7 +480,7 @@ export default function ThreeWayMatchPage() {
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <AuditCTA location="footer" src="glossary-3wm" />
+                                    <AuditCTA location="footer" src="resource-3wm" />
                                 </div>
                             </div>
                         </div>

@@ -29,7 +29,7 @@ export const footerFinanceLinks = [
     { label: "AP Controls Checklist", href: "/resources/accounts-payable-controls/" },
     { label: "Invoice Extractor", href: "/resources/invoice-extractor/" },
     { label: "Cost-to-Close Calculator", href: "/resources/cost-to-close-calculator/" },
-    { label: "Three-Way Matcher", href: "/glossary/three-way-match/" },
+    { label: "Three-Way Matcher", href: "/resources/three-way-match/" },
 ] satisfies NavigationItem[];
 
 export const footerProofLinks = [

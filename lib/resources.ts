@@ -92,11 +92,11 @@ export const resources: Resource[] = [
         pillar: "finance-ops",
         title: "Three-Way Match Tool",
         excerpt:
-            "Check PO, invoice, and receipt fields before approval. Use the interactive matcher and glossary to classify three-way match exceptions.",
+            "Check PO, invoice, and receipt fields before approval. Use the interactive matcher to classify three-way match exceptions.",
         category: "tool",
         industry: "Manufacturing / Distribution",
         format: "Interactive web tool",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
     },
     {
         slug: "invoice-processing-automation",

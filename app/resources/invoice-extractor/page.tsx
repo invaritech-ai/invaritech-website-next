@@ -187,7 +187,7 @@ const nextStepLinks = [
         label: "Check matching exceptions",
         title: "Three-way match exceptions",
         body: "Use extracted invoice fields to support PO, invoice, and receipt checks before payment or posting.",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
         cta: "Review the workflow",
     },
     {

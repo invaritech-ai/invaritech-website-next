@@ -5,7 +5,7 @@ export const tools = [
         id: "three-way-matcher",
         title: "Three-Way Matcher",
         body: "Compare purchase orders, goods receipts, and supplier invoices to see AP mismatch logic and exception reasons clearly.",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
         category: "matcher",
     },
     {

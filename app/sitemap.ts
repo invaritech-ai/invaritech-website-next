@@ -94,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/glossary/three-way-match/`,
+            url: `${baseUrl}/resources/three-way-match/`,
             changeFrequency: "monthly",
             priority: 0.7,
         },

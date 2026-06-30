@@ -200,6 +200,16 @@ const nextConfig: NextConfig = {
                 statusCode: 301,
             },
             {
+                source: "/glossary",
+                destination: "/resources/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/",
+                destination: "/resources/",
+                statusCode: 301,
+            },
+            {
                 source: "/glossary/difot",
                 destination: "/resources/difot/",
                 statusCode: 301,
@@ -227,6 +237,16 @@ const nextConfig: NextConfig = {
             {
                 source: "/glossary/food-and-grocery-code/",
                 destination: "/resources/food-and-grocery-code/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/three-way-match",
+                destination: "/resources/three-way-match/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/three-way-match/",
+                destination: "/resources/three-way-match/",
                 statusCode: 301,
             },
 

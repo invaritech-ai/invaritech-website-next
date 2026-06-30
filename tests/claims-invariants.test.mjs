@@ -1,11 +1,12 @@
 import assert from "node:assert/strict";
-import { readdirSync, readFileSync, statSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, it } from "node:test";
 
 import { CLAIMS_VERDICTS } from "../lib/claims/verdicts.ts";
 
 function walkFiles(dir) {
+    if (!existsSync(dir)) return [];
     return readdirSync(dir).flatMap((entry) => {
         const path = join(dir, entry);
         const stat = statSync(path);

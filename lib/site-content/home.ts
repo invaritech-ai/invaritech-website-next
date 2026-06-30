@@ -93,7 +93,7 @@ export const homePageContent = {
                 ctaLabel: "Explore Compliance Automation",
                 proof: [
                     "EUDR bridge proof",
-                    "Compliance automation writing",
+                    "Compliance operations guides",
                     "Evidence-heavy workflows",
                 ],
             },

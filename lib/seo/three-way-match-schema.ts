@@ -1,4 +1,4 @@
-const PAGE_URL = "https://www.invaritech.ai/glossary/three-way-match/";
+const PAGE_URL = "https://www.invaritech.ai/resources/three-way-match/";
 const SITE_URL = "https://www.invaritech.ai/";
 
 export function buildBreadcrumbSchema() {
@@ -7,7 +7,7 @@ export function buildBreadcrumbSchema() {
         "@type": "BreadcrumbList",
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Invaritech", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: "Glossary", item: `${SITE_URL}glossary/` },
+            { "@type": "ListItem", position: 2, name: "Resources", item: `${SITE_URL}resources/` },
             { "@type": "ListItem", position: 3, name: "Three-Way Match", item: PAGE_URL },
         ],
     };
@@ -21,7 +21,7 @@ export function buildArticleSchema({ lastUpdated }: { lastUpdated: string }) {
         description:
             "How three-way matching works between invoice, purchase order, and goods receipt — what an agentic exception-routing system catches that manual review misses.",
         mainEntityOfPage: PAGE_URL,
-        articleSection: "Glossary",
+        articleSection: "Resources",
         datePublished: lastUpdated,
         dateModified: lastUpdated,
         author: {

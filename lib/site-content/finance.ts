@@ -161,7 +161,7 @@ export const financePageContent = {
                     },
                     {
                         label: "three-way match exceptions",
-                        href: "/glossary/three-way-match/",
+                        href: "/resources/three-way-match/",
                         body: "Use the matcher and guide to see where PO, receipt, and invoice records break.",
                     },
                 ],

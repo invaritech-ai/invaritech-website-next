@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
 };
 
-const pillars = ["Finance Automation", "Compliance Automation"];
+const topics = ["Finance operations", "Compliance operations"];
 
 function BlogCard({
     post,
@@ -79,16 +79,8 @@ function BlogCard({
                 <div className="flex-1 flex flex-col">
                     <div className="mb-4 flex flex-wrap gap-2">
                         <span className="text-[10px] font-mono uppercase tracking-wider text-primary">
-                            #{post.articleSection === "Finance Operations" ? "FinanceAutomation" : "ComplianceAutomation"}
+                            #{post.articleSection === "Finance Operations" ? "Finance" : "Compliance"}
                         </span>
-                        {post.tags.slice(0, 1).map((tag) => (
-                            <span
-                                key={tag}
-                                className="text-[10px] font-mono uppercase tracking-wider text-foreground-muted"
-                            >
-                                #{tag}
-                            </span>
-                        ))}
                     </div>
 
                     <h2 className="font-editorial text-2xl md:text-3xl font-semibold leading-tight mb-4 group-hover:text-primary transition-colors line-clamp-2">
@@ -120,16 +112,16 @@ export default function BlogsPage() {
     const sections = [
         {
             id: "finance-ops",
-            eyebrow: "Finance Automation",
-            title: "Finance automation writing",
-            body: "Accounts payable, invoice controls, month-end close, cash visibility, and automation decisions for finance teams.",
+            eyebrow: "Finance operations",
+            title: "Invoice, controls, and month-end work",
+            body: "Guides on AP controls, invoice workflows, close work, cash visibility, and manual checks that should not live in someone's inbox.",
             posts: financePosts,
         },
         {
             id: "regops",
-            eyebrow: "Compliance Automation",
-            title: "Compliance automation writing",
-            body: "Compliance automation, EUDR workflows, evidence handling, regulated submissions, and operational scale.",
+            eyebrow: "Compliance operations",
+            title: "Evidence, submissions, and regulated work",
+            body: "Guides on EUDR, compliance evidence, regulated submissions, and the operations work around them.",
             posts: regopsPosts,
         },
     ];
@@ -147,18 +139,18 @@ export default function BlogsPage() {
                         <div>
                             <div className="site-eyebrow" data-reveal="block">
                                 <div className="site-eyebrow-line" />
-                                <p className="site-eyebrow-text">Finance & Compliance Automation Blog</p>
+                                <p className="site-eyebrow-text">Invaritech Blog</p>
                             </div>
                             <h1 className="site-h2" data-reveal="block">
-                                Practical writing for finance and compliance automation.
+                                Practical guides for finance and compliance work.
                             </h1>
                         </div>
                         <div data-reveal="block">
                             <p className="site-lead">
-                                Read practical guides on AP controls, invoice workflows, month-end close, cash visibility, compliance evidence, and regulated submissions.
+                                Read about AP controls, invoice workflows, month-end close, compliance evidence, and regulated submissions. The focus is simple: where manual work breaks, what to check, and when automation is worth scoping.
                             </p>
                             <div className="mt-6 flex flex-wrap gap-2">
-                                {pillars.map((category) => (
+                                {topics.map((category) => (
                                     <span
                                         key={category}
                                         className="text-[10px] font-mono uppercase tracking-widest text-foreground-subtle border border-border px-3 py-1 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
@@ -191,8 +183,7 @@ export default function BlogsPage() {
                     {posts.length === 0 ? (
                         <div className="text-center py-24 border border-dashed border-border">
                             <p className="text-muted-foreground text-xl font-mono">
-                                {"// ARCHIVE EMPTY //"} <br />
-                                <span className="text-sm opacity-50">Transmissions pending...</span>
+                                No posts published yet.
                             </p>
                         </div>
                     ) : (

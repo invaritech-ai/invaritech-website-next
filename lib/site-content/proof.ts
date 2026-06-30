@@ -20,7 +20,7 @@ export const proofAssets = [
         body: "A working AP exception demo that compares purchase orders, goods receipts, and supplier invoices to show mismatch logic clearly.",
         proves:
             "Finance exception handling can be made visible, explainable, and reviewable before payment release.",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
         tags: ["AP controls", "exceptions", "matching"],
     },
     {
