@@ -7,7 +7,7 @@ export const CLAIMS_DESK_CTA_MEDIA = [
     "food-grocery-code",
     "retailer-deductions",
     "claims-checklist",
-    "difot-glossary",
+    "difot-resource",
 ] as const;
 
 export const CLAIMS_DESK_CTA_CONTENTS = [

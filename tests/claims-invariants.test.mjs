@@ -20,12 +20,7 @@ const claimsSurfaceFiles = [
     ...walkFiles("app/resources").filter(
         (path) =>
             /page\.tsx$/.test(path) &&
-            /claim|deduction|difot|remittance|retailer/.test(path),
-    ),
-    ...walkFiles("app/glossary").filter(
-        (path) =>
-            /page\.tsx$/.test(path) &&
-            /difot|remittance|food-and-grocery-code/.test(path),
+            /claim|deduction|difot|remittance|retailer|food-and-grocery-code/.test(path),
     ),
 ];
 

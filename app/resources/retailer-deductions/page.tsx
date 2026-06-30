@@ -87,17 +87,17 @@ const proofAssets = [
     {
         title: "Remittance advice guide",
         body: "Start with the generic accounting term, then pivot to supermarket deductions and worksheet triage.",
-        href: "/glossary/remittance-advice/",
+        href: "/resources/remittance-advice/",
     },
     {
-        title: "DIFOT glossary",
+        title: "DIFOT guide",
         body: "Plain-English meaning, formula, calculation basis, and the evidence that decides a penalty line.",
-        href: "/glossary/difot/",
+        href: "/resources/difot/",
     },
     {
         title: "Food and Grocery Code explainer",
         body: "Supplier-side summary of where Code facts can make a deduction challengeable.",
-        href: "/glossary/food-and-grocery-code/",
+        href: "/resources/food-and-grocery-code/",
     },
 ];
 

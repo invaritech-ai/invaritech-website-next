@@ -6,10 +6,10 @@ import { ClaimsCTA } from "@/components/claims/claims-cta";
 import { WorksheetDownloadLink } from "@/components/claims/worksheet-download-link";
 
 const BASE = "https://www.invaritech.ai";
-const PAGE_URL = "https://www.invaritech.ai/glossary/remittance-advice/";
+const PAGE_URL = "https://www.invaritech.ai/resources/remittance-advice/";
 
 const description =
-    "Definition-first remittance advice glossary page covering what it is, what it contains, how it differs from an invoice or receipt, and why it matters when supermarket deductions appear.";
+    "Definition-first remittance advice resource covering what it is, what it contains, how it differs from an invoice or receipt, and why it matters when supermarket deductions appear.";
 
 export const metadata: Metadata = {
     title: "What is a remittance advice?",
@@ -37,7 +37,7 @@ const jsonLd = [
         "@type": "BreadcrumbList",
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-            { "@type": "ListItem", position: 2, name: "Glossary", item: `${BASE}/glossary/` },
+            { "@type": "ListItem", position: 2, name: "Resources", item: `${BASE}/resources/` },
             { "@type": "ListItem", position: 3, name: "Remittance advice", item: PAGE_URL },
         ],
     },
@@ -48,7 +48,7 @@ const jsonLd = [
         description:
             "A payer notice that tells a supplier which invoices or claim lines a payment relates to, including deductions, set-offs, references, and amounts.",
         url: PAGE_URL,
-        inDefinedTermSet: `${BASE}/glossary/`,
+        inDefinedTermSet: `${BASE}/resources/`,
     },
 ];
 
@@ -66,7 +66,7 @@ export default function RemittanceAdvicePage() {
                         <Breadcrumbs
                             items={[
                                 { label: "Home", href: "/" },
-                                { label: "Glossary", href: "/glossary/" },
+                                { label: "Resources", href: "/resources/" },
                                 { label: "Remittance Advice" },
                             ]}
                         />
@@ -74,7 +74,7 @@ export default function RemittanceAdvicePage() {
                         <div className="mt-12 mb-6 flex items-center gap-3">
                             <div className="h-px w-8 bg-primary/60" />
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                Supplier Claims Glossary
+                                Supplier Claims Resource
                             </p>
                         </div>
 

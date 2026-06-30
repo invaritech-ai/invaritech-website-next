@@ -6,7 +6,7 @@ import { ClaimsCTA } from "@/components/claims/claims-cta";
 import { CLAIM_SOURCES } from "@/lib/claims/claim-sources";
 
 const BASE = "https://www.invaritech.ai";
-const PAGE_URL = "https://www.invaritech.ai/glossary/food-and-grocery-code/";
+const PAGE_URL = "https://www.invaritech.ai/resources/food-and-grocery-code/";
 
 const description =
     "A supplier-side summary of the Food and Grocery Code issues that can matter when retailer deductions involve shrinkage, set-offs, wastage, or fresh produce shortfall and damage timing.";
@@ -37,7 +37,7 @@ const jsonLd = [
         "@type": "BreadcrumbList",
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-            { "@type": "ListItem", position: 2, name: "Glossary", item: `${BASE}/glossary/` },
+            { "@type": "ListItem", position: 2, name: "Resources", item: `${BASE}/resources/` },
             { "@type": "ListItem", position: 3, name: "Food and Grocery Code", item: PAGE_URL },
         ],
     },
@@ -97,7 +97,7 @@ export default function FoodAndGroceryCodePage() {
                         <Breadcrumbs
                             items={[
                                 { label: "Home", href: "/" },
-                                { label: "Glossary", href: "/glossary/" },
+                                { label: "Resources", href: "/resources/" },
                                 { label: "Food and Grocery Code" },
                             ]}
                         />
@@ -105,7 +105,7 @@ export default function FoodAndGroceryCodePage() {
                         <div className="mt-12 mb-6 flex items-center gap-3">
                             <div className="h-px w-8 bg-primary/60" />
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                Supplier Claims Glossary
+                                Supplier Claims Resource
                             </p>
                         </div>
 

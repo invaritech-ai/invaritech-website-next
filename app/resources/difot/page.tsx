@@ -5,9 +5,9 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { buildClaimsDeskUrl } from "@/lib/claims/claims-desk-cta";
 
 const BASE = "https://www.invaritech.ai";
-const PAGE_URL = "https://www.invaritech.ai/glossary/difot/";
+const PAGE_URL = "https://www.invaritech.ai/resources/difot/";
 const CLAIMS_DESK_URL = buildClaimsDeskUrl({
-    medium: "difot-glossary",
+    medium: "difot-resource",
     content: "page-cta",
 });
 
@@ -40,7 +40,7 @@ const jsonLd = [
         "@type": "BreadcrumbList",
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Home", item: BASE },
-            { "@type": "ListItem", position: 2, name: "Glossary", item: `${BASE}/glossary/` },
+            { "@type": "ListItem", position: 2, name: "Resources", item: `${BASE}/resources/` },
             { "@type": "ListItem", position: 3, name: "DIFOT", item: PAGE_URL },
         ],
     },
@@ -51,11 +51,11 @@ const jsonLd = [
         description:
             "Delivered in full, on time. A retailer supply-chain measure used to score whether the ordered quantity arrived within the agreed delivery window.",
         url: PAGE_URL,
-        inDefinedTermSet: `${BASE}/glossary/`,
+        inDefinedTermSet: `${BASE}/resources/`,
     },
 ];
 
-export default function DifotGlossaryPage() {
+export default function DifotResourcePage() {
     return (
         <main className="site-page" id="main-content" tabIndex={-1}>
             <script
@@ -69,7 +69,7 @@ export default function DifotGlossaryPage() {
                         <Breadcrumbs
                             items={[
                                 { label: "Home", href: "/" },
-                                { label: "Glossary", href: "/glossary/" },
+                                { label: "Resources", href: "/resources/" },
                                 { label: "DIFOT" },
                             ]}
                         />
@@ -77,7 +77,7 @@ export default function DifotGlossaryPage() {
                         <div className="mt-12 mb-6 flex items-center gap-3">
                             <div className="h-px w-8 bg-primary/60" />
                             <p className="text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                                Supplier Claims Glossary
+                                Supplier Claims Resource
                             </p>
                         </div>
 
@@ -128,8 +128,8 @@ export default function DifotGlossaryPage() {
                                 <Link href="/resources/retailer-deductions/" className="site-button-secondary">
                                     Compare retailer deductions
                                 </Link>
-                                <Link href="/glossary/remittance-advice/" className="site-button-secondary">
-                                    Read the remittance advice glossary
+                                <Link href="/resources/remittance-advice/" className="site-button-secondary">
+                                    Read the remittance advice guide
                                 </Link>
 
                                 <div className="border-t border-border pt-5">

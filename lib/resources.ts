@@ -51,8 +51,8 @@ export const resources: Resource[] = [
             "Plain-English remittance advice guide with a supermarket deduction triage worksheet for supplier-side line review.",
         category: "guide",
         industry: "FMCG suppliers",
-        format: "Glossary guide + XLSX",
-        href: "/glossary/remittance-advice/",
+        format: "Resource guide + XLSX",
+        href: "/resources/remittance-advice/",
     },
     {
         slug: "food-and-grocery-code",
@@ -62,8 +62,8 @@ export const resources: Resource[] = [
             "Supplier-side summary of where Food and Grocery Code facts can make retailer deductions challengeable.",
         category: "guide",
         industry: "FMCG suppliers",
-        format: "Glossary guide",
-        href: "/glossary/food-and-grocery-code/",
+        format: "Resource guide",
+        href: "/resources/food-and-grocery-code/",
     },
     {
         slug: "accounts-payable-controls",

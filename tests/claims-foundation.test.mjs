@@ -33,7 +33,7 @@ describe("Claims foundation", () => {
             "food-grocery-code",
             "retailer-deductions",
             "claims-checklist",
-            "difot-glossary",
+            "difot-resource",
         ]);
         assert.deepEqual(CLAIMS_DESK_CTA_CONTENTS, [
             "difot-example",

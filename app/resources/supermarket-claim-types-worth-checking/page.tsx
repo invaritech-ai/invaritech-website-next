@@ -203,12 +203,12 @@ const relatedPages = [
     {
         title: "Remittance advice guide",
         body: "Understand the document first, then triage the deduction lines inside it.",
-        href: "/glossary/remittance-advice/",
+        href: "/resources/remittance-advice/",
     },
     {
         title: "Food and Grocery Code explainer",
         body: "Check where Code facts can make a deduction challengeable.",
-        href: "/glossary/food-and-grocery-code/",
+        href: "/resources/food-and-grocery-code/",
     },
 ];
 

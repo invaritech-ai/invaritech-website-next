@@ -99,17 +99,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/glossary/difot/`,
+            url: `${baseUrl}/resources/difot/`,
             changeFrequency: "monthly" as const,
             priority: 0.75,
         },
         {
-            url: `${baseUrl}/glossary/remittance-advice/`,
+            url: `${baseUrl}/resources/remittance-advice/`,
             changeFrequency: "monthly" as const,
             priority: 0.75,
         },
         {
-            url: `${baseUrl}/glossary/food-and-grocery-code/`,
+            url: `${baseUrl}/resources/food-and-grocery-code/`,
             changeFrequency: "monthly" as const,
             priority: 0.7,
         },
