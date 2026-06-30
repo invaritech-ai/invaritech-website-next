@@ -9,7 +9,7 @@ const BASE = "https://www.invaritech.ai";
 const PAGE_URL = "https://www.invaritech.ai/glossary/food-and-grocery-code/";
 
 const description =
-    "A supplier-side summary of the Food and Grocery Code issues that can matter when retailer deductions involve shrinkage, set-offs, wastage, or late shortfall and damage claims.";
+    "A supplier-side summary of the Food and Grocery Code issues that can matter when retailer deductions involve shrinkage, set-offs, wastage, or fresh produce shortfall and damage timing.";
 
 export const metadata: Metadata = {
     title: "The Food and Grocery Code: Which Retailer Deductions Suppliers Can Challenge",
@@ -76,10 +76,10 @@ const checks = [
             "What clause, calculation method, actual cost basis, and mitigation steps sit behind this wastage amount?",
     },
     {
-        title: "Shortfall and damaged-goods timing",
-        body: "For Code-covered retailers, shortfall and damage claims have a timing boundary tied to delivery date and claim date.",
+        title: "Fresh produce shortfall and damaged-goods timing",
+        body: "For fresh produce supplied to a Code-covered retailer, shortfall and damage claims have a timing boundary tied to delivery date and claim date.",
         question:
-            "When was delivery completed, when was the claim raised, and does the retailer evidence show the line was raised within 30 days?",
+            "Is this fresh produce, when was delivery completed, when was the claim raised, and does the retailer evidence show the line was raised within 30 days?",
     },
 ];
 

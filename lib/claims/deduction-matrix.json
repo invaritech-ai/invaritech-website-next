@@ -46,11 +46,11 @@
     "family": "Delivery variance",
     "defaultVerdict": "missing proof",
     "shortEvidence": "POD, delivery docket, ASN, retailer received quantity, claim date.",
-    "codeCheck": "Check the Code's 30-day cap on retailer-raised shortfall claims.",
+    "codeCheck": "For fresh produce, check the Code's 30-day cap on retailer-raised shortfall claims.",
     "neutralQuery": "Please provide the received-quantity evidence and the delivery date used for this shortfall claim.",
-    "deadlineHelper": "The Code caps retailer-raised shortfall claims at no later than 30 days after delivery where the Code applies.",
+    "deadlineHelper": "For fresh produce, the Code caps retailer-raised shortfall claims at no later than 30 days after delivery where the Code applies.",
     "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"],
-    "deadlineRule": { "kind": "claimRaisedWithinDays", "days": 30 }
+    "deadlineRule": { "kind": "freshProduceClaimRaisedWithinDays", "days": 30 }
   },
   {
     "id": "damaged-goods",
@@ -58,11 +58,11 @@
     "family": "Delivery variance",
     "defaultVerdict": "missing proof",
     "shortEvidence": "POD condition notes, photos, carrier report, warehouse notes, claim date.",
-    "codeCheck": "Check the Code's 30-day cap on retailer-raised damage claims.",
+    "codeCheck": "For fresh produce, check the Code's 30-day cap on retailer-raised damage claims.",
     "neutralQuery": "Please provide the delivery date, claim date, and damage evidence used for this claim.",
-    "deadlineHelper": "The Code caps retailer-raised damage claims at no later than 30 days after delivery where the Code applies.",
+    "deadlineHelper": "For fresh produce, the Code caps retailer-raised damage claims at no later than 30 days after delivery where the Code applies.",
     "sourceIds": ["accc-code-rights-responsibilities", "food-grocery-code-legislation"],
-    "deadlineRule": { "kind": "claimRaisedWithinDays", "days": 30 }
+    "deadlineRule": { "kind": "freshProduceClaimRaisedWithinDays", "days": 30 }
   },
   {
     "id": "wastage",

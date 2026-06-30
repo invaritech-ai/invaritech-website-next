@@ -74,7 +74,7 @@ def build_start_here_sheet() -> str:
                 inline_string_cell("A3", "Method", 1),
                 inline_string_cell(
                     "B3",
-                    "Pick the deduction type, enter delivery and claim dates, and let the matrix formulas fill the baseline verdict, evidence, Code check, and neutral query.",
+                    "Enter a deduction type ID or visible label from the Matrix tab, add dates, and let the formulas fill the baseline verdict, evidence, Code check, and neutral query.",
                     2,
                 ),
             ],
@@ -85,7 +85,7 @@ def build_start_here_sheet() -> str:
                 inline_string_cell("A4", "Timing", 1),
                 inline_string_cell(
                     "B4",
-                    "Shortfall and damaged-goods lines flag when the claim date is more than 30 days after delivery.",
+                    "Fresh produce shortfall and damaged-goods lines flag when the claim date is more than 30 days after delivery.",
                     2,
                 ),
             ],
@@ -117,6 +117,7 @@ def build_ledger_sheet(matrix_length: int) -> str:
         "Invoice / remittance date",
         "Delivery date",
         "Claim raised date",
+        "Fresh produce? (Y/N)",
         "Deduction type",
         "Reason note",
         "Amount",
@@ -133,30 +134,42 @@ def build_ledger_sheet(matrix_length: int) -> str:
 
     last_matrix_row = matrix_length + 1
     matrix_id_range = f"'Deduction Type Matrix'!$A$2:$A${last_matrix_row}"
+    matrix_label_range = f"'Deduction Type Matrix'!$B$2:$B${last_matrix_row}"
     verdict_range = f"'Deduction Type Matrix'!$C$2:$C${last_matrix_row}"
     evidence_range = f"'Deduction Type Matrix'!$D$2:$D${last_matrix_row}"
     code_check_range = f"'Deduction Type Matrix'!$E$2:$E${last_matrix_row}"
     query_range = f"'Deduction Type Matrix'!$F$2:$F${last_matrix_row}"
 
     for row_number in range(2, 42):
-        match_formula = f'MATCH($E{row_number},{matrix_id_range},0)'
-        verdict_formula = f'IF($E{row_number}="","",INDEX({verdict_range},{match_formula}))'
-        evidence_formula = f'IF($E{row_number}="","",INDEX({evidence_range},{match_formula}))'
-        code_check_formula = f'IF($E{row_number}="","",INDEX({code_check_range},{match_formula}))'
-        query_formula = f'IF($E{row_number}="","",INDEX({query_range},{match_formula}))'
+        match_formula = (
+            f"IFERROR(MATCH($F{row_number},{matrix_id_range},0),"
+            f"MATCH($F{row_number},{matrix_label_range},0))"
+        )
+        date_is_late = f'AND($C{row_number}<>"",$D{row_number}<>"",$D{row_number}-$C{row_number}>30)'
+        fresh_produce_yes = f'OR(UPPER($E{row_number})="Y",UPPER($E{row_number})="YES")'
+        fresh_produce_rule_type = (
+            f'OR($F{row_number}="shortfall",$F{row_number}="damaged-goods",'
+            f'$F{row_number}="Shortfall / short-delivery",$F{row_number}="Damaged goods")'
+        )
+        fresh_produce_timing_rule = f"AND({fresh_produce_rule_type},{date_is_late})"
+        verdict_formula = f'IF($F{row_number}="","",INDEX({verdict_range},{match_formula}))'
+        evidence_formula = f'IF($F{row_number}="","",INDEX({evidence_range},{match_formula}))'
+        code_check_formula = f'IF($F{row_number}="","",INDEX({code_check_range},{match_formula}))'
+        query_formula = f'IF($F{row_number}="","",INDEX({query_range},{match_formula}))'
         deadline_formula = (
-            f'IF(AND(OR($E{row_number}="shortfall",$E{row_number}="damaged-goods"),'
-            f'$C{row_number}<>"",$D{row_number}<>"",$D{row_number}-$C{row_number}>30),'
-            '"Claim raised more than 30 days after delivery.",'
-            f'IF($H{row_number}="missing proof","Await line-level proof from the retailer.",'
-            f'IF($H{row_number}="Code risk","Check Code coverage, agreement basis, and retailer conditions.",'
-            f'IF($H{row_number}="worth challenging","Reconcile this line against prior credits, timing, and support.",""))))'
+            f'IF(AND({fresh_produce_timing_rule},{fresh_produce_yes}),'
+            '"Fresh produce claim raised more than 30 days after delivery.",'
+            f'IF({fresh_produce_timing_rule},'
+            '"If this line is fresh produce, check why the claim was raised more than 30 days after delivery.",'
+            f'IF($I{row_number}="missing proof","Await line-level proof from the retailer.",'
+            f'IF($I{row_number}="Code risk","Check Code coverage, agreement basis, and retailer conditions.",'
+            f'IF($I{row_number}="worth challenging","Reconcile this line against prior credits, timing, and support.","")))))'
         )
         priority_formula = (
-            f'IF($E{row_number}="","",'
-            f'IF(AND(OR($E{row_number}="shortfall",$E{row_number}="damaged-goods"),$C{row_number}<>"",$D{row_number}<>"",$D{row_number}-$C{row_number}>30),"High",'
-            f'IF(OR($H{row_number}="Code risk",$G{row_number}>=5000),"High",'
-            f'IF(OR($H{row_number}="missing proof",$G{row_number}>=1000),"Medium","Low"))))'
+            f'IF($F{row_number}="","",'
+            f'IF(AND({fresh_produce_timing_rule},{fresh_produce_yes}),"High",'
+            f'IF(OR($I{row_number}="Code risk",$H{row_number}>=5000),"High",'
+            f'IF(OR($I{row_number}="missing proof",$H{row_number}>=1000),"Medium","Low"))))'
         )
         rows.append(
             row_xml(
@@ -168,15 +181,16 @@ def build_ledger_sheet(matrix_length: int) -> str:
                     inline_string_cell(f"D{row_number}", "", 4),
                     inline_string_cell(f"E{row_number}", ""),
                     inline_string_cell(f"F{row_number}", "", 2),
-                    number_cell(f"G{row_number}", 0, 3),
-                    formula_cell(f"H{row_number}", verdict_formula),
-                    formula_cell(f"I{row_number}", evidence_formula, 2),
-                    formula_cell(f"J{row_number}", code_check_formula, 2),
-                    formula_cell(f"K{row_number}", query_formula, 2),
-                    formula_cell(f"L{row_number}", deadline_formula, 2),
-                    formula_cell(f"M{row_number}", priority_formula),
-                    inline_string_cell(f"N{row_number}", ""),
+                    inline_string_cell(f"G{row_number}", "", 2),
+                    number_cell(f"H{row_number}", 0, 3),
+                    formula_cell(f"I{row_number}", verdict_formula),
+                    formula_cell(f"J{row_number}", evidence_formula, 2),
+                    formula_cell(f"K{row_number}", code_check_formula, 2),
+                    formula_cell(f"L{row_number}", query_formula, 2),
+                    formula_cell(f"M{row_number}", deadline_formula, 2),
+                    formula_cell(f"N{row_number}", priority_formula),
                     inline_string_cell(f"O{row_number}", ""),
+                    inline_string_cell(f"P{row_number}", ""),
                 ],
             )
         )
@@ -187,12 +201,13 @@ def build_ledger_sheet(matrix_length: int) -> str:
             (1, 1, 18),
             (2, 4, 18),
             (5, 5, 20),
-            (6, 6, 28),
-            (7, 7, 14),
-            (8, 8, 18),
-            (9, 11, 34),
-            (12, 12, 32),
-            (13, 15, 16),
+            (6, 6, 24),
+            (7, 7, 28),
+            (8, 8, 14),
+            (9, 9, 18),
+            (10, 12, 34),
+            (13, 13, 36),
+            (14, 16, 16),
         ],
         freeze_ref="A2",
     )
@@ -267,7 +282,7 @@ def build_summary_sheet() -> str:
                     inline_string_cell(f"A{row_number}", verdict),
                     formula_cell(
                         f"B{row_number}",
-                        f'SUMIF(\'Claim Ledger\'!$H$2:$H$41,A{row_number},\'Claim Ledger\'!$G$2:$G$41)',
+                        f'SUMIF(\'Claim Ledger\'!$I$2:$I$41,A{row_number},\'Claim Ledger\'!$H$2:$H$41)',
                         3,
                     ),
                 ],

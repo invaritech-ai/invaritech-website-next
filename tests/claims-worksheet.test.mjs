@@ -19,10 +19,10 @@ function readWorksheetXml(entryName) {
 }
 
 describe("Retailer Deduction Triage Worksheet", () => {
-    it("has deadline rules for shortfall and damaged goods", () => {
+    it("has fresh-produce deadline rules for shortfall and damaged goods", () => {
         for (const id of ["shortfall", "damaged-goods"]) {
             const row = matrix.find((item) => item.id === id);
-            assert.equal(row.deadlineRule.kind, "claimRaisedWithinDays");
+            assert.equal(row.deadlineRule.kind, "freshProduceClaimRaisedWithinDays");
             assert.equal(row.deadlineRule.days, 30);
         }
     });
@@ -62,11 +62,26 @@ describe("Retailer Deduction Triage Worksheet", () => {
     it("sets worksheet dimensions to the actual used range", () => {
         execFileSync("python3", ["scripts/generate-claims-worksheet.py"], { stdio: "pipe" });
 
-        assert.match(readWorksheetXml("xl/worksheets/sheet2.xml"), /<dimension ref="A1:O41"\/>/);
+        assert.match(readWorksheetXml("xl/worksheets/sheet2.xml"), /<dimension ref="A1:P41"\/>/);
         assert.match(
             readWorksheetXml("xl/worksheets/sheet3.xml"),
             new RegExp(`<dimension ref="A1:J${matrix.length + 1}"\\/>`),
         );
         assert.match(readWorksheetXml("xl/worksheets/sheet4.xml"), /<dimension ref="A1:B8"\/>/);
+    });
+
+    it("accepts deduction type labels and guards 30-day timing with fresh produce status", () => {
+        execFileSync("python3", ["scripts/generate-claims-worksheet.py"], { stdio: "pipe" });
+
+        const claimLedger = readWorksheetXml("xl/worksheets/sheet2.xml");
+        assert.match(
+            claimLedger,
+            /IFERROR\(MATCH\(\$F2,'Deduction Type Matrix'!\$A\$2:\$A\$\d+,0\),MATCH\(\$F2,'Deduction Type Matrix'!\$B\$2:\$B\$\d+,0\)\)/,
+        );
+        assert.match(claimLedger, /OR\(UPPER\(\$E2\)="Y",UPPER\(\$E2\)="YES"\)/);
+        assert.match(
+            claimLedger,
+            /If this line is fresh produce, check why the claim was raised more than 30 days after delivery\./,
+        );
     });
 });

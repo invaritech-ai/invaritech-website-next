@@ -3,7 +3,7 @@ import type { ClaimSourceId } from "./claim-sources";
 import type { ClaimVerdict } from "./verdicts";
 
 export type DeadlineRule = {
-    kind: "claimRaisedWithinDays";
+    kind: "freshProduceClaimRaisedWithinDays";
     days: number;
 };
 

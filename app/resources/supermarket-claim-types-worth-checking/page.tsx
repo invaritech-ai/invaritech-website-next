@@ -55,8 +55,8 @@ type ClaimRow = {
 const claimRows: ClaimRow[] = [
     {
         claim: "Short-delivery / shortfall",
-        check: "Did fewer units arrive than you billed? A shortfall claim must be made within 30 days of delivery.",
-        evidence: "Signed POD, delivery docket, ASN, invoice, retailer received quantity",
+        check: "Did fewer units arrive than you billed? For fresh produce, check whether the retailer raised the shortfall claim within 30 days of delivery.",
+        evidence: "Signed POD, delivery docket, ASN, invoice, retailer received quantity, fresh produce status",
     },
     {
         claim: "Carton or unit count variance",
@@ -70,8 +70,8 @@ const claimRows: ClaimRow[] = [
     },
     {
         claim: "Damaged goods",
-        check: "Did goods arrive damaged, or did the claim appear after clean delivery? Damaged-goods claims must be made within 30 days of delivery.",
-        evidence: "POD condition notes, photos, carrier report, warehouse notes",
+        check: "Did goods arrive damaged, or did the claim appear after clean delivery? For fresh produce, check whether the retailer raised the damage claim within 30 days of delivery.",
+        evidence: "POD condition notes, photos, carrier report, warehouse notes, fresh produce status",
     },
     {
         claim: "Wastage charge",
@@ -163,7 +163,7 @@ const codeChecks = [
     "Shrinkage after the retailer takes possession cannot be charged back to a supplier.",
     "Wastage needs express agreement, a reasonable amount, a stated calculation, and retailer cost mitigation.",
     "Shelf space or listing payments need express written agreement and a reasonable amount.",
-    "Damaged-goods and shortfall claims must be made no later than 30 days after delivery.",
+    "Fresh produce damaged-goods and shortfall claims must be made no later than 30 days after delivery.",
     "Payment is due within a reasonable time after invoice, per the agreed timeframe.",
 ];
 
