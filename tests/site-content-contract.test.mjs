@@ -57,7 +57,7 @@ describe("site content registry", () => {
         assert.match(brand, /siteUrl:\s*"https:\/\/www\.invaritech\.ai"/);
 
         const pages = read("lib/site-content/pages.ts");
-        assert.match(pages, /canonical:\s*"\/finance-operations-automation\/"/);
+        assert.match(pages, /canonical:\s*"\/finance-automation\/"/);
         assert.match(pages, /canonical:\s*"\/regulatory-operations-automation\/"/);
         assert.doesNotMatch(pages, /canonical:\s*"https:\/\/www\.invaritech\.ai/);
     });

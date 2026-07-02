@@ -43,12 +43,12 @@ export const metadata: Metadata = {
     title: "Three-Way Match: Invoice, PO & Goods Receipt Matching | Invaritech",
     description:
         "How three-way matching works between invoice, purchase order, and goods receipt. An interactive matcher plus the seven canonical AP exceptions an agentic system catches.",
-    alternates: { canonical: "https://www.invaritech.ai/glossary/three-way-match/" },
+    alternates: { canonical: "https://www.invaritech.ai/resources/three-way-match/" },
     openGraph: {
         title: "Three-Way Match: Invoice, PO & Goods Receipt Matching",
         description: "Interactive matcher plus the seven canonical AP exceptions an agentic system catches.",
         type: "article",
-        url: "https://www.invaritech.ai/glossary/three-way-match/",
+        url: "https://www.invaritech.ai/resources/three-way-match/",
     },
 };
 
@@ -75,7 +75,7 @@ export default function ThreeWayMatchPage() {
                     <nav className="glossary-breadcrumb mb-6" aria-label="Breadcrumb">
                         <Link href="/" className="glossary-breadcrumb-link">Invaritech</Link>
                         <span className="glossary-breadcrumb-separator">/</span>
-                        <span>Glossary</span>
+                        <Link href="/resources/" className="glossary-breadcrumb-link">Resources</Link>
                         <span className="glossary-breadcrumb-separator">/</span>
                         <span className="glossary-breadcrumb-current">Three-Way Match</span>
                     </nav>
@@ -116,7 +116,7 @@ export default function ThreeWayMatchPage() {
 
                     {/* Primary CTA */}
                     <div className="glossary-cta-row mt-8">
-                        <AuditCTA location="hero" src="glossary-3wm" />
+                        <AuditCTA location="hero" src="resource-3wm" />
                         <a href="#matcher" className="site-button-secondary glossary-primary-cta">
                             Try the matcher below
                         </a>
@@ -285,15 +285,15 @@ export default function ThreeWayMatchPage() {
                             <div className="glossary-cta-card-grid">
                                 <div>
                                     <p className="glossary-eyebrow-label">
-                                        Share one AP workflow
+                                        Share one manual workflow
                                     </p>
                                     <p className="glossary-cta-card-body">
-                                        We review one AP workflow and recommend the smallest useful
-                                        first system to prove.
+                                        We review one manual workflow and recommend the smallest
+                                        useful next step.
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <AuditCTA location="mid" src="glossary-3wm" />
+                                    <AuditCTA location="mid" src="resource-3wm" />
                                 </div>
                             </div>
                         </div>
@@ -371,7 +371,7 @@ export default function ThreeWayMatchPage() {
                                 traffic.
                             </p>
                             <p>
-                                Adjacent proof for the kind of regulatory document workflows this style
+                                Related case study for the kind of regulatory document workflows this style
                                 of build handles: we shipped the EU TRACES platform integration for a
                                 client&apos;s sustainability compliance program. Public review from
                                 Matthew Baldwin:{" "}
@@ -420,11 +420,11 @@ export default function ThreeWayMatchPage() {
                                 or amounts match. The matcher above demonstrates this with the
                                 DUPLICATE_INVOICE status.
                             </FaqItem>
-                            <FaqItem question="How long does AP automation take to implement?">
-                                A fixed-scope three-way match system from us takes 4 to 8 weeks from
-                                kick-off to production. Most of the time goes to data plumbing (export
-                                format edge cases, document intake reliability, vendor master
-                                normalization), not to the matching logic itself.
+                            <FaqItem question="When should this become a client project?">
+                                Treat three-way matching as a scoping input, not a packaged offer.
+                                If your matching process depends on real exports, approvals, exception
+                                ownership, and reporting handoffs, bring it as one manual workflow.
+                                We can decide whether it belongs in a client project.
                             </FaqItem>
                             <FaqItem question="What about non-PO invoices?">
                                 Non-PO invoices (subscriptions, utilities, professional services without
@@ -443,7 +443,7 @@ export default function ThreeWayMatchPage() {
                             <ul className="glossary-related-list">
                                 <li>
                                     <Link href="/finance-automation/" className="glossary-related-link">
-                                        Finance automation for AP teams: the full control-layer model
+                                        Workflow automation: the full control-layer model
                                     </Link>
                                 </li>
                                 <li>
@@ -469,18 +469,18 @@ export default function ThreeWayMatchPage() {
                             <div className="glossary-cta-card-grid">
                                 <div>
                                     <p className="glossary-eyebrow-label">
-                                        Ready to automate three-way matching?
+                                        Have a manual matching workflow worth fixing?
                                     </p>
                                     <h3 className="glossary-cta-footer-heading">
-                                        Share one AP workflow.
+                                        Share one manual workflow.
                                     </h3>
                                     <p className="glossary-cta-card-body mt-3">
-                                        We review one AP workflow and recommend the smallest useful
-                                        first system to prove.
+                                        We review one manual workflow and recommend the smallest
+                                        useful next step.
                                     </p>
                                 </div>
                                 <div className="glossary-cta-card-actions">
-                                    <AuditCTA location="footer" src="glossary-3wm" />
+                                    <AuditCTA location="footer" src="resource-3wm" />
                                 </div>
                             </div>
                         </div>

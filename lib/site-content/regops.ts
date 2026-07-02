@@ -113,8 +113,8 @@ export const regopsPageContent = {
     },
     proof: {
         header: {
-            eyebrow: "Compliance automation proof",
-            title: "The proof starts with EUDR.",
+            eyebrow: "Compliance automation example",
+            title: "The EUDR bridge shows the pattern.",
             body: "The EUDR bridge shows the compliance automation pattern at real volume: structured validation, API bridges, submission evidence, and retry-safe processing.",
         },
         assets: proofAssets.filter((asset) => asset.pillar === "regops"),

@@ -24,7 +24,7 @@ export default function TermsPage() {
     return (
         <LegalPage
             titleLine1="Terms &"
-            titleLine2="Protocols"
+            titleLine2="Conditions"
             subtitle="Operational terms for engaging with Invaritech services."
         >
             <LegalSection number="01" heading="Acceptance of Terms">

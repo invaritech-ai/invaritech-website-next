@@ -1,4 +1,4 @@
-const PAGE_URL = "https://www.invaritech.ai/glossary/three-way-match/";
+const PAGE_URL = "https://www.invaritech.ai/resources/three-way-match/";
 const SITE_URL = "https://www.invaritech.ai/";
 
 export function buildBreadcrumbSchema() {
@@ -7,7 +7,7 @@ export function buildBreadcrumbSchema() {
         "@type": "BreadcrumbList",
         itemListElement: [
             { "@type": "ListItem", position: 1, name: "Invaritech", item: SITE_URL },
-            { "@type": "ListItem", position: 2, name: "Glossary", item: `${SITE_URL}glossary/` },
+            { "@type": "ListItem", position: 2, name: "Resources", item: `${SITE_URL}resources/` },
             { "@type": "ListItem", position: 3, name: "Three-Way Match", item: PAGE_URL },
         ],
     };
@@ -19,9 +19,9 @@ export function buildArticleSchema({ lastUpdated }: { lastUpdated: string }) {
         "@type": "Article",
         headline: "Three-Way Match: Invoice, PO, and Goods Receipt Matching",
         description:
-            "How three-way matching works between invoice, purchase order, and goods receipt — what an agentic exception-routing system catches that manual review misses.",
+            "How three-way matching works between invoice, purchase order, and goods receipt, and what an agentic exception-routing system catches that manual review misses.",
         mainEntityOfPage: PAGE_URL,
-        articleSection: "Glossary",
+        articleSection: "Resources",
         datePublished: lastUpdated,
         dateModified: lastUpdated,
         author: {
@@ -60,8 +60,8 @@ const FAQ_ENTRIES: { q: string; a: string }[] = [
         a: "Yes, and it is one of the highest-value catches. The PO number is the join key. Two invoices referencing the same PO are by definition candidate duplicates, regardless of whether the invoice numbers, dates, or amounts match.",
     },
     {
-        q: "How long does AP automation take to implement?",
-        a: "A fixed-scope three-way match system typically takes 4 to 8 weeks from kick-off to production. Most of the time goes to data plumbing (export format edge cases, document intake reliability, vendor master normalization), not to the matching logic itself.",
+        q: "When should three-way matching become a client project?",
+        a: "Use the matcher as a scoping input first. A client project starts to make sense when matching depends on real exports, approval paths, exception ownership, reporting handoffs, and support expectations.",
     },
     {
         q: "What about non-PO invoices?",

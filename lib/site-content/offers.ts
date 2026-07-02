@@ -11,15 +11,15 @@ type OfferStage = {
 const diagnosticOffers = [
     {
         id: "finance-workflow-diagnostic",
-        title: "Finance Workflow Diagnostic",
-        audience: "Teams with a finance or regulated operations workflow that keeps escaping the systems they already pay for.",
+        title: "Manual Workflow Diagnostic",
+        audience: "Teams with a manual workflow that keeps escaping the systems they already pay for.",
         promise:
-            "Map one workflow, find where controls are missing, and leave with a practical automation path before anyone commits to a build.",
+            "Map one workflow, find where checks and handoffs break, and leave with a practical next step before anyone commits to a build.",
         includes: [
             "Workflow and system map",
             "Exception and evidence inventory",
-            "Missing controls and approval risks",
-            "Recommended first build scope",
+            "Missing checks and handoff risks",
+            "Recommended next step",
         ],
         cta: primaryDiagnosticCta,
     },
@@ -28,10 +28,10 @@ const diagnosticOffers = [
 const buildOffers = [
     {
         id: "finance-control-sprint",
-        title: "Finance Control Sprint",
-        audience: "Finance teams that need one exception-heavy workflow made checkable, visible, and repeatable.",
+        title: "Workflow Control Sprint",
+        audience: "Teams that need one exception-heavy workflow made checkable, visible, and repeatable.",
         promise:
-            "Turn a narrow payment, reconciliation, or approval process into a workflow with clear rules, owners, and evidence.",
+            "Turn a narrow approval, reconciliation, or reporting process into a workflow with clear rules, owners, and evidence.",
         includes: [
             "Fixed-scope workflow build",
             "Rule table and exception queue",
@@ -41,10 +41,10 @@ const buildOffers = [
     },
     {
         id: "finance-ops-automation-build",
-        title: "Finance Automation Build",
-        audience: "Operators who need a broader automation layer across finance systems, inboxes, spreadsheets, and approval tools.",
+        title: "Ops Automation Build",
+        audience: "Operators who need a broader automation layer across systems, inboxes, spreadsheets, and approval tools.",
         promise:
-            "Build the automation that keeps finance teams moving, without forcing a system replacement.",
+            "Build the automation that keeps operations moving, without forcing a system replacement.",
         includes: [
             "Multi-step workflow automation",
             "System and spreadsheet integrations",

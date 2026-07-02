@@ -456,7 +456,7 @@ export default function InvoiceProcessingAutomationPage() {
 
             <section className="mt-14 pt-12">
                 <p className="mb-4 text-xs font-mono uppercase tracking-[0.22em] text-primary">
-                    Accounting System Boundary
+                    Accounting system fit
                 </p>
                 <h2 className="font-editorial text-3xl font-semibold leading-tight md:text-5xl">
                     Where Xero or your ERP fits.
@@ -503,9 +503,9 @@ export default function InvoiceProcessingAutomationPage() {
                     Test the intake step before you redesign the workflow.
                 </h2>
                 <p className="site-body mt-4">
-                    Run one real invoice through the free invoice extractor. Then use the supplier
-                    AP controls checklist to map the checks, exception owners, and evidence AP needs
-                    before approval or payment release.
+                    Run one real invoice through the free invoice extractor. Then use the controls
+                    checklist to map the checks, exception owners, and evidence needed before
+                    approval or release.
                 </p>
                 <div className="mt-7 flex flex-wrap gap-3">
                     <Link href="/resources/invoice-extractor/" className="site-button">
@@ -515,10 +515,10 @@ export default function InvoiceProcessingAutomationPage() {
                         href="/resources/accounts-payable-controls/"
                         className="site-button bg-transparent text-foreground hover:bg-card"
                     >
-                        Map AP Controls
+                        Map Controls
                     </Link>
                     <Link
-                        href="/glossary/three-way-match/"
+                        href="/resources/three-way-match/"
                         className="site-button bg-transparent text-foreground hover:bg-card"
                     >
                         Review Three-Way Match

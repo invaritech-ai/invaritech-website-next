@@ -110,7 +110,7 @@ export default function FooterSection() {
                         className="site-footer-company-column"
                     />
                     <FooterColumn title="Finance Ops" links={footerFinanceLinks} />
-                    <FooterColumn title="RegOps & Proof" links={footerProofLinks} />
+                    <FooterColumn title="Compliance Work" links={footerProofLinks} />
 
                     <div className="site-footer-utility-column">
                         <FooterColumn title="Legal" links={legalLinks} />

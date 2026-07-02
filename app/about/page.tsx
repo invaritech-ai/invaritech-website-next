@@ -185,7 +185,7 @@ export default function AboutPage() {
                             href="/contact/?diagnostic=1&src=about"
                             className="inline-flex min-h-12 items-center justify-center bg-primary px-6 font-semibold text-primary-foreground transition-colors hover:bg-foreground hover:text-background"
                         >
-                            Book a Finance Workflow Diagnostic <ArrowRight className="ml-2 size-4" />
+                            Share a Manual Workflow <ArrowRight className="ml-2 size-4" />
                         </Link>
                         <Link
                             href={BOOK_MEETING_URL}

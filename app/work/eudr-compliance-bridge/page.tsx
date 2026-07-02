@@ -9,11 +9,11 @@ import { primaryDiagnosticCta } from "@/lib/site-content/brand";
 export const metadata: Metadata = {
     title: "EUDR Compliance Bridge Case Study",
     description:
-        "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
+        "Compliance bridge case study for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
     openGraph: {
         title: "EUDR Compliance Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
+            "Compliance bridge case study for high-volume, audit-ready EUDR submissions with deterministic workflow infrastructure, structured validation, API bridges, submission evidence, and retry-safe processing.",
         url: "https://www.invaritech.ai/work/eudr-compliance-bridge/",
         images: [
             {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "EUDR Compliance Bridge | Regulated Workflow Infrastructure | INVARITECH",
         description:
-            "Compliance bridge proof for high-volume, audit-ready EUDR submissions with deterministic validation and retry-safe processing.",
+            "Compliance bridge case study for high-volume, audit-ready EUDR submissions with deterministic validation and retry-safe processing.",
         images: ["/og-image.png"],
     },
     alternates: {
@@ -55,7 +55,7 @@ export default function EudrCaseStudyPage() {
                 <div className="relative mb-32">
                     <div className="flex flex-col gap-2 mb-8">
                          <span className="font-mono text-primary text-sm tracking-widest uppercase">
-                            Compliance automation proof case
+                            Compliance automation case
                         </span>
                         <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] mix-blend-difference mb-6">
                             <TextEffect per="char" preset="fade">
@@ -118,8 +118,8 @@ export default function EudrCaseStudyPage() {
                     <div className="mb-16 max-w-3xl">
                         <p className="text-lg text-muted-foreground leading-relaxed">
                             In practice, this is compliance automation backend development: deterministic workflow infrastructure for bursty submission volume, strict regulator interfaces, and defensible evidence trails. The same design discipline carries into finance automation whenever approvals, exception routing, and auditability matter more than presentation layers. The same exception-routing approach is described in our{" "}
-                            <Link href="/glossary/three-way-match/" className="site-link">
-                                three-way match glossary entry
+                            <Link href="/resources/three-way-match/" className="site-link">
+                                three-way match resource
                             </Link>
                             .
                         </p>

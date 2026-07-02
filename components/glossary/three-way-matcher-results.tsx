@@ -125,7 +125,7 @@ export function ThreeWayMatcherResults({ results, onFilterChange }: Props) {
                                 <tr key={r.invoiceId} className="glossary-matcher-table-row">
                                     <td className="glossary-matcher-table-cell-mono">{r.invoiceId}</td>
                                     <td className="glossary-matcher-table-cell-mono">{r.matchedPo?.poNumber ?? r.poNumber}</td>
-                                    <td className="glossary-matcher-table-cell-mono">{r.matchedGr ? "✓" : "—"}</td>
+                                    <td className="glossary-matcher-table-cell-mono">{r.matchedGr ? "Yes" : "No"}</td>
                                     <td className="glossary-matcher-table-cell-status">
                                         <span className={`glossary-matcher-status-badge ${TONE_CLASSES[meta.tone] ?? ""}`}>
                                             {meta.label}

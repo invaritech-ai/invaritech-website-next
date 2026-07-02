@@ -12,6 +12,7 @@
 
 # testing
 /coverage
+__pycache__/
 
 # next.js
 /.next/
@@ -64,3 +65,9 @@ artifacts
 
 # AP scan sample data — local only
 /ap-scan-samples/
+
+# Local git worktrees
+/.worktrees/
+
+# Superpowers workflow scratch files
+/.superpowers/

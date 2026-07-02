@@ -142,7 +142,7 @@ If you are evaluating whether a workflow justifies custom infrastructure, start 
 
 Map the manual steps, error rates, and time cost. If the delta is material, the build case becomes clear. If it is not, buying is probably correct.
 
-For accounts payable and finance workflows, start with the [finance automation](/finance-automation/) model before committing to either path. It maps the common free assets, AP controls, and paid deployment threshold.
+For finance workflows, start with the [workflow automation](/finance-automation/) model before committing to either path. It maps the common free assets, control checks, and client-project threshold.
 
 [Book a scoping call](/contact/) to map your workflow before committing to either path.
     `,

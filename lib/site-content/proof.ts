@@ -20,7 +20,7 @@ export const proofAssets = [
         body: "A working AP exception demo that compares purchase orders, goods receipts, and supplier invoices to show mismatch logic clearly.",
         proves:
             "Finance exception handling can be made visible, explainable, and reviewable before payment release.",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
         tags: ["AP controls", "exceptions", "matching"],
     },
     {
@@ -39,7 +39,7 @@ export const proofAssets = [
         pillar: "finance-ops",
         type: "tool",
         title: "Accounts Payable Controls Checklist",
-        body: "A live AP controls checklist for deciding the checks, review owners, evidence requirements, and release posture around supplier invoices and payments.",
+        body: "A live controls checklist for deciding the checks, review owners, evidence requirements, and release posture around supplier invoices and payments.",
         proves:
             "Payment control rules can be defined in plain language before they become workflow automation.",
         href: "/resources/accounts-payable-controls/",

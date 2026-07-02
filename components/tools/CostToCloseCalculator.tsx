@@ -24,7 +24,7 @@ const AUTOMATION_REDUCTION = 0.7;
 const HOURS_PER_CLOSE_DAY = 6;
 
 const BENCHMARK_TIERS = [
-    { label: "BEST-IN-CLASS", maxDays: 3, pct: "TOP 18%", end: 3 },
+    { label: "FAST CLOSE", maxDays: 3, pct: "TOP 18%", end: 3 },
     { label: "TOP QUARTILE", maxDays: 5, pct: "TOP 50%", end: 5 },
     { label: "AVERAGE", maxDays: 7, pct: "MEDIAN", end: 7 },
     { label: "BELOW AVG", maxDays: 15, pct: "BTM 27%", end: 15 },
@@ -192,13 +192,13 @@ function BenchmarkBar({
             <div className="tool-benchmark-legend">
                 <span className="tool-benchmark-legend-item">
                     <span className="tool-benchmark-dot tool-benchmark-dot-current" />
-                    NOW: ~{Math.round(currentDays)} DAYS —{" "}
+                    NOW: ~{Math.round(currentDays)} DAYS,{" "}
                     {getTier(currentDays).label}
                 </span>
                 <span className="tool-benchmark-legend-item">
                     <span className="tool-benchmark-dot tool-benchmark-dot-target" />
-                    AFTER: ~{Math.max(1, Math.round(targetDays))} DAYS —
-                    BEST-IN-CLASS
+                    AFTER: ~{Math.max(1, Math.round(targetDays))} DAYS,
+                    FAST CLOSE
                 </span>
             </div>
         </div>
@@ -371,7 +371,7 @@ export function CostToCloseCalculator() {
                     {/* After automation + Savings row */}
                     <div className="tool-metric tool-state-stack">
                         <div className="tool-label">
-                            After Workflow Control — 70% reduction model
+                            After workflow control: 70% reduction model
                         </div>
                         <div className="tool-metric-row">
                             <div>
@@ -411,10 +411,10 @@ export function CostToCloseCalculator() {
                 </div>
             </div>
 
-            {/* Methodology */}
+            {/* Estimate note */}
             <div className="tool-divider">
                 <p className="tool-small">
-                    METHODOLOGY — Savings estimate uses a 70% reduction model for
+                    HOW THIS ESTIMATE WORKS: Savings estimate uses a 70% reduction model for
                     manual close work after exception handling, reconciliations,
                     approval follow-up, and recurring checks are controlled or
                     automated. Days-to-close derived from{" "}

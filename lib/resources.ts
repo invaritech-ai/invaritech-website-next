@@ -11,6 +11,61 @@ export interface Resource {
 
 export const resources: Resource[] = [
     {
+        slug: "retailer-deductions",
+        pillar: "finance-ops",
+        title: "Retailer Deductions: The Supplier's Guide",
+        excerpt:
+            "Supplier-side guide for retailer deductions, evidence gaps, and Code risk before accepting a short-pay.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Claims guide",
+        href: "/resources/retailer-deductions/",
+    },
+    {
+        slug: "sample-claims-evidence-pack",
+        pillar: "finance-ops",
+        title: "Sample Claims Evidence-Pack Teardown",
+        excerpt:
+            "Illustrative DIFOT, promo scan, and shrinkage examples showing how a deduction is brought back to the evidence.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Worked example",
+        href: "/resources/sample-claims-evidence-pack/",
+    },
+    {
+        slug: "difot-calculator",
+        pillar: "finance-ops",
+        title: "DIFOT Calculator and Penalty Checker",
+        excerpt:
+            "DIFOT meaning, formula, worked example, and a supplier-side penalty checker focused on evidence gaps.",
+        category: "calculator",
+        industry: "FMCG suppliers",
+        format: "Reference + live checker",
+        href: "/resources/difot-calculator/",
+    },
+    {
+        slug: "remittance-advice",
+        pillar: "finance-ops",
+        title: "Remittance Advice Guide and Deduction Worksheet",
+        excerpt:
+            "Plain-English remittance advice guide with a supermarket deduction triage worksheet for supplier-side line review.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Resource guide + XLSX",
+        href: "/resources/remittance-advice/",
+    },
+    {
+        slug: "food-and-grocery-code",
+        pillar: "finance-ops",
+        title: "Food and Grocery Code Deduction Explainer",
+        excerpt:
+            "Supplier-side summary of where Food and Grocery Code facts can make retailer deductions challengeable.",
+        category: "guide",
+        industry: "FMCG suppliers",
+        format: "Resource guide",
+        href: "/resources/food-and-grocery-code/",
+    },
+    {
         slug: "accounts-payable-controls",
         pillar: "finance-ops",
         title: "Accounts Payable Controls Checklist",
@@ -37,11 +92,11 @@ export const resources: Resource[] = [
         pillar: "finance-ops",
         title: "Three-Way Match Tool",
         excerpt:
-            "Check PO, invoice, and receipt fields before approval. Use the interactive matcher and glossary to classify three-way match exceptions.",
+            "Check PO, invoice, and receipt fields before approval. Use the interactive matcher to classify three-way match exceptions.",
         category: "tool",
         industry: "Manufacturing / Distribution",
         format: "Interactive web tool",
-        href: "/glossary/three-way-match/",
+        href: "/resources/three-way-match/",
     },
     {
         slug: "invoice-processing-automation",

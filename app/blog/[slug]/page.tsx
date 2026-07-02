@@ -23,6 +23,10 @@ export async function generateStaticParams() {
     return slugs.map((slug) => ({ slug }));
 }
 
+function formatBlogTag(tag: string) {
+    return tag.replace(/([a-z])([A-Z])/g, "$1 $2");
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { slug } = await params;
     const post = getPostBySlug(slug);
@@ -34,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {
         title: { absolute: post.seoTitle ?? post.title },
         description: post.excerpt,
-        keywords: post.tags,
+        keywords: post.tags.map(formatBlogTag),
         authors: [{ name: post.author.name }],
         openGraph: {
             title: post.title,
@@ -43,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             type: "article",
             publishedTime: post.publishedAt,
             authors: [post.author.name],
-            tags: post.tags,
+            tags: post.tags.map(formatBlogTag),
             images: [{ url: imageUrl, width: 1200, height: 630, alt: post.title }],
         },
         twitter: {
@@ -92,7 +96,7 @@ function generateArticleSchema(post: {
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         url,
         articleSection: post.articleSection,
-        keywords: post.tags.join(", "),
+        keywords: post.tags.map(formatBlogTag).join(", "),
     };
 }
 
@@ -238,7 +242,7 @@ export default async function BlogPostPage({ params }: Props) {
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="h-[1px] w-8 bg-primary/40" />
                                 <span className="font-mono text-foreground-subtle text-[11px] tracking-[0.22em] uppercase">
-                                    Intelligence // Strategy
+                                    Invaritech guide
                                 </span>
                             </div>
 
@@ -252,7 +256,7 @@ export default async function BlogPostPage({ params }: Props) {
                                 <div className="flex flex-wrap gap-2">
                                     {post.tags.map((tag) => (
                                         <span key={tag} className="text-[10px] font-mono px-3 py-1.5 border border-primary/20 text-foreground-muted bg-primary/[0.05]">
-                                            #{tag}
+                                            #{formatBlogTag(tag)}
                                         </span>
                                     ))}
                                 </div>

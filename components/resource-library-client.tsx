@@ -9,7 +9,14 @@ const resourceGroups = [
         id: "supplier-claims",
         title: "Supplier Claims & Deductions",
         body: "Retailer claims, short-pays, debit notes, promo deductions, and duplicate credits.",
-        slugs: ["supermarket-claim-types-worth-checking"],
+        slugs: [
+            "retailer-deductions",
+            "sample-claims-evidence-pack",
+            "difot-calculator",
+            "remittance-advice",
+            "food-and-grocery-code",
+            "supermarket-claim-types-worth-checking",
+        ],
     },
     {
         id: "finance-operations",

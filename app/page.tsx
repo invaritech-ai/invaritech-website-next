@@ -119,9 +119,9 @@ export default function Home() {
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
-                            eyebrow: "Offer ladder",
+                            eyebrow: "How work starts",
                             title: "Diagnose. Build. Support.",
-                            body: "The service ladder is deliberately narrow at the start. One workflow first, then a fixed-scope build, then managed support when the workflow is live.",
+                            body: "Start with one workflow. Then decide whether it needs a build and support.",
                         }}
                         reveal
                     />
@@ -134,9 +134,9 @@ export default function Home() {
                 <div className="site-container pt-12 md:pt-16 lg:pt-20">
                     <SectionHeader
                         content={{
-                            eyebrow: "Proof and tools",
-                            title: "Proof and tools you can open today.",
-                            body: "Start with live assets: the compliance bridge case study, AP matching demo, invoice extraction, payment-control rules, and close-cost calculator.",
+                            eyebrow: "Case studies and tools",
+                            title: "Open the case studies and tools.",
+                            body: "Start with the compliance bridge case study, AP matching demo, invoice extraction, payment-control rules, and close-cost calculator.",
                         }}
                         reveal
                     />

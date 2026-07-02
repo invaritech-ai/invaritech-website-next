@@ -199,6 +199,56 @@ const nextConfig: NextConfig = {
                 destination: "/resources/accounts-payable-controls/",
                 statusCode: 301,
             },
+            {
+                source: "/glossary",
+                destination: "/resources/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/",
+                destination: "/resources/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/difot",
+                destination: "/resources/difot/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/difot/",
+                destination: "/resources/difot/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/remittance-advice",
+                destination: "/resources/remittance-advice/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/remittance-advice/",
+                destination: "/resources/remittance-advice/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/food-and-grocery-code",
+                destination: "/resources/food-and-grocery-code/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/food-and-grocery-code/",
+                destination: "/resources/food-and-grocery-code/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/three-way-match",
+                destination: "/resources/three-way-match/",
+                statusCode: 301,
+            },
+            {
+                source: "/glossary/three-way-match/",
+                destination: "/resources/three-way-match/",
+                statusCode: 301,
+            },
 
             // ── Services (removed) → Homepage ─────────────────────────────
             // Specific compliance-bridge link preserved for inbound equity

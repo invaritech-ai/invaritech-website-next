@@ -211,10 +211,10 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                         </h3>
                                         <p className="text-sm text-muted-foreground mb-3">
                                             {diagnosticRequested
-                                                ? "Use the form to bring one finance or regulated operations workflow to a focused diagnostic."
+                                                ? "Use the form to bring one manual workflow to a focused diagnostic."
                                                 : scanRequested
                                                   ? "Use the form to start the free workflow controls scan. We will confirm the export, NDA, and next step before asking for data."
-                                                  : "Skip the email loop and bring one real finance or regulated operations workflow to a focused diagnostic."}
+                                                  : "Skip the email loop and bring one real manual workflow to a focused diagnostic."}
                                         </p>
                                         <Button
                                             asChild
@@ -263,14 +263,14 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                             <div className="mb-8">
                                 <h3 className="text-xl font-semibold mb-2 text-foreground">
                                     {diagnosticRequested
-                                        ? "Book the finance workflow diagnostic"
+                                        ? "Map a manual workflow"
                                         : scanRequested
                                           ? "Request the free workflow controls scan"
                                           : "Tell us about your workflow"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
                                     {diagnosticRequested
-                                        ? "Tell us which finance or regulated operations workflow you want to map first."
+                                        ? "Tell us which manual workflow you want to map first."
                                         : scanRequested
                                           ? "Tell us which system you use and the best way to handle the NDA before you send your export."
                                           : "Tell us which workflow, exception path, reporting bridge, or evidence gap needs attention."}
@@ -357,7 +357,7 @@ export default function ContactSection({ scanRequested = false, diagnosticReques
                                         name="message"
                                         placeholder={scanRequested
                                             ? "Example: I want the free workflow controls scan. We use NetSuite and can provide a recent export after NDA."
-                                            : "Example: month-end exception handling, reporting bridge, approval evidence, or regulated submission workflow."}
+                                            : "Example: reporting bridge, approval evidence, exception handling, or a copied spreadsheet workflow."}
                                         defaultValue={formData.message}
                                         onChange={handleInputChange}
                                         rows={4}

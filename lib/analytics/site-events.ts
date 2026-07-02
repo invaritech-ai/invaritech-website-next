@@ -2,9 +2,11 @@ type SiteEventName =
     | "glossary_tool_run"
     | "glossary_tool_tolerance_change"
     | "glossary_tool_csv_upload"
-    | "glossary_secondary_cta_submit"
     | "glossary_filter_chip_click"
-    | "cta_click";
+    | "cta_click"
+    | "claims_cta_click"
+    | "claims_difot_checker_run"
+    | "claims_worksheet_download";
 
 type SiteEventProps = Record<string, string | number | boolean>;
 

@@ -22,7 +22,7 @@ const painCardLinks: Record<string, string> = {
     "invoice-approval-workflow": "/resources/invoice-processing-automation/",
     "invoice-exception-management": "/resources/invoice-processing-automation/",
     "duplicate-invoice-detection": "/blog/ai-invoice-data-extraction/",
-    "three-way-match-exceptions": "/glossary/three-way-match/",
+    "three-way-match-exceptions": "/resources/three-way-match/",
     "payment-controls-release-evidence": "/resources/accounts-payable-controls/?scenario=payment-release-review",
 };
 
@@ -86,10 +86,10 @@ const financeAutomationStructuredData = [
         "@context": "https://schema.org",
         "@type": "Service",
         "@id": `${pageUrl}#service`,
-        name: "Finance Automation for AP Teams",
-        serviceType: "Finance Automation",
+        name: "Workflow Automation for Manual Finance Work",
+        serviceType: "Workflow Automation",
         description:
-            "Finance automation for AP teams that need invoice exceptions, approval evidence, payment controls, and month-end follow-up made visible around existing accounting systems.",
+            "Ops automation for manual finance work that needs exceptions, approval evidence, release controls, and month-end follow-up made visible around existing systems.",
         provider: {
             "@type": "Organization",
             name: siteConfig.name,
@@ -99,7 +99,7 @@ const financeAutomationStructuredData = [
         audience: {
             "@type": "Audience",
             audienceType:
-                "Finance teams, accounts payable teams, controllers, and shared services teams",
+                "Finance teams, operators, controllers, and client teams with manual workflows",
         },
     },
 ];

@@ -24,7 +24,7 @@ describe("buildArticleSchema", () => {
         assert.equal(schema.author.name, "Aditi Garg");
         assert.ok(schema.author.sameAs.some((u) => u.includes("linkedin.com")));
         assert.ok(schema.author.sameAs.some((u) => u.includes("scholar.google.com")));
-        assert.equal(schema.articleSection, "Glossary");
+        assert.equal(schema.articleSection, "Resources");
     });
 });
 
